@@ -1,0 +1,8 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "cs4_v1/gemini_2_flash",
+            "model_name": "gemini-2.0-flash"
+        }
+    ]
+}

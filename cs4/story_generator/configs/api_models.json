@@ -1,0 +1,12 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "cs4_v1/claude_37_sonnet",
+            "model_name": "claude-3-7-sonnet-20250219"
+        },
+        {
+            "run_id": "cs4_v1/claude_3_haiku",
+            "model_name": "claude-3-haiku-20240307"
+        }
+    ]
+}

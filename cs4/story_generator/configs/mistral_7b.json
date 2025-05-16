@@ -1,0 +1,9 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "cs4_v1/mistral_7b_instr",
+            "model_name": "mistral_7b_instruct",
+            "test_size": 5e10
+        }
+    ]
+}

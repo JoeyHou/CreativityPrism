@@ -1,0 +1,12 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "cs4_v1/olmo_13b_dpo",
+            "model_name": "olmo_13b_dpo"
+        },
+        {
+            "run_id": "cs4_v1/olmo_13b_sft",
+            "model_name": "olmo_13b_sft"
+        }
+    ]
+}
