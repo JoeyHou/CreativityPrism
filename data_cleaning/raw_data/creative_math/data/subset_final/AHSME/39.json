@@ -1,0 +1,8 @@
+{
+  "competition_id": "1954_AHSME_Problems",
+  "problem_id": 13,
+  "problem": "A quadrilateral is inscribed in a circle. If angles are inscribed in the four arcs cut off \nby the sides of the quadrilateral, their sum will be: \n$\\textbf{(A)}\\ 180^\\circ \\qquad \\textbf{(B)}\\ 540^\\circ \\qquad \\textbf{(C)}\\ 360^\\circ \\qquad \\textbf{(D)}\\ 450^\\circ\\qquad\\textbf{(E)}\\ 1080^\\circ$",
+  "solutions": {
+    "Solution": "The arcs created by all sides of the quadrilateral will sum to 360 because they cover the entire circle. The inscribed angles created by each side of the trapezoid will all be half the measure of each arc created by their respective side. Thus, the sum of the all the inscribed angles is half the sum of all the arcs. $360/2 = 180\\  \\fbox{(A)}$"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1984_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Let $d$ be the sum of the lengths of all the diagonals of a plane convex polygon with $n$ vertices (where $n>3$). Let $p$ be its perimeter. Prove that:\n\\[n-3<{2d\\over p}<\\Bigl[{n\\over2}\\Bigr]\\cdot\\Bigl[{n+1\\over 2}\\Bigr]-2,\\]\nwhere $[x]$ denotes the greatest integer not exceeding $x$.",
+  "solutions": {
+    "Solution": "Consider all the pairs of non-adjacent sides in the polygon. Each pair uniquely determines two diagonals which intersect in an interior point. The sum of these two diagonals is greater than the sum of the two sides (triangle inequality). Each side will appear in a pair $n-3$ times. And each time the side appears it also includes two diagonals. Thus, $(n-3)p < 2d$.\nNote that for any diagonal, its length is less than the sum of the sides on either side of it (triangle inequality). Consider all the diagonals from a fixed vertex and using the least number of sides in each application of the triangle inequality. We can sum everything up over all the diagonals considering the two cases (even or odd) to get the result.\n"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "competition_id": "2002_AIME_I_Problems",
+  "problem_id": 2,
+  "difficulty": 3,
+  "problem": "The diagram shows twenty congruent circles arranged in three rows and enclosed in a rectangle. The circles are tangent to one another and to the sides of the rectangle as shown in the diagram. The ratio of the longer dimension of the rectangle to the shorter dimension can be written as $\\dfrac{1}{2}(\\sqrt{p}-q)$ where $p$ and $q$ are positive integers. Find $p+q$.",
+  "solutions": {
+    "Solution": "Let the radius of the circles be $r$. The longer dimension of the rectangle can be written as $14r$, and by the Pythagorean Theorem, we find that the shorter dimension is $2r\\left(\\sqrt{3}+1\\right)$.\nTherefore, $\\frac{14r}{2r\\left(\\sqrt{3}+1\\right)}= \\frac{7}{\\sqrt{3} + 1} \\cdot \\left[\\frac{\\sqrt{3}-1}{\\sqrt{3}-1}\\right] = \\frac{1}{2}\\left(7\\sqrt{3} - 7\\right) = \\frac{1}{2}\\left(\\sqrt{p}-q\\right)$. Thus we have $p=147$ and $q=7$, so $p+q=\\boxed{154}$.",
+    "Solution 2": "Since we only care about the  between the longer side and shorter side, we can set the longer side to $14$. So, this means that each of the radii is $1$. Now, we connect the radii of three circles such that they form an equilateral triangle with side length 4. Obviously, the height this triangle is $2\\sqrt{3}$, and the shorter side if the triangle is therefore $2\\sqrt{3}+2$ and we use simplification similar to as showed above, and we reach the result $\\frac{1}{2} \\cdot (\\sqrt{147}-7)$ and the final answer is $147+7 = \\boxed{154}$."
+  }
+}

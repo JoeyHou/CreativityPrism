@@ -1,0 +1,9 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "aut_tmp_var/qwen_1",
+            "task": "aut_push",
+            "model_name": "qwen_72b_instruct"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "2003_IMO_Problems",
+  "problem_id": 6,
+  "difficulty": 9.5,
+  "problem": "p is a prime number. Prove that for every p there exists a q for every positive integer n, so that $n^p-p$ can't be divided by q.",
+  "solutions": {
+    "Solution": "Let N be $1 + p + p^2 + ... + p^{p-1}$ which equals $\\frac{p^p-1}{p-1}$\n$N\\equiv{p+1}\\pmod{p^2}$\nWhich means there exists q which is a prime factor of n that doesn't satisfy $q\\equiv{1}\\pmod{p^2}$.\n\\\\unfinished"
+  }
+}

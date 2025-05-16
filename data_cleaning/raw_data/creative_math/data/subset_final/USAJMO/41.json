@@ -1,0 +1,9 @@
+{
+  "competition_id": "2016_USAJMO_Problems",
+  "problem_id": 2,
+  "difficulty": 6.5,
+  "problem": "Prove that there exists a positive integer $n < 10^6$ such that $5^n$ has six consecutive zeros in its decimal representation.",
+  "solutions": {
+    "Solution": "Let digit $1$ of a number be the units digit, digit $2$ be the tens digit, and so on. Let the 6 consecutive zeroes be at digits $k-5$ through digit $k$. The criterion is then obviously equivalent to \n\\[5^n \\bmod 10^k < 10^{k-6}\\]\nWe will prove that $n = 20+2^{19}, k = 20$ satisfies this, thus proving the problem statement (since $n = 20+2^{19} < 10^6$). \nWe want \n\\[5^{20+2^{19}}\\pmod{10^{20}}\\]\nWe can split this into its prime factors. Obviously, it is a multiple of $5^{20}$, so we only need to consider it $\\mod2^{20}$.\n\\[5^{20}\\cdot5^{2^{19}}\\pmod{2^{20}}\\]\n\\[5^{20}\\cdot5^{\\varphi(2^{20})}\\pmod{2^{20}}\\]\n($\\varphi$ is the Euler Totient Function.) By Euler's Theorem, since $\\bigl(5, 2^{20}\\bigr)=1$, \n\\[5^{\\varphi(2^{20})}\\equiv1\\pmod{2^{20}}\\]\nso\n\\[5^{20}\\cdot5^{\\varphi (2^{20})}\\equiv5^{20}\\pmod{2^{20}}\\]\nSince $2^{20} > 10^6, 5^{20} < 10^{14} = 10^{20-6}$,\n\\[5^n \\bmod 10^k < 10^{k-6}\\]\nfor $n = 20+2^{19}$ and $k = 20$, and thus the problem statement has been proven."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1973_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "Two points $P$ and $Q$ lie in the interior of a regular tetrahedron $ABCD$. Prove that angle $PAQ < 60^\\circ$.",
+  "solutions": {
+    "Solution 1": "Let the side length of the regular tetrahedron be $a$. Link and extend $AP$ to meet the plane containing triangle $BCD$ at $E$; link $AQ$ and extend it to meet the same plane at $F$. We know that $E$ and $F$ are inside triangle $BCD$ and that $\\angle PAQ = \\angle EAF$\nNow let\u2019s look at the plane containing triangle $BCD$ with points $E$ and $F$ inside the triangle. Link and extend $EF$ on both sides to meet the sides of the triangle $BCD$ at $I$ and $J$, $I$ on $BC$ and $J$ on $DC$. We have $\\angle EAF < \\angle IAJ$\nBut since $E$ and $F$ are interior of the tetrahedron, points $I$ and $J$ cannot be both at the vertices and $IJ < a$, $\\angle IAJ < \\angle BAD = 60$. Therefore, $\\angle PAQ < 60$."
+  }
+}

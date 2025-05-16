@@ -1,0 +1,8 @@
+{
+  "competition_id": "1968_AHSME_Problems",
+  "problem_id": 9,
+  "problem": "The sum of the real values of $x$ satisfying the equality $|x+2|=2|x-2|$ is:\n$\\text{(A) } \\frac{1}{3}\\quad \\text{(B) } \\frac{2}{3}\\quad \\text{(C) } 6\\quad \\text{(D) } 6\\tfrac{1}{3}\\quad \\text{(E) } 6\\tfrac{2}{3}$",
+  "solutions": {
+    "Solution": "$\\fbox{E}$"
+  }
+}

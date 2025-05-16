@@ -1,0 +1,8 @@
+{
+  "competition_id": "1982_AHSME_Problems",
+  "problem_id": 16,
+  "problem": "A wooden cube has edges of length $3$ meters. Square holes, of side one meter, centered in each face are cut through to the opposite face. The edges of the holes are parallel to the edges of the cube. The entire surface area including the inside, in square meters, is\n$\\text {(A)} 54 \\qquad  \\text {(B)} 72 \\qquad  \\text {(C)} 76 \\qquad  \\text {(D)} 84\\qquad  \\text {(E)} 86$",
+  "solutions": {
+    "Solution": "Each exterior unit square which is removed exposes 4 faces of the unit interior squares, so the entire surface area in square meters is $6 \\cdot 3^2 - 6 + 24=72.$"
+  }
+}

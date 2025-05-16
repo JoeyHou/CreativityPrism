@@ -1,0 +1,12 @@
+{
+  "competition_id": "2021_AMC_12A_Problems",
+  "problem_id": 2,
+  "difficulty": 2,
+  "problem": "Under what conditions is $\\sqrt{a^2+b^2}=a+b$ true, where $a$ and $b$ are real numbers?\n$\\textbf{(A) }$ It is never true.\n$\\textbf{(B) }$ It is true if and only if $ab=0$.\n$\\textbf{(C) }$ It is true if and only if $a+b\\ge 0$.\n$\\textbf{(D) }$ It is true if and only if $ab=0$ and $a+b\\ge 0$.\n$\\textbf{(E) }$ It is always true.",
+  "solutions": {
+    "Solution 1 (Algebra)": "One can square both sides to get $a^{2}+b^{2}=a^{2}+2ab+b^{2}$. Then, $0=2ab\\implies ab=0$. Also, it is clear that both sides of the equation must be nonnegative. The answer is $\\boxed{\\textbf{(D)}}$.",
+    "Solution 2 (Algebra)": "Complete the square of the left side by rewriting the radical to be \\[\\sqrt{(a+b)^{2}-2ab}.\\]\nFrom there it is evident for the square root of the left to be equal to the right, $ab$ must be equal to zero.\nAlso, we know that the equivalency of square root values only holds true for nonnegative values of $a+b$, making the correct answer $\\boxed{\\textbf{(D)}}.$",
+    "Solution 3 (Process of Elimination)": "The left side of the original equation is the arithmetic square root, which is always nonnegative. So, we need $a+b\\ge 0,$ which refutes $\\textbf{(B)}$ and $\\textbf{(E)}.$ Next, picking $(a,b)=(0,0)$ refutes $\\textbf{(A)},$ and picking $(a,b)=(1,2)$ refutes $\\textbf{(C)}.$ By POE (Process of Elimination), the answer is $\\boxed{\\textbf{(D)}}.$",
+    "Solution 4 (Graphing)": "If we graph $\\sqrt{x^2+y^2}=x+y,$ then we get the union of:\nTherefore, the answer is $\\boxed{\\textbf{(D)}}.$\nThe graph of $\\sqrt{x^2+y^2}=x+y$ is shown below.\n[asy] /* Made by MRENTHUSIASM */ size(200);   int xMin = -5; int xMax = 5; int yMin = -5; int yMax = 5;  draw((xMin,0)--(xMax,0),black+linewidth(1.5),EndArrow(5)); draw((0,yMin)--(0,yMax),black+linewidth(1.5),EndArrow(5)); label(\"$x$\",(xMax,0),(2,0)); label(\"$y$\",(0,yMax),(0,2)); draw((xMax,0)--(0,0)--(0,yMax),red+linewidth(1.5)); [/asy]"
+  }
+}

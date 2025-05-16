@@ -1,0 +1,9 @@
+{
+  "competition_id": "1982_IMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6.5,
+  "problem": "Prove that if $n$ is a positive integer such that the equation $x^3-3xy^2+y^3=n$ has a solution in integers $x,y$, then it has at least three such solutions. Show that the equation has no solutions in integers for $n=2891$.",
+  "solutions": {
+    "Solution": "Suppose the equation $x^3-3xy^2+y^3=n$ has solution in integers $(x,y)$ with $y=x+k$.  Then, completing the cube yields $(y-x)^3-3x^2y+2x^3$.  Using the substitution $y=x+k$ yields $k^3-3kx^2-x^3=n$.  Notice that equality directly implies that $(k,-x)$ is also a solution to the original equation.  Applying the transformation again yields that $(-x-k,-k)$ is also a solution.  We show that these three solutions are indeed distinct: If $(x,y)=(k,-x)$ then $x=k,x+k=-x$ which only has solution $x=k=0$ which implies that $n$ is not a positive integer, a contradiction.  Similarly, since the transformation from $(k,-x)$ to $(-x-k,-k)$ and $(-x-k,-k)$ to $(x,y)$ is the same as the transformation from $(x,y)$ to $(k,-x)$, we have that the three solutions are pairwise distinct.\nFor the case $n=2891$, notice that $7|n$.  Considering all solutions modulo $7$ of the equation $x^3-3xy^2+y^3\\equiv0\\pmod{7}$ yields only $x\\equiv y\\equiv 0\\pmod{7}$.  But, this implies that $7^3$ divides $2891$ which is clearly not true."
+  }
+}

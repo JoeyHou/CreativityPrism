@@ -1,0 +1,9 @@
+{
+  "competition_id": "2001_AMC_12_Problems",
+  "problem_id": 20,
+  "difficulty": 3,
+  "problem": "Points $A = (3,9)$, $B = (1,1)$, $C = (5,3)$, and $D=(a,b)$ lie in the first quadrant and are the vertices of quadrilateral $ABCD$. The quadrilateral formed by joining the midpoints of $\\overline{AB}$, $\\overline{BC}$, $\\overline{CD}$, and $\\overline{DA}$ is a square. What is the sum of the coordinates of point $D$?\n$\\text{(A) }7 \\qquad \\text{(B) }9 \\qquad \\text{(C) }10 \\qquad \\text{(D) }12 \\qquad \\text{(E) }16$",
+  "solutions": {
+    "Solution": "[asy] pair A=(3,9), B=(1,1), C=(5,3), D=(7,3); draw(A--B--C--D--cycle); label(\"$A$\",A,N); label(\"$B$\",B,SW); label(\"$C$\",C,N); label(\"$D$\",D,E); pair AB = (A + B)/2, BC = (B + C)/2, CD = (C + D)/2, DA = (D + A)/2; draw(AB--BC--CD--DA--cycle); [/asy]\nWe already know two vertices of the square: $(A+B)/2 = (2,5)$ and $(B+C)/2 = (3,2)$. \nThere are only two possibilities for the other vertices of the square: either they are $(6,3)$ and $(5,6)$, or they are $(0,1)$ and $(-1,4)$. The second case would give us $D$ outside the first quadrant, hence the first case is the correct one. As $(6,3)$ is the midpoint of $CD$, we can compute $D=(7,3)$, and $7+3=\\boxed{10}$."
+  }
+}

@@ -1,0 +1,187 @@
+{
+    "experiments_list": [
+        {
+            "task": "book",
+            "model_name": "OLMo2-13B-sft",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "temperature": 0.75,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/OLMo2-13B-sft"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "Llama-31-8B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/Llama-31-8B-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "qwen-7b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/qwen-7b-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "mistral-7b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/mistral-7b-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "qwen-coder-7B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/qwen-coder-7B-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "OLMo-7B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/OLMo-7B-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "OLMo2-13B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/OLMo2-13B-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "Mistral-24B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/Mistral-24B-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "qwen-32b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/qwen-32b-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "qwen-coder-32b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/qwen-coder-32b-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "Mistral-8x7B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/Mistral-8x7B-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "Llama-33-70B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/Llama-33-70B-instruct"
+            }
+        },
+        {
+            "task": "book",
+            "model_name": "qwen-72B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 288,
+                "top_p": 0.9,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "/scratch/dkhasha1/bzhang90/creative_bench/data/processed/creative_index/book_prompt.json",
+                "generation": "data/outputs/new_index/qwen-72B-instruct"
+            }
+        }
+    ]
+}

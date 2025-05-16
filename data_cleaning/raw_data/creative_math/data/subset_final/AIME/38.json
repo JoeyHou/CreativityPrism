@@ -1,0 +1,11 @@
+{
+  "competition_id": "2006_AIME_II_Problems",
+  "problem_id": 11,
+  "difficulty": 5,
+  "problem": "A sequence is defined as follows $a_1=a_2=a_3=1,$ and, for all positive integers $n, a_{n+3}=a_{n+2}+a_{n+1}+a_n.$ Given that $a_{28}=6090307, a_{29}=11201821,$ and $a_{30}=20603361,$ find the remainder when $\\sum^{28}_{k=1} a_k$ is divided by 1000.",
+  "solutions": {
+    "Solution 1": "Define the sum as $s$. Since $a_n\\ = a_{n + 3} - a_{n + 2} - a_{n + 1}$, the sum will be:\nThus $s = \\frac{a_{28} + a_{30}}{2}$, and $a_{28},\\,a_{30}$ are both given; the last four digits of their sum is $3668$, and half of that is $1834$. Therefore, the answer is $\\boxed{834}$.",
+    "Solution 2 (bash)": "Since the problem only asks for the first 28 terms and we only need to calculate mod 1000, we simply bash the first 28 terms:\n\n$a_{1}\\equiv 1 \\pmod {1000} \\\\ a_{2}\\equiv 1 \\pmod {1000} \\\\ a_{3}\\equiv 1 \\pmod {1000} \\\\ a_{4}\\equiv 3 \\pmod {1000} \\\\ a_{5}\\equiv 5 \\pmod {1000} \\\\ \\cdots \\\\ a_{25} \\equiv 793 \\pmod {1000} \\\\ a_{26} \\equiv 281 \\pmod {1000} \\\\ a_{27} \\equiv 233 \\pmod {1000} \\\\ a_{28} \\equiv 307 \\pmod {1000}$\nAdding all the residues shows the sum is congruent to $\\boxed{834}$ mod $1000$.",
+    "Solution 3 (some guessing involved)/\"Engineer's Induction\"": "All terms in the sequence are sums of previous terms, so the sum of all terms up to a certain point must be some linear combination of the first three terms. Also, we are given $a_{28}, a_{29},$ and $a_{30}$, so we can guess that there is some way to use them in a formula. Namely, we guess that there exists some $p, q, r$ such that $\\sum_{k=1}^{n}{a_k} = pa_n+qa_{n+1}+ra_{n+2}$. From here, we list out the first few terms of the sequence and the cumulative sums, and with a little bit of substitution and algebra we see that $(p, q, r) = (\\frac{1}{2}, 0, \\frac{1}{2})$, at least for the first few terms. From this, we have that $\\sum_{k=1}^{28}{a_k} = \\frac{a_{28}+a_{30}}{2} \\equiv{\\boxed{834}}(\\mod 1000)$."
+  }
+}

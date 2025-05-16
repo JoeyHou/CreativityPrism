@@ -1,0 +1,9 @@
+{
+  "competition_id": "2003_AMC_8_Problems",
+  "problem_id": 18,
+  "difficulty": 1.5,
+  "problem": "Each of the twenty dots on the graph below represents one of Sarah's classmates.  Classmates who are friends are connected with a line segment.  For her birthday party, Sarah is inviting only the following:  all of her friends and all of those classmates who are friends with at least one of her friends.  How many classmates will not be invited to Sarah's party?\n[asy] pair a=(102,256), b=(68,131), c=(162,101), d=(134,150); pair e=(269,105), f=(359,104), g=(303,12), h=(579,211); pair i=(534, 342), j=(442,432), k=(374,484), l=(278,501); pair m=(282,411), n=(147,451), o=(103,437), p=(31,373); pair q=(419,175), r=(462,209), s=(477,288), t=(443,358); pair oval=(282,303); draw(l--m--n--cycle); draw(p--oval); draw(o--oval); draw(b--d--oval); draw(c--d--e--oval); draw(e--f--g--h--i--j--oval); draw(k--oval); draw(q--oval); draw(s--oval); draw(r--s--t--oval); dot(a); dot(b); dot(c); dot(d); dot(e); dot(f); dot(g); dot(h); dot(i); dot(j); dot(k); dot(l); dot(m); dot(n); dot(o); dot(p); dot(q); dot(r); dot(s); dot(t); filldraw(yscale(.5)*Circle((282,606),80),white,black); label(scale(0.75)*\"Sarah\", oval);[/asy]\n$\\textbf{(A)}\\ 1\\qquad\\textbf{(B)}\\ 4\\qquad\\textbf{(C)}\\ 5\\qquad\\textbf{(D)}\\ 6\\qquad\\textbf{(E)}\\ 7$",
+  "solutions": {
+    "Solution": "There are $3$ people who are friends with only each other who won't be invited, plus $1$ person who has no friends, and $2$ people who are friends of friends of friends who won\u2019t be invited. So the answer is $\\boxed{\\textbf{(D)}\\ 6}$."
+  }
+}

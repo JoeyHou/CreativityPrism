@@ -1,0 +1,8 @@
+{
+  "competition_id": "1952_AHSME_Problems",
+  "problem_id": 36,
+  "problem": "To be continuous at $x = - 1$, the value of $\\frac {x^3 + 1}{x^2 - 1}$ is taken to be: \n$\\textbf{(A)}\\ - 2 \\qquad \\textbf{(B)}\\ 0 \\qquad \\textbf{(C)}\\ \\frac {3}{2} \\qquad \\textbf{(D)}\\ \\infty \\qquad \\textbf{(E)}\\ -\\frac{3}{2}$",
+  "solutions": {
+    "Solution": "Factoring the numerator using the sum of cubes identity and denominator using the difference of squares identity gives \\[\\dfrac{(x+1)(x^{2}-x+1)}{(x+1)(x-1)}\\]\nCancelling out a factor of $x+1$ from the numerator and denominator gives \\[\\dfrac{(x^{2}-x+1)}{(x-1)}\\]\nPlugging in $x= -1$ gives $\\dfrac{3}{-2}$ or $\\fbox{E}$."
+  }
+}

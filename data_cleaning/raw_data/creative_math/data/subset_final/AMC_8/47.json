@@ -1,0 +1,11 @@
+{
+  "competition_id": "2012_AMC_8_Problems",
+  "problem_id": 23,
+  "difficulty": 1.5,
+  "problem": "An equilateral triangle and a regular hexagon have equal perimeters. If the triangle's area is 4, what is the area of the hexagon?\n$\\textbf{(A)}\\hspace{.05in}4\\qquad\\textbf{(B)}\\hspace{.05in}5\\qquad\\textbf{(C)}\\hspace{.05in}6\\qquad\\textbf{(D)}\\hspace{.05in}4\\sqrt3\\qquad\\textbf{(E)}\\hspace{.05in}6\\sqrt3$",
+  "solutions": {
+    "Solution 1": "Let the perimeter of the equilateral triangle be $3s$. The side length of the equilateral triangle would then be $s$ and the sidelength of the hexagon would be $\\frac{s}{2}$.\nA hexagon contains six equilateral triangles. One of these triangles would be similar to the large equilateral triangle in the ratio $1\u00a0: 4$, since the sidelength of the small equilateral triangle is half the sidelength of the large one. Thus, the area of one of the small equilateral triangles is $1$. The area of the hexagon is then $1 \\times 6 = \\boxed{\\textbf{(C)}\\ 6}$.",
+    "Solution 2": "Let the side length of the equilateral triangle be $s$ and the side length of the hexagon be $y$. Since the perimeters are equal, we must have $3s=6y$ which reduces to $s=2y$. Substitute this value in to the area of an equilateral triangle to yield $\\dfrac{(2y)^2\\sqrt{3}}{4}=\\dfrac{4y^2\\sqrt{3}}{4}$. \nSetting this equal to $4$ gives us $\\dfrac{4y^2\\sqrt{3}}{4}=4\\implies 4y^2\\sqrt{3}=16\\implies y^2\\sqrt{3}=4$.\nSubstitute $y^2\\sqrt{3}$ into the area of a regular hexagon to yield $\\dfrac{3(4)}{2}=6$.\nTherefore, our answer is $\\boxed{\\textbf{(C)}\\ 6}$.",
+    "Solution 3": "Let the side length of the triangle be $s$ and the side length of the hexagon be $t$. As explained in Solution 1, $s=2t$, or $t=\\frac{s}{2}$. The area of the triangle is $\\frac{s^2\\sqrt3}{4}=4$ and the area of the hexagon is $\\frac{t^2\\sqrt3}{4} \\cdot 6=\\frac{3t^2\\sqrt3}{2}$. Substituting $\\frac{s}{2}$ in for $t$, we get \n\\[\\frac{\\frac{3s^2\\sqrt3}{4}}{2}=\\frac{3s^2\\sqrt3}{8}.\\]\n$\\frac{s^2\\sqrt3}{4}=4 \\implies \\frac{s^2\\sqrt3}{8}=2 \\implies \\frac{3s^2\\sqrt3}{8}=\\boxed{\\textbf{(C)}\\ 6}$."
+  }
+}

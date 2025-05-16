@@ -1,0 +1,8 @@
+{
+  "competition_id": "1979_AHSME_Problems",
+  "problem_id": 8,
+  "problem": "Find the area of the smallest region bounded by the graphs of $y=|x|$ and $x^2+y^2=4$.\n$\\textbf{(A) }\\frac{\\pi}{4}\\qquad \\textbf{(B) }\\frac{3\\pi}{4}\\qquad \\textbf{(C) }\\pi\\qquad \\textbf{(D) }\\frac{3\\pi}{2}\\qquad \\textbf{(E) }2\\pi$",
+  "solutions": {
+    "Solution": "Solution by e_power_pi_times_i\nThe graph of $x^2+y^2 = 4$ is a circle with radius $2$ centered at the origin. The graph of $y=|x|$ is the combined graphs of $y=x$ and $y=-x$ with a nonnegative y. Because the arguments of $y=x$ and $y=-x$ are $135^\\circ$ and $45^\\circ$ respectively, the angle between the graphs of $y=x$ and $y=-x$ is $90^\\circ$. Thus, the smallest region bounded by the graphs is $\\frac{1}{4}\\cdot2^2\\cdot\\pi = \\boxed{\\textbf{(C) } \\pi}$."
+  }
+}

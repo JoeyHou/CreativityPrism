@@ -1,0 +1,10 @@
+{
+  "competition_id": "1999_AMC_8_Problems",
+  "problem_id": 8,
+  "difficulty": 1,
+  "problem": "Six squares are colored, front and back, (R = red, B = blue, O = orange, Y = yellow, G = green, and W = white). They are hinged together as shown, then folded to form a cube. The face opposite the white face is\n[asy] draw((0,2)--(1,2)--(1,1)--(2,1)--(2,0)--(3,0)--(3,1)--(4,1)--(4,2)--(2,2)--(2,3)--(0,3)--cycle); draw((1,3)--(1,2)--(2,2)--(2,1)--(3,1)--(3,2)); label(\"R\",(.5,2.3),N); label(\"B\",(1.5,2.3),N); label(\"G\",(1.5,1.3),N); label(\"Y\",(2.5,1.3),N); label(\"W\",(2.5,.3),N); label(\"O\",(3.5,1.3),N); [/asy]\n$\\text{(A)}\\ \\text{B} \\qquad \\text{(B)}\\ \\text{G} \\qquad \\text{(C)}\\ \\text{O} \\qquad \\text{(D)}\\ \\text{R} \\qquad \\text{(E)}\\ \\text{Y}$",
+  "solutions": {
+    "Solution 1": "When G is arranged to be the base, B is the back face and W is\nthe front face. Thus, $\\boxed{\\text{(A)}\\ B}$ is opposite W.",
+    "Solution 2": "Let Y be the top and fold G, O, and W down.\nThen $\\boxed{\\text{(A)}\\ B}$ will fold to become the back face and be\nopposite W."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1999_USAMO_Problems",
+  "problem_id": 2,
+  "difficulty": 8,
+  "problem": "Let $ABCD$ be a cyclic quadrilateral. Prove that \\[|AB - CD| + |AD - BC| \\geq 2|AC - BD|.\\]",
+  "solutions": {
+    "Solution": "Let arc $AB$ of the circumscribed circle (which we assume WLOG has radius 0.5) have value $2x$, $BC$ have $2y$, $CD$ have $2z$, and $DA$ have $2w$. \nThen our inequality reduces to, for $x+y+z+w = 180^\\circ$: \\[|\\sin x - \\sin z| + |\\sin y - \\sin w| \\ge 2|\\sin (x+y) - \\sin (y+z)|.\\]\nThis is equivalent to by sum-to-product and use of $\\cos x = \\sin (90^\\circ - x)$:\n\\[|\\sin \\frac{x-z}{2} \\sin \\frac{y+w}{2}| + |\\sin \\frac{y-w}{2} \\sin \\frac{x+z}{2}| \\ge 2|\\sin \\frac{x-z}{2} \\sin \\frac{y-w}{2}|.\\]\nClearly $90^\\circ \\ge \\frac{x+z}{2} > \\frac{x-z}{2} \\ge 0^\\circ$. As sine is increasing over $[0, \\pi/2]$, $|\\sin \\frac{x+z}{2}| > |\\sin \\frac{x-z}{2}|$.\nSimilarly, $|\\sin \\frac{y+w}{2}| > |\\sin \\frac{y-w}{2}|$. The result now follows after multiplying the first inequality by $|\\sin \\frac{x-z}{2}|$, the second by $|\\sin \\frac{y-w}{2}|$, and adding. (Equality holds if and only if $x=z$ and $y=w$, ie. $ABCD$ is a parallelogram.)"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "2014_AMC_12B_Problems",
+  "problem_id": 3,
+  "difficulty": 2,
+  "problem": "Randy drove the first third of his trip on a gravel road, the next $20$ miles on pavement, and the remaining one-fifth on a dirt road. In miles, how long was Randy's trip?\n$\\textbf{(A)}\\ 30\\qquad\\textbf{(B)}\\ \\frac{400}{11}\\qquad\\textbf{(C)}\\ \\frac{75}{2}\\qquad\\textbf{(D)}\\ 40\\qquad\\textbf{(E)}\\ \\frac{300}{7}$",
+  "solutions": {
+    "Solution": "If the first and last legs of his trip account for $\\frac{1}{3}$ and $\\frac{1}{5}$ of his trip, then the middle leg accounts for $1 - \\frac{1}{3} - \\frac{1}{5} = \\frac{7}{15}$ths of his trip.  This is equal to $20$ miles.  Letting the length of the entire trip equal $x$, we have \n\\[\\frac{7}{15}x = 20 \\implies x=\\boxed{\\textbf{(E)}\\ \\frac{300}{7}}\\]"
+  }
+}

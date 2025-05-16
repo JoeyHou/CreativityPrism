@@ -1,0 +1,9 @@
+{
+  "competition_id": "2001_USAMO_Problems",
+  "problem_id": 6,
+  "difficulty": 9,
+  "problem": "Each point in the plane is assigned a real number such that, for any triangle, the number at the center of its inscribed circle is equal to the arithmetic mean of the three numbers at its vertices. Prove that all points in the plane are assigned the same number.",
+  "solutions": {
+    "Solution": "We label each upper case point with the corresponding lower case letter as its assigned number. The key step is the following lemma.\n: If $ABCD$ is an isosceles trapezoid, then $a + c = b + d$.\n: Assume without loss of generality that $BC\\parallel AD$, and that rays $AB$ and $DC$ meet at $P$. Let $I$ be the incenter of triangle $PAC$, and let line $l$ bisect $\\angle APD$. Then $I$ is on $l$, so reflecting everything across line $l$ shows that $I$ is also the incenter of triangle $PDB$. Therefore,\n\\[\\frac{p + a + c}{3} = i = \\frac{p + b + d}{3}.\\]\nHence $a + c = b + d$, as desired.$\\blacksquare$\nFor any two distinct points $A_1$ and $A_2$ in the plane, we construct a regular pentagon $A_1A_2A_3A_4A_5$. Applying the lemma to isosceles trapezoids $A_1A_3A_4A_5$ and $A_2A_3A_4A_5$ yields\n\\[a_1 + a_4 = a_3 + a_5\\quad\\text{and}\\quad a_2 + a_4 = a_3 + a_5.\\]\nHence $a_1 = a_2$. Since $A_1$ and $A_2$ were arbitrary, all points in the plane are assigned the same number."
+  }
+}

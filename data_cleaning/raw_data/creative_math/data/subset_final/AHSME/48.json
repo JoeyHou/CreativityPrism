@@ -1,0 +1,8 @@
+{
+  "competition_id": "1964_AHSME_Problems",
+  "problem_id": 40,
+  "problem": "A watch loses $2\\frac{1}{2}$ minutes per day. It is set right at $1$ P.M. on March 15. Let $n$ be the positive correction, in minutes, to be added to the time shown by the watch at a given time. When the watch shows $9$ A.M. on March 21, $n$ equals:\n$\\textbf{(A) }14\\frac{14}{23}\\qquad\\textbf{(B) }14\\frac{1}{14}\\qquad\\textbf{(C) }13\\frac{101}{115}\\qquad\\textbf{(D) }13\\frac{83}{115}\\qquad \\textbf{(E) }13\\frac{13}{23}$",
+  "solutions": {
+    "Solution": "From March 15 $1$ P.M. on the watch to March 21 $9$ A.M. on the watch, the watch passed $20 + 5 \\times 24 = 140$ hours. \nSince $1$ watch hour equals $\\frac{24}{23 + \\frac{57.5}{60}} = \\frac{576}{575}$ real hour, the difference between the watch time and the actual time passed is $140 \\times \\left( \\frac{576}{575} - 1 \\right) = \\frac{28}{115}$ hour $=14\\frac{14}{23}$ minutes."
+  }
+}

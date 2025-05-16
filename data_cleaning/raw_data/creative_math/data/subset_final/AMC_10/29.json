@@ -1,0 +1,10 @@
+{
+  "competition_id": "2020_AMC_10A_Problems",
+  "problem_id": 1,
+  "difficulty": 1,
+  "problem": "What value of $x$ satisfies\n\\[x- \\frac{3}{4} = \\frac{5}{12} - \\frac{1}{3}?\\]\n$\\textbf{(A)}\\ {-}\\frac{2}{3}\\qquad\\textbf{(B)}\\ \\frac{7}{36}\\qquad\\textbf{(C)}\\ \\frac{7}{12}\\qquad\\textbf{(D)}\\ \\frac{2}{3}\\qquad\\textbf{(E)}\\ \\frac{5}{6}$",
+  "solutions": {
+    "Solution 1": "Adding $\\frac{3}{4}$ to both sides, $x= \\frac{5}{12} - \\frac{1}{3} + \\frac{3}{4} = \\frac{5}{12} - \\frac{4}{12} + \\frac{9}{12}=\\boxed{\\textbf{(E) }\\frac{5}{6}}$.",
+    "Solution 2": "Multiplying $12$ on both sides gets us $12x-9=1 \\Rightarrow 12x=10$, therefore $\\boxed{x=\\textbf{(E)}~\\frac{5}{6}}$."
+  }
+}

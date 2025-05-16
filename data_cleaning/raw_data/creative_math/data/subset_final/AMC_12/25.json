@@ -1,0 +1,9 @@
+{
+  "competition_id": "2015_AMC_12B_Problems",
+  "problem_id": 3,
+  "difficulty": 2,
+  "problem": "Isaac has written down one integer two times and another integer three times. The sum of the five numbers is 100, and one of the numbers is 28. What is the other number?\n$\\textbf{(A)}\\; 8 \\qquad\\textbf{(B)}\\; 11 \\qquad\\textbf{(C)}\\; 14 \\qquad\\textbf{(D)}\\; 15 \\qquad\\textbf{(E)}\\; 18$",
+  "solutions": {
+    "Solution": "Let $a$ be the number written two times, and $b$ the number written three times. Then $2a + 3b = 100$. Plugging in $a = 28$ doesn't yield an integer for $b$, so it must be that $b = 28$, and we get $2a + 84 = 100$. Solving for $a$, we obtain $a = \\boxed{\\textbf{(A)}\\; 8}$."
+  }
+}

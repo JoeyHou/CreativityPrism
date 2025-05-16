@@ -1,0 +1,12 @@
+{
+  "competition_id": "2003_AMC_10A_Problems",
+  "problem_id": 8,
+  "difficulty": 2,
+  "problem": "What is the probability that a randomly drawn positive factor of $60$ is less than $7$?\n$\\mathrm{(A) \\ } \\frac{1}{10}\\qquad \\mathrm{(B) \\ } \\frac{1}{6}\\qquad \\mathrm{(C) \\ } \\frac{1}{4}\\qquad \\mathrm{(D) \\ } \\frac{1}{3}\\qquad \\mathrm{(E) \\ } \\frac{1}{2}$",
+  "solutions": {
+    "Solution 1": "For a positive number $n$ which is not a perfect square, exactly half of the positive factors will be less than $\\sqrt{n}$. \nSince $60$ is not a perfect square, half of the positive factors of $60$ will be less than $\\sqrt{60}\\approx 7.746$. \nClearly, there are no positive factors of $60$ between $7$ and $\\sqrt{60}$. \nTherefore half of the positive factors will be less than $7$. \nSo the answer is $\\boxed{\\mathrm{(E)}\\ \\frac{1}{2}}$.",
+    "Solution 2": "Testing all numbers less than $7$, numbers $1, 2, 3, 4, 5$, and $6$ divide $60$. The prime factorization of $60$ is $2^2\\cdot 3 \\cdot 5$. Using the formula for the number of divisors, the total number of divisors of $60$ is $(3)(2)(2) = 12$. Therefore, our desired probability is $\\frac{6}{12} = \\boxed{\\mathrm{(E)}\\ \\frac{1}{2}}$",
+    "Solution 3": "This is not too bad with casework. Notice that $1*60=2*30=3*20=4*15=5*12=6*10=60$. Hence, $60$ has $12$ factors, of which $6$ are less than $7$. Thus, the answer is $\\frac{6}{12} = \\boxed{\\mathrm{(E)}\\ \\frac{1}{2}}$.",
+    "Solution 4": "This following solution isn't recommended,  but just list out all the divisors of $60$ to find $12$ divisors.  $6$ of these are less than $7,$ so the answer is $\\frac{6}{12} = \\boxed{\\mathrm{(E)}\\ \\frac{1}{2}}$. "
+  }
+}

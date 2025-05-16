@@ -1,0 +1,14 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "aut_v1_0/claude_37_sonnet",
+            "task": "aut_push",
+            "model_name": "claude-3-7-sonnet-20250219"
+        },
+        {
+            "run_id": "aut_v1_0/claude_3_haiku",
+            "task": "aut_push",
+            "model_name": "claude-3-haiku-20240307"
+        }
+    ]
+}

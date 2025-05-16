@@ -1,0 +1,9 @@
+{
+  "competition_id": "2008_AMC_8_Problems",
+  "problem_id": 1,
+  "difficulty": 1,
+  "problem": "Susan had 50 dollars to spend at the carnival. She spent 12 dollars on food and twice as much on rides. How many dollars did she have left to spend?\n$\\textbf{(A)}\\ 12 \\qquad \\textbf{(B)}\\ 14 \\qquad \\textbf{(C)}\\ 26 \\qquad \\textbf{(D)}\\ 38 \\qquad \\textbf{(E)}\\ 50$",
+  "solutions": {
+    "Solution": "If Susan spent 12 dollars, then twice that much on rides, then she spent $12+12 \\times 2=36$ dollars in total. We subtract $36$ from $50$ to get $\\boxed{\\textbf{(B)}\\ 14}$"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "competition_id": "2003_AMC_10B_Problems",
+  "problem_id": 11,
+  "difficulty": 2,
+  "problem": "A line with slope $3$ intersects a line with slope $5$ at point  $(10,15)$. What is the distance between the $x$-intercepts of these two lines?\n$\\textbf{(A) } 2 \\qquad\\textbf{(B) } 5 \\qquad\\textbf{(C) } 7 \\qquad\\textbf{(D) } 12 \\qquad\\textbf{(E) } 20$",
+  "solutions": {
+    "Solution 1": "Using the point-slope form, the equation of each line is\n\\[y-15=3(x-10) \\longrightarrow y=3x-15\\]\n\\[y-15=5(x-10) \\longrightarrow y=5x-35\\]\nSubstitute in $y=0$ to find the $x$-intercepts.\n\\[0=3x-15\\longrightarrow x=5\\]\n\\[0=5x-35\\longrightarrow x=7\\]\nThe difference between them is $7-5=\\boxed{\\textbf{(A) \\ } 2}$.",
+    "Solution 2(using slopes)": "The $x$-intercepts of a line is where the line's $y$-coordinate is $=0$. The slope is defined as $\\frac{\\text{change in } y\\text{-coordinate}}{\\text{change in } x\\text{-coordinate}}$. Therefore, the line with slope $3$ can be expressed as\n\\[\\frac{\\text{change in }y\\text{-coordinate}}{\\text{change in }x\\text{-coordinate}}=3\\]\nFrom $(10,15)$ to the $x$-intercept, the line must move $-15$ units to the $x$-axis. Therefore, \\[\\frac{\\text{change in }y\\text{-coordinate}}{\\text{change in }x\\text{-coordinate}}=\\frac{-15}{x_1}=3\\implies x_1=-5\\].\nTherefore, the $x$-intercept of the line with slope $3$ is $(10-5,0)=(5,0)$.Note that some sources may state \"the $x$-intercept is $5$\" instead of \"the $x$-intercept is $(5,0)$.\nIf an idea functions great for one part of the problem but does not find the solution to the problem, we want to use the idea again. Using the idea for the line with slope $5$, we find\n\\[\\frac{\\text{change in }y\\text{-coordinate}}{\\text{change in }x\\text{-coordinate}}=\\frac{-15}{x_2}=5\\implies x_2=-3\\].\nTherefore, the $x$-intercept of the line with slope $5$ is $(10-3,0)=(7,0)$. The distance between $\\boxed{(5,0)--(7,0)=2\\implies A}$."
+  }
+}

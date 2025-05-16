@@ -1,0 +1,9 @@
+{
+  "competition_id": "2023_AMC_8_Problems",
+  "problem_id": 13,
+  "difficulty": 1.5,
+  "problem": "Along the route of a bicycle race, $7$ water stations are evenly spaced between the start and finish lines,\nas shown in the figure below. There are also $2$ repair stations evenly spaced between the start and\nfinish lines. The $3$rd water station is located $2$ miles after the $1$st repair station. How long is the race\nin miles?\n[asy] usepackage(\"mathptmx\"); size(10cm); filldraw((11,4.5)--(171,4.5)--(171,17.5)--(11,17.5)--cycle,mediumgray*0.4 + lightgray*0.6); draw((11,11)--(171,11),linetype(\"2 2\")+white+linewidth(1.2)); draw((0,0)--(11,0)--(11,22)--(0,22)--cycle); draw((171,0)--(182,0)--(182,22)--(171,22)--cycle);  draw((31,4.5)--(31,0)); draw((51,4.5)--(51,0)); draw((151,4.5)--(151,0));  label(scale(.85)*rotate(45)*\"Water 1\", (23,-13.5)); label(scale(.85)*rotate(45)*\"Water 2\", (43,-13.5)); label(scale(.85)*rotate(45)*\"Water 7\", (143,-13.5));  filldraw(circle((103,-13.5),.2)); filldraw(circle((98,-13.5),.2)); filldraw(circle((93,-13.5),.2)); filldraw(circle((88,-13.5),.2)); filldraw(circle((83,-13.5),.2));  label(scale(.85)*rotate(90)*\"Start\", (5.5,11)); label(scale(.85)*rotate(270)*\"Finish\", (176.5,11)); [/asy]\n$\\textbf{(A)}\\ 8 \\qquad \\textbf{(B)}\\ 16 \\qquad \\textbf{(C)}\\ 24 \\qquad \\textbf{(D)}\\ 48 \\qquad \\textbf{(E)}\\ 96$",
+  "solutions": {
+    "Solution": "Suppose that the race is $d$ miles long. The water stations are located at \\[\\frac{d}{8}, \\frac{2d}{8}, \\ldots, \\frac{7d}{8}\\] miles from the start, and the repair stations are located at \\[\\frac{d}{3}, \\frac{2d}{3}\\] miles from the start.\nWe are given that $\\frac{3d}{8}=\\frac{d}{3}+2,$ from which  \n\\begin{align*} \\frac{9d}{24}&=\\frac{8d}{24}+2 \\\\ \\frac{d}{24}&=2 \\\\ d&=\\boxed{\\textbf{(D)}\\ 48}. \\end{align*}"
+  }
+}

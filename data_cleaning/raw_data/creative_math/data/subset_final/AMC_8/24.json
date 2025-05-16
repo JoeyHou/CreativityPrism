@@ -1,0 +1,9 @@
+{
+  "competition_id": "1997_AJHSME_Problems",
+  "problem_id": 7,
+  "difficulty": 1,
+  "problem": "The area of the smallest square that will contain a circle of radius 4 is\n$\\text{(A)}\\ 8 \\qquad \\text{(B)}\\ 16 \\qquad \\text{(C)}\\ 32 \\qquad \\text{(D)}\\ 64 \\qquad \\text{(E)}\\ 128$",
+  "solutions": {
+    "Solution": "Draw a square circumscribed around the circle.  (Alternately, the circle is inscribed in the square.)  If the circle has radius $4$, it has diameter $8$.  Two of the diameters of the circle will run parallel to the sides of the square.  Thus, the smallest square that contains it has side length $8$, and area $8\\times8=64$.\n$\\boxed{\\textbf{(D)}}$"
+  }
+}

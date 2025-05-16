@@ -1,0 +1,8 @@
+{
+  "competition_id": "1970_AHSME_Problems",
+  "problem_id": 14,
+  "problem": "Consider $x^2+px+q=0$, where $p$ and $q$ are positive numbers. If the roots of this equation differ by 1, then $p$ equals\n$\\text{(A) } \\sqrt{4q+1}\\quad \\text{(B) } q-1\\quad \\text{(C) } -\\sqrt{4q+1}\\quad \\text{(D) } q+1\\quad \\text{(E) } \\sqrt{4q-1}$",
+  "solutions": {
+    "Solution": "From the quadratic equation, the two roots of the equation are $\\frac{-p\\pm\\sqrt{p^2-4q}}{2}$. The positive difference between these roots is $\\sqrt{p^2 - 4q}$. Setting $\\sqrt{p^2-4q}=1$ and isolating $p$ gives $\\sqrt{4q+1}$, or choice $\\boxed{\\text{(A)}}$."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "competition_id": "2007_AMC_8_Problems",
+  "problem_id": 8,
+  "difficulty": 1,
+  "problem": "In trapezoid $ABCD$, $\\overline{AD}$ is perpendicular to $\\overline{DC}$,\n$AD = AB = 3$, and $DC = 6$. In addition, $E$ is on $\\overline{DC}$, and $\\overline{BE}$ is parallel to $\\overline{AD}$. Find the area of $\\triangle BEC$.\n[asy] defaultpen(linewidth(0.7)); pair A=(0,3), B=(3,3), C=(6,0), D=origin, E=(3,0); draw(E--B--C--D--A--B); draw(rightanglemark(A, D, C)); label(\"$A$\", A, NW); label(\"$B$\", B, NW); label(\"$C$\", C, SE); label(\"$D$\", D, SW); label(\"$E$\", E, NW); label(\"$3$\", A--D, W); label(\"$3$\", A--B, N); label(\"$6$\", E, S); [/asy]\n$\\textbf{(A)}\\ 3 \\qquad \\textbf{(B)}\\ 4.5 \\qquad \\textbf{(C)}\\ 6 \\qquad \\textbf{(D)}\\ 9 \\qquad \\textbf{(E)}\\ 18$",
+  "solutions": {
+    "Solution 1 (Area Formula for Triangles)": "Clearly, $ABED$ is a square with side-length $3.$ By segment subtraction, we have $EC = DC - DE = 6 - 3 = 3.$\nThe area of $\\triangle BEC$ is \\[\\frac12\\cdot EC\\cdot BE = \\frac12\\cdot3\\cdot3 = \\boxed{\\textbf{(B)}\\ 4.5}.\\]",
+    "Solution 2 (Area Subtraction)": "Clearly, $ABED$ is a square with side-length $3.$\nLet the brackets denote areas. We apply area subtraction to find the area of $\\triangle BEC:$\n\\begin{align*} [BEC]&=[ABCD]-[ABED] \\\\ &=\\frac{AB+CD}{2}\\cdot AD - AB^2 \\\\ &=\\frac{3+6}{2}\\cdot 3 - 3^2 \\\\ &=\\boxed{\\textbf{(B)}\\ 4.5}. \\end{align*}"
+  }
+}

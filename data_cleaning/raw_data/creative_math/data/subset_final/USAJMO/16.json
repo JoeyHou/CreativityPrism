@@ -1,0 +1,10 @@
+{
+  "competition_id": "2015_USAJMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6,
+  "problem": "Find all functions $f:\\mathbb{Q}\\rightarrow\\mathbb{Q}$ such that\\[f(x)+f(t)=f(y)+f(z)\\]for all rational numbers $x<y<z<t$ that form an arithmetic progression. ($\\mathbb{Q}$ is the set of all rational numbers.)",
+  "solutions": {
+    "Solution 1": "According to the given, $f(x-a)+f(x+0.5a)=f(x-0.5a)+f(x)$, where x and a are rational. Likewise $f(x-0.5a)+f(x+a)=f(x+0.5a)+f(x)$. Hence $f(x+a)-f(x)= f(x)-f(x-a)$, namely $2f(x)=f(x-a)+f(x+a)$. Let $f(0)=C$, then consider $F(x)=f(x)-C$, where $F(0)=0,$ $2F(x)=F(x-a)+F(x+a)$. \n$F(2x)=F(x)+[F(x)-F(0)]=2F(x)$, \n$F(3x)=F(2x)+[F(2x)-F(x)]=3F(x)$.\nEasily, by induction, $F(nx)=nF(x)$ for all integers $n$.\nTherefore, for nonzero integer m, $(1/m)F(mx)=F(x)$ , namely $F(x/m)=(1/m)F(x)$\nHence $F(n/m)=(n/m)F(1)$. Let $F(1)=k$, we obtain $F(x)=kx$, where $k$ is the slope of the linear functions, and $f(x)=kx+C$.",
+    "Solution 2": "We have \\[f(x-3d)+f(x+3d)=f(x-d)+f(x+d)\\] and \\[f(x)+f(x+3d)=f(x+d)+f(x+2d).\\] Subtracting these two and rearranging gives \\[f(x-3d)+f(x+2d)=f(x)+f(x-d),\\] and since $f(x+2d)=f(x+d)+f(x)-f(x-d)$ we get \\[f(x-3d)+f(x+d)=2f(x-d)\\] from which we get \\[f(x-d)+f(x+d)=2f(x).\\] Then we have $f(x)+f(y)=f(0)+f(x+y)=2f\\left(\\frac{x+y}{2}\\right)$. Setting $f(0)=c$, we let $f(x)=g(x)+c$ to get $g(x)+g(y)=g(x+y)$. This is Cauchy's functional equation, so it has solutions at $g(x)=kx$, so the answer is $\\boxed{f(x)=kx+c}$."
+  }
+}

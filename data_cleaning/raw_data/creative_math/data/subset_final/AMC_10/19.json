@@ -1,0 +1,10 @@
+{
+  "competition_id": "2014_AMC_10B_Problems",
+  "problem_id": 18,
+  "difficulty": 2,
+  "problem": "A list of $11$ positive integers has a mean of $10$, a median of $9$, and a unique mode of $8$. What is the largest possible value of an integer in the list?\n$\\textbf {(A) } 24 \\qquad \\textbf {(B) } 30 \\qquad \\textbf {(C) } 31\\qquad \\textbf {(D) } 33 \\qquad \\textbf {(E) } 35$",
+  "solutions": {
+    "Solution 1": "We start off with the fact that the median is $9$, so we must have $a, b, c, d, e, 9, f, g, h, i, j$, listed in ascending order. Note that the integers do not have to be distinct. \nSince the mode is $8$, we have to have at least $2$ occurrences of $8$ in the list. If there are $2$ occurrences of $8$ in the list, we will have $a, b, c, 8, 8, 9, f, g, h, i, j$. In this case, since $8$ is the unique mode, the rest of the integers have to be distinct. So we minimize $a,b,c,f,g,h,i$ in order to maximize $j$. If we let the list be $1,2,3,8,8,9,10,11,12,13,j$, then $j = 11 \\times 10 - (1+2+3+8+8+9+10+11+12+13) = 33$. \nNext, consider the case where there are $3$ occurrences of $8$ in the list. Now, we can have two occurrences of another integer in the list. We try $1,1,8,8,8,9,9,10,10,11,j$. Following the same process as above, we get $j = 11 \\times 10 - (1+1+8+8+8+9+9+10+10+11) = 35$. As this is the highest choice in the list, we know this is our answer. Therefore, the answer is $\\boxed{\\textbf{(E) }35}$",
+    "Solution 2": "Note that $x_1 + \\ldots + x_{11} = 110$ let $x_6 = 9$ so $x_1 + \\ldots + x_5 + x_7 + \\ldots + x_{11} = 101$. To maximize the value of $x_i$ where $i$ ranges from $1$ to $11$, we let any $7$ elements be $1,2,\\ldots,7$ so $x_1 + x_2 + x_3 = 57$. Now we have to let one of above $3$ values = $8$ hence $x_1 + x_2 = 49$ now let $x_1 = 35$, $x_2 = 14$ hence $\\boxed{\\textbf{(E) }35}$ is the answer."
+  }
+}

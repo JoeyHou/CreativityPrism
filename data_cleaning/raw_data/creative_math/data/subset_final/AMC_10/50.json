@@ -1,0 +1,9 @@
+{
+  "competition_id": "2004_AMC_10B_Problems",
+  "problem_id": 10,
+  "difficulty": 2,
+  "problem": "A grocer makes a display of cans in which the top row has one can and each lower row has two more cans than the row above it. If the display contains $100$ cans, how many rows does it contain?\n$\\mathrm{(A)\\ }5\\qquad\\mathrm{(B)\\ }8\\qquad\\mathrm{(C)\\ }9\\qquad\\mathrm{(D)\\ }10\\qquad\\mathrm{(E)\\ }11$",
+  "solutions": {
+    "Solution": "The sum of the first $n$ odd numbers is $n^2$. As in our case $n^2=100$, we have $n=\\boxed{\\mathrm{(D)\\ }10}$."
+  }
+}

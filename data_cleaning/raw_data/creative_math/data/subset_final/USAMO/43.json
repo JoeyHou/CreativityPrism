@@ -1,0 +1,9 @@
+{
+  "competition_id": "2006_USAMO_Problems",
+  "problem_id": 2,
+  "difficulty": 8,
+  "problem": "For a given positive integer $k$ find, in terms of $k$, the minimum value of $N$ for which there is a set of $2k+1$ distinct positive integers that has sum greater than $N$ but every subset of size $k$ has sum at most $N/2$.",
+  "solutions": {
+    "Solution 1": "Let one optimal set of integers be $\\{a_1,\\dots,a_{2k+1}\\}$ with $a_1 > a_2 > \\cdots > a_{2k+1} > 0$.\nThe two conditions can now be rewritten as $a_1+\\cdots + a_k \\leq N/2$ and $a_1+\\cdots +a_{2k+1} > N$.\nSubtracting, we get that $a_{k+1}+\\cdots + a_{2k+1} > N/2$, and hence $a_{k+1}+\\cdots + a_{2k+1} > a_1+\\cdots + a_k$.\nIn words, the sum of the $k+1$ smallest numbers must exceed the sum of the $k$ largest ones.\nLet $a_{k+1}=C$. As all the numbers are distinct integers, we must have $\\forall i \\in\\{1,\\dots,k\\}:~ a_{k+1-i} \\geq C+i$, and also $\\forall i \\in\\{1,\\dots,k\\}:~ a_{k+1+i} \\leq C-i$.\nThus we get that $a_1+\\cdots + a_k \\geq kC + \\dfrac{k(k+1)}2$, and $a_{k+1}+\\cdots + a_{2k+1} \\leq (k+1)C - \\dfrac{k(k+1)}2$.\nAs we want the second sum to be larger, clearly we must have $(k+1)C - \\dfrac{k(k+1)}2 > kC + \\dfrac{k(k+1)}2$.\nThis simplifies to $C > k(k+1)$.\nHence we get that:\n\\begin{align*} N & \\geq 2(a_1+\\cdots + a_k) \\\\   & \\geq 2\\left( kC + \\dfrac{k(k+1)}2 \\right) \\\\   & = 2kC + k(k+1) \\\\   & \\geq 2k(k^2+k+1) + k(k+1) \\\\   & = 2k^3 + 3k^2 + 3k \\end{align*}\nOn the other hand, for the set $\\{ k^2+k+1+i ~|~ i\\in\\{-k,\\dots,k\\} \\, \\}$ the sum of the largest $k$ elements is exactly $k^3 + k^2 + k + \\dfrac{k(k+1)}2$, and the sum of the entire set is $(k^2+k+1)(2k+1) = 2k^3 + 3k^2 + 3k + 1$, which is more than twice the sum of the largest set.\nHence the smallest possible $N$ is $\\boxed{ N = 2k^3 + 3k^2 + 3k }$."
+  }
+}

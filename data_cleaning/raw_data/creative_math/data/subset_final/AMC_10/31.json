@@ -1,0 +1,11 @@
+{
+  "competition_id": "2001_AMC_10_Problems",
+  "problem_id": 19,
+  "difficulty": 2,
+  "problem": "Pat wants to buy four donuts from an ample supply of three types of donuts: glazed, chocolate, and powdered. How many different selections are possible?\n$\\textbf{(A)}\\ 6 \\qquad \\textbf{(B)}\\ 9 \\qquad \\textbf{(C)}\\ 12 \\qquad \\textbf{(D)}\\ 15 \\qquad \\textbf{(E)}\\ 18$",
+  "solutions": {
+    "Solution 1": "Let's use stars and bars.\nLet the donuts be represented by $O$s. We wish to find all possible combinations of glazed, chocolate, and powdered donuts that give us $4$ in all. The four donuts we want can be represented as $OOOO$. Notice that we can add two \"dividers\" to divide the group of donuts into three different kinds; the first will be glazed, second will be chocolate, and the third will be powdered. For example, $O|OO|O$ represents one glazed, two chocolate, and one powdered. We have six objects in all, and we wish to turn two into dividers, which can be done in $\\binom{6}{2}=15$ ways. Our answer is hence $\\boxed{\\textbf{(D)}\\ 15}$. Notice that this can be generalized to get the stars and bars (balls and urns) identity.",
+    "Solution 2": "Similar to Solution 1, we can generalize the problem by using the stars and bars formula, yielding an answer of $\\dbinom{4+3-1}{3-1}=\\dbinom{6}{2}=\\boxed{\\textbf{(D)}\\ 15}$.",
+    "Solution 3": "Simple casework works here as well:\nSet up the following ratios:\n\\[4:0:0\\]\n\\[3:1:0\\]\n\\[2:2:0\\]\n\\[2:1:1\\]\nIn three of these cases we see that there are two of the same ratios (so like two boxes would have $0$), and so if we swapped those two donuts, we would have the same case. Thus we get $\\frac{3!}{2!1!}$ for those $3$ (You can also set it up and logically symmetry applies). For the other case where each ratio of donuts is different, we get the normal $\\binom{4}{3}=6.$ Thus, our answer is $3 \\cdot 3+6 = \\boxed{\\textbf{(D) }15}$."
+  }
+}

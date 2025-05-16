@@ -1,0 +1,10 @@
+{
+  "competition_id": "2024_AIME_II_Problems",
+  "problem_id": 5,
+  "difficulty": 3,
+  "problem": "Let ABCDEF be a convex equilateral hexagon in which all pairs of opposite sides are parallel. The triangle whose sides are extensions of segments AB, CD, and EF has side lengths 200, 240, and 300. Find the side length of the hexagon.",
+  "solutions": {
+    "Solution 1": "(Sorry i have zero idea how to make drawings)\nDraw a good diagram!\nLet $AB \\cap DC$, $CD \\cap FE$, and $BA \\cap EF$ be P, Q, and R, respectively. Let $QR=200, RP=300, PQ=240$. Notice that all smaller triangles formed are all similar to the larger $(200,240,300)$ triangle. Let the side length of the hexagon be x. Triangle $\\triangle BCP \\sim \\triangle RQP$, so $\\frac{BC}{BP} =\\frac{x}{BP} =\\frac{200}{300} \\implies BP=\\frac{3x}{2}$. Triangle $\\triangle AFR \\sim \\triangle PQR$, so $\\frac{AF}{AR}=\\frac{x}{AR} = \\frac{240}{300} \\implies AR=\\frac{5x}{4}$. We know $RA+AB+BP=300$, so $\\frac{5}{4}x + x + \\frac{3}{2}x = 300$. Solving, we get $x=\\boxed{080}$. ",
+    "Solution 2 (Fakesolve)": "Draw an accurate diagram using the allowed compass and ruler: Draw a to-scale diagram of the $(200,240,300)$ triangle (e.g. 10cm-12cm-15cm). Because of the nature of these lengths and the integer answer needed, it can be assumed that the side length of the hexagon will be divisible by 10. Therefore, a trial-and-error method can be set up, wherein line segments of length $n\\cdot 10$, scaled to the same scale as the triangle, can be drawn to represent the sides of the hexagon. For instance, side $BC$ would be drawn parallel to the side of the triangle of length 300, and would have endpoints on the other sides of the triangle. Using this method, it would be evident that line segments of length 80 units, scaled proportionally (4cm using the scale above), would create a perfect equilateral hexagon when drawn parallel to the sides of the triangle. $x=\\boxed{080}$. "
+  }
+}

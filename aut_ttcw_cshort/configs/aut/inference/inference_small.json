@@ -1,0 +1,34 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "aut_v1_0/qwen_7b_instruct",
+            "task": "aut_push",
+            "model_name": "qwen_7b_instruct"
+        },
+        {
+            "run_id": "aut_v1_0/llama3_8b_instr",
+            "task": "aut_push",
+            "model_name": "llama3_8b_instruct"
+        },
+        {
+            "run_id": "aut_v1_0/mistral_7b_instr",
+            "task": "aut_push",
+            "model_name": "mistral_7b_instruct"
+        },
+        {
+            "run_id": "aut_v1_0/deepseek_qwen_7b",
+            "task": "aut_push",
+            "model_name": "deepseek_qwen_7b"
+        },
+        {
+            "run_id": "aut_v1_0/olmo_7b",
+            "task": "aut_push",
+            "model_name": "olmo_7b"
+        },
+        {
+            "run_id": "aut_v1_0/olmo_13b",
+            "task": "aut_push",
+            "model_name": "olmo_13b"
+        }
+    ]
+}

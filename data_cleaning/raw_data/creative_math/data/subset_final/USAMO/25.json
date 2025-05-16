@@ -1,0 +1,9 @@
+{
+  "competition_id": "2000_USAMO_Problems",
+  "problem_id": 4,
+  "difficulty": 7,
+  "problem": "Find the smallest positive  $n$ such that if $n$ squares of a $1000 \\times 1000$ chessboard are colored, then there will exist three colored squares whose centers form a right triangle with sides parallel to the edges of the board.",
+  "solutions": {
+    "Solution": "We claim that $n = 1999$ is the smallest such number. For $n \\le 1998$, we can simply color any of the $1998$ squares forming the top row and the left column, but excluding the top left corner square.\nWe now show that no configuration with no colored right triangles exists for $n = 1999$. We call a row or column  if all $1000$ of its squares are colored. Then any of the remaining $999$ colored squares must share a column or row, respectively, with one of the colored squares in a filled row or column. These two squares, and any other square in the filled row or column, form a colored right triangle, giving us a contradiction. Hence, no filled row or column may exist.\nLet $m$ be the number of columns with $1$ colored square. Then there are $1999-m$ colored squares in the remaining columns, and in each of these $< 1999-m$ columns that have a colored square must have at least two colored squares in them. These two colored squares will form a triangle with any other colored square in either of the rows containing the colored squares. Hence, each of the $1999-m$ colored squares must be placed in different rows, but as there are only $1000$ rows, the inequality $1999 - m \\le 1000 \\Longrightarrow m \\ge 999$ holds. If $m = 1000$, then each column only has $1$ colored square, leaving no place for the remaining $999$, contradiction. If $m = 999$, then each of the $1000$ rows has $1$ black square, leaving no place for the other $999$, contradiction. Hence $n = \\boxed{1999}$ is the minimal value."
+  }
+}

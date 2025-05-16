@@ -1,0 +1,9 @@
+{
+  "competition_id": "1966_IMO_Problems",
+  "problem_id": 3,
+  "difficulty": 9.5,
+  "problem": "Prove that the sum of the distances of the vertices of a regular tetrahedron from the center of its circumscribed sphere is less than the sum of the distances of these vertices from any other point in space.",
+  "solutions": {
+    "Solution": "We will need the following lemma to solve this problem:\n$\\emph{Lemma:}$ Suppose there is a point in a regular tetrahedron $MNOP$ such that the distances from this point to the faces $MNO$, $MNP$, $MOP$, and $NOP$ are, respectively, $x_1$, $x_2$, $x_3$, and $x_4$. Then, the value $x_1 + x_2 + x_3 + x_4$ is constant. \n$\\emph{Proof:}$\nWe will compute the volume of $MNOP$ in terms of the areas of the faces and the distances from the point to the faces:\n\\[\\textrm{Volume}(MNOP) = [MNO] \\cdot x_1 \\cdot \\frac{1}{3} + [MNP] \\cdot x_2 \\cdot \\frac{1}{3} + [MOP] \\cdot x_3 \\cdot \\frac{1}{3} + [NOP] \\cdot x_4 \\cdot \\frac{1}{3}\\]\n\\[= [MNO] \\cdot \\frac{(x_1 + x_2 + x_3 + x_4)}{3}\\]\n\\[\\therefore\\frac{3\\cdot\\textrm{Volume}(MNOP)}{[MNO]} = x_1 + x_2 + x_3 + x_4.\\]\nThis value is constant, so the proof of the lemma is complete.\n$\\emph{Proof of problem statement:}$\nLet our tetrahedron be $ABCD$, and the center of its circumscribed sphere be $O$. Construct a new regular tetrahedron, $WXYZ$, such that the centers of the faces of this tetrahedron are at $A$, $B$, $C$, and $D$.\nFor any point $P$ in $ABCD$, \n\\[OA + OB + OC + OD = \\sum \\textrm{Distances from }O\\textrm{ to faces of }WXYZ\\]\n\\[= \\sum \\textrm{Distances from }P\\textrm{ to faces of }WXYZ  \\leq PA + PB + PC + PD,\\]\nwith equality only occurring when $AP$, $BP$, $CP$, and $DP$ are perpendicular to the faces of $WXYZ$, meaning that $P = O$. This completes the proof. $\\square$"
+  }
+}

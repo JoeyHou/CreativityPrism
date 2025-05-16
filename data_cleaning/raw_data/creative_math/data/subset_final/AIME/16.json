@@ -1,0 +1,9 @@
+{
+  "competition_id": "1998_AIME_Problems",
+  "problem_id": 13,
+  "difficulty": 6,
+  "problem": "If $\\{a_1,a_2,a_3,\\ldots,a_n\\}$ is a set of real numbers, indexed so that $a_1 < a_2 < a_3 < \\cdots < a_n,$ its complex power sum is defined to be $a_1i + a_2i^2+ a_3i^3 + \\cdots + a_ni^n,$ where $i^2 = - 1.$  Let $S_n$ be the sum of the complex power sums of all nonempty subsets of $\\{1,2,\\ldots,n\\}.$  Given that $S_8 = - 176 - 64i$ and $S_9 = p + qi,$ where $p$ and $q$ are integers, find $|p| + |q|.$",
+  "solutions": {
+    "Solution": "We note that the number of subsets (for now, including the empty subset, which we will just define to have a power sum of zero) with $9$ in it is equal to the number of subsets without a $9$. To easily see this, take all possible subsets of $\\{1,2,\\ldots,8\\}$. Since the sets are ordered, a $9$ must go at the end; hence we can just append a $9$ to any of those subsets to get a new one. \nNow that we have drawn that bijection, we can calculate the complex power sum recursively. Since appending a $9$ to a subset doesn't change anything about that subset's complex power sum besides adding an additional term, we have that $S_9 = 2S_8 + T_9$, where $T_9$ refers to the sum of all of the $9i^x$. \nIt a subset of size 1 has a 9, then its power sum must be $9i$, and there is only $1$ of these such subsets. There are ${8\\choose1}$ with $9\\cdot i^2$, ${8\\choose2}$ with $9\\cdot i^3$, and so forth. So $T_9 =\\sum_{k=0}^{8} 9{8\\choose{k}}i^{k+1}$. This is exactly the binomial expansion of $9i \\cdot (1+i)^8$. We can use De Moivre's Theorem to calculate the power: $(\\sqrt{2})^8\\cos{8\\cdot45} = 16$. Hence $T_9 = 16\\cdot9i = 144i$, and $S_9 = 2S_8 + 144i = 2(-176 -64i) + 144i = -352 + 16i$. Thus, $|p| + |q| = |-352| + |16| = 368$."
+  }
+}

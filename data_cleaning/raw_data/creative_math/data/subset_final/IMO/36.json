@@ -1,0 +1,10 @@
+{
+  "competition_id": "2001_IMO_Problems",
+  "problem_id": 1,
+  "difficulty": 6.5,
+  "problem": "Consider an acute triangle $\\triangle ABC$. Let $P$ be the foot of the altitude of triangle $\\triangle ABC$ issuing from the vertex $A$, and let $O$ be the  of triangle $\\triangle ABC$. Assume that $\\angle C \\geq \\angle B+30^{\\circ}$. Prove that $\\angle A+\\angle COP < 90^{\\circ}$.",
+  "solutions": {
+    "Solution": "Take $D$ on the circumcircle with $AD \\parallel  BC$. Notice that $\\angle CBD = \\angle BCA$, so $\\angle ABD \\ge 30^\\circ$. Hence $\\angle AOD \\ge 60^\\circ$. Let $Z$ be the midpoint of $AD$ and $Y$ the midpoint of $BC$. Then $AZ \\ge R/2$, where $R$ is the radius of the circumcircle. But $AZ = YP$ (since $AZYP$ is a rectangle).\nNow $O$ cannot coincide with $Y$ (otherwise $\\angle A$ would be $90^\\circ$ and the triangle would not be acute-angled). So $OP > YP \\ge R/2$. But $PC = YC - YP < R - YP \\le R/2$. So $OP > PC$.\nHence $\\angle COP < \\angle OCP$. Let $CE$ be a diameter of the circle, so that $\\angle OCP = \\angle ECB$. But $\\angle ECB = \\angle EAB$ and $\\angle EAB + \\angle BAC = \\angle EAC = 90^\\circ$, since $EC$ is a diameter. Hence $\\angle COP + \\angle BAC < 90^\\circ$.",
+    "Solution 2": "Notice that because $\\angle{PCO} = 90^\\circ - \\angle{A}$, it suffices to prove that $\\angle{POC} < \\angle{PCO}$, or equivalently $PC < PO.$\nSuppose on the contrary that $PC > PO$. By the triangle inequality, $2 PC = PC + PC > PC + PO > CO = R$, where $R$ is the circumradius of $ABC$. But the Law of Sines and basic trigonometry gives us that $PC = 2R \\sin B \\cos C$, so we have $4 \\sin B \\cos C > 1$. But we also have $4 \\sin B \\cos C \\le 4 \\sin B \\cos (B + 30^\\circ) = 2 (\\sin (2B + 30^\\circ) - \\sin 30^\\circ) \\le 2 (1 - \\frac{1}{2}) = 1$ because $\\angle{C} \\ge \\angle{B} + 30^\\circ$, and so we have a contradiction. Hence $PC < PO$ and so $\\angle{PCO} + \\angle{A} < 90^\\circ$, as desired."
+  }
+}

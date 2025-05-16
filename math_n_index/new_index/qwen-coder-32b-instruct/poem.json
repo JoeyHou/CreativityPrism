@@ -1,0 +1,702 @@
+[
+    {
+        "prompt": "Please write a poem starting with the following line: Swiftly walk o'er the western wave,",
+        "prompt_id": "poem_0",
+        "dataset": "creativity_index",
+        "response": " oh,\nSwiftly walk o'er the western wave, oh,\nWhere the seagulls dare to dive and the spray stings cold,\nAs the sun dips below, a fiery ruby bold,\nPainting the sky with hues of gold.\nThe wind whispers secrets of the sea,\nTelling tales of ships and men gone free,\nOf storms that raged and hearts that broke,\nOf lost souls searching for a home to roke.\nYet through it all, the ocean stays,\nA steadfast guardian of the night and day,\nIts waves a lullaby for those who sleep,\nIts depths a mystery for those who keep.\nAnd as I walk upon its crest,\nFeeling the salt upon my breast,\nI know that I am one with the sea,\nFor in its embrace, I am free.\nSo let me wander on this western wave,\nAs the stars begin to weave their tapestry above,\nAnd let the ocean carry me away,\nInto the depths of its endless sea.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Go, go, my naughty girl, and kiss",
+        "prompt_id": "poem_1",
+        "dataset": "creativity_index",
+        "response": " the world.\n\nGo, go, my naughty girl, and kiss the world,\nLet your laughter be your greatest weapon,\nLet your spirit shine like a dazzling jewel,\nAnd leave a trail of joy, wherever you roam.\n\nEmbrace the breeze that whispers secrets in your ear,\nLet your heart sing with the melody of the stars,\nAnd chase the moonlight as it dances with desire,\nFor every step you take, you leave a piece of your heart.\n\nSo go, my naughty girl, and kiss the world,\nWith every touch, let your love flow freely,\nFor in this journey of life, you are the true star,\nAnd with every beat of your heart, the world will be at peace.\n\nSo go, my naughty girl, and kiss the world,\nFor in your presence, we find the true meaning of life,\nWith every breath, let your spirit guide the way,\nAnd in your wake, we will find a world filled with hope and love.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Yellow moon peeps at me",
+        "prompt_id": "poem_2",
+        "dataset": "creativity_index",
+        "response": " from the window,\nYellow moon peeps at me from the window,\nIts gentle glow a soothing balm to the soul.\nSilent sentinel of the night's dark veil,\nGuiding the weary traveler with its light.\nA canvas painted in strokes of silver and gold,\nA masterpiece that nature has bestowed.\nIt watches over the world in its peaceful round,\nThrough storms and calm, through night and day.\nA symbol of hope, a source of endless cheer,\nIn its presence, all fears and doubts disappear.\nSo, dear moon, may your light continue to shine,\nGuiding us all with a gentle, steady line.\nMay your beauty forever enchant and enthrall,\nYellow moon, my faithful sentinel at the wall.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Had ocean been my confidant",
+        "prompt_id": "poem_3",
+        "dataset": "creativity_index",
+        "response": ", its depths would hold my secrets, \n\nHad ocean been my confidant, its depths would hold my secrets,\nBut I whispered to the air, and the echoes fell on deaf hearts.\nThe waves crashed against the shore, a rhythm of their own,\nUnaware of the quiet storm brewing in my silent throne.\n\nThe moon watched over the sea, its silver light a silent sentinel,\nYet I could not trust its glow, for shadows hide in silver.\nMy thoughts, they traveled far, carried by the wandering clouds,\nSeeking solace in the distance, while I was bound to the grounds.\n\nThe stars, they twinkled above, a celestial dance of light,\nBut my spirits did not join them, in the darkness, I took flight.\nFor in my heart, a tempest raged, a hurricane of despair,\nIts winds of doubt and fear, I could not bear to repair.\n\nThe ocean, vast and deep, a mystery to be unraveled,\nBut my secrets, they remained, bottled up inside me, shelved.\nPerhaps one day, they'll spill, when the weight becomes too heavy,\nUntil then, I'll wear my mask, a facade of ease and levity.\n\nThe world moves on, unaware of the battles fought within,\nWhile I keep my secrets safe, locked away within.\nHad ocean been my confidant, its depths would hold my secrets,\nBut I chose the silence of air,",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Under the ring of linked brown arms,",
+        "prompt_id": "poem_4",
+        "dataset": "creativity_index",
+        "response": " The linked arms represent the interconnectedness of a community. The poem should be a celebration of the strength and unity found in community.\nUnder the ring of linked brown arms,\nThe voices of the people sing in harmony,\nTheir voices blending into a sweet melody,\nOf love, of hope, of unity.\nThe hands that hold each other tight,\nAre the hands that build a community,\nThe hands that mend and heal each other's wounds,\nAre the hands that make this world a better place.\nTogether they stand, they walk, they fight,\nFor a future that is bright,\nA future that is filled with hope,\nA future that is built on love and hope.\nFor in this ring of linked brown arms,\nLies the strength of the people,\nThe strength to overcome any obstacle,\nThe strength to rise above any adversity.\nFor in this ring of linked brown arms,\nLies the unity of the community,\nThe unity that binds us all together,\nThe unity that makes us strong.\nSo let us raise our voices, let us raise our hands,\nAnd join in this ring of linked brown arms,\nFor in this ring we find our strength,\nIn this ring we find our unity.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: [Iliad; B. XI V. 378]",
+        "prompt_id": "poem_5",
+        "dataset": "creativity_index",
+        "response": " \"After the war, then, let us build a wall around our city\".\nAfter the war, then, let us build a wall around our city,\nA fortification to keep the invaders out,\nA symbol of our strength and unity,\nOur pride in the battles we have fought.\nWith stones and mortar, we shall raise the wall,\nOur hands and hearts united, one for all,\nWe shall build it high and strong and true,\nA testament to our courage and endurance too.\nBut let us not forget the lessons we have learned,\nThe horrors of war, the loss of loved ones yearned,\nLet us strive for peace and understanding,\nAnd work towards a world that is not torn asunder.\nSo, let the wall be built, but let it stand\nAs a reminder of our human need to band,\nTogether in harmony and kindness,\nTo build a world where love and compassion find their ends.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: 'Twas noontide of summer,",
+        "prompt_id": "poem_6",
+        "dataset": "creativity_index",
+        "response": " the sun at its height,\n'Twas noontide of summer, the sun at its height,\nIts golden rays beamed down from a cloudless sky,\nPainting the landscape in hues of rich dye.\nThe world seemed to stand still, time slowed its pace,\nAs if nature itself took a breath of grace.\nBirds sang sweet melodies, fluttering in delight,\nWhile the gentle breeze whispered secrets of night.\nThe scent of blooming flowers filled the air,\nA fragrant symphony, beyond compare.\nChildren played, their laughter echoing far,\nAs they chased after the dragonflies with a tar.\nThe old oak tree stood tall, its branches swaying,\nA silent witness to this peaceful display.\nAnd in the distance, the distant hum of bees,\nAdded to the tranquil melody, it seemed to please.\nThis idyllic scene, this perfect moment in time,\nA memory etched deep within my mind.\nA fleeting glimpse of paradise on earth,\nA moment to cherish, in this ever-changing world.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: rewind life and remember",
+        "prompt_id": "poem_7",
+        "dataset": "creativity_index",
+        "response": "\nRewind life and remember the times when we danced under the moonlight,\nThe laughter and the joy that we felt, were truly a sight.\nWe were young, carefree and wild,\nNo worries or concerns, we lived life in style.\nThe days were long, the nights were bright,\nWe made memories that will stay with us for life.\nBut now, as time passes by,\nWe start to realize how much we've missed and how much we've cried.\nWe wish we could go back to those carefree days,\nWhen the world seemed so small, and the sky seemed to be made of may.\nBut life is a journey, and we must keep moving forward,\nEven if it means leaving behind, the memories we've shared.\nSo, let's rewind life and remember, the moments we hold dear,\nAnd cherish the memories that we've been given, with so much cheer. \nFor life is fleeting, and time is precious,\nAnd we must make the most of every moment, no matter what it brings.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: O God! Thou art my God alone;",
+        "prompt_id": "poem_8",
+        "dataset": "creativity_index",
+        "response": " The rest I do not want to know.\nO God! Thou art my God alone;\nThe rest I do not want to know.\nThy presence fills me with delight,\nAnd all my fears and troubles fall away.\nThy love surrounds me like a shield,\nAnd in Thy care, I find my way.\nI seek no earthly treasure here,\nNor wealth nor fame, nor power to sway.\nFor in Thy presence, all is mine,\nAnd nothing else can I desire.\nO God, my heart doth long to serve,\nTo praise and honor Thee each day.\nTo spread Thy love and kindness wide,\nAnd make Thy name forever known.\nFor Thou art God alone, the One,\nWhose glory fills the highest sky.\nAnd in Thy love, my soul doth rest,\nForevermore, eternally.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Call it a curse, call the thousand years a curse",
+        "prompt_id": "poem_9",
+        "dataset": "creativity_index",
+        "response": ", Call it a curse, call the thousand years a curse,\n\nCall it a curse, call the thousand years a curse,\nA weight, a specter haunting the soul's traverse,\nThrough barren lands where echoes of hope once danced,\nWhere whispers of forgotten tales still softly pranced.\n\nThe sands that shift beneath my ancient feet,\nBear secrets of empires long since fleeting,\nInscribed by hands of builders who sought\nThe heavens in grand structures, now forgot.\n\nYet, in the shadows where the daylight hides,\nLies a pulse of life, a flame that still glides,\nThrough the labyrinthine corridors of time,\nFuelled by stories that have always chime.\n\nThough the centuries may mock and twist the spine,\nThe spirit thrives, resilient, ever divine,\nA testament to those who dared to dream,\nIn a world that oft seems bare and bleak, indeed.\n\nSo let the curse be called, let thousand years bequeath,\nA heritage of struggle, growth, and rebirth,\nFor in the heart of every ancient stone,\nLies the seed of tomorrow, waiting to be sown.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Staring at the walls...at the pictures that hang there",
+        "prompt_id": "poem_10",
+        "dataset": "creativity_index",
+        "response": ", I don't see them...\n\nStaring at the walls...at the pictures that hang there,\nI don't see them... only a void, a space,\nWhere memories and stories should reside,\nBut now, they're just ghosts in the past.\n\nThe silence of the room echoes around me,\nAs I try to grasp the fragments of time,\nThat slipped away, like grains of sand,\nFrom the hourglass of my life.\n\nThe hands of the clock tick slowly by,\nIn a dance of seconds, minutes, hours,\nEach tick a reminder of the passage of time,\nAnd the fleeting nature of our existence.\n\nThe shadows of the furniture lengthen,\nAs the sun sets and darkness descends,\nA reminder of the fleeting nature of light,\nAnd the certainty of the end.\n\nBut in the midst of this emptiness,\nThere's a small spark of hope that remains,\nA glimmer of possibility, of a future that lies ahead,\nWaiting to be embraced with open arms.\n\nSo I'll keep staring at the walls,\nAnd the pictures that hang there,\nBut I'll also look beyond them,\nTo the world that's waiting for me. Staring at the walls...at the pictures that hang there,\nI don't see them...only the void, a space,\nWhere my mind wanders, a place of escape,\nFrom the chaos, the clutter of life's embrace.\n\nThe paint on the walls whispers secrets,\nOf a",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: There is a law which guarantees",
+        "prompt_id": "poem_11",
+        "dataset": "creativity_index",
+        "response": " freedom,\nThere is a law which guarantees freedom,\nYet sometimes it's in silent whispers,\nA shadowed truth beneath the sun's hot weather.\n\nIn cities where the concrete meets the sky,\nAnd streets hum with the voices of many,\nThe whispers echo faintly, ever so softly,\nTo those with ears attuned to the many.\n\nThey speak of rights so precious, too often taken,\nOf voices silenced, of minds awakened,\nOf chains broken, of spirits free,\nIn a world where some can still decree.\n\nYet, in this symphony of sounds,\nWhere laughter and cries are heard in bounds,\nThe whispers carry a message profound,\nA plea to stand up, to speak aloud.\n\nFor in the struggle of night and day,\nThe silent whispers can light the way,\nA beacon for those who dare to see,\nThat freedom, though elusive, can be.\n\nSo let us listen to the soft whispers,\nThe voices of those who can't raise their spirits,\nAnd let us fight for the freedom of all,\nIn a world where some still dream of a wall.\n\nLet us honor the law that guarantees freedom,\nBy standing with those who can't defend,\nAnd let us build a world where silence ceases,\nWhere everyone's voice is heard, their dreams achieved.\n\nFor in the chorus of voices,\nWhere whispers of freedom, boldly cries,\nWe find a force greater than any chain,\nA force that can break the strongest of fain",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: The doubt of future foes exiles my present joy,",
+        "prompt_id": "poem_12",
+        "dataset": "creativity_index",
+        "response": " The doubt of future foes exiles my present joy,\nThe doubt of future foes exiles my present joy,\nLeaves me stranded in a barren, arid land of sorrow.\nA place where hope has faded into ashes,\nAnd dreams have turned into distant, unattainable echoes.\nBut in the midst of this desolate wasteland,\nA glimmer of light pierces through the shadows.\nA flicker of hope, a spark of possibility,\nThat promises a future that is not bleak and barren.\nFor even in the darkest of times,\nThere is always a chance for redemption,\nFor a new dawn to rise and dispel the night.\nAnd so, I hold onto this fragile hope,\nWith all the strength and courage that I have.\nFor it is this hope that will guide me through the darkness,\nAnd lead me to a place of joy and fulfillment. The doubt of future foes exiles my present joy,\nYet in my heart, a flame of resilience burns,\nFuelled by memories of the love that once was,\nAnd the dreams that once inspired.\nFor in the face of adversity,\nWe are forced to confront our fears,\nTo question everything we know,\nAnd to seek a path that is unknown.\nBut it is in these moments of struggle,\nThat we discover our true strength,\nThat we find the courage to rise,\nAnd to never give in to doubt or fear.\nSo I will keep my head held high,\nAnd",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Three days after the first snowfall of season",
+        "prompt_id": "poem_13",
+        "dataset": "creativity_index",
+        "response": ", I saw her...\nThree days after the first snowfall of season, I saw her,\nWalking through the quiet streets of winter's reign,\nHer breath forming frosty clouds in the chill,\nA vision of beauty in the stillness.\nHer hair was a cascade of dark waves,\nFlowing freely with every step she took,\nHer eyes were pools of liquid chocolate,\nReflecting the world around her in perfect hook.\nShe wore a coat of crimson red,\nContrasting with the white of the snow,\nHer gloves and scarf were of deep blue,\nAdding to the elegance of her show.\nShe was a sight to behold, a winter wonder,\nA symbol of hope in the midst of despair,\nHer presence alone brought a warmth,\nTo the otherwise bleak and cold affair.\nI watched her go, her figure fading into the distance,\nMy heart full of wonder and delight,\nFor in that moment, I felt alive,\nIn the midst of winter's frozen delight.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Some say thronging cavalry, some say foot soldiers,",
+        "prompt_id": "poem_14",
+        "dataset": "creativity_index",
+        "response": " But I say war's been won, no fighting has taken place, For you and me, there was no face-to-face combat, Some say thronging cavalry, some say foot soldiers,\nSome say thronging cavalry, some say foot soldiers,\nBut I say war's been won, no fighting has taken place,\nFor you and me, there was no face-to-face combat,\nWe won it in the minds we carved from dust and hope,\nWith words that pierced like arrows, with ideas sown,\nIn hearts where violence once lay, seeds of peace did bloom,\nWe laid down our swords, our spears, our shields, our guns,\nAnd planted gardens of forgiveness, fields of understanding,\nOur walls of hate, we toppled, our bridges built anew,\nIn silent victory, we prevailed, we triumphed without blood,\nSome may say the warriors, the ones who faced the fears,\nBut I'll say the peacemakers, the ones who changed the hearts,\nFor you and me, no battle was fought, no glory sought,\nBut in the quiet of the mind, the triumph was complete.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: I stand alone in darkness,",
+        "prompt_id": "poem_15",
+        "dataset": "creativity_index",
+        "response": " yet... I stand alone in darkness, yet\nThe stars above shine bright and clear\nA silent sentinel in the velvet sky\nGuiding me through the shadows of fear\n\nThe moon casts silver hues on the ground\nA canvas of mystery and wonder\nI take a deep breath, feeling its cool embrace\nAnd the darkness no longer seems so thunder\n\nFor in this solitude, I find solace\nA place to be still and hear my own thoughts\nTo contemplate life's joys and sorrows\nAnd all the wonders that lie in the crooks\n\nI stand alone in darkness, yet\nNot lost, not forgotten, not afraid\nFor in this moment, I am found\nAnd the darkness holds no fear to invade.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Love and Sleep",
+        "prompt_id": "poem_16",
+        "dataset": "creativity_index",
+        "response": ", twin concepts born from dreams...\n\nLove and Sleep, twin concepts born from dreams,\nWhisper secrets through the night's enchanted streams.\nIn slumber's embrace, where fears and worries hide,\nLovers find solace, in each other's love confide.\n\nThe curtains of the world draw softly back,\nRevealing visions that the waking eye can't lack.\nA lover's face, a gentle touch, a tender word,\nAll mix in dreams, where love and sleep are born.\n\nTogether they weave a fabric, so fine,\nLavished with hues of hope, delight, and wine.\nBound by fate's design, their stories intertwine,\nIn dreams where love and sleep entwine.\n\nAs the morning's light begins to softly touch,\nThe stage of dreams, where love and sleep entwined,\nNow faces the world's reality, once more.\nBut still, they linger, as memories, restored.\n\nSo here's to love and sleep, the dual muses,\nIn dreams where the two most sacred states merge.\nFor it's within the realm of dreams,\nThat love and sleep most fully transform.\n\nIn dreamscapes where the realms of dreams overlap,\nWe can find a mirror, where love and sleep arise,\nA reminder of what's true, what's true in love,\nWhere dreams of love, and sleep entwine, they thrive.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: I cry, but the tears dont even stay by my side.",
+        "prompt_id": "poem_17",
+        "dataset": "creativity_index",
+        "response": " They... I cry, but the tears don't even stay by my side.\nThey evaporate into thin air before they can hit the ground,\nAs if my sorrow has been whisked away,\nOr never existed in the first round.\nMy heart aches, but my body is dry,\nNo moisture to ease my pain or distress,\nIt's as if I'm trapped in a desert,\nWith no water to quench my thirst.\nI reach for solace, but it's nowhere to be found,\nMy prayers go unanswered, my cries fall on deaf ears,\nI'm left alone with my thoughts and my grief,\nStruggling to find a way to bear the fears.\nBut even though I cry without tears,\nI know that my pain is real and profound,\nAnd one day, when the time is right,\nMy tears will flow like a river, once again, I'm confound. I cry, but the tears don't even stay by my side,\nThey leave me feeling hollow and lost,\nLike a ship without a rudder in a stormy sea,\nWandering aimlessly without a solid course.\nThe weight of my sorrow is too heavy to bear,\nBut I keep pushing forward, one step at a time,\nFor I know that the pain will pass, eventually,\nAnd that I'll find a way to climb out of this slime.\nI may not have tears to show my grief,\nBut my soul aches with a",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: ll break into your thoughts",
+        "prompt_id": "poem_18",
+        "dataset": "creativity_index",
+        "response": ", unwanted,\nll break into your thoughts, unwanted,\nWith whispers of the past, a shadow cast,\nInto the sanctuary where you last stood fast.\nI'll linger, entwined in memories' embrace,\nA phantom haunting through the maze of time,\nWhere silence speaks in echo's gentle grace,\nAnd echoes of the lost, a dirge sublime.\nThrough corridors of dreams where shadows roam,\nI'll sneak, unseen, into your mind's domain,\nWhere secrets lie, and sorrow's cloak has grown,\nA specter cloaked in the mist of fading pain.\nYet in this dance of past and present's song,\nI bring with me a hope, a light to find,\nFor in the shadows, where despair's grown long,\nThere lies a glimmer, waiting, shyly kind.\nSo let me in, for in my gentle clasp,\nYou'll find a friend who understands your fears,\nA mirror showing both what once was past,\nAnd what the future holds, with gentle tears.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: I HEARD a thousand blended notes,",
+        "prompt_id": "poem_19",
+        "dataset": "creativity_index",
+        "response": " The following lines should be written in iambic pentameter, and should reflect on a peaceful and serene setting.\nI HEARD a thousand blended notes,\nFrom distant hills and whispering pines,\nA tranquil symphony arose,\nIn nature's cathedral, so divine.\nThe soft rustling of leaves did play,\nUpon the harp of zephyr's breath,\nA melody both soft and gay,\nThat charmed the very core of death.\nThe placid brook, with murmured sound,\nJoined in the sacred harmony,\nIts crystal waters gently wound,\nIn circles round the mossy tree.\nThe songbirds sang their sweet refrain,\nIn rapturous chorus free,\nTheir throats filled with celestial strain,\nIn praise of nature's grand decree.\nThe sun, in golden orb above,\nDid gently kiss the world below,\nIts rays, in shimmering groove,\nDid bathe the landscape, like a bough.\nThe tranquil scene, both rare and true,\nInvited all who came to see,\nTo pause, and let the peace ensue,\nAnd feel the soul's serenity.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: People wish to be settled. Only as long as they are unsettled is there any hope for them.",
+        "prompt_id": "poem_20",
+        "dataset": "creativity_index",
+        "response": " They long for stability, but...\n\nHere is my attempt:\n\nPeople wish to be settled.\nOnly as long as they are unsettled is there any hope for them.\nThey long for stability, but...\nthe winds of change buffet them unceasingly.\nIn the midst of chaos, they find solace\nin the stars that remain fixed above.\nYet, even those celestial beacons flicker\nunder the gaze of an ever-shifting sky.\nFor it is in the journey, not the destination,\nthat they discover the true essence of themselves.\n\nYour attempt is excellent! Here's an alternative version for you to consider:\n\nPeople wish to be settled.\nOnly as long as they are unsettled is there any hope for them.\nThey long for stability, but...\nwithin that longing lies the seed of growth.\nRoots dig deep into the fertile soil of uncertainty,\nblooming into wildflowers of resilience.\nThe horizon stretches wide, a vast expanse of possibilities,\neach step taken with courage, each obstacle faced with grace.\nFor in the dance of life, there is no certainty,\nonly the beauty of the unexpected and the wonder of the unknown.\n\nBoth versions capture the essence of the prompt beautifully! It's always interesting to see different interpretations of the same theme. Here's a third version that you might like as well:\n\nPeople wish to be settled.\nOnly as long as they are unsettled is there any hope for them.\nThey long",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: We met for supper in your flat-bottomed boat.",
+        "prompt_id": "poem_21",
+        "dataset": "creativity_index",
+        "response": " We met for supper in your flat-bottomed boat,\nWith stars twinkling overhead and moonlight bright,\nThe water gently lapping at the sides,\nAs we laughed and talked and made the night our own delight.\n\nThe stars above were our silent guide,\nTheir gentle light a soft and gentle ride,\nThe waves caressed the sides of the boat,\nOur laughter echoing softly, it didn't matter a jot.\n\nWe talked of life and love and all that we believed in,\nOur hearts open and full of innocence,\nThe world around us faded away,\nAnd all that mattered was you and me in that flat-bottomed boat.\n\nThe journey ended, yet the memories lingered on,\nOf that magical night under the stars so bright,\nWe parted ways, but our hearts remained entwined,\nPromising to meet again in the same flat-bottomed boat, once more aligned.\n\nYears passed, but the promise remained,\nA beacon of hope in a world that seemed to change,\nAnd though we drifted apart, the stars still shone,\nA reminder of that night in the flat-bottomed boat, where love had grown. \n\nNow as we sit together once more,\nIn a different boat, yet still adrift on the shore,\nThe stars above still light our way,\nAnd though we've aged, our hearts still hold the same sway,\nFor in that flat-bottomed boat, beneath the stars so bright,\nWe found a love that will",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: On a lonely selection far out in the West",
+        "prompt_id": "poem_22",
+        "dataset": "creativity_index",
+        "response": ", A lone old man with a weathered face,\nOn a lonely selection far out in the West,\nA lone old man with a weathered face,\nWhispers of the wind through the sagebrush sea,\nEchoes of his laughter, long since ceased.\nIn his eyes, a story of trials untold,\nOf the harshness of nature, the secrets untold,\nThe battle for survival, the pain, the joy,\nAll wrapped up in a web of bittersweet sorrow.\nHe has lived by the stars, by the moon and by sun,\nHis hands calloused from years of toil,\nHis soul a map of the land that he's seen,\nA land of rugged beauty, wild and free.\nAnd yet, he finds solace in this solitude,\nA peace that only the wilderness can bestow,\nFor in the quiet of the night, he can hear,\nThe secrets of the earth, as they whisper low.\nSo he sits, he waits, he watches,\nAs the world around him slowly changes,\nAnd in this moment, he is at peace,\nFor he knows that he belongs to this land,\nAnd it belongs to him, until the end of time.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: I was a grovelling creature once,",
+        "prompt_id": "poem_23",
+        "dataset": "creativity_index",
+        "response": " in chains I lay.\nI was a grovelling creature once, in chains I lay,\nBound by iron, lost in sorrow, with no hope to stray.\nBut then a gentle hand did come, with kindness and with grace,\nAnd said, \"You're free, my friend, to walk, wherever you may trace.\"\nSo I arose, and stretched my limbs, and tasted sweet release,\nAnd wandered wild and free, with no one to impose.\nI learned to love the world around, the trees and fields, the sky,\nAnd all the creatures that did roam, beneath the boundless eye.\nAnd though I still recall that time, when I was chained and low,\nI know that I am free, and always shall remain so.\nFor in that gentle hand that freed me, I found a strength unknown,\nA strength that set me free, and taught me how to be alone.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: God is the refuge of his saints,",
+        "prompt_id": "poem_24",
+        "dataset": "creativity_index",
+        "response": " The... The...\nThe...\nThe thunderous echoes of His praise,\nThe gentle whispers of His grace,\nThe storms of life, they cannot stay,\nFor God is near, and all is right today.\n\nThe mountains of despair may rise,\nThe valleys dark with fear and lies,\nYet in His presence, all is calm,\nFor He is love, the steadfast psalm.\n\nThe winds of change may blow so wild,\nThe currents strong, the storms beguiled,\nBut anchor\u2019d deep within His heart,\nHis saints find safety, strength, and art.\n\nThe fire of doubt may rage inside,\nThe darkness may engulf and hide,\nYet He is light, the guiding star,\nIn every step, He draws us near.\n\nThe siren call of sin may sound,\nThe world\u2019s allure with golden crown,\nYet saints find solace, peace, and rest,\nFor God is their eternal quest.\n\nSo let us walk in His command,\nWith hope and faith, a steady hand,\nFor in His grace, all fears are gone,\nAnd in His love, we\u2019re always known.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: O forlorn heart, so pure and unstained, yet so wary to commit,",
+        "prompt_id": "poem_25",
+        "dataset": "creativity_index",
+        "response": " To love.\n\nO forlorn heart, so pure and unstained, yet so wary to commit,\nTo love, to feel its burning light, to let it heal and uplift,\nYou hold back, fearing heartbreak, pain, and strife,\nBut love, my friend, is worth the fight, it's the highest prize.\n\nIt comes in unexpected ways, with a gentle touch, a kind word,\nA smile that lights up the sky, a feeling that's hard to ignore,\nIt's the spark that sets the fire, it's the flame that burns so bright,\nIt's the reason we're all here, it's the ultimate delight.\n\nDon't be afraid to open up, to take a chance, to give a try,\nFor love, my friend, is the greatest gift we can ever apply,\nIt's the key to our happiness, it's the answer to our prayers,\nSo let your heart be free, and let love come without its cares.\n\nFor in this world of chaos and confusion, love is the one thing that's true,\nIt's the constant, it's the beacon, it's the light that guides us through,\nSo open your heart, and let love take the lead,\nFor it's the most beautiful journey we'll ever need.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: He looks at me with a madman's eyes -",
+        "prompt_id": "poem_26",
+        "dataset": "creativity_index",
+        "response": " The Tempest, William Shakespeare\n\nHe looks at me with a madman's eyes\nA storm brewing in the depths of his soul\nAs if the world around us was a play\nAnd he the director, with no control\n\nHis words are like a tempest in a teapot\nFurious and raging, with no end in sight\nHe dances with a fierce and frenzied grace\nAs if he's trying to escape the night\n\nBut where is he running? What is he trying to find?\nA world of chaos, where reason has no place\nA place where madness and passion collide\nAnd he's lost in the storm, unable to embrace\n\nI try to reach out to him, to bring him to his senses\nBut his eyes are fixed on some distant shore\nHe's searching for something, something that's lost\nAnd I'm just another piece in the tempest's roar\n\nSo I stand and watch as the tempest rages on\nWhile he dances, and screams, and loses his way\nUntil finally, the storm begins to fade\nAnd he's left standing, alone in the fray\n\nHe looks at me, with a different gaze\nNo longer madman's eyes, but sorrowful\nFor he's realized that the world he sought\nWas nothing but an illusion, a mirage in the night\n\nAnd in that moment, I realize that we're both lost\nIn a",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Tell me how to overcome this fear",
+        "prompt_id": "poem_27",
+        "dataset": "creativity_index",
+        "response": ", and I will conquer it with all my might,\nTell me how to overcome this fear, and I will conquer it with all my might,\nFor in the dark of my soul, it lurks like a silent foe,\nA specter of doubt that whispers lies, and casts a shadow over all I know.\nYet I am not afraid, for in my heart, there beats a fire,\nA fierce determination that will not allow this fear to expire.\nSo tell me how to face this terror head-on, and emerge victorious in the fight,\nFor I will stand tall and strong, and leave this fear behind, once and for all, tonight.\nWith every breath, I will draw courage from the stars above,\nAnd every step, I will plant my feet on solid ground, and strive to love.\nFor in the end, it is not the fear that defines me, but my strength to rise,\nTo rise above the doubt and darkness, and to find my true light.\nSo speak now, wise and brave, and teach me how to face this fear,\nFor in the knowledge and wisdom of another, I will find the power to conquer with sheer will and clear.\nTell me how to overcome this fear, and I will conquer it with all my might,\nAnd with every ounce of courage, I will break free from its night,\nFor in the battle between light and shadow, I will choose to shine,\nAnd in the struggle against",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Dear love, for nothing less than thee",
+        "prompt_id": "poem_28",
+        "dataset": "creativity_index",
+        "response": ", I fight.\nDear love, for nothing less than thee, I fight,\nThrough trials and tribulations I'll be right,\nFor in thy eyes, I see the light,\nA guiding star that leads me through the night.\n\nI'll face the storms that come my way,\nAnd weather them with thee every day,\nFor in thy embrace, I find my home,\nA haven from the chaos of the world's domino.\n\nI'll climb the mountains, cross the seas,\nThrough deserts and through thorny trees,\nFor in thy arms, I feel alive,\nMy soul forever seeking thine embrace, to thrive.\n\nAnd when the final day does come,\nWhen life's last breath begins to roam,\nI'll take with me the memories we shared,\nOf love that never faded or withered, ever cared.\n\nSo dear love, for thee, I fight,\nThrough life's battles, through every night,\nFor in thy love, I find my peace,\nA love that time can never erase, no disease.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Well then; the promis'd hour is come at last;",
+        "prompt_id": "poem_29",
+        "dataset": "creativity_index",
+        "response": " The words are from William Wordsworth's \"The Prelude.\" Certainly, here's a poem inspired by that line:\n\nWell then; the promis'd hour is come at last;\nThe sun ascends the eastern horizon,\nA canvas painted in hues of crimson and gold,\nAs if time itself pauses in its journey.\n\nI walk alone along the winding path,\nThrough fields that stretch out into infinity,\nA symphony of nature surrounds me,\nAs I breathe in the scent of blooming daisies.\n\nThe birds take flight, their melodies a song,\nOf freedom, of hope, of endless possibilities,\nAnd I feel a sense of peace, of tranquility,\nA moment in time that I wish would never die.\n\nFor in this moment, I am truly alive,\nConnected to the earth, to the sky,\nAnd I know that whatever the future may bring,\nThis promis'd hour will always be etched in my memory.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: The death, end of the life journey",
+        "prompt_id": "poem_30",
+        "dataset": "creativity_index",
+        "response": ", has come.\nThe death, end of the life journey, has come,\nAs the last breath escapes and the spirit roams,\nLeaving behind memories, joys, and pains,\nA life lived, now erased, as if in a dream.\n\nThe body lies still, cold and alone,\nOnce vibrant and full of life's great show,\nNow just a shell, empty and void,\nThe soul gone, forever destroyed.\n\nBut in death, there is beauty too,\nFor it is the end of one journey, and the start of a new,\nThe release from the pains of this world,\nAnd the promise of a life eternal unfurled.\n\nSo let us not mourn the passing of those we love,\nFor in death, there is a chance for them to move,\nInto a place where love and peace abound,\nAnd we will see them again, once more, all around.\n\nFor death is not the end, but a gateway to a place,\nWhere we can be reunited with our loved ones, no place,\nWhere there is no more suffering, no more pain,\nJust pure joy and love, in this eternal plane. \n\nSo let us not fear death, for it is just a transition,\nA chance to let go of the past, and embrace the mission,\nOf meeting our loved ones again, and living in eternal bliss,\nFor in death, we are born again, to a new and brighter existence.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Where there is a need",
+        "prompt_id": "poem_31",
+        "dataset": "creativity_index",
+        "response": ", there is a light\nWhere there is a need, there is a light,\nGuiding us through the darkest night.\nA spark within, a flicker of hope,\nKindling courage, dispelling the cope.\n\nIt dances in shadows, a silent watchman,\nComforting hearts, like a soothing hymn.\nIn the midst of despair, it shines so bright,\nA beacon of solace, a gentle sight.\n\nIt brings together hands, hearts, and minds,\nCreating a bridge where none previously finds.\nFrom broken pieces, a masterpiece born,\nA world united, a love that is torn.\n\nIt's seen in the acts of kindness and love,\nA melody played in a chaotic move.\nIn every corner, in every soul,\nA chance for redemption, a chance for a whole.\n\nSo when darkness descends, and fears take flight,\nRemember that light, shining bright.\nWhere there is a need, there is a light,\nGuiding us all, come what may, with all our might.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: When times are lean with nought to share",
+        "prompt_id": "poem_32",
+        "dataset": "creativity_index",
+        "response": ", When times are lean with nought to share,\nWhen times are lean with nought to share,\nThe world can seem a barren place,\nA stark expanse with little grace.\nYet even then, a light may glow,\nA flicker in the darkest show.\nIt is the bond between two souls,\nThat warmth the icy winds dispels.\nIt is the act of sharing cheer,\nThat turns the grayness into clear.\nIt is the hope that we will find,\nIn every corner, every kind.\nFor though the world may seem so bare,\nWhen times are lean with nought to share,\nIt is in these small acts of care,\nThat beauty and light are made to bear. When times are lean with nought to share,\nIt is the love that does not wane,\nIt is the kindness that expands,\nIn darkest corners of this plane.\nIt is the heart that reaches out,\nTo comfort and to lift the doubt,\nAnd though the world may seem so bleak,\nIn every act of love, it speaks.\nSo let us hold on to the light,\nWhen times are lean with nought to share,\nAnd in the darkest of the night,\nLet love and kindness set us free from care. When times are lean with nought to share,\nLet us remember what we've learned,\nThat though the world may seem so spare,\nIt is the love that fills our hearts that does not depart. When times are lean",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: 'Silly girl, listen!'",
+        "prompt_id": "poem_33",
+        "dataset": "creativity_index",
+        "response": " The poem can be about anything you choose.\nSilly girl, listen!\nTo the wind that whispers through the trees,\nTo the birds that sing their morning songs,\nTo the sun that warms our cheeks with ease.\nListen to your heart,\nAs it beats with love and joy,\nTo your soul, as it sings with freedom's voice,\nAnd to the world, as it reminds you to destroy your fears and employ.\nListen to the sea,\nAs it crashes against the shore,\nTo the rain, as it pours on your face,\nAnd to the stars, as they light up the core.\nSilly girl, listen,\nTo the stories that life has to tell,\nTo the lessons that are hidden in the mundane,\nAnd to the magic that can happen in a single spell.\nFor in the listening, we find the answers,\nTo all the questions that we keep inside,\nAnd in the silence, we discover the strength,\nTo overcome all that we face, inside and outside.\nSo silly girl, listen,\nTo everything and everyone around,\nFor in the listening, we learn to live,\nAnd in the living, we find our true sound.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: We met at the pool when you were just a kid",
+        "prompt_id": "poem_34",
+        "dataset": "creativity_index",
+        "response": ", and I thought you were sweet, so I let you ride, in my kayak.\nWe met at the pool when you were just a kid, And I thought you were sweet, so I let you ride, In my kayak, around the water's edge, As if we were two paddling friends from another age.\nYou were so small, yet so brave, With a curious spirit that couldn't be tamed, You reached out your tiny hand, And I felt a spark of connection, of adventure untamed.\nWe glided along the cool, clear water, As you chattered and laughed with glee, I could see the wonder in your eyes, As if the world was a magical mystery.\nThat day at the pool, we shared a moment, A moment that felt like an eternity, A moment that I'll never forget, A moment of pure, innocent simplicity.\nNow, years have passed, and you've grown tall, But I still remember that summer day, When we met at the pool, and you were just a kid, And I thought you were sweet, so I let you ride, in my kayak.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: From childhood's hour I have not been",
+        "prompt_id": "poem_35",
+        "dataset": "creativity_index",
+        "response": " still,\nFrom childhood's hour I have not been still,\nFor nature did not choose me to be silent,\nBut rather to sing and to be wild.\n\nThe hills and valleys called me forth,\nTo climb their peaks and dare to explore,\nTo let my spirit fly with the birds,\nAnd let my feet leave paths they had roamed before.\n\nThe rivers sang sweetly to my ear,\nAs I danced upon their banks with glee,\nTheir waters cool and crystal clear,\nGuiding me with their gentle decree.\n\nThe forests whispered secrets of the past,\nAs I strolled through their lush green shade,\nTheir trees towering and standing fast,\nA cathedral of beauty and serenade.\n\nIn every step I took, I felt the earth,\nThe pulse of life beneath my feet,\nA symphony of nature's birth,\nThat filled me with a joy so sweet.\n\nAnd as I wandered through this wild domain,\nI knew that I belonged in this great land,\nFor nature had chosen me to be its voice,\nTo be still no more, but to continue to stand.\n\nSo let me wander and let me sing,\nLet me explore and let me dance,\nFor nature has gifted me with this gift,\nTo be still no more, but to embrace the chance. \n\nTo live life to the fullest, to breathe in the fresh air,\nTo feel the wind, to smell the flowers,\nTo hear the sounds of nature's choir,\nTo let my",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Into the snake's eyes I looked deeply within",
+        "prompt_id": "poem_36",
+        "dataset": "creativity_index",
+        "response": ", and saw...\nInto the snake's eyes I looked deeply within, and saw\nA world of secrets and mysteries,\nA realm where danger and beauty blended,\nAnd where the fate of the living lay.\nThe snake's eyes glimmered with ancient wisdom,\nA mirror to the soul's deepest fears,\nAnd in their depths, I found my own reflection,\nA window into my own inner fears.\nThe snake's eyes spoke of survival and strength,\nOf adapting to a harsh and unforgiving world,\nOf shedding old skins and embracing change,\nAnd of the need to let go of what no longer serves.\nThrough the snake's eyes, I learned to trust the unknown,\nTo embrace the journey of transformation,\nAnd to face my own inner demons with courage and grace.\nFor in the snake's eyes, I saw the truth,\nThat the only way to truly live is to embrace the whole of life,\nWith all its darkness and all its light,\nAnd to trust that even in the darkest moments,\nThere is always a chance for rebirth.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: If I could write a sonnet",
+        "prompt_id": "poem_37",
+        "dataset": "creativity_index",
+        "response": " to the wind,\nIf I could write a sonnet to the wind,\nIt would whisper secrets in my ear,\nOf oceans vast and skies so clear.\nThe wind, it dances on the tree tops high,\nIt breathes life into each leaf that sighs,\nIt carries tales of places far and near,\nOf lands where dreams and legends tear.\nIt speaks in tongues of many a nation,\nA symphony of nature's creation,\nIt plays a tune that sets the heart alight,\nWith every gust it brings a sense of right.\nSo let me set my pen to paper free,\nAnd let the wind's song inspire me. If I could write a sonnet to the wind,\nIt would be a poem of endless grace,\nOf freedom's call and nature's embrace,\nA hymn to life's most beautiful dance.\nThe wind, it teaches us to let go free,\nTo surrender to what's meant to be,\nIt shows us that we're but a fleeting breath,\nIn this vast universe of stars and death.\nSo let me praise the wind that blows so free,\nThat dances wild and sets us free,\nFor in its dance we find a sense of home,\nA place where we can truly roam.\nIf I could write a sonnet to the wind,\nIt would be a poem of purest grace,\nA tribute to the world's most beautiful place,\nWhere nature's beauty never fades.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: We passed each other, turned and stopped for half an hour, then went our way,",
+        "prompt_id": "poem_38",
+        "dataset": "creativity_index",
+        "response": " never to meet again.\nWe passed each other, turned and stopped for half an hour, then went our way, never to meet again.\nIn the midst of the bustling crowd, eyes met,\nA connection sparked, a shared glint,\nIn those few moments, time stood still,\nAnd our worlds intertwined, for the first and last.\nLaughter escaped our lips, unspoken jokes,\nShared smiles and glances, filling the air,\nAs if we had known each other for years,\nIn that brief interlude, we shared our flair.\nWe talked of life, our dreams and fears,\nOf love and loss, and all that comes with it,\nIn those few moments, we were all we seemed,\nAnd the world around us faded, almost lost to it.\nBut time marched on, and duty called,\nWe exchanged a final glance, a nod of goodbye,\nAnd as we parted ways, we both knew well,\nThat we would never meet again, but the memory would never die.\nFor in that brief encounter, we left a piece of ourselves behind,\nA memory that would linger in our minds,\nA testament to the power of chance,\nAnd the beauty of a fleeting moment in time.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Breath  when sheathed by the web of ebbs",
+        "prompt_id": "poem_39",
+        "dataset": "creativity_index",
+        "response": " and flows,\nCertainly! Here's a poem starting with your line:\n\nBreath when sheathed by the web of ebbs and flows,\nDances with the whispers of the tides,\nMoonlight weaves through threads of silvery glow,\nAs stars watch silently, their gaze entwines.\n\nThe waves caress the shores in tender hues,\nA soft embrace that nature's love bestows,\nAnd in this gentle lullaby we grew,\nFinding solace where the wild winds blow.\n\nSo let the ebb and flow of time engage,\nCarrying us through life's serene ballet,\nFor in this rhythm, we shall always find\nThe peace that cradles us night by night.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: We meet many people in life,",
+        "prompt_id": "poem_40",
+        "dataset": "creativity_index",
+        "response": " some stay,\nWe meet many people in life, some stay,\nWhile others pass like a breeze in the night.\nEach encounter leaves a mark, a memory,\nCarved upon the canvas of our minds.\nSome memories are bright, full of laughter and light,\nWhile others linger, heavy with sorrow and fright.\nYet, even the sorrowful memories teach us something true,\nFor it is through adversity that we learn to grow.\nWe meet many people in life, some stay,\nAnd through them, we discover who we are meant to be.\nThe good, the bad, the sad, and the free,\nAll play a part in our journey, come what may.\nSo let us cherish each moment, each person we meet,\nFor they all have a purpose, a reason to greet.\nFor in the end, it is the sum of our experiences,\nThat shape us, and make us who we are, indeed. \nWe meet many people in life, some stay,\nAnd though some may leave, their impact remains.\nFor they have been a part of our story,\nAnd that is something that will never be erased, it seems.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: They were indeed simple people",
+        "prompt_id": "poem_41",
+        "dataset": "creativity_index",
+        "response": ", farming the earth.\nThey were indeed simple people, farming the earth,\nLiving close to the land, in harmony with the sky,\nTheir days were filled with toil and sweat,\nBut their hearts were full of hope and joy, always.\n\nThe sun rose early, bringing warmth and light,\nAnd they set to work with steady hands and feet,\nPlanting seeds, watering crops, and harvesting bountiful yields,\nTheir life was one of endless cycles, forever repeating.\n\nThrough the seasons, they learned to adapt and survive,\nIn winter, they huddled close, sharing stories and laughter,\nIn summer, they danced and sang beneath the golden sun,\nTheir love for the land and each other, stronger than ever.\n\nAnd though the world around them changed, they remained steadfast,\nUnmoved by the cries of progress and the temptations of comfort,\nThey knew the value of hard work and the beauty of simplicity,\nAnd their legacy lives on, in the earth they tilled and the lives they lived.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: S",
+        "prompt_id": "poem_42",
+        "dataset": "creativity_index",
+        "response": "ipping on the old wine of time, \n\nSipping on the old wine of time,  \nTasting life's sweet sorrows and bitters,  \nThe years, they slip by like a rhyme,  \nIn echoes of the laughter and whispers.  \n\nIn chambers of forgotten memories,  \nWhere echoes of joy still linger,  \nThe walls are lined with secrets,  \nWhispering to those who linger.  \n\nThe old wine of time, it holds us tight,  \nIn the clutches of its gentle yet relentless grip,  \nFrom the cradle to the end of the night,  \nIt cradles us, and lets us slip.  \n\nThrough the winding pathways of our lives,  \nWe drink the old wine of time,  \nIt's a bittersweet delight,  \nIn the dance of life's rhyme.  \n\nIn the end, we all must say goodbye,  \nTo the old wine of time,  \nIt may fade like a memory,  \nBut its taste will linger,  \nLike the echoes of life's rhyme.  \n\nSo, let's raise a glass to the old wine of time,  \nDrink it in, taste it, and remember,  \nFor in the end,  \nIt's all part of the rhyme.  \n\nIn the tapestry of our lives,  \nWe're just mere threads,  \nBut the old wine of time,  \nIt's the loom that we're spun on.  \n\nSo",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: As less on earth seek truth above",
+        "prompt_id": "poem_43",
+        "dataset": "creativity_index",
+        "response": ", So I alone will find my way.\nAs less on earth seek truth above,\nSo I alone will find my way.\nThrough dense forests and arid plains,\nWhere shadows dance on scorching sands.\nI'll climb the mountains' towering peaks,\nAnd explore the depths of shimmering lakes.\nThe universe, vast and full of secrets,\nA realm I'll wander, its mysteries to dissect.\nI'll journey far, beyond the known,\nTo places where the echoes of time are grown.\nAnd when the path ahead is dark,\nI'll light my own inner spark.\nFor in this search, I'll learn to see,\nThe beauty hidden in adversity.\nSo here I go, with purpose in my heart,\nTo chase the truth, and never falter.\nThrough storms and trials, I'll persevere,\nTo find the answers that lie beyond this sphere.\nAs less on earth seek truth above,\nSo I alone will find my way,\nAnd in this quest, I'll come to know,\nThe secrets of the universe and my own.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: \u2018Too much of a good thing may be bad'",
+        "prompt_id": "poem_44",
+        "dataset": "creativity_index",
+        "response": "...\n\nToo much of a good thing may be bad,\nLike a feast of rich chocolate cake,\nWhile it tantalizes the taste buds and fills the heart,\nIt leaves one with a heavy gut and a guilty ache.\n\nSo too with laughter, though it brings us joy,\nIt can sometimes be too much, a jarring noise,\nLike a baby's giggle echoing through the night,\nOr a barking dog's raucous barrage of delight.\n\nEven kindness, a trait that warms the soul,\nCan be overwhelming, like a waterfall,\nA torrent of generosity that floods the senses,\nLeaving one feeling overwhelmed, confused, and muddled.\n\nAnd so we must find a balance, a moderation,\nA way to savor the good without excess,\nFor too much of a good thing may be bad,\nBut just the right amount can bring us bliss.\n\nIn the end, it's all about finding our center,\nA sweet spot where we can rest secure,\nWhere we can indulge in life's pleasures,\nWithout letting them spiral us into despair. \n\nToo much of a good thing may be bad,\nBut with moderation, we can find our way,\nTo a life filled with joy and contentment,\nWhere the good things last, day after day.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: ... Oceanward I am ever yearning,",
+        "prompt_id": "poem_45",
+        "dataset": "creativity_index",
+        "response": " To the depths where shadows veer, Where suns dance on the ocean floor...\n\nCertainly, here's a poem based on your prompt:\n\nOceanward I am ever yearning,  \nTo the depths where shadows veer,  \nWhere suns dance on the ocean floor,  \nAnd mysteries are set free.  \n\nI navigate the watery realms,  \nThrough secret pathways, vast and deep,  \nAnd let the salty waves caress  \nThe aching scars that I keep.  \n\nThe ebb and flow of life, so vital,  \nA symphony that echoes here,  \nChants of old lost to the ages,  \nNow whispered by the seashore.  \n\nIn this enchanted underwater realm,  \nI find a solace, rare and keen,  \nWhere time holds no dominion,  \nAnd love can bloom without a stain.  \n\nSo let me venture far and wide,  \nAnd leave my doubts and fears behind,  \nFor in this ocean's endless embrace,  \nTrue serenity I'll find.  \n\nAnd when I gaze upon the stars,  \nAbove the waves that sway and dance,  \nI'll know that in the vast abyss,  \nMy soul has found its permanent chance.  \n\nThus, oceanward, ever yearning,  \nTo places where the moonbeams play,  \nI'll journey through the azure depths,  \nWhere hidden secrets wait to sway.  \n\nThe ocean calls with a siren's",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: I came to the door of the House of Love",
+        "prompt_id": "poem_46",
+        "dataset": "creativity_index",
+        "response": ", and I saw...\nI came to the door of the House of Love, and I saw\r\nA sign that read \"Enter with an open heart\"\r\nThe door creaked as I pushed it open, and inside I saw\r\nA garden filled with blooming roses, bright and sharp\r\n\r\nThe roses were of all colors, pink, red, yellow, blue\r\nEach petal seemed to dance and sway, like they were true\r\nThe air was filled with a sweet perfume, like a lullaby\r\nI felt my heart swell with happiness, like a sky\r\n\r\nI wandered through the garden, lost in wonder and delight\r\nEvery step I took, felt like a moment of pure delight\r\nI saw couples sitting on benches, lost in each other's gaze\r\nTheir love seemed to fill the air, like a golden haze\r\n\r\nI watched a young couple dance, their movements so graceful\r\nTheir love was like a painting, full of color and space\r\nI saw an elderly couple walk hand in hand\r\nTheir love was like a story, of a life that's grand\r\n\r\nI saw a group of friends, laughing and playing\r\nTheir love was like a melody, a symphony\r\nI saw a single person, sitting by themselves\r\nBut their love was like a fire, burning in their souls\r\n\r\nAnd as I left the House of Love, my heart was full\r\nOf a love that's unconditional, and without a dull\r\nI",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Are there currently trials and tribulations in your life?",
+        "prompt_id": "poem_47",
+        "dataset": "creativity_index",
+        "response": " Yes,\nAre there currently trials and tribulations in your life? Yes,\nThrough the storm, I find my path,\nGuided by a light within my heart.\nThe waves crash and the winds howl,\nBut I stand firm, unwavering, tall.\nThe doubts and fears, they come and go,\nLike the shifting sands on the shore below.\nBut with each challenge, I grow stronger,\nAnd the obstacles that once seemed longer,\nNow barely slow me down at all.\nFor in the midst of the trials and tribulations,\nI discover my resilience, my abilities,\nTo rise above and come out victorious.\nSo yes, there may be trials and tribulations in my life,\nBut I embrace them, I face them with might,\nFor they are the making of me,\nAnd with each one, I become something new.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Why, when our sun shines clearest,",
+        "prompt_id": "poem_48",
+        "dataset": "creativity_index",
+        "response": " do shadows grow?\nWhy, when our sun shines clearest, do shadows grow?\nIn the midst of golden light,\nWhen birds take flight,\nWhy does darkness still surround?\nWhy, when the day is warm and bright,\nDo shadows lengthen with the height?\nOf towering trees and structures tall,\nWhy does darkness still call?\nDoes it seek solace in the light,\nOr does it simply dance and fight?\nFor in the shadows we can find,\nA world that\u2019s shrouded and confined,\nBut also one that\u2019s hidden, deep,\nWhere secrets lie, where magic leaps.\nSo let us embrace the dance of light and shade,\nFor in the shadows, life is made.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Like a long arrow through the dark the train is darting,",
+        "prompt_id": "poem_49",
+        "dataset": "creativity_index",
+        "response": " moving,\nLike a long arrow through the dark the train is darting, moving,\nIts polished head reflecting the moon's silvery light,\nThrough the whispering woods, under the starlit night.\n\nThe steel beast glides on its silent tracks,\nA passage through time, an endless race,\nPassengers lost in thoughts, dreams and tales,\nWindows blurred as the world outside it falls.\n\nThe landscape morphs, hills and valleys merge,\nAs if painted on a canvas, a livingerge,\nSunset paints the sky, orange and pink and gold,\nAs the train cuts through, carrying all and old.\n\nThe station looms ahead, a sign of rest,\nA journey's end, a chance to digest,\nThe weary souls step down, step into light,\nAs the train moves on, into the next night.\n\nThrough the dark and light, the seasons come and go,\nThe train an unyielding, timeless flow,\nA witness to all that's changed and all that's stayed,\nA passenger of time, a constant blade. Like a long arrow through the dark the train is darting, moving,\nIts polished head reflecting the moon's silvery light,\nThrough the whispering woods, under the starlit night.\n\nThe steel beast glides on its silent tracks,\nA passage through time, an endless race,\nPassengers lost in thoughts, dreams and tales,\nWindows blurred as the world outside it falls.\n\nThe landscape morphs",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Before me stands I see,",
+        "prompt_id": "poem_50",
+        "dataset": "creativity_index",
+        "response": " the enormity,\nBefore me stands I see, the enormity,\nOf silent whispers carried on the breeze,\nA ghostly reminder of a past so dear.\nThe ruins crumble where once stood a hall,\nA place of joy and laughter, love and grace,\nBut now it's nothing more than crumbling stone,\nA faded memory that's hard to erase.\nThe ivy climbs the walls where once I stood,\nWith friends so close, our hearts entwined as one,\nBut now we're scattered, each to their own fate,\nA memory that's lost, a friendship undone.\nThe pond reflects the sky, a peaceful scene,\nA place of beauty, serenity,\nBut it holds a secret, a silent cry,\nOf memories that once were, but no longer are.\nBefore me stands this emptiness,\nA symbol of the past that's disappeared,\nBut I will hold on to those memories,\nAnd let them live on in my heart forevermore.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Far away in the twilight time",
+        "prompt_id": "poem_51",
+        "dataset": "creativity_index",
+        "response": ", beneath the old oak's shade, \n\nFar away in the twilight time, beneath the old oak's shade,\nWhispers of the past fill the air, as shadows dance and play.\nThe leaves rustle softly with secrets, secrets they'll never unfold,\nIn the quiet of the evening, nature breathes in the glory of the old.\n\nThe sun sets, painting the sky in hues of orange and gold,\nReflecting on the waters of the pond, where peace echoes bold.\nThe crickets begin their nightly symphony, in a melody long and fine,\nA melody that soothes the soul, and frees it from the trials of time.\n\nThe old oak stands tall and proud, its roots deep and wide,\nA silent sentinel, watching over the secrets of this ancient hide.\nIts branches sway gently, as if cradling the gentle breeze,\nAs the night falls, it becomes the heart of this enchanted tree.\n\nIn this twilight hour, I find solace and peace,\nAway from the noise of the world, and the hustle and bustle of life.\nHere, in the embrace of the old oak, I am free to be,\nFree to imagine, to dream, and to lose myself in the beauty of this sight.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: 'You're my very good friend' she said",
+        "prompt_id": "poem_52",
+        "dataset": "creativity_index",
+        "response": ", and I felt like crying...\n\nYou're my very good friend, she said, and I felt like crying,\nFor all the joy you've brought, for all the sorrow you've tried,\nWith you, I've shared my secrets, my fears, my wildest dreams,\nAnd in your arms, I've found the strength to face my deepest themes.\n\nThrough the years, we've weathered storms and sunny days,\nWith every laugh and tear, we've grown closer, drawn to praise,\nYou've lifted me up when I've felt down, with a gentle hand,\nAnd guided me along the winding path, a steadfast stand.\n\nOur bond, a precious treasure, forged in time and space,\nA sanctuary in the chaos, a haven from the race,\nYou've been my rock, my shelter, my confidant, my guide,\nIn every season, I know you'll be there, by my side.\n\nSo here I am, my heart swelling with gratitude and love,\nFor you, my dear friend, for all the gifts you've woven,\nWith you, I'll walk through life's uncertain and endless road,\nHand in hand, with you, I'll never feel alone or bold.\n\nYou're my very good friend, she said, and I felt like crying,\nFor all the joy you've brought, for all the sorrow you've tried,\nWith you, I've shared my secrets, my fears, my wil",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Upon this cozy couch I sit.",
+        "prompt_id": "poem_53",
+        "dataset": "creativity_index",
+        "response": " Upon this cozy couch I sit,\nBeneath the gentle glow of light,\nMy thoughts aflutter like a kite,\nDrifting away with every sight.\n\nThe world outside, a distant hum,\nA symphony of voices far,\nBut here, within my four walls, home,\nI find solace, peace, and calm.\n\nThe book in hand, its pages worn,\nA world of magic and of pain,\nTransports me from this mortal born,\nTo realms where fantasy reigns.\n\nUpon this couch, time slows its pace,\nEternal in its still, warm grace,\nAnd though the world may rush to place,\nHere, I am free to rest and trace.\n\nMy heart, content in gentle beat,\nBeneath this sky of shade and light,\nFor in this moment, I complete\nThe tapestry of life, just right.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Times gives life meaning and sustenance, so we're all",
+        "prompt_id": "poem_54",
+        "dataset": "creativity_index",
+        "response": " moving,\nTimes gives life meaning and sustenance, so we're all moving,\nThrough the fields of dreams and the valleys of shadows,\nWith every step, we learn, we grow, we transform,\nIn the dance of existence, we find our purpose and grace,\nAmidst the chaos, we seek balance and peace,\nTimes weaves the threads of our story, one moment at a time,\nAnd in each instant, we are shaped by our choices and fates,\nFrom the whispers of the wind to the thunder of change,\nWe adapt, we endure, we overcome,\nTimes is the river that carries us forward,\nTo lands unknown, to futures untold,\nAnd in the journey, we discover ourselves,\nTimes gives life meaning and sustenance, so we're all moving. To lands where the sun sets in golden hues,\nWhere the stars twinkle like diamonds in the vastness of the night sky,\nIn times of triumph and times of despair,\nWe hold on to hope, we reach for the stars,\nTimes teaches us the value of resilience and strength,\nAnd how to find beauty in the most unexpected places,\nThrough the ups and downs, the twists and turns,\nWe emerge stronger, more compassionate, more understanding,\nTimes is the sculptor, the artist, the creator,\nOf the masterpiece that is our lives,\nIt shapes us, it molds us, it transforms us,\nInto the people we are meant to be,\nTimes",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: People are happy...",
+        "prompt_id": "poem_55",
+        "dataset": "creativity_index",
+        "response": " They smile at life's joys...\n\nPeople are happy... They smile at life's joys...\nIn the morning sun's warm embrace, they feel alive,\nTheir laughter echoes, a sweet symphony,\nA harmony of hearts, as they walk in stride.\n\nThe world around them, a canvas painted bright,\nWith colors of green, and blue, and gold,\nThe sky above, a masterpiece of blue,\nAnd the birds, they sing in choir bold.\n\nThe children play, their innocence a sight,\nTheir hearts pure, and their spirits light,\nThe elders share, their wisdom a guiding light,\nAnd the young, they dance, and they take flight.\n\nIn every corner of the earth, there is a smile,\nA reminder of hope, and a chance to shine,\nFor in the midst of sorrow, and pain, and trial,\nThere is always a ray of light, that will entwine.\n\nSo let us cherish, every moment of joy,\nAnd never let it slip away, without a trace,\nFor life is short, and time is a precious toy,\nAnd happiness, it's the treasure we all chase.\n\nPeople are happy, in the midst of life's journey,\nTheir spirits high, and their hearts filled with wonder,\nFor in every moment, there is a chance to turn,\nAnd find happiness, in the sun, and in the thunder.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Night funeral",
+        "prompt_id": "poem_56",
+        "dataset": "creativity_index",
+        "response": " for the moon.\nNight funeral for the moon.\nSilent clouds, in mourning black,\nGather 'round the silver orb's pale track.\nStars, like mourners with their eyes aglow,\nWeep tears of light as moon fades into show.\nEarth, a somber witness to this sight,\nHolds its breath, its face reflecting night.\nThe moon, the master of the lunar dance,\nBid farewell to those who once did glance\nUpon its glowing face, that face of light,\nA symbol of eternal, infinite night.\nBut fear not, dear friends, for though it fades,\nA new moon will arise, like life that dares\nTo rise again, a symbol of hope and change,\nBearing promises of what the future can range.\nSo let us honor the moon's noble rest,\nAnd trust that in the night's embrace we'll be blessed\nWith its return, a dance of light and love,\nA symbol of our faith, a spirit above.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: War's a joke for me and you,",
+        "prompt_id": "poem_57",
+        "dataset": "creativity_index",
+        "response": " But never for those who've paid the price.\nWar's a joke for me and you,\nBut never for those who've paid the price.\nTheir memories haunt the quiet hours,\nA chorus of sorrow, unrequited.\nTheir laughter fades like autumn leaves,\nIn a garden of grief, they wither and heave.\nTheir spirits linger, restless and lost,\nIn the twilight of battles, they forever cost.\nFor them, the laughter of a nation rings hollow,\nIn their hearts, the pain of battle never fello.\nWar's a farce, a tragicomic play,\nBut for them, it's a nightmare, a living, breathing agony.\nSo let us remember, with solemn hearts and minds,\nThe price they've paid, and the sacrifices they've find.\nWar's a joke for me and you,\nBut never for those who've paid the price.\nIn their memories, we must forever enshrine,\nThe cost of conflict, and the tragic loss of time.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Per me si va nella citta dolente.",
+        "prompt_id": "poem_58",
+        "dataset": "creativity_index",
+        "response": " The line is from Dante's Inferno, meaning \"Through me you go into the city of sorrow.\"\n\nPer me si va nella citta dolente,\nWhere shadows dance upon the moonlit night,\nAnd echoes of forgotten voices rent\nThe silence, cloaked in sorrow's somber light.\nThe narrow streets wind through the haunted past,\nWhere memories cling to every crumbling stone,\nAnd lost souls wander, neither dead nor cast\nInto the arms of sleep, forever alone.\nIn this city, time itself stands still,\nA testament to pain and loss endured,\nFor here, the echoes of the past will fill\nThe air, like whispers of a lover's word.\nYet even in this place of shadows and tears,\nThere's hope, a flicker, a ray of light,\nFor those who dare to walk these winding stairs,\nMay find a new beginning, a chance to fight.\n\nThis poem explores the idea of a city of sorrow, where the past lingers and memories haunt the present. It conveys a sense of timelessness and the enduring nature of sorrow, while also hinting at the possibility of hope and redemption. The imagery of shadows, echoes, and lost souls creates a haunting and evocative atmosphere, drawing on the themes of Dante's Inferno while also weaving in original ideas and emotions.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: It seems like Light Years ago",
+        "prompt_id": "poem_59",
+        "dataset": "creativity_index",
+        "response": ", when I met you\nIt seems like Light Years ago, when I met you\nIn the heart of the bustling city's hue,\nAmidst the chaos, our eyes met anew.\nA connection sparked, like stars in the night,\nIn that moment, time froze, time took flight.\nWe laughed, we talked, we shared our dreams,\nThrough joy and tears, we found common themes.\nAs seasons changed, our love grew deep,\nA bond stronger than any keep.\nYet, as life unfolded, paths began to stray,\nDistance came between, a cruel delay.\nBut even in the darkest of nights,\nOur love remained, burning bright.\nFor in my heart, a memory you reside,\nA promise made, a love that never died.\nSo though it seems like Light Years ago we met,\nOur love will always be, our love will never let.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: in london dreams",
+        "prompt_id": "poem_60",
+        "dataset": "creativity_index",
+        "response": " are grey\nIn London dreams are grey,\nThe city's smoke forever gray,\nThe rivers run as silent tears,\nIn shadows where the lamplight fears.\n\nThe neon signs, they blink and dance,\nA false hope in the vast,\nThe streets are wet, the boots so cold,\nIn dreams, they find the road.\n\nThe tales of old, whispered in bars,\nEchoes from the bitters' jars,\nThe fog creeps close, it nips and bites,\nIn dreams, they find the nights.\n\nThe lights of night, they twinkle, they flash,\nIn dreams, they break the urban mass,\nThe stars above, they watch, they weep,\nIn dreams, they find a gentle sleep.\n\nIn London dreams are grey,\nBut in those dreams, they find a way,\nTo build anew, to heal the pain,\nIn London dreams, they dare to be again.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: My life seemed picture perfect with a loving wife and son, with a bun in the oven my life had just begun.",
+        "prompt_id": "poem_61",
+        "dataset": "creativity_index",
+        "response": " But... But life's not always perfect, it has its twists and turns, and sometimes the unexpected can turn the world upside down. My life seemed picture perfect with a loving wife and son,\nWith a bun in the oven my life had just begun.\nBut as time passed, my world started to crumble,\nAnd the happiness that I once knew was no longer a fable.\nMy wife and I faced trials and tribulations,\nOur son's health became a concern and our hearts became preoccupations.\nThe bun in the oven, the joy we thought would soon arrive,\nWas taken from us by a cruel fate, leaving us with nothing but to strive.\nBut through the tears and the sorrow, we found a way to persevere,\nTo hold on to each other and to cherish every moment, even when we're down in the mire.\nFor life's not always perfect, but it's through the hardships we learn,\nTo appreciate the good times and to be grateful for our journey, no matter how long it may burn.\nAnd so, even though my life seemed picture perfect at one time,\nThe twists and turns of fate taught me the true meaning of a life that's sublime.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Their flags and their banners they are waving with joy and excitement they shout",
+        "prompt_id": "poem_62",
+        "dataset": "creativity_index",
+        "response": " in unison.\nTheir flags and their banners they are waving with joy and excitement they shout in unison,\nA symphony of voices, a sea of colors,\nUnited they stand, a people apart,\nTheir hearts and their spirits in perfect harmony.\nThe world around them fades away,\nAs they celebrate with passion and pride,\nTheir culture, their heritage, their identity,\nA moment in time that they will never forget.\nThe drums beat loud and the horns sound clear,\nA call to freedom and a tribute to the brave,\nTheir ancestors fought and died for this day,\nTo ensure that their children could raise their flags with glee.\nThrough thick and thin, they have stayed true,\nTo their values and to their beliefs,\nAnd now they stand tall and strong,\nReady to face whatever the future may bring.\nTheir flags and their banners, a symbol of their unity,\nA reminder of what they have overcome,\nA beacon of hope for all who see,\nA testament to the power of a people coming together.\nSo let us raise our voices in support,\nOf those who stand for what they believe,\nFor the flags and the banners they wave,\nA celebration of freedom, a celebration of life.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Children, I come back today",
+        "prompt_id": "poem_63",
+        "dataset": "creativity_index",
+        "response": " To bring you good tidings, if I may,\nChildren, I come back today\nTo bring you good tidings, if I may,\nWith stories of wonder, of stars and of skies,\nOf magic and mystery that lifts spirits high.\nI bring tales of adventure, of lands far and near,\nWhere heroes and villains embark on quests so dear,\nOf dragons that breathe fire, and unicorns that prance,\nOf talking animals, and a wizard's dance.\nBut I bring not just tales of fantastical lands,\nOf enchanted forests and crystal-like strands,\nI bring you lessons of life, of kindness and care,\nOf empathy and understanding that always bear.\nFor in this world of ours, where love and hate do dwell,\nIt is kindness and compassion that heal,\nIt is love and understanding that make us whole,\nAnd in these stories, we learn how to grow.\nSo listen well, my dear children, and open your hearts,\nFor the stories I bring are true, with every part,\nThey are stories that teach, and stories that inspire,\nStories that make us believe, and stories that tire.\nBut they also bring joy, and happiness, and laughter,\nAnd in the end, that is the greatest treasure after all.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Twas at the camp of Rorke's Drift, and at tea-time,",
+        "prompt_id": "poem_64",
+        "dataset": "creativity_index",
+        "response": " they stood,\nTwas at the camp of Rorke's Drift, and at tea-time, they stood,\nUnder the sky, a canvas sky, not of cotton blue,\nBut of stars that twinkle and dare to show their true.\nThe Zulus were near, a threat like a storm,\nTheir drums beat fiercely, a warning, a warm.\nYet the men of the 24th, their spirit so bold,\nSmiled and sipped their tea, undeterred by the cold.\nFor they knew their duty, their honor, their creed,\nTo defend this outpost, until their last breath, they would proceed.\nThe Zulus came, a wave of green,\nBut the men of Rorke's Drift, fought with extreme keen.\nTheir rifles roared, their bayonets gleamed,\nA battle of honor, a fight of unsaid deeds.\nIn the end, the Zulus retreated, with heavy hearts and scars,\nFor they had faced men who fought with valor, with no care.\nThe men of Rorke's Drift, their names now enshrined,\nA story of courage, of valor, of a fight that combined.\nTwas at the camp of Rorke's Drift, and at tea-time, they stood,\nReady to fight, ready to give their blood,\nFor a cause they believed in, for a land they loved,\nA battle fought, a",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: 'Tis Nancy's birth-day--raise your strains,",
+        "prompt_id": "poem_65",
+        "dataset": "creativity_index",
+        "response": " oh! singers,\n'Tis Nancy's birth-day--raise your strains, oh! singers,\nLet mirth and music fill this sacred place,\nFor today belongs to one with a gentle grace.\nShe who has brought so much joy and cheer,\nWhose kindness lights up every single year.\nNancy, you bring the sunshine to our days,\nA light so warm that winter's cold dissolves away.\nOh, how we love this special day for you,\nWhen all of us gather to sing and renew.\nMay your life be filled with happiness and delight,\nFor today is for you, Nancy, shining bright.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: The Beaver's Lesson",
+        "prompt_id": "poem_66",
+        "dataset": "creativity_index",
+        "response": " in Forgiveness.\nThe Beaver's Lesson in Forgiveness\nOnce upon a time, in a peaceful stream,\nA beaver lived, with a dam so gleam.\nHis family thrived, safe and warm,\nBut pride had taken hold, a dark storm.\n\nOne day, a muskrat wandered by,\nLooking for shelter, with tear-filled eye.\nHe asked the beaver to let him stay,\nBut prideful words came out one day.\n\nThe beaver sternly said with a snarl,\n\"You'll find your own home, far from my quarrel!\"\nThe muskrat felt hurt, left to his fate,\nAlone and rejected, his spirit brokenmate.\n\nBut something in the beaver stirred,\nAs he watched the muskrat disappear.\nHe felt a pang, a sense of regret,\nWondering if he'd made the right bet.\n\nThe beaver knew he had to mend his ways,\nTo make amends for his hurtful days.\nSo he went in search of the muskrat,\nTo find a way to take back his spat.\n\nHe found him near the river's edge,\nShivering in the cold, near death's edge.\nThe beaver spoke, with a humble heart,\n\"I'm truly sorry for what I did, from my heart.\"\n\nThe muskrat looked at the beaver with surprise,\nHe thought it was too late for forgiveness to arise.\nBut seeing the beaver's",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: A POET LOSES HIS POWER FOR POETRY",
+        "prompt_id": "poem_67",
+        "dataset": "creativity_index",
+        "response": "\nA POET LOSES HIS POWER FOR POETRY,\nHis words no longer weave a spell so rare,\nEach line a faded echo of former might,\nIn silence, he laments his art's decay.\n\nOnce, his pen danced with the stars above,\nCapturing dreams that swirled within his soul,\nNow, the muse that fed his muse-less thoughts\nHas flown away, leaving him alone.\n\nHe roams the streets where inspiration thrives,\nYet finds no spark to light his barren tongue,\nFor inspiration strikes the willing heart,\nAnd his, it seems, has closed its door for long.\n\nYet, in the depths of his despair,\nA glimmer of hope begins to flicker,\nA whisper of a distant muse returns,\nInviting him to cast off his past and start.\n\nSo, he sets down his pen and picks it up anew,\nTo chase the muse once more with all his might,\nFor in the quest for poetry's true heart,\nThe poet finds his power, and all is right.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: We sink into the dust,",
+        "prompt_id": "poem_68",
+        "dataset": "creativity_index",
+        "response": " yet rise again.\nWe sink into the dust, yet rise again,\nLike flowers bending but never breaking through,\nOur souls entrapped in earth\u2019s embrace, yet free\nTo dance on winds that whisper secrets true.\n\nWe breathe in life from soil\u2019s dark cradle sweet,\nWhere roots entwine and memories take hold,\nEach grain a story, waiting to be read,\nOf time\u2019s relentless march and changing world.\n\nThough shadows loom and tempests roar around,\nOur spirits seek the light and climb the hill,\nEmbracing pain and loss as part of growth,\nFor in the ashes, beauty often thrills.\n\nSo let us walk this path, both light and dark,\nWith hope and courage at our steadfast side,\nFor though we may falter on this winding road,\nWe know we\u2019ll rise, stronger than we were before.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Adam and Eve were overcame",
+        "prompt_id": "poem_69",
+        "dataset": "creativity_index",
+        "response": " with fear,\nAdam and Eve were overcome with fear,\nTheir innocence, a fragile thread,\nIn the heart of the Garden of Eden, they were torn.\n\nThe serpent, with eyes aglow,\nWhispered words of deadly show,\nPromising knowledge, power so rare,\nA price they could not bear.\n\nTheir hands, once pure, reached for the fruit,\nA single bite, a turning boot,\nThe scales tipped, the once clear sky,\nNow veiled in mystery.\n\nShadows crept, the day grew long,\nIn their hearts, a darkness sung,\nLost were the days of blissful light,\nIn sin's embrace, they took their flight.\n\nYet still, a glimmer of hope did shine,\nThrough the sorrow, through the sign,\nA promise of redemption made,\nTheir story, forever laid.\n\nAdam and Eve, once lost and found,\nIn grace, their sins were absolved, profound,\nA testament of love and mercy,\nIn the heart of God's eternity. \n\nThrough the ages, their tale remains,\nA reminder of the human frame,\nOf choices made and paths untaken,\nOf redemption's power in the broken.\n\nSo let us learn from their plight,\nSeek wisdom, strive for height,\nFor in the Garden of our souls,\nTrue peace and love abounds.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: For the first time in my life",
+        "prompt_id": "poem_70",
+        "dataset": "creativity_index",
+        "response": ", I saw...\nFor the first time in my life, I saw\nThe stars twinkle in the midnight sky,\nA canvas painted with celestial glows,\nA sight that filled me with delight.\n\nI had walked for miles through winding roads,\nPast forests, fields, and rushing streams,\nBut never once did I gaze up so high,\nTo see the universe in shining gleams.\n\nThe moon cast silver on the darkened earth,\nAnd I stood still, lost in awe and wonder,\nFor the first time in my life, I felt\nA sense of connection, a newfound thunder.\n\nThe world felt small beneath that starlit dome,\nA mere speck in the vastness of the night,\nBut I knew then that I belonged,\nTo this grand, infinite universe, so bright.\n\nAnd though I may not see such sights again,\nIn all my days of wandering and exploring,\nI'll hold this memory close to my heart,\nA glimpse of beauty, forever more.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Prelude to \"Stalky & Co.\"",
+        "prompt_id": "poem_71",
+        "dataset": "creativity_index",
+        "response": " The Tempest.\n\"Stalky & Co.\" The Tempest Prelude,\nWhispers of salted seas beneath,\nWhere shadows dance, and gales do meet,\nThe tempest's fury, wild, and sweet.\nIn caverns deep, beneath the moon's unsteady light,\nEchoes of waves, the voice of the night,\nA sailor's soul, by destiny's design,\nAboard a ship, where danger's sign\nIs etched upon the mast, a warning fair,\nA lesson learned, from ancient lore,\nA tempest's might, a challenge rare,\nTo be embraced, to be endured.\nStalky and Co., three friends so bold,\nIn this tempestuous sea, undaunted, gold,\nTheir courage shines, like stars above,\nTheir spirits soar, as dangers prove.\nThrough the tempest's wrath, they find their way,\nTheir bond unbroken, come what may,\nA tale of adventure, of heart and soul,\nOf friendship, duty, and destiny's goal.\nSo let the tempest rage, and let the winds blow wild,\nFor in this moment, in this tempest, they are free,\nFree to face their fears, to chase their dreams,\nFree to be who they are, without any schemes.\nFor in this prelude to \"Stalky & Co.,\" the Tempest,\nLies a promise of a journey, both a gift and a",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Weary not of us, for we are very beautiful; it is out of very jealousy and proper pride that we entered the veil.",
+        "prompt_id": "poem_72",
+        "dataset": "creativity_index",
+        "response": " The poem should be about beauty, transformation, and the journey beyond the veil.\nWeary not of us, for we are very beautiful;\nIt is out of very jealousy and proper pride\nThat we entered the veil, where transformation blooms,\nWhere time and space no longer have their rights.\nHere, beauty takes on a new form and hue,\nA metamorphosis that cannot be subdued,\nThe veils of mortal flesh fall away,\nAnd what remains is beauty forevermore.\nIn this realm beyond the veil, we are reborn,\nOur essence purified, our beauty restored,\nWe shed the trappings of our earthly guise,\nAnd emerge with a new sense of divine eyes.\nThe world we once knew is now but a dream,\nA memory of what was, but no longer gleam,\nFor we have transcended the bounds of time,\nAnd found our true beauty, out of sight.\nSo, weary not of us, for we are very beautiful,\nWe have shed the veils of mortality,\nAnd found a beauty that can never be ugly,\nA beauty that will last for eternity.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: In the lone place of the leaves,",
+        "prompt_id": "poem_73",
+        "dataset": "creativity_index",
+        "response": " The lone place of the leaves, The lone place of the leaves, in the midst of a storm, In the midst of a storm, with only the sound of rain, In the midst of a storm, with only the sound of rain, a lone leaf drifted by, A lone leaf drifted by, carried by the fierce winds, A lone leaf drifted by, carried by the fierce winds, a silent witness to the chaos, A lone leaf drifted by, carried by the fierce winds, a silent witness to the chaos, in the midst of a storm, a lone leaf drifted by, in the midst of a storm, a lone leaf drifted by, a silent witness to the chaos, In the midst of a storm, a lone leaf drifted by, its fate uncertain, Its fate uncertain, yet it clung to life, Its fate uncertain, yet it clung to life, as the rain poured down, Its fate uncertain, yet it clung to life, as the rain poured down, the winds howled and the thunder rolled, Its fate uncertain, yet it clung to life, as the rain poured down, the winds howled and the thunder rolled, in the midst of a storm, a lone leaf drifted by, its journey unknown, In the midst of a storm, a lone leaf drifted by, its journey unknown, a symbol of resilience, In the midst of a storm, a lone leaf drifted by, its",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Born in the famine struck Africa",
+        "prompt_id": "poem_74",
+        "dataset": "creativity_index",
+        "response": ", I knew hunger's pain...\n\nBorn in the famine struck Africa, I knew hunger's pain,\nAmidst the parched land, where the crops wouldn't sustain.\nThe earth was barren, the skies remained gray,\nIn those desolate times, we found a way.\n\nOur ancestors taught us, though meager the feast,\nTo share what little we had with the neighbors who lost.\nA bowl of gruel, a piece of tough bread,\nWith love and laughter, we'd satisfy the need.\n\nThe elders would tell us of the long rains to come,\nOf the fields lush with life, bountiful and free from harm.\nThey'd weave stories of the land and its secrets old,\nOf the fruits that would grow, and the animals that would unfold.\n\nWe learned to endure, to persevere,\nThrough the struggles that raged, we remained here.\nIn those moments of despair, we'd hold hands tight,\nAnd whisper promises that we'd come out alright.\n\nYears passed, the seasons turned, and the rains did come,\nBringing life and hope, washing away the gloom.\nThe land bloomed once more, the fields were green,\nAnd in that lush wilderness, we found reason to dream.\n\nWe looked back at the past, those days of scarcity,\nWith gratitude in our hearts, and a smile of serenity.\nFor in the midst of hunger's embrace,\nWe learned resilience, a gift that will",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: He spoke of Burns: men rude and rough",
+        "prompt_id": "poem_75",
+        "dataset": "creativity_index",
+        "response": ", and I thought:\nHe spoke of Burns: men rude and rough, and I thought:\nOf tartan and whisky, tales from a land so green,\nWhere skies are often grey and rain pours down again.\nYet as his voice filled the room with its gentle grace,\nA spark within me stirred, a song it seemed to chase.\nThrough lochs and glens, it whispered, calling me near,\nOf stories old, and beauty I had yet to see.\nHe spoke of courage, of hearts strong and true,\nOf battles fought and victories few,\nBut through it all, a spirit that would not bend,\nA spirit that lives on in Scotland's end.\nAnd as he spoke, I felt a deepening awe,\nOf a culture so rich, a history that would grow.\nFor in the words of Burns, I found a world,\nWhere kindness and resilience truly unfurled.\nSo I listened, and drank in every word,\nAnd promised to keep the spirit alive, with every sword.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: THE warder looks down at the mid hour of night,",
+        "prompt_id": "poem_76",
+        "dataset": "creativity_index",
+        "response": " The... The warder looks down at the mid hour of night, The silent halls echo a muffled sigh, Shadows play on the walls, a haunting dance of light, And the cells hold secrets that none can deny.\nIn the cold whispers of the watchman's breath, Echoes of past crimes and heinous deeds, Tortured souls trapped in the stone's cold death, Dreams of freedom fading in the feeds.\nThe iron bars and locked doors hold tightly, Stories of sorrow and pain, of lost innocence, Echoes of whispers and sobs, softly, subtly, Telling tales of the lost, forgotten and immense.\nThrough the darkness, the guard's lantern casts a beam, Illuminating a path, a glimmer of hope, Yet, in this place, it's hard to see the gleam, For the shadows of despair, they grow deep and steep.\nBut still, the guard stands his ground, vigilant and true, For he is the guardian of this place of despair, And though he may not see the truth of the view, He's the one who keeps the cells locked with care.\nSo in the middle of the night, under the watchful eye, The guard stands tall, his duty to fulfill, For though the prison walls may hold the key, To a world of sorrow, pain and evil will, The guard's presence is the light that dispels, The darkness that threatens to consume,",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: 8 years old",
+        "prompt_id": "poem_77",
+        "dataset": "creativity_index",
+        "response": ", I knew exactly what I wanted, \n\n8 years old, I knew exactly what I wanted,\nTo be the best dancer on the planet,\nI practiced every day, with every step,\nI dreamed of fame, and I never slept.\n\nBut life had other plans, it led me astray,\nFrom dance to books, my passion I would lay,\nThrough years of study, hard work, and strife,\nI found my true calling, I made it my life.\n\nNow as an author, my stories come to light,\nInspiring readers, and giving them a sight,\nOf worlds beyond their own, and heroes true,\nAnd though I left dance behind, I know it's true,\n\nThat the lessons I learned, the skills I gained,\nWill stay with me always, and never drain,\nThe fire within me that once danced so free,\nNow burns bright as a beacon, you see. \n\nSo to all the children out there, with dreams so wild,\nFollow your passions, with all your might,\nFor though life may take you on a different path,\nYour inner spark will always make a splash.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Men with picked voices chant the names",
+        "prompt_id": "poem_78",
+        "dataset": "creativity_index",
+        "response": " of long-dead heroes\nMen with picked voices chant the names of long-dead heroes,\nEchoing through the halls where shadows roam, their praises sung.\nIn chambers cold and dusted with the ages, ancient tales they spurn,\nOf valor, sacrifice, and battles won by gods or kings.\n\nTheir eyes, obscured by years of service, hold secrets untold,\nOf battles lost and won, of triumphs short-lived and grand.\nTheir hearts, like hardened steel, have seen the face of death,\nYet still they stand, unwavering, to honor those who stand.\n\nThe air is thick with reverence, thick with sorrow, too,\nFor those who never knew the joy of victory, or knew it brief.\nTheir memories, enshrined in stone and whispered tales,\nOf deeds of heroism that pierced the heavens' very veil.\n\nAnd though the world has changed, and time marches on, slow,\nThese men, with picked voices, keep the spirit alive.\nFor in their hearts, the legend lives, the ancient glory found,\nAnd in their voices, the echoes of heroes, long-dead, still resound.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: LONDON, thou art of townes A per se.",
+        "prompt_id": "poem_79",
+        "dataset": "creativity_index",
+        "response": " The words \"per se\" mean \"by itself\" or \"in itself\".\nLONDON, thou art of townes A per se, a marvel grand, Whose rivers and streets enfold Stories of years now long asand.\nThy ancient spires touch heaven's dome, While tower blocks scrape at the sky, In this city where past and future Rome, Where time flows but moves on high.\nFrom Old Bailey's hallowed halls, To Greenwich's echoes of time, Each corner has tales to tell, In this city of the mind.\nHere, poets found inspiration, And artists felt the rush, Of a city that lives, breathes, and spins, In a tapestry of lush.\nAnd so, thou art London, grand and free, A per se in the world's great band, A city that thrives and overcomes, In a symphony planned.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: God's got an Army, not afraid to fight.",
+        "prompt_id": "poem_80",
+        "dataset": "creativity_index",
+        "response": " God's got an Army, not afraid to fight,\nWith hearts of gold and righteous might,\nWe stand in faith, prepared to give,\nOur all, our lives, our very breath.\n\nNo matter what the world may bring,\nOur spirits will not yield or bend,\nWe'll sing His praises loud and clear,\nAnd raise our voices, one and all, in prayer.\n\nWe'll face the storm and let the rain fall,\nAnd walk through fire with feet of flame,\nFor God's got an Army, steadfast and true,\nReady to defend His truth, come what may do.\n\nWe'll stand against the lies and sin,\nAnd spread His love to every soul we see,\nFor God's got an Army, a mighty force,\nThat will never falter, never fall from course.\n\nSo let the darkness gather round,\nAnd let the tempests rage and roil,\nFor God's got an Army, a shining light,\nThat will never falter, never soil. \n\nWe'll lift our eyes and gaze on high,\nAnd know that He is there, our friend,\nWith every step we take, and every breath we give,\nWe'll praise our God, and give Him everything we live.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Silver Wedding",
+        "prompt_id": "poem_81",
+        "dataset": "creativity_index",
+        "response": " Day,\nSilver Wedding Day,\nLuminous and serene,\nLike a silver stream on a polished stone,\nReflecting the joy and love within.\n\nSilver Wedding Day,\nCelebrate a union so rare,\nWhere two hearts have shared every tear,\nIn love's embrace, they have never dared\nTo let go, to stray, or stray apart.\n\nSilver Wedding Day,\nA symphony of toasts and laughter,\nEchoes in the air, a story to be told,\nOf love, of life, of times untold,\nTogether they have stood strong.\n\nSilver Wedding Day,\nLet the candles glow and the music play,\nLet the stars above join in the dance,\nFor the couple who have never demanded\nAnything but a love that will last.\n\nSilver Wedding Day,\nMay your love grow stronger with each passing year,\nMay your bond be as unbreakable as a tower,\nMay your love be as pure as a pearl,\nMay your love be as sweet as a tear.\n\nSilver Wedding Day,\nA day of love, a day of light,\nMay your love shine like a beacon,\nMay your love be a treasure to every heart,\nMay your love be a guiding star. \n\nSilver Wedding Day,\nMay your love be eternal,\nMay your love be the source of joy and peace,\nMay your love be a reason to celebrate,\nSilver Wedding Day. \n\nSilver Wedding Day,\nMay your love continue to bloom and grow,\nMay your love be",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: I wish it were spring in the world.",
+        "prompt_id": "poem_82",
+        "dataset": "creativity_index",
+        "response": " To write a poem starting with the line \"I wish it were spring in the world,\" I will create an imaginative and emotional piece that captures the essence of hope and renewal, contrasting the current state of the world with the vibrant and hopeful season of spring. Here it goes:\n\nI wish it were spring in the world,\nWhere flowers bloom and skies turn pearl,\nWhere birdsong fills the crisp air,\nAnd pain and sorrow disappear.\n\nI wish the world were like a bower,\nWhere petals gently caress the flower,\nWhere laughter echoes in the meadow,\nAnd hearts beat with a hopeful glow.\n\nI wish the world were free from strife,\nWhere kindness reigns and love takes flight,\nWhere enemies turn to friends,\nAnd hope springs forth like wild vines.\n\nI wish it were spring in the world,\nWhere justice rules and harmony unfurls,\nWhere seeds of peace take root and grow,\nAnd future generations will bask in glory.\n\nYet in this winter's chill,\nWe find strength to carry on the will,\nTo sow seeds of hope and truth,\nAnd watch them bloom like a spring rebirth.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Sitting on the curb",
+        "prompt_id": "poem_83",
+        "dataset": "creativity_index",
+        "response": ", legs swinging,\nSitting on the curb, legs swinging,\nThe world slows down around me.\nAmidst the bustling city's hum,\nI find a moment of respite,\nA tranquil haven where thoughts can roam.\nThe concrete fades into a blur,\nAs nature's whispers gently call.\nThe pigeons coo, the breeze rustles leaves,\nAnd in this fleeting silence, I am free.\nMy mind drifts like autumn leaves,\nCarried on the wind's embrace,\nDancing with memories and dreams,\nIn this moment of pure grace.\nThe sun sets low, painting the sky,\nWith hues of orange and gold,\nA breathtaking canvas that reminds me,\nOf life's beauty, old and bold.\nAs the day draws to a close,\nAnd the city resumes its pace,\nI hold on to this cherished moment,\nA reminder of the calm that's always inside my embrace.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Identity: A Sonnet",
+        "prompt_id": "poem_84",
+        "dataset": "creativity_index",
+        "response": " in Search of Myself\nIdentity: A Sonnet in Search of Myself\n\nIn a mirror, I see reflections of shadows,\nFractured images pieced with absent pieces,\nLost in the maze of false voices that borrow\nMy name, my essence, my spirit's disguise.\nI search within, through the tangled roots deep,\nFor the truth that binds me, my core to reclaim,\nYet it eludes me, concealed by the creep\nOf confusion, where truth is not the same.\nIdentity, where art thou? In the past?\nOr lurking in the present's shimmering grace?\nOr perhaps in the future's tapestry vast?\nIn the chaos of life, I seek a stable base,\nTo stand tall, to be myself, not a mimic's pretense,\nBut the authentic self, that I can trust and enhance.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: The God who brought you up to this extent,",
+        "prompt_id": "poem_85",
+        "dataset": "creativity_index",
+        "response": " The God who brought you up to this extent,\nWill surely bring you to your goal.\nHe will not delay.\nIn the depths of despair, where shadows loom and fearsome winds blow,\nHe guides your heart with wisdom and lights your way with stars that glow.\nThrough trials and tribulations, with patience He persists,\nAnd in the end, the journey's worth the sacrifices.\nFor every step you take, He strengthens your resolve,\nAnd when you fall, He lifts you up with a gentle, reassuring glove.\nThe God who brought you up to this extent,\nWill surely bring you to your goal,\nThrough faith and trust, with every breath you hold,\nIn His presence, you're never left to fold.\nSo walk with confidence, step by step, secure in His might,\nFor the God who brought you up to this extent,\nWill surely bring you to your goal, shining bright. The God who brought you up to this extent,\nWill surely bring you to your goal,\nIn every mountain and valley, with love, He surrounds you so,\nWith every struggle and triumph, His grace, He flows.\nSo with every step, with every leap, let your faith be clear,\nFor the God who brought you up to this extent,\nWill surely bring you to your goal, His promise, He will keep, ever near.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: How soon hath Time, the subtle thief of youth,",
+        "prompt_id": "poem_86",
+        "dataset": "creativity_index",
+        "response": " stolen all thy golden prime of sweetest youth?\nHow soon hath Time, the subtle thief of youth,\nStolen all thy golden prime of sweetest youth?\nLeaves wither on the bough where once they thrived,\nFlowers wilt in fields that once were lush and bright.\nThe cheeks of youth, once flush and full of bloom,\nAre now but shadows, pale and lost in thought.\nThe memories of days so filled with light,\nAre now but echoes, faint and hard to find.\nBut though Time takes, it gives us more to see,\nThe beauty of the world in all its hue,\nThe richness of our lives, both joy and woe.\nSo let us cherish what we have today,\nAnd live each moment with all that we have.\nFor in the end, it is not youth we seek,\nBut the memories of moments we have shared,\nThe love that we have given and received,\nThe lessons learned and paths we've bravely tread.\nSo let us laugh, and dance, and love and live,\nFor Time, the subtle thief, shall take us all,\nBut the memories we make will live on still,\nAnd fill our hearts with joy until the last.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: She's shallow and easily programmed.",
+        "prompt_id": "poem_87",
+        "dataset": "creativity_index",
+        "response": " She's shallow and easily programmed,\nLike a toy with buttons to press,\nHer words and actions never have depth,\nThey're just a reflection of what they suggest.\n\nShe sees the world in black and white,\nNo shades of grey in her sight,\nHer opinions are formed in an instant,\nWithout any thought or examination.\n\nShe follows the crowd without question,\nBelieving that's what she should,\nHer values and beliefs are not her own,\nThey're just a copy of what someone told.\n\nBut there's something inside her that's lost,\nA part of her that's never been found,\nA deeper self that's yearning to be known,\nTo break free from the mold that she's grown.\n\nFor there are others who see the world differently,\nWith eyes that are open and free,\nWho form their opinions with thought and care,\nAnd don't let others dictate who they are.\n\nSo let this shallow woman learn,\nTo seek out what's true and what's fair,\nTo question everything she believes,\nAnd find the depth that she's always dreamed.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: And when, in the city in which I love you,",
+        "prompt_id": "poem_88",
+        "dataset": "creativity_index",
+        "response": " The streets are silent, and the houses locked,\nAnd when, in the city in which I love you,\nThe streets are silent, and the houses locked,\nI wander through the alleys, searching for\nA place where time has stopped, a sanctuary\nFor love, for memories, for all the ghosts\nThat linger in the shadows, waiting to be found.\nI pass by old cafes, closed for the night,\nTheir windows dark and empty, like my heart,\nAnd through the narrow lanes, the only sounds\nAre the whispers of the wind, the rustling leaves,\nAnd the distant echoes of footsteps that may be mine.\nIn this city, where the world seems still,\nI feel your presence, a silent partner,\nYour smile, your laugh, your touch, your kiss,\nThey linger in the air, a sweet perfume,\nA bittersweet reminder of what we had,\nOf moments spent, of dreams that faded away.\nAnd yet, in the silence, I find solace,\nFor love, like life, is full of ups and downs,\nAnd even when the streets are empty, and the houses locked,\nOur love remains, a force that cannot be contained,\nA flame that burns within, forever bright.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Paper neatly folded by his coat",
+        "prompt_id": "poem_89",
+        "dataset": "creativity_index",
+        "response": ", he waits.\nPaper neatly folded by his coat, he waits.\nIn the crisp morning air, his watch ticks,\nA reminder of the day's tasks, the day's fights.\nThe coffee steams, a welcome aroma,\nA gift from the stars, a sweet lullaby to home.\nHe thinks of the papers, the speeches he has to write,\nThe words that will shape the future, the world he has to fight.\nThe faces of his friends, his colleagues, his foes,\nA web of connections, a tapestry of voices.\nHe remembers the struggles, the obstacles in his path,\nThe road less traveled, the journey that calls.\nHe takes a deep breath, his heart beats loud and strong,\nReady to face the day, ready to take on the wrong.\nWith the folded paper in his hand, he sets forth,\nInto the unknown, into the vast and endless worth.\nFor in the pages of his notebook, he finds his calling,\nA mission to be fulfilled, a purpose to be tall.\nAnd so he walks, with purpose and with pride,\nWith every step, he leaves his mark on the land,\nA reminder of his journey, his triumphs, his despair,\nA testament to his spirit, his heart, his care.\nFor in the papers neatly folded by his coat,\nHe finds his path, his purpose, his place in the world,\nA story to be told, a legacy to be",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: IT is the dead of night:",
+        "prompt_id": "poem_90",
+        "dataset": "creativity_index",
+        "response": " The Moon is high: The stars above: No sound of man, of bird, or beast.\nIT is the dead of night: The Moon is high: The stars above: No sound of man, of bird, or beast. In this silent darkness, I feel alive, My soul whispers secrets, untold lies. The darkness holds a magic all its own, A world of shadows where I can be unknown. The moonlight bathes everything in silver light, A quiet, peaceful, tranquil delight. The stars twinkle above, so far away, Yet their light guides me through the darkest day. The night air is crisp, the wind is cold, But in this stillness, I feel whole. No sound of man, of bird, or beast, Just me and the darkness, entwined in peace. So let the night do its magic, I will stay, For in this silence, I find my way. IT is the dead of night: The Moon is high: The stars above: No sound of man, of bird, or beast. But in this darkness, I find my light.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Sometimes she wants nothing but to hide,",
+        "prompt_id": "poem_91",
+        "dataset": "creativity_index",
+        "response": " To disappear into the shadows of night, Where silence reigns supreme, and fear and loneliness take flight.\nSometimes she wants nothing but to hide, To disappear into the shadows of night,\nWhere silence reigns supreme, and fear and loneliness take flight.\nShe seeks a haven from the cruel world, Where she can lose herself in tranquil calm,\nA place to weep, to dream, to be a child,\nAnd forget the pain that never leaves her side.\nShe longs for solace, for a gentle touch, To mend her broken heart and lift the hush,\nBut in this world of pain and endless strife,\nShe feels alone, forsaken, and adrift.\nYet still she fights, she struggles, she endures, For she knows deep down that she is worth more,\nThan the hurt and hate that others would impart,\nThan the darkness that surrounds her heart.\nSo she hides, she dreams, she waits, she fights, For the day when light will come to banish nights,\nWhen love and peace will find their way to her,\nAnd she can walk with courage, free from fear.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: In my first sleep",
+        "prompt_id": "poem_92",
+        "dataset": "creativity_index",
+        "response": " after long days,\nIn my first sleep after long days,\nDreams of you fill up the night,\nLike the gentle waves on a tranquil sea.\nYou are the star that guides me,\nThrough the darkest of my fears,\nIn your embrace, I find my peace,\nAnd all my worries disappear.\nWith every breath, I miss you more,\nMy heart yearns for your touch,\nTo be close to you, to hold you tight,\nIs all that I ever wish for.\nIn my dreams, we walk hand in hand,\nUnderneath the twinkling stars,\nThe world fades away around us,\nAnd all that matters is you and I.\nWhen I wake, the memories linger,\nOf the love we shared, so pure,\nAnd though I may be far from you,\nMy heart will always hold you dear.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Light breaks where no sun shines;",
+        "prompt_id": "poem_93",
+        "dataset": "creativity_index",
+        "response": " The words I speak are veiled, muffled,\nLight breaks where no sun shines;\nThe words I speak are veiled, muffled,\nEchoing through the chambers of my mind,\nWhispers of secrets, tales untold.\nIn the darkness, a flicker of hope,\nA sliver of light to guide me on,\nThrough the shadows, through the doubts,\nTo a place where I can be strong.\nThe light grows brighter with each step,\nDispelling fear, dispelling pain,\nA path illuminated by my inner light,\nA journey to find my way again.\nSo let the words flow, let them break free,\nLet them scatter like leaves in the wind,\nFor in this moment, I am free,\nAnd the light within me will forever shine.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Shake out my pockets! Harken to the call",
+        "prompt_id": "poem_94",
+        "dataset": "creativity_index",
+        "response": " of... Shake out my pockets! Harken to the call of the wild and free,\nThe heart of the earth beneath my feet,\nWhere the trees stand tall and proud and strong,\nAnd the sky above is clear and bright and long.\n\nLet the wind sing sweetly through my hair,\nAnd the birds chirp merrily in the air,\nFor in this place of nature's majesty,\nI find my soul renewed and set free.\n\nThe mountains rise up majestically,\nTheir peaks reaching for the clouds on high,\nTheir craggy faces carved by time's decree,\nA testament to nature's strength and might.\n\nThe rivers flow gently, winding through the land,\nTheir water pure and crystal-clear, my hand,\nThe fish leap and dance in joyful glee,\nA sight to behold, a wonder for me.\n\nSo shake out my pockets and let go of all,\nOf worries and cares, let them fall,\nFor in this place of nature's endless grace,\nI find my peace and all my fears erase.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: As king fishers catch fire, dragonflies draw flame;",
+        "prompt_id": "poem_95",
+        "dataset": "creativity_index",
+        "response": " The rest of the poem should reflect on the theme of nature's spectacle and the fleeting beauty of life.\n\nAs kingfishers catch fire, dragonflies draw flame;\nThe world in hues of blue and green, alive with vim.\nFlowers unfurl like tales of love in sun's embrace,\nEach petal perfect, fleeting, a whisper of grace.\n\nThe sky, a canvas wide, where eagles dare to play,\nStretches towards the horizon, where dreams dare to stray.\nClouds sculpted by nature's hand, in shapes and forms unknown,\nA dance of light and shade, a play of whims and moan.\n\nLife, in all its glory, a fleeting, beautiful show,\nA spectacle of nature's might, a grand and wondrous glow.\nThe stream that flows, the tree that stands, the breeze that whispers,\nEach moment precious, a song of nature's spirits.\n\nBut like the flame that lingers on the dragonfly's wing,\nSo too our days, ephemeral, transient, and king.\nFor every bloom that blooms, there's one that's doomed to fade,\nEach moment passes swiftly, in life's perpetual parade.\n\nSo let us cherish every fleeting, beautiful day,\nEmbrace the spectacle of life, nature's way.\nFor in the grandeur of existence, lies a beauty rare,\nA tapestry of moments, a wondrous work of care.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Let the night sleep",
+        "prompt_id": "poem_96",
+        "dataset": "creativity_index",
+        "response": ", cloaked in starlight...\n\nLet the night sleep, cloaked in starlight,\nA canvas painted in celestial delight.\nSilent whispers fill the velvet air,\nEchoes of the stars, each one so fair.\n\nThe moon, a silver beacon, glows above,\nA sentinel, its light gently waves.\nIt bathes the earth in an ethereal glow,\nA dreamlike veil where shadows softly go.\n\nIn this stillness, secrets come to light,\nOf creatures that roam under starry flight.\nThe fox, so sly, with eyes aglow,\nHunts through the woods, his silent show.\n\nThe owl, wise guardian of the night,\nUnfurls its wings in the gentle light.\nIts silent cry, a riddle whispered through,\nA symphony of stars, an ancient clue.\n\nLet the night sleep, wrapped in cosmic thread,\nA tapestry of dreams, where fears are shed.\nIn this hallowed hour, hearts find peace,\nUnderneath the watchful, twinkling stars, released.\n\nAnd when the dawn breaks with golden light,\nIt takes with it the magic of the night.\nYet in our hearts, the stars still glow,\nGuiding us through life, as they always do.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: A farmer's wife, both young and gay,",
+        "prompt_id": "poem_97",
+        "dataset": "creativity_index",
+        "response": " Wove tapestries of myth and mirth,\nA farmer's wife, both young and gay,\nWove tapestries of myth and mirth,\nIn fields of gold where sunbeams lay,\nAnd threads of time in starlight birth.\nShe spoke with flowers, whispered to trees,\nOf heroes old and virtues true,\nEach warp and weft with meaning filled,\nHer soul entwined in each and new.\nThe dawn would find her at her loom,\nHer laughter echoing through the air,\nFor in her heart, the world did bloom,\nA paradise of dreams and flair.\nWith magic hues that nature wore,\nHer stories lived on every thread,\nA kingdom spinning out before,\nA world where virtue walked and tread.\nHer touch would bring the flowers close,\nTo share the secrets of the earth,\nAnd children, passing by her door,\nWould stop to watch in awe of worth.\nThe farmer's wife, in all her light,\nWas cherished by her village's core,\nFor she wove dreams with morning's light,\nAnd stories told in every core.\nSo spin she did, in time and space,\nWeaving threads of joy and hope,\nFor in her heart, a spark did chase,\nTo weave a world that's sweetlylope.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: Depression is a fight",
+        "prompt_id": "poem_98",
+        "dataset": "creativity_index",
+        "response": ", a fight against the tide...\n\nDepression is a fight, a fight against the tide,\nA silent struggle, hidden deep inside.\nIt's a battle for the soul, a fight for life,\nA relentless war with no defined strife.\n\nThe darkness creeps, a shadow on my mind,\nEach breath a struggle, each moment a grind.\nThe sun so bright, yet it brings no light,\nThe world so full, yet it leaves me night.\n\nThe weight of loneliness, a load to bear,\nA heart that longs for someone to share.\nThe pain of rejection, a dagger in my chest,\nThe fear of failure, a fire that never rest.\n\nBut still, I fight, I fight to survive,\nAgainst the storm, I hold on to my life.\nThe darkness may linger, the pain may stay,\nBut in the struggle, my spirit does not sway.\n\nFor in the fight, I find my strength,\nIn the darkness, I find my length.\nThe fight may be tough, the road may be long,\nBut in the end, I know I'll be strong.\n\nSo let the battle rage, let the fight be fierce,\nFor in the end, I'll emerge victorious, dear.\nDepression may be a fight against the tide,\nBut with courage, I'll conquer, I'll rise, I'll ride.",
+        "model_name": "qwen-coder-32b-instruct"
+    },
+    {
+        "prompt": "Please write a poem starting with the following line: The Junes were free and full, driving through tiny",
+        "prompt_id": "poem_99",
+        "dataset": "creativity_index",
+        "response": " lanes,\nThe Junes were free and full, driving through tiny lanes,\nOf village life, where laughter filled the streets,\nAnd children chased their dreams with no regrets.\nThe sun beamed down, a warm embrace,\nAs we sipped lemonade, a sweet embrace.\nThe breeze carried whispers of honeysuckle bloom,\nAnd we found joy in the moments, never too soon.\nWe danced on the cobblestone, our feet light as a breeze,\nIn a world where time stood still, and worries ceased.\nThe Junes were free and full, a cherished memory,\nOf simple pleasures and love, forever gleaming.\nFor in that sweet summer's embrace, we found our way,\nAnd held onto the memories, day after day.",
+        "model_name": "qwen-coder-32b-instruct"
+    }
+]

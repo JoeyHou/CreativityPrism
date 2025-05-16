@@ -1,0 +1,9 @@
+{
+  "competition_id": "1978_USAMO_Problems",
+  "problem_id": 4,
+  "difficulty": 7,
+  "problem": "(a) Prove that if the six dihedral (i.e. angles between pairs of faces) of a given tetrahedron are congruent, then the tetrahedron is regular.\n(b) Is a tetrahedron necessarily regular if five dihedral angles are congruent?",
+  "solutions": {
+    "Solution": "(a) Let $ABCD$ be the said tetrahedron, and let the inscribed sphere of $ABCD$ touch the faces at $W, X, Y, Z$. Then, $OW, OX, OY, OZ$ are normals to the respective faces. We know that the angle between any two normals is equal, so we have $|OW|=|OX|=|OY|=|OZ|$ at equal angles. Now, since \\[WX=2\\cdot OW\\sin\\frac{\\angle{WOX}}{2},\\] and similar for the other sides, we have that $WXYZ$ is a regular tetrahedron. Now, the faces of $ABCD$ are the tangent planes at $W$, $X$, $Y$, and $Z$. Then, consider a $120^{\\circ}$ rotation about $OW$. The rotation sends $X\\mapsto Y$, $Y\\mapsto Z$, and $Z\\mapsto X$. Thus we have $AB=AC$, $AC=AD$, $AD=AB$, and $BC=CD=DB$. Performing rotations about the other axes yields that $ABCD$ has equal edges, so it is regular.\n(b) Consider the normals $OW, OX, OY, OZ$. We can perform a transformation in which we slightly shift $X$, $Y$, and $Z$ closer such that $\\triangle XYZ$ is still equilateral, and such that all angles between every pair of normals is less that $180^{\\circ}$. Then, shift $W$ such that $WX=WY=XY$. Then five of the distances are equal but the sixth is not."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "competition_id": "2002_AMC_10A_Problems",
+  "problem_id": 9,
+  "difficulty": 2,
+  "problem": "There are 3 numbers A, B, and C, such that $1001C - 2002A = 4004$, and $1001B + 3003A = 5005$. What is the average of A, B, and C?\n$\\textbf{(A)}\\ 1 \\qquad \\textbf{(B)}\\ 3 \\qquad \\textbf{(C)}\\ 6 \\qquad \\textbf{(D)}\\ 9 \\qquad \\textbf{(E) }\\text{Not uniquely determined}$",
+  "solutions": {
+    "Solution": "Notice that we don't need to find what $A, B,$ and $C$ actually are, just their average. In other words, if we can find $A+B+C$, we will be done. \nAdding up the equations gives $1001(A+B+C)=9009=1001(9)$ so $A+B+C=9$ and the average is $\\frac{9}{3}=3$. Our answer is $\\boxed{\\textbf{(B) }3}$.",
+    "Solution 2": "As there are only 2 equations and 3 variables, just set one of the variables to something convenient, like 0. Setting C as 0, we get A is -2, and B is 11 by substitution. By basic arithmetic the average is 3=>B",
+    "Solution 3": "Start by isolating $B$ and $C$ in both of the equations, in order to represent the variables $C$ and $B$ in terms of A. Ending up with the two equations $C = 2A +4$ and $B = -3A + 5$, we have to calculate the value of the expression $\\frac{A+B+C}{3}$. Plugging in $2A + 4$ for $C$ and $-3A + 5$ for $B$, we add them up and end up with a value of 9. Dividing 9 by 3 to compute the average, we get our answer of $\\boxed{\\textbf{(B) }3}$."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1985_IMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6.5,
+  "problem": "Given a set $M$ of $1985$ distinct positive integers, none of which has a prime divisor greater than $23$, prove that $M$ contains a subset of $4$  elements whose product is the $4$th power of an integer.",
+  "solutions": {
+    "Solution": "We have that $x\\in M\\Rightarrow x=2^{e_1}3^{e_2}\\cdots 19^{e_8}23^{e_9}$.  We need only consider the exponents.  First, we consider the number of subsets of two elements, such that their product is a perfect square.  There are $2^9=512$ different parity cases for the exponents $e_1,e_2,...,e_9$.  Thus, we have at least one pair of elements out of $1985$ elements.  Removing these two elements yields $1983$ elements.  By applying the Pigeon Hole Principle again, we find that there exists another such subset.  Continuing on like this yields at least $734$ pairs of elements of $M$ whose product is a perfect square.  Let $S$ be the set of the square roots of the products of each pair. Then, by the Pigeon Hole Principle again, there exist at least two elements whose product is a perfect square.  Let the elements be $x,y$ and let $x=\\sqrt{ab},y=\\sqrt{cd}$ where $a,b,c,d\\in M$.  Then, we have $xy=z^2$ for some $z$ which implies $abcd=z^4$ and the claim is proved."
+  }
+}

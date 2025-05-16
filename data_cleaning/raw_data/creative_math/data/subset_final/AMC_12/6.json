@@ -1,0 +1,11 @@
+{
+  "competition_id": "2009_AMC_12A_Problems",
+  "problem_id": 12,
+  "difficulty": 3,
+  "problem": "How many positive integers less than $1000$ are $6$ times the sum of their digits?\n$\\textbf{(A)}\\ 0 \\qquad \\textbf{(B)}\\ 1 \\qquad \\textbf{(C)}\\ 2 \\qquad \\textbf{(D)}\\ 4 \\qquad \\textbf{(E)}\\ 12$",
+  "solutions": {
+    "Solution 1": "The sum of the digits is at most $9+9+9=27$. Therefore the number is at most $6\\cdot 27 = 162$. Out of the numbers $1$ to $162$ the one with the largest sum of digits is $99$, and the sum is $9+9=18$. Hence the sum of digits will be at most $18$.\nAlso, each number with this property is divisible by $6$, therefore it is divisible by $3$, and thus also its sum of digits is divisible by $3$. Thus, the number is divisible by $18$.\nWe only have six possibilities left for the sum of the digits: $3$, $6$, $9$, $12$, $15$, and $18$, but since the number is divisible by $18$, the digits can only add to $9$ or $18$. This leads to the integers $18$, $36$, $54$, $72$, $90$, and $108$ being possibilities. We can check to see that $\\boxed{1}$ solution: the number $54$ is the only solution that satisfies the conditions in the problem.",
+    "Solution 2": "We can write each integer between $1$ and $999$ inclusive as $\\overline{abc}=100a+10b+c$ where $a,b,c\\in\\{0,1,\\dots,9\\}$ and $a+b+c>0$.\nThe sum of digits of this number is $a+b+c$, hence we get the equation $100a+10b+c = 6(a+b+c)$. This simplifies to $94a + 4b - 5c = 0$. Clearly for $a>0$ there are no solutions, hence $a=0$ and we get the equation $4b=5c$. This obviously has only one valid solution $(b,c)=(5,4)$, hence the only solution is the number $54$.",
+    "Solution 3": "The sum of the digits is at most $9+9+9=27$. Therefore the number is at most $6\\cdot 27 = 162$. Since the number is $6$ times the sum of its digits, it must be divisible by $6$, therefore also by $3$, therefore the sum of its digits must be divisible by $3$. With this in mind we can conclude that the number must be divisible by $18$, not just by $6$. Since the number is divisible by $18$, it is also divisible by $9$, therefore the sum of its digits is divisible by $9$, therefore the number is divisible by $54$, which leaves us with $54$, $108$ and $162$. Only $54$ is $6$ times its digits, hence the answer is $\\boxed{1}$."
+  }
+}

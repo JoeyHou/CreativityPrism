@@ -1,0 +1,9 @@
+{
+  "competition_id": "1997_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "Let $p_1,p_2,p_3,...$ be the prime numbers listed in increasing order, and let $x_0$ be a real number between $0$ and $1$. For positive integer $k$, define\n$x_{k}=\\begin{cases}0&\\text{ if }x_{k-1}=0\\\\ \\left\\{\\frac{p_{k}}{x_{k-1}}\\right\\}&\\text{ if }x_{k-1}\\ne0\\end{cases}$\nwhere $\\{x\\}$ denotes the fractional part of $x$. (The fractional part of $x$ is given by $x-\\lfloor{x}\\rfloor$ where $\\lfloor{x}\\rfloor$ is the greatest integer less than or equal to $x$.) Find, with proof, all $x_0$ satisfying $0<x_0<1$ for which the sequence $x_0,x_1,x_2,...$ eventually becomes $0$.",
+  "solutions": {
+    "Solution": "All rational numbers between 0 and 1 inclusive will eventually yield some $x_k = 0$. To begin, note that by definition, all rational numbers can be written as a quotient of coprime integers. Let $x_0 = \\frac{m}{n}$, where $m,n$ are coprime positive integers. Since $0<x_0<1$, $0<m<n$. Now \\[x_1 = \\left\\{\\frac{p_1}{\\frac{m}{n}}\\right\\}=\\left\\{\\frac{np_1}{m}\\right\\}.\\] From this, we can see that applying the iterative process will decrease the value of the denominator, since $m<n$. Moreover, the numerator is always smaller than the denominator, thanks to the fractional part operator. So we have a strictly decreasing denominator that bounds the numerator. Thus, the numerator will eventually become 0.\nOn the other hand, if $x_0$ is irrational, then a simple induction will show that $x_k$ will always be irrational. Indeed, the base case has been established, and, if $x_k$ is irrational, then $\\dfrac{p_{k+1}}{x_k}$ must be too, and likewise for its fractional portion, which differs from it by an integer. Hence $x_{k+1}$ is irrational, completing the proof."
+  }
+}

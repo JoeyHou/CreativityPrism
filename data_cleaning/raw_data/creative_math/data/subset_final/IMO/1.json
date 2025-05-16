@@ -1,0 +1,9 @@
+{
+  "competition_id": "2015_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Let $\\mathbb{R}$ be the set of real numbers. Determine all functions $f$:$\\mathbb{R}\\rightarrow\\mathbb{R}$ satisfying the equation\n$f(x+f(x+y))+f(xy) = x+f(x+y)+yf(x)$\nfor all real numbers $x$ and $y$.\n",
+  "solutions": {
+    "Solution": "$f(x+f(x+y)) + f(xy) = x + f(x+y) + yf(x)$ for all real numbers $x$ and $y$.\n(1) Put $x=y=0$ in the equation,\nWe get$f(0 + f(0)) + f(0) = 0 + f(0) + 0$\nor $f(f(0)) = 0$\nLet $f(0) = k$, then $f(k) = 0$\n(2) Put $x=0, y=k$ in the equation,\nWe get $f(0 + f(k)) + f(0) = 0 + f(k) + kf(0)$\nBut $f(k) = 0$ and $f(0) = k$\nso, $f(0) + f(0) = f(0)^2$\nor $f(0)[f(0) - 2] = 0$\nHence $f(0) = 0, 2$\nCase $1$\u00a0: $f(0) = 0$\nPut $x=0, y=x$ in the equation,\nWe get $f(0 + f(x)) + f(0) = 0 + f(x) + xf(0)$\nor, $f(f(x)) = f(x)$\nSay $f(x) = z$, we get $f(z) = z$\nSo, $f(x) = x$ is a solution -- fallacy\nCase $2$\u00a0: $f(0) = 2$\nAgain put $x=0, y=x$ in the equation,\nWe get $f(0 + f(x)) + f(0) = 0 + f(x) + xf(0)$\nor, $f(f(x)) + 2 = f(x) + 2x$\nWe observe that $f(x)$ must be a polynomial of power $1$ as any other power (for that matter, any other function) will make the $LHS$ and $RHS$ of different powers and will not have any non-trivial solutions. -- fallacy\nAlso, if we put $x=0$ in the above equation we get $f(2) = 0$\n$f(x) = 2-x$ satisfies both the above.\nHence, the solutions are $\\boxed{\\color{red}{f(x) = x}}$ and $\\boxed{\\color{red}{f(x) = 2-x}}$."
+  }
+}

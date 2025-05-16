@@ -1,0 +1,8 @@
+{
+  "competition_id": "1965_AHSME_Problems",
+  "problem_id": 9,
+  "problem": "The vertex of the parabola $y = x^2 - 8x + c$ will be a point on the $x$-axis if the value of $c$ is: \n$\\textbf{(A)}\\ - 16 \\qquad  \\textbf{(B) }\\ - 4 \\qquad  \\textbf{(C) }\\ 4 \\qquad  \\textbf{(D) }\\ 8 \\qquad  \\textbf{(E) }\\ 16$",
+  "solutions": {
+    "Solution": "Notice that if the vertex of a parabola is on the x-axis, then the x-coordinate of the vertex must be a solution to the quadratic. Since the quadratic is strictly increasing on either side of the vertex, the solution must have double multiplicity, or the quadratic is a perfect square trinomial. This means that for the vertex of $y = x^2 - 8x + c$ to be on the x-axis, the trinomial must be a perfect square, and have discriminant of zero. So,\n\\begin{align*}     0 &= b^2-4ac\\\\     0 &= (-8)^2-4c\\\\     c &=  64\\\\     c &= 16\\\\ \\end{align*}\nTherefore $c=16$, and our answer is $\\boxed{\\textbf{(E)}}$"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1962_AHSME_Problems",
+  "problem_id": 20,
+  "problem": "The angles of a pentagon are in arithmetic progression. One of the angles in degrees, must be: \n$\\textbf{(A)}\\ 108\\qquad\\textbf{(B)}\\ 90\\qquad\\textbf{(C)}\\ 72\\qquad\\textbf{(D)}\\ 54\\qquad\\textbf{(E)}\\ 36$",
+  "solutions": {
+    "Solution": "If the angles are in an arithmetic progression, they can be expressed as\n$a$, $a+n$, $a+2n$, $a+3n$, and $a+4n$ for some real numbers $a$ and $n$.\nNow we know that the sum of the degree measures of the angles of a pentagon is $180(5-2)=540$.\nAdding our expressions for the five angles together, we get $5a+10n=540$.\nWe now divide by 5 to get $a+2n=108$. It so happens that $a+2n$ is one of the angles we defined earlier, so that angle must have a measure of $\\boxed{108\\textbf{ (A)}}$.\n(In fact, for any arithmetic progression with an odd number of terms,\nthe middle term is equal to the average of all the terms.)",
+    "Solution 2": "If we write the five terms as $a$, $a - n$, $a - 2n$, $a + n$ and $a + 2n$, we can see that adding them up, we get $5a = 540$ through this, we can see that $a = 108$, $\\fbox{\\textbf{(A)}}$"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "competition_id": "2015_USAJMO_Problems",
+  "problem_id": 5,
+  "difficulty": 6.5,
+  "problem": "Let $ABCD$ be a cyclic quadrilateral. Prove that there exists a point $X$ on segment $\\overline{BD}$ such that $\\angle BAC=\\angle XAD$ and $\\angle BCA=\\angle XCD$ if and only if there exists a point $Y$ on segment $\\overline{AC}$ such that $\\angle CBD=\\angle YBA$ and $\\angle CDB=\\angle YDA$.",
+  "solutions": {
+    "Solution 1": "Note that lines $AC, AX$ are isogonal in $\\triangle ABD$, so an inversion centered at $A$ with power $r^2=AB\\cdot AD$ composed with a reflection about the angle bisector of $\\angle DAB$ swaps the pairs $(D,B)$ and $(C,X)$. Thus, \\[\\frac{AD}{XD}\\cdot \\frac{XD}{CD}=\\frac{AC}{BC}\\cdot \\frac{AB}{CA}\\Longrightarrow (A,C;B,D)=-1\\]so that $ACBD$ is a harmonic quadrilateral. By symmetry, if $Y$ exists, then $(B,D;A,C)=-1$. We have shown the two conditions are equivalent, whence both directions follow.",
+    "Solution 2": "All angles are directed. Note that lines $AC, AX$ are isogonal in $\\triangle ABD$ and $CD, CE$ are isogonal in $\\triangle CDB$. From the law of sines it follows that \n\\[\\frac{DX}{XB}\\cdot \\frac{DE}{ED}=\\left(\\frac{AD}{DB}\\right)^2=\\left(\\frac{DC}{BC}\\right)^2.\\]\nTherefore, the ratio equals $\\frac{AD\\cdot DC}{DB\\cdot BC}.$\nNow let $Y$ be a point of $AC$ such that $\\angle{ABE}=\\angle{CBY}$. We apply the above identities for $Y$ to get that $\\frac{CY}{YA}\\cdot \\frac{CE}{EA}=\\left(\\frac{CD}{DA}\\right)^2$. So $\\angle{CDY}=\\angle{EDA}$, the converse follows since all our steps are reversible.\n\nBeware that directed angles, or angles $\\bmod$ $180$, are not standard olympiad material. If you use them, provide a definition."
+  }
+}

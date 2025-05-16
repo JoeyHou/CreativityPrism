@@ -1,0 +1,8 @@
+{
+  "competition_id": "1959_AHSME_Problems",
+  "problem_id": 42,
+  "problem": "Given three positive integers $a,b,$ and $c$. Their greatest common divisor is $D$; their least common multiple is $m$. \nThen, which two of the following statements are true?\n$\\text{(1)}\\ \\text{the product MD cannot be less than abc} \\qquad \\\\ \\text{(2)}\\ \\text{the product MD cannot be greater than abc}\\qquad \\\\ \\text{(3)}\\ \\text{MD equals abc if and only if a,b,c are each prime}\\qquad \\\\ \\text{(4)}\\ \\text{MD equals abc if and only if a,b,c are each relatively prime in pairs} \\text{ (This means: no two have a common factor greater than 1.)}$\n$\\textbf{(A)}\\ 1,2 \\qquad\\textbf{(B)}\\ 1,3\\qquad\\textbf{(C)}\\ 1,4\\qquad\\textbf{(D)}\\ 2,3\\qquad\\textbf{(E)}\\ 2,4$",
+  "solutions": {
+    "Solution": "Because $1\\times2\\times4>1\\times4$, 1 is false. Because $1\\times1\\times1=1\\times1$, 3 is false. It follows that the answer is $\\boxed{\\textbf{E}}$."
+  }
+}

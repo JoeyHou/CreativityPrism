@@ -1,0 +1,11 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "aut_evaluator_check/qwen_72b",
+            "task": "aut_push",
+            "model_name": "qwen_72b_instruct",
+            "eval_output_raw": false,
+            "test_size": 4e10
+        }
+    ]
+}

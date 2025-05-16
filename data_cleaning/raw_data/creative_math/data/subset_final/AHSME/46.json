@@ -1,0 +1,8 @@
+{
+  "competition_id": "1966_AHSME_Problems",
+  "problem_id": 30,
+  "problem": "If three of the roots of $x^4+ax^2+bx+c=0$ are $1$, $2$, and $3$ then the value of $a+c$ is:\n$\\text{(A) } 35 \\quad \\text{(B) } 24 \\quad \\text{(C) } -12 \\quad \\text{(D) } -61 \\quad \\text{(E) } -63$",
+  "solutions": {
+    "Solution": "Since this is a quartic equation, there are going to be $4$ solutions. \nBy Vieta's formulas, since the $x^3$ term is $0$, the sum of the roots is also $0$. Therefore, the 4th root of this polynomial is $-6$. \nLastly, by Vieta's Formulas, $a+c=-(1\\cdot2+1\\cdot3+1\\cdot-6+2\\cdot3+2\\cdot-6+3\\cdot-6)+1\\cdot2\\cdot3\\cdot-6=-25-36=-61= \\fbox{D}$"
+  }
+}

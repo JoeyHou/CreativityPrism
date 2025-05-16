@@ -1,0 +1,8 @@
+{
+  "competition_id": "1972_AHSME_Problems",
+  "problem_id": 13,
+  "problem": "[asy] draw(unitsquare);draw((0,0)--(.4,1)^^(0,.6)--(1,.2)); label(\"D\",(0,1),NW);label(\"E\",(.4,1),N);label(\"C\",(1,1),NE); label(\"P\",(0,.6),W);label(\"M\",(.25,.55),E);label(\"Q\",(1,.2),E); label(\"A\",(0,0),SW);label(\"B\",(1,0),SE); //Credit to Zimbalono for the diagram [/asy]\nInside square $ABCD$ (See figure) with sides of length $12$ inches, segment $AE$ is drawn where $E$ is the point on $DC$ which is $5$ inches from $D$. \nThe perpendicular bisector of $AE$ is drawn and intersects $AE, AD$, and $BC$ at points $M, P$, and $Q$ respectively. The ratio of segment $PM$ to $MQ$ is\n$\\textbf{(A) }5:12\\qquad \\textbf{(B) }5:13\\qquad \\textbf{(C) }5:19\\qquad \\textbf{(D) }1:4\\qquad  \\textbf{(E) }5:21$",
+  "solutions": {
+    "Solution": "Let the line passing through $M$ parallel to $AB$ intersect $AD$ and $BC$ and $S$ and $T$ respectively. Since $M$ is the midpoint of $AE$, $SM=\\frac{5}{2}$ and $TM=12-\\frac{5}{2}=\\frac{19}{2}$. Since $\\triangle PSM\\sim \\triangle QTM$, $PM:MQ=SM:MT=5:9$, hence our answer is $\\fbox{C}$."
+  }
+}

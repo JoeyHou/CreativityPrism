@@ -1,0 +1,9 @@
+{
+  "competition_id": "1994_AJHSME_Problems",
+  "problem_id": 7,
+  "difficulty": 1,
+  "problem": "If $\\angle A = 60^\\circ$, $\\angle E = 40^\\circ$ and $\\angle C = 30^\\circ$, then $\\angle BDC =$\n[asy] pair A,B,C,D,EE; A = origin; B = (2,0); C = (5,0); EE = (1.5,3); D = (1.75,1.5); draw(A--C--D); draw(B--EE--A); dot(A); dot(B); dot(C); dot(D); dot(EE); label(\"$A$\",A,SW); label(\"$B$\",B,S); label(\"$C$\",C,SE); label(\"$D$\",D,NE); label(\"$E$\",EE,N); [/asy]\n$\\text{(A)}\\ 40^\\circ \\qquad \\text{(B)}\\ 50^\\circ \\qquad \\text{(C)}\\ 60^\\circ \\qquad \\text{(D)}\\ 70^\\circ \\qquad \\text{(E)}\\ 80^\\circ$",
+  "solutions": {
+    "Solution": "The sum of the angles in a triangle is $180^\\circ$. We can find $\\angle ABE = 80^\\circ$, so $\\angle CBD = 180-80=100^\\circ$.\n\\[\\angle BDC = 180-100-30=\\boxed{\\text{(B)}\\ 50^\\circ}\\]"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "competition_id": "1979_AHSME_Problems",
+  "problem_id": 13,
+  "problem": "The inequality $y-x<\\sqrt{x^2}$ is satisfied if and only if\n$\\textbf{(A) }y<0\\text{ or }y<2x\\text{ (or both inequalities hold)}\\qquad \\textbf{(B) }y>0\\text{ or }y<2x\\text{ (or both inequalities hold)}\\qquad \\textbf{(C) }y^2<2xy\\qquad \\textbf{(D) }y<0\\qquad \\textbf{(E) }x>0\\text{ and }y<2x$",
+  "solutions": {
+    "Solution": "Solution by e_power_pi_times_i\n$\\sqrt{x^2} = \\pm x$, so the inequality is just $y-x<\\pm x$. Therefore we get the two inequalities $y<0$ and $y<2x$. Checking the answer choices, we find that $\\boxed{\\textbf{(A) } y<0\\text{ or }y<2x\\text{ (or both inequalities hold)}}$ is the answer."
+  }
+}

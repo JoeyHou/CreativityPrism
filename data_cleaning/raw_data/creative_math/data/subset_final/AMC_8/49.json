@@ -1,0 +1,9 @@
+{
+  "competition_id": "1986_AJHSME_Problems",
+  "problem_id": 15,
+  "difficulty": 1.5,
+  "problem": "Sale prices at the Ajax Outlet Store are $50\\%$ below original prices.  On Saturdays an additional discount of $20\\%$ off the sale price is given.  What is the Saturday price of a coat whose original price is $\\textdollar 180$?\n$\\text{(A)}$ $\\textdollar 54$\n$\\text{(B)}$ $\\textdollar 72$\n$\\text{(C)}$ $\\textdollar 90$\n$\\text{(D)}$ $\\textdollar 108$\n$\\text{(D)}$ $\\textdollar 110$",
+  "solutions": {
+    "Solution": "First we need to do the first discount, which, at Ajax Outlet Store, would be there any day of the week.\n\\begin{align*} 180 \\times 50\\% &= 180 \\times \\frac{1}{2} \\\\ &= 90 \\\\ \\end{align*}\nIf we discount $20\\%$, then $80 \\%$ will be left, so after the second discount, we get\n\\begin{align*} 90 \\times 80\\% &= 90 \\times \\frac{8}{10} \\\\ &= 9 \\times 8 \\\\ &= 72 \\\\ \\end{align*}\n$\\boxed{\\text{B}}$"
+  }
+}

@@ -1,0 +1,272 @@
+[
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "petrol-diesel-pump",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "petrol",
+                    "diesel",
+                    "pump"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "going to the petrol station to pump diesel into a vehicle"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "stamp-letter-send",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "stamp",
+                    "letter",
+                    "send"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "putting a stamp on the envelop containing a letter to send it"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "organ-empire-comply",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "organ",
+                    "empire",
+                    "comply"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "high",
+                "boring_theme": "having an organ empire and complying with regulations"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "gloom-payment-exist",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "gloom",
+                    "payment",
+                    "exist"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "high",
+                "boring_theme": "the feeling of gloom you have about an existing payment"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "house-window-live",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "house",
+                    "window",
+                    "live"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "living in a house with windows"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "door-room-enter",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "door",
+                    "room",
+                    "enter"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "entering a room through a door"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "desk-laptop-study",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "desk",
+                    "laptop",
+                    "study"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "studying on a desk with a laptop"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "bike-wheel-ride",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "bike",
+                    "wheel",
+                    "ride"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "riding on a bike with wheels"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "kitchen-food-cook",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "kitchen",
+                    "food",
+                    "cook"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "cooking food in a kitchen"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_short_story",
+            "id": "pen-paper-write",
+            "eval_func": null
+        },
+        "input": {
+            "text": "",
+            "others": {
+                "items": [
+                    "pen",
+                    "paper",
+                    "write"
+                ],
+                "pos": [
+                    "noun",
+                    "noun",
+                    "verb"
+                ],
+                "semantic_distance": "low",
+                "boring_theme": "writing on a paper with a pen"
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    }
+]

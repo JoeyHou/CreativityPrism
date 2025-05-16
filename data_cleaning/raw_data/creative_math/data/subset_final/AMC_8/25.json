@@ -1,0 +1,10 @@
+{
+  "competition_id": "2002_AMC_8_Problems",
+  "problem_id": 4,
+  "difficulty": 1,
+  "problem": "The year 2002 is a palindrome (a number that reads the same from left to right as it does from right to left). What is the product of the digits of the next year after 2002 that is a palindrome?\n$\\text{(A)}\\ 0 \\qquad \\text{(B)}\\ 4 \\qquad \\text{(C)}\\ 9 \\qquad \\text{(D)}\\ 16 \\qquad \\text{(E)}\\ 25$",
+  "solutions": {
+    "Solution 1": "The palindrome right after 2002 is 2112. The product of the digits of 2112 is $\\boxed{\\text{(B)}\\ 4}$.",
+    "Solution 2": "The palindrome formula is to add 110 to the number in order to get the next palindrome, a palindrome needs to be in the form as ABBA . We can use this in this case to get 2112. 2*1*1*2=4. Therefore, the answer is $\\boxed{\\text{(B)}\\ 4}$."
+  }
+}

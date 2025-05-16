@@ -1,0 +1,11 @@
+{
+  "competition_id": "2007_AMC_10A_Problems",
+  "problem_id": 10,
+  "difficulty": 2,
+  "problem": "The Dunbar family consists of a mother, a father, and some children. The average age of the members of the family is $20$, the father is $48$ years old, and the average age of the mother and children is $16$. How many children are in the family?\n$\\text{(A)}\\ 2 \\qquad \\text{(B)}\\ 3 \\qquad \\text{(C)}\\ 4 \\qquad \\text{(D)}\\ 5 \\qquad \\text{(E)}\\ 6$",
+  "solutions": {
+    "Solution 1": "Let $n$ be the number of children. Then the total ages of the family is $48 + 16(n+1)$, and the total number of people in the family is $n+2$. So\n\\[20 = \\frac{48 + 16(n+1)}{n+2} \\Longrightarrow 20n + 40 = 16n + 64 \\Longrightarrow n = 6\\ \\mathrm{(E)}.\\]",
+    "Solution 2": "Let $x$ be the number of the children and the mom. The father, who is $48$, plus the sum of the ages of the kids and mom divided by the number of kids and mom plus $1$ (for the dad) = $20$. This is because the average age of the entire family is $20.$\nThis statement, written as an equation, is: \\[\\frac{48+16x}{x+1}=20\\]\n\\[48+16x=20x+20\\]\n\\[4x=28\\]\n\\[x=7\\]\n$7$ people - $1$ mom = $6$ children.\nTherefore, the answer is $\\boxed{E}$",
+    "Solution 3": "Let $m$ be the Mom's age.\nLet the number of children be $x$ and their average age be $y$. Their age totaled up is simply $xy$. \nWe have the following two equations:\n$\\frac{m+48+xy}{2+x}=20$, where $m+48+xy$ is the family's total age and $2+x$ is the total number of people in the family.\n$\\frac{m+48+xy}{2+x}=20$\n$m+48+xy=40+20x$\nThe next equation is $\\frac{m+xy}{1+x}=16$, where $m+xy$ is the total age of the Mom and the children, and $1+x$ is the number of children along with the Mom.\n$\\frac{m+xy}{1+x}=16$\n$m+xy=16+16x$.\nWe know the value for $m+xy$, so we substitute the value back in the first equation.\n$m+48+xy=40+20x$\n$(16+16x)+48=40+20x$.\n$x=6$. \nEarlier, we set $x$ to be the number of children. Therefore, there are $\\boxed{\\text{(E)}  6}$ children."
+  }
+}

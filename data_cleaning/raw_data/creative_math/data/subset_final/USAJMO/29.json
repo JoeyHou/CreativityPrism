@@ -1,0 +1,9 @@
+{
+  "competition_id": "2018_USAJMO_Problems",
+  "problem_id": 6,
+  "difficulty": 7,
+  "problem": "Karl starts with $n$ cards labeled $1,2,3,\\dots,n$ lined up in a random order on his desk. He calls a pair $(a,b)$ of these cards swapped if $a>b$ and the card labeled $a$ is to the left of the card labeled $b$. For instance, in the sequence of cards $3,1,4,2$, there are three swapped pairs of cards, $(3,1)$, $(3,2)$, and $(4,2)$.\nHe picks up the card labeled 1 and inserts it back into the sequence in the opposite position: if the card labeled 1 had $i$ card to its left, then it now has $i$ cards to its right. He then picks up the card labeled $2$ and reinserts it in the same manner, and so on until he has picked up and put back each of the cards $1,2,\\dots,n$ exactly once in that order. (For example, the process starting at $3,1,4,2$ would be $3,1,4,2\\to 3,4,1,2\\to 2,3,4,1\\to 2,4,3,1\\to 2,3,4,1$.)\nShow that no matter what lineup of cards Karl started with, his final lineup has the same number of swapped pairs as the starting lineup.",
+  "solutions": {
+    "Solution": "Note that in this solution, the term \"inversions\" is used synonymously with \"swapped pairs.\"\nWe define a new process $P'$ where, when re-inserting card $i$, we additionally change its label from $i$ to $n+i$. For example, an example of $P'$ also starting with $3142$ is:\n\\[3142 \\longrightarrow 3452 \\longrightarrow 6345 \\longrightarrow 6475 \\longrightarrow 6785.\\]\nNote that now, each step of $P'$ preserves the number of inversions. Moreover, the final configuration of $P'$ is the same as the final configuration of $P$ with all cards incremented by $n$, and thus, of course, has the same number of inversions."
+  }
+}

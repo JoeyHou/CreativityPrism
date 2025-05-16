@@ -1,0 +1,9 @@
+{
+  "competition_id": "2008_AMC_8_Problems",
+  "problem_id": 13,
+  "difficulty": 1.5,
+  "problem": "Mr. Harman needs to know the combined weight in pounds of three boxes he wants to mail. However, the only available scale is not accurate for weights less than $100$ pounds or more than $150$ pounds. So the boxes are weighed in pairs in every possible way. The results are $122$, $125$ and $127$ pounds. What is the combined weight in pounds of the three boxes?\n$\\textbf{(A)}\\ 160\\qquad \\textbf{(B)}\\ 170\\qquad \\textbf{(C)}\\ 187\\qquad \\textbf{(D)}\\ 195\\qquad \\textbf{(E)}\\ 354$",
+  "solutions": {
+    "Solution": "Each box is weighed twice during this, so the combined weight of the three boxes is half the weight of these separate measures:\n\\[\\frac{122+125+127}{2} = \\frac{374}{2} = \\boxed{\\textbf{(C)}\\ 187}.\\]"
+  }
+}

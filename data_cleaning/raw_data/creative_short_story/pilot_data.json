@@ -1,0 +1,33 @@
+{
+    "metadata": {},
+    "data": [
+        {
+            "id": "petrol-diesel-pump",
+            "items": ["petrol", "diesel", "pump"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "going to the petrol station to pump diesel into a vehicle"
+        },
+        {
+            "id": "stamp-letter-send",
+            "items": ["stamp", "letter", "send"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "putting a stamp on the envelop containing a letter to send it"
+        },
+        {
+            "id": "organ-empire-comply",
+            "items": ["organ", "empire", "comply"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "high",
+            "boring_theme": "having an organ empire and complying with regulations"
+        },
+        {
+            "id": "gloom-payment-exist",
+            "items": ["gloom", "payment", "exist"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "high",
+            "boring_theme": "the feeling of gloom you have about an existing payment"
+        }
+    ]
+}

@@ -1,0 +1,293 @@
+{
+    "experiments_list": [
+        {
+            "task": "creative_math",
+            "model_name": "OLMo2-13B-sft",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/OLMo2-13B-sft",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "OLMo2-13B-dpo",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/OLMo2-13B-dpo",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "Llama-31-8B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/Llama-31-8B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "Llama-31-8B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/Llama-31-8B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "qwen-7b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/qwen-7b-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "mistral-7b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/mistral-7b-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "qwen-coder-7B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/qwen-coder-7B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "OLMo-7B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/OLMo-7B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "OLMo2-13B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/OLMo2-13B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "Mistral-24B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/Mistral-24B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "qwen-32b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/qwen-32b-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "qwen-coder-32b-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/qwen-coder-32b-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "Mistral-8x7B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/Mistral-8x7B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "Llama-33-70B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/Llama-33-70B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "Llama-31-70B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/Llama-31-70B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        },
+        {
+            "task": "creative_math",
+            "model_name": "qwen-72B-instruct",
+            "portion": 1.0,
+            "model_config": {
+                "max_new_tokens": 2000,
+                "temperature": 0,
+                "seed": 42
+            },
+            "file_paths": {
+                "dataset": "data/processed/creative_math.json",
+                "generation": "data/outputs/creative_math/qwen-72B-instruct",
+                "evaluation": "data/evaluations/creative_math_evaluation"
+            }
+        }
+    ],
+    "model_config": {
+            "max_new_tokens": 2000,
+            "do_sample": false,
+            "top_p": 1,
+            "top_k": -1,
+            "temperature": 0.0,
+            "tensor_parrallel_size": 4
+        },
+        "model_version": {
+            "claude-3-opus": "claude-3-opus-20240229",
+            "claude-3-5-sonnet": "claude-3-5-sonnet-20240620",
+            "deepseek-v2": "deepseek-chat",
+            "gemini-1.5-pro": "models/gemini-1.5-pro-latest",
+            "gpt-4": "gpt-4-0613",
+            "gpt-4o": "gpt-4o-2024-05-13",
+            "gpt-4o-mini": "gpt-4o-mini-2024-07-18",
+            "Deepseek-math-7b-rl": "deepseek-ai/deepseek-math-7b-rl",
+            "Internlm2-math-20b": "internlm/internlm2-math-20b",
+            "Llama-3.1-70B": "meta-llama/Llama-3.1-70B-Instruct",
+            "Llama-3.3-70B": "meta-llama/Llama-3.3-70B-Instruct",
+            "Mixtral-8x22B": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+            "Qwen1.5-72B": "Qwen/Qwen1.5-72B-Chat",
+            "Yi-1.5-34B": "01-ai/Yi-1.5-34B-Chat",
+            "Llama-31-8B-Instruct": "meta-llama/Llama-3.1-8B-Instruct",
+            "Qwen2.5-7B-Instruct": "Qwen/Qwen2.5-7B-Instruct",
+            "Qwen2.5-72B-Instruct": "Qwen/Qwen2.5-72B-Instruct"
+        },
+        "file_paths": {
+            "dataset": "data/processed/creative_math.json",
+            "generation": "data/outputs/creative_math",
+            "evaluation": "data/evaluations/creative_math_evaluation"
+        },
+        "api_keys": {
+            "ANTHROPIC_API_KEY": "YOUR_ANTHROPIC_API_KEY",
+            "DEEPSEEK_API_KEY": "YOUR_DEEPSEEK_API_KEY",
+            "GEMINI_API_KEY": "YOUR_GEMINI_API_KEY",
+            "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY"
+        },
+        "experiment": {
+            "save_interval": 20,
+            "seed": 42    
+        },
+        "logging": {
+            "log_level": "INFO",
+            "log_dir": "logs"
+        },
+        "prompt": {
+            "use_openai_template": true
+        }
+}

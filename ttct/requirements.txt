@@ -1,0 +1,7 @@
+anthropic==0.51.0
+huggingface_hub==0.27.1
+openai==1.78.1
+pandas==2.2.3
+protobuf==6.31.0
+tqdm==4.66.5
+vllm==0.7.1

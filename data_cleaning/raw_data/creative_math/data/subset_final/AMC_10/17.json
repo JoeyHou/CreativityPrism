@@ -1,0 +1,9 @@
+{
+  "competition_id": "2008_AMC_10A_Problems",
+  "problem_id": 9,
+  "difficulty": 2,
+  "problem": "Suppose that\n\\[\\frac{2x}{3}-\\frac{x}{6}\\]\nis an integer. Which of the following statements must be true about $x$?\n$\\mathrm{(A)}\\ \\text{It is negative.}\\\\\\mathrm{(B)}\\ \\text{It is even, but not necessarily a multiple of 3.}\\\\\\mathrm{(C)}\\ \\text{It is a multiple of 3, but not necessarily even.}\\\\\\mathrm{(D)}\\ \\text{It is a multiple of 6, but not necessarily a multiple of 12.}\\\\\\mathrm{(E)}\\ \\text{It is a multiple of 12.}$",
+  "solutions": {
+    "Solution": "\\[\\frac{2x}{3}-\\frac{x}{6}\\quad\\Longrightarrow\\quad\\frac{4x}{6}-\\frac{x}{6}\\quad\\Longrightarrow\\quad\\frac{3x}{6}\\quad\\Longrightarrow\\quad\\frac{x}{2}\\]\nFor $\\frac{x}{2}$ to be an integer, $x$ must be even, but not necessarily divisible by $3$. Thus, the answer is $\\mathrm{(B)}$."
+  }
+}

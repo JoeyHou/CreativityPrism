@@ -1,0 +1,10 @@
+{
+  "competition_id": "2018_USAJMO_Problems",
+  "problem_id": 2,
+  "difficulty": 6.5,
+  "problem": "Let $a,b,c$ be positive real numbers such that $a+b+c=4\\sqrt[3]{abc}$. Prove that \\[2(ab+bc+ca)+4\\min(a^2,b^2,c^2)\\ge a^2+b^2+c^2.\\]",
+  "solutions": {
+    "Solution 1": "WLOG let $a \\leq b \\leq c$. Add $2(ab+bc+ca)$ to both sides of the inequality and factor to get: \\[4(a(a+b+c)+bc) \\geq (a+b+c)^2\\]\nBy substituting $a+b+c=4\\sqrt[3]{abc}$, we get:\n\\[\\frac{4a\\sqrt[3]{abc}+bc}{2} \\geq 2\\sqrt[3]{a^2b^2c^2}\\]\nThe last inequality is true by AM-GM. Since all these steps are reversible, the proof is complete.",
+    "Solution 2": "WLOG let $a \\geq b \\geq c$. Note that the equations are homogeneous, so WLOG let $c=1$.\nThus, the inequality now becomes $2ab + 2a + 2b + 4 \\geq a^2 + b^2 + 1$, which simplifies to $2(a+b) + 3 \\geq (a-b)^2$.\nNow we will use the condition. Letting $x=a+b$ and $y=a-b$, we have\n$x+1=\\sqrt[3]{16(x^2-y^2)} \\implies 16y^2=-x^3+13x^2-3x-1$.\nPlugging this into the inequality, we have $2x+3 \\geq \\frac{1}{16}(-x^3+13x^2-3x-1) \\implies x^3-13x^2+35x+49 = (x-7)^2(x+1) \\geq 0$, which is true since $x \\geq 0$."
+  }
+}

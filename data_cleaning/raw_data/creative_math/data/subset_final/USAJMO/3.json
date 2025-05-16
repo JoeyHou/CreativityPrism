@@ -1,0 +1,9 @@
+{
+  "competition_id": "2016_USAJMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6,
+  "problem": "Find, with proof, the least integer $N$ such that if any $2016$ elements are removed from the set $\\{1, 2,...,N\\}$, one can still find $2016$ distinct numbers among the remaining elements with sum $N$.",
+  "solutions": {
+    "Solution": "Since any $2016$ elements are removed, suppose we remove the integers from $1$ to $2016$. Then the smallest possible sum of $2016$ of the remaining elements is \\[2017+2018+\\cdots + 4032 = 1008 \\cdot 6049 = 6097392\\]\nso clearly $N\\ge 6097392$. We will show that $N=6097392$ works.\n$\\vspace{0.2 in}$\n$\\{1,2\\cdots 6097392\\}$ contain the integers from $1$ to $6048$, so pair these numbers as follows:\n\\[1, 6048\\]\n\\[2, 6047\\]\n\\[3, 6046\\]\n\\[\\cdots\\]\n\\[3024, 3025\\]\nWhen we remove any $2016$ integers from the set $\\{1,2,\\cdots N\\}$, clearly we can remove numbers from at most $2016$ of the $3024$ pairs above, leaving at least $1008$ complete pairs. To get a sum of $N$, simply take these $1008$ pairs, all of which sum to $6049$. The sum of these $2016$ elements is $1008 \\cdot 6049 = 6097392$, as desired.\n$\\vspace{0.2 in}$\nWe have shown that $N$ must be at least $6097392$, and that this value is attainable. Therefore our answer is $\\boxed{6097392}$."
+  }
+}

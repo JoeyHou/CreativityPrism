@@ -1,0 +1,11 @@
+{
+  "competition_id": "1977_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "Determine all pairs of positive integers $(m,n)$ such that\n$(1+x^n+x^{2n}+\\cdots+x^{mn})$ is divisible by $(1+x+x^2+\\cdots+x^{m})$.",
+  "solutions": {
+    "Solution 1": "Denote the first and larger polynomial to be $f(x)$ and the second one to be $g(x)$. In order for $f(x)$ to be divisible by $g(x)$ they must have the same roots. The roots of $g(x)$ are the (m+1)th roots of unity, except for 1. When plugging into $f(x)$, the root of unity is a root of $f(x)$ if and only if the terms $x^n, x^{2n}, x^{3n}, \\cdots x^{mn}$ all represent a different (m+1)th root of unity not equal to 1. \nNote that if $\\\\gcd(m+1,n)=1$, the numbers $n, 2n, 3n, \\cdots, mn$ represent a complete set of residues minus 0 modulo $m+1$. However, if $gcd(m+1,n)=a$ not equal to 1, then $\\frac{(m+1)(n)}{a}$ is congruent to $0 \\pmod {m+1}$ and thus a complete set is not formed. Therefore, $f(x)$ divides $g(x)$ if and only if $\\boxed{\\\\gcd(m+1,n)=1}.$ $\\blacksquare$",
+    "Solution 2": "We could instead consider $f(x)$ modulo $g(x)$. Notice that $x^{m+1} = 1 \\pmod {g(x)}$, and thus we can reduce the exponents of $f(x)$ to their equivalent modulo $m+1$. We want the resulting $h(x)$ with degree less than $m+1$ to be equal to $g(x)$ (of degree $m$), which implies that the exponents of $f(x)$ must be all different modulo $m+1$. This can only occur if and only if $gcd(m+1, n) = 1$, and this is our answer, as shown in Solution 1.",
+    "Solution 3": "Notice that $1+x^n+x^{2n}+...+x^{mn}=\\frac{x^{mn+n}-1}{x^n-1}$ and $1+x+x^2+...+x^m=\\frac{x^{m+1}-1}{x-1}$, so it remains to prove that $(x^n-1)(x^{m+1}-1) \\mid (x^{mn+n}-1)(x-1)$. It is clear that $(x^n-1) \\mid (x^{mn+n}-1)$ and $(x^{m+1}-1) \\mid (x^{mn+n}-1)$. For any $k \\in \\mathbb{N}$, we can use the fact that $x^k-1=\\prod_{d \\mid k} \\Phi _d(x)$, where $\\Phi _d(x)$ is the dth cyclotomic polynomial. If $\\gcd(m+1,n) = d > 1$, then $x^{m+1}-1$ and $x^n-1$ share a common cyclotomic polynomial; namely, $\\Phi _d(x)$. But since all the factors of $x^{mn+n}-1$ are distinct, $(x^{mn+n}-1)(x-1)$ cannot be divisible by $(x^n-1)(x^{m+1}-1)$. We find that $\\gcd(m+1,n) = 1$ must be the solution, since the only shared polynomial is $\\Phi _1(x)=x-1$, and we are done."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1988_AJHSME_Problems",
+  "problem_id": 22,
+  "difficulty": 1.5,
+  "problem": "Tom's Hat Shoppe increased all original prices by $25\\%$.  Now the shoppe is having a sale where all prices are $20\\%$ off these increased prices.  Which statement best describes the sale price of an item?\n$\\text{(A)}\\ \\text{The sale price is }5\\% \\text{ higher than the original price.}$\n$\\text{(B)}\\ \\text{The sale price is higher than the original price, but by less than }5\\% .$\n$\\text{(C)}\\ \\text{The sale price is higher than the original price, but by more than }5\\% .$\n$\\text{(D)}\\ \\text{The sale price is lower than the original price.}$\n$\\text{(E)}\\ \\text{The sale price is the same as the original price.}$",
+  "solutions": {
+    "Solution": "Let the original price of an item be $x$.  The shoppe originally increased this to $1.25x$.  The sale brings it down to $.8(1.25x)=x$, which is the same as the original $\\rightarrow \\boxed{\\text{E}}$"
+  }
+}

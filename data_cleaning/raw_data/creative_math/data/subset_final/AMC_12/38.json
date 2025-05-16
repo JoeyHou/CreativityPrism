@@ -1,0 +1,9 @@
+{
+  "competition_id": "2015_AMC_12B_Problems",
+  "problem_id": 13,
+  "difficulty": 3,
+  "problem": "Quadrilateral $ABCD$ is inscribed in a circle with $\\angle BAC=70^{\\circ}, \\angle ADB=40^{\\circ}, AD=4,$ and $BC=6$. What is $AC$?\n$\\textbf{(A)}\\; 3+\\sqrt{5} \\qquad\\textbf{(B)}\\; 6 \\qquad\\textbf{(C)}\\; \\dfrac{9}{2}\\sqrt{2} \\qquad\\textbf{(D)}\\; 8-\\sqrt{2} \\qquad\\textbf{(E)}\\; 7$",
+  "solutions": {
+    "Solution": "$\\angle ADB$ and $\\angle ACB$ are both subtended by segment $AB$, hence $\\angle ACB = \\angle ADB = 40^\\circ$. By considering $\\triangle ABC$, it follows that $\\angle ABC = 180^\\circ - (70^\\circ + 40^\\circ) = 70^\\circ$. Hence $\\triangle ABC$ is isosceles, and $AC = BC = \\boxed{\\textbf{(B)}\\; 6}.$"
+  }
+}

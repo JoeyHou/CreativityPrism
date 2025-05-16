@@ -1,0 +1,8 @@
+{
+  "competition_id": "1966_AHSME_Problems",
+  "problem_id": 3,
+  "problem": "If the arithmetic mean of two numbers is $6$ and their geometric mean is $10$, then an equation with the given two numbers as roots is:\n$\\text{(A)} \\ x^2 + 12x + 100 = 0 ~~ \\text{(B)} \\ x^2 + 6x + 100 = 0 ~~ \\text{(C)} \\ x^2 - 12x - 10 = 0$\n$\\text{(D)} \\ x^2 - 12x + 100 = 0 \\qquad \\text{(E)} \\ x^2 - 6x + 100 = 0$",
+  "solutions": {
+    "Solution": "Let the numbers be $\\eta$ and $\\zeta$.\n\\[\\dfrac{\\eta+\\zeta}{2}=6\\Rightarrow \\eta+\\zeta=12\\].\n\\[\\sqrt{\\eta\\zeta}=10\\Rightarrow \\eta\\zeta=100\\].\nThe   with roots $\\eta$ and $\\zeta$ is $x^2-(\\eta+\\zeta)x+\\eta\\zeta$. Therefore, an equation with $\\eta$ and $\\zeta$ as roots is $x^2 - 12x + 100 = 0\\Rightarrow \\text{(D)}$"
+  }
+}

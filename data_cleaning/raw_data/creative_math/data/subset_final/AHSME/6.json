@@ -1,0 +1,9 @@
+{
+  "competition_id": "1999_AHSME_Problems",
+  "problem_id": 15,
+  "problem": "Let $x$ be a real number such that $\\sec x - \\tan x = 2$. Then $\\sec x + \\tan x =$\n$\\textbf{(A)}\\ 0.1 \\qquad  \\textbf{(B)}\\ 0.2 \\qquad  \\textbf{(C)}\\ 0.3 \\qquad  \\textbf{(D)}\\ 0.4 \\qquad  \\textbf{(E)}\\ 0.5$",
+  "solutions": {
+    "Solution 1 (Fastest)": "$(\\sec x - \\tan x)(\\sec x + \\tan x) = \\sec^{2} x - \\tan^{2} x = 1$, so $\\sec x + \\tan x = \\boxed{\\textbf{(E)}\\ 0.5}$.",
+    "Solution 2 (Alternate, Slightly Longer)": "Note that $\\sec x - \\tan x = (1-\\sin x)/\\cos x$ and $\\sec x + \\tan x = (1+\\sin x)/\\cos x$. Let $(1+\\sin x)/\\cos x = y$. Multiplying, we get $(1-\\sin^{2}x)/\\cos^{2}x = 1$.Then, $2y = 1$. $\\sec x + \\tan x =  \\boxed{\\textbf{(E)}\\ 0.5}$. "
+  }
+}

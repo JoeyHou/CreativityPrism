@@ -1,0 +1,8 @@
+{
+  "competition_id": "1977_AHSME_Problems",
+  "problem_id": 8,
+  "problem": "For every triple $(a,b,c)$ of non-zero real numbers, form the number $\\frac{a}{|a|}+\\frac{b}{|b|}+\\frac{c}{|c|}+\\frac{abc}{|abc|}$. \nThe set of all numbers formed is\n$\\textbf{(A)}\\ {0} \\qquad \\textbf{(B)}\\ \\{-4,0,4\\} \\qquad \\textbf{(C)}\\ \\{-4,-2,0,2,4\\} \\qquad \\textbf{(D)}\\ \\{-4,-2,2,4\\}\\qquad \\textbf{(E)}\\ \\text{none of these}$",
+  "solutions": {
+    "Solution": "Solution by e_power_pi_times_i\n$\\dfrac{x}{|x|} = 1$ or $-1$ depending whether $x$ is positive or negative. If $a$, $b$, and $c$ are positive, then the entire thing amounts to $4$. If one of the three is negative and the other two positive, the answer is $0$. If two of the three is negative and one is positive, the answer is $0$. If all three are negative, the answer is $-4$. Therefore the set is $\\boxed{\\textbf{(B)}\\ \\{-4,0,4\\}}$."
+  }
+}

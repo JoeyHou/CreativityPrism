@@ -1,0 +1,8 @@
+{
+  "competition_id": "1984_AHSME_Problems",
+  "problem_id": 22,
+  "problem": "Let $a$ and $c$ be fixed . For each  $t$ let $(x_t, y_t)$ be the  of the  $y=ax^2+bx+c$. If the set of the vertices $(x_t, y_t)$ for all real numbers of $t$ is graphed on the , the  is\n$\\mathrm{(A) \\ } \\text{a straight line} \\qquad \\mathrm{(B) \\ } \\text{a parabola} \\qquad \\mathrm{(C) \\ } \\text{part, but not all, of a parabola} \\qquad \\mathrm{(D) \\ } \\text{one branch of a hyperbola} \\qquad$ $\\mathrm{(E) \\ } \\text{None of these}$",
+  "solutions": {
+    "Solution": "The x-coordinate of the vertex of a parabola is $-\\frac{b}{2a}$, so $x_t=-\\frac{b}{2a}$. Plugging this into $y=ax^2+bx+c$ yields $y=-\\frac{b^2}{4a^2}+c$, so $y_t=-\\frac{b^2}{4a^2}+c$. Notice that $y_t=-\\frac{b^2}{4a^2}+c=-a(-\\frac{b}{2a})^2+c=-ax_t^2+c$, so all of the vertices are on a parabola. However, we have only showed that all of the points in the locus of vertices are on a parabola, we have not shown whether or not all points on the parabola are on the locus. Assume we are given an $x_t$ on the parabola. $-\\frac{b}{2a}=x_t$, $b=-2ax_t$, so a unique $b$, and therefore a unique vertex, is determined for each point on the parabola. We therefore conclude that every point in the locus is on the parabola and every point on the parabola is in the locus, and the graph of the locus is the same as the graph of the parabola, $\\boxed{\\text{B}}$."
+  }
+}

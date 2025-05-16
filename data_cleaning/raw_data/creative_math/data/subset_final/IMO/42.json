@@ -1,0 +1,9 @@
+{
+  "competition_id": "1959_IMO_Problems",
+  "problem_id": 6,
+  "difficulty": 9.5,
+  "problem": "Two , $P$ and $Q$,  along the  $p$.  The point $A$ is in the plane $P$, and the point ${C}$ is in the plane $Q$; neither of these points lies on the straight line $p$.  Construct an  $ABCD$ (with $AB$  to $DC$) in which a  can be inscribed, and with  $B$ and $D$ lying in the planes $P$ and $Q$, respectively.",
+  "solutions": {
+    "Solution": "We first observe that we must have both lines $AB$ (which we shall denote $a$) and $DC$ (which we shall denote $c$) parallel to $p$, since if one of them is not, then neither can be and they must both intersect $p$ (since they are both coplanar with $p$), making them .\nNow we note since a circle can be inscribed in the trapezoid, we must have $AB + DC = AD + BC$, and since the trapezoid is isosceles, this implies that each of the trapezoid's legs has length equal to the  of the lengths of the bases.\nWe can find this average by dropping  $AA'$ to $c$ such that $A'$ is on $c$.  The average will be $A'C$, which is one of the sides of the  with sides on $a$ and $c$ with vertices at $A$ and ${C}$.\nWe now draw a circle with center ${C}$ that contains $A'$.  The intersections of this circle with $a$ are the two possible values of $B$, from either of which it is trivial to determine the corresponding location for $D$.  It is worth noting that the intersection points may concur (in which case there is only one distinct possibility (a square)), or they may not occur at all.  Q.E.D."
+  }
+}

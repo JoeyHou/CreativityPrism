@@ -1,0 +1,9 @@
+{
+  "competition_id": "1988_AJHSME_Problems",
+  "problem_id": 14,
+  "difficulty": 1.5,
+  "problem": "$\\diamondsuit$ and $\\Delta$ are  whole numbers and $\\diamondsuit \\times \\Delta =36$.  The largest possible value of $\\diamondsuit + \\Delta$ is \n$\\text{(A)}\\ 12 \\qquad \\text{(B)}\\ 13 \\qquad \\text{(C)}\\ 15 \\qquad \\text{(D)}\\ 20\\ \\qquad \\text{(E)}\\ 37$",
+  "solutions": {
+    "Solution": "Since it doesn't take too long, we can just make a table with all the possible values of the sum: \n\\[\\begin{array}{|c|c|c|} \\multicolumn{3}{}{} \\\\ \\hline \\diamondsuit & \\Delta & \\diamondsuit + \\Delta \\\\ \\hline 36 & 1 & 37 \\\\ \\hline 18 & 2 & 20 \\\\ \\hline 12 & 3 & 15 \\\\ \\hline 9 & 4 & 13 \\\\ \\hline 6 & 6 & 12 \\\\ \\hline \\end{array}\\]\nClearly $37\\rightarrow \\boxed{\\text{E}}$ is the largest."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "competition_id": "1990_AHSME_Problems",
+  "problem_id": 18,
+  "problem": "First $a$ is chosen at random from the set $\\{1,2,3,\\cdots,99,100\\}$, and then $b$ is chosen at random from the same set. The probability that the integer $3^a+7^b$ has units digit $8$ is\n$\\text{(A) } \\frac{1}{16}\\quad \\text{(B) } \\frac{1}{8}\\quad \\text{(C) } \\frac{3}{16}\\quad \\text{(D) } \\frac{1}{5}\\quad \\text{(E) } \\frac{1}{4}$",
+  "solutions": {
+    "Solution": "The units digits of the powers of $3$ and $7$ both cycle through $1,3,9,7$ in opposite directions, and as $4\\mid 100$ each power's units digit is equally probable. There are $16$ ordered pairs of units digits, and three of them $(1,7),(7,1),(9,9)$ have a sum with units digit $8$.\nThus the probability is $\\frac3{16}$ which is $\\fbox{C}$"
+  }
+}

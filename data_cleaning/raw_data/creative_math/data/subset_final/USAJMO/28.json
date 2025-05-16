@@ -1,0 +1,9 @@
+{
+  "competition_id": "2013_USAJMO_Problems",
+  "problem_id": 2,
+  "difficulty": 6.5,
+  "problem": "Each cell of an $m\\times n$ board is filled with some nonnegative integer. Two numbers in the filling are said to be  if their cells share a common side. (Note that two numbers in cells that share only a corner are not adjacent). The filling is called a  if it satisfies the following two conditions:\n(i) The difference between any two adjacent numbers is either $0$ or $1$. \n(ii) If a number is less than or equal to all of its adjacent numbers, then it is equal to  $0$ .\nDetermine the number of distinct gardens in terms of $m$ and $n$ .",
+  "solutions": {
+    "Solution": "We claim that any configuration of $0$'s produces a distinct garden.  To verify this claim, we show that, for any cell that is nonzero, the value of that cell is its distance away from the nearest zero, where distance means the shortest chain of adjacent cells connecting two cells.  Now, since we know that any cell with a nonzero value must have a cell adjacent to it that is less than its value, there is a path that goes from this cell to the $0$ that is decreasing, which means that the value of the cell must be its distance from the $0 \\rightarrow$ as the path must end.  From this, we realize that, for any configuration of $0$'s, the value of each of the cells is simply its distance from the nearest $0$, and therefore one garden is produced for every configuration of $0$'s.  \n\nHowever, we also note that there must be at least one $0$ in the garden, as otherwise the smallest number in the garden, which is less than or equal to all of its neighbors, is $>0$, which violates condition $(ii)$.  There are $2^{mn}$ possible configurations of $0$ and not $0$ in the garden, one of which has no $0$'s, so our total amount of configurations is $\\boxed{2^{mn} -1}$"
+  }
+}

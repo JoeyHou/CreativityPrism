@@ -1,0 +1,40 @@
+{
+    "experiments_list": [        
+        {
+            "run_id": "ttcw_v1_0/qwen_7b_instruct",
+            "task": "creative_writing",
+            "model_name": "qwen_7b_instruct",
+            "max_tokens": 4096
+        },
+        {
+            "run_id": "ttcw_v1_0/llama3_8b_instr",
+            "task": "creative_writing",
+            "model_name": "llama3_8b_instruct",
+            "max_tokens": 4096
+        },
+        {
+            "run_id": "ttcw_v1_0/mistral_7b_instr",
+            "task": "creative_writing",
+            "model_name": "mistral_7b_instruct",
+            "max_tokens": 4096
+        },
+        {
+            "run_id": "ttcw_v1_0/deepseek_qwen_7b",
+            "task": "creative_writing",
+            "model_name": "deepseek_qwen_7b",
+            "max_tokens": 4096
+        },
+        {
+            "run_id": "ttcw_v1_0/olmo_7b",
+            "task": "creative_writing",
+            "model_name": "olmo_7b",
+            "max_tokens": 4096
+        },
+        {
+            "run_id": "ttcw_v1_0/olmo_13b",
+            "task": "creative_writing",
+            "model_name": "olmo_13b",
+            "max_tokens": 4096
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "2002_AMC_12P_Problems",
+  "problem_id": 10,
+  "difficulty": 2,
+  "problem": "Let $f_n (x) = \\text{sin}^n x + \\text{cos}^n x.$ For how many $x$ in $[0,\\pi]$ is it true that\n\\[6f_{4}(x)-4f_{6}(x)=2f_{2}(x)?\\]\n$\\text{(A) }2 \\qquad \\text{(B) }4  \\qquad \\text{(C) }6 \\qquad \\text{(D) }8 \\qquad \\text{(E) more than }8$",
+  "solutions": {
+    "Solution 1": "Divide by 2 on both sides to get \\[3f_{4}(x)-2f_{6}(x)=f_{2}(x)\\]\nSubstituting the definitions of $f_{2}(x)$, $f_{4}(x)$, and $f_{6}(x)$, we may rewrite the expression as\n\\[3(\\text{sin}^4{x} + \\text{cos}^4{x}) - 2(\\text{sin}^6{x} + \\text{cos}^6{x}) = 1\\]\nWe now simplify each term separately using some algebraic manipulation and the Pythagorean identity.\nWe can rewrite $3(\\text{sin}^4 x + \\text{cos}^4 x)$ as\n$3(\\text{sin}^2 x + \\text{cos}^2 x)^2 - 6\\text{sin}^2 x \\text{cos}^2 x$, which is equivalent to \n$3 - 6\\text{sin}^2 x \\text{cos}^2 x$.\nAs for $2(\\text{sin}^6 x + \\text{cos}^6 x)$, we may factor it as \n$2(\\text{sin}^2 x + \\text{cos}^2 x)(\\text{sin}^4 x + \\text{cos}^4 x - \\text{sin}^2 x \\text{cos}^2 x)$ which can be rewritten as\n$2(\\text{sin}^4 x + \\text{cos}^4 x - \\text{sin}^2 x \\text{cos}^2 x)$, and then as\n$2(\\text{sin}^2 x + \\text{cos}^2)^2) - 6\\text{sin}^2 x \\text{cos}^2 x$, which is equivalent to \n$2 - 6\\text{sin}^2 x \\text{cos}^2 x$.\nPutting everything together, we have $(3 - 6\\text{sin}^2 {x} \\text{cos}^2 {x}) - (2 - 6\\text{sin}^2 {x} \\text{cos}^2 {x}) = 1$ or $1 = 1$. Therefore, the given equation $3f_{4}(x)-2f_{6}(x)=f_{2}(x)$ is true for all real $x$, meaning that there are more than 8 values of $x$ that satisfy the given equation and so the answer is $\\boxed{\\text{(E) more than }8}$."
+  }
+}

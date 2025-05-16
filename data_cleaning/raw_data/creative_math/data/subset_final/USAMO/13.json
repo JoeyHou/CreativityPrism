@@ -1,0 +1,9 @@
+{
+  "competition_id": "1983_USAMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Consider an open interval of length $1/n$ on the real number line, where $n$ is a positive integer. Prove that the number of irreducible fractions $p/q$, with $1\\le q\\le n$, contained in the given interval is at most $(n+1)/2$.",
+  "solutions": {
+    "Solution": "Let $I$ be an open interval of length $1/n$ and $F_n$ the set of fractions $p/q\\in I$ with $p,q\\in\\mathbb{Z}$, $\\gcd(p,q)=1$ and $1\\leq q\\leq n$. \nAssume that $\\frac{p}{q}\\in F_n$. If $k\\in\\mathbb{Z}$ is such that $1\\leq kq\\leq n$, and $p'\\in\\mathbb{Z}$ is such that $\\gcd(p',kq)=1$, then\n\\[\\left|\\frac{p}{q}-\\frac{p'}{kq}\\right|\\geq\\frac{1}{kq}\\geq \\frac{1}{n}\\]\nTherefore $\\frac{p'}{kq}\\notin I\\supset F_n$. This means that $\\frac{p}{q}$ is the only fraction in $F_n$ with denominator $q$ or multiple of $q$.\nTherefore, from each of the pairs in $P=\\left\\{(k,2k):\\ 1\\leq k\\leq \\left\\lfloor\\frac{n+1}{2}\\right\\rfloor\\right\\}$ at most one element from each can be a denominator of a fraction in $F_n$.\nHence $|F_n|\\leq |P|\\leq\\frac{n+1}{2}$"
+  }
+}

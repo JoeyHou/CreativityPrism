@@ -1,0 +1,9 @@
+{
+  "competition_id": "2012_AMC_12A_Problems",
+  "problem_id": 21,
+  "difficulty": 4,
+  "problem": "Let $a$, $b$, and $c$ be positive integers with $a\\ge$ $b\\ge$ $c$ such that\n$a^2-b^2-c^2+ab=2011$ and\n$a^2+3b^2+3c^2-3ab-2ac-2bc=-1997$.\nWhat is $a$?\n$\\textbf{(A)}\\ 249\\qquad\\textbf{(B)}\\ 250\\qquad\\textbf{(C)}\\ 251\\qquad\\textbf{(D)}\\ 252\\qquad\\textbf{(E)}\\ 253$",
+  "solutions": {
+    "Solution": "Add the two equations.\n$2a^2 + 2b^2 + 2c^2 - 2ab - 2ac - 2bc = 14$.\nNow, this can be rearranged and factored.\n$(a^2 - 2ab + b^2) + (a^2 - 2ac + c^2) + (b^2 - 2bc + c^2) = 14$\n$(a - b)^2 + (a - c)^2 + (b - c)^2 = 14$\n$a$, $b$, and $c$ are all integers, so the three terms on the left side of the equation must all be perfect squares.\nWe see that the only is possibility is $14 = 9 + 4 + 1$. \n$(a-c)^2 = 9 \\Rightarrow a-c = 3$, since $a-c$ is the biggest difference. It is impossible to determine by inspection whether $a-b = 1$ or $2$, or whether $b-c = 1$ or $2$.\nWe want to solve for $a$, so take the two cases and solve them each for an expression in terms of $a$. Our two cases are $(a, b, c) = (a, a-1, a-3)$ or $(a, a-2, a-3)$. Plug these values into one of the original equations to see if we can get an integer for $a$.\n$a^2 - (a-1)^2 - (a-3)^2 + a(a-1) = 2011$, after some algebra, simplifies to\n$7a = 2021$. $2021$ is not divisible by $7$, so $a$ is not an integer. \nThe other case gives $a^2 - (a-2)^2 - (a-3)^2 + a(a-2) = 2011$, which simplifies to $8a = 2024$. Thus, $a = 253$ and the answer is $\\boxed{\\textbf{(E)}\\ 253}$."
+  }
+}

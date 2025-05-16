@@ -1,0 +1,8 @@
+{
+  "competition_id": "1985_AHSME_Problems",
+  "problem_id": 12,
+  "problem": "Let $p$, $q$ and $r$ be distinct prime numbers, where $1$ is not considered a prime. Which of the following is the smallest positive perfect cube having $n = pq^2r^4$ as a divisor?\n$\\mathrm{(A)\\ } p^8q^8r^8 \\qquad \\mathrm{(B) }\\left(pq^2r^2\\right)^3 \\qquad \\mathrm{(C) } \\left(p^2q^2r^2\\right)^3 \\qquad \\mathrm{(D) } \\left(pqr^2\\right)^3 \\qquad \\mathrm{(E) \\  }4p^3q^3r^3$",
+  "solutions": {
+    "Solution": "A number of the form $p^aq^br^c$ will be a perfect cube precisely when $a$, $b$, and $c$ are multiples of 3. (Clearly, since we are looking for the  possible perfect cube, we can assume that it has no other prime factors.) Furthermore, for it to be a multiple of $pq^2r^4$, we must have $a \\geq 1$, $b \\geq 2$, and $c \\geq 4$. The smallest multiple of $3$ that is at least $1$ is $3$, the smallest that is at least $2$ is again $3$, and the smallest that is at least $4$ is $6$. Hence the smallest possible perfect cube with $n$ as a divisor is $p^3q^3r^6 = \\boxed{\\text{(D)} \\left(pqr^2\\right)^3}$."
+  }
+}

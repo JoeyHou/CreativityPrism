@@ -1,0 +1,9 @@
+{
+  "competition_id": "1988_AJHSME_Problems",
+  "problem_id": 2,
+  "difficulty": 1,
+  "problem": "The product $8\\times .25\\times 2\\times .125 =$\n$\\text{(A)}\\ \\frac18 \\qquad \\text{(B)}\\ \\frac14 \\qquad \\text{(C)}\\ \\frac12 \\qquad \\text{(D)}\\ 1 \\qquad \\text{(E)}\\ 2$",
+  "solutions": {
+    "Solution": "Converting the decimals to fractions, this is \n\\begin{align*} 8\\times \\frac{1}{4} \\times 2\\times \\frac{1}{8} &= \\frac{8\\times 2}{4\\times 8} \\\\ &= \\frac{16}{32} \\\\ &= \\frac{1}{2} \\rightarrow \\boxed{\\text{C}} \\end{align*}"
+  }
+}

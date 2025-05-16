@@ -1,0 +1,9 @@
+{
+  "competition_id": "1997_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Find all pairs $(a,b)$ of integers $a,b \\ge 1$ that satisfy the equation\n$a^{b^{2}}=b^{a}$",
+  "solutions": {
+    "Solution": "Case 1: $(1 \\le a \\le b)$\n$(a^{b})^{b}=b^{a}$\nLooking at this expression since $b \\ge a$ then $a^{b} \\le b$.\nHere we look at subcase $a>1$ which gives $a^{b}>b$ for all $(1 < a \\le b)$.  This contradicts condition $a^{b} \\le b$, and thus $a$ can't be more than one giving the solution of $a=1$ with $b \\ge 1$.  So we substitute the value of $a=1$ into the original equation to get $1^{b^2}=b^{1}$ which solves to $b=1$ and our first pair $(a,b)=(1,1)$\n\nCase 2: $(1 \\le b < a)$\n$a^{b^2}=b^{a}$\nsince $a>b$, then $b^{2}<a$ and we multiply both sides of the equation by $b^{-2b^{2}}$ to get:\n$b^{-2b^{2}}a^{b^2}=b^{-2b^{2}}b^{a}$\n$(ab^{-2})^{b^{2}}=b^{a-2b^{2}}$\nSince $b^{2}<a$, then $(ab^{-2})^{b^{2}}>1$ and $b^{a-2b^{2}}>0$. This gives $a-2b^{2}>1$\nThis implies that $a>2b^{2}$ for $b>1$\nLet $a=kb^{2}$ with $k \\in \\mathbb{Z} ^{+}$. Since $a>2b^{2}$, then $k \\ge 3$\n$(kb^{2}b^{-2})^{b^{2}}=b^{kb^{2}-2b^{2}}$\n$k^{b^{2}}=b^{(k-2)b^{2}}$\n$k=b^{k-2}$, which gives $b \\ge 2$\nsubcase $k=3$:\n$3=b^{3-2}=b$ and $a=kb^{2}=(3)(3)^{2}=27$. which provides 2nd pair $(a,b)=(27,3)$\nsubcase $k=4$:\n$4=b^{4-2}=b^{2}$, thus $b=2$ and $a=kb^{2}=(4)(2)^{2}=16$. which provides 3rd pair $(a,b)=(16,2)$\nsubcase $k \\ge 5$:\n$k=b^{k-2}$, thus $b=k^{1/(k-2)}$ which decreases with $k$ and $b \\to 1$ as $k \\to \\infty$ .  From subcase $k=4$, we know that $b=2$, thus for subcase $k \\ge 5$, $1<b<2$.  Therefore this subcase has no solution because it contradicts the condition for Case 2 of $b \\ge 2$.\nFinal solution for all pairs is $(a,b)=(1,1); (27,3); (16,2)$"
+  }
+}

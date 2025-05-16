@@ -1,0 +1,9 @@
+{
+  "competition_id": "2007_AMC_10A_Problems",
+  "problem_id": 22,
+  "difficulty": 3,
+  "problem": "A finite sequence of three-digit integers has the property that the tens and units digits of each term are, respectively, the hundreds and tens digits of the next term, and the tens and units digits of the last term are, respectively, the hundreds and tens digits of the first term. For example, such a sequence might begin with the terms 247, 475, and 756 and end with the term 824. Let $S$ be the sum of all the terms in the sequence. What is the largest prime factor that always divides $S$? \n$\\mathrm{(A)}\\ 3\\qquad \\mathrm{(B)}\\ 7\\qquad \\mathrm{(C)}\\ 13\\qquad \\mathrm{(D)}\\ 37\\qquad \\mathrm{(E)}\\ 43$",
+  "solutions": {
+    "Solution": "A given digit appears as the hundreds digit, the tens digit, and the units digit of a term the same number of times. Let $k$ be the sum of the units digits in all the terms. Then $S=111k=3 \\cdot 37k$, so $S$ must be divisible by $37\\ \\mathrm{(D)}$. To see that it need not be divisible by any larger prime, the sequence $123, 231, 312$ gives $S=666=2 \\cdot 3^2 \\cdot 37\\Rightarrow \\mathrm{\\boxed{(D)}}$."
+  }
+}

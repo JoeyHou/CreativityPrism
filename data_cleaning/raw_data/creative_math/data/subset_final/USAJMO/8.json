@@ -1,0 +1,9 @@
+{
+  "competition_id": "2024_USAJMO_Problems",
+  "problem_id": 3,
+  "difficulty": 7,
+  "problem": "Let $a(n)$ be the sequence defined by $a(1)=2$ and $a(n+1)=(a(n))^{n+1}-1$ for each integer $n\\geq1$. Suppose that $p>2$ is prime and $k$ is a positive integer. Prove that some term of the sequence $a(n)$ is divisible by $p^k$.",
+  "solutions": {
+    "Solution 1": "Lemma $1$:\nGiven a prime $p$, a positive integer $k$, and an even $m$ such that $p^k|a(m)$, we must have that $p^{k+1}|a(m+2)$.\n\nProof of Lemma $1$:\n$a(m+1)\\equiv (a(m))^{m+1}-1\\equiv -1 \\mod p^{k+1}$\nThen, $a(m+2)\\equiv (a(m+1))^{m+2}-1\\equiv (-1)^{m+2}-1\\equiv 0 \\mod p^{k+1}$\n\nTherefore, by induction, if there exists an even integer $m$ such that $p|a(m)$, then for all integers $k$, $p^k|a(m+2k-2)$, so we are done if there exists an even $m$ such that $p|a(m)$.\n\nNow, consider the case where there is some prime $p>2$ such that there are no even integers $m$ such that $p|a(m)$.\nLemma $2$:\nIn this case, we must have that $p|a(m)$ if $m\\equiv -1 \\mod p-1$ for all integers $m$.\nProof of Lemma $2$:\nSuppose for the sake of contradiction that there exists some $m$ such that $m\\equiv -1\\mod p-1$ and $p$ does not divide $a(m)$. Then, we have $a(m+1)\\equiv (a(m))^{m+1}-1\\equiv 1-1\\equiv 0\\mod p$, by Fermat's Little Theorem. Since for all $p>2$, $p-1$ is even, then $m+1$ would be even. However this results in a contradiction.\nThen, we get that if $m\\equiv -1\\mod p-1$, then $0\\equiv a(m)\\equiv (a(m-1))^m-1\\mod p\\implies (a(m-1))^{m+1}\\equiv 1\\equiv a(m-1)\\mod p$.\nThen, by LTE, $v_p(a(m))=v_p((a(m-1))^m-1)=v_p(a(m-1)-1)+v_p(m)>v_p(m)$. Since $\\gcd(p-1,p)=1$, then $\\gcd(p-1,p^k)=1$ for all positive integers $k$, so then by Chines Remainder Theorem there exists integers $m$ such that $m\\equiv -1\\mod p-1$ and $m\\equiv 0\\mod p^k$, so we are done"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "competition_id": "2021_AMC_10A_Problems",
+  "problem_id": 2,
+  "difficulty": 1,
+  "problem": "Portia's high school has $3$ times as many students as Lara's high school. The two high schools have a total of $2600$ students. How many students does Portia's high school have?\n$\\textbf{(A)} ~600 \\qquad\\textbf{(B)} ~650 \\qquad\\textbf{(C)} ~1950 \\qquad\\textbf{(D)} ~2000\\qquad\\textbf{(E)} ~2050$",
+  "solutions": {
+    "Solution 1 (Two Variables)": "The following system of equations can be formed with $P$ representing the number of students in Portia's high school and $L$ representing the number of students in Lara's high school:\n\\begin{align*} P&=3L, \\\\ P+L&=2600. \\end{align*}\nSubstituting $P=3L$ gives $4L=2600.$ Solving for $L$ gives $L=650.$ Since we need to find $P,$ we multiply $650$ by $3$ to get $P=\\boxed{\\textbf{(C)} ~1950}.$",
+    "Solution 2 (One Variable)": "Suppose Lara's high school has $x$ students, so Portia's high school has $3x$ students. We have $x+3x=2600,$ or $4x=2600.$ The answer is \\[3x=2600\\cdot\\frac 34=650\\cdot3=\\boxed{\\textbf{(C)} ~1950}.\\]",
+    "Solution 3 (Arithmetic)": "Clearly, $2600$ is $4$ times the number of students in Lara's high school. Therefore, Lara's high school has $2600\\div4=650$ students, and Portia's high school has $650\\cdot3=\\boxed{\\textbf{(C)} ~1950}$ students.",
+    "Solution 4 (Observations)": "The number of students in Portia's high school must be a multiple of $3.$ This eliminates $\\textbf{(B)},\\textbf{(D)},$ and $\\textbf{(E)}.$ Since $\\textbf{(A)}$ is too small (as it is clear that $600+\\frac{600}{3}<2600$), we are left with $\\boxed{\\textbf{(C)} ~1950}.$"
+  }
+}

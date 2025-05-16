@@ -1,0 +1,10 @@
+{
+  "competition_id": "2005_AMC_10B_Problems",
+  "problem_id": 16,
+  "difficulty": 2,
+  "problem": "The quadratic equation $x^2+mx+n$ has roots twice those of $x^2+px+m$, and none of $m,n,$ and $p$ is zero. What is the value of $n/p$?\n$\\textbf{(A) }\\ {{{1}}} \\qquad \\textbf{(B) }\\ {{{2}}} \\qquad \\textbf{(C) }\\ {{{4}}} \\qquad \\textbf{(D) }\\ {{{8}}} \\qquad \\textbf{(E) }\\ {{{16}}}$",
+  "solutions": {
+    "Solution 1": "Let $x^2 + px + m = 0$ have roots $a$ and $b$. Then \n\\[x^2 + px + m = (x-a)(x-b) = x^2 - (a+b)x + ab,\\]\nso $p = -(a+b)$ and $m = ab$. Also, $x^2 + mx + n = 0$ has roots $2a$ and $2b$, so\n\\[x^2 + mx + n = (x-2a)(x-2b) = x^2 - 2(a+b)x + 4ab,\\]\nand $m = -2(a+b)$ and $n = 4ab$. Thus $\\frac{n}{p} = \\frac{4ab}{-(a+b)} = \\frac{4m}{\\frac{m}{2}} = \\boxed{\\textbf{(D) }8}$. \nIndeed, consider the quadratics $x^2 + 8x + 16 = 0,\\ x^2 + 16x + 64 = 0$.",
+    "Solution 2": "If the roots of $x^2 + mx + n = 0$ are $2a$ and $2b$ and the roots of $x^2 + px + m = 0$ are $a$ and $b$, then using Vieta's formulas,\n\\[2a + 2b = -m\\]\n\\[a + b = -p\\]\n\\[2a(2b) = n\\]\n\\[a(b) = m\\]\nTherefore, substituting the second equation into the first equation gives \n\\[m = 2(p)\\]\nand substituting the fourth equation into the third equation gives\n\\[n = 4(m)\\]\nTherefore, $n = 8p$, so $\\frac{n}{p}= \\boxed{\\textbf{(D) }8}$"
+  }
+}

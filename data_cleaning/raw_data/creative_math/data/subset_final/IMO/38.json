@@ -1,0 +1,9 @@
+{
+  "competition_id": "2000_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Does there exist a positive integer $n$ such that $n$ has exactly 2000 prime divisors and $n$ divides $2^n + 1$?",
+  "solutions": {
+    "Solution": "Let $N=2^n+1$. We will assume for the sake of contradiction that $n|N$.\n$2^n+1 \\equiv 0 \\pmod{n} \\Rightarrow 2^n \\equiv -1 \\pmod{n}$. So 2 does not divide $n$, and so $n$ is odd.\nSelect an arbitrary prime factor of $n$ and call it $p$. Let's represent $n$ in the form $p^am$, where $m$ is not divisible by $p$.\nNote that $p$ and $m$ are both odd since $n$ is odd. By repeated applications of Fermat's Little Theorem:\n$N = 2^n+1 = 2^{p^am} + 1 = (2^{p^{a-1}m})^p + 1 \\equiv 2^{p^{a-1}m} + 1$ (mod $p$)\nContinuing in this manner, and inducting on k from 1 to $a$,\n$2^{p^{a-k}m}+1 \\equiv (2^{p^{a-k-1}m})^p + 1$ (mod $p$) $\\equiv 2^{p^{a-k-1}m} + 1$ (mod $p$)\nSo we have $N \\equiv 2^m+1$ (mod $p$)\nSince $p$ is relatively prime to $m$, $N \\equiv 1+1$ (mod $p$) $\\equiv 2$ (mod $p$)\nSince $p$ is odd, $N$ is not divisible by $p$. Hence $N$ is not divisible by $n$. So we have a contradiction, and our original assumption was false, and therefore $N$ is still not divisible by $n$."
+  }
+}

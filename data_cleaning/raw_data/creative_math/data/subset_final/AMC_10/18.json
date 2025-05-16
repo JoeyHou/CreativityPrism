@@ -1,0 +1,10 @@
+{
+  "competition_id": "2008_AMC_10B_Problems",
+  "problem_id": 16,
+  "difficulty": 2,
+  "problem": "Two fair coins are to be tossed once. For each head that results, one fair die is to be rolled. What is the probability that the sum of the die rolls is odd? (Note that if no die is rolled, the sum is 0.)\n$\\mathrm{(A)}\\ {{{\\frac{3} {8}}}} \\qquad \\mathrm{(B)}\\ {{{\\frac{1} {2}}}} \\qquad \\mathrm{(C)}\\ {{{\\frac{43} {72}}}} \\qquad \\mathrm{(D)}\\ {{{\\frac{5} {8}}}} \\qquad \\mathrm{(E)}\\ {{{\\frac{2} {3}}}}$",
+  "solutions": {
+    "Solution": "We consider 3 cases based on the outcome of the coin:\nCase 1, 0 heads:\nThe probability of this occurring on the coin flip is $\\frac{1} {4}$. The probability that 0 rolls of a die will result in an odd sum is $0$. \nCase 2, 1 head:\nThe probability of this case occurring is $\\frac{1} {2} \\cdot \\frac {1} {2} \\cdot 2 = \\frac {1} {2}.$ The probability that 1 die results in an odd number is $\\frac{1} {2}$.\nCase 3, 2 heads:\nThe probability of this occurring is $\\frac{1} {4}$. The probability that 2 dice result in an odd sum is $\\frac{1} {2}$, because regardless of what we throw on the first die, we have $\\frac{1} {2}$ probability that the second die will have the opposite parity.\nThus, the probability of having an odd sum rolled is $\\frac{1} {4} \\cdot 0 + \\frac{1} {2} \\cdot \\frac{1} {2} + \\frac{1} {4} \\cdot \\frac{1} {2}=\\frac{3} {8}\\Rightarrow \\boxed{A}$",
+    "Solution 2 (possibly slightly faster)": "We use complementary counting or subtracting $P(\\text{Even})$ from $1$. We use casework now.\nCase $1$: $2$ Tails. $2$ tails occur with probability $\\frac{1}{4}$, but we will always get an even number, so the overall probability to get an even sum is $\\frac{1}{4}$.\nCase $2$: $1$ Tail: This event occurs with probability $\\frac{1}{2}$ and the probability we get an even is $\\frac{1}{2}$, so the overall probability to get an even, in this case, is also $\\frac{1}{4}$.\nWe know $P\\text{(Even)}$ is greater than $\\frac{1}{2}$, so $P\\text{(Odd)}$ is less than $\\frac{1}{2}$.\nOnly $\\boxed{\\text{(A)}\\frac{3}{8}}$ is less than $\\frac{1}{2}$."
+  }
+}

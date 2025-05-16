@@ -1,0 +1,11 @@
+{
+  "competition_id": "1987_AIME_Problems",
+  "problem_id": 11,
+  "difficulty": 5,
+  "problem": "Find the largest possible value of $k$ for which $3^{11}$ is expressible as the sum of $k$ consecutive positive integers.",
+  "solutions": {
+    "Solution 1": "Let us write down one such sum, with $m$ terms and first term $n + 1$:\n$3^{11} = (n + 1) + (n + 2) + \\ldots + (n + m) = \\frac{1}{2} m(2n + m + 1)$.\nThus $m(2n + m + 1) = 2 \\cdot 3^{11}$ so $m$ is a divisor of $2\\cdot 3^{11}$.  However, because $n \\geq 0$ we have $m^2 < m(m + 1) \\leq 2\\cdot 3^{11}$ so $m < \\sqrt{2\\cdot 3^{11}} < 3^6$.  Thus, we are looking for large factors of $2\\cdot 3^{11}$ which are less than $3^6$.  The largest such factor is clearly $2\\cdot 3^5 = 486$; for this value of $m$ we do indeed have the valid expression $3^{11} = 122 + 123 + \\ldots + 607$, for which $k=\\boxed{486}$.",
+    "Solution 2": "First note that if $k$ is odd, and $n$ is the middle term, the sum equals $kn$. If $k$ is even, then we have the sum equal to $kn+k/2$, which will be even. Since $3^{11}$ is odd, we see that $k$ is odd. \nThus, we have $nk=3^{11} \\implies n=3^{11}/k$. Also, note $n-(k+1)/2=0 \\implies n=(k+1)/2.$ Subsituting $n=3^{11}/k$, we have $k^2+k=2*3^{11}$. Proceed as in solution 1.",
+    "Solution 3": "Proceed as in Solution 1 until it is noted that $m$ is a divisor of $2\\cdot 3^{11}$. The divisors of $2\\cdot 3^{11}$ are $3^{1} , 2\\cdot 3^{1} , 3^{2} , 2\\cdot 3^{2} , \\ldots , 2\\cdot 3^{10} , 3^{11}$. Note that the factors of $m(2n + m + 1)$ are of opposite parity (if $m$ is odd, then $(2n + m + 1)$ is even and vice versa). Thus, one of the two factors will be a power of three, and the other will be twice a power of three. $(2n + m + 1)$ will represent the greater factor while $m$ will represent the lesser factor. Given this information, we need to find the factor pair that maximizes the lesser of the two factors, as this will maximize the value of $m$. The factor pair which maximizes the lesser factor is $2\\cdot 3^{5}$ and $3^{6}$. It follows that $m$ = $2\\cdot 3^{5}$ = $\\boxed{486}$."
+  }
+}

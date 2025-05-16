@@ -1,0 +1,8 @@
+{
+  "competition_id": "1957_AHSME_Problems",
+  "problem_id": 38,
+  "problem": "From a two-digit number $N$ we subtract the number with the digits reversed and find that the result is a positive perfect cube. Then:\n$\\textbf{(A)}\\ {N}\\text{ cannot end in 5}\\qquad\\\\  \\textbf{(B)}\\ {N}\\text{ can end in any digit other than 5}\\qquad \\\\  \\textbf{(C)}\\ {N}\\text{ does not exist}\\qquad\\\\  \\textbf{(D)}\\ \\text{there are exactly 7 values for }{N}\\qquad\\\\  \\textbf{(E)}\\ \\text{there are exactly 10 values for }{N}$",
+  "solutions": {
+    "Solution": "The number $N$ can be written as $10a+b$ with $a$ and $b$ representing the digits. The number $N$ with its digits reversed is $10b+a$. Since the problem asks for a positive number as the difference of these two numbers, than $a>b$. Writing this out, we get $10a+b-(10b+a)=9a-9b=9(a-b)$. Therefore, the difference must be a multiple of $9$, and the only perfect cube with less than $3$ digits and is multiple of $9$ is $3^3=27$. Also, that means $a-b=3$, and there are $7$ possibilities of that, so our answer is \n$\\boxed{\\textbf{(D)}}$ There are exactly $7$ values of $N$"
+  }
+}

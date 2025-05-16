@@ -1,0 +1,9 @@
+{
+  "competition_id": "1965_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Consider $\\triangle OAB$ with acute angle $AOB$. Through a point $M \\neq O$ perpendiculars are drawn to $OA$ and $OB$, the feet of which are $P$ and $Q$ respectively. The point of intersection of the altitudes of $\\triangle OPQ$ is $H$. What is the locus of $H$ if $M$ is permitted to range over (a) the side $AB$, (b) the interior of $\\triangle OAB$?",
+  "solutions": {
+    "Solution": "Let $O(0,0),A(a,0),B(b,c)$.\nEquation of the line $AB: y=\\frac{c}{b-a}(x-a)$.\nPoint $M \\in AB\u00a0: M(\\lambda,\\frac{c}{b-a}(\\lambda-a))$.\nEasy, point $P(\\lambda,0)$.\nPoint $Q = OB \\cap MQ$, $MQ \\bot OB$.\nEquation of $OB\u00a0: y=\\frac{c}{b}x$, equation of $MQ\u00a0: y=-\\frac{b}{c}(x-\\lambda)+\\frac{c}{b-a}(\\lambda-a)$.\nSolving: $x_{Q}=\\frac{1}{b^{2}+c^{2}}\\left[b^{2}\\lambda+\\frac{c^{2}(\\lambda-a)b}{b-a}\\right]$.\nEquation of the first altitude: $x=\\frac{1}{b^{2}+c^{2}}\\left[b^{2}\\lambda+\\frac{c^{2}(\\lambda-a)b}{b-a}\\right] \\quad (1)$.\nEquation of the second altitude: $y=-\\frac{b}{c}(x-\\lambda)\\quad\\quad (2)$.\nEliminating $\\lambda$ from (1) and (2):\n\t\\[ac \\cdot x + (b^{2}+c^{2}-ab)y=abc\\]\na line segment $MN , M \\in OA , N \\in OB$.\nSecond question: the locus consists in the $\\triangle OMN$."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "competition_id": "2022_AMC_10B_Problems",
+  "problem_id": 11,
+  "difficulty": 2,
+  "problem": "All the high schools in a large school district are involved in a fundraiser selling T-shirts. Which of the choices below is logically equivalent to the statement \"No school bigger than Euclid HS sold more T-shirts than Euclid HS\"?\n$\\textbf{(A) }$ All schools smaller than Euclid HS sold fewer T-shirts than Euclid HS.\n$\\textbf{(B) }$ No school that sold more T-shirts than Euclid HS is bigger than Euclid HS.\n$\\textbf{(C) }$ All schools bigger than Euclid HS sold fewer T-shirts than Euclid HS.\n$\\textbf{(D) }$ All schools that sold fewer T-shirts than Euclid HS are smaller than Euclid HS.\n$\\textbf{(E) }$ All schools smaller than Euclid HS sold more T-shirts than Euclid HS.",
+  "solutions": {
+    "Solution 1": "Let $B$ denote a school that is bigger than Euclid HS, and $M$ denote a school that sold more T-shirts than Euclid HS.\nIt follows that $\\neg B$ denotes a school that is  Euclid HS, and $\\neg M$ denotes a school that  T-shirts than Euclid HS.\nConverting everything to conditional statements (if-then form), the given statement becomes \\[B\\implies\\neg M.\\]\nIts contrapositive is $M\\implies\\neg B,$ which is $\\boxed{\\textbf{(B)}}.$\nNote that \"not bigger than\" does not mean \"smaller than\", and \"not selling more\" does not mean \"selling fewer\". There is an equality case. Therefore, none of the other answer choices is equivalent to $B\\implies\\neg M.$",
+    "Solution 2 (Elimination)": "Suppose we have five schools: Euclid HS with $50$ students and $10$ T-shirts sold, school $A$ with $51$ students and $10$ T-shirts sold, school $B$ with $49$ students and $10$ T-shirts sold, school $C$ with $49$ students and $9$ T-shirts sold, and school $D$ with $51$ students and $9$ T-shirts sold (This configuration is legal.). Then, school $B$ rules out $\\textbf{(A)}$, school $A$ rules out $\\textbf{(C)}$, school $D$ rules out $\\textbf{(D)}$, and school $C$ rules out $\\textbf{(E)}$, leaving us with $\\boxed{\\textbf{(B)}}$ as the correct answer."
+  }
+}

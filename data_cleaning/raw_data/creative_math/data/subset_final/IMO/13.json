@@ -1,0 +1,9 @@
+{
+  "competition_id": "1970_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "In the tetrahedron $ABCD$, angle $BDC$ is a right angle.  Suppose that the foot $H$ of the perpendicular from $D$ to the plane $ABC$ in the tetrahedron is the intersection of the altitudes of $\\triangle ABC$.  Prove that\nFor what tetrahedra does equality hold?",
+  "solutions": {
+    "Solution": "Let us show first that angles $ADB$ and $ADC$ are also right. Let $H$ be the intersection of the altitudes\nof $ABC$ and let $CH$ meet $AB$ at $X$. Planes $CED$ and $ABC$ are perpendicular and $AB$ is perpendicular to\nthe line of intersection $CE$. Hence $AB$ is perpendicular to the plane $CDE$ and hence to $ED$. So $BD^2 = DE^2 + BE^2.$ Also $CB^2 = CE^2 + BE^2.$ Therefore $CB^2 - BD^2 = CE^2 - DE^2.$ But $CB^2 - BD^2 = CD^2,$ so $CE^2 = CD^2 + DE^2$, so angle $CDE = 90^{\\circ}$. But angle $CDB = 90^{\\circ}$, so $CD$ is perpendicular to\nthe plane $DAB$, and hence angle $CDA$ = $90^{\\circ}$. Similarly, angle $ADB = 90^{\\circ}$.\nHence $AB^2 + BC^2 + CA^2 = 2(DA^2 + DB^2 + DC^2)$. But now we are done, because Cauchy's\ninequality gives $(AB + BC + CA)^2 = 3(AB^2 + BC^2 + CA^2).$ We have equality if and only if\nwe have equality in Cauchy's inequality, which means $AB = BC = CA.$"
+  }
+}

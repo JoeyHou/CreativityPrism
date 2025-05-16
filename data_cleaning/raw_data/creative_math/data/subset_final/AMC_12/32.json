@@ -1,0 +1,9 @@
+{
+  "competition_id": "2002_AMC_12P_Problems",
+  "problem_id": 8,
+  "difficulty": 2,
+  "problem": "Let $AB$ be a segment of length $26$, and let points $C$ and $D$ be located on $AB$ such that $AC=1$ and $AD=8$. Let $E$ and $F$ be points on one of the semicircles with diameter $AB$ for which $EC$ and $FD$ are perpendicular to $AB$. Find $EF.$\n$\\text{(A) }5 \\qquad \\text{(B) }5 \\sqrt{2}  \\qquad \\text{(C) }7 \\qquad \\text{(D) }7 \\sqrt{2} \\qquad \\text{(E) }12$",
+  "solutions": {
+    "Solution 1": "We can solve this with some simple coordinate geometry. Let $A$ be the origin at let $AB$ be located on the positive $x-$axis. The equation of semi-circle $AB$ is $(x-13)^2+y^2=13^2, y \\geq 0.$ Since $E$ and $F$ are both perpendicular to $C$ and $D$ respectively, they must have the same $x -$ coordinate. Plugging in $1$ and $8$ into our semi-circle equation gives us $y=5$ and $y=12$ respectively. The distance formula on $(1, 5)$ and $(8, 12)$ gives us our answer of $\\sqrt{(1-8)^2 + (5-12)^2}=\\sqrt{2(7^2)}=\\boxed{\\textbf{(D) } 7\\sqrt{2}}.$"
+  }
+}

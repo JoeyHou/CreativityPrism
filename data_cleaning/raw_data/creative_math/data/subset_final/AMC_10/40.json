@@ -1,0 +1,9 @@
+{
+  "competition_id": "2005_AMC_10A_Problems",
+  "problem_id": 11,
+  "difficulty": 2,
+  "problem": "A wooden cube $n$ units on a side is painted red on all six faces and then cut into $n^3$ unit cubes. Exactly one-fourth of the total number of faces of the unit cubes are red. What is $n$?\n$\\textbf{(A) } 3\\qquad \\textbf{(B) } 4\\qquad \\textbf{(C) } 5\\qquad \\textbf{(D) } 6\\qquad \\textbf{(E) } 7$",
+  "solutions": {
+    "Solution": "Since there are $n^2$ little faces on each face of the big wooden cube, there are $6n^2$ little faces painted red. \nSince each unit cube has $6$ faces, there are $6n^3$ little faces total. \nSince one-fourth of the little faces are painted red, \n$\\frac{6n^2}{6n^3}=\\frac{1}{4}$\n$\\frac{1}{n}=\\frac{1}{4}$\n$n=\\boxed{\\textbf{(B) }4}$"
+  }
+}

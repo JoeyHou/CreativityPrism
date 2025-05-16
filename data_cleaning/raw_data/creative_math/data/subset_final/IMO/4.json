@@ -1,0 +1,9 @@
+{
+  "competition_id": "2009_IMO_Problems",
+  "problem_id": 2,
+  "difficulty": 8,
+  "problem": "Let $ABC$ be a triangle with circumcentre $O$. The points $P$ and $Q$ are interior points of the sides $CA$ and $AB$ respectively. Let $K,L$ and $M$ be the midpoints of the segments $BP,CQ$ and $PQ$, respectively, and let $\\Gamma$ be the circle passing through $K,L$ and $M$. Suppose that the line $PQ$ is tangent to the circle $\\Gamma$. Prove that $OP=OQ$.",
+  "solutions": {
+    "Solution": "[asy] dot(\"O\", (50, 38), N); dot(\"A\", (40, 100), N); dot(\"B\", (0, 0), S); dot(\"C\", (100, 0), S); dot(\"Q\", (24, 60), W); dot(\"P\", (52, 80), E); dot(\"L\", (62, 30), SE); dot(\"M\", (38, 70), N); dot(\"K\", (27, 42), W); draw((100, 0)--(24, 60), dotted); draw((0, 0)--(52, 80), dashed); draw((0, 0)--(100, 0)--(40, 100)--cycle); draw((24, 60)--(52, 80)); draw((27, 42)--(38, 70)--(62, 30)--cycle); draw(circle((49, 49), 23)); label(\"$\\Gamma$\", (72, 49), E); draw(circle((50, 38), 63)); label(\"$\\omega$\", (-13, 38), NW); [/asy]\nDiagram by qwertysri987\nBy parallel lines and the tangency condition, \\[\\angle APM\\cong \\angle LMP \\cong \\angle LKM.\\] Similarly, \\[\\angle AQP\\cong \\angle KLM,\\] so AA similarity implies \\[\\triangle APQ\\sim \\triangle MKL.\\] Let $\\omega$ denote the circumcircle of $\\triangle ABC,$ and $R$ its circumradius. As both $P$ and $Q$ are inside $\\omega,$\n\\begin{align*} R^2-QO^2&=\\text{Pow}_{\\omega}(Q)\\\\ &=QB\\cdot AQ \\\\ &=2AQ\\cdot MK\\\\ &=2AP\\cdot ML\\\\ &=AP\\cdot PC\\\\ &=\\text{Pow}_{\\omega}(P)\\\\ &=R^2-PO^2. \\end{align*} It follows that $OP=OQ.$ $\\blacksquare$"
+  }
+}

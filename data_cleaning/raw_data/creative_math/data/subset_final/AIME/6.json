@@ -1,0 +1,10 @@
+{
+  "competition_id": "2002_AIME_II_Problems",
+  "problem_id": 7,
+  "difficulty": 4,
+  "problem": "It is known that, for all positive integers $k$,\nFind the smallest positive integer $k$ such that $1^2+2^2+3^2+\\ldots+k^2$ is a multiple of $200$.",
+  "solutions": {
+    "Solution": "$\\frac{k(k+1)(2k+1)}{6}$ is a multiple of $200$ if $k(k+1)(2k+1)$ is a multiple of $1200 = 2^4 \\cdot 3 \\cdot 5^2$. \nSo $16,3,25|k(k+1)(2k+1)$. \nSince $2k+1$ is always odd, and only one of $k$ and $k+1$ is even, either $k, k+1 \\equiv 0 \\pmod{16}$. \nThus, $k \\equiv 0, 15 \\pmod{16}$. \nIf $k \\equiv 0 \\pmod{3}$, then $3|k$. If $k \\equiv 1 \\pmod{3}$, then $3|2k+1$. If $k \\equiv 2 \\pmod{3}$, then $3|k+1$. \nThus, there are no restrictions on $k$ in $\\pmod{3}$. \nIt is easy to see that only one of $k$, $k+1$, and $2k+1$ is divisible by $5$. So either $k, k+1, 2k+1 \\equiv 0 \\pmod{25}$. \nThus, $k \\equiv 0, 24, 12 \\pmod{25}$. \nFrom the Chinese Remainder Theorem, $k \\equiv 0, 112, 224, 175, 287, 399 \\pmod{400}$. Thus, the smallest positive integer $k$ is $\\boxed{112}$.",
+    "Solution 2": "To elaborate, we write out all 6 possibilities of pairings. For example, we have\n$k \\equiv 24 \\pmod{25}$\n$k \\equiv 15 \\pmod{16}$\nis one pairing, and\n$k \\equiv 24 \\pmod{25}$\n$k \\equiv 0 \\pmod{16}$\nis another. We then solve this by writing the first as $16k+15 \\equiv 24 \\pmod{25}$ and then move the 15 to get $16k \\equiv 9 \\pmod{25}$.\nWe then list out all the mods of the multiples of $16$, and realize that each of these $6$ pairings can be generalized to become one of these multiples of $16$.\nThe chain is as follows:\n$16 \\pmod{25}$\n$7, 23, 14, 5, 21, 12, 3, 19, 10, 1, 17, 8, 24, 15, 6, 22, 13, 4, 20, 11, 27, 18, 9, 0,$ and then it loops.\nWe see that for the first equation we have $9 \\pmod {25}$ at the 24th position, so we then do $24(16)+15$ to get the first answer of 399.\nAgain, this is possible to repeat for all $6$ cases. CRT guarantees that we will have a solution before $25 \\times 16$ or $400$ and indeed we did\u00a0:P"
+  }
+}

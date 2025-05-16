@@ -1,0 +1,9 @@
+{
+  "competition_id": "1953_AHSME_Problems",
+  "problem_id": 39,
+  "problem": "The product, $\\log_a b \\cdot \\log_b a$ is equal to: \n$\\textbf{(A)}\\ 1 \\qquad \\textbf{(B)}\\ a \\qquad \\textbf{(C)}\\ b \\qquad \\textbf{(D)}\\ ab \\qquad \\textbf{(E)}\\ \\text{none of these}$",
+  "solutions": {
+    "Solution": "\\[a^x=b\\]\n\\[b^y=a\\]\n\\[{a^x}^y=a\\]\n\\[xy=1\\]\n\\[\\log_a b\\log_b a=1\\]\nAs a result, the answer should be $\\boxed{\\textbf{(A) }1}$.",
+    "Solution 2": "Apply the change of base formula to  $\\log_a b$ and $\\log_b a$. For simplicity, let us convert to base-10 log.\nBy change of base, the expression becomes $\\frac{\\log b}{\\log a} * \\frac{\\log a}{\\log b} = \\boxed{\\textbf{(A) }1}$."
+  }
+}

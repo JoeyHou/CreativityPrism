@@ -1,0 +1,9 @@
+{
+  "competition_id": "2001_AMC_12_Problems",
+  "problem_id": 19,
+  "difficulty": 3,
+  "problem": "The polynomial $p(x) = x^3+ax^2+bx+c$ has the property that the average of its zeros, the product of its zeros, and the sum of its coefficients are all equal. The $y$-intercept of the graph of $y=p(x)$ is 2. What is $b$?\n$(\\mathrm{A})\\ -11 \\qquad (\\mathrm{B})\\ -10 \\qquad (\\mathrm{C})\\ -9 \\qquad (\\mathrm{D})\\ 1 \\qquad (\\mathrm{E})\\ 5$",
+  "solutions": {
+    "Solution": "We are given $c=2$. So the product of the roots is $-c = -2$ by Vieta's formulas. These also tell us that $\\frac{-a}{3}$ is the average of the zeros, so $\\frac{-a}3=-2 \\implies a = 6$. We are also given that the sum of the coefficients is $-2$, so $1+6+b+2 = -2 \\implies b=-11$. So the answer is $\\fbox{A}$."
+  }
+}

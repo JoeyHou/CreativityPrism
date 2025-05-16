@@ -1,0 +1,9 @@
+{
+  "competition_id": "2001_AIME_II_Problems",
+  "problem_id": 14,
+  "difficulty": 6,
+  "problem": "There are $2n$ complex numbers that satisfy both $z^{28} - z^{8} - 1 = 0$ and $\\mid z \\mid = 1$. These numbers have the form $z_{m} = \\cos\\theta_{m} + i\\sin\\theta_{m}$, where $0\\leq\\theta_{1} < \\theta_{2} < \\ldots < \\theta_{2n} < 360$ and angles are measured in degrees. Find the value of $\\theta_{2} + \\theta_{4} + \\ldots + \\theta_{2n}$.",
+  "solutions": {
+    "Solution": "$z$ can be written in the form $\\text{cis\\,}\\theta$. Rearranging, we find that  $\\text{cis\\,}{28}\\theta = \\text{cis\\,}{8}\\theta+1$\nSince the real part of $\\text{cis\\,}{28}\\theta$ is one more than the real part of $\\text{cis\\,} {8}\\theta$ and their imaginary parts are equal, it is clear that either $\\text{cis\\,}{28}\\theta = \\frac{1}{2}+\\frac {\\sqrt{3}}{2}i$ and $\\text{cis\\,} {8}\\theta =  -\\frac{1}{2}+\\frac {\\sqrt{3}}{2}i$, or $\\text{cis\\,}{28}\\theta = \\frac{1}{2} - \\frac{\\sqrt{3}}{2}i$ and  $\\text{cis\\,} {8}\\theta =  -\\frac{1}{2}- \\frac{\\sqrt{3}}{2}i$\nSetting up and solving equations, $Z^{28}= \\text{cis\\,}{60^\\circ}$ and $Z^8= \\text{cis\\,}{120^\\circ}$, we see that the solutions common to both equations have arguments $15^\\circ , 105^\\circ, 195^\\circ,$ and $\\ 285^\\circ$. We can figure this out by adding 360 repeatedly to the number 60 to try and see if it will satisfy what we need. We realize that it does not work in the integer values.\nAgain setting up equations ($Z^{28}= \\text{cis\\,}{300^\\circ}$ and $Z^{8} = \\text{cis\\,}{240^\\circ}$) we see that the common solutions have arguments of  $75^\\circ, 165^\\circ, 255^\\circ,$ and $345^\\circ$\nListing all of these values, we find that $\\theta_{2} + \\theta_{4} + \\ldots + \\theta_{2n}$ is equal to $(75 + 165 + 255 + 345) ^\\circ$ which is equal to $\\boxed {840}$ degrees. We only want the sum of a certain number of theta, not all of it."
+  }
+}

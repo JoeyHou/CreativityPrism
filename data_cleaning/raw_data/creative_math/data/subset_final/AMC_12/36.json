@@ -1,0 +1,9 @@
+{
+  "competition_id": "2007_AMC_12B_Problems",
+  "problem_id": 5,
+  "difficulty": 2,
+  "problem": "The 2007 AMC 12 contests will be scored by awarding 6 points for each correct response, 0 points for each incorrect response, and 1.5 points for each problem left unanswered. After looking over the 25 problems, Sarah has decided to attempt the first 22 and leave the last 3 unanswered. How many of the first 22 problems must she solve correctly in order to score at least 100 points? \n$\\mathrm {(A)}\\ 13 \\qquad \\mathrm {(B)}\\ 14 \\qquad \\mathrm {(C)}\\ 15 \\qquad \\mathrm {(D)}\\ 16 \\qquad \\mathrm {(E)} 17$",
+  "solutions": {
+    "Solution": "She must get at least $100 - 4.5 = 95.5$ points, and that can only be possible by answering at least $\\lceil \\frac{95.5}{6}\\rceil = 16 \\Rightarrow \\mathrm {(D)}$ questions correctly."
+  }
+}

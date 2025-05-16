@@ -1,0 +1,8 @@
+{
+  "competition_id": "1958_AHSME_Problems",
+  "problem_id": 28,
+  "problem": "A $16$-quart radiator is filled with water. Four quarts are removed and replaced with pure antifreeze liquid. Then four quarts of the mixture are removed and replaced with pure antifreeze. This is done a third and a fourth time. The fractional part of the final mixture that is water is:\n$\\textbf{(A)}\\ \\frac{1}{4}\\qquad  \\textbf{(B)}\\ \\frac{81}{256}\\qquad  \\textbf{(C)}\\ \\frac{27}{64}\\qquad  \\textbf{(D)}\\ \\frac{37}{64}\\qquad  \\textbf{(E)}\\ \\frac{175}{256}$",
+  "solutions": {
+    "Solution": "Every time the process is done, $\\frac{3}{4}$ of the mixture is replaced with antifreeze. That means that $\\frac{3}{4}$ of the water is replaced by antifreeze, and the amount of water in the mixture after the fourth time is $\\left(\\frac{3}{4}\\right)^4 = \\boxed{\\textbf{(B) }\\frac{81}{256}}$."
+  }
+}

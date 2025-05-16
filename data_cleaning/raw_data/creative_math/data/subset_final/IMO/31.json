@@ -1,0 +1,9 @@
+{
+  "competition_id": "1967_IMO_Problems",
+  "problem_id": 6,
+  "difficulty": 9.5,
+  "problem": "In a sports contest, there were $m$ medals awarded on $n$ successive days $(n > 1)$. On the first day, one medal and $\frac{1}{7}$ of the remaining $m - 1$ medals were awarded. On the second day, two medals and $\frac{1}{7}$ of the now remaining medals were awarded; and so on. On the n-th and last day, the remaining $n$ medals were awarded. How many days did the contest last, and how many medals were awarded altogether?",
+  "solutions": {
+    "Solution": "This is not a particularly elegant solution, but if you start from 1 and go all the way in a clever method, by only guessing those that are 1 more than a multiple of 7, you arrive at the answer of 36."
+  }
+}

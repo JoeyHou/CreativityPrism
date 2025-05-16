@@ -1,0 +1,8 @@
+{
+  "competition_id": "1968_AHSME_Problems",
+  "problem_id": 26,
+  "problem": "Let $S=2+4+6+\\cdots +2N$, where $N$ is the smallest positive integer such that $S>1,000,000$. Then the sum of the digits of $N$ is:\n$\\text{(A) } 27\\quad \\text{(B) } 12\\quad \\text{(C) } 6\\quad \\text{(D) } 2\\quad \\text{(E) } 1$",
+  "solutions": {
+    "Solution": "Note that $S = 2(1+2+3+...+N) = N(N +1)$. It follows that $N = 1000$, so the sum of the digits of $N$ is $\\fbox{E}$."
+  }
+}

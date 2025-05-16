@@ -1,0 +1,9 @@
+{
+  "competition_id": "2008_AMC_10B_Problems",
+  "problem_id": 3,
+  "difficulty": 1,
+  "problem": "Assume that $x$ is a positive real number . Which is equivalent to $\\sqrt[3]{x\\sqrt{x}}$?\n$\\mathrm{(A)}\\ x^{1/6}\\qquad\\mathrm{(B)}\\ x^{1/4}\\qquad\\mathrm{(C)}\\ x^{3/8}\\qquad\\mathrm{(D)}\\ x^{1/2}\\qquad\\mathrm{(E)}\\ x$",
+  "solutions": {
+    "Solution": "$\\sqrt[3]{x\\sqrt{x}}=\\sqrt[3]{\\sqrt{x^3}}=\\sqrt[6]{x^3}=x^{3/6}=x^{1/2}\\ \\boxed{(D)}$"
+  }
+}

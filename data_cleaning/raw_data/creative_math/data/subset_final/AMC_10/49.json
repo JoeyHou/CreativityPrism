@@ -1,0 +1,9 @@
+{
+  "competition_id": "2009_AMC_10B_Problems",
+  "problem_id": 6,
+  "difficulty": 2,
+  "problem": "Kiana has two older twin brothers.  The product of their three ages is 128.  What is the sum of their three ages?\n$\\mathrm{(A)}\\ 10\\qquad \\mathrm{(B)}\\ 12\\qquad \\mathrm{(C)}\\ 16\\qquad \\mathrm{(D)}\\ 18\\qquad \\mathrm{(E)}\\ 24$",
+  "solutions": {
+    "Solution": "The age of each person is a factor of $128 = 2^7$.  So the twins could be $2^0 = 1, 2^1 = 2, 2^2 = 4, 2^3 = 8$ years of age and, consequently Kiana could be $128$, $32$, $8$, or $2$ years old, respectively.  Because Kiana is younger than her brothers, she must be $2$ years old. So the sum of their ages is $2 + 8 + 8 = \\boxed{18}$.  The answer is $\\mathrm{(D)}$."
+  }
+}

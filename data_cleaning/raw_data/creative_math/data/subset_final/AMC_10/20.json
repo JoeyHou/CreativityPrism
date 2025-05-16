@@ -1,0 +1,9 @@
+{
+  "competition_id": "2015_AMC_10B_Problems",
+  "problem_id": 3,
+  "difficulty": 1,
+  "problem": "Isaac has written down one integer two times and another integer three times. The sum of the five numbers is $100$, and one of the numbers is $28.$ What is the other number?\n$\\textbf{(A) }8\\qquad\\textbf{(B) }11\\qquad\\textbf{(C) }14\\qquad\\textbf{(D) }15\\qquad\\textbf{(E) }18$",
+  "solutions": {
+    "Solution": "Let the first number be $x$ and the second be $y$. We have $2x+3y=100$. We are given one of the numbers is $28$. If $x$ were to be $28$, $y$ would not be an integer, thus $y=28$.  $2x+3(28)=100$, which gives $x=\\boxed{\\textbf{(A) }8}$."
+  }
+}

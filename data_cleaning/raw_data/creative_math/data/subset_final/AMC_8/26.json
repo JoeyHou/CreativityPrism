@@ -1,0 +1,9 @@
+{
+  "competition_id": "2009_AMC_8_Problems",
+  "problem_id": 19,
+  "difficulty": 1.5,
+  "problem": "Two angles of an isosceles triangle measure $70^\\circ$ and $x^\\circ$. What is the sum of the three possible values of $x$?\n$\\textbf{(A)}\\   95    \\qquad \\textbf{(B)}\\    125   \\qquad \\textbf{(C)}\\    140   \\qquad \\textbf{(D)}\\    165   \\qquad \\textbf{(E)}\\     180$",
+  "solutions": {
+    "Solution": "There are 3 cases: where $x^\\circ$ is a base angle with the $70^\\circ$ as the other angle, where $x^\\circ$ is a base angle with $70^\\circ$ as the vertex angle, and where $x^\\circ$ is the vertex angle with $70^\\circ$ as a base angle.\nCase 1: $x^\\circ$ is a base angle with the $70^\\circ$ as the other angle:\nHere, $x=70$, since base angles are congruent.\nCase 2: $x^\\circ$ is a base angle with $70^\\circ$ as the vertex angle:\nHere, the 2 base angles are both $x^\\circ$, so we can use the equation $2x+70=180$, which simplifies to $x=55$.\nCase 3: $x^\\circ$ is the vertex angle with $70^\\circ$ as a base angle:\nHere, both base angles are $70^\\circ$, since base angles are congruent. Thus, we can use the equation $x+140=180$, which simplifies to $x=40$.\nAdding up all the cases, we get $70+55+40=165$, so the answer is $\\boxed{\\textbf{(D)}\\    165}$."
+  }
+}

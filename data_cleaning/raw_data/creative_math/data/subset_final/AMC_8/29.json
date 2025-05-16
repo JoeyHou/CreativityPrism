@@ -1,0 +1,10 @@
+{
+  "competition_id": "1996_AJHSME_Problems",
+  "problem_id": 12,
+  "difficulty": 1,
+  "problem": "What number should be removed from the list\n\\[1,2,3,4,5,6,7,8,9,10,11\\]\nso that the average of the remaining numbers is $6.1$?\n$\\text{(A)}\\ 4 \\qquad \\text{(B)}\\ 5 \\qquad \\text{(C)}\\ 6 \\qquad \\text{(D)}\\ 7 \\qquad \\text{(E)}\\ 8$",
+  "solutions": {
+    "Solution 1": "Adding all of the numbers gives us $\\frac{11\\cdot12}{2}=66$ as the current total. Since there are $11$ numbers, the current average is $\\frac{66}{11}=6$. We need to take away a number from the total and then divide the result by $10$ because there will only be $10$ numbers left to give an average of $6.1$. Setting up the equation:\n$\\frac{66-x}{10}=6.1$\n$66 - x = 61$\n$x = 5$\nThus, the answer is $\\boxed{B}$",
+    "Solution 2": "Similar to the first solution, the current total is $66$.  Since there are $11$ numbers on the list, taking $1$ number away will leave $10$ numbers.  If those $10$ numbers have an average of $6.1$, then those $10$ numbers must have a sum of $10 \\times 6.1 = 61$.  Thus, the number that was removed must be $66 - 61 = 5$, and the answer is $\\boxed{B}$."
+  }
+}

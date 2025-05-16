@@ -1,0 +1,8 @@
+{
+  "competition_id": "1951_AHSME_Problems",
+  "problem_id": 16,
+  "problem": "If in applying the quadratic formula to a quadratic equation \n\\[f(x) \\equiv ax^2 + bx + c = 0,\\]\nit happens that $c = \\frac{b^2}{4a}$, then the graph of $y = f(x)$ will certainly:\n$\\mathrm{(A) \\ have\\ a\\ maximum  } \\qquad \\mathrm{(B) \\ have\\ a\\ minimum} \\qquad$ $\\mathrm{(C) \\ be\\ tangent\\ to\\ the\\ x-axis} \\qquad$ $\\mathrm{(D) \\ be\\ tangent\\ to\\ the\\ y-axis} \\qquad$ $\\mathrm{(E) \\ lie\\ in\\ one\\ quadrant\\ only}$",
+  "solutions": {
+    "Solution": "The discriminant of the quadratic equation is $b^2 - 4ac = b^2 - 4a\\left(\\frac{b^2}{4a}\\right) = 0$. This indicates that the equation has only one root (applying the quadratic formula, we get $x = \\frac{-b + \\sqrt{0}}{2a} = -b/2a$). Thus it follows that $f(x)$ touches the x-axis exactly once, and hence is tangent to the x-axis $\\Rightarrow \\mathrm{(C)}$."
+  }
+}
