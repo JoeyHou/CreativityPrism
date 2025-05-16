@@ -8,7 +8,7 @@
 - `\math_n_index`: evaluation codebase for [creative_math](https://arxiv.org/pdf/2410.18336) and [creativity_index](https://arxiv.org/abs/2410.04265)
 
 ## Requirement
-- `vllm`: [0.7.2](https://docs.vllm.ai/en/v0.7.2/getting_started/installation/index.html) (at least 0.7.0, for the support of deepseek-v3)
+- `vllm`: [0.7.2](https://docs.vllm.ai/en/v0.7.2/getting_started/installation/index.html) (or >= 0.7.0)
 - `Python`: 3.9 – 3.12
 - `cuda`: >= 12.1
 - Detailed requirements please check `requirements.txt` of each subfolder.
