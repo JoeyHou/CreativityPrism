@@ -1,0 +1,27 @@
+{
+    "meta": { "last_updated": "2025-09-09" },
+    "group_order": ["7B / 8B", "13–32B", "70B / 72B (open)", "Proprietary"],
+    "rows": [
+      { "group": "7B / 8B", "model": "Mistral-7B",   "overall": 0.526, "quality": 0.376, "novelty": 0.552, "diversity": 0.649, "cw": 0.410, "dt": 0.758, "lr": 0.320 },
+      { "group": "7B / 8B", "model": "Qwen2.5-7B",   "overall": 0.501, "quality": 0.478, "novelty": 0.537, "diversity": 0.489, "cw": 0.345, "dt": 0.687, "lr": 0.460 },
+      { "group": "7B / 8B", "model": "OLMo2-7B",     "overall": 0.531, "quality": 0.419, "novelty": 0.476, "diversity": 0.698, "cw": 0.470, "dt": 0.712, "lr": 0.257 },
+      { "group": "7B / 8B", "model": "Llama3.1-8B",  "overall": 0.501, "quality": 0.409, "novelty": 0.528, "diversity": 0.566, "cw": 0.352, "dt": 0.729, "lr": 0.409 },
+  
+      { "group": "13–32B",  "model": "OLMo2-13B",    "overall": 0.540, "quality": 0.433, "novelty": 0.480, "diversity": 0.707, "cw": 0.492, "dt": 0.713, "lr": 0.278 },
+      { "group": "13–32B",  "model": "Mistral-24B",  "overall": 0.549, "quality": 0.487, "novelty": 0.569, "diversity": 0.591, "cw": 0.446, "dt": 0.642, "lr": 0.473 },
+      { "group": "13–32B",  "model": "Qwen2.5-32B",  "overall": 0.545, "quality": 0.510, "novelty": 0.482, "diversity": 0.644, "cw": 0.421, "dt": 0.715, "lr": 0.358 },
+  
+      { "group": "70B / 72B (open)", "model": "Mixtral-8x7B", "overall": 0.527, "quality": 0.416, "novelty": 0.537, "diversity": 0.630, "cw": 0.378, "dt": 0.749, "lr": 0.420 },
+      { "group": "70B / 72B (open)", "model": "Llama3.3-70B", "overall": 0.555, "quality": 0.533, "novelty": 0.571, "diversity": 0.562, "cw": 0.387, "dt": 0.722, "lr": 0.529 },
+      { "group": "70B / 72B (open)", "model": "Qwen2.5-72B",  "overall": 0.614, "quality": 0.581, "novelty": 0.587, "diversity": 0.674, "cw": 0.477, "dt": 0.731, "lr": 0.554 },
+  
+      { "group": "Proprietary", "model": "Claude3-Sonnet","overall": 0.721, "quality": 0.672, "novelty": 0.657, "diversity": 0.835, "cw": 0.597, "dt": 0.833, "lr": 0.612 },
+      { "group": "Proprietary", "model": "Claude3-Haiku", "overall": 0.613, "quality": 0.542, "novelty": 0.604, "diversity": 0.692, "cw": 0.464, "dt": 0.782, "lr": 0.568 },
+      { "group": "Proprietary", "model": "GPT4.1",        "overall": 0.751, "quality": 0.697, "novelty": 0.686, "diversity": 0.871, "cw": 0.647, "dt": 0.793, "lr": 0.682 },
+      { "group": "Proprietary", "model": "GPT4.1-mini",   "overall": 0.709, "quality": 0.681, "novelty": 0.672, "diversity": 0.774, "cw": 0.617, "dt": 0.778, "lr": 0.649 },
+      { "group": "Proprietary", "model": "Gemini2.0-Flash","overall": 0.706, "quality": 0.645, "novelty": 0.651, "diversity": 0.822, "cw": 0.555, "dt": 0.806, "lr": 0.655 },
+      { "group": "Proprietary", "model": "DeepSeek-R1",   "overall": 0.623, "quality": 0.573, "novelty": 0.586, "diversity": 0.710, "cw": 0.616, "dt": 0.603, "lr": 0.643 },
+      { "group": "Proprietary", "model": "DeepSeek-V3",   "overall": 0.757, "quality": 0.716, "novelty": 0.702, "diversity": 0.854, "cw": 0.647, "dt": 0.805, "lr": 0.726 }
+    ]
+  }
+  

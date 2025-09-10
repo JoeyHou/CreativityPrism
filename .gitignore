@@ -3,6 +3,8 @@
 log/
 .DS_Store
 
+*/data/outputs/*
+human_annotation/data/raw/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
