@@ -31,6 +31,35 @@ INTRODUCTION
     </figure>
 </div>
 
+
+
+<div class="section leaderboard-card">
+  <div class="lb-header">
+    <div>
+      <h2 id="leaderboard">Leaderboard</h2>
+      <div id="updated" class="lb-updated">Last updated: —</div>
+    </div>
+  </div>
+
+  <table id="board" class="paper-table" style="width:100%">
+    <thead>
+      <tr>
+        <th class="th-model" data-key="model" data-type="text">Model</th>
+        <th data-key="overall" data-type="num">Overall</th>
+        <th data-key="quality" data-type="num">Quality</th>
+        <th data-key="novelty" data-type="num">Novelty</th>
+        <th data-key="diversity" data-type="num">Diversity</th>
+        <th data-key="cw" data-type="num">Creative&nbsp;Writing</th>
+        <th data-key="dt" data-type="num">Divergent&nbsp;Thinking</th>
+        <th data-key="lr" data-type="num">Logical&nbsp;Reasoning</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+---
+
 <div class="section">
     <h2 id="headline-results">Overall Results</h2>
     <figure>
@@ -74,30 +103,6 @@ INTRODUCTION
           <img src="assets/img/plot-perf-logical.png" alt="Logical reasoning performance">
         </figure>
 
-<div class="section leaderboard-card">
-  <div class="lb-header">
-    <div>
-      <h2 id="leaderboard">Leaderboard</h2>
-      <div id="updated" class="lb-updated">Last updated: —</div>
-    </div>
-  </div>
-
-  <table id="board" class="paper-table" style="width:100%">
-    <thead>
-      <tr>
-        <th class="th-model" data-key="model" data-type="text">Model</th>
-        <th data-key="overall" data-type="num">Overall</th>
-        <th data-key="quality" data-type="num">Quality</th>
-        <th data-key="novelty" data-type="num">Novelty</th>
-        <th data-key="diversity" data-type="num">Diversity</th>
-        <th data-key="cw" data-type="num">Creative&nbsp;Writing</th>
-        <th data-key="dt" data-type="num">Divergent&nbsp;Thinking</th>
-        <th data-key="lr" data-type="num">Logical&nbsp;Reasoning</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</div>
 
 <script>
 (async function(){
