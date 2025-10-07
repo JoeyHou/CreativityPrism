@@ -2,7 +2,8 @@
 .ipynb_checkpoints/
 log/
 .DS_Store
-
+vllm/
+paper/
 */data/outputs/*
 human_annotation/data/raw/
 
