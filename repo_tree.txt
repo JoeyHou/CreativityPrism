@@ -1,0 +1,1221 @@
+.
+├── aut_ttcw_cshort
+│   ├── configs
+│   │   ├── aut
+│   │   │   ├── evaluation
+│   │   │   │   ├── claude_37_sonnet.json
+│   │   │   │   ├── claude_3_haiku.json
+│   │   │   │   ├── deepseek_llama_70b.json
+│   │   │   │   ├── deepseek_qwen_32b.json
+│   │   │   │   ├── deepseek_qwen_7b.json
+│   │   │   │   ├── deepseek_r1.json
+│   │   │   │   ├── deepseek_v3.json
+│   │   │   │   ├── evaluator_check.json
+│   │   │   │   ├── gemini_2_flash.json
+│   │   │   │   ├── gemini_2_pro.json
+│   │   │   │   ├── gpt_4.1.json
+│   │   │   │   ├── gpt_4.1_mini.json
+│   │   │   │   ├── llama3_8b.json
+│   │   │   │   ├── llama_70b.json
+│   │   │   │   ├── mistral_7b.json
+│   │   │   │   ├── mistral_small_24b.json
+│   │   │   │   ├── mixtral_8x7b.json
+│   │   │   │   ├── olmo_13b_dpo.json
+│   │   │   │   ├── olmo_13b.json
+│   │   │   │   ├── olmo_13b_sft.json
+│   │   │   │   ├── olmo_7b.json
+│   │   │   │   ├── qwen_32b.json
+│   │   │   │   ├── qwen_72b.json
+│   │   │   │   └── qwen_7b.json
+│   │   │   ├── inference
+│   │   │   │   ├── claude.json
+│   │   │   │   ├── deepseek.json
+│   │   │   │   ├── deepseek_llama_70b.json
+│   │   │   │   ├── deepseek_qwen_32b.json
+│   │   │   │   ├── gemini.json
+│   │   │   │   ├── gpt.json
+│   │   │   │   ├── inference_small.json
+│   │   │   │   ├── llama_70b.json
+│   │   │   │   ├── mistral_small_24b.json
+│   │   │   │   ├── mixtral_8x7b.json
+│   │   │   │   ├── olmo_sft.json
+│   │   │   │   ├── qwen_32b.json
+│   │   │   │   └── qwen_72b.json
+│   │   │   ├── tmp_var_evaluation
+│   │   │   │   ├── olmo_025.json
+│   │   │   │   ├── olmo_05.json
+│   │   │   │   ├── olmo_0.json
+│   │   │   │   ├── olmo_1.json
+│   │   │   │   ├── qwen_025.json
+│   │   │   │   ├── qwen_05.json
+│   │   │   │   ├── qwen_0.json
+│   │   │   │   └── qwen_1.json
+│   │   │   └── tmp_var_inference
+│   │   │       ├── inference_olmo_025.json
+│   │   │       ├── inference_olmo_05.json
+│   │   │       ├── inference_olmo_0.json
+│   │   │       ├── inference_olmo_1.json
+│   │   │       ├── inference_qwen_025.json
+│   │   │       ├── inference_qwen_05.json
+│   │   │       ├── inference_qwen_0.json
+│   │   │       └── inference_qwen_1.json
+│   │   ├── creative_short
+│   │   │   ├── claude.json
+│   │   │   ├── deepseek_llama_70b.json
+│   │   │   ├── deepseek_qwen_32b.json
+│   │   │   ├── evaluation.json
+│   │   │   ├── evaluation_tmp_var.json
+│   │   │   ├── gemini.json
+│   │   │   ├── gpt.json
+│   │   │   ├── llama_70b.json
+│   │   │   ├── mistral_small_24b.json
+│   │   │   ├── mixtral_8x7b.json
+│   │   │   ├── olmo_sft.json
+│   │   │   ├── qwen_32b.json
+│   │   │   ├── qwen_72b.json
+│   │   │   ├── small.json
+│   │   │   └── tmp_var
+│   │   │       ├── inference_olmo_025.json
+│   │   │       ├── inference_olmo_05.json
+│   │   │       ├── inference_olmo_0.json
+│   │   │       ├── inference_olmo_1.json
+│   │   │       ├── inference_qwen_025.json
+│   │   │       ├── inference_qwen_05.json
+│   │   │       ├── inference_qwen_0.json
+│   │   │       └── inference_qwen_1.json
+│   │   └── ttcw
+│   │       ├── evaluation
+│   │       │   ├── claude_37_sonnet.json
+│   │       │   ├── claude_3_haiku.json
+│   │       │   ├── deepseek_llama_70b.json
+│   │       │   ├── deepseek_qwen_32b.json
+│   │       │   ├── deepseek_qwen_7b.json
+│   │       │   ├── deepseek_r1.json
+│   │       │   ├── deepseek_v3.json
+│   │       │   ├── evaluator_check.json
+│   │       │   ├── gemini_2_flash.json
+│   │       │   ├── gemini_2_pro.json
+│   │       │   ├── gpt_4.1.json
+│   │       │   ├── gpt_4.1_mini.json
+│   │       │   ├── llama3_8b.json
+│   │       │   ├── llama_70b.json
+│   │       │   ├── mistral_7b.json
+│   │       │   ├── mistral_small_24b.json
+│   │       │   ├── mixtral_8x7b.json
+│   │       │   ├── olmo_13b_dpo.json
+│   │       │   ├── olmo_13b.json
+│   │       │   ├── olmo_13b_sft.json
+│   │       │   ├── olmo_7b.json
+│   │       │   ├── qwen_32b.json
+│   │       │   ├── qwen_72b.json
+│   │       │   └── qwen_7b.json
+│   │       ├── inference
+│   │       │   ├── claude.json
+│   │       │   ├── deepseek_llama_70b.json
+│   │       │   ├── deepseek_qwen_32b.json
+│   │       │   ├── gemini.json
+│   │       │   ├── gpt.json
+│   │       │   ├── llama_70b.json
+│   │       │   ├── mistral_small_24b.json
+│   │       │   ├── mixtral_8x7b.json
+│   │       │   ├── olmo_sft.json
+│   │       │   ├── qwen_32b.json
+│   │       │   ├── qwen_72b.json
+│   │       │   ├── ttcw_inference_large.json
+│   │       │   └── ttcw_inference_small.json
+│   │       ├── tmp_var
+│   │       │   ├── inference_olmo_025.json
+│   │       │   ├── inference_olmo_05.json
+│   │       │   ├── inference_olmo_0.json
+│   │       │   ├── inference_olmo_1.json
+│   │       │   ├── inference_qwen_025.json
+│   │       │   ├── inference_qwen_05.json
+│   │       │   ├── inference_qwen_0.json
+│   │       │   └── inference_qwen_1.json
+│   │       └── tmp_var_evaluation
+│   │           ├── olmo_025.json
+│   │           ├── olmo_05.json
+│   │           ├── olmo_0.json
+│   │           ├── olmo_1.json
+│   │           ├── qwen_025.json
+│   │           ├── qwen_05.json
+│   │           ├── qwen_0.json
+│   │           └── qwen_1.json
+│   ├── data
+│   │   └── README.md
+│   ├── __init__.py
+│   ├── notebooks
+│   │   ├── 1-ttcw-eval-analysis.ipynb
+│   │   ├── 2-short-story-eval.ipynb
+│   │   └── 3-aut-eval.ipynb
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── run_evaluation.py
+│   ├── run_inference.py
+│   ├── scripts
+│   │   ├── aut_evaluation.sh
+│   │   ├── aut_inference.sh
+│   │   ├── claude_inference.sh
+│   │   ├── creative_short_inference.sh
+│   │   ├── olmo_sft_evaluation.sh
+│   │   ├── olmo_sft_inference.sh
+│   │   ├── temp_var_evaluation.sh
+│   │   ├── temp_var_inference.sh
+│   │   ├── temp_var_inference_small.sh
+│   │   ├── ttcw_evaluation.sh
+│   │   └── ttcw_inference.sh
+│   └── src
+│       ├── driver.py
+│       ├── evaluation
+│       │   ├── aut_push.py
+│       │   ├── creative_short_story.py
+│       │   ├── creative_writing.py
+│       │   ├── eval_driver.py
+│       │   ├── __init__.py
+│       │   └── story_metrics.py
+│       ├── inference
+│       │   ├── aut_push.py
+│       │   ├── creative_short_story.py
+│       │   ├── creative_writing.py
+│       │   ├── inference_driver.py
+│       │   └── __init__.py
+│       ├── __init__.py
+│       ├── prompt_engineering
+│       │   ├── __init__.py
+│       │   └── templates.py
+│       └── utils
+│           ├── api_eval.py
+│           ├── api_wrapper.py
+│           ├── helpers.py
+│           └── __init__.py
+├── creativity_prism_framework.tar.gz
+├── cs4
+│   ├── evaluation
+│   │   ├── coherence_vs_constraint_graph.py
+│   │   ├── constraint_satisfaction_graph_generation.py
+│   │   ├── constraint_satisfaction.py
+│   │   ├── diversity_calculation.py
+│   │   ├── diversity_graphs.py
+│   │   ├── perplexity_calculation.ipynb
+│   │   ├── perplexity_graphs.py
+│   │   ├── quc_and_rcs.py
+│   │   └── story_quality_eval.py
+│   ├── LICENSE
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── scripts
+│   │   ├── run_constraint_satisfaction.sh
+│   │   ├── run_diversity.sh
+│   │   ├── run_evaluations.sh
+│   │   ├── run_quality_eval_1.sh
+│   │   ├── run_quality_eval_2.sh
+│   │   └── run_quality_eval_gpt.sh
+│   └── story_generator
+│       ├── api_keys.json
+│       ├── api_wrapper.py
+│       ├── configs
+│       │   ├── api_models copy.json
+│       │   ├── api_models.json
+│       │   ├── deepseek_llama_70b.json
+│       │   ├── deepseek_qwen_32b.json
+│       │   ├── deepseek_qwen_7b.json
+│       │   ├── gemini.json
+│       │   ├── llama_70b.json
+│       │   ├── llama_8b.json
+│       │   ├── mistral_7b.json
+│       │   ├── mistral_small_24b.json
+│       │   ├── mixtral_8x7b.json
+│       │   ├── olmo_13b.json
+│       │   ├── olmo_7b.json
+│       │   ├── olmo_sft.json
+│       │   ├── qwen_32b.json
+│       │   ├── qwen_72b.json
+│       │   ├── qwen_7b.json
+│       │   └── tmp_var
+│       │       ├── inference_olmo_025.json
+│       │       ├── inference_olmo_05.json
+│       │       ├── inference_olmo_0.json
+│       │       ├── inference_olmo_1.json
+│       │       ├── inference_qwen_025.json
+│       │       ├── inference_qwen_05.json
+│       │       ├── inference_qwen_0.json
+│       │       └── inference_qwen_1.json
+│       ├── cs4_story_generator.py
+│       ├── df3_updated_gpt_constraints.csv
+│       ├── README.md
+│       ├── run_generator_ds.sh
+│       ├── run_generator_large.sh
+│       ├── run_generator_medium.sh
+│       ├── run_generator_small.sh
+│       └── run_generator_tmp_var.sh
+├── data_cleaning
+│   ├── part1.ipynb
+│   ├── part2.ipynb
+│   ├── part3.ipynb
+│   ├── processed
+│   │   ├── aut_push.json
+│   │   ├── creative_math.json
+│   │   ├── creative_short_story.json
+│   │   ├── creativity_index.json
+│   │   ├── cs4.json
+│   │   ├── dat_test.json
+│   │   ├── neocoder.json
+│   │   ├── ttct.json
+│   │   └── ttcw.json
+│   ├── raw_data
+│   │   ├── aut_new
+│   │   │   ├── fewshot
+│   │   │   │   ├── gpt-3.5-turbo-0-10.csv
+│   │   │   │   ├── gpt-3.5-turbo-5-10.csv
+│   │   │   │   ├── gpt-3.5-turbo-5-5.csv
+│   │   │   │   ├── gpt3-text-davinci-002-0-10.csv
+│   │   │   │   ├── gpt3-text-davinci-002-5-10.csv
+│   │   │   │   ├── gpt3-text-davinci-002-5-5.csv
+│   │   │   │   ├── gpt-4-0-10.csv
+│   │   │   │   ├── gpt-4-20-20.csv
+│   │   │   │   └── gpt-4-5-10.csv
+│   │   │   ├── gt_byprompt
+│   │   │   │   ├── gpt-ft-ada.csv
+│   │   │   │   ├── gpt-ft-babbage.csv
+│   │   │   │   ├── gpt-ft-curie.csv
+│   │   │   │   ├── ocs-main.csv
+│   │   │   │   ├── SemDis_cbowBNCwikiukwac_nf_m.csv
+│   │   │   │   ├── SemDis_cbowsubtitle_nf_m.csv
+│   │   │   │   ├── SemDis_cbowukwacsubtitle_nf_m.csv
+│   │   │   │   ├── SemDis_glove_nf_m.csv
+│   │   │   │   ├── SemDis_MEAN.csv
+│   │   │   │   ├── SemDis_TASA_nf_m.csv
+│   │   │   │   └── t5-base-gt_byprompt-08-05-1659739678.csv
+│   │   │   └── gt_main2
+│   │   │       ├── gpt-emb-text-embedding-ada-002.csv
+│   │   │       ├── gpt-emb-text-similarity-ada-001.csv
+│   │   │       ├── gpt-emb-text-similarity-babbage-001.csv
+│   │   │       ├── gpt-ft-ada-0.01.csv
+│   │   │       ├── gpt-ft-ada-0.05.csv
+│   │   │       ├── gpt-ft-ada-0.1.csv
+│   │   │       ├── gpt-ft-ada-0.2.csv
+│   │   │       ├── gpt-ft-ada-0.4.csv
+│   │   │       ├── gpt-ft-ada-0.6.csv
+│   │   │       ├── gpt-ft-ada-0.8.csv
+│   │   │       ├── gpt-ft-ada.csv
+│   │   │       ├── gpt-ft-babbage-0.01.csv
+│   │   │       ├── gpt-ft-babbage-0.05.csv
+│   │   │       ├── gpt-ft-babbage-0.1.csv
+│   │   │       ├── gpt-ft-babbage-0.2.csv
+│   │   │       ├── gpt-ft-babbage-0.4.csv
+│   │   │       ├── gpt-ft-babbage-0.6.csv
+│   │   │       ├── gpt-ft-babbage-0.8.csv
+│   │   │       ├── gpt-ft-babbage.csv
+│   │   │       ├── gpt-ft-curie-0.01.csv
+│   │   │       ├── gpt-ft-curie.csv
+│   │   │       ├── gpt-ft-davinci-0.01.csv
+│   │   │       ├── gpt-ft-davinci-1.csv
+│   │   │       ├── lsa-tasa.csv
+│   │   │       ├── ocs-main.csv
+│   │   │       ├── SemDis_cbowBNCwikiukwac_nf_m.csv
+│   │   │       ├── SemDis_cbowsubtitle_nf_m.csv
+│   │   │       ├── SemDis_cbowukwacsubtitle_nf_m.csv
+│   │   │       ├── SemDis_glove_nf_m.csv
+│   │   │       ├── SemDis_MEAN.csv
+│   │   │       ├── SemDis_TASA_nf_m.csv
+│   │   │       ├── st5-3b.csv
+│   │   │       ├── st5-base.csv
+│   │   │       ├── st5-large.csv
+│   │   │       └── t5-base-gt_main2-08-01-1659397977.csv
+│   │   ├── creative_math
+│   │   │   ├── data
+│   │   │   │   ├── subset_final
+│   │   │   │   │   ├── AHSME
+│   │   │   │   │   │   ├── 10.json
+│   │   │   │   │   │   ├── 11.json
+│   │   │   │   │   │   ├── 12.json
+│   │   │   │   │   │   ├── 13.json
+│   │   │   │   │   │   ├── 14.json
+│   │   │   │   │   │   ├── 15.json
+│   │   │   │   │   │   ├── 16.json
+│   │   │   │   │   │   ├── 17.json
+│   │   │   │   │   │   ├── 18.json
+│   │   │   │   │   │   ├── 19.json
+│   │   │   │   │   │   ├── 1.json
+│   │   │   │   │   │   ├── 20.json
+│   │   │   │   │   │   ├── 21.json
+│   │   │   │   │   │   ├── 22.json
+│   │   │   │   │   │   ├── 23.json
+│   │   │   │   │   │   ├── 24.json
+│   │   │   │   │   │   ├── 25.json
+│   │   │   │   │   │   ├── 26.json
+│   │   │   │   │   │   ├── 27.json
+│   │   │   │   │   │   ├── 28.json
+│   │   │   │   │   │   ├── 29.json
+│   │   │   │   │   │   ├── 2.json
+│   │   │   │   │   │   ├── 30.json
+│   │   │   │   │   │   ├── 31.json
+│   │   │   │   │   │   ├── 32.json
+│   │   │   │   │   │   ├── 33.json
+│   │   │   │   │   │   ├── 34.json
+│   │   │   │   │   │   ├── 35.json
+│   │   │   │   │   │   ├── 36.json
+│   │   │   │   │   │   ├── 37.json
+│   │   │   │   │   │   ├── 38.json
+│   │   │   │   │   │   ├── 39.json
+│   │   │   │   │   │   ├── 3.json
+│   │   │   │   │   │   ├── 40.json
+│   │   │   │   │   │   ├── 41.json
+│   │   │   │   │   │   ├── 42.json
+│   │   │   │   │   │   ├── 43.json
+│   │   │   │   │   │   ├── 44.json
+│   │   │   │   │   │   ├── 45.json
+│   │   │   │   │   │   ├── 46.json
+│   │   │   │   │   │   ├── 47.json
+│   │   │   │   │   │   ├── 48.json
+│   │   │   │   │   │   ├── 49.json
+│   │   │   │   │   │   ├── 4.json
+│   │   │   │   │   │   ├── 50.json
+│   │   │   │   │   │   ├── 5.json
+│   │   │   │   │   │   ├── 6.json
+│   │   │   │   │   │   ├── 7.json
+│   │   │   │   │   │   ├── 8.json
+│   │   │   │   │   │   └── 9.json
+│   │   │   │   │   ├── AIME
+│   │   │   │   │   │   ├── 10.json
+│   │   │   │   │   │   ├── 11.json
+│   │   │   │   │   │   ├── 12.json
+│   │   │   │   │   │   ├── 13.json
+│   │   │   │   │   │   ├── 14.json
+│   │   │   │   │   │   ├── 15.json
+│   │   │   │   │   │   ├── 16.json
+│   │   │   │   │   │   ├── 17.json
+│   │   │   │   │   │   ├── 18.json
+│   │   │   │   │   │   ├── 19.json
+│   │   │   │   │   │   ├── 1.json
+│   │   │   │   │   │   ├── 20.json
+│   │   │   │   │   │   ├── 21.json
+│   │   │   │   │   │   ├── 22.json
+│   │   │   │   │   │   ├── 23.json
+│   │   │   │   │   │   ├── 24.json
+│   │   │   │   │   │   ├── 25.json
+│   │   │   │   │   │   ├── 26.json
+│   │   │   │   │   │   ├── 27.json
+│   │   │   │   │   │   ├── 28.json
+│   │   │   │   │   │   ├── 29.json
+│   │   │   │   │   │   ├── 2.json
+│   │   │   │   │   │   ├── 30.json
+│   │   │   │   │   │   ├── 31.json
+│   │   │   │   │   │   ├── 32.json
+│   │   │   │   │   │   ├── 33.json
+│   │   │   │   │   │   ├── 34.json
+│   │   │   │   │   │   ├── 35.json
+│   │   │   │   │   │   ├── 36.json
+│   │   │   │   │   │   ├── 37.json
+│   │   │   │   │   │   ├── 38.json
+│   │   │   │   │   │   ├── 39.json
+│   │   │   │   │   │   ├── 3.json
+│   │   │   │   │   │   ├── 40.json
+│   │   │   │   │   │   ├── 41.json
+│   │   │   │   │   │   ├── 42.json
+│   │   │   │   │   │   ├── 43.json
+│   │   │   │   │   │   ├── 44.json
+│   │   │   │   │   │   ├── 45.json
+│   │   │   │   │   │   ├── 46.json
+│   │   │   │   │   │   ├── 47.json
+│   │   │   │   │   │   ├── 48.json
+│   │   │   │   │   │   ├── 49.json
+│   │   │   │   │   │   ├── 4.json
+│   │   │   │   │   │   ├── 50.json
+│   │   │   │   │   │   ├── 5.json
+│   │   │   │   │   │   ├── 6.json
+│   │   │   │   │   │   ├── 7.json
+│   │   │   │   │   │   ├── 8.json
+│   │   │   │   │   │   └── 9.json
+│   │   │   │   │   ├── AMC_10
+│   │   │   │   │   │   ├── 10.json
+│   │   │   │   │   │   ├── 11.json
+│   │   │   │   │   │   ├── 12.json
+│   │   │   │   │   │   ├── 13.json
+│   │   │   │   │   │   ├── 14.json
+│   │   │   │   │   │   ├── 15.json
+│   │   │   │   │   │   ├── 16.json
+│   │   │   │   │   │   ├── 17.json
+│   │   │   │   │   │   ├── 18.json
+│   │   │   │   │   │   ├── 19.json
+│   │   │   │   │   │   ├── 1.json
+│   │   │   │   │   │   ├── 20.json
+│   │   │   │   │   │   ├── 21.json
+│   │   │   │   │   │   ├── 22.json
+│   │   │   │   │   │   ├── 23.json
+│   │   │   │   │   │   ├── 24.json
+│   │   │   │   │   │   ├── 25.json
+│   │   │   │   │   │   ├── 26.json
+│   │   │   │   │   │   ├── 27.json
+│   │   │   │   │   │   ├── 28.json
+│   │   │   │   │   │   ├── 29.json
+│   │   │   │   │   │   ├── 2.json
+│   │   │   │   │   │   ├── 30.json
+│   │   │   │   │   │   ├── 31.json
+│   │   │   │   │   │   ├── 32.json
+│   │   │   │   │   │   ├── 33.json
+│   │   │   │   │   │   ├── 34.json
+│   │   │   │   │   │   ├── 35.json
+│   │   │   │   │   │   ├── 36.json
+│   │   │   │   │   │   ├── 37.json
+│   │   │   │   │   │   ├── 38.json
+│   │   │   │   │   │   ├── 39.json
+│   │   │   │   │   │   ├── 3.json
+│   │   │   │   │   │   ├── 40.json
+│   │   │   │   │   │   ├── 41.json
+│   │   │   │   │   │   ├── 42.json
+│   │   │   │   │   │   ├── 43.json
+│   │   │   │   │   │   ├── 44.json
+│   │   │   │   │   │   ├── 45.json
+│   │   │   │   │   │   ├── 46.json
+│   │   │   │   │   │   ├── 47.json
+│   │   │   │   │   │   ├── 48.json
+│   │   │   │   │   │   ├── 49.json
+│   │   │   │   │   │   ├── 4.json
+│   │   │   │   │   │   ├── 50.json
+│   │   │   │   │   │   ├── 5.json
+│   │   │   │   │   │   ├── 6.json
+│   │   │   │   │   │   ├── 7.json
+│   │   │   │   │   │   ├── 8.json
+│   │   │   │   │   │   └── 9.json
+│   │   │   │   │   ├── AMC_12
+│   │   │   │   │   │   ├── 10.json
+│   │   │   │   │   │   ├── 11.json
+│   │   │   │   │   │   ├── 12.json
+│   │   │   │   │   │   ├── 13.json
+│   │   │   │   │   │   ├── 14.json
+│   │   │   │   │   │   ├── 15.json
+│   │   │   │   │   │   ├── 16.json
+│   │   │   │   │   │   ├── 17.json
+│   │   │   │   │   │   ├── 18.json
+│   │   │   │   │   │   ├── 19.json
+│   │   │   │   │   │   ├── 1.json
+│   │   │   │   │   │   ├── 20.json
+│   │   │   │   │   │   ├── 21.json
+│   │   │   │   │   │   ├── 22.json
+│   │   │   │   │   │   ├── 23.json
+│   │   │   │   │   │   ├── 24.json
+│   │   │   │   │   │   ├── 25.json
+│   │   │   │   │   │   ├── 26.json
+│   │   │   │   │   │   ├── 27.json
+│   │   │   │   │   │   ├── 28.json
+│   │   │   │   │   │   ├── 29.json
+│   │   │   │   │   │   ├── 2.json
+│   │   │   │   │   │   ├── 30.json
+│   │   │   │   │   │   ├── 31.json
+│   │   │   │   │   │   ├── 32.json
+│   │   │   │   │   │   ├── 33.json
+│   │   │   │   │   │   ├── 34.json
+│   │   │   │   │   │   ├── 35.json
+│   │   │   │   │   │   ├── 36.json
+│   │   │   │   │   │   ├── 37.json
+│   │   │   │   │   │   ├── 38.json
+│   │   │   │   │   │   ├── 39.json
+│   │   │   │   │   │   ├── 3.json
+│   │   │   │   │   │   ├── 40.json
+│   │   │   │   │   │   ├── 41.json
+│   │   │   │   │   │   ├── 42.json
+│   │   │   │   │   │   ├── 43.json
+│   │   │   │   │   │   ├── 44.json
+│   │   │   │   │   │   ├── 45.json
+│   │   │   │   │   │   ├── 46.json
+│   │   │   │   │   │   ├── 47.json
+│   │   │   │   │   │   ├── 48.json
+│   │   │   │   │   │   ├── 49.json
+│   │   │   │   │   │   ├── 4.json
+│   │   │   │   │   │   ├── 50.json
+│   │   │   │   │   │   ├── 5.json
+│   │   │   │   │   │   ├── 6.json
+│   │   │   │   │   │   ├── 7.json
+│   │   │   │   │   │   ├── 8.json
+│   │   │   │   │   │   └── 9.json
+│   │   │   │   │   ├── AMC_8
+│   │   │   │   │   │   ├── 10.json
+│   │   │   │   │   │   ├── 11.json
+│   │   │   │   │   │   ├── 12.json
+│   │   │   │   │   │   ├── 13.json
+│   │   │   │   │   │   ├── 14.json
+│   │   │   │   │   │   ├── 15.json
+│   │   │   │   │   │   ├── 16.json
+│   │   │   │   │   │   ├── 17.json
+│   │   │   │   │   │   ├── 18.json
+│   │   │   │   │   │   ├── 19.json
+│   │   │   │   │   │   ├── 1.json
+│   │   │   │   │   │   ├── 20.json
+│   │   │   │   │   │   ├── 21.json
+│   │   │   │   │   │   ├── 22.json
+│   │   │   │   │   │   ├── 23.json
+│   │   │   │   │   │   ├── 24.json
+│   │   │   │   │   │   ├── 25.json
+│   │   │   │   │   │   ├── 26.json
+│   │   │   │   │   │   ├── 27.json
+│   │   │   │   │   │   ├── 28.json
+│   │   │   │   │   │   ├── 29.json
+│   │   │   │   │   │   ├── 2.json
+│   │   │   │   │   │   ├── 30.json
+│   │   │   │   │   │   ├── 31.json
+│   │   │   │   │   │   ├── 32.json
+│   │   │   │   │   │   ├── 33.json
+│   │   │   │   │   │   ├── 34.json
+│   │   │   │   │   │   ├── 35.json
+│   │   │   │   │   │   ├── 36.json
+│   │   │   │   │   │   ├── 37.json
+│   │   │   │   │   │   ├── 38.json
+│   │   │   │   │   │   ├── 39.json
+│   │   │   │   │   │   ├── 3.json
+│   │   │   │   │   │   ├── 40.json
+│   │   │   │   │   │   ├── 41.json
+│   │   │   │   │   │   ├── 42.json
+│   │   │   │   │   │   ├── 43.json
+│   │   │   │   │   │   ├── 44.json
+│   │   │   │   │   │   ├── 45.json
+│   │   │   │   │   │   ├── 46.json
+│   │   │   │   │   │   ├── 47.json
+│   │   │   │   │   │   ├── 48.json
+│   │   │   │   │   │   ├── 49.json
+│   │   │   │   │   │   ├── 4.json
+│   │   │   │   │   │   ├── 50.json
+│   │   │   │   │   │   ├── 5.json
+│   │   │   │   │   │   ├── 6.json
+│   │   │   │   │   │   ├── 7.json
+│   │   │   │   │   │   ├── 8.json
+│   │   │   │   │   │   └── 9.json
+│   │   │   │   │   ├── IMO
+│   │   │   │   │   │   ├── 10.json
+│   │   │   │   │   │   ├── 11.json
+│   │   │   │   │   │   ├── 12.json
+│   │   │   │   │   │   ├── 13.json
+│   │   │   │   │   │   ├── 14.json
+│   │   │   │   │   │   ├── 15.json
+│   │   │   │   │   │   ├── 16.json
+│   │   │   │   │   │   ├── 17.json
+│   │   │   │   │   │   ├── 18.json
+│   │   │   │   │   │   ├── 19.json
+│   │   │   │   │   │   ├── 1.json
+│   │   │   │   │   │   ├── 20.json
+│   │   │   │   │   │   ├── 21.json
+│   │   │   │   │   │   ├── 22.json
+│   │   │   │   │   │   ├── 23.json
+│   │   │   │   │   │   ├── 24.json
+│   │   │   │   │   │   ├── 25.json
+│   │   │   │   │   │   ├── 26.json
+│   │   │   │   │   │   ├── 27.json
+│   │   │   │   │   │   ├── 28.json
+│   │   │   │   │   │   ├── 29.json
+│   │   │   │   │   │   ├── 2.json
+│   │   │   │   │   │   ├── 30.json
+│   │   │   │   │   │   ├── 31.json
+│   │   │   │   │   │   ├── 32.json
+│   │   │   │   │   │   ├── 33.json
+│   │   │   │   │   │   ├── 34.json
+│   │   │   │   │   │   ├── 35.json
+│   │   │   │   │   │   ├── 36.json
+│   │   │   │   │   │   ├── 37.json
+│   │   │   │   │   │   ├── 38.json
+│   │   │   │   │   │   ├── 39.json
+│   │   │   │   │   │   ├── 3.json
+│   │   │   │   │   │   ├── 40.json
+│   │   │   │   │   │   ├── 41.json
+│   │   │   │   │   │   ├── 42.json
+│   │   │   │   │   │   ├── 43.json
+│   │   │   │   │   │   ├── 44.json
+│   │   │   │   │   │   ├── 45.json
+│   │   │   │   │   │   ├── 46.json
+│   │   │   │   │   │   ├── 47.json
+│   │   │   │   │   │   ├── 48.json
+│   │   │   │   │   │   ├── 49.json
+│   │   │   │   │   │   ├── 4.json
+│   │   │   │   │   │   ├── 50.json
+│   │   │   │   │   │   ├── 5.json
+│   │   │   │   │   │   ├── 6.json
+│   │   │   │   │   │   ├── 7.json
+│   │   │   │   │   │   ├── 8.json
+│   │   │   │   │   │   └── 9.json
+│   │   │   │   │   ├── USAJMO
+│   │   │   │   │   │   ├── 10.json
+│   │   │   │   │   │   ├── 11.json
+│   │   │   │   │   │   ├── 12.json
+│   │   │   │   │   │   ├── 13.json
+│   │   │   │   │   │   ├── 14.json
+│   │   │   │   │   │   ├── 15.json
+│   │   │   │   │   │   ├── 16.json
+│   │   │   │   │   │   ├── 17.json
+│   │   │   │   │   │   ├── 18.json
+│   │   │   │   │   │   ├── 19.json
+│   │   │   │   │   │   ├── 1.json
+│   │   │   │   │   │   ├── 20.json
+│   │   │   │   │   │   ├── 21.json
+│   │   │   │   │   │   ├── 22.json
+│   │   │   │   │   │   ├── 23.json
+│   │   │   │   │   │   ├── 24.json
+│   │   │   │   │   │   ├── 25.json
+│   │   │   │   │   │   ├── 26.json
+│   │   │   │   │   │   ├── 27.json
+│   │   │   │   │   │   ├── 28.json
+│   │   │   │   │   │   ├── 29.json
+│   │   │   │   │   │   ├── 2.json
+│   │   │   │   │   │   ├── 30.json
+│   │   │   │   │   │   ├── 31.json
+│   │   │   │   │   │   ├── 32.json
+│   │   │   │   │   │   ├── 33.json
+│   │   │   │   │   │   ├── 34.json
+│   │   │   │   │   │   ├── 35.json
+│   │   │   │   │   │   ├── 36.json
+│   │   │   │   │   │   ├── 37.json
+│   │   │   │   │   │   ├── 38.json
+│   │   │   │   │   │   ├── 39.json
+│   │   │   │   │   │   ├── 3.json
+│   │   │   │   │   │   ├── 40.json
+│   │   │   │   │   │   ├── 41.json
+│   │   │   │   │   │   ├── 42.json
+│   │   │   │   │   │   ├── 43.json
+│   │   │   │   │   │   ├── 44.json
+│   │   │   │   │   │   ├── 45.json
+│   │   │   │   │   │   ├── 46.json
+│   │   │   │   │   │   ├── 47.json
+│   │   │   │   │   │   ├── 48.json
+│   │   │   │   │   │   ├── 49.json
+│   │   │   │   │   │   ├── 4.json
+│   │   │   │   │   │   ├── 50.json
+│   │   │   │   │   │   ├── 5.json
+│   │   │   │   │   │   ├── 6.json
+│   │   │   │   │   │   ├── 7.json
+│   │   │   │   │   │   ├── 8.json
+│   │   │   │   │   │   └── 9.json
+│   │   │   │   │   └── USAMO
+│   │   │   │   │       ├── 10.json
+│   │   │   │   │       ├── 11.json
+│   │   │   │   │       ├── 12.json
+│   │   │   │   │       ├── 13.json
+│   │   │   │   │       ├── 14.json
+│   │   │   │   │       ├── 15.json
+│   │   │   │   │       ├── 16.json
+│   │   │   │   │       ├── 17.json
+│   │   │   │   │       ├── 18.json
+│   │   │   │   │       ├── 19.json
+│   │   │   │   │       ├── 1.json
+│   │   │   │   │       ├── 20.json
+│   │   │   │   │       ├── 21.json
+│   │   │   │   │       ├── 22.json
+│   │   │   │   │       ├── 23.json
+│   │   │   │   │       ├── 24.json
+│   │   │   │   │       ├── 25.json
+│   │   │   │   │       ├── 26.json
+│   │   │   │   │       ├── 27.json
+│   │   │   │   │       ├── 28.json
+│   │   │   │   │       ├── 29.json
+│   │   │   │   │       ├── 2.json
+│   │   │   │   │       ├── 30.json
+│   │   │   │   │       ├── 31.json
+│   │   │   │   │       ├── 32.json
+│   │   │   │   │       ├── 33.json
+│   │   │   │   │       ├── 34.json
+│   │   │   │   │       ├── 35.json
+│   │   │   │   │       ├── 36.json
+│   │   │   │   │       ├── 37.json
+│   │   │   │   │       ├── 38.json
+│   │   │   │   │       ├── 39.json
+│   │   │   │   │       ├── 3.json
+│   │   │   │   │       ├── 40.json
+│   │   │   │   │       ├── 41.json
+│   │   │   │   │       ├── 42.json
+│   │   │   │   │       ├── 43.json
+│   │   │   │   │       ├── 44.json
+│   │   │   │   │       ├── 45.json
+│   │   │   │   │       ├── 46.json
+│   │   │   │   │       ├── 47.json
+│   │   │   │   │       ├── 48.json
+│   │   │   │   │       ├── 49.json
+│   │   │   │   │       ├── 4.json
+│   │   │   │   │       ├── 50.json
+│   │   │   │   │       ├── 5.json
+│   │   │   │   │       ├── 6.json
+│   │   │   │   │       ├── 7.json
+│   │   │   │   │       ├── 8.json
+│   │   │   │   │       └── 9.json
+│   │   │   │   └── subset.json
+│   │   │   └── README.md
+│   │   ├── creative_short_story
+│   │   │   ├── pilot_data.json
+│   │   │   └── test_data.json
+│   │   ├── creativity_index
+│   │   │   └── data
+│   │   │       ├── book
+│   │   │       │   ├── ChatGPT_book.json
+│   │   │       │   ├── GPT3_book.json
+│   │   │       │   ├── Human_book.json
+│   │   │       │   ├── Llama2-70B-chat_book.json
+│   │   │       │   ├── Olmo-7B-instruct_book.json
+│   │   │       │   └── Tulu2-dpo-70B_book.json
+│   │   │       ├── poem
+│   │   │       │   ├── ChatGPT_poem.json
+│   │   │       │   ├── GPT3_poem.json
+│   │   │       │   ├── Human_poem.json
+│   │   │       │   ├── Llama2-70B-chat_poem.json
+│   │   │       │   ├── Olmo-7B-instruct_poem.json
+│   │   │       │   └── Tulu2-dpo-70B_poem.json
+│   │   │       └── speech
+│   │   │           ├── ChatGPT_speech.json
+│   │   │           ├── GPT3_speech.json
+│   │   │           ├── Human_speech.json
+│   │   │           ├── Llama2-70B-chat_speech.json
+│   │   │           ├── Olmo-7B-instruct_speech.json
+│   │   │           └── Tulu2-dpo-70B_speech.json
+│   │   ├── cs4
+│   │   │   ├── Instruction-based Constraints.csv
+│   │   │   ├── README.md
+│   │   │   └── Story-based Constraints.csv
+│   │   ├── neocoder
+│   │   │   └── datasets
+│   │   │       └── CodeForce
+│   │   │           ├── crawled
+│   │   │           │   ├── codeforces_problems.jsonl
+│   │   │           │   └── test_cases.json
+│   │   │           ├── NeoCoder
+│   │   │           │   ├── human_solutions.json
+│   │   │           │   ├── human_solution_techniques.json
+│   │   │           │   ├── NeoCoder.json
+│   │   │           │   └── test_cases_annotated.json
+│   │   │           └── raw
+│   │   │               └── CodeForce800spreadsheet.xlsx
+│   │   ├── raw
+│   │   │   ├── common_problem_task_prompt.csv
+│   │   │   ├── consequences_task_prompt.csv
+│   │   │   ├── im_task_prompt.csv
+│   │   │   ├── is_task_prompt.csv
+│   │   │   ├── js_task_prompt.csv
+│   │   │   ├── situation_task_prompt.csv
+│   │   │   └── unusual_task_prompt.csv
+│   │   └── ttcw
+│   │       ├── Art_or_Artifice
+│   │       │   ├── annotations
+│   │       │   │   ├── ttcw_annotations.json
+│   │       │   │   └── ttcw_majority.json
+│   │       │   ├── CODE_OF_CONDUCT.md
+│   │       │   ├── CONTRIBUTING.md
+│   │       │   ├── data
+│   │       │   │   ├── annotations_cgpt.jsonl
+│   │       │   │   ├── annotations_claude3-opus.jsonl
+│   │       │   │   ├── annotations_claudev13.jsonl
+│   │       │   │   ├── annotations_claudev21.jsonl
+│   │       │   │   ├── annotations_claudev2.jsonl
+│   │       │   │   ├── annotations_gemini-pro.jsonl
+│   │       │   │   └── annotations_gpt4.jsonl
+│   │       │   ├── Data_Inspection.ipynb
+│   │       │   ├── Evaluating_LLM.ipynb
+│   │       │   ├── images
+│   │       │   │   └── creative_writing_image.png
+│   │       │   ├── prompts
+│   │       │   │   └── with_background.txt
+│   │       │   ├── README.md
+│   │       │   ├── run_llm_eval.py
+│   │       │   ├── SECURITY.md
+│   │       │   ├── stories
+│   │       │   │   └── ttcw_short_stories.json
+│   │       │   └── tests
+│   │       │       └── ttcw_all_tests.json
+│   │       ├── CODEOWNERS
+│   │       ├── LICENSE
+│   │       ├── README.md
+│   │       └── Writing_Alignment
+│   │           ├── annotation_demo
+│   │           │   ├── app.py
+│   │           │   ├── index.html
+│   │           │   ├── static
+│   │           │   │   └── css
+│   │           │   │       └── style.css
+│   │           │   └── templates
+│   │           │       ├── index.html
+│   │           │       ├── login.html
+│   │           │       ├── result.html
+│   │           │       └── visualize.html
+│   │           ├── data
+│   │           │   └── detection_preds
+│   │           │       ├── claude3.5-sonnet_v2-fs25.jsonl
+│   │           │       ├── claude3.5-sonnet_v2-fs2b.jsonl
+│   │           │       ├── claude3.5-sonnet_v2-fs2.jsonl
+│   │           │       ├── claude3.5-sonnet_v2-fs5.jsonl
+│   │           │       ├── claude3-haiku_v2-fs25.jsonl
+│   │           │       ├── claude3-haiku_v2-fs2b.jsonl
+│   │           │       ├── claude3-haiku_v2-fs2.jsonl
+│   │           │       ├── claude3-haiku_v2-fs5.jsonl
+│   │           │       ├── gemini-1.5-flash_v2-fs25.jsonl
+│   │           │       ├── gemini-1.5-flash_v2-fs2.jsonl
+│   │           │       ├── gemini-1.5-flash_v2-fs5.jsonl
+│   │           │       ├── gemini-1.5-pro_v2-fs25.jsonl
+│   │           │       ├── gemini-1.5-pro_v2-fs2.jsonl
+│   │           │       ├── gemini-1.5-pro_v2-fs5.jsonl
+│   │           │       ├── gpt-4o-mini_v2-fs25.jsonl
+│   │           │       ├── gpt-4o-mini_v2-fs2b.jsonl
+│   │           │       ├── gpt-4o-mini_v2-fs2.jsonl
+│   │           │       ├── gpt-4o-mini_v2-fs5.jsonl
+│   │           │       ├── gpt-4o_v2-fs25.jsonl
+│   │           │       ├── gpt-4o_v2-fs2b.jsonl
+│   │           │       ├── gpt-4o_v2-fs2.jsonl
+│   │           │       ├── gpt-4o_v2-fs5.jsonl
+│   │           │       ├── llama3.1-70b_v2-fs25.jsonl
+│   │           │       ├── llama3.1-70b_v2-fs2b.jsonl
+│   │           │       ├── llama3.1-70b_v2-fs2.jsonl
+│   │           │       ├── llama3.1-70b_v2-fs5.jsonl
+│   │           │       ├── llama3.1-8b_v2-fs25.jsonl
+│   │           │       ├── llama3.1-8b_v2-fs2b.jsonl
+│   │           │       ├── llama3.1-8b_v2-fs2.jsonl
+│   │           │       ├── llama3.1-8b_v2-fs5.jsonl
+│   │           │       ├── llama3-70b_v2-fs5.jsonl
+│   │           │       ├── mistral-large2_v2-fs25.jsonl
+│   │           │       └── mistral-large2_v2-fs5.jsonl
+│   │           ├── figures
+│   │           │   ├── Figure_Edit_Distance.pdf
+│   │           │   ├── Figure_Edit_Operations.pdf
+│   │           │   ├── Figure_Model_Error_Categories.pdf
+│   │           │   ├── Figure_Pre_Post_Scores.pdf
+│   │           │   ├── Figure_Pre_Scores_Domains.pdf
+│   │           │   └── Figure_Score_vs_Edit_Categories.pdf
+│   │           ├── images
+│   │           │   └── intro.png
+│   │           ├── LAMP
+│   │           │   ├── LAMP.json
+│   │           │   ├── LAMP-train-val-test.json
+│   │           │   └── reannotation
+│   │           │       ├── W12_edits.json
+│   │           │       ├── W16_edits.json
+│   │           │       └── W3_edits.json
+│   │           ├── notebooks
+│   │           │   ├── Data_Analysis.ipynb
+│   │           │   ├── Detection_Task_Agreement.ipynb
+│   │           │   ├── Phil_Editing_Experiment.ipynb
+│   │           │   └── rewriting_prompts.ipynb
+│   │           ├── populate_auto_detection.py
+│   │           ├── preference_ranking
+│   │           │   ├── agreement_map.json
+│   │           │   ├── batch1
+│   │           │   │   ├── batch1.json
+│   │           │   │   ├── cgreer.json
+│   │           │   │   ├── cgreer_rankings.json
+│   │           │   │   ├── issa.json
+│   │           │   │   ├── issa_rankings.json
+│   │           │   │   ├── yen.json
+│   │           │   │   └── yen_rankings.json
+│   │           │   ├── batch2
+│   │           │   │   ├── batch2.json
+│   │           │   │   ├── rachel_lapides.json
+│   │           │   │   ├── rachel_lapides_rankings.json
+│   │           │   │   ├── riley.json
+│   │           │   │   ├── riley_rankings.json
+│   │           │   │   ├── xiadi.json
+│   │           │   │   └── xiadi_rankings.json
+│   │           │   ├── batch3
+│   │           │   │   ├── batch3.json
+│   │           │   │   ├── hyo.json
+│   │           │   │   ├── hyo_rankings.json
+│   │           │   │   ├── imani.json
+│   │           │   │   ├── imani_rankings.json
+│   │           │   │   ├── margaret.json
+│   │           │   │   └── margaret_rankings.json
+│   │           │   ├── batch4
+│   │           │   │   ├── batch4.json
+│   │           │   │   ├── cgreer.json
+│   │           │   │   ├── cgreer_rankings.json
+│   │           │   │   ├── josiah.json
+│   │           │   │   ├── josiah_rankings.json
+│   │           │   │   ├── yen.json
+│   │           │   │   └── yen_rankings.json
+│   │           │   ├── batch5
+│   │           │   │   ├── adeniyiademoroti.json
+│   │           │   │   ├── adeniyiademoroti_rankings.json
+│   │           │   │   ├── batch5.json
+│   │           │   │   ├── cgreer.json
+│   │           │   │   ├── cgreer_rankings.json
+│   │           │   │   ├── rachel_lapides.json
+│   │           │   │   └── rachel_lapides_rankings.json
+│   │           │   ├── batch6
+│   │           │   │   ├── batch6.json
+│   │           │   │   ├── cgreer.json
+│   │           │   │   ├── cgreer_rankings.json
+│   │           │   │   ├── josiah.json
+│   │           │   │   ├── josiah_rankings.json
+│   │           │   │   ├── yen.json
+│   │           │   │   └── yen_rankings.json
+│   │           │   ├── batch7
+│   │           │   │   ├── batch7.json
+│   │           │   │   ├── hyo.json
+│   │           │   │   ├── hyo_rankings.json
+│   │           │   │   ├── stefan.json
+│   │           │   │   ├── stefan_rankings.json
+│   │           │   │   ├── tuhin.json
+│   │           │   │   └── tuhin_rankings.json
+│   │           │   ├── calc_kendall_tau.py
+│   │           │   ├── calc_pref_rank.py
+│   │           │   ├── LLM_edited_full.json
+│   │           │   ├── LLM_edited_oracle.json
+│   │           │   ├── orcale_span.json
+│   │           │   └── predicted_span.json
+│   │           ├── prompts
+│   │           │   ├── detection_v1_fs25.txt
+│   │           │   ├── detection_v1_fs5.txt
+│   │           │   ├── detection_v2_fs25.txt
+│   │           │   ├── detection_v2_fs2.txt
+│   │           │   ├── detection_v2_fs5.txt
+│   │           │   ├── examples_to_use.json
+│   │           │   └── rewrite_prompts_fewshot25.json
+│   │           ├── README.md
+│   │           ├── syntactic_idiosyncrasies
+│   │           │   ├── human_syntax.json
+│   │           │   └── llm_syntax.json
+│   │           ├── utils_diff.py
+│   │           ├── utils_generate_edits.py
+│   │           └── utils_misc.py
+│   ├── README.md
+│   └── remove_data_creative_math.py
+├── docs
+│   ├── assets
+│   │   ├── data
+│   │   │   └── leaderboard.json
+│   │   ├── img
+│   │   │   ├── 1991_AJHSME_Problems_25.png
+│   │   │   ├── CreativePrism_light.pdf
+│   │   │   ├── CreativePrism_light.png
+│   │   │   ├── heatmap-paper.png
+│   │   │   ├── plot-perf-diversity.png
+│   │   │   ├── plot-perf-logical.png
+│   │   │   ├── plot-perf-novelty.png
+│   │   │   ├── plot-perf-overall.png
+│   │   │   ├── plot-perf-psyc.png
+│   │   │   ├── plot-perf-quality.png
+│   │   │   ├── plot-perf-story.png
+│   │   │   └── plot-time.png
+│   │   └── onepage.css
+│   ├── changelog.md
+│   ├── data.md
+│   ├── index.md
+│   ├── leaderboard.md
+│   ├── method.md
+│   └── README.md
+├── eval_main.py
+├── eval.yaml
+├── generate.py
+├── human_annotation
+│   └── notebooks
+│       ├── aut.ipynb
+│       ├── creative_math.ipynb
+│       ├── neocoder.ipynb
+│       └── ttct.ipynb
+├── LICENSE
+├── main
+│   ├── config
+│   │   └── tasks.yaml
+│   ├── evaluate.py
+│   ├── evaluators
+│   │   ├── base.py
+│   │   ├── __init__.py
+│   │   └── quality.py
+│   ├── example.py
+│   ├── generate.py
+│   ├── models
+│   │   └── model_interface.py
+│   ├── README.md
+│   ├── requirements.txt
+│   └── tasks
+│       ├── aut.py
+│       ├── base.py
+│       ├── __init__.py
+│       └── ttcw.py
+├── math_n_index
+│   ├── api_eval_math.py
+│   ├── api_eval.py
+│   ├── api_warpper.py
+│   ├── book_creative_par.sh
+│   ├── configs
+│   │   ├── config.json
+│   │   ├── config.py
+│   │   ├── creative_math_config.json
+│   │   ├── eval_creative_math.json
+│   │   ├── inference_creative_index_book.json
+│   │   ├── inference_creative_math.json
+│   │   └── __init__.py
+│   ├── data
+│   │   ├── outputs
+│   │   │   └── Llama-3.1-8B.json
+│   │   ├── processed
+│   │   │   ├── creative_index
+│   │   │   │   ├── book_prompt.json
+│   │   │   │   ├── poem_prompt.json
+│   │   │   │   └── speech_prompt.json
+│   │   │   └── creative_math.json
+│   │   ├── raw
+│   │   │   └── subset.json
+│   │   └── README.md
+│   ├── poem_creative.sh
+│   ├── preprocess_index.py
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── run_inference_all.py
+│   ├── run_inference.py
+│   ├── speech_creative.sh
+│   └── src
+│       ├── evaluation
+│       │   ├── creative_math_eval_api.py
+│       │   ├── creative_math_evaluation.py
+│       │   ├── evaluation_creative_index_exact.py
+│       │   ├── evaluation_creative_index_parr.py
+│       │   ├── evaluation.py
+│       │   ├── __init__.py
+│       │   └── run_evaluator.sh
+│       ├── inference
+│       │   ├── creative_index_generation.py
+│       │   ├── creative_index_inference.py
+│       │   ├── creative_math_generation.py
+│       │   ├── creative_math_inference.py
+│       │   ├── creative_math_selfimprove.py
+│       │   ├── inference_driver.py
+│       │   └── __init__.py
+│       ├── __init__.py
+│       ├── models
+│       │   ├── api_models.py
+│       │   ├── __init__.py
+│       │   ├── local_models.py
+│       │   ├── local_models_vllm.py
+│       │   ├── model_loader.py
+│       │   └── prompt_utils.py
+│       ├── prompt_engineering
+│       │   ├── creative_math_prompts.py
+│       │   ├── __init__.py
+│       │   └── prompts.py
+│       └── utils
+│           ├── clean_data_creative_math.py
+│           ├── helpers.py
+│           ├── __init__.py
+│           ├── logger.py
+│           └── utils.py
+├── mkdocs.yml
+├── neocoder_dat
+│   ├── datasets
+│   │   └── CodeForce
+│   │       ├── crawled
+│   │       │   ├── codeforces_problems.jsonl
+│   │       │   └── test_cases.json
+│   │       ├── NeoCoder
+│   │       │   ├── human_solutions.json
+│   │       │   ├── human_solution_techniques.json
+│   │       │   ├── NeoCoder.json
+│   │       │   └── test_cases_annotated.json
+│   │       └── raw
+│   │           └── CodeForce800spreadsheet.xlsx
+│   ├── README.md
+│   ├── requirements.txt
+│   ├── scripts
+│   │   ├── correctness_evaluation.sh
+│   │   ├── detect_techniques.sh
+│   │   ├── evaluate_dat.sh
+│   │   ├── evaluate_neogauge.sh
+│   │   ├── inference_dat.sh
+│   │   └── inference_neocoder.sh
+│   ├── src
+│   │   ├── collate_fns
+│   │   │   ├── codeforce_collate_fn.py
+│   │   │   ├── collate_fn.py
+│   │   │   └── __init__.py
+│   │   ├── crawl
+│   │   │   ├── codeforce_crawler.py
+│   │   │   ├── crawler.py
+│   │   │   └── __init__.py
+│   │   ├── evaluators
+│   │   │   ├── dp_evaluator.py
+│   │   │   ├── evaluation_utils.py
+│   │   │   └── evaluator.py
+│   │   ├── generator
+│   │   │   ├── dataset.py
+│   │   │   ├── dp_generator.py
+│   │   │   ├── generator.py
+│   │   │   ├── __init__.py
+│   │   │   └── p_generator.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   └── model.py
+│   │   └── utils
+│   │       ├── configs.py
+│   │       └── dat_score.py
+│   ├── steps
+│   │   ├── evaluate_dat.py
+│   │   ├── evaluate_neogauge.py
+│   │   ├── inference_dat.py
+│   │   └── inference_dp.py
+│   └── words.txt
+├── README.md
+├── repo_tree.txt
+├── result_analysis
+│   └── visualization.ipynb
+└── ttct
+    ├── data
+    │   ├── evaluations
+    │   │   ├── temp_0
+    │   │   │   ├── OLMo-2-1124-13B-Instruct.csv
+    │   │   │   └── Qwen2.5-72B-Instruct.csv
+    │   │   ├── temp_0.25
+    │   │   │   ├── OLMo-2-1124-13B-Instruct.csv
+    │   │   │   └── Qwen2.5-72B-Instruct.csv
+    │   │   ├── temp_0.5
+    │   │   │   ├── OLMo-2-1124-13B-Instruct.csv
+    │   │   │   └── Qwen2.5-72B-Instruct.csv
+    │   │   ├── temp_0.75
+    │   │   │   ├── OLMo-2-1124-13B-Instruct.csv
+    │   │   │   └── Qwen2.5-72B-Instruct.csv
+    │   │   └── temp_1
+    │   │       ├── claude-3-5-haiku-20241022.csv
+    │   │       ├── claude-3-7-sonnet-20250219.csv
+    │   │       ├── deepseek-chat.csv
+    │   │       ├── deepseek-reasoner.csv
+    │   │       ├── gemini-2.0-flash.csv
+    │   │       ├── gpt-4.1-2025-04-14.csv
+    │   │       ├── gpt-4.1-mini-2025-04-14.csv
+    │   │       ├── gpt-4o-mini-2024-07-18.csv
+    │   │       ├── Llama-3.3-70B-Instruct.csv
+    │   │       ├── Meta-Llama-3.1-8B-Instruct.csv
+    │   │       ├── Mistral-7B-Instruct-v0.3.csv
+    │   │       ├── Mistral-Small-24B-Instruct-2501.csv
+    │   │       ├── Mixtral-8x7B-Instruct-v0.1.csv
+    │   │       ├── OLMo-2-1124-13B-DPO.csv
+    │   │       ├── OLMo-2-1124-13B-DPO.json
+    │   │       ├── OLMo-2-1124-13B-Instruct.csv
+    │   │       ├── OLMo-2-1124-13B-SFT.csv
+    │   │       ├── OLMo-2-1124-7B-Instruct.csv
+    │   │       ├── Qwen2.5-32B-Instruct.csv
+    │   │       ├── Qwen2.5-72B-Instruct.csv
+    │   │       ├── Qwen2.5-72B-Instruct_llama.csv
+    │   │       ├── Qwen2.5-7B-Instruct.csv
+    │   │       ├── Qwen2.5-Coder-32B-Instruct.csv
+    │   │       └── Qwen2.5-Coder-7B-Instruct.csv
+    │   ├── processed
+    │   │   └── ttct.json
+    │   ├── raw
+    │   │   ├── common_problem_task_prompt.csv
+    │   │   ├── consequences_task_prompt.csv
+    │   │   ├── im_task_prompt.csv
+    │   │   ├── is_task_prompt.csv
+    │   │   ├── js_task_prompt.csv
+    │   │   ├── situation_task_prompt.csv
+    │   │   └── unusual_task_prompt.csv
+    │   └── raw2processed.ipynb
+    ├── README.md
+    ├── requirements.txt
+    ├── scripts
+    │   ├── download_models.sh
+    │   ├── run_evaluation.sh
+    │   ├── run_inference.sh
+    │   └── show_results.sh
+    └── src
+        ├── evaluation
+        │   ├── __init__.py
+        │   └── ttct_evaluation.py
+        ├── inference
+        │   ├── __init__.py
+        │   └── ttct_inference.py
+        └── utils
+            ├── api_wrapper.py
+            ├── download_model.py
+            ├── helpers.py
+            ├── __init__.py
+            ├── run_api.py
+            └── show_results.py
+
+146 directories, 1073 files

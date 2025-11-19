@@ -3,7 +3,7 @@
     <h1>CreativityPrism</h1>
     <p class="sub">A benchmark for creative reasoning in LLMs — Quality · Novelty · Diversity</p>
     <div class="btns">
-        <a href="." target="_blank" rel="noopener">📄 arXiv (coming soon!)</a>
+        <a href="https://arxiv.org/abs/2510.20091" target="_blank" rel="noopener">📄 arXiv</a>
         <a href="https://www.kaggle.com/datasets/a916e717ce0375e9ca3e31a53d1f4b37f29266057027e3bfb0140b31cc6dcc21" target="_blank" rel="noopener">🗂 data</a>
         <a href="https://github.com/joeyhou/creativityprism" target="_blank" rel="noopener">💻 code</a>
     </div>
