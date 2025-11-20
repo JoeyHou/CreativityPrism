@@ -102,7 +102,7 @@ def _run(cmd, env=None, dry=False):
 
 
 # ----------------------------- Runners ---------------------------------
-
+# This is almost clear now. 
 def run_aut_ttcw_cshort(task: str, model: str, config_path: str, outdir: Path,
                         limit: int, seed: int, temperature: float,
                         max_new_tokens: int, dry: bool):
@@ -169,7 +169,7 @@ def run_math_n_index(task: str, subtask: str, config_path: str, outdir: Path,
 
     return _run(cmd, dry=dry)
 
-
+# almost done: adjust model names inside ttct/scripts/run_inference.sh 
 def run_ttct(model: str, config_path: str, outdir: Path,
              limit: int, seed: int, temperature: float,
              max_new_tokens: int, dry: bool):
@@ -184,6 +184,7 @@ def run_ttct(model: str, config_path: str, outdir: Path,
 
     # Many TTCT scripts are model-agnostic & pull model from a config or env.
     cmd = ["bash", str(sh)]
+    '''
     if config_path:
         cmd += ["--config", str(config_path)]
     if outdir:
@@ -198,7 +199,7 @@ def run_ttct(model: str, config_path: str, outdir: Path,
         cmd += ["--max_new_tokens", str(max_new_tokens)]
     if model:
         cmd += ["--model", model]
-
+    '''
     return _run(cmd, dry=dry)
 
 

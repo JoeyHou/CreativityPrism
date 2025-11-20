@@ -19,7 +19,7 @@ def main(model_name, temp, cache_dir):
     else:
         # Load model using 4 GPUs
         llm = LLM(
-                model=f'{cache_dir}{model_name}', 
+                model=f'{model_name}', 
                 tensor_parallel_size=4,        
                 gpu_memory_utilization=0.95, 
                 max_model_len=2048
@@ -78,20 +78,10 @@ if __name__ == "__main__":
                         help=f'Name of LLM used for inference (should match name of local directory where weights are stored)'
                         )
     
-    # parser.add_argument('-basic', type=bool, default=True, help=f'Include arg to run basic prompt types')
-    # parser.add_argument('-instructive', type=bool, default=True, help=f'Include arg to run instructive prompt types')
-    # parser.add_argument('-cot', type=bool, default=True, help=f'Include arg to run chain-of-thought prompt types')
-    
     parser.add_argument('-temp', 
                         type=int, 
                         default=1, 
                         help=f'Original temp=1; however, it is variable here for additional experiments'
-                        )
-    
-    parser.add_argument('-cache_dir', 
-                        type=str, 
-                        default='/playpen-ssd/pretrained_models/', 
-                        help=f'Path to local directory containing model weights'
                         )
 
     args = parser.parse_args()

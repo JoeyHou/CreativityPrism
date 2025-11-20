@@ -2,7 +2,7 @@
 MODELS=('OLMo-2-1124-13B-DPO')
 
 export CUDA_VISIBLE_DEVICES=4,5,6,7
-cd /playpen-ssd/abrei/creativity_benchmark/ttct
+
 
 for MODEL in "${MODELS[@]}"
 do
@@ -10,5 +10,4 @@ do
     python3 ./src/inference/ttct_inference.py \
         -model_name "$MODEL" \
         -temp 1 \
-        -cache_dir "/playpen-ssd/pretrained_models/"
 done
