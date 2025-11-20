@@ -121,25 +121,11 @@ def run_aut_ttcw_cshort(task: str, model: str, config_path: str, outdir: Path,
         cfg = REPO_ROOT / "aut_ttcw_cshort" / "configs" / task_dir / "inference" / name
 
     runner = REPO_ROOT / "aut_ttcw_cshort" / "run_inference.py"
+    print("DEBUG: current run is under: ", runner)
     if not runner.exists():
         raise FileNotFoundError("Expected aut_ttcw_cshort/run_inference.py not found.")
 
-    cmd = [sys.executable, str(runner),
-           "--config", str(cfg),
-           "--task", task]  # the underlying script distinguishes templates by task
-
-    # Optional knobs: only add if provided; the subproject ignores unknown flags.
-    if outdir:
-        cmd += ["--output_dir", str(outdir)]
-    if limit is not None:
-        cmd += ["--limit", str(limit)]
-    if seed is not None:
-        cmd += ["--seed", str(seed)]
-    if temperature is not None:
-        cmd += ["--temperature", str(temperature)]
-    if max_new_tokens is not None:
-        cmd += ["--max_new_tokens", str(max_new_tokens)]
-
+    cmd = [sys.executable, str(runner), str(cfg)]  # the underlying script distinguishes templates by task
     return _run(cmd, dry=dry)
 
 

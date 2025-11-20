@@ -18,6 +18,10 @@ class Driver(ABC):
 
         # 1. initialze class info
         self.open_source_models = {
+            "Qwen2.5-1.5B-Instruct": {
+                "hf_dir": "Qwen/Qwen2.5-1.5B-Instruct",
+                "max_model_len": 32000
+            },
             "mistral_7b_instruct": {
                 "hf_dir": "mistralai/Mistral-7B-Instruct-v0.3"
             },
