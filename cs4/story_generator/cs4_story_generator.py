@@ -13,7 +13,7 @@ import sys
 from api_wrapper import ModelWrapper
 
 #### CONSTANTS ####
-STORY_CONSTRAINTS_CSV = 'df3_updated_gpt_constraints.csv'
+STORY_CONSTRAINTS_CSV = 'data/df3_updated_gpt_constraints.csv'
 MAX_TOKENS = 1500
 # MAX_MODEL_LEN = 8000
 
@@ -107,33 +107,6 @@ def generate_response(tokenizer, olmo, prompt_text, max_tokens=MAX_TOKENS):
     inputs = inputs.cpu()
     # Decode and return response
     return tokenizer.batch_decode(response, skip_special_tokens=True)[0]
-
-    
-def clear_cache_if_needed(directory):
-    # Execute the df command to check disk usage for the specified directory
-    abs_directory = os.path.expanduser(directory)
-
-    df_output = subprocess.check_output(['df', '-h', abs_directory]).decode('utf-8')
-    # Split the output lines
-    df_lines = df_output.split('\n')
-    # Get the line containing usage information
-    usage_line = df_lines[1]
-    # Split the line into fields
-    fields = usage_line.split()
-    # Extract the usage percentage
-    usage_percentage = int(fields[4].rstrip('%'))
-    
-    # Check if usage exceeds 85%
-    files_in_directory = os.listdir('/home/rbheemreddy_umass_edu/.cache/huggingface/hub')
-    print(files_in_directory)
-
-    if usage_percentage>60:
-        command = f"rm -rfv ~/.cache/huggingface/hub/*"
-        subprocess.call(command, shell=True)
-
-        print(f"Cache cleared successfully for models as usage percentage is {usage_percentage}")
-    else:
-        print("Disk usage is below 60%. No need to clear cache. Usage Percentage:", usage_percentage)
 
     
 # Example usage:

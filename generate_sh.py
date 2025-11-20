@@ -17,6 +17,7 @@ Supported task keys
 - creativity_index -> math_n_index (subtypes: book|poem|speech)
 - neocoder       -> neocoder_dat (codeforces / NeoCoder)
 - dat            -> neocoder_dat (Divergent Association Task coding variant)
+- cs4
 
 Usage examples
 - python unified_generate.py --task aut --model gpt --out runs/aut_gpt
@@ -82,8 +83,9 @@ TTCT_SCRIPT = "ttct/scripts/run_inference.sh"
 
 # neocoder/dat have their own shell wrappers too.
 NEOCODER_SCRIPT = "neocoder_dat/scripts/inference_neocoder.sh"
-DAT_SCRIPT      = "neocoder_dat/scripts/inference_dat.sh"
+DAT_SCRIPT = "neocoder_dat/scripts/inference_dat.sh"
 
+CS4_SCRIPT = "cs4/story_generator/cs4_story_generator.py"
 
 def _default_out(task: str) -> Path:
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -150,8 +152,8 @@ def run_math_n_index(task: str, subtask: str, config_path: str, outdir: Path,
             raise ValueError(f"[math_n_index] No default config for {key}. Use --config.")
         cfg = REPO_ROOT / default_cfg
 
-    cmd = [sys.executable, str(runner),
-           "--task", task]
+    cmd = [sys.executable, str(runner)]
+    '''
     if subtask:
         cmd += ["--subtask", subtask]
     cmd += ["--config", str(cfg)]
@@ -166,7 +168,7 @@ def run_math_n_index(task: str, subtask: str, config_path: str, outdir: Path,
         cmd += ["--temperature", str(temperature)]
     if max_new_tokens is not None:
         cmd += ["--max_new_tokens", str(max_new_tokens)]
-
+    '''
     return _run(cmd, dry=dry)
 
 # almost done: adjust model names inside ttct/scripts/run_inference.sh 
@@ -202,7 +204,7 @@ def run_ttct(model: str, config_path: str, outdir: Path,
     '''
     return _run(cmd, dry=dry)
 
-
+# what should the hyperparameters be? How should we change this? Do we want to use sh scripts or py scripts?
 def run_neocoder_or_dat(which: str, outdir: Path, limit: int, seed: int,
                         temperature: float, max_new_tokens: int, dry: bool):
     """
@@ -227,7 +229,13 @@ def run_neocoder_or_dat(which: str, outdir: Path, limit: int, seed: int,
 
     return _run(cmd, dry=dry)
 
-
+# new for cs4 directly call python script with command 
+def run_cs4(which: str, outdir: Path, limit: int, seed: int, temperature: float, max_new_tokens: int, dry: bool, config_path: str):
+    py = REPO_ROOT / CS4_SCRIPT
+    if not py.exists():
+        raise FileNotFoundError(f"Expected script not found: {py}")
+    cmd = [sys.executable, str(py), config_path]
+    return _run(cmd, dry=dry)
 # ----------------------------- CLI -------------------------------------
 
 def main():
@@ -237,7 +245,7 @@ def main():
     p.add_argument("--task", required=True,
                    choices=["aut", "ttcw", "cshort",
                             "ttct", "creative_math", "creativity_index",
-                            "neocoder", "dat"],
+                            "neocoder", "dat", "cs4"],
                    help="Which task to run.")
     p.add_argument("--subtask", default=None,
                    help="Optional subtask (e.g., for creativity_index: book|poem|speech).")
@@ -308,6 +316,17 @@ def main():
             temperature=args.temperature,
             max_new_tokens=args.max_new_tokens,
             dry=args.dry_run,
+        ))
+    if args.task in ("cs4"):
+        return sys.exit(run_cs4(
+            which=args.task,
+            outdir=outdir,
+            limit=args.limit,
+            seed=args.seed,
+            temperature=args.temperature,
+            max_new_tokens=args.max_new_tokens,
+            dry=args.dry_run,
+            config_path=args.config,
         ))
 
     raise ValueError(f"Unhandled task: {args.task}")

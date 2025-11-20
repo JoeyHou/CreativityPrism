@@ -27,7 +27,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 3:
         print("Usage: python run_inference.py <config_file> <experiment_index>")
         sys.exit(1)
-
+    # we need to make decision choices here whether to keep the second arg or split configs, split configs is consistent
     config_file = sys.argv[1]
     experiment_index = int(sys.argv[2])
 
