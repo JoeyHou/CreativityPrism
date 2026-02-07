@@ -11,7 +11,7 @@ from src.inference.creative_math_inference import CreativeMathInference
 
 def run_inference(config):
 
-    for exp_config in config['experiments_list'][0:1]: # next is 3.3
+    for exp_config in config['experiments_list']:
         task = exp_config.get('task', 'creative_writing')
         if task == 'creative_writing':
             inference_driver = CreativeWritingInference(exp_config)
