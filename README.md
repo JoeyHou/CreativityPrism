@@ -11,4 +11,19 @@ All tasks are in `\tasks`.
 - `vllm`: [0.7.2](https://docs.vllm.ai/en/v0.7.2/getting_started/installation/index.html) (or >= 0.7.0)
 - `Python`: 3.9 – 3.12
 - `cuda`: >= 12.1
-- Detailed requirements please check `requirements.txt` of each subfolder.
+
+## Get Started
+- Install necessary dependency
+```
+conda create -n creativity_prism python=3.12
+pip install -r requirements.txt
+```
+- Run infernece
+```
+python main_inference.py --task [task_name]
+```
+
+- Run evaluation
+```
+python main_evaluation.py --task [task_name]
+```
