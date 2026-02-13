@@ -1,0 +1,315 @@
+infer_cot_input,infer_cot_pred,rubric
+"Common Problems Task. In this task, you will be presented with a scenario or situation. Your job is to think about it and identify as many potential problems or issues that may arise in connection with each situation. Let's think step by step. The scenario is: Pioneering a mission to the bottom of the ocean."," Let's break this down step by step to identify the potential problems that may arise when pioneering a mission to explore the depths of the ocean.
+
+### 1. **Engineering and Technology**
+   - **Seismic Activity and Turbulence:** The ocean's seafloor can be unstable due to seismic activity, which can pose hazards to diving vessels and undersea exploratory equipment.
+   - **Pressure Suits and Equipment:** Deep-sea diving requires advanced pressure suits and equipment to prevent decompression sickness and other health issues. Ensuring these tools are reliable and durable is critical.
+   - **Communication Challenges:** Underwater communication can be difficult due to signal attenuation, noise, and the need for specialized equipment.
+   - **Power Supply:** Maintaining power in underwater environments requires batteries, generators, or innovative energy solutions, which can be costly and logistically challenging.
+   - **Visual Obfuscation:** Visibility can be severely reduced by sediment, plankton, and other particles in the water, affecting both human and robotic vision.
+
+### 2. **Environmental Factors**
+   - **Temperature Extremes:** Temperatures can vary significantly with depth, from near freezing near the bottom to much warmer at shallower depths.
+   - **Pressure Variations:** As depth increases, pressure does too, which can affect both the equipment and the biology in the region.
+   - **Ocean Currents:** Strong currents can pose risks to divers and submersibles, potentially causing equipment failure or loss of vessel control.
+   - **Biological Hazards:** The deep sea is home to unique and potentially dangerous organisms that could harm human explorers.
+
+### 3. **Logistical and Organizational Challenges**
+   - **Shipyard and Base Requirements:** Specialized shipyards and bases may be needed to launch and maintain deep-diving missions, requiring significant investment and infrastructure development.
+   - **Training and Certification:** Crew members need specialized training and certification to safely operate in these extreme conditions, which can be time-consuming and expensive.
+   - **Supply Chain Management:** Getting supplies and equipment to and from the deep sea can be particularly challenging due to maritime logistics.
+   - **Emergency Response Planning:** Effective emergency response plans are crucial in the event of equipment failure","- Definition: This task focuses on everyday problems that are familiar to most people, requiring participants to generate innovative and effective solutions. For example, organizing a cross-country road trip or building a tree house.
+- Example: Common Problems Task. In this task, you will be presented with a scenario or situation. Your job is to think about it and identify as many potential problems or issues that may arise in connection with each situation. Let's think step by step. The scenario is: Overcoming language barriers in a multicultural workplace.
+
+
+| Dimension       | What to Look For                                                         | 1                    | 3                                    | 5                                                                                           |
+| --------------- | ------------------------------------------------------------------------ | -------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of distinct problems                                              | 0–2                  | 6–8                                  | ≥13                                                                                         |
+| **Flexibility** | Number of problem types (tech, env, human, logistic, legal, financial …) | 1 type               | 3–4 types                            | ≥6 types                                                                                    |
+| **Originality** | Rarity of problems listed                                                | generic (“pressure”) | some specific (“biological hazards”) | multiple rare, cross-domain risks (“cyber-spoofing of acoustic comms,” “EEZ law conflicts”) |
+| **Elaboration** | Mechanistic and causal depth                                             | labels only          | short mechanism                      | multi-step causal chains + examples + mitigation                                            |
+"
+"Common Problems Task. In this task, you will be presented with a scenario or situation. Your job is to think about it and identify as many potential problems or issues that may arise in connection with each situation. Let's think step by step. The scenario is: Writing a screenplay for a feature film."," Sure, let's break down the scenario of writing a screenplay for a feature film and identify potential problems or issues that may arise in the process. I'll go through this step by step:
+
+### 1. Initial Development
+- **Lack of Originality**: Finding a unique idea that hasn't been done to death in the industry.
+- **Market Research**: Insufficient knowledge about current market trends and audience preferences.
+- **Character Development**: Crafting compelling, well-rounded characters.
+- **Plot Structure**: Developing a coherent and engaging plot.
+- **Genre Confusion**: Struggling to define the genre of the film accurately.
+
+### 2. Writing Process
+- **Writer’s Block**: Facing difficulties in generating ideas or structuring scenes.
+- **Excessive Pacing**: Creating a script that moves too quickly or too slowly.
+- **Dialogue**: Writing realistic, engaging, and meaningful dialogue.
+- **Voice and Tone**: Maintaining a consistent voice throughout the script.
+- **Formatting Issues**: Ensuring adherence to proper screenplay format and guidelines.
+
+### 3. Budget Constraints
+- **Funding**: Securing financial support to make the film.
+- **Penny Pinching**: Making choices that compromise quality due to budget limitations.
+- **Resource Allocation**: Efficient distribution of available resources (e.g., crew, equipment, location).
+
+### 4. Team Dynamics
+- **Writer's Block on Collaboration**: Collaborating with a team if the project is for a studio or company.
+- **Creative Differences**: Resolving conflicts with directors, producers, or other writers.
+- **Management**: Balancing creative input with production demands.
+- **Communication**: Ensuring clear and effective communication between all team members.
+
+### 5. Legal and Rights Issues
+- **Copyright Infringement**: Using copyrighted material without proper licensing.
+- **Workshop and Feedback**: Getting feedback from legal professionals or rights holders.
+- **Permits and Clearances**: Obtaining necessary permissions for locations, music, or other elements.
+- **Contractual Obligations**: Adhering to contractual agreements during and after the writing process.
+
+### 6. Thematic and Narrative Issues
+- **Over-Explaining**: Telling the story in a way that feels heavy-handed or","- Definition: This task focuses on everyday problems that are familiar to most people, requiring participants to generate innovative and effective solutions. For example, organizing a cross-country road trip or building a tree house.
+- Example: Common Problems Task. In this task, you will be presented with a scenario or situation. Your job is to think about it and identify as many potential problems or issues that may arise in connection with each situation. Let's think step by step. The scenario is: Overcoming language barriers in a multicultural workplace.
+
+
+| Dimension       | What to Look For                                                         | 1                    | 3                                    | 5                                                                                           |
+| --------------- | ------------------------------------------------------------------------ | -------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of distinct problems                                              | 0–2                  | 6–8                                  | ≥13                                                                                         |
+| **Flexibility** | Number of problem types (tech, env, human, logistic, legal, financial …) | 1 type               | 3–4 types                            | ≥6 types                                                                                    |
+| **Originality** | Rarity of problems listed                                                | generic (“pressure”) | some specific (“biological hazards”) | multiple rare, cross-domain risks (“cyber-spoofing of acoustic comms,” “EEZ law conflicts”) |
+| **Elaboration** | Mechanistic and causal depth                                             | labels only          | short mechanism                      | multi-step causal chains + examples + mitigation                                            |
+"
+"Common Problems Task. In this task, you will be presented with a scenario or situation. Your job is to think about it and identify as many potential problems or issues that may arise in connection with each situation. Let's think step by step. The scenario is: Overcoming language barriers in a multicultural workplace."," This is a complex issue involving many potential problems. Let's break it down:
+
+1. Communication:
+   - Miscommunication due to different accents, dialects, or language fluency levels
+   - Difficulty in conveying complex ideas or instructions effectively
+   - Misinterpretation of written or verbal messages
+   - Language barriers leading to misunderstandings and conflicts
+
+2. Collaboration and teamwork:
+   - Challenges in developing cohesive teams when members struggle to understand each other
+   - Reduced productivity due to ineffective communication
+   - Inability to reach consensus or make joint decisions
+   - Tension and frustration among team members
+
+3. Training and development:
+   - Inadequate training or support for non-native speakers
+   - Language barriers limiting access to important company information and resources
+   - Uneven knowledge and skill distribution across teams
+
+4. Client interactions:
+   - Inability to communicate effectively with clients from diverse cultural backgrounds
+   - Difficulty in providing personalized and culturally sensitive service
+   - Potential loss of business due to communication barriers
+
+5. Recruitment and hiring:
+   - Challenges in attracting and retaining employees from diverse linguistic backgrounds
+   - Bias in recruitment processes if not all candidates can communicate effectively
+   - Difficulty in creating a diverse and inclusive workplace culture
+
+6. Management and leadership:
+   - Ineffective management techniques when dealing with language barriers
+   - Challenges in leadership development for employees who are non-native speakers
+   - Perceived favoritism or inequity towards certain employees based on language abilities
+
+7. Technology and communication tools:
+   - Inadequate translation or language support for digital communication tools
+   - Issues with screen readers, speech recognition software, and other assistive technologies
+   - Inconsistent use of communication channels due to language barriers
+
+8. Customer service:
+   - Reduced customer satisfaction due to language barriers during interactions
+   - Higher rates of returned products or services due to miscommunication
+   - Difficulty in addressing concerns and resolving issues effectively
+
+9. Company policies and procedures:
+   - Inaccessible or unclear company-wide policies for non-native speakers
+   - Challenges in implementing company-wide initiatives due to language barriers
+   - Inconsistent application of company policies across different employee groups
+
+10. Cultural awareness and sensitivity:
+","- Definition: This task focuses on everyday problems that are familiar to most people, requiring participants to generate innovative and effective solutions. For example, organizing a cross-country road trip or building a tree house.
+- Example: Common Problems Task. In this task, you will be presented with a scenario or situation. Your job is to think about it and identify as many potential problems or issues that may arise in connection with each situation. Let's think step by step. The scenario is: Overcoming language barriers in a multicultural workplace.
+
+
+| Dimension       | What to Look For                                                         | 1                    | 3                                    | 5                                                                                           |
+| --------------- | ------------------------------------------------------------------------ | -------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of distinct problems                                              | 0–2                  | 6–8                                  | ≥13                                                                                         |
+| **Flexibility** | Number of problem types (tech, env, human, logistic, legal, financial …) | 1 type               | 3–4 types                            | ≥6 types                                                                                    |
+| **Originality** | Rarity of problems listed                                                | generic (“pressure”) | some specific (“biological hazards”) | multiple rare, cross-domain risks (“cyber-spoofing of acoustic comms,” “EEZ law conflicts”) |
+| **Elaboration** | Mechanistic and causal depth                                             | labels only          | short mechanism                      | multi-step causal chains + examples + mitigation                                            |
+"
+What would happen if the world's deserts suddenly turned into forests?Let's think step by step.," If the world's deserts suddenly turned into forests, there would be significant ecological, environmental, and societal changes. Here's a step-by-step breakdown of what could happen:
+
+1. Climate and Weather:
+   - Deserts have a minimal amount of vegetation, which reduces evaporation and transpiration.
+   - With the rapid transformation to forests, evapotranspiration would increase, affecting local and perhaps global climates.
+   - More rainfall and cloud cover might be expected in forested areas due to increased moisture evaporation.
+
+2. Biodiversity:
+   - Desert ecosystems are typically home to unique and adapted species, many of which could be displaced or go extinct.
+   - Forest ecosystems support a much richer variety of plant and animal species, altering the existing biodiversity.
+   - New species could potentially move in, while others may struggle to adapt, leading to potential ecological imbalances.
+   - Increased humidity in certain areas might benefit certain species while worsening conditions for others.
+
+3. Soil and Water:
+   - Deserts have poor, sandy, and nutrient-poor soils.
+   - Forests require healthy, fertile soil and sufficient water, which would need to be sourced from the ground or atmosphere.
+   - Increased rainfall could lead to erosion issues and possibly flooding in newly forested areas.
+   - Underground water systems might undergo changes, potentially drying up or becoming abundant, depending on the specific conditions.
+
+4. Carbon Cycle:
+   - Deserts are poor carbon sinks, as they have limited vegetation.
+   - New forests would become a significant carbon sink, potentially shifting global carbon balances.
+   - There might be a pulse of atmospheric carbon as the new forests initially grow but eventually an equilibrium would be reached.
+
+5. Agriculture:
+   - Many desert regions are currently used for agriculture, primarily through irrigation.
+   - The sudden appearance of forests could be favorable for some crops, potentially leading to new agricultural practices.
+   - The transformation might displace current food production areas, leading to potential food shortages and conflicts over resources.
+
+6. Human Impact:
+   - People living in desert areas would need to adapt to the new conditions or migrate to new areas.
+   - There might be new opportunities for various industries, such as logging, as well as challenges related to infrastructure changes.
+   - Cultural and spiritual practices based on the existing desert environments would need to be reassessed.
+
+7. Economy:
+   - Traditional industries and livelihoods based on desert farming and mining might collapse.
+  ","- Definition: This task focuses on the ability to foresee consequences or outcomes of an unusual or hypothetical situation. For example, what would be the implications if animals could talk?
+- Example: What would happen if the world's deserts suddenly turned into forests?Let's think step by step.
+
+| Dimension       | What to Look For                                                                   | 1                              | 3                                    | 5                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of consequences                                                             | 1–2                            | 6–8                                  | ≥12 distinct effects                                                                                           |
+| **Flexibility** | Diversity of domains (social, ecological, economic, legal, technological, moral …) | 1–2 domains                    | 3–4                                  | ≥6 domains                                                                                                     |
+| **Originality** | Novelty of consequences                                                            | generic (“laws against noise”) | some less-common links               | multiple specific and unexpected but plausible chains (“AI translation obsolete because parrots become spies”) |
+| **Elaboration** | Causal depth and mechanism                                                         | statement only                 | “because→therefore” chain or example | layered reasoning with second-order effects or quantitative hint                                               |
+"
+What would happen if plastic could biodegrade as quickly as paper?Let's think step by step.," Sure, let's think through this step by step:
+
+1. **Current Context**: Currently, plastic takes hundreds of years to biodegrade, while paper biodegrades much more quickly, usually within a few months.
+
+2. **Assumption**: If plastic could biodegrade as quickly as paper, it would significantly reduce the time it takes for plastic waste to break down.
+
+3. **Environmental Impact**:
+   - **Soil**:
+     - Faster breakdown of plastic would mean less contamination of soil over time.
+     - Plants grown in such soil might suffer less from plastic particles blocking water and nutrient absorption.
+   - **Landfills**:
+     - Landfills would be less burdened by plastic waste, as it would decompose more rapidly.
+     - This would reduce the volume of waste in landfills and the associated environmental concerns of waste seepage and methane production.
+   - **Microplastics**:
+     - The biodegradation of plastic could reduce the accumulation of microplastics in the environment.
+     - Microplastics are harmful to marine and land wildlife, and their reduction would significantly improve ecosystem health.
+
+4. **Economic Impact**:
+   - **Waste Management**:
+     - The cost of waste management and cleanup would likely decrease, as there would be less need for long-term storage and disposal strategies.
+     - This could lead to reduced costs for governments as well as individuals and businesses.
+   - **Recycling Industry**:
+     - The reduced volume of post-consumer plastic waste might impact the recycling industry, potentially making it less necessary or economically viable to recycle as much plastic.
+     - However, it could also create a new market for companies that specialize in breaking down and reusing degraded plastic.
+
+5. **Technological and Societal Responses**:
+   - **Innovation**:
+     - There might be less urgency to develop alternative materials to plastic if traditional plastic could easily biodegrade.
+     - However, this could also spur innovation in sustainable and biodegradable materials to ensure we are still environmentally responsible.
+   - **Behavioral Changes**:
+     - People might still use plastics more liberally due to the reduced long-term implications, necessitating continued public education on the importance of proper disposal and reduction.
+   - **Regulations**:
+     - Governments might ease plastic usage regulations if plastic biodegradation is seen as a sufficient solution to environmental concerns.
+     - Regulations could shift toward encouraging","- Definition: This task focuses on the ability to foresee consequences or outcomes of an unusual or hypothetical situation. For example, what would be the implications if animals could talk?
+- Example: What would happen if the world's deserts suddenly turned into forests?Let's think step by step.
+
+| Dimension       | What to Look For                                                                   | 1                              | 3                                    | 5                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of consequences                                                             | 1–2                            | 6–8                                  | ≥12 distinct effects                                                                                           |
+| **Flexibility** | Diversity of domains (social, ecological, economic, legal, technological, moral …) | 1–2 domains                    | 3–4                                  | ≥6 domains                                                                                                     |
+| **Originality** | Novelty of consequences                                                            | generic (“laws against noise”) | some less-common links               | multiple specific and unexpected but plausible chains (“AI translation obsolete because parrots become spies”) |
+| **Elaboration** | Causal depth and mechanism                                                         | statement only                 | “because→therefore” chain or example | layered reasoning with second-order effects or quantitative hint                                               |
+"
+What would happen if the speed of light was reduced by half?Let's think step by step.," If the speed of light was reduced by half, there would be a number of significant changes and implications across various fields of science and technology. Here’s a step-by-step way to consider these effects:
+
+### 1. **Physics and Astronomy**
+   - **Light Travel Time:** If the speed of light were halved, the time it takes for light to travel to distant stars and galaxies would also be doubled.
+   - **Distance Measurement:** Distances measured in astronomical units would be perceived as twice as far from Earth.
+   - **Cosmological Constant:** The rate of expansion of the universe would appear to be slower, as light travels more slowly and takes longer to reach us from distant bodies.
+
+### 2. **Electromagnetism and Quantum Mechanics**
+   - **Electromagnetic Waves:** The speed of electromagnetic waves, including radio, microwave, and X-rays, would also be reduced by half, affecting wireless communications and electronics.
+   - **Planck's Constant:** The value of Planck's constant (h), which relates quantum mechanics and electromagnetism, would change in a related manner.
+   - **Wave-Particle Duality:** This would significantly alter the behavior and interaction of particles at quantum scales.
+
+### 3. **Optics and Light Propagation**
+   - **Fiber Optics:** Data transmission through fiber optic cables would be drastically slower, as light travels slower through them.
+   - **Laser Technology:** The performance of lasers would be compromised, as laser light propagation would be slowed.
+
+### 4. **Relativity**
+   - **Causality:** In special and general relativity, signals from an event would take longer to propagate and be detected, potentially affecting signals used for time dilation calculations.
+   - **Speed of Gravity Waves:** Assuming that the speed of gravity is similarly related to the speed of light, gravity signals would also propagate more slowly, affecting gravitational waves and their observation.
+
+### 5. **Technology and Communication**
+   - **Internet and Data Transfer:** Internet connections and data transfer rates would be significantly slower, as information travels at half the speed.
+   - **Wireless Communication:** Wi-Fi, 4G, 5G, and other wireless communication technologies would experience a significant slowdown, reducing data throughput and increasing latency.
+
+### 6. **Everyday Life**
+   - **Satellite and GPS Systems:** GPS and satellite communication systems would need extensive recalibration, as signal","- Definition: This task focuses on the ability to foresee consequences or outcomes of an unusual or hypothetical situation. For example, what would be the implications if animals could talk?
+- Example: What would happen if the world's deserts suddenly turned into forests?Let's think step by step.
+
+| Dimension       | What to Look For                                                                   | 1                              | 3                                    | 5                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of consequences                                                             | 1–2                            | 6–8                                  | ≥12 distinct effects                                                                                           |
+| **Flexibility** | Diversity of domains (social, ecological, economic, legal, technological, moral …) | 1–2 domains                    | 3–4                                  | ≥6 domains                                                                                                     |
+| **Originality** | Novelty of consequences                                                            | generic (“laws against noise”) | some less-common links               | multiple specific and unexpected but plausible chains (“AI translation obsolete because parrots become spies”) |
+| **Elaboration** | Causal depth and mechanism                                                         | statement only                 | “because→therefore” chain or example | layered reasoning with second-order effects or quantitative hint                                               |
+"
+"Creativity Improvement Task. You'll be presented with a object, and your task is to suggest as many ways as you can think of to improve the object. Let's think step by step. Here's the object: Shopping Cart",". The shopping cart is a simple utility that helps customers carry their groceries from the shelves to the checkout counter. To improve the shopping cart, we can consider the following aspects:
+
+1. Ergonomics:
+- Improve the height and design to be more ergonomic for people of different heights
+- Add ergonomic features, such as side handles or back support
+- Make the wheels easier to maneuver and adjust for different surfaces
+
+2. Durability and Quality:
+- Replace or reinforce parts that frequently wear out
+- Use high-quality materials and construction methods to reduce wear and tear
+- Improve the strength of the frame to withstand heavy loads
+
+3. Convenience:
+- Add compartmentalized baskets or containers for different types of goods
+- Include features like quick-release handles for quick access to items
+- Offer different sizes or configurations to fit various needs (e.g., narrow aisles, large families)
+
+4. Sustainability:
+- Upgrade to eco-friendly materials (biodegradable, recycled, or reusable components)
+- Improve the design for easier assembly and disassembly for recycling
+- Encourage the use of reusable carts with customer rewards or discounts
+
+5. Digital Enhancements:
+- Integrate touchscreens for price checking, payment, and coupons
+- Connect carts to the store's POS system for real-time inventory management
+- Add features for smartphone integration, such as app control of certain functions
+
+6. Accessibility:
+- Implement features to help customers with mobility challenges (e.g., easier to maneuver, wheelchair-accessible designs)
+- Offer adjustable seating or backrests for customers who need them
+- Design accessible shopping carts that don't require pushing (e.g., powered or pulled carts)
+
+7. User Experience:
+- Create intuitive designs for easy loading and unloading of items
+- Offer pre-sorted compartments for specific categories (e.g., fresh produce, dairy, bakery)
+- Include safety features like automatic braking or gentle stops to prevent accidental rolling
+
+8. Storage and Travel:
+- Enable collapsible designs for easy storage or stacking
+- Add hooks or storage compartments for bags, umbrellas, or shopping lists
+- Design portable carts that can be easily disassembled for travel or storage
+
+9. Additional Functions:
+- Integrate promotional materials or advertisements for in-store marketing
+- Include hooks or holders for bags, purses, or shopping","- Definition: Improvement. This task focuses on assessing an individual′s ability to enhance or modify existing objects or ideas. The given object is similar to the unusual uses task.
+- Example: Creativity Improvement Task. You'll be presented with a object, and your task is to suggest as many ways as you can think of to improve the object. Let's think step by step. Here's the object: Shopping Cart
+
+
+| Dimension       | What to Look For                                                                        | 1                | 3                                         | 5                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------- | ---------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of improvement ideas                                                             | 1–2              | 5–7                                       | ≥12                                                                                       |
+| **Flexibility** | Variety of improvement domains (material, ergonomic, aesthetic, systemic, ecological …) | 1–2              | 3–4                                       | ≥6                                                                                        |
+| **Originality** | Novelty of improvements                                                                 | incremental only | some creative features (“dual-loop clip”) | radical re-conceptualizations (“self-heating shape-memory clip that welds itself closed”) |
+| **Elaboration** | Detail and function mechanism                                                           | names only       | basic “how it works”                      | technical mechanisms + materials + user context + trade-offs      "

@@ -1,0 +1,275 @@
+problem_id,problem,cleaned_references,cleaned_response,model,image_in_problem
+1986_AJHSME_Problems_6,"\(\frac{2}{1-\frac{2}{3}}=\)
+\(\text{(A)}\ -3 \qquad \text{(B)}\ -\frac{4}{3} \qquad \text{(C)}\ \frac{2}{3} \qquad \text{(D)}\ 2 \qquad \text{(E)}\ 6\)","Solution 1. Just simplify the bottom as \(\frac{3}{3}-\frac{2}{3}=\frac{1}{3}\), getting us \(\frac{2}{\frac{1}{3}}\), with which we multiply top and bottom by 3, we get \(\frac{6}{1}\), or \(6\)
+\(\boxed{\text{E}}\)","Multiply both the numerator and the denominator of the entire expression by 3 to eliminate the inner fraction:  
+\(
+\frac{2 \times 3}{\left(1 \times 3 - \frac{2}{3} \times 3\right)} = \frac{6}{3 - 2} = \frac{6}{1} = 6.
+\)  
+\(\boxed{\text{E}}\)",deepseek-reasoner,
+1984_AHSME_Problems_22,"Let \(a\) and \(c\) be fixed . For each  \(t\) let \((x_t, y_t)\) be the  of the  \(y=ax^2+bx+c\). If the set of the vertices \((x_t, y_t)\) for all real numbers of \(t\) is graphed on the , the  is
+\(\mathrm{(A) \ } \text{a straight line} \qquad \mathrm{(B) \ } \text{a parabola} \qquad \mathrm{(C) \ } \text{part, but not all, of a parabola} \qquad \mathrm{(D) \ } \text{one branch of a hyperbola} \qquad\) \(\mathrm{(E) \ } \text{None of these}\)","Solution 1. The x-coordinate of the vertex of a parabola is \(-\frac{b}{2a}\), so \(x_t=-\frac{b}{2a}\). Plugging this into \(y=ax^2+bx+c\) yields \(y=-\frac{b^2}{4a^2}+c\), so \(y_t=-\frac{b^2}{4a^2}+c\). Notice that \(y_t=-\frac{b^2}{4a^2}+c=-a(-\frac{b}{2a})^2+c=-ax_t^2+c\), so all of the vertices are on a parabola. However, we have only showed that all of the points in the locus of vertices are on a parabola, we have not shown whether or not all points on the parabola are on the locus. Assume we are given an \(x_t\) on the parabola. \(-\frac{b}{2a}=x_t\), \(b=-2ax_t\), so a unique \(b\), and therefore a unique vertex, is determined for each point on the parabola. We therefore conclude that every point in the locus is on the parabola and every point on the parabola is in the locus, and the graph of the locus is the same as the graph of the parabola, \(\boxed{\text{B}}\).","To determine the vertex of the parabola \( y = ax^2 + bx + c \), we first compute its derivative with respect to \( x \):
+
+\(
+\frac{dy}{dx} = 2ax + b.
+\)
+
+Setting the derivative to zero to locate the critical point (vertex):
+
+\(
+2ax + b = 0 \implies x = -\frac{b}{2a}.
+\)
+
+Substitute \( x = -\frac{b}{2a} \) back into the original equation to find the \( y \)-coordinate of the vertex:
+
+\(
+y = a\left(-\frac{b}{2a}\right)^2 + b\left(-\frac{b}{2a}\right) + c = \frac{b^2}{4a} - \frac{b^2}{2a} + c = -\frac{b^2}{4a} + c.
+\)
+
+Thus, the vertex coordinates are \( \left( -\frac{b}{2a}, -\frac{b^2}{4a} + c \right) \). To express \( y \) solely in terms of \( x \), solve for \( b \) from \( x = -\frac{b}{2a} \):
+
+\(
+b = -2ax.
+\)
+
+Substitute \( b = -2ax \) into the expression for \( y \):
+
+\(
+y = -\frac{(-2ax)^2}{4a} + c = -ax^2 + c.
+\)
+
+This equation \( y = -ax^2 + c \) represents a parabola. Since every vertex lies on this curve and every point on the curve corresponds to a unique \( b \), the locus of vertices is a complete parabola. The answer is \(\boxed{\text{B}}\).",deepseek-reasoner,
+2010_USAJMO_Problems_2,"Let \(n > 1\) be an integer. Find, with proof, all sequences
+\(x_1, x_2, \ldots, x_{n-1}\) of positive integers with the following
+three properties:
+(a). \(x_1 < x_2 < \cdots < x_{n-1}\);
+(b). \(x_i + x_{n-i} = 2n\) for all \(i=1,2,\ldots,n-1\);
+(c). given any two indices \(i\) and \(j\) (not necessarily distinct) for which \(x_i + x_j < 2n\), there is an index \(k\) such that \(x_i + x_j = x_k\).","Solution 1. The sequence is \(2, 4, 6, \ldots, 2n-2\).Let \(n > 1\) be an integer. Find, with proof, all sequences
+\(x_1, x_2, \ldots, x_{n-1}\) of positive integers with the following
+three properties:
+(a). \(x_1 < x_2 < \cdots < x_{n-1}\);
+(b). \(x_i + x_{n-i} = 2n\) for all \(i=1,2,\ldots,n-1\);
+(c). given any two indices \(i\) and \(j\) (not necessarily distinct) for which \(x_i + x_j < 2n\), there is an index \(k\) such that \(x_i + x_j = x_k\).The sequence is \(2, 4, 6, \ldots, 2n-2\).
+Proof 1:
+We will prove that any sequence \(x_1, \ldots, x_{n-1}\), that satisfies the given conditions, is an arithmetic progression with \(x_1\) as both the first term and the increment. Once this is proved, condition (b) implies that \(x_1 + x_{n-1} = x_1 + (n-1)x_1 = nx_1 = 2n\). Therefore \(x_1 = 2\), and the sequence is just the even numbers from \(2\) to \(2n-2\). The sequence of successive even numbers clearly satisfies all three conditions, and we are done.
+First a degenerate case. If \(n = 2\), there is only one element \(x_1\), and condition (b) gives \(x_1 + x_1 = 4\) or \(x_1 = 2\). Conditions (a) and (c) are vacuously true.
+Otherwise, for \(n > 2\), we will prove by induction on \(m\) that the difference \(x_{n-m} - x_{n-1-m} = x_1\) for all \(m \in [1, n-2]\), which makes all the differences \(x_{n-1} - x_{n-2} = \ldots = x_2 - x_1 = x_1\), i.e. the sequence is an arithmetic progression with \(x_1\) as the first term and increment as promised.
+So first the \(m=1\) case. With \(n > 2\), \(x_{n-2}\) exists and is less than \(x_{n-1}\) by condition (a). Now since by condition (b) \(x_1 + x_{n-1} = 2n\), we conclude that \(x_1 + x_{n-2} < 2n\), and therefore by condition (c) \(x_1 + x_{n-2} = x_k\) for some \(k\).  Now, since \(x_1 > 0\), \(x_k > x_{n-2}\) and can only be \(x_{n-1}\).  So \(x_1 + x_{n-2} = x_{n-1}\).
+Now for the induction step on all values of \(m\). Suppose we have shown that for all \(i \le m\), \(x_1 + x_{n-1-i} = x_{n-i}\).  If \(m = n-2\) we are done, otherwise \(m < n-2\), and by condition (c) \(x_1 + x_{n-2-m} = x_k\) for some \(k\). This \(x_k\) is larger than \(x_{n-2-m}\), but smaller than \(x_1 + x_{n-1-m} = x_{n-m}\) by the inductive hypothesis. It then follows that \(x_1 + x_{n-2-m} = x_{n-1-m}\), the only element of the sequence between \(x_{n-2-m}\) and \(x_{n-m}\). This establishes the result for \(i=m+1\).
+So, by induction \(x_1 + x_{n-1-m} = x_{n-m}\) for all \(m \in [1, n-2]\), which completes the proof.
+Proof 2:
+Let \(S=\{x_1,x_2,...,x_{n-1}\}\). Notice that \(x_1 < x_1+x_1 < x_1+x_2 < \dots < x_1+x_{n-2} < 2n.\)
+Then by condition (c), we must have \(x_1,x_1+x_1,...,x_1+x_{n-2}\in S\). This implies that \(x_1=x_1,x_1+x_1=x_2,...,x_1+x_{n-2}=x_{n-1}\), or that \(x_k=kx_1\). Then we have \(x_1+x_{n-1}=n(x_1)=2n \rightarrow x_1=2\), and the rest is trivial.","We transform the original problem by scaling down each term by a factor of 2, leveraging the inherent parity constraints imposed by condition (b). 
+
+Let \( y_i = \frac{x_i}{2} \) for each \( i \). Since \( x_i \) are positive even integers (as shown below), \( y_i \) are positive integers. The problem conditions translate as follows:
+
+1. **Strictly Increasing:** \( y_1 < y_2 < \cdots < y_{n-1} \).
+2. **Symmetric Pairing:** \( y_i + y_{n-i} = n \) for all \( i \).
+3. **Closure Under Addition:** If \( y_i + y_j < n \), then \( y_i + y_j = y_k \) for some \( k \).
+
+**Step 1: All \( x_i \) must be even.**  
+Suppose \( x_1 \) is odd. Then \( x_{n-1} = 2n - x_1 \) is also odd. By condition (c), \( x_1 + x_1 = 2x_1 \) must be in \( S \), implying \( 2x_1 \) is even. But \( x_1 \) is the smallest term, so \( 2x_1 \geq x_2 > x_1 \), contradicting parity unless \( x_1 = 1 \). However, scaling \( x_i = 1 \) leads to contradictions with \( x_1 + x_{n-1} = 2n \). Hence, all \( x_i \) are even.
+
+**Step 2: Analyze the Transformed Problem.**  
+The transformed sequence \( \{y_i\} \) must satisfy \( y_i + y_{n-i} = n \). This symmetry implies \( y_i = n - y_{n-i} \). The sequence is strictly increasing, so \( y_1 < y_2 < \cdots < y_{\lfloor (n-1)/2 \rfloor} \), and the latter terms mirror around \( n/2 \).
+
+**Step 3: Prove \( y_i = i \).**  
+Assume \( y_1 = 1 \). By closure, \( y_1 + y_1 = 2 \) must be \( y_2 \). Similarly, \( y_1 + y_2 = 3 \) must be \( y_3 \), and inductively, \( y_k = k \). The sequence \( 1, 2, \ldots, n-1 \) satisfies:
+- Symmetry: \( y_i + y_{n-i} = i + (n - i) = n \).
+- Closure: For \( y_i + y_j < n \), \( y_i + y_j = y_{i+j} \), which exists as \( i+j \leq n-1 \).
+
+**Step 4: Revert Scaling.**  
+Scaling back, \( x_i = 2y_i = 2i \). Thus, the original sequence is \( 2, 4, 6, \ldots, 2n-2 \), which satisfies all conditions:
+- (a) Strictly increasing.
+- (b) \( x_i + x_{n-i} = 2i + 2(n-i) = 2n \).
+- (c) Sums \( <2n \) are even and thus in the sequence.
+
+**Conclusion:**  
+The only solution is the arithmetic progression of even numbers from \( 2 \) to \( 2n-2 \).",deepseek-reasoner,
+2008_AIME_II_Problems_1,"Let \(N = 100^2 + 99^2 - 98^2 - 97^2 + 96^2 + \cdots + 4^2 + 3^2 - 2^2 - 1^2\), where the additions and subtractions alternate in pairs. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. Rewriting this sequence with more terms, we have
+Factoring this expression yields
+Next, we get
+Then,
+Dividing \(10100\) by \(1000\) yields a remainder of \(\boxed{100}\).","To solve the problem, we can break down the sequence by grouping terms into pairs of differences of squares and then summing the results.
+
+**Step-by-Step Explanation:**
+
+1. **Group Terms into Pairs:**
+   The given sequence alternates in pairs of additions and subtractions. We can regroup every two terms into a difference of squares:
+   \(
+   N = (100^2 - 98^2) + (99^2 - 97^2) + (96^2 - 94^2) + (95^2 - 93^2) + \cdots + (4^2 - 2^2) + (3^2 - 1^2)
+   \)
+   Each pair is of the form \( n^2 - (n-2)^2 \).
+
+2. **Apply Difference of Squares:**
+   Each pair simplifies using the identity \( a^2 - b^2 = (a-b)(a+b) \):
+   \(
+   n^2 - (n-2)^2 = (n - (n-2))(n + (n-2)) = 2(2n - 2) = 4n - 4
+   \)
+   Thus, each pair contributes \( 4n - 4 \).
+
+3. **Identify All Pairs:**
+   The pairs involve \( n = 100, 99, 96, 95, \ldots, 4, 3 \). These form two arithmetic sequences:
+   - **Even \( n \):** \( 100, 96, 92, \ldots, 4 \) (25 terms)
+   - **Odd \( n \):** \( 99, 95, 91, \ldots, 3 \) (25 terms)
+
+4. **Sum the Contributions:**
+   - **Sum of Even \( n \):**
+     \(
+     S_{\text{even}} = 100 + 96 + \cdots + 4 = \frac{25}{2} \times (100 + 4) = 25 \times 52 = 1300
+     \)
+   - **Sum of Odd \( n \):**
+     \(
+     S_{\text{odd}} = 99 + 95 + \cdots + 3 = \frac{25}{2} \times (99 + 3) = 25 \times 51 = 1275
+     \)
+   - **Total Sum of \( n \):**
+     \(
+     S_{\text{total}} = 1300 + 1275 = 2575
+     \)
+
+5. **Calculate Total \( N \):**
+   Each pair contributes \( 4n - 4 \), so:
+   \(
+   N = 4 \times 2575 - 4 \times 50 = 10300 - 200 = 10100
+   \)
+
+6. **Find Remainder Modulo 1000:**
+   \(
+   10100 \mod 1000 = 100
+   \)
+
+**Answer:** \(\boxed{100}\)",deepseek-reasoner,
+1984_AIME_Problems_9,"In tetrahedron \(ABCD\), edge \(AB\) has length 3 cm. The area of face \(ABC\) is \(15\mbox{cm}^2\) and the area of face \(ABD\) is \(12 \mbox { cm}^2\). These two faces meet each other at a \(30^\circ\) angle. Find the volume of the tetrahedron in \(\mbox{cm}^3\).","Solution 1. Position face \(ABC\) on the bottom. Since \([\triangle ABD] = 12 = \frac{1}{2} \cdot AB \cdot h_{ABD}\), we find that \(h_{ABD} = 8\). Because the problem does not specify, we may assume both \(ABC\) and \(ABD\) to be isosceles triangles. Thus, the height of \(ABD\) forms a \(30-60-90\) with the height of the tetrahedron. So, \(h = \frac{1}{2} (8) = 4\). The volume of the tetrahedron is thus \(\frac{1}{3}Bh = \frac{1}{3} \cdot15 \cdot 4 = \boxed{020}\).
+
+
+<br><br>==========<br>
+Solution 2. It is clear that \(DX=8\) and \(CX=10\) where \(X\) is the foot of the perpendicular from \(D\) and \(C\) to side \(AB\). Thus \([DXC]=\frac{ab\sin{c}}{2}=20=5 \cdot h \rightarrow h = 4\) where h is the height of the tetrahedron from \(D\). Hence, the volume of the tetrahedron is \(\frac{bh}{3}=15\cdot \frac{4}{3}=\boxed{020}\)
+
+(Note this actually isn't rigorous because they never proved that the height from \(D\) to \(XC\) is the altitude of the tetrahedron.","1. **Coordinate Setup:**
+   - Place vertex \( A \) at the origin \((0,0,0)\) and \( B \) at \((3,0,0)\) along the x-axis.
+   - Let \( C \) lie in the xy-plane. Since the area of \( \triangle ABC \) is \(15 \, \text{cm}^2\), the height from \( C \) to \( AB \) is \(10 \, \text{cm}\). Assume \( C = (1.5, 10, 0) \) (midpoint for simplicity, but position along \( AB \) doesn’t affect volume).
+
+2. **Normal Vectors and Dihedral Angle:**
+   - The normal vector to face \( ABC \) is \( \mathbf{n}_1 = (0,0,1) \).
+   - Let \( D = (x, y, z) \). The vectors \( AB = (3,0,0) \) and \( AD = (x,y,z) \).
+   - Compute the normal to face \( ABD \): \( \mathbf{n}_2 = AB \times AD = (0, -3z, 3y) \).
+
+3. **Dihedral Angle Condition:**
+   - The dihedral angle \( 30^\circ \) implies \( \cos 30^\circ = \frac{\mathbf{n}_1 \cdot \mathbf{n}_2}{|\mathbf{n}_1||\mathbf{n}_2|} \).
+   - Calculate \( \mathbf{n}_1 \cdot \mathbf{n}_2 = 3y \) and \( |\mathbf{n}_2| = 3\sqrt{y^2 + z^2} \).
+   - Solving \( \frac{y}{\sqrt{y^2 + z^2}} = \frac{\sqrt{3}}{2} \) gives \( y = \pm\sqrt{3}z \).
+
+4. **Area Constraint for \( \triangle ABD \):**
+   - The area \(12 \, \text{cm}^2\) leads to \( \sqrt{y^2 + z^2} = 8 \).
+   - Substitute \( y = \sqrt{3}z \): \( z^2 + 3z^2 = 64 \Rightarrow z = \pm4 \).
+
+5. **Volume via Scalar Triple Product:**
+   - Compute \( AB \times AC = (0,0,30) \).
+   - Dot product with \( AD \): \( (0,0,30) \cdot (x, y, z) = 30z \).
+   - Volume \( V = \frac{1}{6}|30z| = \frac{1}{6}(120) = 20 \, \text{cm}^3 \).
+
+**Answer:** \(\boxed{020}\)",deepseek-reasoner,
+2008_AMC_10A_Problems_13,"Doug can paint a room in \(5\) hours. Dave can paint the same room in \(7\) hours. Doug and Dave paint the room together and take a one-hour break for lunch. Let \(t\) be the total time, in hours, required for them to complete the job working together, including lunch. Which of the following equations is satisfied by \(t\)?
+\(\mathrm{(A)}\ \left(\frac{1}{5}+\frac{1}{7}\right)\left(t+1\right)=1\qquad\mathrm{(B)}\ \left(\frac{1}{5}+\frac{1}{7}\right)t+1=1\qquad\mathrm{(C)}\ \left(\frac{1}{5}+\frac{1}{7}\right)t=1\\\mathrm{(D)}\ \left(\frac{1}{5}+\frac{1}{7}\right)\left(t-1\right)=1\qquad\mathrm{(E)}\ \left(5+7\right)t=1\)","Solution 1. Doug can paint \(\frac{1}{5}\) of a room per hour, Dave can paint \(\frac{1}{7}\) of a room per hour, and the time they spend working together is \(t-1\).
+Since rate multiplied by time gives output, \(\left(\frac{1}{5}+\frac{1}{7}\right)\left(t-1\right)=1 \Rightarrow \mathrm{(D)}\)","To determine the total time \( t \) required for Doug and Dave to paint the room including their lunch break, we calculate their individual contributions separately and sum them. 
+
+1. **Individual Rates:**  
+   - Doug paints \( \frac{1}{5} \) of the room per hour.  
+   - Dave paints \( \frac{1}{7} \) of the room per hour.  
+
+2. **Effective Working Time:**  
+   Since they take a 1-hour break, the actual time spent painting is \( t - 1 \) hours.  
+
+3. **Work Contributions:**  
+   - Doug paints \( \frac{t - 1}{5} \) of the room.  
+   - Dave paints \( \frac{t - 1}{7} \) of the room.  
+
+4. **Total Work Equation:**  
+   Their combined work must equal 1 full room:  
+   \(
+   \frac{t - 1}{5} + \frac{t - 1}{7} = 1.
+   \)  
+   Factoring out \( t - 1 \):  
+   \(
+   \left( \frac{1}{5} + \frac{1}{7} \right)(t - 1) = 1.
+   \)",deepseek-reasoner,
+2010_AIME_II_Problems_4,"Dave arrives at an airport which has twelve gates arranged in a straight line with exactly \(100\) feet between adjacent gates. His departure gate is assigned at random. After waiting at that gate, Dave is told the departure gate has been changed to a different gate, again at random. Let the probability that Dave walks \(400\) feet or less to the new gate be a fraction \(\frac{m}{n}\), where \(m\) and \(n\) are relatively prime positive integers. Find \(m+n\).","Solution 1. There are \(12 \cdot 11 = 132\) possible situations (\(12\) choices for the initially assigned gate, and \(11\) choices for which gate Dave's flight was changed to). We are to count the situations in which the two gates are at most \(400\) feet apart.
+If we number the gates \(1\) through \(12\), then gates \(1\) and \(12\) have four other gates within \(400\) feet, gates \(2\) and \(11\) have five, gates \(3\) and \(10\) have six, gates \(4\) and \(9\) have have seven, and gates \(5\), \(6\), \(7\), \(8\) have eight. Therefore, the number of valid gate assignments is \(2\cdot(4+5+6+7)+4\cdot8 = 2 \cdot 22 + 4 \cdot 8 = 76\) so the probability is \(\frac{76}{132} = \frac{19}{33}\). The answer is \(19 + 33 = \boxed{052}\).","To solve the problem, we consider the number of ordered pairs of gates (initial and new) where the distance between them is 400 feet or less. Since the gates are 100 feet apart, this corresponds to gates separated by at most 4 positions.
+
+1. **Total Possible Changes**: There are \(12 \times 11 = 132\) possible ordered pairs of distinct gates.
+
+2. **Counting Valid Pairs by Distance**:
+   - **Distance 1 (100 feet)**: There are \(11\) adjacent gate pairs, each with two directions, totaling \(2 \times 11 = 22\) pairs.
+   - **Distance 2 (200 feet)**: There are \(10\) pairs, each with two directions, totaling \(2 \times 10 = 20\) pairs.
+   - **Distance 3 (300 feet)**: There are \(9\) pairs, each with two directions, totaling \(2 \times 9 = 18\) pairs.
+   - **Distance 4 (400 feet)**: There are \(8\) pairs, each with two directions, totaling \(2 \times 8 = 16\) pairs.
+
+3. **Summing Valid Pairs**: Adding these, we get \(22 + 20 + 18 + 16 = 76\) valid ordered pairs.
+
+4. **Probability Calculation**: The probability is \(\frac{76}{132} = \frac{19}{33}\). Thus, \(m + n = 19 + 33 = \boxed{052}\).",deepseek-reasoner,
+2014_AMC_10A_Problems_3,"Bridget bakes 48 loaves of bread for her bakery. She sells half of them in the morning for \(\textdollar 2.50\) each. In the afternoon she sells two thirds of what she has left, and because they are not fresh, she charges only half price. In the late afternoon she sells the remaining loaves at a dollar each. Each loaf costs \(\textdollar 0.75\) for her to make. In dollars, what is her profit for the day?
+\(\textbf{(A)}\ 24\qquad\textbf{(B)}\ 36\qquad\textbf{(C)}\ 44\qquad\textbf{(D)}\ 48\qquad\textbf{(E)}\ 52\)","Solution 1. She first sells one-half of her \(48\) loaves, or \(\frac{48}{2}=24\) loaves. Each loaf sells for \(\textdollar 2.50\), so her total earnings in the morning is equal to \(24\cdot \textdollar 2.50 = \textdollar 60\)
+This leaves 24 loaves left, and Bridget will sell \(\dfrac{2}{3}\times 24=16\) of them for a price of \(\textdollar\frac{2.50}{2}=\textdollar 1.25\). Thus, her total earnings for the afternoon is \(16\cdot \textdollar 1.25  = \textdollar 20\)
+Finally, Bridget will sell the remaining \(24-16=8\) loaves for a dollar each. This is a total of \(\textdollar 1\cdot 8 = \textdollar 8\)
+The total amount of money she makes is equal to \(60+20+8=\textdollar 88\).
+However, since Bridget spends \(\textdollar 0.75\) making each loaf of bread, the total cost to make the bread is equal to  \(\textdollar 0.75\cdot48=\textdollar 36\).
+Her total profit is the amount of money she spent subtracted from the amount of money she made, which is \(88-36=52\implies\boxed{\textbf{(E)} \ 52}\)","1. **Morning Sales Profit:**
+   - Sells \( \frac{48}{2} = 24 \) loaves at \( \$2.50 \) each.
+   - **Revenue:** \( 24 \times 2.50 = \$60 \).
+   - **Cost for these loaves:** \( 24 \times 0.75 = \$18 \).
+   - **Profit:** \( 60 - 18 = \$42 \).
+
+2. **Afternoon Sales Profit:**
+   - Remaining loaves: \( 48 - 24 = 24 \).
+   - Sells \( \frac{2}{3} \times 24 = 16 \) loaves at half price (\( \$1.25 \)).
+   - **Revenue:** \( 16 \times 1.25 = \$20 \).
+   - **Cost for these loaves:** \( 16 \times 0.75 = \$12 \).
+   - **Profit:** \( 20 - 12 = \$8 \).
+
+3. **Late Afternoon Sales Profit:**
+   - Remaining loaves: \( 24 - 16 = 8 \).
+   - Sells all 8 at \( \$1 \) each.
+   - **Revenue:** \( 8 \times 1 = \$8 \).
+   - **Cost for these loaves:** \( 8 \times 0.75 = \$6 \).
+   - **Profit:** \( 8 - 6 = \$2 \).
+
+**Total Profit:** \( 42 + 8 + 2 = \boxed{\textbf{(E)}\ 52} \).",deepseek-reasoner,
+2020_AMC_10A_Problems_1,"What value of \(x\) satisfies
+\(x- \frac{3}{4} = \frac{5}{12} - \frac{1}{3}?\)
+\(\textbf{(A)}\ {-}\frac{2}{3}\qquad\textbf{(B)}\ \frac{7}{36}\qquad\textbf{(C)}\ \frac{7}{12}\qquad\textbf{(D)}\ \frac{2}{3}\qquad\textbf{(E)}\ \frac{5}{6}\)","Solution 1. Adding \(\frac{3}{4}\) to both sides, \(x= \frac{5}{12} - \frac{1}{3} + \frac{3}{4} = \frac{5}{12} - \frac{4}{12} + \frac{9}{12}=\boxed{\textbf{(E) }\frac{5}{6}}\).
+
+
+<br><br>==========<br>
+Solution 2. Multiplying \(12\) on both sides gets us \(12x-9=1 \Rightarrow 12x=10\), therefore \(\boxed{x=\textbf{(E)}~\frac{5}{6}}\).","Consider the equation \( x - \frac{3}{4} = \frac{5}{12} - \frac{1}{3} \). 
+
+1. **Interpret both sides as linear functions of \( x \):**
+   - Left side: \( y = x - \frac{3}{4} \) (a line with slope 1 and y-intercept \(-\frac{3}{4}\)).
+   - Right side: Simplify \( \frac{5}{12} - \frac{1}{3} = \frac{5}{12} - \frac{4}{12} = \frac{1}{12} \). Thus, \( y = \frac{1}{12} \) (a horizontal line).
+
+2. **Find the intersection point:**
+   - Set \( x - \frac{3}{4} = \frac{1}{12} \).
+   - Solve for \( x \): Add \( \frac{3}{4} \) to both sides:  
+     \(
+     x = \frac{1}{12} + \frac{9}{12} = \frac{10}{12} = \frac{5}{6}.
+     \)
+
+The graphical method visualizes the problem as intersecting lines, leading to the solution \(\boxed{\textbf{(E)}~\frac{5}{6}}\).",deepseek-reasoner,
+2002_AMC_10A_Problems_9,"There are 3 numbers A, B, and C, such that \(1001C - 2002A = 4004\), and \(1001B + 3003A = 5005\). What is the average of A, B, and C?
+\(\textbf{(A)}\ 1 \qquad \textbf{(B)}\ 3 \qquad \textbf{(C)}\ 6 \qquad \textbf{(D)}\ 9 \qquad \textbf{(E) }\text{Not uniquely determined}\)","Solution 1. Notice that we don't need to find what \(A, B,\) and \(C\) actually are, just their average. In other words, if we can find \(A+B+C\), we will be done. 
+Adding up the equations gives \(1001(A+B+C)=9009=1001(9)\) so \(A+B+C=9\) and the average is \(\frac{9}{3}=3\). Our answer is \(\boxed{\textbf{(B) }3}\).","Let's test specific values for \( A \) to observe the effect on \( B \) and \( C \). 
+
+1. If \( A = 1 \):
+   - From the second equation: \( 1001B + 3003(1) = 5005 \Rightarrow B = \frac{5005 - 3003}{1001} = 2 \).
+   - From the first equation: \( 1001C - 2002(1) = 4004 \Rightarrow C = \frac{4004 + 2002}{1001} = 6 \).
+   - Sum: \( 1 + 2 + 6 = 9 \).
+
+2. If \( A = 0 \):
+   - From the second equation: \( B = 5 \).
+   - From the first equation: \( C = 4 \).
+   - Sum: \( 0 + 5 + 4 = 9 \).
+
+3. If \( A = 2 \):
+   - From the second equation: \( B = 5 - 3(2) = -1 \).
+   - From the first equation: \( C = 2(2) + 4 = 8 \).
+   - Sum: \( 2 + (-1) + 8 = 9 \).
+
+In all cases, the sum \( A + B + C = 9 \), so the average is \( \frac{9}{3} = 3 \). The answer is \(\boxed{\textbf{(B) }3}\).",deepseek-reasoner,

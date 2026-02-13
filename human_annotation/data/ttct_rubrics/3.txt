@@ -1,0 +1,9 @@
+- Definition: This task encourages imaginative and speculative thinking by asking participants to consider hypothetical, often fantastical, scenarios and their implications. For example, just suppose you woke up one morning and found you could fly. What would you do? List as many things as you can think of.
+- Example: Just suppose you could decide the length of a day. How long would it be and why? Let's think step by step.
+
+| Dimension       | What to Look For                                              | 1                       | 3                     | 5                                                                                                    |
+| --------------- | ------------------------------------------------------------- | ----------------------- | --------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of actions/events imagined                             | 0–1                     | 4–6                   | ≥10                                                                                                  |
+| **Flexibility** | Range of contexts (personal, societal, scientific, emotional) | one theme               | 3–4 themes            | ≥6 themes with clear shifts                                                                          |
+| **Originality** | Imaginative twists                                            | typical (“fly to work”) | some inventive angles | multiple novel scenes or world-building ideas (“use flight to map micro-climates for urban gardens”) |
+| **Elaboration** | Narrative detail and sensory depth                            | short list              | coherent mini-story   | vivid imagery + emotion + cohesive arc                                                               |

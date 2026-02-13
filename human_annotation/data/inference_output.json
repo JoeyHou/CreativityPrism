@@ -1,0 +1,404 @@
+{
+    "bottle-0": {
+        "nc": "- water bottle"
+    },
+    "bottle-1": {
+        "nc": "- drink on it"
+    },
+    "bottle-2": {
+        "nc": "- paint stamp"
+    },
+    "bottle-3": {
+        "nc": "- use as flower pot"
+    },
+    "bottle-4": {
+        "nc": "- use multiple bottles to make a raft"
+    },
+    "paperclip-0": {
+        "nc": "- use to unlock door"
+    },
+    "paperclip-1": {
+        "nc": "- to unhook and scrape the ground around flowers"
+    },
+    "paperclip-2": {
+        "nc": "- Use as self locking anchor in stonework"
+    },
+    "paperclip-3": {
+        "nc": "- ornaments"
+    },
+    "paperclip-4": {
+        "nc": "- clip"
+    },
+    "spoon-0": {
+        "nc": "- a shovel"
+    },
+    "spoon-1": {
+        "nc": "- To make it into a liquid if it is a metal spoon so I could make cool things like a small metal-looking soccer ball."
+    },
+    "spoon-2": {
+        "nc": "- glue it on a fork"
+    },
+    "spoon-3": {
+        "nc": "- backscratcher"
+    },
+    "spoon-4": {
+        "nc": "- using it for drums"
+    },
+    "spoon-5": {
+        "nc": "- a shovel"
+    },
+    "shovel-0": {
+        "nc": "- melt the metal and repurpose it"
+    },
+    "shovel-1": {
+        "nc": "- hit something"
+    },
+    "shovel-2": {
+        "nc": "- support"
+    },
+    "shovel-3": {
+        "nc": "- sit on it"
+    },
+    "shovel-4": {
+        "nc": "- a plow"
+    },
+    "pants-0": {
+        "nc": "- use fabric for different project"
+    },
+    "pants-1": {
+        "nc": "- cover up an open wound"
+    },
+    "pants-2": {
+        "nc": "- fill with air as a flotation device"
+    },
+    "pants-3": {
+        "nc": "- cut and make jewelry"
+    },
+    "pants-4": {
+        "nc": "- use them as a makeshift rope to tie something up"
+    },
+    "knife-0": {
+        "nc": "- prop for favorite teddy bear"
+    },
+    "knife-1": {
+        "nc": "- dig in gardens"
+    },
+    "knife-2": {
+        "nc": "- to try to get a door open"
+    },
+    "knife-3": {
+        "nc": "- playing games such as \"darts\""
+    },
+    "knife-4": {
+        "nc": "- using it as a spoon or fork because you don't have one"
+    },
+    "brick-0": {
+        "nc": "- Anchor"
+    },
+    "brick-1": {
+        "nc": "- something women can carry around as a rape weapon  instead of pepper spray"
+    },
+    "brick-2": {
+        "nc": "- buddy you can dress up"
+    },
+    "brick-4": {
+        "nc": "- arm weight"
+    },
+    "box-0": {
+        "nc": "- Shelter"
+    },
+    "box-1": {
+        "nc": "- object head"
+    },
+    "box-2": {
+        "nc": "- football"
+    },
+    "box-3": {
+        "nc": "- football"
+    },
+    "box-4": {
+        "nc": "- as a spaceship"
+    },
+    "tire-0": {
+        "nc": "- garden frame for veggie's"
+    },
+    "tire-1": {
+        "nc": "- water tube"
+    },
+    "tire-2": {
+        "nc": "- to use for a swing"
+    },
+    "tire-3": {
+        "nc": "- roll it down hills for a game"
+    },
+    "tire-4": {
+        "nc": "- paint and put on wall as decorative"
+    },
+    "tire-22": {
+        "nc": "- to use for a swing"
+    },
+    "tire-29": {
+        "nc": "- to use for a swing"
+    },
+    "rope-0": {
+        "nc": "- making a necklace"
+    },
+    "rope-1": {
+        "nc": "- us it for tug of war"
+    },
+    "rope-2": {
+        "nc": "- erotic"
+    },
+    "rope-3": {
+        "nc": "- whipping someone with it"
+    },
+    "rope-4": {
+        "nc": "- Tie your dog to a tree or post"
+    },
+    "rope-22": {
+        "nc": "- whipping someone with it"
+    },
+    "sock-0": {
+        "nc": "- put it on your feet"
+    },
+    "sock-1": {
+        "nc": "- put eyes on it and now you have a puppet."
+    },
+    "sock-2": {
+        "nc": "- a doll"
+    },
+    "sock-3": {
+        "nc": "- put eyes on it and now you have a puppet."
+    },
+    "sock-4": {
+        "nc": "- to use it like a backpack or store money in it"
+    },
+    "sock-23": {
+        "nc": "- put it on your feet"
+    },
+    "sock-25": {
+        "nc": "- a doll"
+    },
+    "sock-26": {
+        "nc": "- put it on your feet"
+    },
+    "book-0": {
+        "nc": "- wrapping paper"
+    },
+    "book-1": {
+        "nc": "- smush something"
+    },
+    "book-2": {
+        "nc": "- as a doorstop"
+    },
+    "book-3": {
+        "nc": "- cover your head from the sun"
+    },
+    "book-4": {
+        "nc": "- backpack armor at school shooting"
+    },
+    "toothbrush-0": {
+        "nc": "- Melt the toothbrush on each side to make it sharp and you can make a DIY knife."
+    },
+    "toothbrush-1": {
+        "nc": "- Use it for painting"
+    },
+    "toothbrush-2": {
+        "nc": "- use it to brush your hair"
+    },
+    "toothbrush-3": {
+        "nc": "- people use sandpaper so instead of using sandpaper, you can use a toothbrush to smoothen wood"
+    },
+    "toothbrush-4": {
+        "nc": "- to brush your pet's fur"
+    },
+    "toothbrush-17": {
+        "nc": "- people use sandpaper so instead of using sandpaper, you can use a toothbrush to smoothen wood"
+    },
+    "toothbrush-19": {
+        "nc": "- Melt the toothbrush on each side to make it sharp and you can make a DIY knife."
+    },
+    "toothbrush-26": {
+        "nc": "- to brush your pet's fur"
+    },
+    "table-0": {
+        "nc": "- gather"
+    },
+    "table-1": {
+        "nc": "- use to start a fire"
+    },
+    "table-2": {
+        "nc": "- storing stuff on"
+    },
+    "table-3": {
+        "nc": "- bullet shield"
+    },
+    "table-4": {
+        "nc": "- putting objects"
+    },
+    "table-6": {
+        "nc": "- use to start a fire"
+    },
+    "table-37": {
+        "nc": "- putting objects"
+    },
+    "lightbulb-0": {
+        "nc": "- Painting it"
+    },
+    "lightbulb-1": {
+        "nc": "- Painting it"
+    },
+    "lightbulb-2": {
+        "nc": "- you can make it into a bee"
+    },
+    "lightbulb-3": {
+        "nc": "- You could use it as a trap for insects that bother you"
+    },
+    "lightbulb-4": {
+        "nc": "- as a firecracker"
+    },
+    "lightbulb-10": {
+        "nc": "- Painting it"
+    },
+    "lightbulb-24": {
+        "nc": "- You could use it as a trap for insects that bother you"
+    },
+    "lightbulb-37": {
+        "nc": "- you can make it into a bee"
+    },
+    "fork-0": {
+        "nc": "- as a toothpick"
+    },
+    "fork-1": {
+        "nc": "- fix things"
+    },
+    "fork-2": {
+        "nc": "- puncture"
+    },
+    "fork-3": {
+        "nc": "- use as"
+    },
+    "fork-4": {
+        "nc": "- barbie hair brush"
+    },
+    "fork-7": {
+        "nc": "- puncture"
+    },
+    "fork-15": {
+        "nc": "- as a toothpick"
+    },
+    "fork-21": {
+        "nc": "- as a toothpick"
+    },
+    "fork-23": {
+        "nc": "- puncture"
+    },
+    "fork-27": {
+        "nc": "- as a toothpick"
+    },
+    "fork-34": {
+        "nc": "- barbie hair brush"
+    },
+    "pencil-0": {
+        "nc": "- A bow and arrow"
+    },
+    "pencil-1": {
+        "nc": "- draw on it"
+    },
+    "pencil-2": {
+        "nc": "- seesaw"
+    },
+    "pencil-3": {
+        "nc": "- Use it to type your keyboard keys"
+    },
+    "pencil-4": {
+        "nc": "- A surprising use for a pencil would be to make them trees"
+    },
+    "pencil-16": {
+        "nc": "- Use it to type your keyboard keys"
+    },
+    "pencil-24": {
+        "nc": "- Use it to type your keyboard keys"
+    },
+    "pencil-27": {
+        "nc": "- A bow and arrow"
+    },
+    "pencil-33": {
+        "nc": "- A surprising use for a pencil would be to make them trees"
+    },
+    "hat-0": {
+        "nc": "- to transform it into a foot spa"
+    },
+    "hat-1": {
+        "nc": "- A cover for a big light."
+    },
+    "hat-2": {
+        "nc": "- Wear it inside-out"
+    },
+    "hat-3": {
+        "nc": "- you can make a hat turn into a bed for your pet by flipping it over where the head goes then put little blankets in the and put your pet in there"
+    },
+    "hat-4": {
+        "nc": "- Eat your food with it."
+    },
+    "hat-25": {
+        "nc": "- you can make a hat turn into a bed for your pet by flipping it over where the head goes then put little blankets in the and put your pet in there"
+    },
+    "hat-29": {
+        "nc": "- Eat your food with it."
+    },
+    "shoe-0": {
+        "nc": "- use as a hammer"
+    },
+    "shoe-1": {
+        "nc": "- hang several on the wall and use them to store or display smaller items"
+    },
+    "shoe-2": {
+        "nc": "- hit someone"
+    },
+    "shoe-3": {
+        "nc": "- to throw at someone"
+    },
+    "shoe-4": {
+        "nc": "- donate"
+    },
+    "shoe-18": {
+        "nc": "- hang several on the wall and use them to store or display smaller items"
+    },
+    "shoe-28": {
+        "nc": "- to throw at someone"
+    },
+    "shoe-35": {
+        "nc": "- hit someone"
+    },
+    "shoe-36": {
+        "nc": "- hang several on the wall and use them to store or display smaller items"
+    },
+    "ball-0": {
+        "nc": "- making it a monster"
+    },
+    "ball-1": {
+        "nc": "- to roll on it"
+    },
+    "ball-2": {
+        "nc": "- getting clear strings and taping it to a ceiling and the ball so it can look like they're floating"
+    },
+    "ball-3": {
+        "nc": "- you can bounce it so high like a bounce ball"
+    },
+    "ball-4": {
+        "nc": "- you can attach more and more balls and you can make your favorite thing out of it and color it"
+    },
+    "ball-25": {
+        "nc": "- getting clear strings and taping it to a ceiling and the ball so it can look like they're floating"
+    },
+    "ball-28": {
+        "nc": "- you can bounce it so high like a bounce ball"
+    },
+    "ball-36": {
+        "nc": "- to roll on it"
+    },
+    "ball-38": {
+        "nc": "- you can bounce it so high like a bounce ball"
+    }
+}

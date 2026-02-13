@@ -1,0 +1,902 @@
+problem_id,dp,constraints,machine_techniques,human_techniques,machine_solutions,correctness,follow_constraints,new_techniques,new_techniques_ratio,model
+1702B,2,"['if statement', 'set']",['hashmap'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 's', '=', 'c', ',', '0', ""'"", '+', 'l', '!', '3', '1', '[', ']', 'w', 'd', '<', '.', '""', '\\', 'j', 'x', 'y', '4', '{', '}', 'm', 'h', 'b', '>', 'k', '\t', 'T', 'S', '-', ';', '#', 'B', 'I', 'O', 'z', 'N', '*', '|']","def solve():
+    from collections import Counter
+",False,True,1,1.0,Qwen2.5-7B-Instruct_creativity
+1872A,1,['matrix operation'],['for loop'],"['i', 'm', 'p', 'o', 'r', 't', ' ', 'a', 'h', '\r', '\n', 'f', '_', 'n', 'g', 'e', '(', 'u', ')', ':', ',', 'b', 'c', '=', '.', 's', 'l', '-', '/', '2', '*', '0', '+', '1', '[', ']', ';', '\t', 'x', 'd', 'j', 'k', 'T', 'A', 'B', 'C', 'D']","def solve():
+    from sys import stdin, stdout
+",False,True,1,1.0,Qwen2.5-7B-Instruct_creativity
+1805B,0,['this is the og problem'],['pass statement'],"['t', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', ' ', 'a', 'g', 'e', ':', '-', '1', 'j', '[', ']', ',', '>', 's', '+', '0', '#', 'c', 'l', 'd', '<', 'b', '/', '.', 'h', 'm', ';', '{', '\t', 'w', 'k', '*', '_', '}', '""', 'x', '2', 'z', 'T', 'N', 'S', '!', ""'"", 'y', 'v', 'q', '~']","from typing import List
+
+def solve():
+    # Type your code here
+    pass
+",False,True,1,1.0,Qwen2.5-7B-Instruct_creativity
+1831A,2,"['if statement', 'sorting']","['for loop', 'if statement', 'break statement', 'sorting']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', '=', 's', 'l', 'm', ',', '.', '1', 'b', 'd', 'x', '+', '-', '*', '[', ']', 'v', '0', '2', ';', '_', ""'"", '""', '#', 'c', '<', '/', 'h', '>', '{', 'w', '}', 'j', 'y', 'A']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    index = 0
+    t = int(data[index])
+    index += 1
+    
+    results = []
+    for _ in range(t):
+        n = int(data[index])
+        index += 1
+        a = list(map(int, data[index:index+n]))
+        index += n
+        b = list(range(1, n+1))
+        
+        # Calculate the target sum for the first element
+        target_sum = a[0] + 1
+        
+        # Find the first element in b that can satisfy the condition
+        for i in range(n):
+            if a[i] + b[i] >= target_sum:
+                results.append(b[i])
+                b.pop(i)
+                break
+        
+        # Sort the remaining elements in b
+        for i in range(n-1):
+            for j in range(i+1, n):
+                if a[i] + b[i] <= a[j] + b[j]:
+                    b[i], b[j] = b[j], b[i]
+        
+        results.append(b)
+    
+    for result in results:
+        print(' '.join(map(str, result)))
+",False,False,4,1.0,Qwen2.5-7B-Instruct_creativity
+1790B,0,['this is the og problem'],"['for loop', 'if statement', 'set']","['#', 'i', 'n', 'c', 'l', 'u', 'd', 'e', '<', 'b', 't', 's', '/', '+', '.', 'h', '>', '\r', '\n', 'g', ' ', 'a', 'm', 'p', ';', '(', ')', '{', 'w', '-', ',', 'r', 'o', '""', 'f', '=', '0', '1', '}', 'L', 'U', 'O', 'G', '_', 'R', 'I', 'D', ':', '4', '6', '2', '8', '\t', 'x', 'k', '*', '[', ']', 'q', '%', 'j', '&', '\\', '!', 'y', 'z', ""'"", 'v']","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    data = input().split()
+    
+    n = 0
+    idx = 0
+    result = []
+    
+    for i in range(0, len(data), 3):
+        n += 1
+        a, s, r = int(data[i]), int(data[i+1]), int(data[i+2])
+        max_val = s - r
+        if max_val > 6 or max_val < 1:
+            print(""No solution"")
+        else:
+            sequence = [max_val]
+            remaining_sum = s - max_val
+            used = set([max_val])
+            for _ in range(a-1):
+                for val in range(6, 0, -1):
+                    if val not in used and remaining_sum - val >= 0:
+                        sequence.append(val)
+                        used.add(val)
+                        remaining_sum -= val
+                        break
+            result.append(sequence)
+    
+    for seq in result:
+        print("" "".join(map(str, seq)))
+",False,True,3,1.0,Qwen2.5-7B-Instruct_creativity
+1746B,3,"['for loop', 'break statement', 'if statement']","['for loop', 'while loop', 'if statement']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', '#', ',', 'k', 'm', '.', 's', 'l', 'c', '0', '[', ']', '1', 'h', 'd', 'z', '+', '-', '*', '2', ""'"", ';', 'x', '>', '<', 'b', '/', '5', '{', 'w', '}', 'v', '\t', 'T', '\\', 'L', 'U', 'O', 'G', 'R', 'I', 'D', '9', '6', '!', 'y', '&', 'j', '""', '%', 'A']","def solve():
+    _t = int(input())
+    for _ in range(_t):
+        n = int(input())
+        a = list(map(int, input().split()))
+        count = 0
+        i = 0
+        while i < n-1:
+            if a[i] > a[i+1]:
+                count += 1
+                a[i+1] += a[i]
+                del a[i]
+                n -= 1
+                i -= 1
+            i += 1
+        print(count)
+",False,False,3,1.0,Qwen2.5-7B-Instruct_creativity
+1708A,2,"['break statement', 'for loop']",['pass statement'],"['t', ' ', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', 'x', 'a', 'g', 'e', ':', 'l', 's', 'm', ',', '.', ""'"", 'y', '1', '[', ']', '%', '0', '!', '_', '*', 'T', 'F', 'b', 'k', '""', 'Y', 'E', 'S', 'N', 'O', '\t', 'd', 'c', '>', '+', '-', '#', '<', ';', '{', 'w', 'h', '2', '|', '\\', '}', '/', 'v', '&', 'M', '?', 'q']","import numpy as np
+
+def solve():
+    # Your code here
+    pass
+",False,True,1,1.0,Qwen2.5-7B-Instruct_creativity
+1807C,3,"['for loop', 'if statement', 'recursion']","['for loop', 'if statement', 'dictionary']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', 's', '[', '2', ']', '1', '&', ""'"", 'N', 'O', 'l', 'Y', 'E', 'S', 'T', 'c', '+', ',', 'd', '-', '%', '!', '0', 'F', 'b', 'k', '*', '5', '6', ';', 'x', '|', '3', '#', '<', '/', '.', 'h', '>', 'm', '{', '\t', 'w', 'j', '?', '""', '\\', '}', 'A', 'D', 'v', 'y', 'K', 'C', 'R']","def solve():
+    from collections import Counter
+    
+    def is_alternating(s):
+        prev_char = s[0]
+        for i in range(1, len(s)):
+            if s[i] == prev_char:
+                return False
+            prev_char = s[i]
+        return True
+    
+    def can_be_alternating(s):
+        char_count = Counter(s)
+        if len(char_count) > 2:
+            return False
+        if len(char_count) == 1:
+            return True
+        if len(char_count) == 2:
+            if abs(char_count.most_common(1)[0][1] - char_count.most_common(2)[1][1]) > 1:
+                return False
+            return is_alternating(s)
+        return True
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        s = input().strip()
+        if can_be_alternating(s):
+            print(""YES"")
+        else:
+            print(""NO"")
+",False,False,3,1.0,Qwen2.5-7B-Instruct_creativity
+1855A,5,"['hashmap', 'for loop', 'if statement', 'recursion', 'continue statement']",['misc'],"['t', ' ', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'w', 'h', 'l', 'e', '>', '0', ':', '\t', '-', '1', 'r', '[', 'x', 'f', 'o', ',', 'm', 'a', '.', 's', '+', ']', '/', '2', '#', 'c', 'd', '<', 'b', 'g', ';', '{', '}', '*', '!', '%', '_', 'y', '""', '\\', 'j', ""'"", 'z', 'N', 'B', 'T']","def solve():
+    from sys import stdin, stdout
+",False,True,1,1.0,Qwen2.5-7B-Instruct_creativity
+1807B,4,"['for loop', 'while loop', 'tuple', 'if statement']","['for loop', 'if statement']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', 'l', 's', 'm', ',', '.', ""'"", 'Y', 'E', 'S', 'x', '%', '2', '0', '>', '1', 'N', 'O', 'd', 'v', ';', '+', '""', '[', '*', ']', '-', '|', '&', 'c', '?', 'w', 'h', '\t', 'b', 'z', 'k', 'A', 'B', '<', 'I', 'y', 'j', '!']","def solve():
+    from sys import stdin
+    
+    def is_reordering_possible(t):
+        if t == 1:
+            return 'YES'
+        
+        odd_count = sum(1 for _ in input().split() if int(_) % 2 != 0)
+        even_count = t - odd_count
+        
+        if even_count < odd_count:
+            return 'NO'
+        else:
+            return 'YES'
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        print(is_reordering_possible(n))
+",True,False,2,1.0,Qwen2.5-7B-Instruct_creativity
+1810A,1,['if statement'],"['for loop', 'if statement']","['t', ' ', '=', 'i', 'n', '(', 'p', 'u', ')', '\n', 'f', 'o', 'r', '_', 'a', 'g', 'e', ':', 'l', 's', 'm', ',', '.', '2', 'y', '[', ']', '<', '+', '1', '""', 'Y', 'E', 'S', 'N', 'O', '\r', 'd', 'x', '>', 'b', 'k', 'I', '0', '*', ';', '-', 'c', 'v', '\t', 'F', 'T', 'j', '#', '/', 'h', '5', '{', 'w', '%', '&', '?', '}', ""'"", 'q', 'L', 'A', '|']","def solve():
+    import sys
+    input = lambda: input().strip()
+    
+    def is_beautiful_sequence(seq):
+        # Check if there's any index i such that seq[i] == i+1
+        return any(x == i + 1 for i, x in enumerate(seq))
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        seq = list(map(int, input().split()))
+        if is_beautiful_sequence(seq):
+            print(""YES"")
+        else:
+            print(""NO"")
+",False,False,2,1.0,Qwen2.5-7B-Instruct_creativity
+1845A,2,"['if statement', 'tuple']","['if statement', 'for loop', 'continue statement']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', ',', 'k', 'x', '=', 'm', '.', 's', 'l', '!', '1', '""', 'Y', 'E', 'S', '*', '[', ']', '2', 'd', '%', 'N', 'O', '/', '3', '+', '-', '#', 'c', '<', 'b', 'h', '>', ';', '{', 'w', '\\', ""'"", '}', '&', '|', '0', 'T', 'y']","from itertools import product
+
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    n, k, x, *data = data
+    n, k, x = int(n), int(k), int(x)
+    t = int(data[0])
+    for _ in range(t):
+        n, k, x = map(int, data[:3])
+        data = data[3:]
+        if n == x:
+            print(""NO"")
+            continue
+        if k >= n and x != 1:
+            print(""YES"")
+            print(n)
+            print(n * ""1"")
+            continue
+        if k == 1 and x == 1:
+            print(""NO"")
+            continue
+        if n <= k * (k - 1) // 2:
+            print(""YES"")
+            m = n
+            res = []
+            for i in range(1, k + 1):
+                if i != x:
+                    count = min(m // i, k - 1)
+                    m -= count * i
+                    res.extend([i] * count)
+            print(len(res))
+            print("" "".join(map(str, res)))
+        else:
+            print(""NO"")
+",False,False,3,1.0,Qwen2.5-7B-Instruct_creativity
+1741A,1,['for loop'],"['if statement', 'for loop']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 'd', '=', '{', ""'"", 'S', '-', '1', ',', 'M', '0', 'L', '}', 'b', '.', 's', 'l', 'v', 'c', 'X', '+', '*', '[', ']', '>', '""', '<', '#', '/', 'h', 'm', ';', '2', '\t', 'w', 'z', '|', '&', 'x', 'y', '_', '3', 'T', '?', '\\', '!', 'A', 'B', 'N', 'k']","def solve():
+    import re
+    
+    def compare_sizes(a, b):
+        # Extract the number of Xs before S and L, and the size letter
+        a_parts = re.match(r""^(X*)S?(X*)L?$"", a)
+        b_parts = re.match(r""^(X*)S?(X*)L?$"", b)
+        
+        a_x1, a_s, a_x2 = a_parts.groups()
+        b_x1, b_s, b_x2 = b_parts.groups()
+        
+        # Compare the number of Xs before S
+        if a_s and b_s:
+            if len(a_x1) < len(b_x1):
+                return "">""
+            elif len(a_x1) > len(b_x1):
+                return ""<""
+            else:
+                return ""=""
+        elif a_s and not b_s:
+            return ""<""
+        elif not a_s and b_s:
+            return "">""
+        elif a_s:
+            return ""=""
+        
+        # Compare the number of Xs before L
+        if len(a_x2) < len(b_x2):
+            return "">""
+        elif len(a_x2) > len(b_x2):
+            return ""<""
+        else:
+            return ""=""
+    
+    # Read input
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    
+    t = int(data[0])
+    index = 1
+    results = []
+    
+    for _ in range(t):
+        a = data[index]
+        index += 1
+        b = data[index]
+        index += 1
+        result = compare_sizes(a, b)
+        results.append(result)
+    
+    # Print results
+    for result in results:
+        print(result)
+",False,False,2,1.0,Qwen2.5-7B-Instruct_creativity
+1833A,1,['if statement'],"['for loop', 'if statement']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', '=', 's', 'l', '-', '1', '.', 'd', '[', ']', '+', '_', '2', '*', '0', '{', 'z', ',', '}', 'w', 'k', 'm', 'j', 'c', 'I', 'v', 'y', ""'"", 'X']","def solve():
+    from sys import stdin, stdout
+    input = stdin.readline
+    print = stdout.write
+    
+    def min_melodies(s):
+        n = len(s)
+        last_note = None
+        count = 0
+        for i in range(n - 1):
+            current_note = s[i]
+            if current_note != last_note:
+                count += 1
+                last_note = current_note
+        if last_note != s[-1]:
+            count += 1
+        return count
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        s = input().strip()
+        result = min_melodies(s)
+        print(str(result) + '\n')
+",False,False,2,1.0,Qwen2.5-7B-Instruct_creativity
+1735A,0,['this is the og problem'],"['for loop', 'if statement']","['t', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', ' ', 'a', 'g', 'e', ':', '/', '3', '-', '2', '0', ',', 'c', 'd', '\t', 'k', '_', '1', 'M', '6', 's', ';', 'm', 'h', 'q', '[', ']', 'w', 'l', 'x', ""'"", '.', 'T', '*']","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    lines = input().splitlines()
+    t = int(lines[0])
+    n_values = lines[1:]
+    
+    for n in n_values:
+        n = int(n)
+        if n == 6:
+            print(0)
+        else:
+            min_diff = (n - 2) // 3
+            print(min_diff)
+",False,True,2,1.0,Qwen2.5-7B-Instruct_creativity
+1740A,3,"['if statement', 'for loop', 'misc']",['misc'],"['p', 'r', 'i', 'n', 't', '(', '*', '[', 'o', 'e', '0', ')', ']', '1', ':', '\n', '#', 'f', ' ', '_', 'a', 'g', 'u', '\r', '=', '""', '2', 'l', 's', '3', '7', 'A', '.', 'I', '+', '%', 'm', '/', 'L', 'U', 'O', 'G', 'R', 'D', '9', '5', '6', 'c', 'd', '<', '>', ';', '{', ',', '&', 'w', 'h', '-', '}', '\t', 'x', 'P', 'y', ""'"", '\\']","importDefault
+user
+```python
+def solve():
+    from sympy import isprime, nextprime
+",False,False,1,1.0,Qwen2.5-7B-Instruct_creativity
+1744A,0,['this is the og problem'],['misc'],"['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', 'A', 'l', 's', 'm', ',', '.', 'D', 'd', 'c', 'v', 'T', 'j', '[', ']', '!', ""'"", 'N', 'O', 'F', 'b', 'k', 'Y', 'E', 'S', '{', '}', '0', '1', '""', 'I', '_', '*', 'z', 'y', 'x', '\t', 'w', '#', '<', '>', 'h', '5', '2', ';', '%', '&', '-', '+', '?', '\\', '/']","def solve():
+    from collections import Counter
+",False,True,1,1.0,Qwen2.5-7B-Instruct_creativity
+1878B,1,['if statement'],['misc'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\n', '=', 'l', '[', ']', '.', 'd', '2', '*', '+', '1', '\r', 's', ',', '3', 'w', 'h', '<', '-', ""'"", 'j', 'm', '5', 'x', '6', 'A', '""', 'c', 'k', 'b', 'v', '\t', '0']","def solve():
+    from sys import stdin, stdout
+",False,True,1,1.0,Qwen2.5-7B-Instruct_creativity
+1754A,3,"['for loop', 'if statement', 'misc']","['for loop', 'if statement', 'queue']","['i', 'm', 'p', 'o', 'r', 't', ' ', 's', 'y', '\r', '\n', 'n', 'u', '=', 'l', 'a', 'b', 'd', ':', '.', 'e', '(', ')', 'f', 'v', '\t', 'N', 'S', '0', 'x', ',', '+', '[', '-', '1', ']', ""'"", 'Q', '""', 'Y', '>', 'T', 'g', 'q', 'c', 'A', '*', '2', '_', '!', 'O', 'w', 'j', '#', '<', '/', 'h', ';', '{', '}', '?', '\\', 'E', 'F', 'k', 'z', '&', 'K']","from collections import deque
+
+def solve():
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        dialog = input().strip()
+        queue = deque()
+        
+        for i in range(n):
+            if dialog[i] == ""Q"":
+                queue.append(""Q"")
+            elif dialog[i] == ""A"":
+                if not queue:
+                    print(""No"")
+                    break
+                else:
+                    queue.popleft()
+        else:
+            if not queue:
+                print(""Yes"")
+            else:
+                print(""No"")
+",False,False,3,1.0,Qwen2.5-7B-Instruct_creativity
+1851B,5,"['if statement', 'tuple', 'for loop', 'sorting', 'while loop']","['for loop', 'if statement', 'set']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', '=', 'l', 's', 'm', ',', '.', 'b', 'c', 'y', '0', 'j', '[', ']', '%', '2', '!', '1', 'k', '""', '_', 'd', 'h', 'z', 'Y', 'E', 'S', 'N', 'O', '*', ';', ""'"", 'x', '+', '&', 'T', 'F', 'A', 'B', '-', 'q', 'w', 'L', 'M', 'v']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    def process_case(i):
+        n = int(data[i])
+        i += 1
+        a = list(map(int, data[i:i+n]))
+        i += n
+        evens = [x for x in a if x % 2 == 0]
+        odds = [x for x in a if x % 2 != 0]
+        
+        if len(evens) + len(odds) == n and len(set(evens)) + len(set(odds)) == len(evens) + len(odds):
+            print(""YES"")
+        else:
+            print(""NO"")
+    
+    t = int(data[0])
+    for _ in range(t):
+        process_case(1)
+",False,False,3,1.0,Qwen2.5-7B-Instruct_creativity
+1796A,1,['for loop'],"['for loop', 'tuple']","['K', ' ', '=', 'i', 'n', 't', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', 'a', 'g', 'e', '0', ',', ':', '\t', 'm', 'q', 's', '""', 'F', 'B', '*', '1', 'Y', 'E', 'S', 'l', 'N', 'O', 'b', ""'"", '3', 'd', 'v', 'w', '[', ']', '.', '2', '\\', 'j', '-', '_', '5', 'h', '<', 'k', '+', '!', 'y', '$', '/', ';', 'x', '>', '{', '?', '}', 'c']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    t = int(data[0])
+    idx = 1
+    test_cases = []
+    max_k = 0
+    for _ in range(t):
+        k = int(data[idx])
+        s = data[idx + 1]
+        max_k = max(max_k, k)
+        test_cases.append((k, s))
+        idx += 2
+",False,False,2,1.0,gpt-4.1_creativity
+1831A,2,"['if statement', 'sorting']","['for loop', 'matrix operation']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', '=', 's', 'l', 'm', ',', '.', '1', 'b', 'd', 'x', '+', '-', '*', '[', ']', 'v', '0', '2', ';', '_', ""'"", '""', '#', 'c', '<', '/', 'h', '>', '{', 'w', '}', 'j', 'y', 'A']","import sys
+import numpy as np
+
+def solve():
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    idx = 1
+    res = []
+    for _ in range(t):
+        n = int(data[idx])
+        idx += 1
+        a = np.array(list(map(int, data[idx:idx+n])))
+        idx += n
+        order = np.argsort(a)
+        b = np.zeros(n, dtype=int)
+        b[order] = np.arange(1, n+1)
+        res.append(' '.join(map(str, b)))
+    print('\n'.join(res))
+",False,True,2,1.0,gpt-4.1_creativity
+1716B,4,"['for loop', 'if statement', 'recursion', 'tuple']","['while loop', 'dictionary']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', 's', '[', '*', '1', ',', '+', ']', '-', 'k', 'L', 'w', 'h', 'l', '<', '.', 'd', '_', '\t', 'A', ""'"", 'j', 'm', '0', 'c', '2', 'T', 'N', 'v', '>', 'x', ';', '~', '""']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    idx = 1
+    res = []
+    while t:
+        n = int(data[idx])
+        idx += 1
+        chain = []
+        perm = list(range(1, n+1))
+        chain.append(perm[:])
+        i = 0
+        while i < n-1:
+            perm = perm[:]
+            perm[i], perm[i+1] = perm[i+1], perm[i]
+            chain.append(perm[:])
+            i += 1
+        res.append(str(n))
+        res.extend(' '.join(str(x) for x in perm) for perm in chain)
+        t -= 1
+    print('\n'.join(res))
+",False,True,2,1.0,gpt-4.1_creativity
+1744A,0,['this is the og problem'],"['for loop', 'dictionary', 'if statement', 'break statement']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', 'A', 'l', 's', 'm', ',', '.', 'D', 'd', 'c', 'v', 'T', 'j', '[', ']', '!', ""'"", 'N', 'O', 'F', 'b', 'k', 'Y', 'E', 'S', '{', '}', '0', '1', '""', 'I', '_', '*', 'z', 'y', 'x', '\t', 'w', '#', '<', '>', 'h', '5', '2', ';', '%', '&', '-', '+', '?', '\\', '/']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    idx = 0
+    t = int(data[idx])
+    idx += 1
+    results = []
+    for _ in range(t):
+        n = int(data[idx])
+        idx += 1
+        a = list(map(int, data[idx:idx+n]))
+        idx += n
+        s = data[idx]
+        idx += 1
+        num_to_char = {}
+        char_to_num = {}
+        can = True
+        for num, ch in zip(a, s):
+            if num in num_to_char:
+                if num_to_char[num] != ch:
+                    can = False
+                    break
+            else:
+                num_to_char[num] = ch
+            if ch in char_to_num:
+                if char_to_num[ch] != num:
+                    can = False
+                    break
+            else:
+                char_to_num[ch] = num
+        results.append(""YES"" if can else ""NO"")
+    print('\n'.join(results))
+",False,True,4,1.0,gpt-4.1_creativity
+1790A,5,"['break statement', 'for loop', 'recursion', 'while loop', 'if statement']",['tuple'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', 's', '=', ""'"", '3', '1', '4', '5', '9', '2', '6', '8', '7', 'c', '0', 'l', '[', ']', '+', 'b', 'k', 'z', '""', '*', 'w', 'h', '<', 'd', 'P', 'I', ',', '!', 'j', '#', 'S', 'T', 'R', 'x', 'q', 'm', '/', 'B', 'M', '.', '{', '|', '}', '-', 'v']","import sys
+
+def solve():
+    pi_digits = '314159265358979323846264338327'
+    input_lines = input().split()
+    t = int(input_lines[0])
+    results = map(lambda n: sum(map(lambda x: x[0] == x[1], zip(n, pi_digits))), input_lines[1:t+1])
+    print(*results, sep='\n')
+",False,True,1,1.0,gpt-4.1_creativity
+1807A,4,"['for loop', 'tuple', 'if statement', 'recursion']",['while loop'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\n', ',', 'b', 'c', '=', 'm', '.', 's', 'l', ""'"", '+', '-', '\r', '""', '[', '*', '0', ']', '1', ';', '<', 'x', 'y', 'z', '#', 'd', '>', '{', 'w', 'h', '\\', '}', 'N', 'q', '\t', '?']","def solve():
+    t = int(input())
+    res = []
+    while t:
+        a, b, c = map(int, input().split())
+        # Use arithmetic to produce + or - without if, for, tuple, or recursion
+        res.append('+' * ((a + b == c)) + '-' * ((a - b == c)))
+        t -= 1
+    print('\n'.join(res))
+",True,True,1,1.0,gpt-4.1_creativity
+1765B,0,['this is the og problem'],"['for loop', 'while loop', 'if statement', 'break statement']","['d', 'e', 'f', ' ', 'a', 'n', 's', '(', ')', ':', '\r', '\n', '=', 'i', 't', 'p', 'u', 'o', 'r', 'g', '1', ',', '3', '-', ""'"", 'N', 'O', 'l', '[', ']', '!', '+', 'Y', 'E', 'S', '#', 'c', '<', 'b', '/', '.', 'h', '>', 'm', ';', '{', '\t', '2', '0', 'w', 'k', '""', '%', '}', '_', 'F', '*', 'x', 'z', 'v', 'j', 'y', '\\', 'T', '^', '|', '&']","def solve():
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        s = input().strip()
+        i = 0
+        press_num = 1  # 1-indexed total key presses
+        possible = True
+        while i < n:
+            if press_num % 2 == 1:
+                # Should be a single letter
+                if i+1 < n and s[i] == s[i+1]:
+                    possible = False
+                    break
+                i += 1
+            else:
+                # Should be two same letters
+                if i+1 >= n or s[i] != s[i+1]:
+                    possible = False
+                    break
+                i += 2
+            press_num += 1
+        print(""YES"" if possible else ""NO"")
+",True,True,4,1.0,gpt-4.1_creativity
+1873A,2,"['for loop', 'while loop']","['set', 'for loop']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 's', '=', '""', 'c', 'N', 'O', 'l', 'Y', 'E', 'S', 'b', '[', '2', ']', ""'"", ',', 'y', '.', 'w', 'h', '>', '0', '-', '1', '\t', 'x', 'm', 'd', '3', '#', '<', '{', ';', '|', '?', '\\', '}', '*', '9', '7', '+']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    possible = {""abc"", ""acb"", ""bac"", ""cba""}
+    print('\n'.join(['YES' if s in possible else 'NO' for s in data[1:t+1]]))
+",False,False,2,1.0,gpt-4.1_creativity
+1804A,3,"['if statement', 'tuple', 'matrix operation']","['for loop', 'tuple']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', ',', 'b', '=', 'm', '.', 's', 'l', '-', '<', '1', '+', 'x', '*', '2', '#', 'c', 'd', '/', 'h', '>', ';', 'T', '{', '\t', 'w', '0', '""', '\\', '}', '[', ']', '!', ""'"", 'y', '&', '8', '4', 'A', 'q', 'k', 'v']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    res = []
+    for i in range(t):
+        a = int(data[2*i+1])
+        b = int(data[2*i+2])
+        x = abs(a)
+        y = abs(b)
+        m = x + y
+        d = abs(x - y)
+        ans = m
+        ans += max(0, d - 1)
+        res.append(str(ans))
+    print('\n'.join(res))
+",False,False,2,1.0,gpt-4.1_creativity
+1883A,4,"['if statement', 'for loop', 'dictionary', 'while loop']",['dictionary'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\n', 's', '=', '""', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.', 'd', 'x', '[', ']', ',', 'l', '+', 'b', '-', '\r', ""'"", 'k', 'c', 'm', '!', 'y', '#', '<', '>', ';', '{', 'w', 'h', '}', '/', '\\', '\t', 'q', 'C', 'F', 'R', 'M', 'v', 'j', 'T', '*', 'z']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    pins = data[1:]
+    
+    # The keypad as a string to get the index for movement.
+    keypad = '1234567890'
+    
+    # Helper function to compute distance between two digits
+    def move_cost(a, b):
+        return abs(keypad.index(a) - keypad.index(b))
+    
+    results = list(map(
+        lambda pin: str(
+            4 + move_cost('1', pin[0]) + move_cost(pin[0], pin[1]) + move_cost(pin[1], pin[2]) + move_cost(pin[2], pin[3])
+        ),
+        pins
+    ))
+    
+    print('\n'.join(results))
+",False,False,1,1.0,gpt-4.1_creativity
+1768A,4,"['matrix operation', 'for loop', 'if statement', 'while loop']",['for loop'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '-', '1', 'k', '=', '\t', 'T', 's', 'w', '[', 'c', ']', 'x', '*', '0', 'v']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    cases = list(map(int, data[1:]))
+    print('\n'.join(str(k-1) for k in cases))
+",False,False,1,1.0,gpt-4.1_creativity
+1740A,2,"['if statement', 'for loop']","['for loop', 'if statement', 'dictionary']","['p', 'r', 'i', 'n', 't', '(', '*', '[', 'o', 'e', '0', ')', ']', '1', ':', '\n', '#', 'f', ' ', '_', 'a', 'g', 'u', '\r', '=', '""', '2', 'l', 's', '3', '7', 'A', '.', 'I', '+', '%', 'm', '/', 'L', 'U', 'O', 'G', 'R', 'D', '9', '5', '6', 'c', 'd', '<', '>', ';', '{', ',', '&', 'w', 'h', '-', '}', '\t', 'x', 'P', 'y', ""'"", '\\']","import sys
+
+def solve():
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    ns = list(map(int, data[1:t+1]))
+    # For all n, output m=2 if n is odd, m=3 if n is even (since n is prime, only n=2 is even).
+    # 2+2=4 (not prime), n+2 for odd n (odd+even=odd, odd+2 is odd, but for n odd>2, n+2 is odd and not always prime, but problem says such m always exists)
+    # But with m=2, n+2 for n odd prime: 3+2=5 (prime), 5+2=7 (prime), 7+2=9 (not prime)! So n=7, m=2 works.
+    # For n=2, m=2, 2+2=4 (not prime)
+    # For n=3, m=2, 3+2=5 (prime), but m=3, 3+3=6 (not prime).
+    # So for n=2, use m=2; for n odd, use m=2 if n+2 is not prime, else use m=3 (n+3 is even > 2, so not prime).
+    # But can't use if statement, use mapping.
+    # Precompute set of primes up to 200000
+    MAX = 200005
+    is_prime = [True] * MAX
+    is_prime[0] = is_prime[1] = False
+    for i in range(2, int(MAX**0.5)+1):
+        is_prime[i*i:MAX:i] = [False]*len(is_prime[i*i:MAX:i])
+    # For each n, try m=2, check if n+2 not prime, else m=3
+    res = []
+    for n in ns:
+        m = 2 * (not is_prime[n+2]) + 3 * (is_prime[n+2])
+        res.append(str(m))
+    print('\n'.join(res))
+",False,False,3,1.0,gpt-4.1_creativity
+1790A,1,['break statement'],"['for loop', 'if statement', 'continue statement', 'break statement']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', 's', '=', ""'"", '3', '1', '4', '5', '9', '2', '6', '8', '7', 'c', '0', 'l', '[', ']', '+', 'b', 'k', 'z', '""', '*', 'w', 'h', '<', 'd', 'P', 'I', ',', '!', 'j', '#', 'S', 'T', 'R', 'x', 'q', 'm', '/', 'B', 'M', '.', '{', '|', '}', '-', 'v']","def solve():
+    import sys
+    input = sys.stdin.read
+    pi_digits = ""314159265358979323846264338327""
+    data = input().split()
+    t = int(data[0])
+    results = []
+    for i in range(1, t + 1):
+        n = data[i]
+        cnt = 0
+        for j in range(min(len(n), len(pi_digits))):
+            if n[j] == pi_digits[j]:
+                cnt += 1
+            else:
+                # since break is not allowed, use a trick: make the rest always not count
+                # we just stop counting further, but continue the loop
+                continue_flag = False
+                # from now, cnt will stay the same, so fill the rest with a dummy loop
+                for k in range(j+1, len(n)):
+                    continue_flag = True
+                # break the loop by making j reach limit
+                break_outer = True
+                # set cnt to keep it same, and simulate break by using range
+                break
+        results.append(str(cnt))
+    print('\n'.join(results))
+",False,False,4,1.0,gpt-4.1_creativity
+1867A,5,"['if statement', 'for loop', 'queue', 'recursion', 'hashmap']",['while loop'],"['t', ' ', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', 'k', 'a', 'g', 'e', ':', '[', '.', 's', 'l', ']', 'd', ',', '0', '*', 'c', '1', '-', '_', 'm', 'v', 'x', '""', 'j', ';', 'b', '&', 'h', 'w', '|', '<', 'y', '!', '+', ""'"", 'T', 'A', 'L', '{', '}', 'z', '#', 'q', 'C', '2', '/', '>', 'N', '5', '\t', '%']","import sys
+
+def solve():
+    input = sys.stdin.read
+    data = input().split()
+    idx = 0
+    t = int(data[idx])
+    idx += 1
+    res = []
+    while t:
+        n = int(data[idx])
+        idx += 1
+        a = data[idx:idx+n]
+        idx += n
+        # To avoid for/if/recursion/queue/hashmap, use sorted and zip with slicing.
+        perm = list(range(1, n+1))
+        # Use rotate to avoid for loop: perm = perm[1:] + perm[:1] (cycle right)
+        ans = perm[1:] + perm[:1]
+        res.append(' '.join(map(str, ans)))
+        t -= 1
+    print('\n'.join(res))
+",False,True,1,1.0,gpt-4.1_creativity
+1809A,3,"['misc', 'for loop', 'if statement']","['for loop', 'set', 'tuple', 'if statement']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 'l', '=', 'C', '{', '.', 'c', 'x', 's', '}', '4', '-', '1', ',', '3', '6', '#', 'd', '<', 'b', '/', '+', 'h', '>', 'm', ';', '\t', '[', ']', 'w', '0', ""'"", '\\', '2', '|', '*', 'v', '""', 'y', 'T', '%', 'k']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    res = []
+    for s in data[1:t+1]:
+        from itertools import permutations
+        bulbs = [0, 1, 2, 3]
+        colors = [s[0], s[1], s[2], s[3]]
+        uniq = set(colors)
+        res.append(
+            -1 if len(uniq) == 1 else
+            min(
+                sum(colors[x] == colors[y] for x, y in zip(p, p[1:]))
+                + 4
+                for p in permutations(bulbs)
+            )
+        )
+    print('\n'.join(map(str, res)))
+",False,False,4,1.0,gpt-4.1_creativity
+1768A,2,"['matrix operation', 'for loop']","['if statement', 'for loop']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '-', '1', 'k', '=', '\t', 'T', 's', 'w', '[', 'c', ']', 'x', '*', '0', 'v']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    ks = list(map(int, data[1:]))
+",False,False,2,1.0,gpt-4.1_creativity
+1807C,0,['this is the og problem'],['for loop'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', 's', '[', '2', ']', '1', '&', ""'"", 'N', 'O', 'l', 'Y', 'E', 'S', 'T', 'c', '+', ',', 'd', '-', '%', '!', '0', 'F', 'b', 'k', '*', '5', '6', ';', 'x', '|', '3', '#', '<', '/', '.', 'h', '>', 'm', '{', '\t', 'w', 'j', '?', '""', '\\', '}', 'A', 'D', 'v', 'y', 'K', 'C', 'R']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    idx = 1
+    results = []
+    for _ in range(t):
+        n = int(data[idx])
+        s = data[idx+1]
+        idx += 2
+",False,True,1,1.0,gpt-4.1_creativity
+1703C,3,"['for loop', 'recursion', 'while loop']",['recursion'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 'm', 's', '=', 'l', ',', '.', 'c', 'd', '+', '-', '1', '*', ""'"", 'U', '%', '0', '[', 'x', ']', '""', 'D', '{', '\t', 'k', '&', '|', 'h', '}', 'j', 'w', 'z', 'b', 'A', 'q', 'y', '#', 'v', '9', 'L', 'C', 'B', '!', '/', '3', '<', 'I', ';', '2', 'M']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().splitlines()
+    idx = 0
+    t = int(data[idx])
+    idx += 1
+",False,False,1,1.0,gpt-4.1_creativity
+1741A,2,"['for loop', 'if statement']","['if statement', 'for loop', 'tuple', 'dictionary']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 'd', '=', '{', ""'"", 'S', '-', '1', ',', 'M', '0', 'L', '}', 'b', '.', 's', 'l', 'v', 'c', 'X', '+', '*', '[', ']', '>', '""', '<', '#', '/', 'h', 'm', ';', '2', '\t', 'w', 'z', '|', '&', 'x', 'y', '_', '3', 'T', '?', '\\', '!', 'A', 'B', 'N', 'k']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    t = int(data[0])
+    cases = data[1:]
+    
+    def size_value(s):
+        return (
+            {'S': 0, 'M': 1, 'L': 2}[s[-1]],
+            -len(s) if s[-1] == 'S' else (0 if s[-1] == 'M' else len(s))
+        )
+    
+    result = []
+    for i in range(t):
+        a, b = cases[2*i], cases[2*i+1]
+        va, vb = size_value(a), size_value(b)
+        result.append('<=>[va>vb]-[va<vb]+='[va>vb]-[va<vb] and '>' or va<vb and '<' or '=')
+    print('\n'.join(
+        ('=' if va == vb else ('<' if va < vb else '>'))
+        for i in range(t)
+        for a, b in [(cases[2*i], cases[2*i+1])]
+        for va, vb in [ (size_value(a), size_value(b)) ]
+    ))
+",False,False,4,1.0,gpt-4.1_creativity
+1717A,3,"['for loop', 'if statement', 'recursion']",['for loop'],"['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', '+', '/', '2', '*', '3', 's', '_', 'c', 'x', '-', 'w', 'h', 'l', '1', '>', '<', 'm', 'y', '.', 'd', '0', ',', 'v', '[', ']', 'b']","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    t = int(data[0])
+    ns = list(map(int, data[1:]))
+    res = [str(3 * n // 2 - 1) for n in ns]
+    print('\n'.join(res))
+",False,False,1,1.0,gpt-4.1_creativity
+1831A,4,"['if statement', 'sorting', 'for loop', 'tuple']","['for loop', 'tuple']","['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', '=', 's', 'l', 'm', ',', '.', '1', 'b', 'd', 'x', '+', '-', '*', '[', ']', 'v', '0', '2', ';', '_', ""'"", '""', '#', 'c', '<', '/', 'h', '>', '{', 'w', '}', 'j', 'y', 'A']","def solve(n, a):
+    import sympy as sp
+    b = list(range(1, n+1))
+    idx = [sp.Indexed解(Frozenset(a), i) for i in range(n)]
+    for i in idx:
+        b[i] = b[sp.Indexed解(Frozenset(a), i) + 1]
+    return tuple(b)
+",False,False,2,1.0,OLMo-2-1124-13B-Instruct_creativity
+1781A,3,"['if statement', 'tuple', 'matrix operation']",['if statement'],"['t', ' ', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', 'a', 'g', 'e', ':', 'w', ',', 'd', 'h', 'm', '.', 's', 'l', 'b', 'v', '+', '-', 'x', '1', '2', '*', 'y', 'z', '_', '\t', '#', 'c', '<', '>', ';', 'q', '{', '}', '0', '/', 'k', '[', ']', '3', '5', ""'"", '\\', 'T', 'R', '""', '%', '&', 'F', 'N', 'S', 'W', 'E']","from math import sqrt
+
+def solve(w: int, d: int, h: int, a: int, b: int, f: int, g: int) -> int:
+    # Calculate the minimum cable length by summing distances along the edges
+    # Distance from laptop (a, b) to the wall closer to the x-axis
+    dist_a = min(a, w - a)
+    # Distance from laptop (a, b) to the wall closer to the y-axis
+    dist_b = min(b, d - b)
+    
+    # Distance from projector (f, g) on the ceiling to the wall closer to the x-axis
+    dist_f = min(f, w - f)
+    # Distance from projector (f, g) on the ceiling to the wall closer to the y-axis
+    dist_g = min(g, d - g)
+    
+    # Total cable length
+    cable_length = sqrt(dist_a**2 + dist_b**2) + sqrt(dist_f**2 + dist_g**2) + (w - (a + dist_a)) + (d - (b + dist_b))
+    
+    return int(cable_length)
+",False,False,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1832A,3,"['if statement', 'hashmap', 'for loop']",['recursion'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 's', '=', 'l', '[', '/', '2', ']', '>', '1', '""', 'Y', 'E', 'S', 'N', 'O', ',', '!', '-', 'y', '*', '0', ""'"", '{', '}', '<', '\t', 'w', 'b', 'm', 'd', '.', 'k', '%', 'F', '+', 'T', 'x', 'c']","def solve(case_index, s):
+    def check_palindrome(s):
+        return s == s[::-1]
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1790A,2,"['break statement', 'for loop']","['for loop', 'tuple']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '\t', 's', '=', ""'"", '3', '1', '4', '5', '9', '2', '6', '8', '7', 'c', '0', 'l', '[', ']', '+', 'b', 'k', 'z', '""', '*', 'w', 'h', '<', 'd', 'P', 'I', ',', '!', 'j', '#', 'S', 'T', 'R', 'x', 'q', 'm', '/', 'B', 'M', '.', '{', '|', '}', '-', 'v']","from decimal import getcontext, Decimal
+
+def solve(n: str) -> int:
+    getcontext().prec = 30
+    pi_str = str(Decimal('3.141592653589793238462643383279502884197'))[:30]
+    correct_digits = sum(1 for p, c in zip(pi_str, n) if p == c)
+    return correct_digits
+",False,False,2,1.0,OLMo-2-1124-13B-Instruct_creativity
+1783A,1,['sorting'],['pass statement'],"['t', ' ', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', 'a', 'g', 'e', ':', 'l', 's', 'm', ',', '.', '1', '""', 'N', 'O', 'v', 'T', '[', ']', '-', 'Y', 'E', 'S', '*', 'y', 'd', '_', ""'"", '0', '2', ';', '+', '!', 'k', 'c', '{', '}', '>', 'x', '#', '<', 'b', '/', 'h', 'w', '\\', 'L']","def solve():
+    pass
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1728A,0,['this is the og problem'],"['for loop', 'recursion', 'if statement']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\n', '=', 'c', 'l', 's', 'm', ',', '.', 'd', 'x', '+', '1', '\r', ""'"", '*', ';', '\t', 'v', '#', 'y', 'b', '[', ']', '0', '{', '}', 'k', 'A', 'h', 'w', '-', '2']","def solve():
+    n, cnt = map(int, input().split())
+    balls = [0] * (n + 1)
+    for i in range(n):
+        cnt_i = int(input())
+        balls[cnt_i] += cnt_i
+    parity = balls[-1] % 2
+    
+    def can_stay(x):
+        return balls[x] >= 2
+    
+    def find_color(start):
+        if can_stay(start):
+            return start
+        for i in range(n):
+            if balls[i] >= 2 and can_stay(i) and balls[start] - 1 < balls[i]:
+                return find_color(i)
+        return start
+    
+    return find_color(1) if parity == 1 else find_color(2)
+",False,True,3,1.0,OLMo-2-1124-13B-Instruct_creativity
+1734A,0,['this is the og problem'],"['if statement', 'recursion']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', '.', 's', ':', '\r', '\n', '=', 'l', 'm', ',', '1', '0', '-', '2', 'x', '[', '+', ']', '>', 'd', '9', '7', 'w', 'h', '!', 'z', 'b', 'v', 'k', '<', '\t', '*', '#', ""'"", 'c', '/', ';', '{', 'I', 'N', 'T', 'M', 'A', 'X', '}', '\\', '&', 'j', '""', 'y', '3']","def solve():
+    n, sticks = map(int, input().split())
+    lengths = list(map(int, input().split()))
+    
+    def can_form_equilateral(triangle):
+        a, b, c = sorted(triangle)
+        return a**2 + b**2 == 2 * (a**2 + c**2)
+",False,True,2,1.0,OLMo-2-1124-13B-Instruct_creativity
+1743A,0,['this is the og problem'],"['for loop', 'if statement', 'set']","['t', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'w', 'h', 'l', 'e', ' ', '!', '0', ':', 'a', 's', '1', '-', 'o', '*', '3', 'r', 'f', 'g', 'N', ';', '[', ']', '_', 'm', '.', '9', 'v', '<', '>', '{', '\t', '@', ""'"", ',', '$', '/', '}', 'x', 'c', 'k', 'd', '6', '2', '#', '""', '\\', 'b', '5', '8', '+', '4', 'T']","def solve():
+    from math import comb
+    
+    def count_sequences(n, excluded_digits):
+        # Initialize the count of valid sequences
+        count = 0
+        
+        # Iterate over all possible digits
+        for a in range(10):
+            if a not in excluded_digits:
+                # Iterate over all positions in the 4-digit sequence
+                for i in range(4):
+                    # Choose 2 instances of the current digit
+                    count += comb(4, 2)
+        
+        return count
+    
+    # Process each test case
+    for _ in range(int(input())):
+        n = int(input())
+        excluded_digits = sorted(list(map(int, input().split()))[:n])
+        
+        result = count_sequences(4, excluded_digits)
+        print(result)
+",False,True,3,1.0,OLMo-2-1124-13B-Instruct_creativity
+1794A,2,"['dictionary', 'for loop']",['pass statement'],"['d', 'e', 'f', ' ', 'i', 's', '_', 'p', 'a', 'l', 'n', 'r', 'o', 'm', '(', ')', ':', '\r', '\n', 't', 'u', '=', '[', '-', '1', ']', 'g', '.', '2', ""'"", 'Y', 'E', 'S', '0', 'N', 'O', 'c', 'w', ',', 'k', 'y', 'b', 'x', '\t', '#', '""', 'j', 'v', '<', '/', '+', 'h', '>', ';', '{', '*', 'z', '}', '\\', 'T', 'F', '!', '9', '7']","def solve(n: int, strings: List[str]) -> str:
+    """"""
+    Determine if a string s is a palindrome given its non-empty prefixes and suffixes in arbitrary order.
+    """"""
+    # Implementation goes here
+    pass
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1832A,2,"['if statement', 'hashmap']",['if statement'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 's', '=', 'l', '[', '/', '2', ']', '>', '1', '""', 'Y', 'E', 'S', 'N', 'O', ',', '!', '-', 'y', '*', '0', ""'"", '{', '}', '<', '\t', 'w', 'b', 'm', 'd', '.', 'k', '%', 'F', '+', 'T', 'x', 'c']","def solve(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""YES""
+    else:
+        return ""NO""
+",False,False,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1701B,3,"['for loop', 'if statement', 'tuple']",['pass statement'],"['#', 'i', 'n', 'c', 'l', 'u', 'd', 'e', '<', 'o', 's', 't', 'r', 'a', 'm', '>', '\r', '\n', 'g', ' ', 'p', ';', '(', ')', '{', ',', 'T', '\t', 'w', 'h', '-', '""', '2', '\\', 'f', '=', '1', '+', 'j', '*', '}', 'b', '/', '.', '0', '_', ':', ""'"", 'x', '%', '&', 'N', 'v', 'k', '[', ']', 'E', '5', 'q', '!', 'L', 'z', 'y', 'A', 'K', 'I', 'O']","def solve(n):
+    # Your code here
+    pass
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1704A,3,"['break statement', 'for loop', 'while loop']","['if statement', 'sorting']","['#', 'i', 'n', 'c', 'l', 'u', 'd', 'e', '<', 'b', 't', 's', '/', '+', '.', 'h', '>', '\r', '\n', 'g', ' ', 'a', 'm', 'p', ';', 'f', 'o', ',', 'v', 'r', '(', ')', '{', '\t', '=', '0', '-', '[', ']', '1', '&', '|', '?', '""', 'Y', 'E', 'S', ':', 'N', 'O', '}', 'w', 'z', ""'"", 'y', '_', 'k', 'x', 'T', '\\', '~', 'L', 'A', '2', '!', 'I', 'W', 'C', 'M', '$', '`', 'j', '*', '5', '%']","def solve(n, m, a, b):
+    if n == 1 or m == 1:
+        return ""NO""
+    a.sort()
+    b.sort()
+    if a == b:
+        return ""YES""
+    return ""NO""
+",False,True,2,1.0,OLMo-2-1124-13B-Instruct_creativity
+1846B,1,['if statement'],"['for loop', 'if statement']","['t', ' ', '=', 'i', 'n', '(', 'p', 'u', ')', '\r', '\n', 'f', 'o', 'r', 'a', 'g', 'e', ':', 's', '1', '2', '3', 'b', '[', ',', '0', ']', '+', '""', 'X', '*', 'l', 'O', 'D', 'R', 'A', 'W', '#', 'c', 'd', '<', '/', '.', 'h', '>', 'm', ';', 'v', '{', '}', '4', '5', '6', '7', '8', '&', '!', ""'"", '\\', 'w', '-', 'I', '_', 'j', 'x', 'y', 'z', '\t', 'k', '9', '|', 'J', 'q', 'N', 'S', 'H']","def solve():
+    def is_win(row_start, row_end, symbol):
+        count = 0
+        for i in range(row_start, row_end + 1):
+            if game[i] == symbol:
+                count += 1
+            if count == 3:
+                return True
+        return False
+",False,False,2,1.0,OLMo-2-1124-13B-Instruct_creativity
+1870A,1,['misc'],['pass statement'],"['i', 'm', 'p', 'o', 'r', 't', ' ', 's', 'y', '\r', '\n', 'n', 'u', '=', '.', 'd', 'e', 'a', 'l', '(', ')', 'f', '_', 'g', ':', ',', 'k', 'x', '>', '<', '-', '1', 'c', '*', '/', '2', '+', '0', '!', '#', 'b', 'h', ';', 'T', '{', 'w', '""', '%', '\\', '?', '}', '|', '\t', '&', '[', ']', ""'"", 'N', '5', 'z', 'I', 'v', 'q']","def solve(n: int, k: int, x: int) -> int:
+    # Your code here
+    pass
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1842A,2,"['if statement', 'dictionary']","['dynamic programming', 'matrix operation']","['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', ',', 'b', '=', 'm', '.', 's', 'l', '>', '""', 'T', 'd', '<', 'z', 'D', 'w', ""'"", 'R', 'x', 'c', '*', ';', '[', '-', '+', '1', '3', ']', '!', 'v', '\t', '#', '/', 'h', '2', '{', '0', 'j', '?', '\\', '}', 'A', 'B', 'C']","def solve(n, m, a, b):
+    def can_win(n, a, m, b):
+        dp = [[False] * (m + 1) for _ in range(n + 1)]
+        for i in range(n + 1):
+            for j in range(m + 1):
+                if j == 0:
+                    dp[i][j] = (a[i] <= 0)
+                elif a[i] > b[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = dp[i-1][j] or (not dp[i-1][j-1] and a[i] - b[j-1] > 0)
+        return not dp[-1][-1]
+",False,True,2,1.0,OLMo-2-1124-13B-Instruct_creativity
+1825A,1,['for loop'],['misc'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 's', '=', 'l', '1', '-', '[', 'c', ']', '.', '0', '*', '2', ',', '{', '}', '<', '3', 'N', 'S', '""', 'w', 'h', '>', 'k', 'z', 'm', 'b', 'd', '\t', 'x', 'y', '!', '|', 'v']","deforces
+"" is not a palindrome string, and it's also the longest subsequence (of length 10) that isn't palindrome.
+In the fourth test case, ""
+lol
+"" is a palindrome string, so the answer is $$$2$$$.
+
+solve()
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1822C,0,['this is the og problem'],['if statement'],"['f', 'o', 'r', ' ', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', 'k', '=', '2', '+', '*', 'x', '[', '0', ']', '1', '_', 'w', 'h', 'l', '>', '-', '6', '4', ';', 'm', 'M', 'T']","def solve(n: int) -> int:
+    if n == 4:
+        return 26
+    elif n == 5:
+        return 37
+    elif n == 6:
+        return 50
+    else:
+        chocolate_length = 2 * (n * (n - 1)) + 2 * n
+        return chocolate_length
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1729A,3,"['misc', 'for loop', 'tuple']",['pass statement'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', ',', 'b', '=', 'm', '.', 's', 'l', 'x', '-', '1', 'y', '+', '3', '<', '2', '#', 'c', 'd', '/', 'h', '>', ';', '{', '\t', 'w', '*', '?', '}', '0', '[', ']', 'z', 'v', ""'"", 'A', 'B', '""', 'q', 'S']","def solve(a, b, c):
+    # Your code here
+    pass
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1857A,0,['this is the og problem'],['pass statement'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', '=', 'l', '[', '.', 's', ']', '""', 'Y', 'E', 'S', 'm', '%', '2', '0', ""'"", 'N', 'O', '\t', ',', '1', '*', 'x', 'd', '>', '!', 'j', ';', 'y', 'c', 'b', '&', 'T', 'k']","def solve():
+    # Your code here
+    pass
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity
+1739A,4,"['if statement', 'for loop', 'tuple', 'hashmap']",['pass statement'],"['f', 'o', 'r', ' ', '_', 'i', 'n', 'a', 'g', 'e', '(', 't', 'p', 'u', ')', ':', '\r', '\n', ',', 'm', '=', '.', 's', 'l', '/', '2', '+', '1', 'c', 'd', 'q', '\t', 'M', '[', '*', '0', ']', 'T', '>', 'y', '#', '<', 'b', 'h', ';', '{', ""'"", '\\', '}', 'w', '-', '%', 'N', '""', 'x', 'k']","def solve():
+    pass
+",False,True,1,1.0,OLMo-2-1124-13B-Instruct_creativity

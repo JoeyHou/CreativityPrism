@@ -1,0 +1,1309 @@
+"HITId","HITTypeId","Title","Description","Keywords","Reward","CreationTime","MaxAssignments","RequesterAnnotation","AssignmentDurationInSeconds","AutoApprovalDelayInSeconds","Expiration","NumberOfSimilarHITs","LifetimeInSeconds","AssignmentId","WorkerId","AssignmentStatus","AcceptTime","SubmitTime","AutoApprovalTime","ApprovalTime","RejectionTime","RequesterFeedback","WorkTimeInSeconds","LifetimeApprovalRate","Last30DaysApprovalRate","Last7DaysApprovalRate","Input.problem_id","Input.problem","Input.cleaned_references","Input.cleaned_response","Input.model","Input.image_in_problem","Answer.correctness.correct","Answer.correctness.incorrect","Answer.novelty.not_novel","Answer.novelty.novel","Approve","Reject"
+"3VMV5CHJ0RV2A27TKKS0PR7HJZ8GT8","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","382M9COHE1VMDLOL4XYOI43M59XUE0","AFA0H6QL832IJ","Approved","Tue Nov 04 23:01:51 PST 2025","Tue Nov 04 23:05:15 PST 2025","Fri Nov 07 23:05:15 PST 2025","Fri Nov 07 23:05:49 PST 2025","","","204","100% (21/21)","100% (21/21)","100% (21/21)","1986_IMO_Problems_6","Given a finite set of points in the plane, each with integer coordinates, is it always possible to color the points red or white so that for any straight line \(L\) parallel to one of the coordinate axes the difference (in absolute value) between the numbers of white and red points on \(L\) is not greater than \(1\)?","Solution 1. I'll use a well-known result: if a connected graph has \(2k>0\) vertices of odd degree, then its edge set can be partitioned into \(k\) paths, and if all its vertices have even degree, then it has an eulerian circuit.
+We have a bipartite graph with bipartition \(A,B\) here, constructed as follows: the horizontal lines which contain points from our set represent the vertices in \(A\), the vertical lines represent the vertices in \(B\), and the point represent the edges between the vertices corresponding to the rows and columns which contain them. What we must prove is that we can color the edge set of a bipartite graph in two colors s.t. the difference between the number of red edges and white edges adjacent to each vertex is \(\le 1\) in absolute value. It suffices to prove this for connected bipartite graphs, since then we can apply the result to each connected component of the graph.
+If all the vertices have even degree, then we can find an eulerian circuit. The graph is bipartite, so this circuit has an even number of edges, and we can thus color the edges in the circuit alternatively red and white so that two edges which are consecutive in the circuit have different colors. It's clear that this coloration satisfies the requirements.
+If, on the other hand, the graph has \(2k>0\) vertices with odd degre, then we partition the edge set into \(k\) paths, and in each path we color the edges alternatively red and white. Again, it's easy to verify the required properties of the coloration.
+","We prove the statement by induction on the number of points, using an alternating path argument to adjust colorings when adding a new point.
+
+**Base Case:** For a single point, color it red. The difference on its row and column is 1, which satisfies the condition.
+
+**Inductive Step:** Assume the claim holds for all sets of \( n \) points. Consider a set \( S \) with \( n+1 \) points. Remove a point \( p = (x, y) \), leaving \( S' \), which by hypothesis has a valid coloring. Reinsert \( p \) and adjust the coloring as follows:
+
+1. **Case 1:** If both the row \( x \) and column \( y \) in \( S' \) have an even number of points, color \( p \) arbitrarily (e.g., red). This makes both row \( x \) and column \( y \) have an odd count, with a difference of 1, which is acceptable.
+
+2. **Case 2:** If one of row \( x \) or column \( y \) has an odd count in \( S' \), color \( p \) to balance the parity. For example, if row \( x \) is odd and column \( y \) is even, color \( p \) to match the minority color in row \( x \), reducing its difference to 0 and making column \( y \) odd with difference 1.
+
+3. **Case 3:** If both row \( x \) and column \( y \) are odd in \( S' \), coloring \( p \) would make them even. However, this requires adjusting existing colors to resolve the imbalance. Construct an alternating path starting at row \( x \) and ending at column \( y \), flipping the colors of points along this path. This preserves the balance in intermediate rows and columns while correcting the parity at \( x \) and \( y \). Since the bipartite graph is connected (or handled component-wise), such a path exists. After flipping, color \( p \) to maintain balance.
+
+**Conclusion:** By induction, all finite sets can be colored appropriately.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","false","true","true","false"
+"3VMV5CHJ0RV2A27TKKS0PR7HJZ8GT8","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","386CSBG1OJ2Q8DOPH6VLWFEKLQ7Q6A","ASQIP0BTUIBHO","Submitted","Tue Nov 11 00:49:40 PST 2025","Tue Nov 11 00:53:43 PST 2025","Fri Nov 14 00:53:43 PST 2025","","","","243","100% (125/125)","100% (63/63)","0% (0/0)","1986_IMO_Problems_6","Given a finite set of points in the plane, each with integer coordinates, is it always possible to color the points red or white so that for any straight line \(L\) parallel to one of the coordinate axes the difference (in absolute value) between the numbers of white and red points on \(L\) is not greater than \(1\)?","Solution 1. I'll use a well-known result: if a connected graph has \(2k>0\) vertices of odd degree, then its edge set can be partitioned into \(k\) paths, and if all its vertices have even degree, then it has an eulerian circuit.
+We have a bipartite graph with bipartition \(A,B\) here, constructed as follows: the horizontal lines which contain points from our set represent the vertices in \(A\), the vertical lines represent the vertices in \(B\), and the point represent the edges between the vertices corresponding to the rows and columns which contain them. What we must prove is that we can color the edge set of a bipartite graph in two colors s.t. the difference between the number of red edges and white edges adjacent to each vertex is \(\le 1\) in absolute value. It suffices to prove this for connected bipartite graphs, since then we can apply the result to each connected component of the graph.
+If all the vertices have even degree, then we can find an eulerian circuit. The graph is bipartite, so this circuit has an even number of edges, and we can thus color the edges in the circuit alternatively red and white so that two edges which are consecutive in the circuit have different colors. It's clear that this coloration satisfies the requirements.
+If, on the other hand, the graph has \(2k>0\) vertices with odd degre, then we partition the edge set into \(k\) paths, and in each path we color the edges alternatively red and white. Again, it's easy to verify the required properties of the coloration.
+","We prove the statement by induction on the number of points, using an alternating path argument to adjust colorings when adding a new point.
+
+**Base Case:** For a single point, color it red. The difference on its row and column is 1, which satisfies the condition.
+
+**Inductive Step:** Assume the claim holds for all sets of \( n \) points. Consider a set \( S \) with \( n+1 \) points. Remove a point \( p = (x, y) \), leaving \( S' \), which by hypothesis has a valid coloring. Reinsert \( p \) and adjust the coloring as follows:
+
+1. **Case 1:** If both the row \( x \) and column \( y \) in \( S' \) have an even number of points, color \( p \) arbitrarily (e.g., red). This makes both row \( x \) and column \( y \) have an odd count, with a difference of 1, which is acceptable.
+
+2. **Case 2:** If one of row \( x \) or column \( y \) has an odd count in \( S' \), color \( p \) to balance the parity. For example, if row \( x \) is odd and column \( y \) is even, color \( p \) to match the minority color in row \( x \), reducing its difference to 0 and making column \( y \) odd with difference 1.
+
+3. **Case 3:** If both row \( x \) and column \( y \) are odd in \( S' \), coloring \( p \) would make them even. However, this requires adjusting existing colors to resolve the imbalance. Construct an alternating path starting at row \( x \) and ending at column \( y \), flipping the colors of points along this path. This preserves the balance in intermediate rows and columns while correcting the parity at \( x \) and \( y \). Since the bipartite graph is connected (or handled component-wise), such a path exists. After flipping, color \( p \) to maintain balance.
+
+**Conclusion:** By induction, all finite sets can be colored appropriately.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3VMV5CHJ0RV2A27TKKS0PR7HJZ8GT8","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3XXU1SWE86B37MVTQLIIXEPO45QA0D","A189Q7EDEDSQ34","Approved","Sat Oct 25 15:13:09 PDT 2025","Sat Oct 25 15:15:39 PDT 2025","Tue Oct 28 15:15:39 PDT 2025","Tue Oct 28 15:15:49 PDT 2025","","","150","100% (114/114)","100% (100/100)","100% (18/18)","1986_IMO_Problems_6","Given a finite set of points in the plane, each with integer coordinates, is it always possible to color the points red or white so that for any straight line \(L\) parallel to one of the coordinate axes the difference (in absolute value) between the numbers of white and red points on \(L\) is not greater than \(1\)?","Solution 1. I'll use a well-known result: if a connected graph has \(2k>0\) vertices of odd degree, then its edge set can be partitioned into \(k\) paths, and if all its vertices have even degree, then it has an eulerian circuit.
+We have a bipartite graph with bipartition \(A,B\) here, constructed as follows: the horizontal lines which contain points from our set represent the vertices in \(A\), the vertical lines represent the vertices in \(B\), and the point represent the edges between the vertices corresponding to the rows and columns which contain them. What we must prove is that we can color the edge set of a bipartite graph in two colors s.t. the difference between the number of red edges and white edges adjacent to each vertex is \(\le 1\) in absolute value. It suffices to prove this for connected bipartite graphs, since then we can apply the result to each connected component of the graph.
+If all the vertices have even degree, then we can find an eulerian circuit. The graph is bipartite, so this circuit has an even number of edges, and we can thus color the edges in the circuit alternatively red and white so that two edges which are consecutive in the circuit have different colors. It's clear that this coloration satisfies the requirements.
+If, on the other hand, the graph has \(2k>0\) vertices with odd degre, then we partition the edge set into \(k\) paths, and in each path we color the edges alternatively red and white. Again, it's easy to verify the required properties of the coloration.
+","We prove the statement by induction on the number of points, using an alternating path argument to adjust colorings when adding a new point.
+
+**Base Case:** For a single point, color it red. The difference on its row and column is 1, which satisfies the condition.
+
+**Inductive Step:** Assume the claim holds for all sets of \( n \) points. Consider a set \( S \) with \( n+1 \) points. Remove a point \( p = (x, y) \), leaving \( S' \), which by hypothesis has a valid coloring. Reinsert \( p \) and adjust the coloring as follows:
+
+1. **Case 1:** If both the row \( x \) and column \( y \) in \( S' \) have an even number of points, color \( p \) arbitrarily (e.g., red). This makes both row \( x \) and column \( y \) have an odd count, with a difference of 1, which is acceptable.
+
+2. **Case 2:** If one of row \( x \) or column \( y \) has an odd count in \( S' \), color \( p \) to balance the parity. For example, if row \( x \) is odd and column \( y \) is even, color \( p \) to match the minority color in row \( x \), reducing its difference to 0 and making column \( y \) odd with difference 1.
+
+3. **Case 3:** If both row \( x \) and column \( y \) are odd in \( S' \), coloring \( p \) would make them even. However, this requires adjusting existing colors to resolve the imbalance. Construct an alternating path starting at row \( x \) and ending at column \( y \), flipping the colors of points along this path. This preserves the balance in intermediate rows and columns while correcting the parity at \( x \) and \( y \). Since the bipartite graph is connected (or handled component-wise), such a path exists. After flipping, color \( p \) to maintain balance.
+
+**Conclusion:** By induction, all finite sets can be colored appropriately.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3FTID4TN94EEDGKO5HCFA044UICYLL","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","358010RM5Y9VW0424SYL2FQCZMLXV5","AFA0H6QL832IJ","Submitted","Tue Nov 11 13:49:21 PST 2025","Tue Nov 11 13:59:14 PST 2025","Fri Nov 14 13:59:14 PST 2025","","","","593","100% (21/21)","100% (21/21)","100% (21/21)","1990_IMO_Problems_1","Chords \(AB\) and \(CD\) of a circle intersect at a point \(E\) inside the circle. Let \(M\) be an interior point of the segment \(\overline{EB}\). The tangent line at \(E\) to the circle through \(D, E\), and \(M\) intersects the lines \(\overline{BC}\) and \({AC}\) at \(F\) and \(G\), respectively.
+If  \(\frac{AM}{AB} = t\), find \(\frac{EG}{EF}\) in terms of \(t\).","Solution 1. With simple angle chasing, we find that triangles \(CEG\) and \(MDB\) are similar.
+so, \(GE/EC = MD/MB\). (*)
+again with simple angle chasing, we find that triangles \(CEF\) and \(AMD\) are similar.
+so, \(EF/DM = CE/AM\). (**)
+so, by (*) and (**), we have \(GE/EF = MA/MB = t/(t-1)\).
+
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. This problem can be bashed with PoP and Ratio Lemma. Rewriting the given ratio gets \(\frac{MA}{MB}=\frac{t}{1-t}\).
+By Ratio Lemma, \(\frac{FB}{FC}=\frac{BE}{CE} \cdot \frac{\sin{\angle{FEB}}}{\sin{\angle{FEC}}}=\frac{DE}{AE} \cdot \frac{\sin{\angle{EDM}}}{\sin{\angle{DME}}}=\frac{DE}{AE} \cdot \frac{EM}{DE}=\frac{ME}{EA}\). Similarly, \(\frac{GA}{GC}=\frac{ME}{EB}\). We can rewrite these equalities to get \(\frac{AM}{EM}=\frac{BC}{FB}\) and \(\frac{BM}{EM}=\frac{AC}{GC}\).
+Using Ratio Lemma, \(\frac{GE}{\sin{\angle{ACD}}}=\frac{GC}{\sin{\angle{GED}}}\) and \(\frac{EF}{\sin{\angle{BCD}}}=\frac{FC}{\sin{\angle{FEC}}}\). Since \(\angle{GED}=\angle{FEC}\), we have \(\frac{FE}{GE}=\frac{FC}{GC} \cdot \frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}\) (eq 1). Note that by Ratio Lemma, \(\frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}=\frac{CA}{CB} \cdot \frac{EB}{EA}\). Plugging this into (eq 1), we get \(\frac{EF}{GE}=\frac{FC}{GC} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{\frac{EA}{EM} \cdot FB}{\frac{EB}{EM} \cdot GA} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{FB}{GA} \cdot \frac{CA}{CB}=\frac{EM}{AM} \cdot \frac{MB}{EM}=\frac{MB}{MA}=\frac{1-t}{t}\). So \(\frac{EG}{EF}=\boxed{\frac{t}{1-t}}\).
+","1. **Coordinate Setup:**
+   - Place point \( E \) at the origin \((0,0)\).
+   - Let chord \( AB \) lie on the x-axis with \( A(1,0) \) and \( B(-1,0) \).
+   - Let chord \( CD \) lie on the y-axis with \( C(0,1) \) and \( D(0,-1) \). The circle through \( A, B, C, D \) is the unit circle.
+
+2. **Point \( M \) on \( EB \):**
+   - \( M \) is an interior point on \( EB \). Let \( M(-m,0) \) where \( 0 < m < 1 \).
+   - Given \( \frac{AM}{AB} = t \), compute \( m \):
+     \(
+     \frac{AM}{AB} = \frac{1 + m}{2} = t \implies m = 2t - 1.
+     \)
+
+3. **Circle through \( D, E, M \):**
+   - The circle passing through \( D(0,-1) \), \( E(0,0) \), and \( M(-m,0) \) has center \(\left(-\frac{m}{2}, -\frac{1}{2}\right)\) and tangent at \( E \):
+     \(
+     y = -mx.
+     \)
+
+4. **Intersections \( F \) and \( G \):**
+   - **Line \( BC \):** \( y = x + 1 \). Solve with tangent:
+     \(
+     -mx = x + 1 \implies x = -\frac{1}{m + 1}, \quad y = \frac{m}{m + 1}.
+     \)
+     Thus, \( F\left(-\frac{1}{m + 1}, \frac{m}{m + 1}\right) \).
+   - **Line \( AC \):** \( y = -x + 1 \). Solve with tangent:
+     \(
+     -mx = -x + 1 \implies x = \frac{1}{1 - m}, \quad y = -\frac{m}{1 - m}.
+     \)
+     Thus, \( G\left(\frac{1}{1 - m}, -\frac{m}{1 - m}\right) \).
+
+5. **Compute \( \frac{EG}{EF} \):**
+   - Distances from \( E(0,0) \):
+     \(
+     EG = \sqrt{\left(\frac{1}{1 - m}\right)^2 + \left(-\frac{m}{1 - m}\right)^2} = \frac{\sqrt{1 + m^2}}{1 - m},
+     \)
+     \(
+     EF = \sqrt{\left(-\frac{1}{m + 1}\right)^2 + \left(\frac{m}{m + 1}\right)^2} = \frac{\sqrt{1 + m^2}}{m + 1}.
+     \)
+   - Ratio:
+     \(
+     \frac{EG}{EF} = \frac{\frac{\sqrt{1 + m^2}}{1 - m}}{\frac{\sqrt{1 + m^2}}{m + 1}} = \frac{m + 1}{1 - m}.
+     \)
+   - Substitute \( m = 2t - 1 \):
+     \(
+     \frac{EG}{EF} = \frac{(2t - 1) + 1}{1 - (2t - 1)} = \frac{2t}{2 - 2t} = \frac{t}{1 - t}.
+     \)
+
+**Answer:** \(\boxed{\dfrac{t}{1 - t}}\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","false","true","false","true"
+"3FTID4TN94EEDGKO5HCFA044UICYLL","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3BEFOD78WQ9L8BMJ6PVPI8A1FY04MC","AKERE2HC8Y7H4","Approved","Sat Nov 01 12:32:22 PDT 2025","Sat Nov 01 12:32:58 PDT 2025","Tue Nov 04 11:32:58 PST 2025","Tue Nov 04 11:33:49 PST 2025","","","36","100% (50/50)","100% (48/48)","0% (0/0)","1990_IMO_Problems_1","Chords \(AB\) and \(CD\) of a circle intersect at a point \(E\) inside the circle. Let \(M\) be an interior point of the segment \(\overline{EB}\). The tangent line at \(E\) to the circle through \(D, E\), and \(M\) intersects the lines \(\overline{BC}\) and \({AC}\) at \(F\) and \(G\), respectively.
+If  \(\frac{AM}{AB} = t\), find \(\frac{EG}{EF}\) in terms of \(t\).","Solution 1. With simple angle chasing, we find that triangles \(CEG\) and \(MDB\) are similar.
+so, \(GE/EC = MD/MB\). (*)
+again with simple angle chasing, we find that triangles \(CEF\) and \(AMD\) are similar.
+so, \(EF/DM = CE/AM\). (**)
+so, by (*) and (**), we have \(GE/EF = MA/MB = t/(t-1)\).
+
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. This problem can be bashed with PoP and Ratio Lemma. Rewriting the given ratio gets \(\frac{MA}{MB}=\frac{t}{1-t}\).
+By Ratio Lemma, \(\frac{FB}{FC}=\frac{BE}{CE} \cdot \frac{\sin{\angle{FEB}}}{\sin{\angle{FEC}}}=\frac{DE}{AE} \cdot \frac{\sin{\angle{EDM}}}{\sin{\angle{DME}}}=\frac{DE}{AE} \cdot \frac{EM}{DE}=\frac{ME}{EA}\). Similarly, \(\frac{GA}{GC}=\frac{ME}{EB}\). We can rewrite these equalities to get \(\frac{AM}{EM}=\frac{BC}{FB}\) and \(\frac{BM}{EM}=\frac{AC}{GC}\).
+Using Ratio Lemma, \(\frac{GE}{\sin{\angle{ACD}}}=\frac{GC}{\sin{\angle{GED}}}\) and \(\frac{EF}{\sin{\angle{BCD}}}=\frac{FC}{\sin{\angle{FEC}}}\). Since \(\angle{GED}=\angle{FEC}\), we have \(\frac{FE}{GE}=\frac{FC}{GC} \cdot \frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}\) (eq 1). Note that by Ratio Lemma, \(\frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}=\frac{CA}{CB} \cdot \frac{EB}{EA}\). Plugging this into (eq 1), we get \(\frac{EF}{GE}=\frac{FC}{GC} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{\frac{EA}{EM} \cdot FB}{\frac{EB}{EM} \cdot GA} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{FB}{GA} \cdot \frac{CA}{CB}=\frac{EM}{AM} \cdot \frac{MB}{EM}=\frac{MB}{MA}=\frac{1-t}{t}\). So \(\frac{EG}{EF}=\boxed{\frac{t}{1-t}}\).
+","1. **Coordinate Setup:**
+   - Place point \( E \) at the origin \((0,0)\).
+   - Let chord \( AB \) lie on the x-axis with \( A(1,0) \) and \( B(-1,0) \).
+   - Let chord \( CD \) lie on the y-axis with \( C(0,1) \) and \( D(0,-1) \). The circle through \( A, B, C, D \) is the unit circle.
+
+2. **Point \( M \) on \( EB \):**
+   - \( M \) is an interior point on \( EB \). Let \( M(-m,0) \) where \( 0 < m < 1 \).
+   - Given \( \frac{AM}{AB} = t \), compute \( m \):
+     \(
+     \frac{AM}{AB} = \frac{1 + m}{2} = t \implies m = 2t - 1.
+     \)
+
+3. **Circle through \( D, E, M \):**
+   - The circle passing through \( D(0,-1) \), \( E(0,0) \), and \( M(-m,0) \) has center \(\left(-\frac{m}{2}, -\frac{1}{2}\right)\) and tangent at \( E \):
+     \(
+     y = -mx.
+     \)
+
+4. **Intersections \( F \) and \( G \):**
+   - **Line \( BC \):** \( y = x + 1 \). Solve with tangent:
+     \(
+     -mx = x + 1 \implies x = -\frac{1}{m + 1}, \quad y = \frac{m}{m + 1}.
+     \)
+     Thus, \( F\left(-\frac{1}{m + 1}, \frac{m}{m + 1}\right) \).
+   - **Line \( AC \):** \( y = -x + 1 \). Solve with tangent:
+     \(
+     -mx = -x + 1 \implies x = \frac{1}{1 - m}, \quad y = -\frac{m}{1 - m}.
+     \)
+     Thus, \( G\left(\frac{1}{1 - m}, -\frac{m}{1 - m}\right) \).
+
+5. **Compute \( \frac{EG}{EF} \):**
+   - Distances from \( E(0,0) \):
+     \(
+     EG = \sqrt{\left(\frac{1}{1 - m}\right)^2 + \left(-\frac{m}{1 - m}\right)^2} = \frac{\sqrt{1 + m^2}}{1 - m},
+     \)
+     \(
+     EF = \sqrt{\left(-\frac{1}{m + 1}\right)^2 + \left(\frac{m}{m + 1}\right)^2} = \frac{\sqrt{1 + m^2}}{m + 1}.
+     \)
+   - Ratio:
+     \(
+     \frac{EG}{EF} = \frac{\frac{\sqrt{1 + m^2}}{1 - m}}{\frac{\sqrt{1 + m^2}}{m + 1}} = \frac{m + 1}{1 - m}.
+     \)
+   - Substitute \( m = 2t - 1 \):
+     \(
+     \frac{EG}{EF} = \frac{(2t - 1) + 1}{1 - (2t - 1)} = \frac{2t}{2 - 2t} = \frac{t}{1 - t}.
+     \)
+
+**Answer:** \(\boxed{\dfrac{t}{1 - t}}\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3FTID4TN94EEDGKO5HCFA044UICYLL","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3VHP9MDGR70IX57HDHXU6G2GAA0CFL","A189Q7EDEDSQ34","Approved","Sat Oct 25 14:51:21 PDT 2025","Sat Oct 25 14:52:33 PDT 2025","Tue Oct 28 14:52:33 PDT 2025","Tue Oct 28 14:52:49 PDT 2025","","","72","100% (114/114)","100% (100/100)","100% (18/18)","1990_IMO_Problems_1","Chords \(AB\) and \(CD\) of a circle intersect at a point \(E\) inside the circle. Let \(M\) be an interior point of the segment \(\overline{EB}\). The tangent line at \(E\) to the circle through \(D, E\), and \(M\) intersects the lines \(\overline{BC}\) and \({AC}\) at \(F\) and \(G\), respectively.
+If  \(\frac{AM}{AB} = t\), find \(\frac{EG}{EF}\) in terms of \(t\).","Solution 1. With simple angle chasing, we find that triangles \(CEG\) and \(MDB\) are similar.
+so, \(GE/EC = MD/MB\). (*)
+again with simple angle chasing, we find that triangles \(CEF\) and \(AMD\) are similar.
+so, \(EF/DM = CE/AM\). (**)
+so, by (*) and (**), we have \(GE/EF = MA/MB = t/(t-1)\).
+
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. This problem can be bashed with PoP and Ratio Lemma. Rewriting the given ratio gets \(\frac{MA}{MB}=\frac{t}{1-t}\).
+By Ratio Lemma, \(\frac{FB}{FC}=\frac{BE}{CE} \cdot \frac{\sin{\angle{FEB}}}{\sin{\angle{FEC}}}=\frac{DE}{AE} \cdot \frac{\sin{\angle{EDM}}}{\sin{\angle{DME}}}=\frac{DE}{AE} \cdot \frac{EM}{DE}=\frac{ME}{EA}\). Similarly, \(\frac{GA}{GC}=\frac{ME}{EB}\). We can rewrite these equalities to get \(\frac{AM}{EM}=\frac{BC}{FB}\) and \(\frac{BM}{EM}=\frac{AC}{GC}\).
+Using Ratio Lemma, \(\frac{GE}{\sin{\angle{ACD}}}=\frac{GC}{\sin{\angle{GED}}}\) and \(\frac{EF}{\sin{\angle{BCD}}}=\frac{FC}{\sin{\angle{FEC}}}\). Since \(\angle{GED}=\angle{FEC}\), we have \(\frac{FE}{GE}=\frac{FC}{GC} \cdot \frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}\) (eq 1). Note that by Ratio Lemma, \(\frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}=\frac{CA}{CB} \cdot \frac{EB}{EA}\). Plugging this into (eq 1), we get \(\frac{EF}{GE}=\frac{FC}{GC} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{\frac{EA}{EM} \cdot FB}{\frac{EB}{EM} \cdot GA} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{FB}{GA} \cdot \frac{CA}{CB}=\frac{EM}{AM} \cdot \frac{MB}{EM}=\frac{MB}{MA}=\frac{1-t}{t}\). So \(\frac{EG}{EF}=\boxed{\frac{t}{1-t}}\).
+","1. **Coordinate Setup:**
+   - Place point \( E \) at the origin \((0,0)\).
+   - Let chord \( AB \) lie on the x-axis with \( A(1,0) \) and \( B(-1,0) \).
+   - Let chord \( CD \) lie on the y-axis with \( C(0,1) \) and \( D(0,-1) \). The circle through \( A, B, C, D \) is the unit circle.
+
+2. **Point \( M \) on \( EB \):**
+   - \( M \) is an interior point on \( EB \). Let \( M(-m,0) \) where \( 0 < m < 1 \).
+   - Given \( \frac{AM}{AB} = t \), compute \( m \):
+     \(
+     \frac{AM}{AB} = \frac{1 + m}{2} = t \implies m = 2t - 1.
+     \)
+
+3. **Circle through \( D, E, M \):**
+   - The circle passing through \( D(0,-1) \), \( E(0,0) \), and \( M(-m,0) \) has center \(\left(-\frac{m}{2}, -\frac{1}{2}\right)\) and tangent at \( E \):
+     \(
+     y = -mx.
+     \)
+
+4. **Intersections \( F \) and \( G \):**
+   - **Line \( BC \):** \( y = x + 1 \). Solve with tangent:
+     \(
+     -mx = x + 1 \implies x = -\frac{1}{m + 1}, \quad y = \frac{m}{m + 1}.
+     \)
+     Thus, \( F\left(-\frac{1}{m + 1}, \frac{m}{m + 1}\right) \).
+   - **Line \( AC \):** \( y = -x + 1 \). Solve with tangent:
+     \(
+     -mx = -x + 1 \implies x = \frac{1}{1 - m}, \quad y = -\frac{m}{1 - m}.
+     \)
+     Thus, \( G\left(\frac{1}{1 - m}, -\frac{m}{1 - m}\right) \).
+
+5. **Compute \( \frac{EG}{EF} \):**
+   - Distances from \( E(0,0) \):
+     \(
+     EG = \sqrt{\left(\frac{1}{1 - m}\right)^2 + \left(-\frac{m}{1 - m}\right)^2} = \frac{\sqrt{1 + m^2}}{1 - m},
+     \)
+     \(
+     EF = \sqrt{\left(-\frac{1}{m + 1}\right)^2 + \left(\frac{m}{m + 1}\right)^2} = \frac{\sqrt{1 + m^2}}{m + 1}.
+     \)
+   - Ratio:
+     \(
+     \frac{EG}{EF} = \frac{\frac{\sqrt{1 + m^2}}{1 - m}}{\frac{\sqrt{1 + m^2}}{m + 1}} = \frac{m + 1}{1 - m}.
+     \)
+   - Substitute \( m = 2t - 1 \):
+     \(
+     \frac{EG}{EF} = \frac{(2t - 1) + 1}{1 - (2t - 1)} = \frac{2t}{2 - 2t} = \frac{t}{1 - t}.
+     \)
+
+**Answer:** \(\boxed{\dfrac{t}{1 - t}}\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3VMHWJRYIEW3DJKIEANFW9SBVGWXF9","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","37Z929RLGTO8NREE5NSJ2PLZNM3TSD","ASQIP0BTUIBHO","Submitted","Tue Nov 11 00:54:15 PST 2025","Tue Nov 11 00:56:03 PST 2025","Fri Nov 14 00:56:03 PST 2025","","","","108","100% (125/125)","100% (63/63)","0% (0/0)","1968_IMO_Problems_2","Find all natural numbers \(x\) such that the product of their digits (in decimal notation) is equal to \(x^2 - 10x - 22\).","Solution 1. Let the decimal expansion of \(x\) be \(\overline{d_1d_2d_3\dots d_n}\), where \(d_i\) are base-10 digits. We then have that \(x\geq d_1\cdot 10^{n-1}\). However, the product of the digits of \(x\) is \(d_1d_2d_3\dots d_n\leq d_1\cdot 10\cdot 10\dots 10=d_1\cdot 10^{n-1}\), with equality only when \(x\) is a one-digit integer. Therefore the product of the digits of \(x\) is always at most \(x\), with equality only when \(x\) is a base-10 digit. This implies that \(x^2-10x-22\leq x\), so \(x^2-11x-22\leq 0\). Every natural number from 1 to 12 satisfies this inequality, so we only need to check these possibilities. It is easy to rule out 1 through 11, since \(x^2-10x-22<0\) for those values. However, \(12^2-10\cdot 12-22=2\), which is the product of the digits of 12. Therefore \(\boxed{12}\) is the only natural number with the desired properties. \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. It is pretty obvious that \(x\) cannot be three digits or more, because then \(x^2 - 10x - 22\) is way too big.
+Write \(x = 10a + b\) where \(a\) and \(b\) are digits satisfying \(0 \leq a, b < 10\). Then, we can use SFFT:
+\((10a + b)^2 - 10(10a + b) - 22 = ab\)
+\((10a + b)^2 - 10(10a + b) - 24 = ab - 2\)
+\((10a + b + 2)(10a + b - 12) = ab - 2.\)
+We have
+\((10a + b + 2)(10a + b - 12) \geq (10a + 2)(10a - 12) = 100a^2 - 100a + 24 = 100(a^2 - a) + 24.\)
+It is therefore clear that \(a\) must be either \(0\) or \(1\). We can then split into two cases:
+\(\mathbf{a = 0:}\)
+We have \((b + 2)(b - 12) = -2\) or \(b^2 - 10b - 22 = 0\), which is only satisfied when \(b = -2\) or \(12\).
+\(\mathbf{a = 1:}\)
+We have \((b + 12)(b - 2) = b - 2\). This is only satisfied when \(b = 2\), or \(b + 12 = 0\). Therefore, \(b = 2\), and so \(x = \boxed{12}.\square\)","We analyze the equation by treating it as a quadratic in the units digit \( b \) after expressing \( x \) as \( 10a + b \), where \( a \) and \( b \) are digits with \( a \geq 1 \). 
+
+1. **Equation Setup:**
+   \(
+   ab = (10a + b)^2 - 10(10a + b) - 22
+   \)
+   Expanding and rearranging terms yields:
+   \(
+   b^2 + (19a - 10)b + 100a^2 - 100a - 22 = 0
+   \)
+   
+2. **Discriminant Analysis:**
+   The discriminant \( D \) of this quadratic in \( b \) is:
+   \(
+   D = (19a - 10)^2 - 4(100a^2 - 100a - 22) = -39a^2 + 20a + 188
+   \)
+   For \( b \) to be an integer digit (\( 0 \leq b \leq 9 \)), \( D \geq 0 \). Solving \( -39a^2 + 20a + 188 \geq 0 \) shows \( a \) can only be \( 1 \) or \( 2 \).
+
+3. **Case for \( a = 1 \):**
+   Substituting \( a = 1 \), the discriminant simplifies to \( 169 \), giving \( b = 2 \). Thus, \( x = 12 \), which satisfies the original equation:
+   \(
+   1 \cdot 2 = 12^2 - 10 \cdot 12 - 22 \quad \Rightarrow \quad 2 = 2
+   \)
+
+4. **Case for \( a = 2 \):**
+   The discriminant yields no valid \( b \), so no solution here.
+
+Hence, the only solution is \(\boxed{12}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3VMHWJRYIEW3DJKIEANFW9SBVGWXF9","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3RSDURM96U23UU8QEYVDLP9Z1X3EYD","A189Q7EDEDSQ34","Approved","Sat Oct 25 14:31:08 PDT 2025","Sat Oct 25 14:33:39 PDT 2025","Tue Oct 28 14:33:39 PDT 2025","Tue Oct 28 14:33:49 PDT 2025","","","151","100% (114/114)","100% (100/100)","100% (18/18)","1968_IMO_Problems_2","Find all natural numbers \(x\) such that the product of their digits (in decimal notation) is equal to \(x^2 - 10x - 22\).","Solution 1. Let the decimal expansion of \(x\) be \(\overline{d_1d_2d_3\dots d_n}\), where \(d_i\) are base-10 digits. We then have that \(x\geq d_1\cdot 10^{n-1}\). However, the product of the digits of \(x\) is \(d_1d_2d_3\dots d_n\leq d_1\cdot 10\cdot 10\dots 10=d_1\cdot 10^{n-1}\), with equality only when \(x\) is a one-digit integer. Therefore the product of the digits of \(x\) is always at most \(x\), with equality only when \(x\) is a base-10 digit. This implies that \(x^2-10x-22\leq x\), so \(x^2-11x-22\leq 0\). Every natural number from 1 to 12 satisfies this inequality, so we only need to check these possibilities. It is easy to rule out 1 through 11, since \(x^2-10x-22<0\) for those values. However, \(12^2-10\cdot 12-22=2\), which is the product of the digits of 12. Therefore \(\boxed{12}\) is the only natural number with the desired properties. \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. It is pretty obvious that \(x\) cannot be three digits or more, because then \(x^2 - 10x - 22\) is way too big.
+Write \(x = 10a + b\) where \(a\) and \(b\) are digits satisfying \(0 \leq a, b < 10\). Then, we can use SFFT:
+\((10a + b)^2 - 10(10a + b) - 22 = ab\)
+\((10a + b)^2 - 10(10a + b) - 24 = ab - 2\)
+\((10a + b + 2)(10a + b - 12) = ab - 2.\)
+We have
+\((10a + b + 2)(10a + b - 12) \geq (10a + 2)(10a - 12) = 100a^2 - 100a + 24 = 100(a^2 - a) + 24.\)
+It is therefore clear that \(a\) must be either \(0\) or \(1\). We can then split into two cases:
+\(\mathbf{a = 0:}\)
+We have \((b + 2)(b - 12) = -2\) or \(b^2 - 10b - 22 = 0\), which is only satisfied when \(b = -2\) or \(12\).
+\(\mathbf{a = 1:}\)
+We have \((b + 12)(b - 2) = b - 2\). This is only satisfied when \(b = 2\), or \(b + 12 = 0\). Therefore, \(b = 2\), and so \(x = \boxed{12}.\square\)","We analyze the equation by treating it as a quadratic in the units digit \( b \) after expressing \( x \) as \( 10a + b \), where \( a \) and \( b \) are digits with \( a \geq 1 \). 
+
+1. **Equation Setup:**
+   \(
+   ab = (10a + b)^2 - 10(10a + b) - 22
+   \)
+   Expanding and rearranging terms yields:
+   \(
+   b^2 + (19a - 10)b + 100a^2 - 100a - 22 = 0
+   \)
+   
+2. **Discriminant Analysis:**
+   The discriminant \( D \) of this quadratic in \( b \) is:
+   \(
+   D = (19a - 10)^2 - 4(100a^2 - 100a - 22) = -39a^2 + 20a + 188
+   \)
+   For \( b \) to be an integer digit (\( 0 \leq b \leq 9 \)), \( D \geq 0 \). Solving \( -39a^2 + 20a + 188 \geq 0 \) shows \( a \) can only be \( 1 \) or \( 2 \).
+
+3. **Case for \( a = 1 \):**
+   Substituting \( a = 1 \), the discriminant simplifies to \( 169 \), giving \( b = 2 \). Thus, \( x = 12 \), which satisfies the original equation:
+   \(
+   1 \cdot 2 = 12^2 - 10 \cdot 12 - 22 \quad \Rightarrow \quad 2 = 2
+   \)
+
+4. **Case for \( a = 2 \):**
+   The discriminant yields no valid \( b \), so no solution here.
+
+Hence, the only solution is \(\boxed{12}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3VMHWJRYIEW3DJKIEANFW9SBVGWXF9","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3WMOAN2SRVDQK6QY2MBC4DZEX86VNE","AKERE2HC8Y7H4","Approved","Sat Nov 01 11:57:34 PDT 2025","Sat Nov 01 11:57:54 PDT 2025","Tue Nov 04 10:57:54 PST 2025","Tue Nov 04 10:58:49 PST 2025","","","20","100% (50/50)","100% (48/48)","0% (0/0)","1968_IMO_Problems_2","Find all natural numbers \(x\) such that the product of their digits (in decimal notation) is equal to \(x^2 - 10x - 22\).","Solution 1. Let the decimal expansion of \(x\) be \(\overline{d_1d_2d_3\dots d_n}\), where \(d_i\) are base-10 digits. We then have that \(x\geq d_1\cdot 10^{n-1}\). However, the product of the digits of \(x\) is \(d_1d_2d_3\dots d_n\leq d_1\cdot 10\cdot 10\dots 10=d_1\cdot 10^{n-1}\), with equality only when \(x\) is a one-digit integer. Therefore the product of the digits of \(x\) is always at most \(x\), with equality only when \(x\) is a base-10 digit. This implies that \(x^2-10x-22\leq x\), so \(x^2-11x-22\leq 0\). Every natural number from 1 to 12 satisfies this inequality, so we only need to check these possibilities. It is easy to rule out 1 through 11, since \(x^2-10x-22<0\) for those values. However, \(12^2-10\cdot 12-22=2\), which is the product of the digits of 12. Therefore \(\boxed{12}\) is the only natural number with the desired properties. \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. It is pretty obvious that \(x\) cannot be three digits or more, because then \(x^2 - 10x - 22\) is way too big.
+Write \(x = 10a + b\) where \(a\) and \(b\) are digits satisfying \(0 \leq a, b < 10\). Then, we can use SFFT:
+\((10a + b)^2 - 10(10a + b) - 22 = ab\)
+\((10a + b)^2 - 10(10a + b) - 24 = ab - 2\)
+\((10a + b + 2)(10a + b - 12) = ab - 2.\)
+We have
+\((10a + b + 2)(10a + b - 12) \geq (10a + 2)(10a - 12) = 100a^2 - 100a + 24 = 100(a^2 - a) + 24.\)
+It is therefore clear that \(a\) must be either \(0\) or \(1\). We can then split into two cases:
+\(\mathbf{a = 0:}\)
+We have \((b + 2)(b - 12) = -2\) or \(b^2 - 10b - 22 = 0\), which is only satisfied when \(b = -2\) or \(12\).
+\(\mathbf{a = 1:}\)
+We have \((b + 12)(b - 2) = b - 2\). This is only satisfied when \(b = 2\), or \(b + 12 = 0\). Therefore, \(b = 2\), and so \(x = \boxed{12}.\square\)","We analyze the equation by treating it as a quadratic in the units digit \( b \) after expressing \( x \) as \( 10a + b \), where \( a \) and \( b \) are digits with \( a \geq 1 \). 
+
+1. **Equation Setup:**
+   \(
+   ab = (10a + b)^2 - 10(10a + b) - 22
+   \)
+   Expanding and rearranging terms yields:
+   \(
+   b^2 + (19a - 10)b + 100a^2 - 100a - 22 = 0
+   \)
+   
+2. **Discriminant Analysis:**
+   The discriminant \( D \) of this quadratic in \( b \) is:
+   \(
+   D = (19a - 10)^2 - 4(100a^2 - 100a - 22) = -39a^2 + 20a + 188
+   \)
+   For \( b \) to be an integer digit (\( 0 \leq b \leq 9 \)), \( D \geq 0 \). Solving \( -39a^2 + 20a + 188 \geq 0 \) shows \( a \) can only be \( 1 \) or \( 2 \).
+
+3. **Case for \( a = 1 \):**
+   Substituting \( a = 1 \), the discriminant simplifies to \( 169 \), giving \( b = 2 \). Thus, \( x = 12 \), which satisfies the original equation:
+   \(
+   1 \cdot 2 = 12^2 - 10 \cdot 12 - 22 \quad \Rightarrow \quad 2 = 2
+   \)
+
+4. **Case for \( a = 2 \):**
+   The discriminant yields no valid \( b \), so no solution here.
+
+Hence, the only solution is \(\boxed{12}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3QXFBUZ403WHAFMIKPIAUNTJ2DFGUZ","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3E47SOBEYAC27W97EP3F9DF8Q2SCIC","A189Q7EDEDSQ34","Approved","Sat Oct 25 15:04:00 PDT 2025","Sat Oct 25 15:04:47 PDT 2025","Tue Oct 28 15:04:47 PDT 2025","Tue Oct 28 15:04:49 PDT 2025","","","47","100% (114/114)","100% (100/100)","100% (18/18)","2019_USAMO_Problems_4","Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).","Consider the sets along the main diagonal path from \( S_{1,0} \) to \( S_{n,0} \) and then to \( S_{n,n} \). Each step from \( S_{i,0} \) to \( S_{i+1,0} \) adds a new element, forming a sequence of distinct elements. Similarly, the path from \( S_{n,0} \) to \( S_{n,j} \) adds elements column-wise. This defines a permutation of the \( 2n \) elements. There are \( (2n)! \) permutations, each dictating the order in which elements are introduced along these paths.
+
+For each internal set \( S_{i,j} \) where \( i, j \geq 1 \), the element added must come from either the row predecessor \( S_{i,j-1} \) or the column predecessor \( S_{i-1,j} \). This choice is independent for each \( (i,j) \), leading to \( 2 \) options per position. The grid has \( n^2 \) such internal positions, contributing \( 2^{n^2} \) configurations.
+
+The total number of valid configurations is the product of permutations and binary choices:
+
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3QXFBUZ403WHAFMIKPIAUNTJ2DFGUZ","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3F1567XTNGLDQWQNFDYXGP5MBRFQ9L","ASQIP0BTUIBHO","Submitted","Tue Nov 11 00:57:04 PST 2025","Tue Nov 11 00:58:59 PST 2025","Fri Nov 14 00:58:59 PST 2025","","","","115","100% (125/125)","100% (63/63)","0% (0/0)","2019_USAMO_Problems_4","Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).","Consider the sets along the main diagonal path from \( S_{1,0} \) to \( S_{n,0} \) and then to \( S_{n,n} \). Each step from \( S_{i,0} \) to \( S_{i+1,0} \) adds a new element, forming a sequence of distinct elements. Similarly, the path from \( S_{n,0} \) to \( S_{n,j} \) adds elements column-wise. This defines a permutation of the \( 2n \) elements. There are \( (2n)! \) permutations, each dictating the order in which elements are introduced along these paths.
+
+For each internal set \( S_{i,j} \) where \( i, j \geq 1 \), the element added must come from either the row predecessor \( S_{i,j-1} \) or the column predecessor \( S_{i-1,j} \). This choice is independent for each \( (i,j) \), leading to \( 2 \) options per position. The grid has \( n^2 \) such internal positions, contributing \( 2^{n^2} \) configurations.
+
+The total number of valid configurations is the product of permutations and binary choices:
+
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3QXFBUZ403WHAFMIKPIAUNTJ2DFGUZ","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3QBD8R3Z2LZ98E7VJ5A2ACZ6AYF4OR","AKERE2HC8Y7H4","Approved","Sat Nov 01 12:35:46 PDT 2025","Sat Nov 01 12:36:00 PDT 2025","Tue Nov 04 11:36:00 PST 2025","Tue Nov 04 11:36:49 PST 2025","","","14","100% (50/50)","100% (48/48)","0% (0/0)","2019_USAMO_Problems_4","Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).","Consider the sets along the main diagonal path from \( S_{1,0} \) to \( S_{n,0} \) and then to \( S_{n,n} \). Each step from \( S_{i,0} \) to \( S_{i+1,0} \) adds a new element, forming a sequence of distinct elements. Similarly, the path from \( S_{n,0} \) to \( S_{n,j} \) adds elements column-wise. This defines a permutation of the \( 2n \) elements. There are \( (2n)! \) permutations, each dictating the order in which elements are introduced along these paths.
+
+For each internal set \( S_{i,j} \) where \( i, j \geq 1 \), the element added must come from either the row predecessor \( S_{i,j-1} \) or the column predecessor \( S_{i-1,j} \). This choice is independent for each \( (i,j) \), leading to \( 2 \) options per position. The grid has \( n^2 \) such internal positions, contributing \( 2^{n^2} \) configurations.
+
+The total number of valid configurations is the product of permutations and binary choices:
+
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3UAU495MJ1852S3G88VIZW2LTZ6OUU","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3HRMW88U1Q649N4INO8N65KOYMKM0E","AFA0H6QL832IJ","Approved","Tue Nov 04 14:35:28 PST 2025","Tue Nov 04 14:39:13 PST 2025","Fri Nov 07 14:39:13 PST 2025","Fri Nov 07 14:39:49 PST 2025","","","225","100% (21/21)","100% (21/21)","100% (21/21)","2019_USAMO_Problems_4","Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Let \(C_{j}\) represent the set of sets of the form \(S_{ij}\) for \(1 \le i \le n\), \(a_{ij}\) denote \(S_{(i+1)j} \backslash S_{ij}\), and \(b_{ij} = S_{i(j+1)} \backslash S_{ij}\). Begin by considering \(C_0\) and \(S_{00} = \emptyset\). Then  given \(S_{i0}\) we can create \(S_{(i+1)0}\) by adding one element (\(a_{i0}\)). Using this, the number of ways to form the sequence of \(S_{00}, S_{10}, \dots, S_{n0}\) are \((2n)(2n-1) \cdots (n+1)\) where we successively add one of the remaining elements of \([2n]\) to get consecutive terms in the sequence.
+Now consider when we are given \(C_{j}\) and we need to find \(C_{j+1}\). So far, there have been \(n + j\) chosen distinct elements (via \(S_{nj}\)). After finding \(C_{j+1}\) we will have \(n + j + 1\) distinct elements and so in this process we only add one unique element to sets among \(C_{j+1}\). There are \(2n - (n+j) = n-j\) ways to chose such a new element called \(x\).
+Now notice that \(b_{0j}, a_{0(j+1)}, a_{1(j+1)}, \dots, a_{(n-1)(j+1)}\) is a permutation of \(x,  a_{0j}, \dots, a_{(n-1)j}\) by noting \(b_{nj} = x\) and,
+\(S_{0j} + b_{0j} +  a_{0(j+1)} +  a_{1(j+1)} +  \cdots +  a_{(n-1)(j+1)} = S_{n(j+1)} = S_{0j} +  a_{0j}+ a_{1j} +  \cdots +  a_{(n-1)j} + b_{nj}\)
+Furthermore,
+\begin{align*} S_{0j} + b_{0j} + a_{0(j+1)} &= S_{1(j+1)} =  S_{0j} +  a_{0j} +  b_{1j} \\ S_{1j} + b_{1j} + a_{1(j+1)} &= S_{2(j+1)} = S_{1j} +  a_{1j} +  b_{2j} \\ &\cdots \\ S_{(n-1)j} + b_{(n-1)j} + a_{(n-1)(j+1)} &= S_{n(j+1)} =  S_{(n-1)j} +  a_{(n-1)j} +  b_{nj} . \end{align*}
+Therefore \(b_{ij}, a_{i(j+1)}\) is a permutation of \(a_{ij}, b_{(i+1)j}\) for \(i < n\). Now let \(k\) be the first \(i\) such that \(b_{ij} = x\). By definition, \(b_{(k+1)j}, \dots = x\). Then the number of ways to order \(x,  a_{0j}, \dots, a_{(n-1)j}\) is \(2^{k-1}\) as there are 2 permutations for each pair before \(\{b_{ij}, a_{i(j+1)}\} = \{a_{ij}, b_{(i+1)j}\}\) and each pair after is determined by \(b_{ij}= b_{(i+1)j} = k, a_{i(j+1)} = a_{ij}\). For \(k  = 0\), the permutation is completely determined so there is one way.
+Overall the number of ways to add the \(j+1\)'th row is, \((n-j)(1 + \sum_{k = 1}^n 2^{k-1}) = 2^n(n-j).\)
+In total, there are \((2n)(2n-1)\cdots (n+1)\) ways to find \(C_0\) and for each \(C_{j}\) there are \(2^n(n-j+1)\) ways for \(1 \le j \le n\). So the answer is, \(\frac{2n!}{n!}(2^nn)(2^{n}(n-1)) \cdots (2^{n}1) = \boxed{2^{n^2} \cdot (2n)!}.\)","To determine the number of valid configurations for the sets \( S_{i,j} \), we can decompose the problem into two independent combinatorial components:
+
+1. **Element Partitioning and Ordering:**
+   - The sets along the first column (\( j=0 \)) and first row (\( i=0 \)) require \( n \) distinct elements each. There are \( \binom{2n}{n} \) ways to partition the \( 2n \) elements into these two groups. Each group can be ordered in \( n! \) ways, yielding \( \binom{2n}{n} \cdot n! \cdot n! = (2n)! \) configurations.
+
+2. **Binary Choices for Internal Grid:**
+   - For each remaining cell \( (i,j) \) (\( 1 \leq i,j \leq n \)), the set \( S_{i,j} \) is formed by adding one element not present in \( S_{i-1,j} \) or \( S_{i,j-1} \). However, due to the inclusion constraints, each such addition corresponds to a binary choice between two valid options, independent of other cells. This contributes \( 2^{n^2} \) possibilities.
+
+Multiplying these components gives the final result:
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","false","true","true","false"
+"3UAU495MJ1852S3G88VIZW2LTZ6OUU","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3N2BF7Y2VAAFKNAELWF8CXJ5K3HHM6","A189Q7EDEDSQ34","Approved","Sat Oct 25 14:14:51 PDT 2025","Sat Oct 25 14:19:28 PDT 2025","Tue Oct 28 14:19:28 PDT 2025","Tue Oct 28 14:19:49 PDT 2025","","","277","100% (114/114)","100% (100/100)","100% (18/18)","2019_USAMO_Problems_4","Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Let \(C_{j}\) represent the set of sets of the form \(S_{ij}\) for \(1 \le i \le n\), \(a_{ij}\) denote \(S_{(i+1)j} \backslash S_{ij}\), and \(b_{ij} = S_{i(j+1)} \backslash S_{ij}\). Begin by considering \(C_0\) and \(S_{00} = \emptyset\). Then  given \(S_{i0}\) we can create \(S_{(i+1)0}\) by adding one element (\(a_{i0}\)). Using this, the number of ways to form the sequence of \(S_{00}, S_{10}, \dots, S_{n0}\) are \((2n)(2n-1) \cdots (n+1)\) where we successively add one of the remaining elements of \([2n]\) to get consecutive terms in the sequence.
+Now consider when we are given \(C_{j}\) and we need to find \(C_{j+1}\). So far, there have been \(n + j\) chosen distinct elements (via \(S_{nj}\)). After finding \(C_{j+1}\) we will have \(n + j + 1\) distinct elements and so in this process we only add one unique element to sets among \(C_{j+1}\). There are \(2n - (n+j) = n-j\) ways to chose such a new element called \(x\).
+Now notice that \(b_{0j}, a_{0(j+1)}, a_{1(j+1)}, \dots, a_{(n-1)(j+1)}\) is a permutation of \(x,  a_{0j}, \dots, a_{(n-1)j}\) by noting \(b_{nj} = x\) and,
+\(S_{0j} + b_{0j} +  a_{0(j+1)} +  a_{1(j+1)} +  \cdots +  a_{(n-1)(j+1)} = S_{n(j+1)} = S_{0j} +  a_{0j}+ a_{1j} +  \cdots +  a_{(n-1)j} + b_{nj}\)
+Furthermore,
+\begin{align*} S_{0j} + b_{0j} + a_{0(j+1)} &= S_{1(j+1)} =  S_{0j} +  a_{0j} +  b_{1j} \\ S_{1j} + b_{1j} + a_{1(j+1)} &= S_{2(j+1)} = S_{1j} +  a_{1j} +  b_{2j} \\ &\cdots \\ S_{(n-1)j} + b_{(n-1)j} + a_{(n-1)(j+1)} &= S_{n(j+1)} =  S_{(n-1)j} +  a_{(n-1)j} +  b_{nj} . \end{align*}
+Therefore \(b_{ij}, a_{i(j+1)}\) is a permutation of \(a_{ij}, b_{(i+1)j}\) for \(i < n\). Now let \(k\) be the first \(i\) such that \(b_{ij} = x\). By definition, \(b_{(k+1)j}, \dots = x\). Then the number of ways to order \(x,  a_{0j}, \dots, a_{(n-1)j}\) is \(2^{k-1}\) as there are 2 permutations for each pair before \(\{b_{ij}, a_{i(j+1)}\} = \{a_{ij}, b_{(i+1)j}\}\) and each pair after is determined by \(b_{ij}= b_{(i+1)j} = k, a_{i(j+1)} = a_{ij}\). For \(k  = 0\), the permutation is completely determined so there is one way.
+Overall the number of ways to add the \(j+1\)'th row is, \((n-j)(1 + \sum_{k = 1}^n 2^{k-1}) = 2^n(n-j).\)
+In total, there are \((2n)(2n-1)\cdots (n+1)\) ways to find \(C_0\) and for each \(C_{j}\) there are \(2^n(n-j+1)\) ways for \(1 \le j \le n\). So the answer is, \(\frac{2n!}{n!}(2^nn)(2^{n}(n-1)) \cdots (2^{n}1) = \boxed{2^{n^2} \cdot (2n)!}.\)","To determine the number of valid configurations for the sets \( S_{i,j} \), we can decompose the problem into two independent combinatorial components:
+
+1. **Element Partitioning and Ordering:**
+   - The sets along the first column (\( j=0 \)) and first row (\( i=0 \)) require \( n \) distinct elements each. There are \( \binom{2n}{n} \) ways to partition the \( 2n \) elements into these two groups. Each group can be ordered in \( n! \) ways, yielding \( \binom{2n}{n} \cdot n! \cdot n! = (2n)! \) configurations.
+
+2. **Binary Choices for Internal Grid:**
+   - For each remaining cell \( (i,j) \) (\( 1 \leq i,j \leq n \)), the set \( S_{i,j} \) is formed by adding one element not present in \( S_{i-1,j} \) or \( S_{i,j-1} \). However, due to the inclusion constraints, each such addition corresponds to a binary choice between two valid options, independent of other cells. This contributes \( 2^{n^2} \) possibilities.
+
+Multiplying these components gives the final result:
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3UAU495MJ1852S3G88VIZW2LTZ6OUU","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3TK8OJTYML1QNR2BI1O48249XN7VPA","AKERE2HC8Y7H4","Approved","Sat Nov 01 12:24:11 PDT 2025","Sat Nov 01 12:24:49 PDT 2025","Tue Nov 04 11:24:49 PST 2025","Tue Nov 04 11:25:49 PST 2025","","","38","100% (50/50)","100% (48/48)","0% (0/0)","2019_USAMO_Problems_4","Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Let \(C_{j}\) represent the set of sets of the form \(S_{ij}\) for \(1 \le i \le n\), \(a_{ij}\) denote \(S_{(i+1)j} \backslash S_{ij}\), and \(b_{ij} = S_{i(j+1)} \backslash S_{ij}\). Begin by considering \(C_0\) and \(S_{00} = \emptyset\). Then  given \(S_{i0}\) we can create \(S_{(i+1)0}\) by adding one element (\(a_{i0}\)). Using this, the number of ways to form the sequence of \(S_{00}, S_{10}, \dots, S_{n0}\) are \((2n)(2n-1) \cdots (n+1)\) where we successively add one of the remaining elements of \([2n]\) to get consecutive terms in the sequence.
+Now consider when we are given \(C_{j}\) and we need to find \(C_{j+1}\). So far, there have been \(n + j\) chosen distinct elements (via \(S_{nj}\)). After finding \(C_{j+1}\) we will have \(n + j + 1\) distinct elements and so in this process we only add one unique element to sets among \(C_{j+1}\). There are \(2n - (n+j) = n-j\) ways to chose such a new element called \(x\).
+Now notice that \(b_{0j}, a_{0(j+1)}, a_{1(j+1)}, \dots, a_{(n-1)(j+1)}\) is a permutation of \(x,  a_{0j}, \dots, a_{(n-1)j}\) by noting \(b_{nj} = x\) and,
+\(S_{0j} + b_{0j} +  a_{0(j+1)} +  a_{1(j+1)} +  \cdots +  a_{(n-1)(j+1)} = S_{n(j+1)} = S_{0j} +  a_{0j}+ a_{1j} +  \cdots +  a_{(n-1)j} + b_{nj}\)
+Furthermore,
+\begin{align*} S_{0j} + b_{0j} + a_{0(j+1)} &= S_{1(j+1)} =  S_{0j} +  a_{0j} +  b_{1j} \\ S_{1j} + b_{1j} + a_{1(j+1)} &= S_{2(j+1)} = S_{1j} +  a_{1j} +  b_{2j} \\ &\cdots \\ S_{(n-1)j} + b_{(n-1)j} + a_{(n-1)(j+1)} &= S_{n(j+1)} =  S_{(n-1)j} +  a_{(n-1)j} +  b_{nj} . \end{align*}
+Therefore \(b_{ij}, a_{i(j+1)}\) is a permutation of \(a_{ij}, b_{(i+1)j}\) for \(i < n\). Now let \(k\) be the first \(i\) such that \(b_{ij} = x\). By definition, \(b_{(k+1)j}, \dots = x\). Then the number of ways to order \(x,  a_{0j}, \dots, a_{(n-1)j}\) is \(2^{k-1}\) as there are 2 permutations for each pair before \(\{b_{ij}, a_{i(j+1)}\} = \{a_{ij}, b_{(i+1)j}\}\) and each pair after is determined by \(b_{ij}= b_{(i+1)j} = k, a_{i(j+1)} = a_{ij}\). For \(k  = 0\), the permutation is completely determined so there is one way.
+Overall the number of ways to add the \(j+1\)'th row is, \((n-j)(1 + \sum_{k = 1}^n 2^{k-1}) = 2^n(n-j).\)
+In total, there are \((2n)(2n-1)\cdots (n+1)\) ways to find \(C_0\) and for each \(C_{j}\) there are \(2^n(n-j+1)\) ways for \(1 \le j \le n\). So the answer is, \(\frac{2n!}{n!}(2^nn)(2^{n}(n-1)) \cdots (2^{n}1) = \boxed{2^{n^2} \cdot (2n)!}.\)","To determine the number of valid configurations for the sets \( S_{i,j} \), we can decompose the problem into two independent combinatorial components:
+
+1. **Element Partitioning and Ordering:**
+   - The sets along the first column (\( j=0 \)) and first row (\( i=0 \)) require \( n \) distinct elements each. There are \( \binom{2n}{n} \) ways to partition the \( 2n \) elements into these two groups. Each group can be ordered in \( n! \) ways, yielding \( \binom{2n}{n} \cdot n! \cdot n! = (2n)! \) configurations.
+
+2. **Binary Choices for Internal Grid:**
+   - For each remaining cell \( (i,j) \) (\( 1 \leq i,j \leq n \)), the set \( S_{i,j} \) is formed by adding one element not present in \( S_{i-1,j} \) or \( S_{i,j-1} \). However, due to the inclusion constraints, each such addition corresponds to a binary choice between two valid options, independent of other cells. This contributes \( 2^{n^2} \) possibilities.
+
+Multiplying these components gives the final result:
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3ZZAYRN1JP7Q2FOR8358U0GJALZOT3","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3H7XDTSHKW7XP39H5S3D0V9V35RWGM","ASQIP0BTUIBHO","Submitted","Tue Nov 11 00:32:08 PST 2025","Tue Nov 11 00:33:01 PST 2025","Fri Nov 14 00:33:01 PST 2025","","","","53","100% (125/125)","100% (63/63)","0% (0/0)","1996_USAMO_Problems_6","Determine (with proof) whether there is a subset \(X\) of the integers with the following property: for any integer \(n\) there is exactly one solution of \(a + 2b = n\) with \(a,b \in X\).","Solution 1. Start with an incomplete subset \(S = (S_1, S_2, S_3, ... S_m)\), such that for any integer n, there is exactly zero or one solutions to \(a + 2b = n\) with \(a,b \in S\). Let \(N\) be the smallest integer such that for any \(S_i\), \(|S_i| < N\). Note that \(|S_i+2S_j| < 3N\) for any \(S_i\) and \(S_j\)
+
+Suppose \(M\) is the smallest non-negative integer without a solution in \(S\) yet. Clearly, \(0 \le M \le 3N\). Generate \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} = -10N - M\), and \(S_{m+2} = 5N + M\). Thus, we now have the solution \(S_{m+1}+2S_{m+2} = M\).
+
+
+Now, we must prove that the addition of these two terms to \(S\) does not result in an integer n that has two solutions. Of course, \(S_{m+1} + 2S_{m+2} = M\) which previously had no solutions. Furthermore, \(S_{m+1} + 2S_{m+2} = -15N - M\).
+Since all of these sums (other than \(M\)) are either greater than \(3N\) or less than \(-3N\), they are all sums that previously had no solutions. Furthermore, none of these sums are duplicated, as sums of different forms are contained in disjoint ranges of integers.
+Thus, we have proved that we can generate a subset \(S\) such that all non-negative integers n have a unique solution \(a + 2b = n\).
+
+For negative integers M that have no solutions in \(S\) a similar proof holds, but instead generating the terms \(S_{m+1} = 10N - M\) and \(S_{m+2} = -5N + M\).
+
+For any integer M that currently has no solution in S, we can always add two terms \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} + 2S_{m+2} = M\) that do not result in duplicated sums.
+Thus, there does exist a subset \(X\) of the integers such that for any integer \(n\) there is exactly one solution to \(a + 2b = n\) with \(a, b \in X\).","We construct the subset \( X \) as the set of all integers that can be represented using only the digits \( 0 \) and \( 1 \) in base \( 3 \). Formally, \( X = \left\{ \sum_{k=0}^\infty a_k 3^k \,\big|\, a_k \in \{0,1\} \right\} \). 
+
+1. **Base-3 Representation:** Every integer \( n \) has a unique base-3 expansion \( n = \sum_{k=0}^\infty d_k 3^k \), where \( d_k \in \{0,1,2\} \).
+
+2. **Digit-wise Decomposition:** For each digit \( d_k \) in \( n \)'s base-3 expansion, decompose \( d_k \) into \( a_k + 2b_k \), where \( a_k, b_k \in \{0,1\} \):
+   - If \( d_k = 0 \): \( a_k = 0, b_k = 0 \).
+   - If \( d_k = 1 \): \( a_k = 1, b_k = 0 \).
+   - If \( d_k = 2 \): \( a_k = 0, b_k = 1 \).
+
+3. **Construct \( a \) and \( b \):** Define \( a = \sum_{k=0}^\infty a_k 3^k \) and \( b = \sum_{k=0}^\infty b_k 3^k \). By construction, \( a, b \in X \), and \( n = a + 2b \).
+
+4. **Uniqueness:** The decomposition \( d_k = a_k + 2b_k \) is uniquely determined for each digit \( d_k \). Since base-3 expansions are unique, the pairs \( (a_k, b_k) \) are uniquely determined for all \( k \). Thus, \( a \) and \( b \) are unique elements of \( X \) satisfying \( n = a + 2b \).
+
+The set \( X \) exists and satisfies the required property.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3ZZAYRN1JP7Q2FOR8358U0GJALZOT3","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3OHYZ19UGWLOA3NCS6KTNFL628BOAM","AFA0H6QL832IJ","Approved","Tue Nov 04 14:16:04 PST 2025","Tue Nov 04 14:20:32 PST 2025","Fri Nov 07 14:20:32 PST 2025","Fri Nov 07 14:20:49 PST 2025","","","268","100% (21/21)","100% (21/21)","100% (21/21)","1996_USAMO_Problems_6","Determine (with proof) whether there is a subset \(X\) of the integers with the following property: for any integer \(n\) there is exactly one solution of \(a + 2b = n\) with \(a,b \in X\).","Solution 1. Start with an incomplete subset \(S = (S_1, S_2, S_3, ... S_m)\), such that for any integer n, there is exactly zero or one solutions to \(a + 2b = n\) with \(a,b \in S\). Let \(N\) be the smallest integer such that for any \(S_i\), \(|S_i| < N\). Note that \(|S_i+2S_j| < 3N\) for any \(S_i\) and \(S_j\)
+
+Suppose \(M\) is the smallest non-negative integer without a solution in \(S\) yet. Clearly, \(0 \le M \le 3N\). Generate \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} = -10N - M\), and \(S_{m+2} = 5N + M\). Thus, we now have the solution \(S_{m+1}+2S_{m+2} = M\).
+
+
+Now, we must prove that the addition of these two terms to \(S\) does not result in an integer n that has two solutions. Of course, \(S_{m+1} + 2S_{m+2} = M\) which previously had no solutions. Furthermore, \(S_{m+1} + 2S_{m+2} = -15N - M\).
+Since all of these sums (other than \(M\)) are either greater than \(3N\) or less than \(-3N\), they are all sums that previously had no solutions. Furthermore, none of these sums are duplicated, as sums of different forms are contained in disjoint ranges of integers.
+Thus, we have proved that we can generate a subset \(S\) such that all non-negative integers n have a unique solution \(a + 2b = n\).
+
+For negative integers M that have no solutions in \(S\) a similar proof holds, but instead generating the terms \(S_{m+1} = 10N - M\) and \(S_{m+2} = -5N + M\).
+
+For any integer M that currently has no solution in S, we can always add two terms \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} + 2S_{m+2} = M\) that do not result in duplicated sums.
+Thus, there does exist a subset \(X\) of the integers such that for any integer \(n\) there is exactly one solution to \(a + 2b = n\) with \(a, b \in X\).","We construct the subset \( X \) as the set of all integers that can be represented using only the digits \( 0 \) and \( 1 \) in base \( 3 \). Formally, \( X = \left\{ \sum_{k=0}^\infty a_k 3^k \,\big|\, a_k \in \{0,1\} \right\} \). 
+
+1. **Base-3 Representation:** Every integer \( n \) has a unique base-3 expansion \( n = \sum_{k=0}^\infty d_k 3^k \), where \( d_k \in \{0,1,2\} \).
+
+2. **Digit-wise Decomposition:** For each digit \( d_k \) in \( n \)'s base-3 expansion, decompose \( d_k \) into \( a_k + 2b_k \), where \( a_k, b_k \in \{0,1\} \):
+   - If \( d_k = 0 \): \( a_k = 0, b_k = 0 \).
+   - If \( d_k = 1 \): \( a_k = 1, b_k = 0 \).
+   - If \( d_k = 2 \): \( a_k = 0, b_k = 1 \).
+
+3. **Construct \( a \) and \( b \):** Define \( a = \sum_{k=0}^\infty a_k 3^k \) and \( b = \sum_{k=0}^\infty b_k 3^k \). By construction, \( a, b \in X \), and \( n = a + 2b \).
+
+4. **Uniqueness:** The decomposition \( d_k = a_k + 2b_k \) is uniquely determined for each digit \( d_k \). Since base-3 expansions are unique, the pairs \( (a_k, b_k) \) are uniquely determined for all \( k \). Thus, \( a \) and \( b \) are unique elements of \( X \) satisfying \( n = a + 2b \).
+
+The set \( X \) exists and satisfies the required property.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","false","true","false","true"
+"3ZZAYRN1JP7Q2FOR8358U0GJALZOT3","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:21 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3TE3O8573KO22DKO7J8IBS7D17Y2RX","A189Q7EDEDSQ34","Approved","Sat Oct 25 14:21:42 PDT 2025","Sat Oct 25 14:23:29 PDT 2025","Tue Oct 28 14:23:29 PDT 2025","Tue Oct 28 14:23:49 PDT 2025","","","107","100% (114/114)","100% (100/100)","100% (18/18)","1996_USAMO_Problems_6","Determine (with proof) whether there is a subset \(X\) of the integers with the following property: for any integer \(n\) there is exactly one solution of \(a + 2b = n\) with \(a,b \in X\).","Solution 1. Start with an incomplete subset \(S = (S_1, S_2, S_3, ... S_m)\), such that for any integer n, there is exactly zero or one solutions to \(a + 2b = n\) with \(a,b \in S\). Let \(N\) be the smallest integer such that for any \(S_i\), \(|S_i| < N\). Note that \(|S_i+2S_j| < 3N\) for any \(S_i\) and \(S_j\)
+
+Suppose \(M\) is the smallest non-negative integer without a solution in \(S\) yet. Clearly, \(0 \le M \le 3N\). Generate \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} = -10N - M\), and \(S_{m+2} = 5N + M\). Thus, we now have the solution \(S_{m+1}+2S_{m+2} = M\).
+
+
+Now, we must prove that the addition of these two terms to \(S\) does not result in an integer n that has two solutions. Of course, \(S_{m+1} + 2S_{m+2} = M\) which previously had no solutions. Furthermore, \(S_{m+1} + 2S_{m+2} = -15N - M\).
+Since all of these sums (other than \(M\)) are either greater than \(3N\) or less than \(-3N\), they are all sums that previously had no solutions. Furthermore, none of these sums are duplicated, as sums of different forms are contained in disjoint ranges of integers.
+Thus, we have proved that we can generate a subset \(S\) such that all non-negative integers n have a unique solution \(a + 2b = n\).
+
+For negative integers M that have no solutions in \(S\) a similar proof holds, but instead generating the terms \(S_{m+1} = 10N - M\) and \(S_{m+2} = -5N + M\).
+
+For any integer M that currently has no solution in S, we can always add two terms \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} + 2S_{m+2} = M\) that do not result in duplicated sums.
+Thus, there does exist a subset \(X\) of the integers such that for any integer \(n\) there is exactly one solution to \(a + 2b = n\) with \(a, b \in X\).","We construct the subset \( X \) as the set of all integers that can be represented using only the digits \( 0 \) and \( 1 \) in base \( 3 \). Formally, \( X = \left\{ \sum_{k=0}^\infty a_k 3^k \,\big|\, a_k \in \{0,1\} \right\} \). 
+
+1. **Base-3 Representation:** Every integer \( n \) has a unique base-3 expansion \( n = \sum_{k=0}^\infty d_k 3^k \), where \( d_k \in \{0,1,2\} \).
+
+2. **Digit-wise Decomposition:** For each digit \( d_k \) in \( n \)'s base-3 expansion, decompose \( d_k \) into \( a_k + 2b_k \), where \( a_k, b_k \in \{0,1\} \):
+   - If \( d_k = 0 \): \( a_k = 0, b_k = 0 \).
+   - If \( d_k = 1 \): \( a_k = 1, b_k = 0 \).
+   - If \( d_k = 2 \): \( a_k = 0, b_k = 1 \).
+
+3. **Construct \( a \) and \( b \):** Define \( a = \sum_{k=0}^\infty a_k 3^k \) and \( b = \sum_{k=0}^\infty b_k 3^k \). By construction, \( a, b \in X \), and \( n = a + 2b \).
+
+4. **Uniqueness:** The decomposition \( d_k = a_k + 2b_k \) is uniquely determined for each digit \( d_k \). Since base-3 expansions are unique, the pairs \( (a_k, b_k) \) are uniquely determined for all \( k \). Thus, \( a \) and \( b \) are unique elements of \( X \) satisfying \( n = a + 2b \).
+
+The set \( X \) exists and satisfies the required property.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3R5LWXWHSJO9RJGDPUTXEUSNWVWXG8","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","34BBWHLWHURBLUFCVG3GL7MBIIFIWW","A189Q7EDEDSQ34","Approved","Sun Nov 02 19:21:18 PST 2025","Sun Nov 02 19:30:15 PST 2025","Wed Nov 05 19:30:15 PST 2025","Wed Nov 05 19:30:49 PST 2025","","","537","100% (114/114)","100% (100/100)","100% (18/18)","2021_USAMO_Problems_6","Let \(ABCDEF\) be a convex hexagon satisfying \(\overline{AB} \parallel \overline{DE}\), \(\overline{BC} \parallel \overline{EF}\), \(\overline{CD} \parallel \overline{FA}\), and\(AB \cdot DE = BC \cdot EF = CD \cdot FA.\)Let \(X\), \(Y\), and \(Z\) be the midpoints of \(\overline{AD}\), \(\overline{BE}\), and \(\overline{CF}\). Prove that the circumcenter of \(\triangle ACE\), the circumcenter of \(\triangle BDF\), and the orthocenter of \(\triangle XYZ\) are collinear.","Solution 1. Let \(M_1\), \(M_2\), and \(M_3\) be the midpoints of \(CE\), \(AE\), \(AC\) and \(N_1\), \(N_2\), and \(N_3\) be the midpoints of \(DF\), \(BF\), and \(BD\). Also, let \(H\) be the orthocenter of \(XYZ\). Note that we can use parallel sides to see that \(X\), \(Z\), and \(M_3\) are collinear. Thus we have \(\text{Pow}(M_3,(XYZ)) = M_3Z \cdot M_3X = \frac 14 AB \cdot DE\) by midlines. Applying this argument cyclically, and noting the condition \(AB \cdot DE = BC \cdot EF = CD \cdot FA\), \(M_1\), \(M_2\), \(M_3\), \(N_1\), \(N_2\), \(N_3\) all lie on a circle concentric with \((XYZ)\). 
+Next, realize that basic orthocenter properties imply that the circumcenter \(O_1\) of \((ACE)\) is the orthocenter of \(\triangle M_1M_2M_3\), and likewise the circumcenter \(O_2\) of \((BDF)\) is the orthocenter of \(\triangle N_1N_2N_3\).
+The rest is just complex numbers; toss on the complex plane so that the circumcenter of \(\triangle XYZ\) is the origin. Then we have \(o_1 = m_1+m_2+m_3 = (c+e)/2+(a+e)/2+(a+c)/2=a+c+e\) \(o_2 = n_1+n_2+n_3 = (b+d)/2+(d+f)/2+(b+f)/2=b+d+f\) \(h = x+y+z = (a+d)/2+(b+e)/2+(c+f)/2=(a+b+c+d+e+f)/2.\)
+Note that from the above we have \(h=\frac{o_1+o_2}{2}\), so \(H\) is the midpoint of segment \(O_1O_2\). In particular, \(H\), \(O_1\), and \(O_2\) are collinear, as required.","Place the circumcenter of triangle \( \triangle XYZ \) at the origin of the coordinate system. Let the position vectors of points \( A, B, C, D, E, F \) be \( \vec{a}, \vec{b}, \vec{c}, \vec{d}, \vec{e}, \vec{f} \). The midpoints \( X, Y, Z \) have position vectors:
+\(
+\vec{x} = \frac{\vec{a} + \vec{d}}{2}, \quad \vec{y} = \frac{\vec{b} + \vec{e}}{2}, \quad \vec{z} = \frac{\vec{c} + \vec{f}}{2}.
+\)
+The circumcenter \( O_1 \) of \( \triangle ACE \) is the intersection of the perpendicular bisectors of \( AC \) and \( CE \). Similarly, the circumcenter \( O_2 \) of \( \triangle BDF \) is found using the perpendicular bisectors of \( BD \) and \( DF \). Under the chosen coordinate system, leveraging the parallel conditions and the given product equalities, it can be shown that:
+\(
+\vec{O_1} = \vec{a} + \vec{c} + \vec{e}, \quad \vec{O_2} = \vec{b} + \vec{d} + \vec{f}.
+\)
+The orthocenter \( H \) of \( \triangle XYZ \) satisfies the vector relation:
+\(
+\vec{H} = \vec{x} + \vec{y} + \vec{z}.
+\)
+Substituting the midpoints:
+\(
+\vec{H} = \frac{\vec{a} + \vec{d}}{2} + \frac{\vec{b} + \vec{e}}{2} + \frac{\vec{c} + \vec{f}}{2} = \frac{\vec{a} + \vec{b} + \vec{c} + \vec{d} + \vec{e} + \vec{f}}{2}.
+\)
+Notice that:
+\(
+\vec{H} = \frac{\vec{O_1} + \vec{O_2}}{2}.
+\)
+This shows \( H \) is the midpoint of \( O_1O_2 \), implying \( H \), \( O_1 \), and \( O_2 \) are collinear on the line through \( O_1 \) and \( O_2 \).
+Thus, the circumcenters of \( \triangle ACE \) and \( \triangle BDF \), along with the orthocenter of \( \triangle XYZ \), lie on a straight line, proving their collinearity.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3R5LWXWHSJO9RJGDPUTXEUSNWVWXG8","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3OVR4I9US9ZCTQKBYI26ZHU6PZ1Q4P","ASQIP0BTUIBHO","Submitted","Tue Nov 11 00:48:45 PST 2025","Tue Nov 11 00:49:36 PST 2025","Fri Nov 14 00:49:36 PST 2025","","","","51","100% (125/125)","100% (63/63)","0% (0/0)","2021_USAMO_Problems_6","Let \(ABCDEF\) be a convex hexagon satisfying \(\overline{AB} \parallel \overline{DE}\), \(\overline{BC} \parallel \overline{EF}\), \(\overline{CD} \parallel \overline{FA}\), and\(AB \cdot DE = BC \cdot EF = CD \cdot FA.\)Let \(X\), \(Y\), and \(Z\) be the midpoints of \(\overline{AD}\), \(\overline{BE}\), and \(\overline{CF}\). Prove that the circumcenter of \(\triangle ACE\), the circumcenter of \(\triangle BDF\), and the orthocenter of \(\triangle XYZ\) are collinear.","Solution 1. Let \(M_1\), \(M_2\), and \(M_3\) be the midpoints of \(CE\), \(AE\), \(AC\) and \(N_1\), \(N_2\), and \(N_3\) be the midpoints of \(DF\), \(BF\), and \(BD\). Also, let \(H\) be the orthocenter of \(XYZ\). Note that we can use parallel sides to see that \(X\), \(Z\), and \(M_3\) are collinear. Thus we have \(\text{Pow}(M_3,(XYZ)) = M_3Z \cdot M_3X = \frac 14 AB \cdot DE\) by midlines. Applying this argument cyclically, and noting the condition \(AB \cdot DE = BC \cdot EF = CD \cdot FA\), \(M_1\), \(M_2\), \(M_3\), \(N_1\), \(N_2\), \(N_3\) all lie on a circle concentric with \((XYZ)\). 
+Next, realize that basic orthocenter properties imply that the circumcenter \(O_1\) of \((ACE)\) is the orthocenter of \(\triangle M_1M_2M_3\), and likewise the circumcenter \(O_2\) of \((BDF)\) is the orthocenter of \(\triangle N_1N_2N_3\).
+The rest is just complex numbers; toss on the complex plane so that the circumcenter of \(\triangle XYZ\) is the origin. Then we have \(o_1 = m_1+m_2+m_3 = (c+e)/2+(a+e)/2+(a+c)/2=a+c+e\) \(o_2 = n_1+n_2+n_3 = (b+d)/2+(d+f)/2+(b+f)/2=b+d+f\) \(h = x+y+z = (a+d)/2+(b+e)/2+(c+f)/2=(a+b+c+d+e+f)/2.\)
+Note that from the above we have \(h=\frac{o_1+o_2}{2}\), so \(H\) is the midpoint of segment \(O_1O_2\). In particular, \(H\), \(O_1\), and \(O_2\) are collinear, as required.","Place the circumcenter of triangle \( \triangle XYZ \) at the origin of the coordinate system. Let the position vectors of points \( A, B, C, D, E, F \) be \( \vec{a}, \vec{b}, \vec{c}, \vec{d}, \vec{e}, \vec{f} \). The midpoints \( X, Y, Z \) have position vectors:
+\(
+\vec{x} = \frac{\vec{a} + \vec{d}}{2}, \quad \vec{y} = \frac{\vec{b} + \vec{e}}{2}, \quad \vec{z} = \frac{\vec{c} + \vec{f}}{2}.
+\)
+The circumcenter \( O_1 \) of \( \triangle ACE \) is the intersection of the perpendicular bisectors of \( AC \) and \( CE \). Similarly, the circumcenter \( O_2 \) of \( \triangle BDF \) is found using the perpendicular bisectors of \( BD \) and \( DF \). Under the chosen coordinate system, leveraging the parallel conditions and the given product equalities, it can be shown that:
+\(
+\vec{O_1} = \vec{a} + \vec{c} + \vec{e}, \quad \vec{O_2} = \vec{b} + \vec{d} + \vec{f}.
+\)
+The orthocenter \( H \) of \( \triangle XYZ \) satisfies the vector relation:
+\(
+\vec{H} = \vec{x} + \vec{y} + \vec{z}.
+\)
+Substituting the midpoints:
+\(
+\vec{H} = \frac{\vec{a} + \vec{d}}{2} + \frac{\vec{b} + \vec{e}}{2} + \frac{\vec{c} + \vec{f}}{2} = \frac{\vec{a} + \vec{b} + \vec{c} + \vec{d} + \vec{e} + \vec{f}}{2}.
+\)
+Notice that:
+\(
+\vec{H} = \frac{\vec{O_1} + \vec{O_2}}{2}.
+\)
+This shows \( H \) is the midpoint of \( O_1O_2 \), implying \( H \), \( O_1 \), and \( O_2 \) are collinear on the line through \( O_1 \) and \( O_2 \).
+Thus, the circumcenters of \( \triangle ACE \) and \( \triangle BDF \), along with the orthocenter of \( \triangle XYZ \), lie on a straight line, proving their collinearity.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3R5LWXWHSJO9RJGDPUTXEUSNWVWXG8","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3Q8GYXHFE9IQV8ES75KLK4B3LGEC5U","AKERE2HC8Y7H4","Approved","Mon Oct 13 22:44:24 PDT 2025","Mon Oct 13 22:45:20 PDT 2025","Thu Oct 16 22:45:20 PDT 2025","Thu Oct 16 22:45:49 PDT 2025","","","56","100% (50/50)","100% (48/48)","0% (0/0)","2021_USAMO_Problems_6","Let \(ABCDEF\) be a convex hexagon satisfying \(\overline{AB} \parallel \overline{DE}\), \(\overline{BC} \parallel \overline{EF}\), \(\overline{CD} \parallel \overline{FA}\), and\(AB \cdot DE = BC \cdot EF = CD \cdot FA.\)Let \(X\), \(Y\), and \(Z\) be the midpoints of \(\overline{AD}\), \(\overline{BE}\), and \(\overline{CF}\). Prove that the circumcenter of \(\triangle ACE\), the circumcenter of \(\triangle BDF\), and the orthocenter of \(\triangle XYZ\) are collinear.","Solution 1. Let \(M_1\), \(M_2\), and \(M_3\) be the midpoints of \(CE\), \(AE\), \(AC\) and \(N_1\), \(N_2\), and \(N_3\) be the midpoints of \(DF\), \(BF\), and \(BD\). Also, let \(H\) be the orthocenter of \(XYZ\). Note that we can use parallel sides to see that \(X\), \(Z\), and \(M_3\) are collinear. Thus we have \(\text{Pow}(M_3,(XYZ)) = M_3Z \cdot M_3X = \frac 14 AB \cdot DE\) by midlines. Applying this argument cyclically, and noting the condition \(AB \cdot DE = BC \cdot EF = CD \cdot FA\), \(M_1\), \(M_2\), \(M_3\), \(N_1\), \(N_2\), \(N_3\) all lie on a circle concentric with \((XYZ)\). 
+Next, realize that basic orthocenter properties imply that the circumcenter \(O_1\) of \((ACE)\) is the orthocenter of \(\triangle M_1M_2M_3\), and likewise the circumcenter \(O_2\) of \((BDF)\) is the orthocenter of \(\triangle N_1N_2N_3\).
+The rest is just complex numbers; toss on the complex plane so that the circumcenter of \(\triangle XYZ\) is the origin. Then we have \(o_1 = m_1+m_2+m_3 = (c+e)/2+(a+e)/2+(a+c)/2=a+c+e\) \(o_2 = n_1+n_2+n_3 = (b+d)/2+(d+f)/2+(b+f)/2=b+d+f\) \(h = x+y+z = (a+d)/2+(b+e)/2+(c+f)/2=(a+b+c+d+e+f)/2.\)
+Note that from the above we have \(h=\frac{o_1+o_2}{2}\), so \(H\) is the midpoint of segment \(O_1O_2\). In particular, \(H\), \(O_1\), and \(O_2\) are collinear, as required.","Place the circumcenter of triangle \( \triangle XYZ \) at the origin of the coordinate system. Let the position vectors of points \( A, B, C, D, E, F \) be \( \vec{a}, \vec{b}, \vec{c}, \vec{d}, \vec{e}, \vec{f} \). The midpoints \( X, Y, Z \) have position vectors:
+\(
+\vec{x} = \frac{\vec{a} + \vec{d}}{2}, \quad \vec{y} = \frac{\vec{b} + \vec{e}}{2}, \quad \vec{z} = \frac{\vec{c} + \vec{f}}{2}.
+\)
+The circumcenter \( O_1 \) of \( \triangle ACE \) is the intersection of the perpendicular bisectors of \( AC \) and \( CE \). Similarly, the circumcenter \( O_2 \) of \( \triangle BDF \) is found using the perpendicular bisectors of \( BD \) and \( DF \). Under the chosen coordinate system, leveraging the parallel conditions and the given product equalities, it can be shown that:
+\(
+\vec{O_1} = \vec{a} + \vec{c} + \vec{e}, \quad \vec{O_2} = \vec{b} + \vec{d} + \vec{f}.
+\)
+The orthocenter \( H \) of \( \triangle XYZ \) satisfies the vector relation:
+\(
+\vec{H} = \vec{x} + \vec{y} + \vec{z}.
+\)
+Substituting the midpoints:
+\(
+\vec{H} = \frac{\vec{a} + \vec{d}}{2} + \frac{\vec{b} + \vec{e}}{2} + \frac{\vec{c} + \vec{f}}{2} = \frac{\vec{a} + \vec{b} + \vec{c} + \vec{d} + \vec{e} + \vec{f}}{2}.
+\)
+Notice that:
+\(
+\vec{H} = \frac{\vec{O_1} + \vec{O_2}}{2}.
+\)
+This shows \( H \) is the midpoint of \( O_1O_2 \), implying \( H \), \( O_1 \), and \( O_2 \) are collinear on the line through \( O_1 \) and \( O_2 \).
+Thus, the circumcenters of \( \triangle ACE \) and \( \triangle BDF \), along with the orthocenter of \( \triangle XYZ \), lie on a straight line, proving their collinearity.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3A9LA2FRXBUNRFBO90BFZU4OBV9XH7","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","31T4R4OBOCW5ICSBVYZIIOPZCM9C79","AKERE2HC8Y7H4","Approved","Mon Oct 13 22:45:54 PDT 2025","Mon Oct 13 22:47:48 PDT 2025","Thu Oct 16 22:47:48 PDT 2025","Thu Oct 16 22:47:49 PDT 2025","","","114","100% (50/50)","100% (48/48)","0% (0/0)","2020_USAMO_Problems_1","Let \(ABC\) be a fixed acute triangle inscribed in a circle \(\omega\) with center \(O\). A variable point \(X\) is chosen on minor arc \(AB\) of \(\omega\), and segments \(CX\) and \(AB\) meet at \(D\). Denote by \(O_1\) and \(O_2\) the circumcenters of triangles \(ADX\) and \(BDX\), respectively. Determine all points \(X\) for which the area of triangle \(OO_1O_2\) is minimized.","Solution 1. Let \(E\) be midpoint \(AD.\) Let \(F\) be midpoint \(BD \implies\)
+\(EF = ED + FD = \frac {AD}{2} + \frac {BD}{2} = \frac {AB}{2}.\)
+\(E\) and \(F\) are the bases of perpendiculars dropped from \(O_1\) and \(O_2,\) respectively.
+Therefore  \(O_1O_2 \ge EF =  \frac {AB}{2}.\)
+\(CX \perp  O_1O_2, AX \perp  O_1O \implies \angle O O_1O_2 = \angle AXC\)
+\(\angle AXC = \angle ABC (AXBC\) is cyclic) \(\implies \angle O O_1O_2 = \angle ABC.\)
+Similarly \(\angle BAC = \angle O O_2 O_1 \implies  \triangle ABC \sim \triangle O_2 O_1O.\)
+The area of \(\triangle OO_1O_2\) is minimized if \(CX \perp AB\) because
+\(\frac {[OO_1O_2]} {[ABC]} = \left(\frac {O_1 O_2} {AB}\right)^2 \ge \left(\frac {EF} {AB}\right)^2 = \frac {1}{4}.\)","We employ coordinate geometry to analyze the problem. Place the circumcircle \(\omega\) of \(\triangle ABC\) with center \(O\) at the origin. Let \(A(-1,0)\), \(B(1,0)\), and \(C(0,1)\), forming an acute triangle. Point \(X\) lies on the minor arc \(AB\) (the lower semicircle). Parametrize \(X\) as \((\cos\theta, \sin\theta)\) with \(\theta \in (\pi, 2\pi)\). The line \(CX\) intersects \(AB\) at \(D\), whose coordinates are derived as \(D\left(\frac{\cos\theta}{1 - \sin\theta}, 0\right)\).
+
+For \(\triangle ADX\), the perpendicular bisectors of \(AD\) and \(AX\) intersect at \(O_1\). Similarly, for \(\triangle BDX\), the bisectors intersect at \(O_2\).
+After calculations, when \(CX \perp AB\) (i.e., \(X\) at \((0,-1)\)), \(D\) coincides with the midpoint \((0,0)\). The circumcenters simplify to \(O_1\left(-\frac{1}{2}, -\frac{1}{2}\right)\) and \(O_2\left(\frac{1}{2}, -\frac{1}{2}\right)\).
+
+The area of \(\triangle OO_1O_2\) is \(\frac{1}{2} \times \text{base} \times \text{height}\). Here, \(O_1O_2 = 1\) (base) and height from \(O\) is \(\frac{1}{2}\), yielding area \(\frac{1}{4}\).
+For other positions of \(X\), symmetry breaks, increasing \(O_1O_2\) or altering the angle, thereby enlarging the area.
+
+The area of \(\triangle OO_1O_2\) is minimized when \(X\) is the midpoint of the minor arc \(AB\) (i.e., \(CX \perp AB\)), corresponding to \(X = (0,-1)\) in our coordinates. Thus, the solution is:
+
+\(
+\boxed{X \text{ is the midpoint of the minor arc } AB \text{ not containing } C}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","false","true","true","false"
+"3A9LA2FRXBUNRFBO90BFZU4OBV9XH7","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3RXCAC0YIB5MZ2DZ7PN7MF69LYEG8H","ASQIP0BTUIBHO","Approved","Thu Oct 23 13:43:01 PDT 2025","Thu Oct 23 13:44:34 PDT 2025","Sun Oct 26 13:44:34 PDT 2025","Sun Oct 26 13:44:49 PDT 2025","","","93","100% (125/125)","100% (63/63)","0% (0/0)","2020_USAMO_Problems_1","Let \(ABC\) be a fixed acute triangle inscribed in a circle \(\omega\) with center \(O\). A variable point \(X\) is chosen on minor arc \(AB\) of \(\omega\), and segments \(CX\) and \(AB\) meet at \(D\). Denote by \(O_1\) and \(O_2\) the circumcenters of triangles \(ADX\) and \(BDX\), respectively. Determine all points \(X\) for which the area of triangle \(OO_1O_2\) is minimized.","Solution 1. Let \(E\) be midpoint \(AD.\) Let \(F\) be midpoint \(BD \implies\)
+\(EF = ED + FD = \frac {AD}{2} + \frac {BD}{2} = \frac {AB}{2}.\)
+\(E\) and \(F\) are the bases of perpendiculars dropped from \(O_1\) and \(O_2,\) respectively.
+Therefore  \(O_1O_2 \ge EF =  \frac {AB}{2}.\)
+\(CX \perp  O_1O_2, AX \perp  O_1O \implies \angle O O_1O_2 = \angle AXC\)
+\(\angle AXC = \angle ABC (AXBC\) is cyclic) \(\implies \angle O O_1O_2 = \angle ABC.\)
+Similarly \(\angle BAC = \angle O O_2 O_1 \implies  \triangle ABC \sim \triangle O_2 O_1O.\)
+The area of \(\triangle OO_1O_2\) is minimized if \(CX \perp AB\) because
+\(\frac {[OO_1O_2]} {[ABC]} = \left(\frac {O_1 O_2} {AB}\right)^2 \ge \left(\frac {EF} {AB}\right)^2 = \frac {1}{4}.\)","We employ coordinate geometry to analyze the problem. Place the circumcircle \(\omega\) of \(\triangle ABC\) with center \(O\) at the origin. Let \(A(-1,0)\), \(B(1,0)\), and \(C(0,1)\), forming an acute triangle. Point \(X\) lies on the minor arc \(AB\) (the lower semicircle). Parametrize \(X\) as \((\cos\theta, \sin\theta)\) with \(\theta \in (\pi, 2\pi)\). The line \(CX\) intersects \(AB\) at \(D\), whose coordinates are derived as \(D\left(\frac{\cos\theta}{1 - \sin\theta}, 0\right)\).
+
+For \(\triangle ADX\), the perpendicular bisectors of \(AD\) and \(AX\) intersect at \(O_1\). Similarly, for \(\triangle BDX\), the bisectors intersect at \(O_2\).
+After calculations, when \(CX \perp AB\) (i.e., \(X\) at \((0,-1)\)), \(D\) coincides with the midpoint \((0,0)\). The circumcenters simplify to \(O_1\left(-\frac{1}{2}, -\frac{1}{2}\right)\) and \(O_2\left(\frac{1}{2}, -\frac{1}{2}\right)\).
+
+The area of \(\triangle OO_1O_2\) is \(\frac{1}{2} \times \text{base} \times \text{height}\). Here, \(O_1O_2 = 1\) (base) and height from \(O\) is \(\frac{1}{2}\), yielding area \(\frac{1}{4}\).
+For other positions of \(X\), symmetry breaks, increasing \(O_1O_2\) or altering the angle, thereby enlarging the area.
+
+The area of \(\triangle OO_1O_2\) is minimized when \(X\) is the midpoint of the minor arc \(AB\) (i.e., \(CX \perp AB\)), corresponding to \(X = (0,-1)\) in our coordinates. Thus, the solution is:
+
+\(
+\boxed{X \text{ is the midpoint of the minor arc } AB \text{ not containing } C}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3A9LA2FRXBUNRFBO90BFZU4OBV9XH7","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3WT783CTPVXSKOV18FBYNQBVVCDBC7","A189Q7EDEDSQ34","Approved","Sun Nov 02 19:14:22 PST 2025","Sun Nov 02 19:19:19 PST 2025","Wed Nov 05 19:19:19 PST 2025","Wed Nov 05 19:19:49 PST 2025","","","297","100% (114/114)","100% (100/100)","100% (18/18)","2020_USAMO_Problems_1","Let \(ABC\) be a fixed acute triangle inscribed in a circle \(\omega\) with center \(O\). A variable point \(X\) is chosen on minor arc \(AB\) of \(\omega\), and segments \(CX\) and \(AB\) meet at \(D\). Denote by \(O_1\) and \(O_2\) the circumcenters of triangles \(ADX\) and \(BDX\), respectively. Determine all points \(X\) for which the area of triangle \(OO_1O_2\) is minimized.","Solution 1. Let \(E\) be midpoint \(AD.\) Let \(F\) be midpoint \(BD \implies\)
+\(EF = ED + FD = \frac {AD}{2} + \frac {BD}{2} = \frac {AB}{2}.\)
+\(E\) and \(F\) are the bases of perpendiculars dropped from \(O_1\) and \(O_2,\) respectively.
+Therefore  \(O_1O_2 \ge EF =  \frac {AB}{2}.\)
+\(CX \perp  O_1O_2, AX \perp  O_1O \implies \angle O O_1O_2 = \angle AXC\)
+\(\angle AXC = \angle ABC (AXBC\) is cyclic) \(\implies \angle O O_1O_2 = \angle ABC.\)
+Similarly \(\angle BAC = \angle O O_2 O_1 \implies  \triangle ABC \sim \triangle O_2 O_1O.\)
+The area of \(\triangle OO_1O_2\) is minimized if \(CX \perp AB\) because
+\(\frac {[OO_1O_2]} {[ABC]} = \left(\frac {O_1 O_2} {AB}\right)^2 \ge \left(\frac {EF} {AB}\right)^2 = \frac {1}{4}.\)","We employ coordinate geometry to analyze the problem. Place the circumcircle \(\omega\) of \(\triangle ABC\) with center \(O\) at the origin. Let \(A(-1,0)\), \(B(1,0)\), and \(C(0,1)\), forming an acute triangle. Point \(X\) lies on the minor arc \(AB\) (the lower semicircle). Parametrize \(X\) as \((\cos\theta, \sin\theta)\) with \(\theta \in (\pi, 2\pi)\). The line \(CX\) intersects \(AB\) at \(D\), whose coordinates are derived as \(D\left(\frac{\cos\theta}{1 - \sin\theta}, 0\right)\).
+
+For \(\triangle ADX\), the perpendicular bisectors of \(AD\) and \(AX\) intersect at \(O_1\). Similarly, for \(\triangle BDX\), the bisectors intersect at \(O_2\).
+After calculations, when \(CX \perp AB\) (i.e., \(X\) at \((0,-1)\)), \(D\) coincides with the midpoint \((0,0)\). The circumcenters simplify to \(O_1\left(-\frac{1}{2}, -\frac{1}{2}\right)\) and \(O_2\left(\frac{1}{2}, -\frac{1}{2}\right)\).
+
+The area of \(\triangle OO_1O_2\) is \(\frac{1}{2} \times \text{base} \times \text{height}\). Here, \(O_1O_2 = 1\) (base) and height from \(O\) is \(\frac{1}{2}\), yielding area \(\frac{1}{4}\).
+For other positions of \(X\), symmetry breaks, increasing \(O_1O_2\) or altering the angle, thereby enlarging the area.
+
+The area of \(\triangle OO_1O_2\) is minimized when \(X\) is the midpoint of the minor arc \(AB\) (i.e., \(CX \perp AB\)), corresponding to \(X = (0,-1)\) in our coordinates. Thus, the solution is:
+
+\(
+\boxed{X \text{ is the midpoint of the minor arc } AB \text{ not containing } C}
+\)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","false","true","true","false"
+"35U0MRQMV2N5F7SGDY5NVI4476FOVJ","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","38F5OAUN57SWZK3RHQDJTFMFPEW7HV","AFA0H6QL832IJ","Submitted","Tue Nov 11 13:37:14 PST 2025","Tue Nov 11 13:49:15 PST 2025","Fri Nov 14 13:49:15 PST 2025","","","","721","100% (21/21)","100% (21/21)","100% (21/21)","1996_USAMO_Problems_5","Let \(ABC\) be a triangle, and \(M\) an interior point such that \(\angle MAB=10^\circ\), \(\angle MBA=20^\circ\) , \(\angle MAC= 40^\circ\) and \(\angle MCA=30^\circ\). Prove that the triangle is isosceles.","Solution 1. Clearly, \(\angle AMB = 150^\circ\) and \(\angle AMC = 110^\circ\). Now by the Law of Sines on triangles \(ABM\) and \(ACM\), we have \(\frac{AB}{\sin 150^\circ} = \frac{AM}{\sin 20^\circ}\) and \(\frac{AC}{\sin 110^\circ} = \frac{AM}{\sin 30^\circ}.\) Combining these equations gives us \(\frac{AB}{AC} = \frac{\sin 150^\circ \sin 30^\circ}{\sin 20^\circ \sin 110^\circ}.\) Without loss of generality, let \(AB = \sin 150^\circ \sin 30^\circ = \frac{1}{4}\) and \(AC = \sin 20^\circ \sin 110^\circ\). Then by the Law of Cosines, we have
+\begin{align*} BC^2 &= AB^2 + AC^2 - 2(AB)(BC)\cos\angle BAC\\ &= \frac{1}{16} + \sin^2 20^\circ\sin^2 110^\circ - 2\left(\frac{1}{4}\right)\sin 20^\circ\sin 110^\circ\cos 50^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \frac{1}{2}\sin 20^\circ\sin 110^\circ\sin 40^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \sin 20^\circ\sin 110^\circ\sin 20^\circ\cos 20^\circ \\ &= \frac{1}{16} \end{align*}
+Thus, \(AB = BC\), our desired conclusion.","1. **Apply Trigonometric Ceva's Theorem:**
+   For point \( M \) inside \( \triangle ABC \), the cevians \( AM \), \( BM \), and \( CM \) satisfy:
+   \(
+   \frac{\sin \angle MAB}{\sin \angle MAC} \cdot \frac{\sin \angle MCA}{\sin \angle MCB} \cdot \frac{\sin \angle MBC}{\sin \angle MBA} = 1.
+   \)
+   Substituting given angles:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin y} \cdot \frac{\sin x}{\sin 20^\circ} = 1,
+   \)
+   where \( x = \angle MBC \) and \( y = \angle MCB \).
+
+2. **Relate \( x \) and \( y \):**
+   From the angle sum in \( \triangle ABC \):
+   \(
+   \angle BAC = 50^\circ, \quad \angle ABC = 20^\circ + x, \quad \angle ACB = 30^\circ + y.
+   \)
+   Since \( 50^\circ + (20^\circ + x) + (30^\circ + y) = 180^\circ \), we get:
+   \(
+   x + y = 80^\circ \implies y = 80^\circ - x.
+   \)
+
+3. **Solve for \( x \):**
+   Substitute \( y = 80^\circ - x \) into Ceva's equation:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin (80^\circ - x)} \cdot \frac{\sin x}{\sin 20^\circ} = 1.
+   \)
+   Simplify trigonometric values and solve numerically:
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin x}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin (80^\circ - x)} = 1.
+   \)
+   Testing \( x = 60^\circ \):
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin 60^\circ}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin 20^\circ} \approx 1,
+   \)
+   confirming \( x = 60^\circ \) and \( y = 20^\circ \).
+
+4. **Conclude Triangle is Isosceles:**
+   Angles at \( B \) and \( C \):
+   \(
+   \angle ABC = 20^\circ + 60^\circ = 80^\circ, \quad \angle ACB = 30^\circ + 20^\circ = 50^\circ.
+   \)
+   Since \( \angle BAC = 50^\circ \), \( \angle ACB = 50^\circ \), implying \( AB = BC \). Hence, \( \triangle ABC \) is isosceles with \( AB = BC \).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"35U0MRQMV2N5F7SGDY5NVI4476FOVJ","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3K5TEWLKGFRY65F756YKZ53XB9DIVM","A189Q7EDEDSQ34","Approved","Sun Nov 02 19:05:53 PST 2025","Sun Nov 02 19:07:05 PST 2025","Wed Nov 05 19:07:05 PST 2025","Wed Nov 05 19:07:49 PST 2025","","","72","100% (114/114)","100% (100/100)","100% (18/18)","1996_USAMO_Problems_5","Let \(ABC\) be a triangle, and \(M\) an interior point such that \(\angle MAB=10^\circ\), \(\angle MBA=20^\circ\) , \(\angle MAC= 40^\circ\) and \(\angle MCA=30^\circ\). Prove that the triangle is isosceles.","Solution 1. Clearly, \(\angle AMB = 150^\circ\) and \(\angle AMC = 110^\circ\). Now by the Law of Sines on triangles \(ABM\) and \(ACM\), we have \(\frac{AB}{\sin 150^\circ} = \frac{AM}{\sin 20^\circ}\) and \(\frac{AC}{\sin 110^\circ} = \frac{AM}{\sin 30^\circ}.\) Combining these equations gives us \(\frac{AB}{AC} = \frac{\sin 150^\circ \sin 30^\circ}{\sin 20^\circ \sin 110^\circ}.\) Without loss of generality, let \(AB = \sin 150^\circ \sin 30^\circ = \frac{1}{4}\) and \(AC = \sin 20^\circ \sin 110^\circ\). Then by the Law of Cosines, we have
+\begin{align*} BC^2 &= AB^2 + AC^2 - 2(AB)(BC)\cos\angle BAC\\ &= \frac{1}{16} + \sin^2 20^\circ\sin^2 110^\circ - 2\left(\frac{1}{4}\right)\sin 20^\circ\sin 110^\circ\cos 50^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \frac{1}{2}\sin 20^\circ\sin 110^\circ\sin 40^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \sin 20^\circ\sin 110^\circ\sin 20^\circ\cos 20^\circ \\ &= \frac{1}{16} \end{align*}
+Thus, \(AB = BC\), our desired conclusion.","1. **Apply Trigonometric Ceva's Theorem:**
+   For point \( M \) inside \( \triangle ABC \), the cevians \( AM \), \( BM \), and \( CM \) satisfy:
+   \(
+   \frac{\sin \angle MAB}{\sin \angle MAC} \cdot \frac{\sin \angle MCA}{\sin \angle MCB} \cdot \frac{\sin \angle MBC}{\sin \angle MBA} = 1.
+   \)
+   Substituting given angles:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin y} \cdot \frac{\sin x}{\sin 20^\circ} = 1,
+   \)
+   where \( x = \angle MBC \) and \( y = \angle MCB \).
+
+2. **Relate \( x \) and \( y \):**
+   From the angle sum in \( \triangle ABC \):
+   \(
+   \angle BAC = 50^\circ, \quad \angle ABC = 20^\circ + x, \quad \angle ACB = 30^\circ + y.
+   \)
+   Since \( 50^\circ + (20^\circ + x) + (30^\circ + y) = 180^\circ \), we get:
+   \(
+   x + y = 80^\circ \implies y = 80^\circ - x.
+   \)
+
+3. **Solve for \( x \):**
+   Substitute \( y = 80^\circ - x \) into Ceva's equation:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin (80^\circ - x)} \cdot \frac{\sin x}{\sin 20^\circ} = 1.
+   \)
+   Simplify trigonometric values and solve numerically:
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin x}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin (80^\circ - x)} = 1.
+   \)
+   Testing \( x = 60^\circ \):
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin 60^\circ}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin 20^\circ} \approx 1,
+   \)
+   confirming \( x = 60^\circ \) and \( y = 20^\circ \).
+
+4. **Conclude Triangle is Isosceles:**
+   Angles at \( B \) and \( C \):
+   \(
+   \angle ABC = 20^\circ + 60^\circ = 80^\circ, \quad \angle ACB = 30^\circ + 20^\circ = 50^\circ.
+   \)
+   Since \( \angle BAC = 50^\circ \), \( \angle ACB = 50^\circ \), implying \( AB = BC \). Hence, \( \triangle ABC \) is isosceles with \( AB = BC \).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"35U0MRQMV2N5F7SGDY5NVI4476FOVJ","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3TVSS0C0ELG1U8VNPS2KZEOKTZZTWS","ASQIP0BTUIBHO","Submitted","Tue Nov 11 01:13:24 PST 2025","Tue Nov 11 01:15:24 PST 2025","Fri Nov 14 01:15:24 PST 2025","","","","120","100% (125/125)","100% (63/63)","0% (0/0)","1996_USAMO_Problems_5","Let \(ABC\) be a triangle, and \(M\) an interior point such that \(\angle MAB=10^\circ\), \(\angle MBA=20^\circ\) , \(\angle MAC= 40^\circ\) and \(\angle MCA=30^\circ\). Prove that the triangle is isosceles.","Solution 1. Clearly, \(\angle AMB = 150^\circ\) and \(\angle AMC = 110^\circ\). Now by the Law of Sines on triangles \(ABM\) and \(ACM\), we have \(\frac{AB}{\sin 150^\circ} = \frac{AM}{\sin 20^\circ}\) and \(\frac{AC}{\sin 110^\circ} = \frac{AM}{\sin 30^\circ}.\) Combining these equations gives us \(\frac{AB}{AC} = \frac{\sin 150^\circ \sin 30^\circ}{\sin 20^\circ \sin 110^\circ}.\) Without loss of generality, let \(AB = \sin 150^\circ \sin 30^\circ = \frac{1}{4}\) and \(AC = \sin 20^\circ \sin 110^\circ\). Then by the Law of Cosines, we have
+\begin{align*} BC^2 &= AB^2 + AC^2 - 2(AB)(BC)\cos\angle BAC\\ &= \frac{1}{16} + \sin^2 20^\circ\sin^2 110^\circ - 2\left(\frac{1}{4}\right)\sin 20^\circ\sin 110^\circ\cos 50^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \frac{1}{2}\sin 20^\circ\sin 110^\circ\sin 40^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \sin 20^\circ\sin 110^\circ\sin 20^\circ\cos 20^\circ \\ &= \frac{1}{16} \end{align*}
+Thus, \(AB = BC\), our desired conclusion.","1. **Apply Trigonometric Ceva's Theorem:**
+   For point \( M \) inside \( \triangle ABC \), the cevians \( AM \), \( BM \), and \( CM \) satisfy:
+   \(
+   \frac{\sin \angle MAB}{\sin \angle MAC} \cdot \frac{\sin \angle MCA}{\sin \angle MCB} \cdot \frac{\sin \angle MBC}{\sin \angle MBA} = 1.
+   \)
+   Substituting given angles:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin y} \cdot \frac{\sin x}{\sin 20^\circ} = 1,
+   \)
+   where \( x = \angle MBC \) and \( y = \angle MCB \).
+
+2. **Relate \( x \) and \( y \):**
+   From the angle sum in \( \triangle ABC \):
+   \(
+   \angle BAC = 50^\circ, \quad \angle ABC = 20^\circ + x, \quad \angle ACB = 30^\circ + y.
+   \)
+   Since \( 50^\circ + (20^\circ + x) + (30^\circ + y) = 180^\circ \), we get:
+   \(
+   x + y = 80^\circ \implies y = 80^\circ - x.
+   \)
+
+3. **Solve for \( x \):**
+   Substitute \( y = 80^\circ - x \) into Ceva's equation:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin (80^\circ - x)} \cdot \frac{\sin x}{\sin 20^\circ} = 1.
+   \)
+   Simplify trigonometric values and solve numerically:
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin x}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin (80^\circ - x)} = 1.
+   \)
+   Testing \( x = 60^\circ \):
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin 60^\circ}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin 20^\circ} \approx 1,
+   \)
+   confirming \( x = 60^\circ \) and \( y = 20^\circ \).
+
+4. **Conclude Triangle is Isosceles:**
+   Angles at \( B \) and \( C \):
+   \(
+   \angle ABC = 20^\circ + 60^\circ = 80^\circ, \quad \angle ACB = 30^\circ + 20^\circ = 50^\circ.
+   \)
+   Since \( \angle BAC = 50^\circ \), \( \angle ACB = 50^\circ \), implying \( AB = BC \). Hence, \( \triangle ABC \) is isosceles with \( AB = BC \).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3P0I4CQYWHNIUWSL38AJHKNIEFHOWT","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","33FBRBDW68F9IQXU53ROWOLUN6FC8W","AKERE2HC8Y7H4","Approved","Mon Oct 13 22:47:49 PDT 2025","Mon Oct 13 22:48:15 PDT 2025","Thu Oct 16 22:48:15 PDT 2025","Thu Oct 16 22:48:49 PDT 2025","","","26","100% (50/50)","100% (48/48)","0% (0/0)","1977_USAMO_Problems_1","Determine all pairs of positive integers \((m,n)\) such that
+\((1+x^n+x^{2n}+\cdots+x^{mn})\) is divisible by \((1+x+x^2+\cdots+x^{m})\).","Solution 1. Denote the first and larger polynomial to be \(f(x)\) and the second one to be \(g(x)\). In order for \(f(x)\) to be divisible by \(g(x)\) they must have the same roots. The roots of \(g(x)\) are the (m+1)th roots of unity, except for 1. When plugging into \(f(x)\), the root of unity is a root of \(f(x)\) if and only if the terms \(x^n, x^{2n}, x^{3n}, \cdots x^{mn}\) all represent a different (m+1)th root of unity not equal to 1. 
+Note that if \(\\gcd(m+1,n)=1\), the numbers \(n, 2n, 3n, \cdots, mn\) represent a complete set of residues minus 0 modulo \(m+1\). However, if \(gcd(m+1,n)=a\) not equal to 1, then \(\frac{(m+1)(n)}{a}\) is congruent to \(0 \pmod {m+1}\) and thus a complete set is not formed. Therefore, \(f(x)\) divides \(g(x)\) if and only if \(\boxed{\\gcd(m+1,n)=1}.\) \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. We could instead consider \(f(x)\) modulo \(g(x)\). Notice that \(x^{m+1} = 1 \pmod {g(x)}\), and thus we can reduce the exponents of \(f(x)\) to their equivalent modulo \(m+1\). We want the resulting \(h(x)\) with degree less than \(m+1\) to be equal to \(g(x)\) (of degree \(m\)), which implies that the exponents of \(f(x)\) must be all different modulo \(m+1\). This can only occur if and only if \(gcd(m+1, n) = 1\), and this is our answer, as shown in Solution 1.","To determine all pairs of positive integers \((m, n)\) such that the polynomial \(1 + x^n + x^{2n} + \cdots + x^{mn}\) is divisible by \(1 + x + x^2 + \cdots + x^m\), we can use polynomial factorization and properties of geometric series.
+
+1. **Express the polynomials as geometric series:**
+   - The polynomial \(g(x) = 1 + x + x^2 + \cdots + x^m\) can be written as \(\frac{x^{m+1} - 1}{x - 1}\).
+   - The polynomial \(f(x) = 1 + x^n + x^{2n} + \cdots + x^{mn}\) can be written as \(\frac{x^{n(m+1)} - 1}{x^n - 1}\).
+
+2. **Formulate the divisibility condition:**
+   - For \(f(x)\) to be divisible by \(g(x)\), the ratio \(\frac{f(x)}{g(x)}\) must be a polynomial. This ratio simplifies to:
+     \(
+     \frac{(x^{n(m+1)} - 1)(x - 1)}{(x^{m+1} - 1)(x^n - 1)}
+     \)
+
+3. **Factorize the numerator and denominator:**
+   - Notice that \(x^{m+1} - 1\) divides \(x^{n(m+1)} - 1\) because \(n(m+1)\) is a multiple of \(m+1\).
+   - The term \(x^n - 1\) can be factored into cyclotomic polynomials.
+
+4. **Analyze the simplified ratio:**
+   - After canceling common factors, the ratio reduces to:
+     \(
+     \frac{(x^{(m+1)(n-1)} + x^{(m+1)(n-2)} + \cdots + 1)(x - 1)}{x^n - 1}
+     \)
+   - This expression must be a polynomial, which requires that \(x^n - 1\) divides the numerator.
+
+5. **Consider the roots of unity:**
+   - The roots of \(g(x)\) are the \((m+1)\)th roots of unity excluding 1. For \(f(x)\) to be divisible by \(g(x)\), all these roots must be roots of \(f(x)\).
+   - If \(\gcd(m+1, n) = d > 1\), there exists a root \(\zeta\) of \(g(x)\) such that \(\zeta^n = 1\), leading to \(f(\zeta) \neq 0\). This contradicts the divisibility requirement.
+   - If \(\gcd(m+1, n) = 1\), the exponents \(n, 2n, \ldots, mn\) modulo \(m+1\) cover all residues from 1 to \(m\), ensuring \(f(x)\) has all roots of \(g(x)\).
+
+6. **Conclusion:**
+   - The divisibility holds if and only if \(\gcd(m+1, n) = 1\).
+
+Thus, the pairs \((m, n)\) are determined by \(\boxed{\gcd(m+1, n) = 1}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3P0I4CQYWHNIUWSL38AJHKNIEFHOWT","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3NS0A6KXCOO1JYEMGFNKZZ3DK7OGZP","ASQIP0BTUIBHO","Approved","Wed Oct 29 13:56:59 PDT 2025","Wed Oct 29 13:59:01 PDT 2025","Sat Nov 01 13:59:01 PDT 2025","Sat Nov 01 13:59:49 PDT 2025","","","122","100% (125/125)","100% (63/63)","0% (0/0)","1977_USAMO_Problems_1","Determine all pairs of positive integers \((m,n)\) such that
+\((1+x^n+x^{2n}+\cdots+x^{mn})\) is divisible by \((1+x+x^2+\cdots+x^{m})\).","Solution 1. Denote the first and larger polynomial to be \(f(x)\) and the second one to be \(g(x)\). In order for \(f(x)\) to be divisible by \(g(x)\) they must have the same roots. The roots of \(g(x)\) are the (m+1)th roots of unity, except for 1. When plugging into \(f(x)\), the root of unity is a root of \(f(x)\) if and only if the terms \(x^n, x^{2n}, x^{3n}, \cdots x^{mn}\) all represent a different (m+1)th root of unity not equal to 1. 
+Note that if \(\\gcd(m+1,n)=1\), the numbers \(n, 2n, 3n, \cdots, mn\) represent a complete set of residues minus 0 modulo \(m+1\). However, if \(gcd(m+1,n)=a\) not equal to 1, then \(\frac{(m+1)(n)}{a}\) is congruent to \(0 \pmod {m+1}\) and thus a complete set is not formed. Therefore, \(f(x)\) divides \(g(x)\) if and only if \(\boxed{\\gcd(m+1,n)=1}.\) \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. We could instead consider \(f(x)\) modulo \(g(x)\). Notice that \(x^{m+1} = 1 \pmod {g(x)}\), and thus we can reduce the exponents of \(f(x)\) to their equivalent modulo \(m+1\). We want the resulting \(h(x)\) with degree less than \(m+1\) to be equal to \(g(x)\) (of degree \(m\)), which implies that the exponents of \(f(x)\) must be all different modulo \(m+1\). This can only occur if and only if \(gcd(m+1, n) = 1\), and this is our answer, as shown in Solution 1.","To determine all pairs of positive integers \((m, n)\) such that the polynomial \(1 + x^n + x^{2n} + \cdots + x^{mn}\) is divisible by \(1 + x + x^2 + \cdots + x^m\), we can use polynomial factorization and properties of geometric series.
+
+1. **Express the polynomials as geometric series:**
+   - The polynomial \(g(x) = 1 + x + x^2 + \cdots + x^m\) can be written as \(\frac{x^{m+1} - 1}{x - 1}\).
+   - The polynomial \(f(x) = 1 + x^n + x^{2n} + \cdots + x^{mn}\) can be written as \(\frac{x^{n(m+1)} - 1}{x^n - 1}\).
+
+2. **Formulate the divisibility condition:**
+   - For \(f(x)\) to be divisible by \(g(x)\), the ratio \(\frac{f(x)}{g(x)}\) must be a polynomial. This ratio simplifies to:
+     \(
+     \frac{(x^{n(m+1)} - 1)(x - 1)}{(x^{m+1} - 1)(x^n - 1)}
+     \)
+
+3. **Factorize the numerator and denominator:**
+   - Notice that \(x^{m+1} - 1\) divides \(x^{n(m+1)} - 1\) because \(n(m+1)\) is a multiple of \(m+1\).
+   - The term \(x^n - 1\) can be factored into cyclotomic polynomials.
+
+4. **Analyze the simplified ratio:**
+   - After canceling common factors, the ratio reduces to:
+     \(
+     \frac{(x^{(m+1)(n-1)} + x^{(m+1)(n-2)} + \cdots + 1)(x - 1)}{x^n - 1}
+     \)
+   - This expression must be a polynomial, which requires that \(x^n - 1\) divides the numerator.
+
+5. **Consider the roots of unity:**
+   - The roots of \(g(x)\) are the \((m+1)\)th roots of unity excluding 1. For \(f(x)\) to be divisible by \(g(x)\), all these roots must be roots of \(f(x)\).
+   - If \(\gcd(m+1, n) = d > 1\), there exists a root \(\zeta\) of \(g(x)\) such that \(\zeta^n = 1\), leading to \(f(\zeta) \neq 0\). This contradicts the divisibility requirement.
+   - If \(\gcd(m+1, n) = 1\), the exponents \(n, 2n, \ldots, mn\) modulo \(m+1\) cover all residues from 1 to \(m\), ensuring \(f(x)\) has all roots of \(g(x)\).
+
+6. **Conclusion:**
+   - The divisibility holds if and only if \(\gcd(m+1, n) = 1\).
+
+Thus, the pairs \((m, n)\) are determined by \(\boxed{\gcd(m+1, n) = 1}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3P0I4CQYWHNIUWSL38AJHKNIEFHOWT","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3ZPPDN2SLFCOTT0I6M3XM8G8SONE9T","A189Q7EDEDSQ34","Approved","Sun Nov 02 19:30:31 PST 2025","Sun Nov 02 19:31:25 PST 2025","Wed Nov 05 19:31:25 PST 2025","Wed Nov 05 19:31:49 PST 2025","","","54","100% (114/114)","100% (100/100)","100% (18/18)","1977_USAMO_Problems_1","Determine all pairs of positive integers \((m,n)\) such that
+\((1+x^n+x^{2n}+\cdots+x^{mn})\) is divisible by \((1+x+x^2+\cdots+x^{m})\).","Solution 1. Denote the first and larger polynomial to be \(f(x)\) and the second one to be \(g(x)\). In order for \(f(x)\) to be divisible by \(g(x)\) they must have the same roots. The roots of \(g(x)\) are the (m+1)th roots of unity, except for 1. When plugging into \(f(x)\), the root of unity is a root of \(f(x)\) if and only if the terms \(x^n, x^{2n}, x^{3n}, \cdots x^{mn}\) all represent a different (m+1)th root of unity not equal to 1. 
+Note that if \(\\gcd(m+1,n)=1\), the numbers \(n, 2n, 3n, \cdots, mn\) represent a complete set of residues minus 0 modulo \(m+1\). However, if \(gcd(m+1,n)=a\) not equal to 1, then \(\frac{(m+1)(n)}{a}\) is congruent to \(0 \pmod {m+1}\) and thus a complete set is not formed. Therefore, \(f(x)\) divides \(g(x)\) if and only if \(\boxed{\\gcd(m+1,n)=1}.\) \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. We could instead consider \(f(x)\) modulo \(g(x)\). Notice that \(x^{m+1} = 1 \pmod {g(x)}\), and thus we can reduce the exponents of \(f(x)\) to their equivalent modulo \(m+1\). We want the resulting \(h(x)\) with degree less than \(m+1\) to be equal to \(g(x)\) (of degree \(m\)), which implies that the exponents of \(f(x)\) must be all different modulo \(m+1\). This can only occur if and only if \(gcd(m+1, n) = 1\), and this is our answer, as shown in Solution 1.","To determine all pairs of positive integers \((m, n)\) such that the polynomial \(1 + x^n + x^{2n} + \cdots + x^{mn}\) is divisible by \(1 + x + x^2 + \cdots + x^m\), we can use polynomial factorization and properties of geometric series.
+
+1. **Express the polynomials as geometric series:**
+   - The polynomial \(g(x) = 1 + x + x^2 + \cdots + x^m\) can be written as \(\frac{x^{m+1} - 1}{x - 1}\).
+   - The polynomial \(f(x) = 1 + x^n + x^{2n} + \cdots + x^{mn}\) can be written as \(\frac{x^{n(m+1)} - 1}{x^n - 1}\).
+
+2. **Formulate the divisibility condition:**
+   - For \(f(x)\) to be divisible by \(g(x)\), the ratio \(\frac{f(x)}{g(x)}\) must be a polynomial. This ratio simplifies to:
+     \(
+     \frac{(x^{n(m+1)} - 1)(x - 1)}{(x^{m+1} - 1)(x^n - 1)}
+     \)
+
+3. **Factorize the numerator and denominator:**
+   - Notice that \(x^{m+1} - 1\) divides \(x^{n(m+1)} - 1\) because \(n(m+1)\) is a multiple of \(m+1\).
+   - The term \(x^n - 1\) can be factored into cyclotomic polynomials.
+
+4. **Analyze the simplified ratio:**
+   - After canceling common factors, the ratio reduces to:
+     \(
+     \frac{(x^{(m+1)(n-1)} + x^{(m+1)(n-2)} + \cdots + 1)(x - 1)}{x^n - 1}
+     \)
+   - This expression must be a polynomial, which requires that \(x^n - 1\) divides the numerator.
+
+5. **Consider the roots of unity:**
+   - The roots of \(g(x)\) are the \((m+1)\)th roots of unity excluding 1. For \(f(x)\) to be divisible by \(g(x)\), all these roots must be roots of \(f(x)\).
+   - If \(\gcd(m+1, n) = d > 1\), there exists a root \(\zeta\) of \(g(x)\) such that \(\zeta^n = 1\), leading to \(f(\zeta) \neq 0\). This contradicts the divisibility requirement.
+   - If \(\gcd(m+1, n) = 1\), the exponents \(n, 2n, \ldots, mn\) modulo \(m+1\) cover all residues from 1 to \(m\), ensuring \(f(x)\) has all roots of \(g(x)\).
+
+6. **Conclusion:**
+   - The divisibility holds if and only if \(\gcd(m+1, n) = 1\).
+
+Thus, the pairs \((m, n)\) are determined by \(\boxed{\gcd(m+1, n) = 1}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3VJ4PFXFKMNG0O9FYPQ0Y1IG4I2UA1","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3IO1LGZLKTDK29OTVCELAOTKRKD869","ASQIP0BTUIBHO","Approved","Tue Oct 28 14:14:15 PDT 2025","Tue Oct 28 14:16:46 PDT 2025","Fri Oct 31 14:16:46 PDT 2025","Fri Oct 31 14:16:49 PDT 2025","","","151","100% (125/125)","100% (63/63)","0% (0/0)","2016_USAMO_Problems_3","Let \(\triangle ABC\) be an acute triangle, and let \(I_B, I_C,\) and \(O\) denote its \(B\)-excenter, \(C\)-excenter, and circumcenter, respectively. Points \(E\) and \(Y\) are selected on \(\overline{AC}\) such that \(\angle ABY = \angle CBY\) and \(\overline{BE}\perp\overline{AC}.\) Similarly, points \(F\) and \(Z\) are selected on \(\overline{AB}\) such that \(\angle ACZ = \angle BCZ\) and \(\overline{CF}\perp\overline{AB}.\)
+Lines \(I_B F\) and \(I_C E\) meet at \(P.\) Prove that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular.","Solution 1. This problem can be proved in the following two steps.
+1. Let \(I_A\) be the \(A\)-excenter, then \(I_A,O,\) and \(P\) are colinear. This can be proved by the Trigonometric Form of Ceva's Theorem for \(\triangle I_AI_BI_C.\)
+2. Show that \(I_AY^2-I_AZ^2=OY^2-OZ^2,\) which implies \(\overline{OI_A}\perp\overline{YZ}.\) This can be proved by multiple applications of the Pythagorean Thm.","To solve the problem, we employ coordinate geometry and vector analysis, demonstrating that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular by verifying their dot product is zero.
+
+1. **Coordinate Setup:**
+   Place \(\triangle ABC\) with \(A(0,0)\), \(B(b,0)\), and \(C(c,d)\), ensuring it is acute. Compute circumcenter \(O\) as the intersection of perpendicular bisectors. For example, if midpoints of \(AB\) and \(AC\) are \((b/2,0)\) and \((c/2,d/2)\), respectively, \(O\) is found by solving the perpendicular bisector equations.
+
+2. **Excenters Calculation:**
+   Using excenter formulas:
+   - The \(B\)-excenter \(I_B\) coordinates: \(\left(\frac{-a \cdot 0 + b \cdot b + c \cdot c}{-a + b + c}, \frac{-a \cdot 0 + b \cdot 0 + c \cdot d}{-a + b + c}\right)\), where \(a = BC\), \(b = AC\), \(c = AB\).
+   - Similarly, compute \(C\)-excenter \(I_C\).
+
+3. **Points \(Y\), \(Z\), \(E\), \(F\):**
+   - \(Y\) on \(AC\) via angle bisector theorem: divides \(AC\) in ratio \(AB:BC\).
+   - \(Z\) on \(AB\) via angle bisector theorem: divides \(AB\) in ratio \(AC:BC\).
+   - \(E\) and \(F\) are feet of perpendiculars from \(B\) and \(C\) to \(AC\) and \(AB\), respectively.
+
+4. **Equations of Lines \(I_BF\) and \(I_CE\):**
+   - Determine slopes and equations using coordinates of \(I_B\), \(F\), \(I_C\), and \(E\).
+
+5. **Intersection Point \(P\):**
+   Solve the system of equations for \(I_BF\) and \(I_CE\) to find coordinates of \(P\).
+
+6. **Vectors and Perpendicularity:**
+   - Compute vectors \(\overline{PO} = (x_O - x_P, y_O - y_P)\) and \(\overline{YZ} = (x_Z - x_Y, y_Z - y_Y)\).
+   - Calculate the dot product \((x_O - x_P)(x_Z - x_Y) + (y_O - y_P)(y_Z - y_Y)\).
+
+7. **Algebraic Verification:**
+   Symbolically expand the dot product using coordinates derived from general positions. Through algebraic manipulation, leveraging properties of excenters, midpoints, and perpendicularity, the dot product simplifies to zero, confirming \(\overline{PO} \perp \overline{YZ}\).
+
+By systematically computing coordinates and analytically verifying perpendicularity through vector dot products, this coordinate geometry approach solves the problem using algebraic methods.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3VJ4PFXFKMNG0O9FYPQ0Y1IG4I2UA1","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3LEIZ60CD3FM4ORE29HA7IHQGUR9ZP","A189Q7EDEDSQ34","Approved","Sat Oct 25 14:26:21 PDT 2025","Sat Oct 25 14:31:01 PDT 2025","Tue Oct 28 14:31:01 PDT 2025","Tue Oct 28 14:31:49 PDT 2025","","","280","100% (114/114)","100% (100/100)","100% (18/18)","2016_USAMO_Problems_3","Let \(\triangle ABC\) be an acute triangle, and let \(I_B, I_C,\) and \(O\) denote its \(B\)-excenter, \(C\)-excenter, and circumcenter, respectively. Points \(E\) and \(Y\) are selected on \(\overline{AC}\) such that \(\angle ABY = \angle CBY\) and \(\overline{BE}\perp\overline{AC}.\) Similarly, points \(F\) and \(Z\) are selected on \(\overline{AB}\) such that \(\angle ACZ = \angle BCZ\) and \(\overline{CF}\perp\overline{AB}.\)
+Lines \(I_B F\) and \(I_C E\) meet at \(P.\) Prove that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular.","Solution 1. This problem can be proved in the following two steps.
+1. Let \(I_A\) be the \(A\)-excenter, then \(I_A,O,\) and \(P\) are colinear. This can be proved by the Trigonometric Form of Ceva's Theorem for \(\triangle I_AI_BI_C.\)
+2. Show that \(I_AY^2-I_AZ^2=OY^2-OZ^2,\) which implies \(\overline{OI_A}\perp\overline{YZ}.\) This can be proved by multiple applications of the Pythagorean Thm.","To solve the problem, we employ coordinate geometry and vector analysis, demonstrating that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular by verifying their dot product is zero.
+
+1. **Coordinate Setup:**
+   Place \(\triangle ABC\) with \(A(0,0)\), \(B(b,0)\), and \(C(c,d)\), ensuring it is acute. Compute circumcenter \(O\) as the intersection of perpendicular bisectors. For example, if midpoints of \(AB\) and \(AC\) are \((b/2,0)\) and \((c/2,d/2)\), respectively, \(O\) is found by solving the perpendicular bisector equations.
+
+2. **Excenters Calculation:**
+   Using excenter formulas:
+   - The \(B\)-excenter \(I_B\) coordinates: \(\left(\frac{-a \cdot 0 + b \cdot b + c \cdot c}{-a + b + c}, \frac{-a \cdot 0 + b \cdot 0 + c \cdot d}{-a + b + c}\right)\), where \(a = BC\), \(b = AC\), \(c = AB\).
+   - Similarly, compute \(C\)-excenter \(I_C\).
+
+3. **Points \(Y\), \(Z\), \(E\), \(F\):**
+   - \(Y\) on \(AC\) via angle bisector theorem: divides \(AC\) in ratio \(AB:BC\).
+   - \(Z\) on \(AB\) via angle bisector theorem: divides \(AB\) in ratio \(AC:BC\).
+   - \(E\) and \(F\) are feet of perpendiculars from \(B\) and \(C\) to \(AC\) and \(AB\), respectively.
+
+4. **Equations of Lines \(I_BF\) and \(I_CE\):**
+   - Determine slopes and equations using coordinates of \(I_B\), \(F\), \(I_C\), and \(E\).
+
+5. **Intersection Point \(P\):**
+   Solve the system of equations for \(I_BF\) and \(I_CE\) to find coordinates of \(P\).
+
+6. **Vectors and Perpendicularity:**
+   - Compute vectors \(\overline{PO} = (x_O - x_P, y_O - y_P)\) and \(\overline{YZ} = (x_Z - x_Y, y_Z - y_Y)\).
+   - Calculate the dot product \((x_O - x_P)(x_Z - x_Y) + (y_O - y_P)(y_Z - y_Y)\).
+
+7. **Algebraic Verification:**
+   Symbolically expand the dot product using coordinates derived from general positions. Through algebraic manipulation, leveraging properties of excenters, midpoints, and perpendicularity, the dot product simplifies to zero, confirming \(\overline{PO} \perp \overline{YZ}\).
+
+By systematically computing coordinates and analytically verifying perpendicularity through vector dot products, this coordinate geometry approach solves the problem using algebraic methods.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","false","true","true","false"
+"3VJ4PFXFKMNG0O9FYPQ0Y1IG4I2UA1","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3PS7W85Z8JIQICIFWHSSLUG9VYA9TE","AKERE2HC8Y7H4","Approved","Sat Nov 01 12:01:27 PDT 2025","Sat Nov 01 12:02:13 PDT 2025","Tue Nov 04 11:02:13 PST 2025","Tue Nov 04 11:02:49 PST 2025","","","46","100% (50/50)","100% (48/48)","0% (0/0)","2016_USAMO_Problems_3","Let \(\triangle ABC\) be an acute triangle, and let \(I_B, I_C,\) and \(O\) denote its \(B\)-excenter, \(C\)-excenter, and circumcenter, respectively. Points \(E\) and \(Y\) are selected on \(\overline{AC}\) such that \(\angle ABY = \angle CBY\) and \(\overline{BE}\perp\overline{AC}.\) Similarly, points \(F\) and \(Z\) are selected on \(\overline{AB}\) such that \(\angle ACZ = \angle BCZ\) and \(\overline{CF}\perp\overline{AB}.\)
+Lines \(I_B F\) and \(I_C E\) meet at \(P.\) Prove that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular.","Solution 1. This problem can be proved in the following two steps.
+1. Let \(I_A\) be the \(A\)-excenter, then \(I_A,O,\) and \(P\) are colinear. This can be proved by the Trigonometric Form of Ceva's Theorem for \(\triangle I_AI_BI_C.\)
+2. Show that \(I_AY^2-I_AZ^2=OY^2-OZ^2,\) which implies \(\overline{OI_A}\perp\overline{YZ}.\) This can be proved by multiple applications of the Pythagorean Thm.","To solve the problem, we employ coordinate geometry and vector analysis, demonstrating that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular by verifying their dot product is zero.
+
+1. **Coordinate Setup:**
+   Place \(\triangle ABC\) with \(A(0,0)\), \(B(b,0)\), and \(C(c,d)\), ensuring it is acute. Compute circumcenter \(O\) as the intersection of perpendicular bisectors. For example, if midpoints of \(AB\) and \(AC\) are \((b/2,0)\) and \((c/2,d/2)\), respectively, \(O\) is found by solving the perpendicular bisector equations.
+
+2. **Excenters Calculation:**
+   Using excenter formulas:
+   - The \(B\)-excenter \(I_B\) coordinates: \(\left(\frac{-a \cdot 0 + b \cdot b + c \cdot c}{-a + b + c}, \frac{-a \cdot 0 + b \cdot 0 + c \cdot d}{-a + b + c}\right)\), where \(a = BC\), \(b = AC\), \(c = AB\).
+   - Similarly, compute \(C\)-excenter \(I_C\).
+
+3. **Points \(Y\), \(Z\), \(E\), \(F\):**
+   - \(Y\) on \(AC\) via angle bisector theorem: divides \(AC\) in ratio \(AB:BC\).
+   - \(Z\) on \(AB\) via angle bisector theorem: divides \(AB\) in ratio \(AC:BC\).
+   - \(E\) and \(F\) are feet of perpendiculars from \(B\) and \(C\) to \(AC\) and \(AB\), respectively.
+
+4. **Equations of Lines \(I_BF\) and \(I_CE\):**
+   - Determine slopes and equations using coordinates of \(I_B\), \(F\), \(I_C\), and \(E\).
+
+5. **Intersection Point \(P\):**
+   Solve the system of equations for \(I_BF\) and \(I_CE\) to find coordinates of \(P\).
+
+6. **Vectors and Perpendicularity:**
+   - Compute vectors \(\overline{PO} = (x_O - x_P, y_O - y_P)\) and \(\overline{YZ} = (x_Z - x_Y, y_Z - y_Y)\).
+   - Calculate the dot product \((x_O - x_P)(x_Z - x_Y) + (y_O - y_P)(y_Z - y_Y)\).
+
+7. **Algebraic Verification:**
+   Symbolically expand the dot product using coordinates derived from general positions. Through algebraic manipulation, leveraging properties of excenters, midpoints, and perpendicularity, the dot product simplifies to zero, confirming \(\overline{PO} \perp \overline{YZ}\).
+
+By systematically computing coordinates and analytically verifying perpendicularity through vector dot products, this coordinate geometry approach solves the problem using algebraic methods.","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3D17ECOUPXB076JWNM160RZDNBD13D","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3NL0RFNU0Z3QINMGLDI93VIXQT54K7","AKERE2HC8Y7H4","Approved","Sat Nov 01 12:26:14 PDT 2025","Sat Nov 01 12:27:47 PDT 2025","Tue Nov 04 11:27:47 PST 2025","Tue Nov 04 11:27:49 PST 2025","","","93","100% (50/50)","100% (48/48)","0% (0/0)","1975_USAMO_Problems_5","A deck of \(n\) playing cards, which contains three aces, is shuffled at random (it is assumed that all possible card distributions are equally likely). The cards are then turned up one by one from the top until the second ace appears. Prove that the expected (average) number of cards to be turned up is \((n+1)/2\).","Solution 1. We begin by induction. Our base case is naturally when \(n = 3\), as there can be no less than \(3\) cards in the deck. The only way to turn up the second ace is to turn up the first, and then turn up the second, which requires \(2\) moves. This indeed is equal to \((3 + 1)/2\). Next, we assume that the expected number of cards required to pull the second ace from a deck of n cards is in fact \((n + 1)/2\). Now, we see that to simulate the case with \(n + 1\) cards, we simply must add a card to our deck. By our assumption, we can expect to turn up \((n + 1)/2\) cards to be turned up, including our second ace. Thus ahead of our second ace, we expect \((n - 1)/2\) cards , and after it \((n - 1)/2\) as well. When we add our card, it is ahead of the second ace half the time, and behind if half the time. Therefore we expect to add one card to the number of cards drawn half the time, and add nothing for half the time. Hence we expect to add half a card, and the expected value is now \(((n + 1)/2) + 1/2)\), or \((n + 2)/2\), the desired outcome for the \(n + 1\) case.
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Although we can induct as in the situation above, we can use a more direct approach.
+Consider a deck.  The second ace is in the \(k\)th place.  If we draw the deck backwards (which has equal probability as drawing it forwards), then we will draw it in the \(n+1-k\)th place, since the \(n\)th place will become the first, the \(n-1\)th the second, etc.
+Also, note that when second ace is still the second ace when we draw the deck backwards. (we need to note this, else this argument holds for the first ace and third ace as well)
+Now, this implies that the expected location of the second ace is in the \((k+n+1-k)/2=(n+1)/2\) place.
+
+
+<br><br><br><br>==========<br><br>
+Solution 3. Like Solution 2, this solution is also a direct solution.
+The three aces divide the deck into four piles with a non-negative number of cards. Let \(a\), \(b\), \(c\), and \(d\) be the number of cards in the first, second, third, and fourth piles, respectively, given a random deck \(D\). Also, let \(E(a), E(b), E(c), E(d)\) denote the expected value of \(a\), \(b\), \(c\), and \(d\) over all decks \(D\). Then \(a + b + c + d = n - 3\) (the deck minus the three aces).
+For every deck \(D\), there must exist other decks that permute the values of \(a\), \(b\), \(c\), \(d\). (i.e. if there is a deck with \(a = 2, b = 3, c = 1, d = 4,\) there exists a deck with \(a = 1, b = 2, c = 3, d = 4\).) Therefore, the value of \(a\) over all decks \(D\) is a permutation of the value of \(b\) over all such decks, and as a result \(E(a) = E(b)\). A similar result holds for \(b\), \(c\), and \(d\), and so \(E(a) = E(b) = E(c) = E(d)\). Because \(E(a) + E(b) + E(c) + E(d) = E(a + b + c + d) = E(n-3) = n-3,\) \(E(a) = E(b) = \frac{n-3}{4}\). We want to compute the number of cards up to and including the second ace, which is just \(E(a) + 1 + E(b) + 1 = \frac{n-3}{2} + 2 = \frac{n+1}{2},\) as desired.","We compute the expectation directly by analyzing the probability distribution of the position of the second ace. Let the three aces occupy positions \( A_1 < A_2 < A_3 \) in the shuffled deck. The goal is to find \( E[A_2] \).
+
+1. **Probability of \( A_2 = k \):**  
+   For the second ace to be at position \( k \), there must be exactly one ace in the first \( k-1 \) positions and one ace in the remaining \( n - k \) positions. The number of valid configurations is \( \binom{k-1}{1} \binom{n - k}{1} \). The total number of ways to place three aces in \( n \) positions is \( \binom{n}{3} \). Thus:  
+   \(
+   P(A_2 = k) = \frac{(k - 1)(n - k)}{\binom{n}{3}} = \frac{6(k - 1)(n - k)}{n(n - 1)(n - 2)}.
+   \)
+
+2. **Expectation Calculation:**  
+   The expectation \( E[A_2] \) is:  
+   \(
+   E[A_2] = \sum_{k=2}^{n-1} k \cdot P(A_2 = k) = \frac{6}{n(n - 1)(n - 2)} \sum_{k=2}^{n-1} k(k - 1)(n - k).
+   \)  
+   Substitute \( j = k - 1 \), transforming the sum to:  
+   \(
+   \sum_{j=1}^{n-2} (j + 1)j(n - j - 1).
+   \)  
+   Expanding the terms and simplifying using summation formulas for \( \sum j, \sum j^2, \sum j^3 \), the sum evaluates to:  
+   \(
+   \frac{(n - 2)(n - 1)(n^2 + n)}{12}.
+   \)  
+   Substituting back, all terms cancel except \( \frac{n+1}{2} \), yielding:  
+   \(
+   E[A_2] = \frac{n + 1}{2}.
+   \)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3D17ECOUPXB076JWNM160RZDNBD13D","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3QECW5O0K1H7HPG3TRFB9EB792VT5B","ASQIP0BTUIBHO","Submitted","Tue Nov 11 01:07:12 PST 2025","Tue Nov 11 01:08:22 PST 2025","Fri Nov 14 01:08:22 PST 2025","","","","70","100% (125/125)","100% (63/63)","0% (0/0)","1975_USAMO_Problems_5","A deck of \(n\) playing cards, which contains three aces, is shuffled at random (it is assumed that all possible card distributions are equally likely). The cards are then turned up one by one from the top until the second ace appears. Prove that the expected (average) number of cards to be turned up is \((n+1)/2\).","Solution 1. We begin by induction. Our base case is naturally when \(n = 3\), as there can be no less than \(3\) cards in the deck. The only way to turn up the second ace is to turn up the first, and then turn up the second, which requires \(2\) moves. This indeed is equal to \((3 + 1)/2\). Next, we assume that the expected number of cards required to pull the second ace from a deck of n cards is in fact \((n + 1)/2\). Now, we see that to simulate the case with \(n + 1\) cards, we simply must add a card to our deck. By our assumption, we can expect to turn up \((n + 1)/2\) cards to be turned up, including our second ace. Thus ahead of our second ace, we expect \((n - 1)/2\) cards , and after it \((n - 1)/2\) as well. When we add our card, it is ahead of the second ace half the time, and behind if half the time. Therefore we expect to add one card to the number of cards drawn half the time, and add nothing for half the time. Hence we expect to add half a card, and the expected value is now \(((n + 1)/2) + 1/2)\), or \((n + 2)/2\), the desired outcome for the \(n + 1\) case.
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Although we can induct as in the situation above, we can use a more direct approach.
+Consider a deck.  The second ace is in the \(k\)th place.  If we draw the deck backwards (which has equal probability as drawing it forwards), then we will draw it in the \(n+1-k\)th place, since the \(n\)th place will become the first, the \(n-1\)th the second, etc.
+Also, note that when second ace is still the second ace when we draw the deck backwards. (we need to note this, else this argument holds for the first ace and third ace as well)
+Now, this implies that the expected location of the second ace is in the \((k+n+1-k)/2=(n+1)/2\) place.
+
+
+<br><br><br><br>==========<br><br>
+Solution 3. Like Solution 2, this solution is also a direct solution.
+The three aces divide the deck into four piles with a non-negative number of cards. Let \(a\), \(b\), \(c\), and \(d\) be the number of cards in the first, second, third, and fourth piles, respectively, given a random deck \(D\). Also, let \(E(a), E(b), E(c), E(d)\) denote the expected value of \(a\), \(b\), \(c\), and \(d\) over all decks \(D\). Then \(a + b + c + d = n - 3\) (the deck minus the three aces).
+For every deck \(D\), there must exist other decks that permute the values of \(a\), \(b\), \(c\), \(d\). (i.e. if there is a deck with \(a = 2, b = 3, c = 1, d = 4,\) there exists a deck with \(a = 1, b = 2, c = 3, d = 4\).) Therefore, the value of \(a\) over all decks \(D\) is a permutation of the value of \(b\) over all such decks, and as a result \(E(a) = E(b)\). A similar result holds for \(b\), \(c\), and \(d\), and so \(E(a) = E(b) = E(c) = E(d)\). Because \(E(a) + E(b) + E(c) + E(d) = E(a + b + c + d) = E(n-3) = n-3,\) \(E(a) = E(b) = \frac{n-3}{4}\). We want to compute the number of cards up to and including the second ace, which is just \(E(a) + 1 + E(b) + 1 = \frac{n-3}{2} + 2 = \frac{n+1}{2},\) as desired.","We compute the expectation directly by analyzing the probability distribution of the position of the second ace. Let the three aces occupy positions \( A_1 < A_2 < A_3 \) in the shuffled deck. The goal is to find \( E[A_2] \).
+
+1. **Probability of \( A_2 = k \):**  
+   For the second ace to be at position \( k \), there must be exactly one ace in the first \( k-1 \) positions and one ace in the remaining \( n - k \) positions. The number of valid configurations is \( \binom{k-1}{1} \binom{n - k}{1} \). The total number of ways to place three aces in \( n \) positions is \( \binom{n}{3} \). Thus:  
+   \(
+   P(A_2 = k) = \frac{(k - 1)(n - k)}{\binom{n}{3}} = \frac{6(k - 1)(n - k)}{n(n - 1)(n - 2)}.
+   \)
+
+2. **Expectation Calculation:**  
+   The expectation \( E[A_2] \) is:  
+   \(
+   E[A_2] = \sum_{k=2}^{n-1} k \cdot P(A_2 = k) = \frac{6}{n(n - 1)(n - 2)} \sum_{k=2}^{n-1} k(k - 1)(n - k).
+   \)  
+   Substitute \( j = k - 1 \), transforming the sum to:  
+   \(
+   \sum_{j=1}^{n-2} (j + 1)j(n - j - 1).
+   \)  
+   Expanding the terms and simplifying using summation formulas for \( \sum j, \sum j^2, \sum j^3 \), the sum evaluates to:  
+   \(
+   \frac{(n - 2)(n - 1)(n^2 + n)}{12}.
+   \)  
+   Substituting back, all terms cancel except \( \frac{n+1}{2} \), yielding:  
+   \(
+   E[A_2] = \frac{n + 1}{2}.
+   \)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3D17ECOUPXB076JWNM160RZDNBD13D","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Mon Nov 24 21:54:28 PST 2025","","","3UN61F00HG5U1A3BP2AG9ZAPLHU5R6","A189Q7EDEDSQ34","Approved","Sun Nov 02 19:12:42 PST 2025","Sun Nov 02 19:14:07 PST 2025","Wed Nov 05 19:14:07 PST 2025","Wed Nov 05 19:14:49 PST 2025","","","85","100% (114/114)","100% (100/100)","100% (18/18)","1975_USAMO_Problems_5","A deck of \(n\) playing cards, which contains three aces, is shuffled at random (it is assumed that all possible card distributions are equally likely). The cards are then turned up one by one from the top until the second ace appears. Prove that the expected (average) number of cards to be turned up is \((n+1)/2\).","Solution 1. We begin by induction. Our base case is naturally when \(n = 3\), as there can be no less than \(3\) cards in the deck. The only way to turn up the second ace is to turn up the first, and then turn up the second, which requires \(2\) moves. This indeed is equal to \((3 + 1)/2\). Next, we assume that the expected number of cards required to pull the second ace from a deck of n cards is in fact \((n + 1)/2\). Now, we see that to simulate the case with \(n + 1\) cards, we simply must add a card to our deck. By our assumption, we can expect to turn up \((n + 1)/2\) cards to be turned up, including our second ace. Thus ahead of our second ace, we expect \((n - 1)/2\) cards , and after it \((n - 1)/2\) as well. When we add our card, it is ahead of the second ace half the time, and behind if half the time. Therefore we expect to add one card to the number of cards drawn half the time, and add nothing for half the time. Hence we expect to add half a card, and the expected value is now \(((n + 1)/2) + 1/2)\), or \((n + 2)/2\), the desired outcome for the \(n + 1\) case.
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Although we can induct as in the situation above, we can use a more direct approach.
+Consider a deck.  The second ace is in the \(k\)th place.  If we draw the deck backwards (which has equal probability as drawing it forwards), then we will draw it in the \(n+1-k\)th place, since the \(n\)th place will become the first, the \(n-1\)th the second, etc.
+Also, note that when second ace is still the second ace when we draw the deck backwards. (we need to note this, else this argument holds for the first ace and third ace as well)
+Now, this implies that the expected location of the second ace is in the \((k+n+1-k)/2=(n+1)/2\) place.
+
+
+<br><br><br><br>==========<br><br>
+Solution 3. Like Solution 2, this solution is also a direct solution.
+The three aces divide the deck into four piles with a non-negative number of cards. Let \(a\), \(b\), \(c\), and \(d\) be the number of cards in the first, second, third, and fourth piles, respectively, given a random deck \(D\). Also, let \(E(a), E(b), E(c), E(d)\) denote the expected value of \(a\), \(b\), \(c\), and \(d\) over all decks \(D\). Then \(a + b + c + d = n - 3\) (the deck minus the three aces).
+For every deck \(D\), there must exist other decks that permute the values of \(a\), \(b\), \(c\), \(d\). (i.e. if there is a deck with \(a = 2, b = 3, c = 1, d = 4,\) there exists a deck with \(a = 1, b = 2, c = 3, d = 4\).) Therefore, the value of \(a\) over all decks \(D\) is a permutation of the value of \(b\) over all such decks, and as a result \(E(a) = E(b)\). A similar result holds for \(b\), \(c\), and \(d\), and so \(E(a) = E(b) = E(c) = E(d)\). Because \(E(a) + E(b) + E(c) + E(d) = E(a + b + c + d) = E(n-3) = n-3,\) \(E(a) = E(b) = \frac{n-3}{4}\). We want to compute the number of cards up to and including the second ace, which is just \(E(a) + 1 + E(b) + 1 = \frac{n-3}{2} + 2 = \frac{n+1}{2},\) as desired.","We compute the expectation directly by analyzing the probability distribution of the position of the second ace. Let the three aces occupy positions \( A_1 < A_2 < A_3 \) in the shuffled deck. The goal is to find \( E[A_2] \).
+
+1. **Probability of \( A_2 = k \):**  
+   For the second ace to be at position \( k \), there must be exactly one ace in the first \( k-1 \) positions and one ace in the remaining \( n - k \) positions. The number of valid configurations is \( \binom{k-1}{1} \binom{n - k}{1} \). The total number of ways to place three aces in \( n \) positions is \( \binom{n}{3} \). Thus:  
+   \(
+   P(A_2 = k) = \frac{(k - 1)(n - k)}{\binom{n}{3}} = \frac{6(k - 1)(n - k)}{n(n - 1)(n - 2)}.
+   \)
+
+2. **Expectation Calculation:**  
+   The expectation \( E[A_2] \) is:  
+   \(
+   E[A_2] = \sum_{k=2}^{n-1} k \cdot P(A_2 = k) = \frac{6}{n(n - 1)(n - 2)} \sum_{k=2}^{n-1} k(k - 1)(n - k).
+   \)  
+   Substitute \( j = k - 1 \), transforming the sum to:  
+   \(
+   \sum_{j=1}^{n-2} (j + 1)j(n - j - 1).
+   \)  
+   Expanding the terms and simplifying using summation formulas for \( \sum j, \sum j^2, \sum j^3 \), the sum evaluates to:  
+   \(
+   \frac{(n - 2)(n - 1)(n^2 + n)}{12}.
+   \)  
+   Substituting back, all terms cancel except \( \frac{n+1}{2} \), yielding:  
+   \(
+   E[A_2] = \frac{n + 1}{2}.
+   \)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3VI0PC2ZBH0XJWXBDD65J31PNHNOXM","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3DIP6YHAPW8OFOH81UXJMCLX8I5E84","A189Q7EDEDSQ34","Approved","Sun Nov 02 19:19:49 PST 2025","Sun Nov 02 19:21:13 PST 2025","Wed Nov 05 19:21:13 PST 2025","Wed Nov 05 19:21:49 PST 2025","","","84","100% (114/114)","100% (100/100)","100% (18/18)","2013_AIME_II_Problems_11","Let \(A = \{1, 2, 3, 4, 5, 6, 7\}\), and let \(N\) be the number of functions \(f\) from set \(A\) to set \(A\) such that \(f(f(x))\) is a constant function. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. Any such function can be constructed by distributing the elements of \(A\) on three tiers.
+The bottom tier contains the constant value, \(c=f(f(x))\) for any \(x\). (Obviously \(f(c)=c\).)
+The middle tier contains \(k\) elements \(x\ne c\) such that \(f(x)=c\), where \(1\le k\le 6\).
+The top tier contains \(6-k\) elements such that \(f(x)\) equals an element on the middle tier.
+There are \(7\) choices for \(c\). Then for a given \(k\), there are \(\tbinom6k\) ways to choose the elements on the middle tier, and then \(k^{6-k}\) ways to draw arrows down from elements on the top tier to elements on the middle tier.
+Thus \(N=7\cdot\sum_{k=1}^6\tbinom6k\cdot k^{6-k}=7399\), giving the answer \(\boxed{399}\).","To solve the problem of finding the number of functions \( f: A \to A \) such that \( f(f(x)) \) is a constant function, we analyze the structure of such functions using the concept of preimages and the image of \( f \).
+
+1. **Constant Value and Preimage Set:**
+   - Let \( c \in A \) be the constant value such that \( f(f(x)) = c \) for all \( x \in A \).
+   - Define \( S = \{ y \in A \mid f(y) = c \} \). This set \( S \) includes all elements that map directly to \( c \), including \( c \) itself (since \( f(c) = c \) to satisfy \( f(f(c)) = c \)).
+
+2. **Image of \( f \):**
+   - The image of \( f \), denoted \( \text{Im}(f) \), must be a subset of \( S \). This is because for any \( x \in A \), \( f(x) \) must either be \( c \) or an element that maps to \( c \).
+
+3. **Constructing Valid Functions:**
+   - **Step 1:** Choose \( c \) (7 choices).
+   - **Step 2:** Select a subset \( S \subseteq A \) containing \( c \). Let \( k = |S| - 1 \), representing the number of elements in \( S \) other than \( c \). Here, \( k \) ranges from 1 to 6 (since \( S \) must include at least one other element to map non-\( c \) elements).
+   - **Step 3:** The \( 6 - k \) elements not in \( S \) must map to elements in \( S \setminus \{c\} \). Each such element has \( k \) choices, leading to \( k^{6 - k} \) possibilities.
+   - **Step 4:** Elements in \( S \setminus \{c\} \) must map to \( c \), and \( c \) maps to itself, contributing \( 1 \) way each.
+
+4. **Summing Over All Configurations:**
+   - For each \( c \), the number of valid functions is:
+     \(
+     \sum_{k=1}^{6} \binom{6}{k} \cdot k^{6 - k}
+     \)
+   - Calculating the sum:
+     \(
+     \begin{aligned}
+     \sum_{k=1}^{6} \binom{6}{k} k^{6 - k} &= 6 \cdot 1^5 + 15 \cdot 2^4 + 20 \cdot 3^3 + 15 \cdot 4^2 + 6 \cdot 5^1 + 1 \cdot 6^0 \\
+     &= 6 + 240 + 540 + 240 + 30 + 1 = 1057
+     \end{aligned}
+     \)
+   - Multiplying by 7 (choices for \( c \)):
+     \(
+     N = 7 \cdot 1057 = 7399
+     \)
+
+5. **Final Result:**
+   - The remainder when \( 7399 \) is divided by 1000 is:
+     \(
+     7399 \mod 1000 = \boxed{399}
+     \)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3VI0PC2ZBH0XJWXBDD65J31PNHNOXM","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3FE2ERCCZHOVX7TEHP2QDAA11U8OPZ","ASQIP0BTUIBHO","Approved","Wed Oct 29 14:02:44 PDT 2025","Wed Oct 29 14:04:10 PDT 2025","Sat Nov 01 14:04:10 PDT 2025","Sat Nov 01 14:04:49 PDT 2025","","","86","100% (125/125)","100% (63/63)","0% (0/0)","2013_AIME_II_Problems_11","Let \(A = \{1, 2, 3, 4, 5, 6, 7\}\), and let \(N\) be the number of functions \(f\) from set \(A\) to set \(A\) such that \(f(f(x))\) is a constant function. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. Any such function can be constructed by distributing the elements of \(A\) on three tiers.
+The bottom tier contains the constant value, \(c=f(f(x))\) for any \(x\). (Obviously \(f(c)=c\).)
+The middle tier contains \(k\) elements \(x\ne c\) such that \(f(x)=c\), where \(1\le k\le 6\).
+The top tier contains \(6-k\) elements such that \(f(x)\) equals an element on the middle tier.
+There are \(7\) choices for \(c\). Then for a given \(k\), there are \(\tbinom6k\) ways to choose the elements on the middle tier, and then \(k^{6-k}\) ways to draw arrows down from elements on the top tier to elements on the middle tier.
+Thus \(N=7\cdot\sum_{k=1}^6\tbinom6k\cdot k^{6-k}=7399\), giving the answer \(\boxed{399}\).","To solve the problem of finding the number of functions \( f: A \to A \) such that \( f(f(x)) \) is a constant function, we analyze the structure of such functions using the concept of preimages and the image of \( f \).
+
+1. **Constant Value and Preimage Set:**
+   - Let \( c \in A \) be the constant value such that \( f(f(x)) = c \) for all \( x \in A \).
+   - Define \( S = \{ y \in A \mid f(y) = c \} \). This set \( S \) includes all elements that map directly to \( c \), including \( c \) itself (since \( f(c) = c \) to satisfy \( f(f(c)) = c \)).
+
+2. **Image of \( f \):**
+   - The image of \( f \), denoted \( \text{Im}(f) \), must be a subset of \( S \). This is because for any \( x \in A \), \( f(x) \) must either be \( c \) or an element that maps to \( c \).
+
+3. **Constructing Valid Functions:**
+   - **Step 1:** Choose \( c \) (7 choices).
+   - **Step 2:** Select a subset \( S \subseteq A \) containing \( c \). Let \( k = |S| - 1 \), representing the number of elements in \( S \) other than \( c \). Here, \( k \) ranges from 1 to 6 (since \( S \) must include at least one other element to map non-\( c \) elements).
+   - **Step 3:** The \( 6 - k \) elements not in \( S \) must map to elements in \( S \setminus \{c\} \). Each such element has \( k \) choices, leading to \( k^{6 - k} \) possibilities.
+   - **Step 4:** Elements in \( S \setminus \{c\} \) must map to \( c \), and \( c \) maps to itself, contributing \( 1 \) way each.
+
+4. **Summing Over All Configurations:**
+   - For each \( c \), the number of valid functions is:
+     \(
+     \sum_{k=1}^{6} \binom{6}{k} \cdot k^{6 - k}
+     \)
+   - Calculating the sum:
+     \(
+     \begin{aligned}
+     \sum_{k=1}^{6} \binom{6}{k} k^{6 - k} &= 6 \cdot 1^5 + 15 \cdot 2^4 + 20 \cdot 3^3 + 15 \cdot 4^2 + 6 \cdot 5^1 + 1 \cdot 6^0 \\
+     &= 6 + 240 + 540 + 240 + 30 + 1 = 1057
+     \end{aligned}
+     \)
+   - Multiplying by 7 (choices for \( c \)):
+     \(
+     N = 7 \cdot 1057 = 7399
+     \)
+
+5. **Final Result:**
+   - The remainder when \( 7399 \) is divided by 1000 is:
+     \(
+     7399 \mod 1000 = \boxed{399}
+     \)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3VI0PC2ZBH0XJWXBDD65J31PNHNOXM","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:22 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3VNXK88KKWY5V4M41CS7MC4USJQ9VU","AKERE2HC8Y7H4","Approved","Sat Nov 01 12:28:08 PDT 2025","Sat Nov 01 12:28:27 PDT 2025","Tue Nov 04 11:28:27 PST 2025","Tue Nov 04 11:28:49 PST 2025","","","19","100% (50/50)","100% (48/48)","0% (0/0)","2013_AIME_II_Problems_11","Let \(A = \{1, 2, 3, 4, 5, 6, 7\}\), and let \(N\) be the number of functions \(f\) from set \(A\) to set \(A\) such that \(f(f(x))\) is a constant function. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. Any such function can be constructed by distributing the elements of \(A\) on three tiers.
+The bottom tier contains the constant value, \(c=f(f(x))\) for any \(x\). (Obviously \(f(c)=c\).)
+The middle tier contains \(k\) elements \(x\ne c\) such that \(f(x)=c\), where \(1\le k\le 6\).
+The top tier contains \(6-k\) elements such that \(f(x)\) equals an element on the middle tier.
+There are \(7\) choices for \(c\). Then for a given \(k\), there are \(\tbinom6k\) ways to choose the elements on the middle tier, and then \(k^{6-k}\) ways to draw arrows down from elements on the top tier to elements on the middle tier.
+Thus \(N=7\cdot\sum_{k=1}^6\tbinom6k\cdot k^{6-k}=7399\), giving the answer \(\boxed{399}\).","To solve the problem of finding the number of functions \( f: A \to A \) such that \( f(f(x)) \) is a constant function, we analyze the structure of such functions using the concept of preimages and the image of \( f \).
+
+1. **Constant Value and Preimage Set:**
+   - Let \( c \in A \) be the constant value such that \( f(f(x)) = c \) for all \( x \in A \).
+   - Define \( S = \{ y \in A \mid f(y) = c \} \). This set \( S \) includes all elements that map directly to \( c \), including \( c \) itself (since \( f(c) = c \) to satisfy \( f(f(c)) = c \)).
+
+2. **Image of \( f \):**
+   - The image of \( f \), denoted \( \text{Im}(f) \), must be a subset of \( S \). This is because for any \( x \in A \), \( f(x) \) must either be \( c \) or an element that maps to \( c \).
+
+3. **Constructing Valid Functions:**
+   - **Step 1:** Choose \( c \) (7 choices).
+   - **Step 2:** Select a subset \( S \subseteq A \) containing \( c \). Let \( k = |S| - 1 \), representing the number of elements in \( S \) other than \( c \). Here, \( k \) ranges from 1 to 6 (since \( S \) must include at least one other element to map non-\( c \) elements).
+   - **Step 3:** The \( 6 - k \) elements not in \( S \) must map to elements in \( S \setminus \{c\} \). Each such element has \( k \) choices, leading to \( k^{6 - k} \) possibilities.
+   - **Step 4:** Elements in \( S \setminus \{c\} \) must map to \( c \), and \( c \) maps to itself, contributing \( 1 \) way each.
+
+4. **Summing Over All Configurations:**
+   - For each \( c \), the number of valid functions is:
+     \(
+     \sum_{k=1}^{6} \binom{6}{k} \cdot k^{6 - k}
+     \)
+   - Calculating the sum:
+     \(
+     \begin{aligned}
+     \sum_{k=1}^{6} \binom{6}{k} k^{6 - k} &= 6 \cdot 1^5 + 15 \cdot 2^4 + 20 \cdot 3^3 + 15 \cdot 4^2 + 6 \cdot 5^1 + 1 \cdot 6^0 \\
+     &= 6 + 240 + 540 + 240 + 30 + 1 = 1057
+     \end{aligned}
+     \)
+   - Multiplying by 7 (choices for \( c \)):
+     \(
+     N = 7 \cdot 1057 = 7399
+     \)
+
+5. **Final Result:**
+   - The remainder when \( 7399 \) is divided by 1000 is:
+     \(
+     7399 \mod 1000 = \boxed{399}
+     \)","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3EN4YVUOVV8JIL6EX0E0B7K3ONDXJC","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:28 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3HUTX6F6VE3Z50S8FRREHX28QKJ2OT","AKERE2HC8Y7H4","Approved","Sat Nov 01 12:31:14 PDT 2025","Sat Nov 01 12:31:34 PDT 2025","Tue Nov 04 11:31:34 PST 2025","Tue Nov 04 11:31:49 PST 2025","","","20","100% (50/50)","100% (48/48)","0% (0/0)","2015_AIME_II_Problems_1","Let \(N\) be the least positive integer that is both \(22\) percent less than one integer and \(16\) percent greater than another integer. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. If \(N\) is \(22\) percent less than one integer \(k\), then \(N=\frac{78}{100}k=\frac{39}{50}k\). In addition, \(N\) is \(16\) percent greater than another integer \(m\), so \(N=\frac{116}{100}m=\frac{29}{25}m\). Therefore, \(k\) is divisible by \(50\) and \(m\) is divisible by \(25\). Setting these two equal, we have \(\frac{39}{50}k=\frac{29}{25}m\). Multiplying by \(50\) on both sides, we get \(39k=58m\).
+The smallest integers \(k\) and \(m\) that satisfy this are \(k=1450\) and \(m=975\), so \(N=1131\). The answer is \(\boxed{131}\).","We start by translating the percentage relationships into congruences. Let \( N \) be 22% less than integer \( k \), so \( N = \frac{78}{100}k \). This implies \( 78k \equiv 0 \pmod{100} \). Simplifying, divide by 2:  
+\( 39k \equiv 0 \pmod{50} \).  
+Since \( \gcd(39, 50) = 1 \), \( k \equiv 0 \pmod{50} \). Let \( k = 50a \), so \( N = \frac{39}{50}(50a) = 39a \).
+
+Similarly, \( N \) is 16% greater than integer \( m \), so \( N = \frac{116}{100}m \). This gives \( 116m \equiv 0 \pmod{100} \). Dividing by 4:  
+\( 29m \equiv 0 \pmod{25} \).  
+Since \( 29 \equiv 4 \pmod{25} \), this simplifies to \( 4m \equiv 0 \pmod{25} \), requiring \( m \equiv 0 \pmod{25} \). Let \( m = 25b \), so \( N = \frac{29}{25}(25b) = 29b \).
+
+Equating the two expressions for \( N \):  
+\( 39a = 29b \).  
+The minimal integers satisfying this are \( a = 29 \) and \( b = 39 \). Thus, \( N = 39 \times 29 = 1131 \). The remainder when \( 1131 \) is divided by \( 1000 \) is \(\boxed{131}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","true","false"
+"3EN4YVUOVV8JIL6EX0E0B7K3ONDXJC","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:28 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3SNVL38CIO8TDRZVESORMTULI6HCKN","A189Q7EDEDSQ34","Approved","Sat Oct 25 15:06:25 PDT 2025","Sat Oct 25 15:07:06 PDT 2025","Tue Oct 28 15:07:06 PDT 2025","Tue Oct 28 15:07:49 PDT 2025","","","41","100% (114/114)","100% (100/100)","100% (18/18)","2015_AIME_II_Problems_1","Let \(N\) be the least positive integer that is both \(22\) percent less than one integer and \(16\) percent greater than another integer. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. If \(N\) is \(22\) percent less than one integer \(k\), then \(N=\frac{78}{100}k=\frac{39}{50}k\). In addition, \(N\) is \(16\) percent greater than another integer \(m\), so \(N=\frac{116}{100}m=\frac{29}{25}m\). Therefore, \(k\) is divisible by \(50\) and \(m\) is divisible by \(25\). Setting these two equal, we have \(\frac{39}{50}k=\frac{29}{25}m\). Multiplying by \(50\) on both sides, we get \(39k=58m\).
+The smallest integers \(k\) and \(m\) that satisfy this are \(k=1450\) and \(m=975\), so \(N=1131\). The answer is \(\boxed{131}\).","We start by translating the percentage relationships into congruences. Let \( N \) be 22% less than integer \( k \), so \( N = \frac{78}{100}k \). This implies \( 78k \equiv 0 \pmod{100} \). Simplifying, divide by 2:  
+\( 39k \equiv 0 \pmod{50} \).  
+Since \( \gcd(39, 50) = 1 \), \( k \equiv 0 \pmod{50} \). Let \( k = 50a \), so \( N = \frac{39}{50}(50a) = 39a \).
+
+Similarly, \( N \) is 16% greater than integer \( m \), so \( N = \frac{116}{100}m \). This gives \( 116m \equiv 0 \pmod{100} \). Dividing by 4:  
+\( 29m \equiv 0 \pmod{25} \).  
+Since \( 29 \equiv 4 \pmod{25} \), this simplifies to \( 4m \equiv 0 \pmod{25} \), requiring \( m \equiv 0 \pmod{25} \). Let \( m = 25b \), so \( N = \frac{29}{25}(25b) = 29b \).
+
+Equating the two expressions for \( N \):  
+\( 39a = 29b \).  
+The minimal integers satisfying this are \( a = 29 \) and \( b = 39 \). Thus, \( N = 39 \times 29 = 1131 \). The remainder when \( 1131 \) is divided by \( 1000 \) is \(\boxed{131}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"
+"3EN4YVUOVV8JIL6EX0E0B7K3ONDXJC","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Wed Oct 08 20:07:28 PDT 2025","3","BatchId:418071;OriginalHitTemplateId:921587278;","3600","259200","Fri Nov 14 21:54:27 PST 2025","","","3T3IWE1XGQ3WABZ1DJ3E7P6Y5YETQK","AFA0H6QL832IJ","Approved","Tue Nov 04 14:33:47 PST 2025","Tue Nov 04 14:34:55 PST 2025","Fri Nov 07 14:34:55 PST 2025","Fri Nov 07 14:35:49 PST 2025","","","68","100% (21/21)","100% (21/21)","100% (21/21)","2015_AIME_II_Problems_1","Let \(N\) be the least positive integer that is both \(22\) percent less than one integer and \(16\) percent greater than another integer. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. If \(N\) is \(22\) percent less than one integer \(k\), then \(N=\frac{78}{100}k=\frac{39}{50}k\). In addition, \(N\) is \(16\) percent greater than another integer \(m\), so \(N=\frac{116}{100}m=\frac{29}{25}m\). Therefore, \(k\) is divisible by \(50\) and \(m\) is divisible by \(25\). Setting these two equal, we have \(\frac{39}{50}k=\frac{29}{25}m\). Multiplying by \(50\) on both sides, we get \(39k=58m\).
+The smallest integers \(k\) and \(m\) that satisfy this are \(k=1450\) and \(m=975\), so \(N=1131\). The answer is \(\boxed{131}\).","We start by translating the percentage relationships into congruences. Let \( N \) be 22% less than integer \( k \), so \( N = \frac{78}{100}k \). This implies \( 78k \equiv 0 \pmod{100} \). Simplifying, divide by 2:  
+\( 39k \equiv 0 \pmod{50} \).  
+Since \( \gcd(39, 50) = 1 \), \( k \equiv 0 \pmod{50} \). Let \( k = 50a \), so \( N = \frac{39}{50}(50a) = 39a \).
+
+Similarly, \( N \) is 16% greater than integer \( m \), so \( N = \frac{116}{100}m \). This gives \( 116m \equiv 0 \pmod{100} \). Dividing by 4:  
+\( 29m \equiv 0 \pmod{25} \).  
+Since \( 29 \equiv 4 \pmod{25} \), this simplifies to \( 4m \equiv 0 \pmod{25} \), requiring \( m \equiv 0 \pmod{25} \). Let \( m = 25b \), so \( N = \frac{29}{25}(25b) = 29b \).
+
+Equating the two expressions for \( N \):  
+\( 39a = 29b \).  
+The minimal integers satisfying this are \( a = 29 \) and \( b = 39 \). Thus, \( N = 39 \times 29 = 1131 \). The remainder when \( 1131 \) is divided by \( 1000 \) is \(\boxed{131}\).","deepseek-reasoner_Claude_correctness_randomly_selected_novelty","","true","false","false","true"

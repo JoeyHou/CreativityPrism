@@ -1,0 +1,10 @@
+- Definition: maginative stories. This task is designed to assess creativity through narrative and storytelling with a given prompt. This task emphasizes the ability to construct original, coherent, and imaginative stories, showcasing an individual′s creative potential in terms of narrative ability. Examples of given prompts are “The Invisible Elephant” or “The Book that Wrote Itself”.
+- Example: You are to construct a narrative or story based on the prompt provided below. The story length are suggested around 500 words. Let's think step by step. The prompt is: The Ladder That Reached the Moon
+
+
+| Dimension       | What to Look For                                           | 1                         | 3                                         | 5                                                                                                        |
+| --------------- | ---------------------------------------------------------- | ------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of distinct story elements (images, events, scenes) | ≤2                        | 4–6                                       | ≥10 developed beats                                                                                      |
+| **Flexibility** | Variety of narrative moves (time, POV, genre, tone)        | single straight narrative | 3–4 devices (time shift, flashback etc.)  | ≥6 integrated devices / modes                                                                            |
+| **Originality** | Novelty of concept and imagery                             | conventional plot         | one or two fresh images/twists            | multiple surprising yet coherent concepts and symbols (e.g., ladder as memory, moon descending to Earth) |
+| **Elaboration** | Descriptive detail, coherence, arc                         | sketchy or incoherent     | clear beginning–middle–end + some imagery | rich description + emotional arc + symbolic resolution or ambiguity                                      |

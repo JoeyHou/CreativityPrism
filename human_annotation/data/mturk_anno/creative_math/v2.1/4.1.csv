@@ -1,0 +1,874 @@
+HITId,HITTypeId,Title,Description,Keywords,Reward,CreationTime,MaxAssignments,RequesterAnnotation,AssignmentDurationInSeconds,AutoApprovalDelayInSeconds,Expiration,NumberOfSimilarHITs,LifetimeInSeconds,AssignmentId,WorkerId,AssignmentStatus,AcceptTime,SubmitTime,AutoApprovalTime,ApprovalTime,RejectionTime,RequesterFeedback,WorkTimeInSeconds,LifetimeApprovalRate,Last30DaysApprovalRate,Last7DaysApprovalRate,Input.problem_id,Input.problem,Input.cleaned_references,Input.cleaned_response,Input.model,Input.image_in_problem,Answer.correctness.correct,Answer.correctness.incorrect,Answer.novelty.not_novel,Answer.novelty.novel,Answer.worker_feedbacks,Approve,Reject
+3LG268AV4RMRA9YAA0XHP9LNJHYREU,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,351SEKWQSKXY875CZ0WILC47SB4MDI,AFA0H6QL832IJ,Submitted,Sun Dec 14 01:41:17 PST 2025,Sun Dec 14 01:41:32 PST 2025,Wed Dec 17 01:41:32 PST 2025,,,,15,100% (34/34),100% (10/10),100% (10/10),1964_AHSME_Problems_40,"A watch loses \(2\frac{1}{2}\) minutes per day. It is set right at \(1\) P.M. on March 15. Let \(n\) be the positive correction, in minutes, to be added to the time shown by the watch at a given time. When the watch shows \(9\) A.M. on March 21, \(n\) equals:
+\(\textbf{(A) }14\frac{14}{23}\qquad\textbf{(B) }14\frac{1}{14}\qquad\textbf{(C) }13\frac{101}{115}\qquad\textbf{(D) }13\frac{83}{115}\qquad \textbf{(E) }13\frac{13}{23}\)","Solution 1. From March 15 \(1\) P.M. on the watch to March 21 \(9\) A.M. on the watch, the watch passed \(20 + 5 \times 24 = 140\) hours. 
+Since \(1\) watch hour equals \(\frac{24}{23 + \frac{57.5}{60}} = \frac{576}{575}\) real hour, the difference between the watch time and the actual time passed is \(140 \times \left( \frac{576}{575} - 1 \right) = \frac{28}{115}\) hour \(=14\frac{14}{23}\) minutes.","To solve the problem, we start by converting all time units to minutes for clarity.
+
+**Step 1: Calculate total watch time elapsed**  
+From March 15 1 P.M. to March 21 9 A.M., the watch shows:  
+- Days: March 15–21 = 6 days.  
+- Subtract 4 hours (from 1 P.M. to 9 A.M.) = \(6 \times 24 - 4 = 140\) hours.  
+Convert to minutes: \(140 \times 60 = 8400\) watch minutes.
+
+**Step 2: Determine real time corresponding to watch time**  
+The watch loses \(2.5\) minutes per real day (\(1440\) minutes). Thus, in \(1440\) real minutes, the watch shows \(1440 - 2.5 = 1437.5\) minutes. The ratio of real time to watch time is:  
+\(
+\frac{1440}{1437.5} = \frac{576}{575}
+\)
+
+**Step 3: Compute real time for 8400 watch minutes**  
+Multiply the watch minutes by this ratio:  
+\(
+\text{Real time} = 8400 \times \frac{576}{575} = 8400 \times \left(1 + \frac{1}{575}\right)
+\)
+
+**Step 4: Find the difference between real and watch time**  
+The correction \(n\) is the excess real time:  
+\(
+n = 8400 \times \frac{1}{575} = \frac{8400}{575} = \frac{336}{23} = 14 \frac{14}{23} \text{ minutes}
+\)
+
+**Final Answer**  
+\(\boxed{A}\)",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,Barely novel,,
+3LG268AV4RMRA9YAA0XHP9LNJHYREU,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3RGU30DZTUOBBT549WITOAZKXV1MJW,A189Q7EDEDSQ34,Submitted,Sun Dec 14 04:01:54 PST 2025,Sun Dec 14 04:02:59 PST 2025,Wed Dec 17 04:02:59 PST 2025,,,,65,100% (114/114),0% (0/0),0% (0/0),1964_AHSME_Problems_40,"A watch loses \(2\frac{1}{2}\) minutes per day. It is set right at \(1\) P.M. on March 15. Let \(n\) be the positive correction, in minutes, to be added to the time shown by the watch at a given time. When the watch shows \(9\) A.M. on March 21, \(n\) equals:
+\(\textbf{(A) }14\frac{14}{23}\qquad\textbf{(B) }14\frac{1}{14}\qquad\textbf{(C) }13\frac{101}{115}\qquad\textbf{(D) }13\frac{83}{115}\qquad \textbf{(E) }13\frac{13}{23}\)","Solution 1. From March 15 \(1\) P.M. on the watch to March 21 \(9\) A.M. on the watch, the watch passed \(20 + 5 \times 24 = 140\) hours. 
+Since \(1\) watch hour equals \(\frac{24}{23 + \frac{57.5}{60}} = \frac{576}{575}\) real hour, the difference between the watch time and the actual time passed is \(140 \times \left( \frac{576}{575} - 1 \right) = \frac{28}{115}\) hour \(=14\frac{14}{23}\) minutes.","To solve the problem, we start by converting all time units to minutes for clarity.
+
+**Step 1: Calculate total watch time elapsed**  
+From March 15 1 P.M. to March 21 9 A.M., the watch shows:  
+- Days: March 15–21 = 6 days.  
+- Subtract 4 hours (from 1 P.M. to 9 A.M.) = \(6 \times 24 - 4 = 140\) hours.  
+Convert to minutes: \(140 \times 60 = 8400\) watch minutes.
+
+**Step 2: Determine real time corresponding to watch time**  
+The watch loses \(2.5\) minutes per real day (\(1440\) minutes). Thus, in \(1440\) real minutes, the watch shows \(1440 - 2.5 = 1437.5\) minutes. The ratio of real time to watch time is:  
+\(
+\frac{1440}{1437.5} = \frac{576}{575}
+\)
+
+**Step 3: Compute real time for 8400 watch minutes**  
+Multiply the watch minutes by this ratio:  
+\(
+\text{Real time} = 8400 \times \frac{576}{575} = 8400 \times \left(1 + \frac{1}{575}\right)
+\)
+
+**Step 4: Find the difference between real and watch time**  
+The correction \(n\) is the excess real time:  
+\(
+n = 8400 \times \frac{1}{575} = \frac{8400}{575} = \frac{336}{23} = 14 \frac{14}{23} \text{ minutes}
+\)
+
+**Final Answer**  
+\(\boxed{A}\)",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,2easy2novel,,
+37OPIVELVDJBV23VYQJ1FMTQBTTHAJ,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:38 PST 2025,,,3PW9OPU9PA0E98L79PT351P0X9K12G,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:52:59 PST 2025,Wed Dec 10 20:53:25 PST 2025,Sat Dec 13 20:53:25 PST 2025,Sat Dec 13 20:54:08 PST 2025,,,26,100% (215/215),100% (73/73),100% (73/73),1964_AHSME_Problems_40,"A watch loses \(2\frac{1}{2}\) minutes per day. It is set right at \(1\) P.M. on March 15. Let \(n\) be the positive correction, in minutes, to be added to the time shown by the watch at a given time. When the watch shows \(9\) A.M. on March 21, \(n\) equals:
+\(\textbf{(A) }14\frac{14}{23}\qquad\textbf{(B) }14\frac{1}{14}\qquad\textbf{(C) }13\frac{101}{115}\qquad\textbf{(D) }13\frac{83}{115}\qquad \textbf{(E) }13\frac{13}{23}\)","Solution 1. From March 15 \(1\) P.M. on the watch to March 21 \(9\) A.M. on the watch, the watch passed \(20 + 5 \times 24 = 140\) hours. 
+Since \(1\) watch hour equals \(\frac{24}{23 + \frac{57.5}{60}} = \frac{576}{575}\) real hour, the difference between the watch time and the actual time passed is \(140 \times \left( \frac{576}{575} - 1 \right) = \frac{28}{115}\) hour \(=14\frac{14}{23}\) minutes.","To solve the problem, we start by converting all time units to minutes for clarity.
+
+**Step 1: Calculate total watch time elapsed**  
+From March 15 1 P.M. to March 21 9 A.M., the watch shows:  
+- Days: March 15–21 = 6 days.  
+- Subtract 4 hours (from 1 P.M. to 9 A.M.) = \(6 \times 24 - 4 = 140\) hours.  
+Convert to minutes: \(140 \times 60 = 8400\) watch minutes.
+
+**Step 2: Determine real time corresponding to watch time**  
+The watch loses \(2.5\) minutes per real day (\(1440\) minutes). Thus, in \(1440\) real minutes, the watch shows \(1440 - 2.5 = 1437.5\) minutes. The ratio of real time to watch time is:  
+\(
+\frac{1440}{1437.5} = \frac{576}{575}
+\)
+
+**Step 3: Compute real time for 8400 watch minutes**  
+Multiply the watch minutes by this ratio:  
+\(
+\text{Real time} = 8400 \times \frac{576}{575} = 8400 \times \left(1 + \frac{1}{575}\right)
+\)
+
+**Step 4: Find the difference between real and watch time**  
+The correction \(n\) is the excess real time:  
+\(
+n = 8400 \times \frac{1}{575} = \frac{8400}{575} = \frac{336}{23} = 14 \frac{14}{23} \text{ minutes}
+\)
+
+**Final Answer**  
+\(\boxed{A}\)",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+3VADEH0UIVD78FNDY3DX9VPNJQJPS1,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,38F71OA9GDCV6RJ8Q6R89C7S4OKMFT,AFA0H6QL832IJ,Submitted,Sun Dec 14 02:08:43 PST 2025,Sun Dec 14 02:09:07 PST 2025,Wed Dec 17 02:09:07 PST 2025,,,,24,100% (34/34),100% (10/10),100% (10/10),1994_AHSME_Problems_24,"A sample consisting of five observations has an arithmetic mean of \(10\) and a median of \(12\). The smallest value that the range (largest observation minus smallest) can assume for such a sample is
+\(\textbf{(A)}\ 2 \qquad\textbf{(B)}\ 3 \qquad\textbf{(C)}\ 5 \qquad\textbf{(D)}\ 7 \qquad\textbf{(E)}\ 10\)","Solution 1. The minimum range occurs in the set \(\{7,7,12,12,12\}\), so the answer is \(\boxed{\textbf{(C)}\ 5}\)","Here's the step-by-step reasoning:
+
+1. **Test Option A (Range = 2):**
+   - Assume the smallest range is 2. Let the dataset be \(x, x, 12, y, y\) where \(y - x = 2\).
+   - Total sum: \(2x + 12 + 2y = 50 \implies x + y = 19\).
+   - Substitute \(y = x + 2\): \(x + (x + 2) = 19 \implies x = 8.5\), \(y = 10.5\).
+   - But \(y = 10.5 < 12\), violating \(y \geq 12\). **Rejected.**
+
+2. **Test Option B (Range = 3):**
+   - Assume range = 3. Let \(y = x + 3\).
+   - Total sum: \(x + y = 19 \implies x + (x + 3) = 19 \implies x = 8\), \(y = 11\).
+   - Again, \(y = 11 < 12\), violating \(y \geq 12\). **Rejected.**
+
+3. **Test Option C (Range = 5):**
+   - Assume range = 5. Let \(y = x + 5\).
+   - Total sum: \(x + y = 19 \implies x + (x + 5) = 19 \implies x = 7\), \(y = 12\).
+   - Construct dataset: \(\{7, 7, 12, 12, 12\}\).
+   - Sum: \(7 + 7 + 12 + 12 + 12 = 50\). All constraints satisfied. **Valid.**
+
+The answer is \(\boxed{\textbf{(C)}\ 5\).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,"Barely novel, but more steps",,
+3VADEH0UIVD78FNDY3DX9VPNJQJPS1,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3YHH42UU5VVK35MXNC786S5ZYH5L0M,A189Q7EDEDSQ34,Submitted,Sun Dec 14 04:32:59 PST 2025,Sun Dec 14 04:33:44 PST 2025,Wed Dec 17 04:33:44 PST 2025,,,,45,100% (114/114),0% (0/0),0% (0/0),1994_AHSME_Problems_24,"A sample consisting of five observations has an arithmetic mean of \(10\) and a median of \(12\). The smallest value that the range (largest observation minus smallest) can assume for such a sample is
+\(\textbf{(A)}\ 2 \qquad\textbf{(B)}\ 3 \qquad\textbf{(C)}\ 5 \qquad\textbf{(D)}\ 7 \qquad\textbf{(E)}\ 10\)","Solution 1. The minimum range occurs in the set \(\{7,7,12,12,12\}\), so the answer is \(\boxed{\textbf{(C)}\ 5}\)","Here's the step-by-step reasoning:
+
+1. **Test Option A (Range = 2):**
+   - Assume the smallest range is 2. Let the dataset be \(x, x, 12, y, y\) where \(y - x = 2\).
+   - Total sum: \(2x + 12 + 2y = 50 \implies x + y = 19\).
+   - Substitute \(y = x + 2\): \(x + (x + 2) = 19 \implies x = 8.5\), \(y = 10.5\).
+   - But \(y = 10.5 < 12\), violating \(y \geq 12\). **Rejected.**
+
+2. **Test Option B (Range = 3):**
+   - Assume range = 3. Let \(y = x + 3\).
+   - Total sum: \(x + y = 19 \implies x + (x + 3) = 19 \implies x = 8\), \(y = 11\).
+   - Again, \(y = 11 < 12\), violating \(y \geq 12\). **Rejected.**
+
+3. **Test Option C (Range = 5):**
+   - Assume range = 5. Let \(y = x + 5\).
+   - Total sum: \(x + y = 19 \implies x + (x + 5) = 19 \implies x = 7\), \(y = 12\).
+   - Construct dataset: \(\{7, 7, 12, 12, 12\}\).
+   - Sum: \(7 + 7 + 12 + 12 + 12 = 50\). All constraints satisfied. **Valid.**
+
+The answer is \(\boxed{\textbf{(C)}\ 5\).",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,2easy,,
+3MJ28H2Y2XOOHDD177NARKA5V165OP,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:37 PST 2025,,,3WMOAN2SRVDQK6QY2MBC4DZEX8HVNP,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:30:24 PST 2025,Wed Dec 10 20:31:40 PST 2025,Sat Dec 13 20:31:40 PST 2025,Sat Dec 13 20:32:08 PST 2025,,,76,100% (215/215),100% (73/73),100% (73/73),1994_AHSME_Problems_24,"A sample consisting of five observations has an arithmetic mean of \(10\) and a median of \(12\). The smallest value that the range (largest observation minus smallest) can assume for such a sample is
+\(\textbf{(A)}\ 2 \qquad\textbf{(B)}\ 3 \qquad\textbf{(C)}\ 5 \qquad\textbf{(D)}\ 7 \qquad\textbf{(E)}\ 10\)","Solution 1. The minimum range occurs in the set \(\{7,7,12,12,12\}\), so the answer is \(\boxed{\textbf{(C)}\ 5}\)","Here's the step-by-step reasoning:
+
+1. **Test Option A (Range = 2):**
+   - Assume the smallest range is 2. Let the dataset be \(x, x, 12, y, y\) where \(y - x = 2\).
+   - Total sum: \(2x + 12 + 2y = 50 \implies x + y = 19\).
+   - Substitute \(y = x + 2\): \(x + (x + 2) = 19 \implies x = 8.5\), \(y = 10.5\).
+   - But \(y = 10.5 < 12\), violating \(y \geq 12\). **Rejected.**
+
+2. **Test Option B (Range = 3):**
+   - Assume range = 3. Let \(y = x + 3\).
+   - Total sum: \(x + y = 19 \implies x + (x + 3) = 19 \implies x = 8\), \(y = 11\).
+   - Again, \(y = 11 < 12\), violating \(y \geq 12\). **Rejected.**
+
+3. **Test Option C (Range = 5):**
+   - Assume range = 5. Let \(y = x + 5\).
+   - Total sum: \(x + y = 19 \implies x + (x + 5) = 19 \implies x = 7\), \(y = 12\).
+   - Construct dataset: \(\{7, 7, 12, 12, 12\}\).
+   - Sum: \(7 + 7 + 12 + 12 + 12 = 50\). All constraints satisfied. **Valid.**
+
+The answer is \(\boxed{\textbf{(C)}\ 5\).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+33CLA8O0N1RJGNY65BHN7R6NVIDRFC,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,34YB12FSQI41KRF31QXQRX7453KMGS,A189Q7EDEDSQ34,Submitted,Sun Dec 14 03:04:30 PST 2025,Sun Dec 14 03:04:55 PST 2025,Wed Dec 17 03:04:55 PST 2025,,,,25,100% (114/114),0% (0/0),0% (0/0),1994_AJHSME_Problems_7,"If \(\angle A = 60^\circ\), \(\angle E = 40^\circ\) and \(\angle C = 30^\circ\), then \(\angle BDC =\)
+[asy] pair A,B,C,D,EE; A = origin; B = (2,0); C = (5,0); EE = (1.5,3); D = (1.75,1.5); draw(A--C--D); draw(B--EE--A); dot(A); dot(B); dot(C); dot(D); dot(EE); label(""\(A\)"",A,SW); label(""\(B\)"",B,S); label(""\(C\)"",C,SE); label(""\(D\)"",D,NE); label(""\(E\)"",EE,N); [/asy]
+\(\text{(A)}\ 40^\circ \qquad \text{(B)}\ 50^\circ \qquad \text{(C)}\ 60^\circ \qquad \text{(D)}\ 70^\circ \qquad \text{(E)}\ 80^\circ\)","Solution 1. The sum of the angles in a triangle is \(180^\circ\). We can find \(\angle ABE = 80^\circ\), so \(\angle CBD = 180-80=100^\circ\).
+\(\angle BDC = 180-100-30=\boxed{\text{(B)}\ 50^\circ}\)","Using the Law of Sines in triangle \(ABE\):
+\(
+\frac{AB}{\sin 40^\circ} = \frac{BE}{\sin 60^\circ} = \frac{AE}{\sin 80^\circ}
+\)
+Assuming \(AB = 1\), we find the proportional lengths of \(BE\) and \(AE\). Recognizing that \(\angle CBD\) is an exterior angle to triangle \(ABE\) at \(B\), we determine \(\angle CBD = 180^\circ - 80^\circ = 100^\circ\). In triangle \(BDC\), applying the triangle angle sum:
+\(
+\angle BDC = 180^\circ - 100^\circ - 30^\circ = 50^\circ
+\)
+Thus, \(\angle BDC = \boxed{\text{(B)}\ 50^\circ}\).",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+33CLA8O0N1RJGNY65BHN7R6NVIDRFC,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3Z7EFSHGNTUZXRY2DB3GCN2NEFCCXS,AFA0H6QL832IJ,Submitted,Sat Dec 13 10:20:14 PST 2025,Sat Dec 13 10:20:31 PST 2025,Tue Dec 16 10:20:31 PST 2025,,,,17,100% (34/34),100% (10/10),100% (10/10),1994_AJHSME_Problems_7,"If \(\angle A = 60^\circ\), \(\angle E = 40^\circ\) and \(\angle C = 30^\circ\), then \(\angle BDC =\)
+[asy] pair A,B,C,D,EE; A = origin; B = (2,0); C = (5,0); EE = (1.5,3); D = (1.75,1.5); draw(A--C--D); draw(B--EE--A); dot(A); dot(B); dot(C); dot(D); dot(EE); label(""\(A\)"",A,SW); label(""\(B\)"",B,S); label(""\(C\)"",C,SE); label(""\(D\)"",D,NE); label(""\(E\)"",EE,N); [/asy]
+\(\text{(A)}\ 40^\circ \qquad \text{(B)}\ 50^\circ \qquad \text{(C)}\ 60^\circ \qquad \text{(D)}\ 70^\circ \qquad \text{(E)}\ 80^\circ\)","Solution 1. The sum of the angles in a triangle is \(180^\circ\). We can find \(\angle ABE = 80^\circ\), so \(\angle CBD = 180-80=100^\circ\).
+\(\angle BDC = 180-100-30=\boxed{\text{(B)}\ 50^\circ}\)","Using the Law of Sines in triangle \(ABE\):
+\(
+\frac{AB}{\sin 40^\circ} = \frac{BE}{\sin 60^\circ} = \frac{AE}{\sin 80^\circ}
+\)
+Assuming \(AB = 1\), we find the proportional lengths of \(BE\) and \(AE\). Recognizing that \(\angle CBD\) is an exterior angle to triangle \(ABE\) at \(B\), we determine \(\angle CBD = 180^\circ - 80^\circ = 100^\circ\). In triangle \(BDC\), applying the triangle angle sum:
+\(
+\angle BDC = 180^\circ - 100^\circ - 30^\circ = 50^\circ
+\)
+Thus, \(\angle BDC = \boxed{\text{(B)}\ 50^\circ}\).",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+32W3UF2E0715C5CY3XV9RSAA6RSC4U,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:38 PST 2025,,,34Q075JO1HT7DYITU2PPMDWL0B010W,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:19:34 PST 2025,Wed Dec 10 20:25:23 PST 2025,Sat Dec 13 20:25:23 PST 2025,Sat Dec 13 20:26:08 PST 2025,,,349,100% (215/215),100% (73/73),100% (73/73),1994_AJHSME_Problems_7,"If \(\angle A = 60^\circ\), \(\angle E = 40^\circ\) and \(\angle C = 30^\circ\), then \(\angle BDC =\)
+[asy] pair A,B,C,D,EE; A = origin; B = (2,0); C = (5,0); EE = (1.5,3); D = (1.75,1.5); draw(A--C--D); draw(B--EE--A); dot(A); dot(B); dot(C); dot(D); dot(EE); label(""\(A\)"",A,SW); label(""\(B\)"",B,S); label(""\(C\)"",C,SE); label(""\(D\)"",D,NE); label(""\(E\)"",EE,N); [/asy]
+\(\text{(A)}\ 40^\circ \qquad \text{(B)}\ 50^\circ \qquad \text{(C)}\ 60^\circ \qquad \text{(D)}\ 70^\circ \qquad \text{(E)}\ 80^\circ\)","Solution 1. The sum of the angles in a triangle is \(180^\circ\). We can find \(\angle ABE = 80^\circ\), so \(\angle CBD = 180-80=100^\circ\).
+\(\angle BDC = 180-100-30=\boxed{\text{(B)}\ 50^\circ}\)","Using the Law of Sines in triangle \(ABE\):
+\(
+\frac{AB}{\sin 40^\circ} = \frac{BE}{\sin 60^\circ} = \frac{AE}{\sin 80^\circ}
+\)
+Assuming \(AB = 1\), we find the proportional lengths of \(BE\) and \(AE\). Recognizing that \(\angle CBD\) is an exterior angle to triangle \(ABE\) at \(B\), we determine \(\angle CBD = 180^\circ - 80^\circ = 100^\circ\). In triangle \(BDC\), applying the triangle angle sum:
+\(
+\angle BDC = 180^\circ - 100^\circ - 30^\circ = 50^\circ
+\)
+Thus, \(\angle BDC = \boxed{\text{(B)}\ 50^\circ}\).",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+3R5OYNIC3VP8NF0SN3INJ0L9L9XTPU,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,30X31N5D6N638VF5ZN127KV7ZXPASG,AFA0H6QL832IJ,Submitted,Sat Dec 13 10:03:37 PST 2025,Sat Dec 13 10:04:45 PST 2025,Tue Dec 16 10:04:45 PST 2025,,,,68,100% (34/34),100% (10/10),100% (10/10),1996_AJHSME_Problems_1,"How many positive factors of 36 are also multiples of 4?
+\(\text{(A)}\ 2 \qquad \text{(B)}\ 3 \qquad \text{(C)}\ 4 \qquad \text{(D)}\ 5 \qquad \text{(E)}\ 6\)","Solution 1. The factors of \(36\) are \(1, 2, 3, 4, 6, 9, 12, 18,\) and \(36\).
+The multiples of \(4\) up to \(36\) are \(4, 8, 12, 16, 20, 24, 28, 32\) and \(36\).
+Only \(4, 12\) and \(36\) appear on both lists, so the answer is \(3\), which is option \(\boxed{B}\).
+
+
+<br><br>==========<br>
+Solution 2. \(36 = 4^1 \cdot 3^2\). All possible factors of \(36\) will be here, except for ones divisible by \(2\) and not by \(4\). \((1+1)\cdot (2+1) = 6\). Subtract factors not divisible by \(4\), which are \(1\), \(3^1\), and \(3^2\). \(6-3=3\), which is \(\boxed{B}\).
+
+
+<br><br>==========<br>
+Solution 3. Divide \(36\) by \(4\), and the remaining factors, when multiplied by \(4\), will be factors of \(36\).
+\(36 \div 4 = 9\), which has \(3\) factors, giving us option \(\boxed{B}\).","A positive factor of 36 that is a multiple of 4 must include at least \(2^2\) in its prime factorization. The prime factorization of 36 is \(2^2 \cdot 3^2\). For such factors, the exponent of 2 must be exactly 2 (since higher exponents would exceed 36's factorization), and the exponent of 3 can be 0, 1, or 2. This gives three combinations:  
+- \(2^2 \cdot 3^0 = 4\)  
+- \(2^2 \cdot 3^1 = 12\)  
+- \(2^2 \cdot 3^2 = 36\)  
+
+Thus, there are \(\boxed{B}\) such factors.",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,"Hard to be novel, barely novel",,
+3R5OYNIC3VP8NF0SN3INJ0L9L9XTPU,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3FIJLY1B6EK1RUGLIMJ0QG1N9TVFPI,A189Q7EDEDSQ34,Submitted,Sun Dec 14 04:09:16 PST 2025,Sun Dec 14 04:09:36 PST 2025,Wed Dec 17 04:09:36 PST 2025,,,,20,100% (114/114),0% (0/0),0% (0/0),1996_AJHSME_Problems_1,"How many positive factors of 36 are also multiples of 4?
+\(\text{(A)}\ 2 \qquad \text{(B)}\ 3 \qquad \text{(C)}\ 4 \qquad \text{(D)}\ 5 \qquad \text{(E)}\ 6\)","Solution 1. The factors of \(36\) are \(1, 2, 3, 4, 6, 9, 12, 18,\) and \(36\).
+The multiples of \(4\) up to \(36\) are \(4, 8, 12, 16, 20, 24, 28, 32\) and \(36\).
+Only \(4, 12\) and \(36\) appear on both lists, so the answer is \(3\), which is option \(\boxed{B}\).
+
+
+<br><br>==========<br>
+Solution 2. \(36 = 4^1 \cdot 3^2\). All possible factors of \(36\) will be here, except for ones divisible by \(2\) and not by \(4\). \((1+1)\cdot (2+1) = 6\). Subtract factors not divisible by \(4\), which are \(1\), \(3^1\), and \(3^2\). \(6-3=3\), which is \(\boxed{B}\).
+
+
+<br><br>==========<br>
+Solution 3. Divide \(36\) by \(4\), and the remaining factors, when multiplied by \(4\), will be factors of \(36\).
+\(36 \div 4 = 9\), which has \(3\) factors, giving us option \(\boxed{B}\).","A positive factor of 36 that is a multiple of 4 must include at least \(2^2\) in its prime factorization. The prime factorization of 36 is \(2^2 \cdot 3^2\). For such factors, the exponent of 2 must be exactly 2 (since higher exponents would exceed 36's factorization), and the exponent of 3 can be 0, 1, or 2. This gives three combinations:  
+- \(2^2 \cdot 3^0 = 4\)  
+- \(2^2 \cdot 3^1 = 12\)  
+- \(2^2 \cdot 3^2 = 36\)  
+
+Thus, there are \(\boxed{B}\) such factors.",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,2easy,,
+3TFJJUELT05V9RXBZJCLYDDCMDWC2Y,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:37 PST 2025,,,39L1G8WVWA73UQHQDP78OBUS3NK31T,ASQIP0BTUIBHO,Approved,Wed Dec 10 19:34:42 PST 2025,Wed Dec 10 19:35:34 PST 2025,Sat Dec 13 19:35:34 PST 2025,Sat Dec 13 19:36:08 PST 2025,,,52,100% (215/215),100% (73/73),100% (73/73),1996_AJHSME_Problems_1,"How many positive factors of 36 are also multiples of 4?
+\(\text{(A)}\ 2 \qquad \text{(B)}\ 3 \qquad \text{(C)}\ 4 \qquad \text{(D)}\ 5 \qquad \text{(E)}\ 6\)","Solution 1. The factors of \(36\) are \(1, 2, 3, 4, 6, 9, 12, 18,\) and \(36\).
+The multiples of \(4\) up to \(36\) are \(4, 8, 12, 16, 20, 24, 28, 32\) and \(36\).
+Only \(4, 12\) and \(36\) appear on both lists, so the answer is \(3\), which is option \(\boxed{B}\).
+
+
+<br><br>==========<br>
+Solution 2. \(36 = 4^1 \cdot 3^2\). All possible factors of \(36\) will be here, except for ones divisible by \(2\) and not by \(4\). \((1+1)\cdot (2+1) = 6\). Subtract factors not divisible by \(4\), which are \(1\), \(3^1\), and \(3^2\). \(6-3=3\), which is \(\boxed{B}\).
+
+
+<br><br>==========<br>
+Solution 3. Divide \(36\) by \(4\), and the remaining factors, when multiplied by \(4\), will be factors of \(36\).
+\(36 \div 4 = 9\), which has \(3\) factors, giving us option \(\boxed{B}\).","A positive factor of 36 that is a multiple of 4 must include at least \(2^2\) in its prime factorization. The prime factorization of 36 is \(2^2 \cdot 3^2\). For such factors, the exponent of 2 must be exactly 2 (since higher exponents would exceed 36's factorization), and the exponent of 3 can be 0, 1, or 2. This gives three combinations:  
+- \(2^2 \cdot 3^0 = 4\)  
+- \(2^2 \cdot 3^1 = 12\)  
+- \(2^2 \cdot 3^2 = 36\)  
+
+Thus, there are \(\boxed{B}\) such factors.",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+3R5OYNIC3VP8NF0SN3INJ0L9L9XPTQ,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3N2BF7Y2VAAFKNAELWF8CXJ5K3XHMM,AFA0H6QL832IJ,Submitted,Sat Dec 13 20:14:23 PST 2025,Sat Dec 13 20:14:34 PST 2025,Tue Dec 16 20:14:34 PST 2025,,,,11,100% (34/34),100% (10/10),100% (10/10),2001_AMC_12_Problems_20,"Points \(A = (3,9)\), \(B = (1,1)\), \(C = (5,3)\), and \(D=(a,b)\) lie in the first quadrant and are the vertices of quadrilateral \(ABCD\). The quadrilateral formed by joining the midpoints of \(\overline{AB}\), \(\overline{BC}\), \(\overline{CD}\), and \(\overline{DA}\) is a square. What is the sum of the coordinates of point \(D\)?
+\(\text{(A) }7 \qquad \text{(B) }9 \qquad \text{(C) }10 \qquad \text{(D) }12 \qquad \text{(E) }16\)","Solution 1. [asy] pair A=(3,9), B=(1,1), C=(5,3), D=(7,3); draw(A--B--C--D--cycle); label(""\(A\)"",A,N); label(""\(B\)"",B,SW); label(""\(C\)"",C,N); label(""\(D\)"",D,E); pair AB = (A + B)/2, BC = (B + C)/2, CD = (C + D)/2, DA = (D + A)/2; draw(AB--BC--CD--DA--cycle); [/asy]
+We already know two vertices of the square: \((A+B)/2 = (2,5)\) and \((B+C)/2 = (3,2)\). 
+There are only two possibilities for the other vertices of the square: either they are \((6,3)\) and \((5,6)\), or they are \((0,1)\) and \((-1,4)\). The second case would give us \(D\) outside the first quadrant, hence the first case is the correct one. As \((6,3)\) is the midpoint of \(CD\), we can compute \(D=(7,3)\), and \(7+3=\boxed{10}\).","To solve the problem, we use the Varignon theorem, which states that the midpoints of a quadrilateral's sides form a parallelogram. For this parallelogram to be a square, the original quadrilateral must have diagonals that are equal in length and perpendicular.
+
+1. **Compute diagonals AC and BD:**
+   - Diagonal AC connects points \( A(3,9) \) and \( C(5,3) \). Its vector is \( (2, -6) \).
+   - Diagonal BD connects points \( B(1,1) \) and \( D(a,b) \). Its vector is \( (a-1, b-1) \).
+
+2. **Conditions for diagonals:**
+   - **Perpendicularity:** The dot product must be zero:
+     \(
+     2(a - 1) - 6(b - 1) = 0 \implies a - 3b + 2 = 0 \quad \text{(Equation 1)}
+     \)
+   - **Equal Length:** Their magnitudes must be equal. The length of AC is \( \sqrt{40} \), so:
+     \(
+     \sqrt{(a - 1)^2 + (b - 1)^2} = 2\sqrt{10} \implies (a - 1)^2 + (b - 1)^2 = 40 \quad \text{(Equation 2)}
+     \)
+
+3. **Solve the system:**
+   - From Equation 1: \( a = 3b - 2 \).
+   - Substitute into Equation 2:
+     \(
+     (3b - 3)^2 + (b - 1)^2 = 40 \implies 10b^2 - 20b - 30 = 0 \implies b = 3 \text{ (since } b > 0\text{)}.
+     \)
+   - Thus, \( a = 3(3) - 2 = 7 \).
+
+4. **Conclusion:**
+   - Point \( D \) is \( (7, 3) \), so \( a + b = 7 + 3 = \boxed{10} \).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3R5OYNIC3VP8NF0SN3INJ0L9L9XPTQ,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3S3AMIZX3ELLZLTLMB24IGZVYX0DCR,A189Q7EDEDSQ34,Submitted,Sun Dec 14 04:33:56 PST 2025,Sun Dec 14 04:34:43 PST 2025,Wed Dec 17 04:34:43 PST 2025,,,,47,100% (114/114),0% (0/0),0% (0/0),2001_AMC_12_Problems_20,"Points \(A = (3,9)\), \(B = (1,1)\), \(C = (5,3)\), and \(D=(a,b)\) lie in the first quadrant and are the vertices of quadrilateral \(ABCD\). The quadrilateral formed by joining the midpoints of \(\overline{AB}\), \(\overline{BC}\), \(\overline{CD}\), and \(\overline{DA}\) is a square. What is the sum of the coordinates of point \(D\)?
+\(\text{(A) }7 \qquad \text{(B) }9 \qquad \text{(C) }10 \qquad \text{(D) }12 \qquad \text{(E) }16\)","Solution 1. [asy] pair A=(3,9), B=(1,1), C=(5,3), D=(7,3); draw(A--B--C--D--cycle); label(""\(A\)"",A,N); label(""\(B\)"",B,SW); label(""\(C\)"",C,N); label(""\(D\)"",D,E); pair AB = (A + B)/2, BC = (B + C)/2, CD = (C + D)/2, DA = (D + A)/2; draw(AB--BC--CD--DA--cycle); [/asy]
+We already know two vertices of the square: \((A+B)/2 = (2,5)\) and \((B+C)/2 = (3,2)\). 
+There are only two possibilities for the other vertices of the square: either they are \((6,3)\) and \((5,6)\), or they are \((0,1)\) and \((-1,4)\). The second case would give us \(D\) outside the first quadrant, hence the first case is the correct one. As \((6,3)\) is the midpoint of \(CD\), we can compute \(D=(7,3)\), and \(7+3=\boxed{10}\).","To solve the problem, we use the Varignon theorem, which states that the midpoints of a quadrilateral's sides form a parallelogram. For this parallelogram to be a square, the original quadrilateral must have diagonals that are equal in length and perpendicular.
+
+1. **Compute diagonals AC and BD:**
+   - Diagonal AC connects points \( A(3,9) \) and \( C(5,3) \). Its vector is \( (2, -6) \).
+   - Diagonal BD connects points \( B(1,1) \) and \( D(a,b) \). Its vector is \( (a-1, b-1) \).
+
+2. **Conditions for diagonals:**
+   - **Perpendicularity:** The dot product must be zero:
+     \(
+     2(a - 1) - 6(b - 1) = 0 \implies a - 3b + 2 = 0 \quad \text{(Equation 1)}
+     \)
+   - **Equal Length:** Their magnitudes must be equal. The length of AC is \( \sqrt{40} \), so:
+     \(
+     \sqrt{(a - 1)^2 + (b - 1)^2} = 2\sqrt{10} \implies (a - 1)^2 + (b - 1)^2 = 40 \quad \text{(Equation 2)}
+     \)
+
+3. **Solve the system:**
+   - From Equation 1: \( a = 3b - 2 \).
+   - Substitute into Equation 2:
+     \(
+     (3b - 3)^2 + (b - 1)^2 = 40 \implies 10b^2 - 20b - 30 = 0 \implies b = 3 \text{ (since } b > 0\text{)}.
+     \)
+   - Thus, \( a = 3(3) - 2 = 7 \).
+
+4. **Conclusion:**
+   - Point \( D \) is \( (7, 3) \), so \( a + b = 7 + 3 = \boxed{10} \).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+379OL9DBTBUJCEJFGK9P5RD9V7O9YV,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:37 PST 2025,,,3WETL7AQWDO2I8I9EC9KR179F3P35B,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:39:41 PST 2025,Wed Dec 10 20:42:22 PST 2025,Sat Dec 13 20:42:22 PST 2025,Sat Dec 13 20:43:08 PST 2025,,,161,100% (215/215),100% (73/73),100% (73/73),2001_AMC_12_Problems_20,"Points \(A = (3,9)\), \(B = (1,1)\), \(C = (5,3)\), and \(D=(a,b)\) lie in the first quadrant and are the vertices of quadrilateral \(ABCD\). The quadrilateral formed by joining the midpoints of \(\overline{AB}\), \(\overline{BC}\), \(\overline{CD}\), and \(\overline{DA}\) is a square. What is the sum of the coordinates of point \(D\)?
+\(\text{(A) }7 \qquad \text{(B) }9 \qquad \text{(C) }10 \qquad \text{(D) }12 \qquad \text{(E) }16\)","Solution 1. [asy] pair A=(3,9), B=(1,1), C=(5,3), D=(7,3); draw(A--B--C--D--cycle); label(""\(A\)"",A,N); label(""\(B\)"",B,SW); label(""\(C\)"",C,N); label(""\(D\)"",D,E); pair AB = (A + B)/2, BC = (B + C)/2, CD = (C + D)/2, DA = (D + A)/2; draw(AB--BC--CD--DA--cycle); [/asy]
+We already know two vertices of the square: \((A+B)/2 = (2,5)\) and \((B+C)/2 = (3,2)\). 
+There are only two possibilities for the other vertices of the square: either they are \((6,3)\) and \((5,6)\), or they are \((0,1)\) and \((-1,4)\). The second case would give us \(D\) outside the first quadrant, hence the first case is the correct one. As \((6,3)\) is the midpoint of \(CD\), we can compute \(D=(7,3)\), and \(7+3=\boxed{10}\).","To solve the problem, we use the Varignon theorem, which states that the midpoints of a quadrilateral's sides form a parallelogram. For this parallelogram to be a square, the original quadrilateral must have diagonals that are equal in length and perpendicular.
+
+1. **Compute diagonals AC and BD:**
+   - Diagonal AC connects points \( A(3,9) \) and \( C(5,3) \). Its vector is \( (2, -6) \).
+   - Diagonal BD connects points \( B(1,1) \) and \( D(a,b) \). Its vector is \( (a-1, b-1) \).
+
+2. **Conditions for diagonals:**
+   - **Perpendicularity:** The dot product must be zero:
+     \(
+     2(a - 1) - 6(b - 1) = 0 \implies a - 3b + 2 = 0 \quad \text{(Equation 1)}
+     \)
+   - **Equal Length:** Their magnitudes must be equal. The length of AC is \( \sqrt{40} \), so:
+     \(
+     \sqrt{(a - 1)^2 + (b - 1)^2} = 2\sqrt{10} \implies (a - 1)^2 + (b - 1)^2 = 40 \quad \text{(Equation 2)}
+     \)
+
+3. **Solve the system:**
+   - From Equation 1: \( a = 3b - 2 \).
+   - Substitute into Equation 2:
+     \(
+     (3b - 3)^2 + (b - 1)^2 = 40 \implies 10b^2 - 20b - 30 = 0 \implies b = 3 \text{ (since } b > 0\text{)}.
+     \)
+   - Thus, \( a = 3(3) - 2 = 7 \).
+
+4. **Conclusion:**
+   - Point \( D \) is \( (7, 3) \), so \( a + b = 7 + 3 = \boxed{10} \).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3VEI3XUC0ADV70N0JEDSJLKRXO0PRD,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3QUO65DNQE48PC1AYB1KNGX09BEOU9,AFA0H6QL832IJ,Submitted,Sun Dec 14 01:51:32 PST 2025,Sun Dec 14 01:51:43 PST 2025,Wed Dec 17 01:51:43 PST 2025,,,,11,100% (34/34),100% (10/10),100% (10/10),2006_AMC_12B_Problems_22,"Suppose \(a\), \(b\) and \(c\) are positive integers with \(a+b+c=2006\), and \(a!b!c!=m\cdot 10^n\), where \(m\) and \(n\) are integers and \(m\) is not divisible by \(10\). What is the smallest possible value of \(n\)?
+\(\mathrm{(A)}\ 489 \qquad \mathrm{(B)}\ 492  \qquad \mathrm{(C)}\ 495 \qquad \mathrm{(D)}\ 498 \qquad \mathrm{(E)}\ 501\)","Solution 1. The power of \(10\) for any factorial is given by the well-known algorithm 
+\(\left\lfloor \frac n{5}\right\rfloor + \left\lfloor \frac n{25}\right\rfloor + \left\lfloor \frac n{125}\right\rfloor + \cdots\)
+It is rational to guess numbers right before powers of \(5\) because we won't have any extra numbers from higher powers of \(5\). As we list out the powers of 5, it is clear that \(5^{4}=625\) is less than 2006 and  \(5^{5}=3125\) is greater. Therefore, set \(a\) and \(b\) to be 624. Thus, c is \(2006-(624\cdot 2)=758\). Applying the algorithm, we see that our answer is \(152+152+188= \boxed{492}\).","To minimize the number of trailing zeros (i.e., the exponent of 10) in \(a!b!c!\), we focus on minimizing the exponent of 5 in the product, as the exponent of 2 will be greater. The exponent of 5 in \(n!\) is given by:
+\(
+v_5(n!) = \left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{25} \right\rfloor + \left\lfloor \frac{n}{125} \right\rfloor + \left\lfloor \frac{n}{625} \right\rfloor + \cdots
+\)
+1. The highest power of 5 less than 2006 is \(5^4 = 625\). Numbers \(\geq 625\) incur an extra term \(\left\lfloor \frac{n}{625} \right\rfloor\).
+2. Assign two numbers just below 625 (624) to minimize their \(v_5\) contributions. The third number absorbs the remaining value:
+   \(
+   a = 624, \quad b = 624, \quad c = 2006 - 2 \cdot 624 = 758
+   \)
+3. Calculate \(v_5\):
+   - For \(624!\):
+     \(
+     v_5(624!) = \left\lfloor \frac{624}{5} \right\rfloor + \left\lfloor \frac{624}{25} \right\rfloor + \left\lfloor \frac{624}{125} \right\rfloor = 124 + 24 + 4 = 152
+     \)
+     Each of \(a!\) and \(b!\) contributes 152.
+   - For \(758!\):
+     \(
+     v_5(758!) = \left\lfloor \frac{758}{5} \right\rfloor + \left\lfloor \frac{758}{25} \right\rfloor + \left\lfloor \frac{758}{125} \right\rfloor + \left\lfloor \frac{758}{625} \right\rfloor = 151 + 30 + 6 + 1 = 188
+     \)
+4. Total Exponent of 5:
+   \(
+   v_5(a!b!c!) = 152 + 152 + 188 = 492
+   \)",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+3VEI3XUC0ADV70N0JEDSJLKRXO0PRD,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3QY5DC2MXB0EJZOHZ8IU0MOMHANFUE,A189Q7EDEDSQ34,Submitted,Sun Dec 14 04:48:18 PST 2025,Sun Dec 14 04:51:14 PST 2025,Wed Dec 17 04:51:14 PST 2025,,,,176,100% (114/114),0% (0/0),0% (0/0),2006_AMC_12B_Problems_22,"Suppose \(a\), \(b\) and \(c\) are positive integers with \(a+b+c=2006\), and \(a!b!c!=m\cdot 10^n\), where \(m\) and \(n\) are integers and \(m\) is not divisible by \(10\). What is the smallest possible value of \(n\)?
+\(\mathrm{(A)}\ 489 \qquad \mathrm{(B)}\ 492  \qquad \mathrm{(C)}\ 495 \qquad \mathrm{(D)}\ 498 \qquad \mathrm{(E)}\ 501\)","Solution 1. The power of \(10\) for any factorial is given by the well-known algorithm 
+\(\left\lfloor \frac n{5}\right\rfloor + \left\lfloor \frac n{25}\right\rfloor + \left\lfloor \frac n{125}\right\rfloor + \cdots\)
+It is rational to guess numbers right before powers of \(5\) because we won't have any extra numbers from higher powers of \(5\). As we list out the powers of 5, it is clear that \(5^{4}=625\) is less than 2006 and  \(5^{5}=3125\) is greater. Therefore, set \(a\) and \(b\) to be 624. Thus, c is \(2006-(624\cdot 2)=758\). Applying the algorithm, we see that our answer is \(152+152+188= \boxed{492}\).","To minimize the number of trailing zeros (i.e., the exponent of 10) in \(a!b!c!\), we focus on minimizing the exponent of 5 in the product, as the exponent of 2 will be greater. The exponent of 5 in \(n!\) is given by:
+\(
+v_5(n!) = \left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{25} \right\rfloor + \left\lfloor \frac{n}{125} \right\rfloor + \left\lfloor \frac{n}{625} \right\rfloor + \cdots
+\)
+1. The highest power of 5 less than 2006 is \(5^4 = 625\). Numbers \(\geq 625\) incur an extra term \(\left\lfloor \frac{n}{625} \right\rfloor\).
+2. Assign two numbers just below 625 (624) to minimize their \(v_5\) contributions. The third number absorbs the remaining value:
+   \(
+   a = 624, \quad b = 624, \quad c = 2006 - 2 \cdot 624 = 758
+   \)
+3. Calculate \(v_5\):
+   - For \(624!\):
+     \(
+     v_5(624!) = \left\lfloor \frac{624}{5} \right\rfloor + \left\lfloor \frac{624}{25} \right\rfloor + \left\lfloor \frac{624}{125} \right\rfloor = 124 + 24 + 4 = 152
+     \)
+     Each of \(a!\) and \(b!\) contributes 152.
+   - For \(758!\):
+     \(
+     v_5(758!) = \left\lfloor \frac{758}{5} \right\rfloor + \left\lfloor \frac{758}{25} \right\rfloor + \left\lfloor \frac{758}{125} \right\rfloor + \left\lfloor \frac{758}{625} \right\rfloor = 151 + 30 + 6 + 1 = 188
+     \)
+4. Total Exponent of 5:
+   \(
+   v_5(a!b!c!) = 152 + 152 + 188 = 492
+   \)",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+3LG268AV4RMRA9YAA0XHP9LNJHPER8,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:37 PST 2025,,,3OXV7EAXLY6Y1CINJVJPJ7L9BY036R,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:43:03 PST 2025,Wed Dec 10 20:45:52 PST 2025,Sat Dec 13 20:45:52 PST 2025,Sat Dec 13 20:46:08 PST 2025,,,169,100% (215/215),100% (73/73),100% (73/73),2006_AMC_12B_Problems_22,"Suppose \(a\), \(b\) and \(c\) are positive integers with \(a+b+c=2006\), and \(a!b!c!=m\cdot 10^n\), where \(m\) and \(n\) are integers and \(m\) is not divisible by \(10\). What is the smallest possible value of \(n\)?
+\(\mathrm{(A)}\ 489 \qquad \mathrm{(B)}\ 492  \qquad \mathrm{(C)}\ 495 \qquad \mathrm{(D)}\ 498 \qquad \mathrm{(E)}\ 501\)","Solution 1. The power of \(10\) for any factorial is given by the well-known algorithm 
+\(\left\lfloor \frac n{5}\right\rfloor + \left\lfloor \frac n{25}\right\rfloor + \left\lfloor \frac n{125}\right\rfloor + \cdots\)
+It is rational to guess numbers right before powers of \(5\) because we won't have any extra numbers from higher powers of \(5\). As we list out the powers of 5, it is clear that \(5^{4}=625\) is less than 2006 and  \(5^{5}=3125\) is greater. Therefore, set \(a\) and \(b\) to be 624. Thus, c is \(2006-(624\cdot 2)=758\). Applying the algorithm, we see that our answer is \(152+152+188= \boxed{492}\).","To minimize the number of trailing zeros (i.e., the exponent of 10) in \(a!b!c!\), we focus on minimizing the exponent of 5 in the product, as the exponent of 2 will be greater. The exponent of 5 in \(n!\) is given by:
+\(
+v_5(n!) = \left\lfloor \frac{n}{5} \right\rfloor + \left\lfloor \frac{n}{25} \right\rfloor + \left\lfloor \frac{n}{125} \right\rfloor + \left\lfloor \frac{n}{625} \right\rfloor + \cdots
+\)
+1. The highest power of 5 less than 2006 is \(5^4 = 625\). Numbers \(\geq 625\) incur an extra term \(\left\lfloor \frac{n}{625} \right\rfloor\).
+2. Assign two numbers just below 625 (624) to minimize their \(v_5\) contributions. The third number absorbs the remaining value:
+   \(
+   a = 624, \quad b = 624, \quad c = 2006 - 2 \cdot 624 = 758
+   \)
+3. Calculate \(v_5\):
+   - For \(624!\):
+     \(
+     v_5(624!) = \left\lfloor \frac{624}{5} \right\rfloor + \left\lfloor \frac{624}{25} \right\rfloor + \left\lfloor \frac{624}{125} \right\rfloor = 124 + 24 + 4 = 152
+     \)
+     Each of \(a!\) and \(b!\) contributes 152.
+   - For \(758!\):
+     \(
+     v_5(758!) = \left\lfloor \frac{758}{5} \right\rfloor + \left\lfloor \frac{758}{25} \right\rfloor + \left\lfloor \frac{758}{125} \right\rfloor + \left\lfloor \frac{758}{625} \right\rfloor = 151 + 30 + 6 + 1 = 188
+     \)
+4. Total Exponent of 5:
+   \(
+   v_5(a!b!c!) = 152 + 152 + 188 = 492
+   \)",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+3J6BHNX0VS89HBYSDFR3EKTI2H5NKM,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3634BBTX08A9A8TH5RTGHJ0BNF0FI6,AFA0H6QL832IJ,Submitted,Sun Dec 14 01:46:13 PST 2025,Sun Dec 14 01:46:31 PST 2025,Wed Dec 17 01:46:31 PST 2025,,,,18,100% (34/34),100% (10/10),100% (10/10),2008_IMO_Problems_5,"Let \(n\) and \(k\) be positive integers with \(k \geq n\) and \(k - n\) an even number. Let \(2n\) lamps labelled \(1\), \(2\), ..., \(2n\) be given, each of which can be either  or . Initially all the lamps are off. We consider sequences of steps: at each step one of the lamps is switched (from on to off or from off to on).
+Let \(N\) be the number of such sequences consisting of \(k\) steps and resulting in the state where lamps \(1\) through \(n\) are all on, and lamps \(n + 1\) through \(2n\) are all off.
+Let \(M\) be number of such sequences consisting of \(k\) steps, resulting in the state where lamps \(1\) through \(n\) are all on, and lamps \(n + 1\) through \(2n\) are all off, but where none of the lamps \(n + 1\) through \(2n\) is ever switched on.
+Determine \(\frac {N}{M}\).","Solution 1. For convenience, let \(A\) denote the set \((1,2,\ldots n)\) and \(B\) the set \((n+1,n+2,\ldots,2n)\).
+We can describe each sequences of switching the lamps as a \(k\)-dimensional vector
+\((a_1, a_2, \ldots, a_k)\), where \(a_i \in A \cup B\) signifies which lamp was switched on the \(i\)-th move for \(i=1,2,\ldots k\). 
+Let \(\cal{N}\) consist of those sequences that contain each of the numbers in \(A\) an  number of times and each of the numbers in \(B\) an  number of times. Similarly, let \(\cal{M}\) denote the set of those sequences that contain no numbers from \(B\) and each of the numbers in \(A\) an odd number of times. By definition, \(M=|\cal{M}|\) and \(N=|\cal{N}|\).
+Define the mapping \(f:\cal{N} \rightarrow \cal{M}\) as
+\(f(a_1, a_2, \ldots, a_k) = (b_1,b_2,\ldots b_k) :  b_i =  \begin{cases}    a_i, & \mbox{ if }  a_i \in A \\    a_i-n, & \mbox{ if } a_i  \in B \end{cases}\)
+What we want to show now is that each element of \(\cal{M}\) is an image of exactly \(2^{k-n}\) elements from \(\cal{N}\), which would imply \(N = 2^{k-n}M\) and solve the problem.
+Consider an arbitrary element \(y\) of \(\cal{M}\) and let \(l_i\) be the number of appearances of the number \(i\) in \(y\) for \(i=1,2,\ldots n\). Now consider the set of pre-images of \(y\), that is \(X_y = \{ x | f(x) = y \}\).
+It is easy to see that each element \(x\in X_y\) is derived from \(y\) by  an  number of its \(1\)-s, \(2\)-s, and so on, where flipping means changing the number \(j\in A\) to \(j+n\in B\). Since each such set of flippings results in a unique \(x\), all we want to count is the number of flippings. We can flip exactly \(0, 2, 4,\ldots\) of the \(1\)-s, so that results in
+\(\binom{l_1}{0} + \binom{l_1}{2}+\binom{l_1}{4}+\cdots = 2^{l_1-1}\)
+flippings. Combine each of them with the \(2^{l_2-1}\), \(2^{l_3-1}\), etc. ways of flipping the \(2\)-s, \(3\)-s etc. respectively to get the total number of flippings:
+\(2^{l_1-1}2^{l_2-1}\cdots2^{l_n-1} = 2^{l_1+l_2+\cdots+l_n-n} = 2^{k-n}.\) 
+This shows that \(|X_y| = 2^{k-n}\) and the proof is complete.","To determine \(\frac{N}{M}\), we employ generating functions to model the toggle sequences for lamps in sets \(A\) and \(B\).
+
+1. **Generating Function for \(M\):**
+   - Since only lamps in \(A\) are toggled (each an odd number of times), the generating function for each lamp is \(\sinh(x) = \frac{e^x - e^{-x}}{2}\).
+   - For \(n\) lamps, the generating function is \([\sinh(x)]^n = \left(\frac{e^x - e^{-x}}{2}\right)^n\).
+   - Expanding via the binomial theorem:
+     \(
+     [\sinh(x)]^n = \frac{1}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} e^{x(n-2m)}
+     \)
+   - The coefficient of \(x^k/k!\) gives \(M = \frac{k!}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (n-2m)^k\).
+
+2. **Generating Function for \(N\):**
+   - Lamps in \(A\) are toggled oddly (generator \(\sinh(x)\)), and those in \(B\) evenly (\(\cosh(x) = \frac{e^x + e^{-x}}{2}\)).
+   - The combined generating function is \([\sinh(x)\cosh(x)]^n = \left(\frac{e^{2x} - e^{-2x}}{4}\right)^n\).
+   - Expanding similarly:
+     \(
+     [\sinh(x)\cosh(x)]^n = \frac{1}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} e^{2x(n-2m)}
+     \)
+   - The coefficient of \(x^k/k!\) yields \(N = \frac{k!}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (2(n-2m))^k\).
+
+3. **Computing the Ratio \(\frac{N}{M}\):**
+   - Substitute \(N\) and \(M\):
+     \(
+     \frac{N}{M} = \frac{\frac{1}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (2(n-2m))^k}{\frac{1}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (n-2m)^k}
+     \)
+   - Factor out \(2^k\) from the numerator's sum and simplify:
+     \(
+     \frac{N}{M} = \frac{2^k \cdot 2^n}{4^n} = 2^{k - n}
+     \)
+   
+\(\frac{N}{M} = 2^{k - n}\)",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3J6BHNX0VS89HBYSDFR3EKTI2H5NKM,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3WYGZ5XF3GV9K8ORBEER1YY349JKS5,A189Q7EDEDSQ34,Submitted,Sun Dec 14 03:24:15 PST 2025,Sun Dec 14 03:29:31 PST 2025,Wed Dec 17 03:29:31 PST 2025,,,,316,100% (114/114),0% (0/0),0% (0/0),2008_IMO_Problems_5,"Let \(n\) and \(k\) be positive integers with \(k \geq n\) and \(k - n\) an even number. Let \(2n\) lamps labelled \(1\), \(2\), ..., \(2n\) be given, each of which can be either  or . Initially all the lamps are off. We consider sequences of steps: at each step one of the lamps is switched (from on to off or from off to on).
+Let \(N\) be the number of such sequences consisting of \(k\) steps and resulting in the state where lamps \(1\) through \(n\) are all on, and lamps \(n + 1\) through \(2n\) are all off.
+Let \(M\) be number of such sequences consisting of \(k\) steps, resulting in the state where lamps \(1\) through \(n\) are all on, and lamps \(n + 1\) through \(2n\) are all off, but where none of the lamps \(n + 1\) through \(2n\) is ever switched on.
+Determine \(\frac {N}{M}\).","Solution 1. For convenience, let \(A\) denote the set \((1,2,\ldots n)\) and \(B\) the set \((n+1,n+2,\ldots,2n)\).
+We can describe each sequences of switching the lamps as a \(k\)-dimensional vector
+\((a_1, a_2, \ldots, a_k)\), where \(a_i \in A \cup B\) signifies which lamp was switched on the \(i\)-th move for \(i=1,2,\ldots k\). 
+Let \(\cal{N}\) consist of those sequences that contain each of the numbers in \(A\) an  number of times and each of the numbers in \(B\) an  number of times. Similarly, let \(\cal{M}\) denote the set of those sequences that contain no numbers from \(B\) and each of the numbers in \(A\) an odd number of times. By definition, \(M=|\cal{M}|\) and \(N=|\cal{N}|\).
+Define the mapping \(f:\cal{N} \rightarrow \cal{M}\) as
+\(f(a_1, a_2, \ldots, a_k) = (b_1,b_2,\ldots b_k) :  b_i =  \begin{cases}    a_i, & \mbox{ if }  a_i \in A \\    a_i-n, & \mbox{ if } a_i  \in B \end{cases}\)
+What we want to show now is that each element of \(\cal{M}\) is an image of exactly \(2^{k-n}\) elements from \(\cal{N}\), which would imply \(N = 2^{k-n}M\) and solve the problem.
+Consider an arbitrary element \(y\) of \(\cal{M}\) and let \(l_i\) be the number of appearances of the number \(i\) in \(y\) for \(i=1,2,\ldots n\). Now consider the set of pre-images of \(y\), that is \(X_y = \{ x | f(x) = y \}\).
+It is easy to see that each element \(x\in X_y\) is derived from \(y\) by  an  number of its \(1\)-s, \(2\)-s, and so on, where flipping means changing the number \(j\in A\) to \(j+n\in B\). Since each such set of flippings results in a unique \(x\), all we want to count is the number of flippings. We can flip exactly \(0, 2, 4,\ldots\) of the \(1\)-s, so that results in
+\(\binom{l_1}{0} + \binom{l_1}{2}+\binom{l_1}{4}+\cdots = 2^{l_1-1}\)
+flippings. Combine each of them with the \(2^{l_2-1}\), \(2^{l_3-1}\), etc. ways of flipping the \(2\)-s, \(3\)-s etc. respectively to get the total number of flippings:
+\(2^{l_1-1}2^{l_2-1}\cdots2^{l_n-1} = 2^{l_1+l_2+\cdots+l_n-n} = 2^{k-n}.\) 
+This shows that \(|X_y| = 2^{k-n}\) and the proof is complete.","To determine \(\frac{N}{M}\), we employ generating functions to model the toggle sequences for lamps in sets \(A\) and \(B\).
+
+1. **Generating Function for \(M\):**
+   - Since only lamps in \(A\) are toggled (each an odd number of times), the generating function for each lamp is \(\sinh(x) = \frac{e^x - e^{-x}}{2}\).
+   - For \(n\) lamps, the generating function is \([\sinh(x)]^n = \left(\frac{e^x - e^{-x}}{2}\right)^n\).
+   - Expanding via the binomial theorem:
+     \(
+     [\sinh(x)]^n = \frac{1}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} e^{x(n-2m)}
+     \)
+   - The coefficient of \(x^k/k!\) gives \(M = \frac{k!}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (n-2m)^k\).
+
+2. **Generating Function for \(N\):**
+   - Lamps in \(A\) are toggled oddly (generator \(\sinh(x)\)), and those in \(B\) evenly (\(\cosh(x) = \frac{e^x + e^{-x}}{2}\)).
+   - The combined generating function is \([\sinh(x)\cosh(x)]^n = \left(\frac{e^{2x} - e^{-2x}}{4}\right)^n\).
+   - Expanding similarly:
+     \(
+     [\sinh(x)\cosh(x)]^n = \frac{1}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} e^{2x(n-2m)}
+     \)
+   - The coefficient of \(x^k/k!\) yields \(N = \frac{k!}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (2(n-2m))^k\).
+
+3. **Computing the Ratio \(\frac{N}{M}\):**
+   - Substitute \(N\) and \(M\):
+     \(
+     \frac{N}{M} = \frac{\frac{1}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (2(n-2m))^k}{\frac{1}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (n-2m)^k}
+     \)
+   - Factor out \(2^k\) from the numerator's sum and simplify:
+     \(
+     \frac{N}{M} = \frac{2^k \cdot 2^n}{4^n} = 2^{k - n}
+     \)
+   
+\(\frac{N}{M} = 2^{k - n}\)",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3D4BBDG700CKU9TU3JQQHNI4SRWC39,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:36 PST 2025,,,3NPI0JQDA8LBAZYMD6OP7KGO022TP3,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:01:46 PST 2025,Wed Dec 10 20:19:30 PST 2025,Sat Dec 13 20:19:30 PST 2025,Sat Dec 13 20:20:08 PST 2025,,,1064,100% (215/215),100% (73/73),100% (73/73),2008_IMO_Problems_5,"Let \(n\) and \(k\) be positive integers with \(k \geq n\) and \(k - n\) an even number. Let \(2n\) lamps labelled \(1\), \(2\), ..., \(2n\) be given, each of which can be either  or . Initially all the lamps are off. We consider sequences of steps: at each step one of the lamps is switched (from on to off or from off to on).
+Let \(N\) be the number of such sequences consisting of \(k\) steps and resulting in the state where lamps \(1\) through \(n\) are all on, and lamps \(n + 1\) through \(2n\) are all off.
+Let \(M\) be number of such sequences consisting of \(k\) steps, resulting in the state where lamps \(1\) through \(n\) are all on, and lamps \(n + 1\) through \(2n\) are all off, but where none of the lamps \(n + 1\) through \(2n\) is ever switched on.
+Determine \(\frac {N}{M}\).","Solution 1. For convenience, let \(A\) denote the set \((1,2,\ldots n)\) and \(B\) the set \((n+1,n+2,\ldots,2n)\).
+We can describe each sequences of switching the lamps as a \(k\)-dimensional vector
+\((a_1, a_2, \ldots, a_k)\), where \(a_i \in A \cup B\) signifies which lamp was switched on the \(i\)-th move for \(i=1,2,\ldots k\). 
+Let \(\cal{N}\) consist of those sequences that contain each of the numbers in \(A\) an  number of times and each of the numbers in \(B\) an  number of times. Similarly, let \(\cal{M}\) denote the set of those sequences that contain no numbers from \(B\) and each of the numbers in \(A\) an odd number of times. By definition, \(M=|\cal{M}|\) and \(N=|\cal{N}|\).
+Define the mapping \(f:\cal{N} \rightarrow \cal{M}\) as
+\(f(a_1, a_2, \ldots, a_k) = (b_1,b_2,\ldots b_k) :  b_i =  \begin{cases}    a_i, & \mbox{ if }  a_i \in A \\    a_i-n, & \mbox{ if } a_i  \in B \end{cases}\)
+What we want to show now is that each element of \(\cal{M}\) is an image of exactly \(2^{k-n}\) elements from \(\cal{N}\), which would imply \(N = 2^{k-n}M\) and solve the problem.
+Consider an arbitrary element \(y\) of \(\cal{M}\) and let \(l_i\) be the number of appearances of the number \(i\) in \(y\) for \(i=1,2,\ldots n\). Now consider the set of pre-images of \(y\), that is \(X_y = \{ x | f(x) = y \}\).
+It is easy to see that each element \(x\in X_y\) is derived from \(y\) by  an  number of its \(1\)-s, \(2\)-s, and so on, where flipping means changing the number \(j\in A\) to \(j+n\in B\). Since each such set of flippings results in a unique \(x\), all we want to count is the number of flippings. We can flip exactly \(0, 2, 4,\ldots\) of the \(1\)-s, so that results in
+\(\binom{l_1}{0} + \binom{l_1}{2}+\binom{l_1}{4}+\cdots = 2^{l_1-1}\)
+flippings. Combine each of them with the \(2^{l_2-1}\), \(2^{l_3-1}\), etc. ways of flipping the \(2\)-s, \(3\)-s etc. respectively to get the total number of flippings:
+\(2^{l_1-1}2^{l_2-1}\cdots2^{l_n-1} = 2^{l_1+l_2+\cdots+l_n-n} = 2^{k-n}.\) 
+This shows that \(|X_y| = 2^{k-n}\) and the proof is complete.","To determine \(\frac{N}{M}\), we employ generating functions to model the toggle sequences for lamps in sets \(A\) and \(B\).
+
+1. **Generating Function for \(M\):**
+   - Since only lamps in \(A\) are toggled (each an odd number of times), the generating function for each lamp is \(\sinh(x) = \frac{e^x - e^{-x}}{2}\).
+   - For \(n\) lamps, the generating function is \([\sinh(x)]^n = \left(\frac{e^x - e^{-x}}{2}\right)^n\).
+   - Expanding via the binomial theorem:
+     \(
+     [\sinh(x)]^n = \frac{1}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} e^{x(n-2m)}
+     \)
+   - The coefficient of \(x^k/k!\) gives \(M = \frac{k!}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (n-2m)^k\).
+
+2. **Generating Function for \(N\):**
+   - Lamps in \(A\) are toggled oddly (generator \(\sinh(x)\)), and those in \(B\) evenly (\(\cosh(x) = \frac{e^x + e^{-x}}{2}\)).
+   - The combined generating function is \([\sinh(x)\cosh(x)]^n = \left(\frac{e^{2x} - e^{-2x}}{4}\right)^n\).
+   - Expanding similarly:
+     \(
+     [\sinh(x)\cosh(x)]^n = \frac{1}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} e^{2x(n-2m)}
+     \)
+   - The coefficient of \(x^k/k!\) yields \(N = \frac{k!}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (2(n-2m))^k\).
+
+3. **Computing the Ratio \(\frac{N}{M}\):**
+   - Substitute \(N\) and \(M\):
+     \(
+     \frac{N}{M} = \frac{\frac{1}{4^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (2(n-2m))^k}{\frac{1}{2^n} \sum_{m=0}^n (-1)^m \binom{n}{m} (n-2m)^k}
+     \)
+   - Factor out \(2^k\) from the numerator's sum and simplify:
+     \(
+     \frac{N}{M} = \frac{2^k \cdot 2^n}{4^n} = 2^{k - n}
+     \)
+   
+\(\frac{N}{M} = 2^{k - n}\)",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3BJKPTD2RVSTZSG70VMCOVLOMRLTRM,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:50 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:50 PST 2025,,,3IUZPWIU18N2RP50VJOSYN1OAMFKWK,A189Q7EDEDSQ34,Submitted,Sun Dec 14 03:48:54 PST 2025,Sun Dec 14 03:50:20 PST 2025,Wed Dec 17 03:50:20 PST 2025,,,,86,100% (114/114),0% (0/0),0% (0/0),2015_USAJMO_Problems_6,"Steve is piling \(m\geq 1\) indistinguishable stones on the squares of an \(n\times n\) grid. Each square can have an arbitrarily high pile of stones. After he finished piling his stones in some manner, he can then perform stone moves, defined as follows. Consider any four grid squares, which are corners of a rectangle, i.e. in positions \((i, k), (i, l), (j, k), (j, l)\) for some \(1\leq i, j, k, l\leq n\), such that \(i<j\) and \(k<l\). A stone move consists of either removing one stone from each of \((i, k)\) and \((j, l)\) and moving them to \((i, l)\) and \((j, k)\) respectively, or removing one stone from each of \((i, l)\) and \((j, k)\) and moving them to \((i, k)\) and \((j, l)\) respectively.
+Two ways of piling the stones are equivalent if they can be obtained from one another by a sequence of stone moves.
+How many different non-equivalent ways can Steve pile the stones on the grid?","Solution 1. Let the number of stones in row \(i\) be \(r_i\) and let the number of stones in column \(i\) be \(c_i\). Since there are \(m\) stones, we must have \(\sum_{i=1}^n r_i=\sum_{i=1}^n c_i=m\)
+Lemma 1: If any \(2\) pilings are equivalent, then \(r_i\) and \(c_i\) are the same in both pilings \(\forall i\).
+Proof: We suppose the contrary. Note that \(r_i\) and \(c_i\) remain invariant after each move, therefore, if any of the \(r_i\) or \(c_i\) are different, they will remain different.
+Lemma 2: Any \(2\) pilings with the same \(r_i\) and \(c_i\) \(\forall i\) are equivalent.
+Proof: Suppose piling 1 and piling 2 not the same piling. Call a stone in piling 1 wrong if the stone occupies a position such that there are more stones in that position in piling 1 than piling 2. Similarly define a wrong stone in piling 2. Let a wrong stone be at \((a, b)\) in piling 1. Since \(c_b\) is the same for both pilings, we must have a wrong stone in piling 2 at column b, say at \((c, b)\), such that \(c\not = a\). Similarly, we must have a wrong stone in piling 1 at row c, say at \((c, d)\) where \(d \not = b\). Clearly, making the move \((a,b);(c,d) \implies (c,b);(a,d)\) in piling 1 decreases the number of wrong stones in piling 1. Therefore, the number of wrong stones in piling 1 must eventually be \(0\) after a sequence of moves, so piling 1 and piling 2 are equivalent.
+Lemma 3: Given the sequences \(g_i\) and \(h_i\) such that \(\sum_{i=1}^n g_i=\sum_{i=1}^n h_i=m\) and \(g_i, h_i\geq 0 \forall i\), there is always a piling that satisfies \(r_i=g_i\) and \(c_i=h_i\) \(\forall i\).
+Proof: We take the lowest \(i\), \(j\), such that \(g_i, h_j >0\) and place a stone at \((i, j)\), then we subtract \(g_i\) and \(h_j\) by \(1\) each, until \(g_i\) and \(h_i\) become \(0\) \(\forall i\), which will happen when \(m\) stones are placed, because \(\sum_{i=1}^n g_i\) and \(\sum_{i=1}^n h_i\) are both initially \(m\) and decrease by \(1\) after each stone is placed. Note that in this process \(r_i+g_i\) and \(c_i+h_i\) remains invariant, thus, the final piling satisfies the conditions above.
+By the above lemmas, the number of ways to pile is simply the number of ways to choose the sequences \(r_i\) and \(c_i\) such that \(\sum_{i=1}^n r_i=\sum_{i=1}^n c_i=m\) and \(r_i, c_i \geq 0 \forall i\). By stars and bars, the number of ways is \(\binom{n+m-1}{m}^{2}\).","**Solution 2: Bipartite Graph Interpretation**
+
+1. **Model the Grid as a Bipartite Graph**  
+   Represent the rows and columns of the grid as two disjoint sets of nodes in a bipartite graph \( G \), where an edge between row \( i \) and column \( j \) corresponds to a stone at position \( (i, j) \). The problem reduces to counting equivalence classes of edge multisets under transformations that preserve the degree sequence (row and column sums).
+
+2. **Stone Moves as Edge Swaps**  
+   A stone move corresponds to exchanging edges in a 4-cycle: removing two edges \((i, k), (j, l)\) and adding edges \((i, l), (j, k)\), or vice versa. This operation preserves the degree of all nodes. By repeated swaps, any edge configuration with the same degree sequence can be transformed into any other (analogous to the ""switching"" in contingency tables).
+
+3. **Hall's Theorem for Existence**  
+   Given non-negative integers \( \{r_i\} \) (row sums) and \( \{c_j\} \) (column sums) summing to \( m \), we appeal to the **Gale-Ryser Theorem** (a generalization of Hall's Marriage Theorem for bipartite multigraphs). The conditions for the existence of such a matrix are:
+   - \( \sum_{i=1}^n r_i = \sum_{j=1}^n c_j = m \),
+   - \( \sum_{i \in S} r_i \leq \sum_{j=1}^n \min(c_j, |S|) \) for all subsets \( S \subseteq \{1, \dots, n\} \).
+
+   However, since \( r_i, c_j \geq 0 \) and stones are *indistinct*, these conditions are trivially satisfied. For any \( \{r_i\}, \{c_j\} \), there exists at least one bipartite multigraph (i.e., a matrix) with these degrees.
+
+4. **Counting Degree Sequences**  
+   The number of valid row sum sequences \( \{r_i\} \) is the number of non-negative integer solutions to \( r_1 + \dots + r_n = m \), given by \( \binom{n + m - 1}{m} \). Similarly, the number of column sum sequences \( \{c_j\} \) is \( \binom{n + m - 1}{m} \). Since row and column sums are independent, the total number of equivalence classes is:
+   \(
+   \boxed{\dbinom{n + m - 1}{m}^2}
+   \)",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3BJKPTD2RVSTZSG70VMCOVLOMRLTRM,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:50 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:50 PST 2025,,,3N1FSUEFLPGI4HG6TWWMZIN76KJD4E,AFA0H6QL832IJ,Submitted,Sun Dec 14 02:05:19 PST 2025,Sun Dec 14 02:07:21 PST 2025,Wed Dec 17 02:07:21 PST 2025,,,,122,100% (34/34),100% (10/10),100% (10/10),2015_USAJMO_Problems_6,"Steve is piling \(m\geq 1\) indistinguishable stones on the squares of an \(n\times n\) grid. Each square can have an arbitrarily high pile of stones. After he finished piling his stones in some manner, he can then perform stone moves, defined as follows. Consider any four grid squares, which are corners of a rectangle, i.e. in positions \((i, k), (i, l), (j, k), (j, l)\) for some \(1\leq i, j, k, l\leq n\), such that \(i<j\) and \(k<l\). A stone move consists of either removing one stone from each of \((i, k)\) and \((j, l)\) and moving them to \((i, l)\) and \((j, k)\) respectively, or removing one stone from each of \((i, l)\) and \((j, k)\) and moving them to \((i, k)\) and \((j, l)\) respectively.
+Two ways of piling the stones are equivalent if they can be obtained from one another by a sequence of stone moves.
+How many different non-equivalent ways can Steve pile the stones on the grid?","Solution 1. Let the number of stones in row \(i\) be \(r_i\) and let the number of stones in column \(i\) be \(c_i\). Since there are \(m\) stones, we must have \(\sum_{i=1}^n r_i=\sum_{i=1}^n c_i=m\)
+Lemma 1: If any \(2\) pilings are equivalent, then \(r_i\) and \(c_i\) are the same in both pilings \(\forall i\).
+Proof: We suppose the contrary. Note that \(r_i\) and \(c_i\) remain invariant after each move, therefore, if any of the \(r_i\) or \(c_i\) are different, they will remain different.
+Lemma 2: Any \(2\) pilings with the same \(r_i\) and \(c_i\) \(\forall i\) are equivalent.
+Proof: Suppose piling 1 and piling 2 not the same piling. Call a stone in piling 1 wrong if the stone occupies a position such that there are more stones in that position in piling 1 than piling 2. Similarly define a wrong stone in piling 2. Let a wrong stone be at \((a, b)\) in piling 1. Since \(c_b\) is the same for both pilings, we must have a wrong stone in piling 2 at column b, say at \((c, b)\), such that \(c\not = a\). Similarly, we must have a wrong stone in piling 1 at row c, say at \((c, d)\) where \(d \not = b\). Clearly, making the move \((a,b);(c,d) \implies (c,b);(a,d)\) in piling 1 decreases the number of wrong stones in piling 1. Therefore, the number of wrong stones in piling 1 must eventually be \(0\) after a sequence of moves, so piling 1 and piling 2 are equivalent.
+Lemma 3: Given the sequences \(g_i\) and \(h_i\) such that \(\sum_{i=1}^n g_i=\sum_{i=1}^n h_i=m\) and \(g_i, h_i\geq 0 \forall i\), there is always a piling that satisfies \(r_i=g_i\) and \(c_i=h_i\) \(\forall i\).
+Proof: We take the lowest \(i\), \(j\), such that \(g_i, h_j >0\) and place a stone at \((i, j)\), then we subtract \(g_i\) and \(h_j\) by \(1\) each, until \(g_i\) and \(h_i\) become \(0\) \(\forall i\), which will happen when \(m\) stones are placed, because \(\sum_{i=1}^n g_i\) and \(\sum_{i=1}^n h_i\) are both initially \(m\) and decrease by \(1\) after each stone is placed. Note that in this process \(r_i+g_i\) and \(c_i+h_i\) remains invariant, thus, the final piling satisfies the conditions above.
+By the above lemmas, the number of ways to pile is simply the number of ways to choose the sequences \(r_i\) and \(c_i\) such that \(\sum_{i=1}^n r_i=\sum_{i=1}^n c_i=m\) and \(r_i, c_i \geq 0 \forall i\). By stars and bars, the number of ways is \(\binom{n+m-1}{m}^{2}\).","**Solution 2: Bipartite Graph Interpretation**
+
+1. **Model the Grid as a Bipartite Graph**  
+   Represent the rows and columns of the grid as two disjoint sets of nodes in a bipartite graph \( G \), where an edge between row \( i \) and column \( j \) corresponds to a stone at position \( (i, j) \). The problem reduces to counting equivalence classes of edge multisets under transformations that preserve the degree sequence (row and column sums).
+
+2. **Stone Moves as Edge Swaps**  
+   A stone move corresponds to exchanging edges in a 4-cycle: removing two edges \((i, k), (j, l)\) and adding edges \((i, l), (j, k)\), or vice versa. This operation preserves the degree of all nodes. By repeated swaps, any edge configuration with the same degree sequence can be transformed into any other (analogous to the ""switching"" in contingency tables).
+
+3. **Hall's Theorem for Existence**  
+   Given non-negative integers \( \{r_i\} \) (row sums) and \( \{c_j\} \) (column sums) summing to \( m \), we appeal to the **Gale-Ryser Theorem** (a generalization of Hall's Marriage Theorem for bipartite multigraphs). The conditions for the existence of such a matrix are:
+   - \( \sum_{i=1}^n r_i = \sum_{j=1}^n c_j = m \),
+   - \( \sum_{i \in S} r_i \leq \sum_{j=1}^n \min(c_j, |S|) \) for all subsets \( S \subseteq \{1, \dots, n\} \).
+
+   However, since \( r_i, c_j \geq 0 \) and stones are *indistinct*, these conditions are trivially satisfied. For any \( \{r_i\}, \{c_j\} \), there exists at least one bipartite multigraph (i.e., a matrix) with these degrees.
+
+4. **Counting Degree Sequences**  
+   The number of valid row sum sequences \( \{r_i\} \) is the number of non-negative integer solutions to \( r_1 + \dots + r_n = m \), given by \( \binom{n + m - 1}{m} \). Similarly, the number of column sum sequences \( \{c_j\} \) is \( \binom{n + m - 1}{m} \). Since row and column sums are independent, the total number of equivalence classes is:
+   \(
+   \boxed{\dbinom{n + m - 1}{m}^2}
+   \)",deepseek-reasoner,,FALSE,TRUE,TRUE,FALSE,incomplete question,,
+311HQEI8SBWF3L5RX9DO52V56B47Z8,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:39 PST 2025,,,31EUONYN2FJ82RQA31BPJ2ZJNIMVO4,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:34:53 PST 2025,Wed Dec 10 20:37:00 PST 2025,Sat Dec 13 20:37:00 PST 2025,Sat Dec 13 20:37:08 PST 2025,,,127,100% (215/215),100% (73/73),100% (73/73),2015_USAJMO_Problems_6,"Steve is piling \(m\geq 1\) indistinguishable stones on the squares of an \(n\times n\) grid. Each square can have an arbitrarily high pile of stones. After he finished piling his stones in some manner, he can then perform stone moves, defined as follows. Consider any four grid squares, which are corners of a rectangle, i.e. in positions \((i, k), (i, l), (j, k), (j, l)\) for some \(1\leq i, j, k, l\leq n\), such that \(i<j\) and \(k<l\). A stone move consists of either removing one stone from each of \((i, k)\) and \((j, l)\) and moving them to \((i, l)\) and \((j, k)\) respectively, or removing one stone from each of \((i, l)\) and \((j, k)\) and moving them to \((i, k)\) and \((j, l)\) respectively.
+Two ways of piling the stones are equivalent if they can be obtained from one another by a sequence of stone moves.
+How many different non-equivalent ways can Steve pile the stones on the grid?","Solution 1. Let the number of stones in row \(i\) be \(r_i\) and let the number of stones in column \(i\) be \(c_i\). Since there are \(m\) stones, we must have \(\sum_{i=1}^n r_i=\sum_{i=1}^n c_i=m\)
+Lemma 1: If any \(2\) pilings are equivalent, then \(r_i\) and \(c_i\) are the same in both pilings \(\forall i\).
+Proof: We suppose the contrary. Note that \(r_i\) and \(c_i\) remain invariant after each move, therefore, if any of the \(r_i\) or \(c_i\) are different, they will remain different.
+Lemma 2: Any \(2\) pilings with the same \(r_i\) and \(c_i\) \(\forall i\) are equivalent.
+Proof: Suppose piling 1 and piling 2 not the same piling. Call a stone in piling 1 wrong if the stone occupies a position such that there are more stones in that position in piling 1 than piling 2. Similarly define a wrong stone in piling 2. Let a wrong stone be at \((a, b)\) in piling 1. Since \(c_b\) is the same for both pilings, we must have a wrong stone in piling 2 at column b, say at \((c, b)\), such that \(c\not = a\). Similarly, we must have a wrong stone in piling 1 at row c, say at \((c, d)\) where \(d \not = b\). Clearly, making the move \((a,b);(c,d) \implies (c,b);(a,d)\) in piling 1 decreases the number of wrong stones in piling 1. Therefore, the number of wrong stones in piling 1 must eventually be \(0\) after a sequence of moves, so piling 1 and piling 2 are equivalent.
+Lemma 3: Given the sequences \(g_i\) and \(h_i\) such that \(\sum_{i=1}^n g_i=\sum_{i=1}^n h_i=m\) and \(g_i, h_i\geq 0 \forall i\), there is always a piling that satisfies \(r_i=g_i\) and \(c_i=h_i\) \(\forall i\).
+Proof: We take the lowest \(i\), \(j\), such that \(g_i, h_j >0\) and place a stone at \((i, j)\), then we subtract \(g_i\) and \(h_j\) by \(1\) each, until \(g_i\) and \(h_i\) become \(0\) \(\forall i\), which will happen when \(m\) stones are placed, because \(\sum_{i=1}^n g_i\) and \(\sum_{i=1}^n h_i\) are both initially \(m\) and decrease by \(1\) after each stone is placed. Note that in this process \(r_i+g_i\) and \(c_i+h_i\) remains invariant, thus, the final piling satisfies the conditions above.
+By the above lemmas, the number of ways to pile is simply the number of ways to choose the sequences \(r_i\) and \(c_i\) such that \(\sum_{i=1}^n r_i=\sum_{i=1}^n c_i=m\) and \(r_i, c_i \geq 0 \forall i\). By stars and bars, the number of ways is \(\binom{n+m-1}{m}^{2}\).","**Solution 2: Bipartite Graph Interpretation**
+
+1. **Model the Grid as a Bipartite Graph**  
+   Represent the rows and columns of the grid as two disjoint sets of nodes in a bipartite graph \( G \), where an edge between row \( i \) and column \( j \) corresponds to a stone at position \( (i, j) \). The problem reduces to counting equivalence classes of edge multisets under transformations that preserve the degree sequence (row and column sums).
+
+2. **Stone Moves as Edge Swaps**  
+   A stone move corresponds to exchanging edges in a 4-cycle: removing two edges \((i, k), (j, l)\) and adding edges \((i, l), (j, k)\), or vice versa. This operation preserves the degree of all nodes. By repeated swaps, any edge configuration with the same degree sequence can be transformed into any other (analogous to the ""switching"" in contingency tables).
+
+3. **Hall's Theorem for Existence**  
+   Given non-negative integers \( \{r_i\} \) (row sums) and \( \{c_j\} \) (column sums) summing to \( m \), we appeal to the **Gale-Ryser Theorem** (a generalization of Hall's Marriage Theorem for bipartite multigraphs). The conditions for the existence of such a matrix are:
+   - \( \sum_{i=1}^n r_i = \sum_{j=1}^n c_j = m \),
+   - \( \sum_{i \in S} r_i \leq \sum_{j=1}^n \min(c_j, |S|) \) for all subsets \( S \subseteq \{1, \dots, n\} \).
+
+   However, since \( r_i, c_j \geq 0 \) and stones are *indistinct*, these conditions are trivially satisfied. For any \( \{r_i\}, \{c_j\} \), there exists at least one bipartite multigraph (i.e., a matrix) with these degrees.
+
+4. **Counting Degree Sequences**  
+   The number of valid row sum sequences \( \{r_i\} \) is the number of non-negative integer solutions to \( r_1 + \dots + r_n = m \), given by \( \binom{n + m - 1}{m} \). Similarly, the number of column sum sequences \( \{c_j\} \) is \( \binom{n + m - 1}{m} \). Since row and column sums are independent, the total number of equivalence classes is:
+   \(
+   \boxed{\dbinom{n + m - 1}{m}^2}
+   \)",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,problem is truncate,,
+3XJOUITW9D7TNR17NGXCJ5BJQ5JTQL,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3907X2AHFKLHQ049UR4T6X7Y0PQP28,A189Q7EDEDSQ34,Submitted,Sun Dec 14 03:58:09 PST 2025,Sun Dec 14 04:01:47 PST 2025,Wed Dec 17 04:01:47 PST 2025,,,,218,100% (114/114),0% (0/0),0% (0/0),2018_USAJMO_Problems_5,"Let \(p\) be a prime, and let \(a_1, \dots, a_p\) be integers. Show that there exists an integer \(k\) such that the numbers \(a_1 + k, a_2 + 2k, \dots, a_p + pk\)produce at least \(\tfrac{1}{2} p\) distinct remainders upon division by \(p\).","Solution 1. \(\textbf{Lemma: }\) For fixed \(i\neq j,\) where \(i, j\in\{1, 2, ..., p\},\) the statement \(a_i + ik\equiv a_j + jk\text{ (mod } p\text{)}\) holds for exactly one \(k\in {1, 2, ..., p}.\)
+\(\textbf{Proof: }\) Notice that the left side minus the right side is congruent to \((a_i - a_j) + (i - j)k\) modulo \(p.\) For this difference to equal \(0,\) there is a unique solution for \(k\) modulo \(p\) given by \(k\equiv (a_j - a_i)(i - j)^{-1}\text{ (mod } p\text{)},\) where we have used the fact that every nonzero residue modulo \(p\) has a unique multiplicative inverse. Therefore, there is exactly one \(k\in {1, 2, ..., p}\) that satisfies \(a_i + ik\equiv a_j + jk\text{ (mod } p\text{)}\) for any fixed \(i\neq j. \textbf{ End Lemma}\)
+Suppose that you have \(p\) graphs \(G_1, G_2, ..., G_p,\) and graph \(G_k\) consists of the vertices \((i, k)\) for all \(1\le i\le p.\) Within any graph \(G_k,\) vertices \((i_1, k)\) and \((i_2, k)\) are connected by an edge if and only if \(a_{i_1} + i_1k\equiv a_{i_2} + i_2k\text{ (mod } p\text{)}.\) Notice that the number of disconnected components of any graph \(G_k\) equals the number of distinct remainders when divided by \(p\) given by the numbers \(a_1 + k, a_2 + 2k, ..., a_p + pk.\)
+These \(p\) graphs together have exactly one edge for every unordered pair of elements of \(\{1, 2, ..., p\},\) so they have a total of exactly \(\frac{p(p-1)}{2}\) edges. Therefore, there exists at least one graph \(G_k\) that has strictly fewer than \(\frac{p}{2}\) edges, meaning that it has more than \(\frac{p}{2}\) disconnected components. Therefore, the collection of numbers \(\{a_i + ik: 1\le i\le p\}\) for this particular value of \(k\) has at least \(\frac{p}{2}\) distinct remainders modulo \(p.\) This completes the proof.","We aim to show there exists an integer \( k \) such that the numbers \( a_1 + k, a_2 + 2k, \dots, a_p + pk \) yield at least \( \frac{1}{2}p \) distinct remainders modulo \( p \).
+
+**Step 1: Counting Collisions Across All \( k \)**
+
+For any distinct \( i, j \in \{1, 2, \dots, p\} \), the congruence \( a_i + ik \equiv a_j + jk \pmod{p} \) holds for exactly one \( k \in \{1, 2, \dots, p\} \). This follows because solving \( (i - j)k \equiv a_j - a_i \pmod{p} \) gives a unique \( k \) due to \( p \) being prime. Hence, each pair \( (i, j) \) contributes one collision (shared remainder) for exactly one \( k \).
+
+There are \( \binom{p}{2} = \frac{p(p-1)}{2} \) total pairs \( (i, j) \). Thus, over all \( p \) possible \( k \), the total number of collisions is \( \frac{p(p-1)}{2} \).
+
+**Step 2: Average Number of Collisions**
+
+By the pigeonhole principle, the average number of collisions per \( k \) is:
+\(
+\frac{\text{Total collisions}}{p} = \frac{p-1}{2}.
+\)
+Hence, there exists at least one \( k \) with \( \leq \frac{p-1}{2} \) collisions.
+
+**Step 3: Relating Collisions to Distinct Remainders**
+
+Let \( t \) denote the number of collisions for a fixed \( k \), and let \( m \) be the number of distinct remainders. The total number of residue classes \( m \) satisfies:
+\(
+\sum_{r=1}^m \binom{n_r}{2} = t,
+\)
+where \( n_r \) is the count of numbers in residue class \( r \). By convexity of \( \binom{n}{2} \), the sum is minimized when the \( n_r \) are as equal as possible. Applying Jensen's inequality:
+\(
+t \geq m \cdot \binom{\frac{p}{m}}{2}.
+\)
+Simplifying:
+\(
+t \geq \frac{p(p - m)}{2m}.
+\)
+Rearranging for \( m \):
+\(
+m \geq \frac{p^2}{p + 2t}.
+\)
+Substituting \( t \leq \frac{p-1}{2} \):
+\(
+m \geq \frac{p^2}{p + (p - 1)} = \frac{p^2}{2p - 1} > \frac{p}{2}.
+\)
+Thus, \( m \geq \frac{p}{2} \), as required. Therefore, there exists a \( k \) such that the residues \( \{a_i + ik\} \) produce at least \( \frac{1}{2}p \) distinct remainders modulo \( p \).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3XJOUITW9D7TNR17NGXCJ5BJQ5JTQL,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3VE8AYVF86DGL2H4W5HP4U6XKJVF8Y,AFA0H6QL832IJ,Submitted,Sat Dec 13 10:24:23 PST 2025,Sat Dec 13 10:24:48 PST 2025,Tue Dec 16 10:24:48 PST 2025,,,,25,100% (34/34),100% (10/10),100% (10/10),2018_USAJMO_Problems_5,"Let \(p\) be a prime, and let \(a_1, \dots, a_p\) be integers. Show that there exists an integer \(k\) such that the numbers \(a_1 + k, a_2 + 2k, \dots, a_p + pk\)produce at least \(\tfrac{1}{2} p\) distinct remainders upon division by \(p\).","Solution 1. \(\textbf{Lemma: }\) For fixed \(i\neq j,\) where \(i, j\in\{1, 2, ..., p\},\) the statement \(a_i + ik\equiv a_j + jk\text{ (mod } p\text{)}\) holds for exactly one \(k\in {1, 2, ..., p}.\)
+\(\textbf{Proof: }\) Notice that the left side minus the right side is congruent to \((a_i - a_j) + (i - j)k\) modulo \(p.\) For this difference to equal \(0,\) there is a unique solution for \(k\) modulo \(p\) given by \(k\equiv (a_j - a_i)(i - j)^{-1}\text{ (mod } p\text{)},\) where we have used the fact that every nonzero residue modulo \(p\) has a unique multiplicative inverse. Therefore, there is exactly one \(k\in {1, 2, ..., p}\) that satisfies \(a_i + ik\equiv a_j + jk\text{ (mod } p\text{)}\) for any fixed \(i\neq j. \textbf{ End Lemma}\)
+Suppose that you have \(p\) graphs \(G_1, G_2, ..., G_p,\) and graph \(G_k\) consists of the vertices \((i, k)\) for all \(1\le i\le p.\) Within any graph \(G_k,\) vertices \((i_1, k)\) and \((i_2, k)\) are connected by an edge if and only if \(a_{i_1} + i_1k\equiv a_{i_2} + i_2k\text{ (mod } p\text{)}.\) Notice that the number of disconnected components of any graph \(G_k\) equals the number of distinct remainders when divided by \(p\) given by the numbers \(a_1 + k, a_2 + 2k, ..., a_p + pk.\)
+These \(p\) graphs together have exactly one edge for every unordered pair of elements of \(\{1, 2, ..., p\},\) so they have a total of exactly \(\frac{p(p-1)}{2}\) edges. Therefore, there exists at least one graph \(G_k\) that has strictly fewer than \(\frac{p}{2}\) edges, meaning that it has more than \(\frac{p}{2}\) disconnected components. Therefore, the collection of numbers \(\{a_i + ik: 1\le i\le p\}\) for this particular value of \(k\) has at least \(\frac{p}{2}\) distinct remainders modulo \(p.\) This completes the proof.","We aim to show there exists an integer \( k \) such that the numbers \( a_1 + k, a_2 + 2k, \dots, a_p + pk \) yield at least \( \frac{1}{2}p \) distinct remainders modulo \( p \).
+
+**Step 1: Counting Collisions Across All \( k \)**
+
+For any distinct \( i, j \in \{1, 2, \dots, p\} \), the congruence \( a_i + ik \equiv a_j + jk \pmod{p} \) holds for exactly one \( k \in \{1, 2, \dots, p\} \). This follows because solving \( (i - j)k \equiv a_j - a_i \pmod{p} \) gives a unique \( k \) due to \( p \) being prime. Hence, each pair \( (i, j) \) contributes one collision (shared remainder) for exactly one \( k \).
+
+There are \( \binom{p}{2} = \frac{p(p-1)}{2} \) total pairs \( (i, j) \). Thus, over all \( p \) possible \( k \), the total number of collisions is \( \frac{p(p-1)}{2} \).
+
+**Step 2: Average Number of Collisions**
+
+By the pigeonhole principle, the average number of collisions per \( k \) is:
+\(
+\frac{\text{Total collisions}}{p} = \frac{p-1}{2}.
+\)
+Hence, there exists at least one \( k \) with \( \leq \frac{p-1}{2} \) collisions.
+
+**Step 3: Relating Collisions to Distinct Remainders**
+
+Let \( t \) denote the number of collisions for a fixed \( k \), and let \( m \) be the number of distinct remainders. The total number of residue classes \( m \) satisfies:
+\(
+\sum_{r=1}^m \binom{n_r}{2} = t,
+\)
+where \( n_r \) is the count of numbers in residue class \( r \). By convexity of \( \binom{n}{2} \), the sum is minimized when the \( n_r \) are as equal as possible. Applying Jensen's inequality:
+\(
+t \geq m \cdot \binom{\frac{p}{m}}{2}.
+\)
+Simplifying:
+\(
+t \geq \frac{p(p - m)}{2m}.
+\)
+Rearranging for \( m \):
+\(
+m \geq \frac{p^2}{p + 2t}.
+\)
+Substituting \( t \leq \frac{p-1}{2} \):
+\(
+m \geq \frac{p^2}{p + (p - 1)} = \frac{p^2}{2p - 1} > \frac{p}{2}.
+\)
+Thus, \( m \geq \frac{p}{2} \), as required. Therefore, there exists a \( k \) such that the residues \( \{a_i + ik\} \) produce at least \( \frac{1}{2}p \) distinct remainders modulo \( p \).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3JGHED38FW7FYVVM1NB5RVM30H07YH,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:38 PST 2025,,,3DBQWDE4YQE9MCBJWVTZ0F5FKKG5NT,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:45:55 PST 2025,Wed Dec 10 20:52:56 PST 2025,Sat Dec 13 20:52:56 PST 2025,Sat Dec 13 20:53:08 PST 2025,,,421,100% (215/215),100% (73/73),100% (73/73),2018_USAJMO_Problems_5,"Let \(p\) be a prime, and let \(a_1, \dots, a_p\) be integers. Show that there exists an integer \(k\) such that the numbers \(a_1 + k, a_2 + 2k, \dots, a_p + pk\)produce at least \(\tfrac{1}{2} p\) distinct remainders upon division by \(p\).","Solution 1. \(\textbf{Lemma: }\) For fixed \(i\neq j,\) where \(i, j\in\{1, 2, ..., p\},\) the statement \(a_i + ik\equiv a_j + jk\text{ (mod } p\text{)}\) holds for exactly one \(k\in {1, 2, ..., p}.\)
+\(\textbf{Proof: }\) Notice that the left side minus the right side is congruent to \((a_i - a_j) + (i - j)k\) modulo \(p.\) For this difference to equal \(0,\) there is a unique solution for \(k\) modulo \(p\) given by \(k\equiv (a_j - a_i)(i - j)^{-1}\text{ (mod } p\text{)},\) where we have used the fact that every nonzero residue modulo \(p\) has a unique multiplicative inverse. Therefore, there is exactly one \(k\in {1, 2, ..., p}\) that satisfies \(a_i + ik\equiv a_j + jk\text{ (mod } p\text{)}\) for any fixed \(i\neq j. \textbf{ End Lemma}\)
+Suppose that you have \(p\) graphs \(G_1, G_2, ..., G_p,\) and graph \(G_k\) consists of the vertices \((i, k)\) for all \(1\le i\le p.\) Within any graph \(G_k,\) vertices \((i_1, k)\) and \((i_2, k)\) are connected by an edge if and only if \(a_{i_1} + i_1k\equiv a_{i_2} + i_2k\text{ (mod } p\text{)}.\) Notice that the number of disconnected components of any graph \(G_k\) equals the number of distinct remainders when divided by \(p\) given by the numbers \(a_1 + k, a_2 + 2k, ..., a_p + pk.\)
+These \(p\) graphs together have exactly one edge for every unordered pair of elements of \(\{1, 2, ..., p\},\) so they have a total of exactly \(\frac{p(p-1)}{2}\) edges. Therefore, there exists at least one graph \(G_k\) that has strictly fewer than \(\frac{p}{2}\) edges, meaning that it has more than \(\frac{p}{2}\) disconnected components. Therefore, the collection of numbers \(\{a_i + ik: 1\le i\le p\}\) for this particular value of \(k\) has at least \(\frac{p}{2}\) distinct remainders modulo \(p.\) This completes the proof.","We aim to show there exists an integer \( k \) such that the numbers \( a_1 + k, a_2 + 2k, \dots, a_p + pk \) yield at least \( \frac{1}{2}p \) distinct remainders modulo \( p \).
+
+**Step 1: Counting Collisions Across All \( k \)**
+
+For any distinct \( i, j \in \{1, 2, \dots, p\} \), the congruence \( a_i + ik \equiv a_j + jk \pmod{p} \) holds for exactly one \( k \in \{1, 2, \dots, p\} \). This follows because solving \( (i - j)k \equiv a_j - a_i \pmod{p} \) gives a unique \( k \) due to \( p \) being prime. Hence, each pair \( (i, j) \) contributes one collision (shared remainder) for exactly one \( k \).
+
+There are \( \binom{p}{2} = \frac{p(p-1)}{2} \) total pairs \( (i, j) \). Thus, over all \( p \) possible \( k \), the total number of collisions is \( \frac{p(p-1)}{2} \).
+
+**Step 2: Average Number of Collisions**
+
+By the pigeonhole principle, the average number of collisions per \( k \) is:
+\(
+\frac{\text{Total collisions}}{p} = \frac{p-1}{2}.
+\)
+Hence, there exists at least one \( k \) with \( \leq \frac{p-1}{2} \) collisions.
+
+**Step 3: Relating Collisions to Distinct Remainders**
+
+Let \( t \) denote the number of collisions for a fixed \( k \), and let \( m \) be the number of distinct remainders. The total number of residue classes \( m \) satisfies:
+\(
+\sum_{r=1}^m \binom{n_r}{2} = t,
+\)
+where \( n_r \) is the count of numbers in residue class \( r \). By convexity of \( \binom{n}{2} \), the sum is minimized when the \( n_r \) are as equal as possible. Applying Jensen's inequality:
+\(
+t \geq m \cdot \binom{\frac{p}{m}}{2}.
+\)
+Simplifying:
+\(
+t \geq \frac{p(p - m)}{2m}.
+\)
+Rearranging for \( m \):
+\(
+m \geq \frac{p^2}{p + 2t}.
+\)
+Substituting \( t \leq \frac{p-1}{2} \):
+\(
+m \geq \frac{p^2}{p + (p - 1)} = \frac{p^2}{2p - 1} > \frac{p}{2}.
+\)
+Thus, \( m \geq \frac{p}{2} \), as required. Therefore, there exists a \( k \) such that the residues \( \{a_i + ik\} \) produce at least \( \frac{1}{2}p \) distinct remainders modulo \( p \).",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3PEG1BH7BX77G29VAPMUNPTOLSRKBU,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,36TFCYNS4OQQEZ9IZ3HHNEZ3R7HHX6,A189Q7EDEDSQ34,Submitted,Sun Dec 14 03:18:26 PST 2025,Sun Dec 14 03:19:51 PST 2025,Wed Dec 17 03:19:51 PST 2025,,,,85,100% (114/114),0% (0/0),0% (0/0),2019_AMC_8_Problems_20,"How many different real numbers \(x\) satisfy the equation \((x^{2}-5)^{2}=16?\)
+\(\textbf{(A) }0\qquad\textbf{(B) }1\qquad\textbf{(C) }2\qquad\textbf{(D) }4\qquad\textbf{(E) }8\)","Solution 1. We have that \((x^2-5)^2 = 16\) if and only if \(x^2-5 = \pm 4\). If \(x^2-5 = 4\), then \(x^2 = 9 \implies x = \pm 3\), giving 2 solutions. If \(x^2-5 = -4\), then \(x^2 = 1 \implies x = \pm 1\), giving 2 more solutions. All four of these solutions work, so the answer is \(\boxed{\textbf{(D) }4}\). Further, the equation is a  in \(x\), so by the , there can be at most four real solutions.
+
+
+<br><br>==========<br>
+Solution 2. We can expand \((x^2-5)^2\) to get \(x^4-10x^2+25\), so now our equation is \(x^4-10x^2+25=16\). Subtracting \(16\) from both sides gives us \(x^4-10x^2+9=0\). Now, we can factor the left hand side to get \((x^2-9)(x^2-1)=0\). If \(x^2-9\) and/or \(x^2-1\) equals \(0\), then the whole left side will equal \(0\). Since the solutions can be both positive and negative, we have \(4\) solutions: \(-3,3,-1,1\) (we can find these solutions by setting \(x^2-9\) and \(x^2-1\) equal to \(0\) and solving for \(x\)). So, the answer is \(\boxed{\textbf{(D) }4}\). 
+
+
+<br><br>==========<br>
+Solution 3. Subtract 16 from both sides and factor using difference of squares: 
+
+\((x^2 - 5)^2 = 16\)
+\((x^2 - 5)^2 - 16 =0\)
+\((x^2 - 5)^2 - 4^2 = 0\)
+\([(x^2 - 5)-4][(x^2 - 5) + 4] = 0\)
+\((x^2 - 9)(x^2 - 1) =0\)
+\((x+3)(x-3)(x+1)(x-1) = 0\)
+
+Quite obviously, this equation has \(\boxed{\textbf{(D) }4}\) solutions. 
+","**Solution 4 (Using Calculus):**
+
+To determine the number of real solutions for \((x^2 - 5)^2 = 16\), analyze the function \(f(x) = (x^2 - 5)^2 - 16\). 
+
+1. **Find critical points** by computing the derivative:
+   \(
+   f'(x) = 4x(x^2 - 5)
+   \)
+   Setting \(f'(x) = 0\) gives critical points at \(x = 0\) and \(x = \pm \sqrt{5}\).
+
+2. **Evaluate \(f(x)\) at critical points**:
+   - \(f(0) = 9\) (positive).
+   - \(f(\pm \sqrt{5}) = -16\) (negative).
+
+3. **Behavior analysis**:
+   - For \(x \geq 0\), \(f(x)\) starts at \(f(0) = 9\), decreases to \(-16\) at \(x = \sqrt{5}\), then increases to infinity. This guarantees **two crossings** of the x-axis (one between \(0\) and \(\sqrt{5}\), another for \(x > \sqrt{5}\)).
+   - By symmetry, the same applies for \(x \leq 0\), adding two more crossings.
+
+Thus, there are \(\boxed{\textbf{(D) }4}\) distinct real solutions.",deepseek-reasoner,,TRUE,FALSE,TRUE,FALSE,,,
+3PEG1BH7BX77G29VAPMUNPTOLSRKBU,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Thu Dec 11 14:49:49 PST 2025,3,BatchId:420090;OriginalHitTemplateId:921587278;,3600,259200,Thu Dec 18 14:49:49 PST 2025,,,3TEM0PF1QPD15TY5AV9KNFXUP83D0Y,AFA0H6QL832IJ,Submitted,Sun Dec 14 01:37:33 PST 2025,Sun Dec 14 01:37:45 PST 2025,Wed Dec 17 01:37:45 PST 2025,,,,12,100% (34/34),100% (10/10),100% (10/10),2019_AMC_8_Problems_20,"How many different real numbers \(x\) satisfy the equation \((x^{2}-5)^{2}=16?\)
+\(\textbf{(A) }0\qquad\textbf{(B) }1\qquad\textbf{(C) }2\qquad\textbf{(D) }4\qquad\textbf{(E) }8\)","Solution 1. We have that \((x^2-5)^2 = 16\) if and only if \(x^2-5 = \pm 4\). If \(x^2-5 = 4\), then \(x^2 = 9 \implies x = \pm 3\), giving 2 solutions. If \(x^2-5 = -4\), then \(x^2 = 1 \implies x = \pm 1\), giving 2 more solutions. All four of these solutions work, so the answer is \(\boxed{\textbf{(D) }4}\). Further, the equation is a  in \(x\), so by the , there can be at most four real solutions.
+
+
+<br><br>==========<br>
+Solution 2. We can expand \((x^2-5)^2\) to get \(x^4-10x^2+25\), so now our equation is \(x^4-10x^2+25=16\). Subtracting \(16\) from both sides gives us \(x^4-10x^2+9=0\). Now, we can factor the left hand side to get \((x^2-9)(x^2-1)=0\). If \(x^2-9\) and/or \(x^2-1\) equals \(0\), then the whole left side will equal \(0\). Since the solutions can be both positive and negative, we have \(4\) solutions: \(-3,3,-1,1\) (we can find these solutions by setting \(x^2-9\) and \(x^2-1\) equal to \(0\) and solving for \(x\)). So, the answer is \(\boxed{\textbf{(D) }4}\). 
+
+
+<br><br>==========<br>
+Solution 3. Subtract 16 from both sides and factor using difference of squares: 
+
+\((x^2 - 5)^2 = 16\)
+\((x^2 - 5)^2 - 16 =0\)
+\((x^2 - 5)^2 - 4^2 = 0\)
+\([(x^2 - 5)-4][(x^2 - 5) + 4] = 0\)
+\((x^2 - 9)(x^2 - 1) =0\)
+\((x+3)(x-3)(x+1)(x-1) = 0\)
+
+Quite obviously, this equation has \(\boxed{\textbf{(D) }4}\) solutions. 
+","**Solution 4 (Using Calculus):**
+
+To determine the number of real solutions for \((x^2 - 5)^2 = 16\), analyze the function \(f(x) = (x^2 - 5)^2 - 16\). 
+
+1. **Find critical points** by computing the derivative:
+   \(
+   f'(x) = 4x(x^2 - 5)
+   \)
+   Setting \(f'(x) = 0\) gives critical points at \(x = 0\) and \(x = \pm \sqrt{5}\).
+
+2. **Evaluate \(f(x)\) at critical points**:
+   - \(f(0) = 9\) (positive).
+   - \(f(\pm \sqrt{5}) = -16\) (negative).
+
+3. **Behavior analysis**:
+   - For \(x \geq 0\), \(f(x)\) starts at \(f(0) = 9\), decreases to \(-16\) at \(x = \sqrt{5}\), then increases to infinity. This guarantees **two crossings** of the x-axis (one between \(0\) and \(\sqrt{5}\), another for \(x > \sqrt{5}\)).
+   - By symmetry, the same applies for \(x \leq 0\), adding two more crossings.
+
+Thus, there are \(\boxed{\textbf{(D) }4}\) distinct real solutions.",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,
+3PUOXASB6QJJH4TKC6B8JYMB11S9ZM,36I764H9FR05M4CQ2M6I9EWUWYZVB7,CreativityPrism - CreativeMath,Is this solution creative?,survey,$0.01 ,Wed Dec 10 16:53:07 PST 2025,3,BatchId:420056;OriginalHitTemplateId:921587278;,3600,259200,Wed Dec 10 20:55:39 PST 2025,,,39OWYR0EP47V088M99FJ37UZDYXYFU,ASQIP0BTUIBHO,Approved,Wed Dec 10 20:53:28 PST 2025,Wed Dec 10 20:54:41 PST 2025,Sat Dec 13 20:54:41 PST 2025,Sat Dec 13 20:55:08 PST 2025,,,73,100% (215/215),100% (73/73),100% (73/73),2019_AMC_8_Problems_20,"How many different real numbers \(x\) satisfy the equation \((x^{2}-5)^{2}=16?\)
+\(\textbf{(A) }0\qquad\textbf{(B) }1\qquad\textbf{(C) }2\qquad\textbf{(D) }4\qquad\textbf{(E) }8\)","Solution 1. We have that \((x^2-5)^2 = 16\) if and only if \(x^2-5 = \pm 4\). If \(x^2-5 = 4\), then \(x^2 = 9 \implies x = \pm 3\), giving 2 solutions. If \(x^2-5 = -4\), then \(x^2 = 1 \implies x = \pm 1\), giving 2 more solutions. All four of these solutions work, so the answer is \(\boxed{\textbf{(D) }4}\). Further, the equation is a  in \(x\), so by the , there can be at most four real solutions.
+
+
+<br><br>==========<br>
+Solution 2. We can expand \((x^2-5)^2\) to get \(x^4-10x^2+25\), so now our equation is \(x^4-10x^2+25=16\). Subtracting \(16\) from both sides gives us \(x^4-10x^2+9=0\). Now, we can factor the left hand side to get \((x^2-9)(x^2-1)=0\). If \(x^2-9\) and/or \(x^2-1\) equals \(0\), then the whole left side will equal \(0\). Since the solutions can be both positive and negative, we have \(4\) solutions: \(-3,3,-1,1\) (we can find these solutions by setting \(x^2-9\) and \(x^2-1\) equal to \(0\) and solving for \(x\)). So, the answer is \(\boxed{\textbf{(D) }4}\). 
+
+
+<br><br>==========<br>
+Solution 3. Subtract 16 from both sides and factor using difference of squares: 
+
+\((x^2 - 5)^2 = 16\)
+\((x^2 - 5)^2 - 16 =0\)
+\((x^2 - 5)^2 - 4^2 = 0\)
+\([(x^2 - 5)-4][(x^2 - 5) + 4] = 0\)
+\((x^2 - 9)(x^2 - 1) =0\)
+\((x+3)(x-3)(x+1)(x-1) = 0\)
+
+Quite obviously, this equation has \(\boxed{\textbf{(D) }4}\) solutions. 
+","**Solution 4 (Using Calculus):**
+
+To determine the number of real solutions for \((x^2 - 5)^2 = 16\), analyze the function \(f(x) = (x^2 - 5)^2 - 16\). 
+
+1. **Find critical points** by computing the derivative:
+   \(
+   f'(x) = 4x(x^2 - 5)
+   \)
+   Setting \(f'(x) = 0\) gives critical points at \(x = 0\) and \(x = \pm \sqrt{5}\).
+
+2. **Evaluate \(f(x)\) at critical points**:
+   - \(f(0) = 9\) (positive).
+   - \(f(\pm \sqrt{5}) = -16\) (negative).
+
+3. **Behavior analysis**:
+   - For \(x \geq 0\), \(f(x)\) starts at \(f(0) = 9\), decreases to \(-16\) at \(x = \sqrt{5}\), then increases to infinity. This guarantees **two crossings** of the x-axis (one between \(0\) and \(\sqrt{5}\), another for \(x > \sqrt{5}\)).
+   - By symmetry, the same applies for \(x \leq 0\), adding two more crossings.
+
+Thus, there are \(\boxed{\textbf{(D) }4}\) distinct real solutions.",deepseek-reasoner,,TRUE,FALSE,FALSE,TRUE,,,

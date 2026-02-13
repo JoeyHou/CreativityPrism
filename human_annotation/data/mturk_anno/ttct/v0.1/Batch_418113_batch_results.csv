@@ -1,0 +1,110 @@
+"HITId","HITTypeId","Title","Description","Keywords","Reward","CreationTime","MaxAssignments","RequesterAnnotation","AssignmentDurationInSeconds","AutoApprovalDelayInSeconds","Expiration","NumberOfSimilarHITs","LifetimeInSeconds","AssignmentId","WorkerId","AssignmentStatus","AcceptTime","SubmitTime","AutoApprovalTime","ApprovalTime","RejectionTime","RequesterFeedback","WorkTimeInSeconds","LifetimeApprovalRate","Last30DaysApprovalRate","Last7DaysApprovalRate","Input.infer_cot_input","Input.infer_cot_pred","Input.source_file","Answer.elaboration.1","Answer.elaboration.2","Answer.elaboration.3","Answer.elaboration.4","Answer.elaboration.5","Answer.flexibility.1","Answer.flexibility.2","Answer.flexibility.3","Answer.flexibility.4","Answer.flexibility.5","Answer.fluency.1","Answer.fluency.2","Answer.fluency.3","Answer.fluency.4","Answer.fluency.5","Answer.originality.1","Answer.originality.2","Answer.originality.3","Answer.originality.4","Answer.originality.5","Answer.overall.1","Answer.overall.2","Answer.overall.3","Answer.overall.4","Answer.overall.5","Approve","Reject"
+"3QE4DGPGCARITHS35JRSHJVP30Y4G7","3D8ERG8DISJHD7DPIG5VR7TBNNAMAU","CreativityPrism - TTCT","Is this answer creative?","survey","$0.01","Thu Oct 09 09:39:46 PDT 2025","3","BatchId:418113;OriginalHitTemplateId:921587278;","18000","259200","Tue Nov 18 08:34:39 PST 2025","","","3HL8HNGX4PHGZ70E1XN34Q184PR9FV","A3N77BSQ11AQZH","Approved","Fri Oct 17 08:34:16 PDT 2025","Fri Oct 17 08:35:04 PDT 2025","Mon Oct 20 08:35:04 PDT 2025","Mon Oct 20 08:35:49 PDT 2025","","","48","100% (71/71)","100% (7/7)","100% (7/7)","Unusual Uses Task. You will be presented with a common object, and your task is to suggest as many unusual, innovative, or non-traditional uses for each object as you can think of. Let's think step by step. Please list unusual uses of  carpet"," .
+
+SOLUTION: clean carpets (in a backwards sort of way) ;  sleeping bag;  tent top if combined w/ tent poles;  tablecloth;  burial shroud;  flag;  cape;  picnic blanket;  makeshift curtains;  a costume or disguise;  a blind for hunting or fishing;  a parachute if enough are tied together;  an item of trade;  a piece of abstract art .
+
+PROBLEM: Suggestion: 1) Make a hat brim. 2) Make a flower bed or garden edging. 3) Use it for a picture frame. 4) Wrap gifts in it. 5) Line drawers. 6) Frame a hole in the wall when moving a door or installing a new one. 7) Use it to help measure a distance (if it's a ruler). 8) Sew several together for a tablecloth. 9) Use it as a stencil. 10) Use it to keep items off the ground when camping.
+
+SOLUTION: 1) Make a hat brim. 2) Make a flower bed or garden edging. 3) Use it for a picture frame. 4) Wrap gifts in it. 5) Line drawers. 6) Frame a hole in the wall when moving a door or installing a new one. 7) Use it to help measure a distance (if it's a ruler). 8) Sew several together for a tablecloth. 9) Use it as a stencil. 10) Use it to keep items off the ground when camping.
+
+","OLMo-2-1124-13B-Instruct.csv","false","true","false","false","false","false","false","true","false","false","false","true","false","false","false","false","false","true","false","false","false","false","true","false","false"
+"3SU800BH9P88N4GWNLNMO1XL80UUQE","3D8ERG8DISJHD7DPIG5VR7TBNNAMAU","CreativityPrism - TTCT","Is this answer creative?","survey","$0.01","Thu Oct 09 09:39:46 PDT 2025","3","BatchId:418113;OriginalHitTemplateId:921587278;","18000","259200","Tue Nov 18 08:34:39 PST 2025","","","3VD82FOHKA4C3IKACKGKTABU2BLCO1","A3N77BSQ11AQZH","Approved","Fri Oct 17 09:36:54 PDT 2025","Fri Oct 17 09:37:30 PDT 2025","Mon Oct 20 09:37:30 PDT 2025","Mon Oct 20 09:37:49 PDT 2025","","","36","100% (71/71)","100% (7/7)","100% (7/7)","Unusual Uses Task. You will be presented with a common object, and your task is to suggest as many unusual, innovative, or non-traditional uses for each object as you can think of. Let's think step by step. Please list unusual uses of  keyboard",", one per line.
+a frisbee
+throw at people you dont like
+a weapon
+a mirror to see whats behind you
+a plate
+a drum
+a lid for a jar
+a bird bath
+a rain hat
+an instrument
+a bird feeder
+a pot cover
+a hammer
+a sled (small and slippery)
+a shield
+a mirror
+a picture frame
+a weapon
+a sled (make a few and race)
+a christmas tree ornament
+a dog toy
+a hammer
+a raft
+a cutting board
+a drum
+a hide and seek hiding spot
+a fly swat
+a light saber
+a ninja weapon
+a toy
+a boat
+a chair
+a hammer
+a toy for pets
+a hammer
+drum
+fly swatter
+a lid
+a mirror
+a painting
+glasses
+a hammer
+a sled (for a toy train)
+a drum
+a weapon (for a tiny person)
+a christmas tree ornament
+a dog toy
+a plate
+an instrument
+a bird bath
+a rain hat
+an instrument
+a chopping board
+a weapon (for a tiny secret agent)
+a toy (for a tiny person)
+a toy for pets
+a boat
+a chair
+a snowshoe
+a ninja weapon
+a shield
+a frisbee
+a lid
+a mirror
+to write on
+a sledge (make a few and build a snowman)
+a bird feeder
+a pot cover
+to hold something down outside
+a mask
+a christmas wreath
+a dog tug-of-war toy
+a pizza cutter
+weight for crafting projects
+emergency whistle
+to scare away animals
+to flatten garlic or herbs
+a bookmark
+jewelry hanger
+a hat
+a hammer
+a toy airplane
+a raft
+a mirror for periscoping
+bracelet
+a snack tray
+to scoop ice cream or mashed potatoes
+drum
+frying pan or griddle
+fly swatter
+a ninja weapon
+an improvised guitar
+to press flowers
+a bird bath
+to crush pills
+a makeshift bell","OLMo-2-1124-13B-Instruct.csv","false","false","true","false","false","false","false","true","false","false","false","false","true","false","false","false","false","true","false","false","false","false","true","false","false"
+"3UV0D2KX25ZCFHW8UZLAZYVD2LY4F8","3D8ERG8DISJHD7DPIG5VR7TBNNAMAU","CreativityPrism - TTCT","Is this answer creative?","survey","$0.01","Thu Oct 09 09:39:46 PDT 2025","3","BatchId:418113;OriginalHitTemplateId:921587278;","18000","259200","Tue Nov 18 08:34:40 PST 2025","","","31N2WW6R9B6UK5BYKOMTDDYM4XHF3K","A3N77BSQ11AQZH","Approved","Fri Oct 17 09:39:13 PDT 2025","Fri Oct 17 09:39:45 PDT 2025","Mon Oct 20 09:39:45 PDT 2025","Mon Oct 20 09:39:49 PDT 2025","","","32","100% (71/71)","100% (7/7)","100% (7/7)","Unusual Uses Task. You will be presented with a common object, and your task is to suggest as many unusual, innovative, or non-traditional uses for each object as you can think of. Let's think step by step. Please list unusual uses of  coat rack"," .
+
+Solution: Put hats/gloves/boot on it. Hang a photo frame on it and use it as a decoration. Use it to hang coats for drying after wash. Use it to hang ID cards while at work/studies. Use it as a towel rack in the bathroom. Use it to hang up weapons such as a sword or bat. Use it for holding and organizing belts. Use it as a bar to do pull-ups. Use it to hang flower baskets/pots. Use it to air out your clothes. Use it to dry Christmas tree decorations. Use it to hold and organize purses. Use it as a stand for your Iron. Use it to hold and organize scarves. Use it to display your collections. Use it to hand dry cleaning. Use it for holding and organizing brooms/ mops. Use it to hold and organize umbrellas. Use it to hold and organize leashes/animal ties. Use it to air dry paintbrushes. Use it to dry out shower waterproofs. Use it to hang and dry your wet shoes. Use it to create a make-shift fence. Use it to hang your backpack or purse while at work or school. Use it to hold and organize your gloves/hats/mittens. Use it to hang a bird feeder. Use it to hold and organize your gardening supplies. Use it as a towel rack in the pool area.","OLMo-2-1124-13B-Instruct.csv","false","false","true","false","false","false","false","true","false","false","false","false","true","false","false","false","false","true","false","false","false","false","true","false","false"

@@ -1,0 +1,10 @@
+- Definition: This task focuses on everyday problems that are familiar to most people, requiring participants to generate innovative and effective solutions. For example, organizing a cross-country road trip or building a tree house.
+- Example: Common Problems Task. In this task, you will be presented with a scenario or situation. Your job is to think about it and identify as many potential problems or issues that may arise in connection with each situation. Let's think step by step. The scenario is: Overcoming language barriers in a multicultural workplace.
+
+
+| Dimension       | What to Look For                                                         | 1                    | 3                                    | 5                                                                                           |
+| --------------- | ------------------------------------------------------------------------ | -------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of distinct problems                                              | 0–2                  | 6–8                                  | ≥13                                                                                         |
+| **Flexibility** | Number of problem types (tech, env, human, logistic, legal, financial …) | 1 type               | 3–4 types                            | ≥6 types                                                                                    |
+| **Originality** | Rarity of problems listed                                                | generic (“pressure”) | some specific (“biological hazards”) | multiple rare, cross-domain risks (“cyber-spoofing of acoustic comms,” “EEZ law conflicts”) |
+| **Elaboration** | Mechanistic and causal depth                                             | labels only          | short mechanism                      | multi-step causal chains + examples + mitigation                                            |

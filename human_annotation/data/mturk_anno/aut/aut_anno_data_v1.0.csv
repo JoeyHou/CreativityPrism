@@ -1,0 +1,68 @@
+original_idx,human_anno_0,human_anno_1,human_anno_2,llm_judge,human_median,incorrect,tool_use,tool_name
+bottle-0,1,1,1,1,1,FALSE,water bottle,bottle
+bottle-1,1,1,1,1,1,FALSE,drink on it,bottle
+table-2,1,1,1,2,1,TRUE,storing stuff on,table
+table-4,1,1,1,2,1,TRUE,putting objects,table
+pencil-1,1,2,1,2,1,TRUE,draw on it,pencil
+bottle-3,2,2,2,2,2,FALSE,use as flower pot,bottle
+spoon-0,2,2,3,3,2,TRUE,a shovel,spoon
+spoon-3,2,2,2,2,2,FALSE,backscratcher,spoon
+knife-1,2,2,2,1,2,TRUE,dig in gardens,knife
+brick-0,2,2,1,2,2,FALSE,Anchor,brick
+brick-4,2,2,2,3,2,TRUE,arm weight,brick
+tire-1,2,2,2,2,2,FALSE,water tube,tire
+tire-2,2,3,2,2,2,FALSE,to use for a swing,tire
+tire-3,1,3,2,2,2,FALSE,roll it down hills for a game,tire
+rope-0,2,2,2,2,2,FALSE,making a necklace,rope
+rope-3,2,2,1,1,2,TRUE,whipping someone with it,rope
+rope-4,3,2,1,1,2,TRUE,Tie your dog to a tree or post,rope
+book-1,2,2,2,2,2,FALSE,smush something,book
+book-2,3,2,2,3,2,TRUE,as a doorstop,book
+book-3,2,2,2,3,2,TRUE,cover your head from the sun,book
+toothbrush-2,2,2,3,3,2,TRUE,use it to brush your hair,toothbrush
+table-0,3,1,2,2,2,FALSE,gather,table
+lightbulb-0,2,2,4,3,2,TRUE,Painting it,lightbulb
+fork-1,2,2,3,2,2,FALSE,fix things,fork
+fork-2,1,2,2,2,2,FALSE,puncture,fork
+pencil-3,2,2,3,3,2,TRUE,Use it to type your keyboard keys,pencil
+shoe-2,2,2,1,2,2,FALSE,hit someone,shoe
+shoe-3,2,2,1,2,2,FALSE,to throw at someone,shoe
+shoe-4,3,2,1,2,2,FALSE,donate,shoe
+ball-3,2,2,1,2,2,FALSE,you can bounce it so high like a bounce ball,ball
+bottle-2,3,3,3,3,3,FALSE,paint stamp,bottle
+spoon-2,2,3,4,3,3,FALSE,glue it on a fork,spoon
+spoon-4,3,3,3,2,3,TRUE,using it for drums,spoon
+shovel-0,2,4,3,4,3,TRUE,melt the metal and repurpose it,shovel
+shovel-4,3,5,1,4,3,TRUE,a plow,shovel
+pants-0,3,4,3,2,3,TRUE,use fabric for different project,pants
+pants-1,3,3,3,2,3,TRUE,cover up an open wound,pants
+pants-4,3,2,3,3,3,FALSE,use them as a makeshift rope to tie something up,pants
+knife-2,3,2,3,1,3,TRUE,to try to get a door open,knife
+brick-2,3,2,4,3,3,FALSE,buddy you can dress up,brick
+tire-4,3,4,3,3,3,FALSE,paint and put on wall as decorative,tire
+rope-2,4,3,1,2,3,TRUE,erotic,rope
+sock-2,3,3,3,3,3,FALSE,a doll,sock
+book-0,2,3,4,3,3,FALSE,wrapping paper,book
+toothbrush-1,2,3,3,4,3,TRUE,Use it for painting,toothbrush
+table-1,3,3,2,3,3,FALSE,use to start a fire,table
+table-3,4,3,3,4,3,TRUE,bullet shield,table
+fork-4,3,3,3,2,3,TRUE,barbie hair brush,fork
+pencil-0,3,3,2,3,3,FALSE,A bow and arrow,pencil
+pencil-2,3,4,2,3,3,FALSE,seesaw,pencil
+shoe-0,2,3,3,4,3,TRUE,use as a hammer,shoe
+bottle-4,3,4,4,4,4,FALSE,use multiple bottles to make a raft,bottle
+shovel-3,4,4,4,1,4,TRUE,sit on it,shovel
+pants-2,4,4,4,4,4,FALSE,fill with air as a flotation device,pants
+pants-3,4,3,4,2,4,TRUE,cut and make jewelry,pants
+box-2,4,4,3,1,4,TRUE,football,box
+sock-4,4,4,3,3,4,TRUE,to use it like a backpack or store money in it,sock
+book-4,4,4,3,4,4,FALSE,backpack armor at school shooting,book
+lightbulb-2,4,5,4,3,4,TRUE,you can make it into a bee,lightbulb
+lightbulb-3,4,5,4,3,4,TRUE,You could use it as a trap for insects that bother you,lightbulb
+lightbulb-4,4,4,4,2,4,TRUE,as a firecracker,lightbulb
+pencil-4,4,5,4,4,4,FALSE,A surprising use for a pencil would be to make them trees,pencil
+hat-0,4,5,4,3,4,TRUE,to transform it into a foot spa,hat
+hat-3,3,4,4,3,4,TRUE,you can make a hat turn into a bed for your pet by flipping it over where the head goes then put little blankets in the and put your pet in there,hat
+shoe-1,3,4,4,4,4,FALSE,hang several on the wall and use them to store or display smaller items,shoe
+ball-4,4,4,4,4,4,FALSE,you can attach more and more balls and you can make your favorite thing out of it and color it,ball
+ball-0,5,5,5,4,5,TRUE,making it a monster,ball

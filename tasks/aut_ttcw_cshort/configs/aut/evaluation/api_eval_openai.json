@@ -1,0 +1,142 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "aut_v1_gpt41_judge/claude_3_haiku",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/claude_37_sonnet",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/deepseek_llama_70b",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/deepseek_qwen_7b",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/deepseek_qwen_32b",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/deepseek_r1",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/deepseek_v3",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/gemini_2_flash",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/gemini_2_pro",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/gpt_4.1",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/gpt_4.1_mini",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/llama3_8b_instr",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/llama3_70b_instruct",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/mistral_7b_instr",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/mistral_small_24b",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/mixtral_8x7b",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/olmo_7b",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/olmo_13b",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/olmo_13b_dpo",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/olmo_13b_sft",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/qwen_7b_instruct",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/qwen_32b_instruct",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        },
+        {
+            "run_id": "aut_v1_gpt41_judge/qwen_72b_instruct",
+            "task": "aut_push",
+            "model_name": "gpt-4.1",
+            "test_size": 10e10
+        }
+    ]
+}

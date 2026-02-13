@@ -1,0 +1,1436 @@
+problem_id,problem,cleaned_references,cleaned_response,model,image_in_problem
+2016_AMC_8_Problems_15,"What is the largest power of \(2\) that is a divisor of \(13^4 - 11^4\)?
+\(\textbf{(A)}\mbox{ }8\qquad \textbf{(B)}\mbox{ }16\qquad \textbf{(C)}\mbox{ }32\qquad \textbf{(D)}\mbox{ }64\qquad \textbf{(E)}\mbox{ }128\)","Solution 1. First, we use difference of squares on \(13^4 - 11^4 = (13^2)^2 - (11^2)^2\) to get \(13^4 - 11^4 = (13^2 + 11^2)(13^2 - 11^2)\). Using difference of squares again and simplifying, we get \((169 + 121)(13+11)(13-11) = 290 \cdot 24 \cdot 2 = (2\cdot 8 \cdot 2) \cdot (3 \cdot 145)\). Realizing that we don't need the right-hand side because it doesn't contain any factor of 2, we see that the greatest power of \(2\) that is a divisor \(13^4 - 11^4\) is \(\boxed{\textbf{(C)}\ 32}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Just like in the above solution, we use the difference-of-squares factorization, but only once to get \(13^4-11^4=(13^2-11^2)(13^2+11^2).\) We can then compute that this is equal to \(48\cdot290.\) Note that \(290=2\cdot145\) (we don't need to factorize any further as \(145\) is already odd) thus the largest power of \(2\) that divides \(290\) is only \(2^1=2,\) while \(48=2^4\cdot3,\) so the largest power of \(2\) that divides \(48\) is \(2^4=16.\) Hence, the largest power of \(2\) that is a divisor of \(13^4-11^4\) is \(2\cdot16=\boxed{\textbf{(C)}~32}.\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 3. Let \(n=13^4-11^4.\) We wish to find the largest power of \(2\) that divides \(n\).
+Denote \(v_p(k)\) as the largest exponent of \(p\) in the prime factorization of \(n\). In this problem, we have \(p=2\). 
+By the Lifting the Exponent Lemma on \(n\), 
+\(v_2(13^4-11^4)=v_2(13-11)+v_2(4)+v_2(13+11)-1\)
+\(=v_2(2)+v_2(4)+v_2(24)-1\)
+\(=1+2+3-1=5.\)
+Therefore, exponent of the largest power of \(2\) that divids \(13^4-11^4\) is \(5,\) so the largest power of \(2\) that divides this number is \(2^5=\boxed{\textbf{(C)} 32}\).","We start by expressing \(13\) as \(11 + 2\) and expand \((11 + 2)^4\) using the binomial theorem:
+\(
+(11 + 2)^4 = 11^4 + 4 \cdot 11^3 \cdot 2 + 6 \cdot 11^2 \cdot 2^2 + 4 \cdot 11 \cdot 2^3 + 2^4.
+\)
+Subtracting \(11^4\) from both sides gives:
+\(
+13^4 - 11^4 = 4 \cdot 11^3 \cdot 2 + 6 \cdot 11^2 \cdot 4 + 4 \cdot 11 \cdot 8 + 16.
+\)
+Simplify each term:
+\(
+= 8 \cdot 11^3 + 24 \cdot 11^2 + 32 \cdot 11 + 16.
+\)
+Factor out \(8\):
+\(
+= 8 \left(11^3 + 3 \cdot 11^2 + 4 \cdot 11 + 2\right).
+\)
+Compute the inner expression modulo \(2\). Since \(11 \equiv 1 \mod 2\):
+\(
+1^3 + 3 \cdot 1^2 + 4 \cdot 1 + 2 \equiv 1 + 3 + 4 + 2 = 10 \equiv 0 \mod 2.
+\)
+Thus, the inner term is even. Factor out \(2\):
+\(
+= 8 \cdot 2 \cdot \left(\frac{11^3 + 3 \cdot 11^2 + 4 \cdot 11 + 2}{2}\right) = 16 \cdot 870.
+\)
+Check \(870\) for evenness: \(870 = 2 \cdot 435\). Factor out \(2\) again:
+\(
+= 16 \cdot 2 \cdot 435 = 32 \cdot 435.
+\)
+Since \(435\) is odd, no further factors of \(2\) remain. The largest power of \(2\) dividing \(13^4 - 11^4\) is \(\boxed{\textbf{(C)}\ 32}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1991_AJHSME_Problems_25,"An equilateral triangle is originally painted black.  Each time the triangle is changed, the middle fourth of each black triangle turns white.  After five changes, what fractional part of the original area of the black triangle remains black?
+[asy] unitsize(36); fill((0,0)--(2,0)--(1,sqrt(3))--cycle,gray); draw((0,0)--(2,0)--(1,sqrt(3))--cycle,linewidth(1));  fill((4,0)--(6,0)--(5,sqrt(3))--cycle,gray); fill((5,0)--(9/2,sqrt(3)/2)--(11/2,sqrt(3)/2)--cycle,white); draw((5,sqrt(3))--(4,0)--(5,0)--(9/2,sqrt(3)/2)--(11/2,sqrt(3)/2)--(5,0)--(6,0)--cycle,linewidth(1)); fill((8,0)--(10,0)--(9,sqrt(3))--cycle,gray); fill((9,0)--(17/2,sqrt(3)/2)--(19/2,sqrt(3)/2)--cycle,white); fill((17/2,0)--(33/4,sqrt(3)/4)--(35/4,sqrt(3)/4)--cycle,white); fill((9,sqrt(3)/2)--(35/4,3*sqrt(3)/4)--(37/4,3*sqrt(3)/4)--cycle,white); fill((19/2,0)--(37/4,sqrt(3)/4)--(39/4,sqrt(3)/4)--cycle,white); draw((9,sqrt(3))--(35/4,3*sqrt(3)/4)--(37/4,3*sqrt(3)/4)--(9,sqrt(3)/2)--(35/4,3*sqrt(3)/4)--(33/4,sqrt(3)/4)--(35/4,sqrt(3)/4)--(17/2,0)--(33/4,sqrt(3)/4)--(8,0)--(9,0)--(17/2,sqrt(3)/2)--(19/2,sqrt(3)/2)--(9,0)--(19/2,0)--(37/4,sqrt(3)/4)--(39/4,sqrt(3)/4)--(19/2,0)--(10,0)--cycle,linewidth(1)); label(""Change 1"",(3,3*sqrt(3)/4),N); label(""\(\Longrightarrow \)"",(3,5*sqrt(3)/8),S); label(""Change 2"",(7,3*sqrt(3)/4),N); label(""\(\Longrightarrow \)"",(7,5*sqrt(3)/8),S); [/asy]
+\(\text{(A)}\ \frac{1}{1024} \qquad \text{(B)}\ \frac{15}{64} \qquad \text{(C)}\ \frac{243}{1024} \qquad \text{(D)}\ \frac{1}{4} \qquad \text{(E)}\ \frac{81}{256}\)<br><br><img alt=""problem image"" class=""tagimage"" src=""{image_url}""/><br><br>","Solution 1. With each change, \(\frac{3}{4}\) of the black space from the previous stage remains.  Since there are \(5\) changes, the fractional part of the triangle that remains black is \(\left( \frac{3}{4} \right)^5=\frac{243}{1024}\rightarrow \boxed{\text{C}}\).","At each change, every black triangle is subdivided into four smaller congruent triangles, with the middle one turning white. This process replaces each black triangle with three smaller black triangles, each having one-fourth the area of the original. 
+
+- **Initial Step (Change 0):**  
+  There is 1 black triangle.  
+  Total black area = \(1\).
+
+- **After 1st Change:**  
+  Number of black triangles = \(3\), each with area \(\frac{1}{4}\).  
+  Total black area = \(3 \times \frac{1}{4} = \frac{3}{4}\).
+
+- **After 2nd Change:**  
+  Each of the 3 triangles splits into 3, resulting in \(3^2 = 9\) black triangles, each with area \(\frac{1}{4^2}\).  
+  Total black area = \(9 \times \frac{1}{16} = \left(\frac{3}{4}\right)^2\).
+
+Continuing this pattern, after \(n\) changes:  
+- Number of black triangles = \(3^n\),  
+- Each triangle's area = \(\frac{1}{4^n}\),  
+- Total black area = \(3^n \times \frac{1}{4^n} = \left(\frac{3}{4}\right)^n\).
+
+For \(n = 5\):  
+Total remaining black area = \(\left(\frac{3}{4}\right)^5 = \frac{243}{1024}\).  
+
+\(\boxed{\text{C}}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,https://joeyhou.github.io/CreativityPrism/assets/img/1991_AJHSME_Problems_25.png
+1996_AJHSME_Problems_20,"Suppose there is a special key on a calculator that replaces the number \(x\) currently displayed with the number given by the formula \(1/(1-x)\).  For example, if the calculator is displaying 2 and the special key is pressed, then the calculator will display -1 since \(1/(1-2)=-1\).  Now suppose that the calculator is displaying 5.  After the special key is pressed 100 times in a row, the calculator will display 
+\(\text{(A)}\ -0.25 \qquad \text{(B)}\ 0 \qquad \text{(C)}\ 0.8 \qquad \text{(D)}\ 1.25 \qquad \text{(E)}\ 5\)","Solution 1. We look for a pattern, hoping this sequence either settles down to one number, or that it forms a cycle that repeats.
+After \(1\) press, the calculator displays \(\frac{1}{1 - 5} = -\frac{1}{4}\)
+After \(2\) presses, the calculator displays \(\frac{1}{1 - (-\frac{1}{4})} = \frac{1}{\frac{5}{4}} = \frac{4}{5}\)
+After \(3\) presses, the calculator displays \(\frac{1}{1 - \frac{4}{5}} = \frac{1}{\frac{1}{5}} = 5\)
+Thus, every three presses, the display will be \(5\).  On press \(3\cdot 33 = 99\), the display will be \(5\).  One more press will give \(-\frac{1}{4}\), which is answer \(\boxed{A}\).","To solve the problem, we can model the special key's function as a Möbius transformation and analyze its periodicity using linear algebra. 
+
+1. **Represent the function as a matrix**:  
+   The transformation \( f(x) = \frac{1}{1 - x} \) corresponds to the matrix \( M = \begin{pmatrix} 0 & 1 \\ -1 & 1 \end{pmatrix} \). Möbius transformations compose via matrix multiplication.
+
+2. **Compute eigenvalues and powers of \( M \)**:
+   - The characteristic equation of \( M \) is \( \lambda^2 - \lambda + 1 = 0 \), yielding eigenvalues \( \lambda = \frac{1 \pm i\sqrt{3}}{2} \), which are primitive 6th roots of unity.
+   - Calculating \( M^3 \), we find \( M^3 = -I \), confirming that applying the transformation three times is equivalent to the identity operation (up to a scalar multiple, which does not affect the result).
+
+3. **Determine the 100th iteration**:
+   - Since \( M^3 = -I \), pressing the key 99 times (a multiple of 3) brings the display back to 5. The 100th press applies \( M \) once more, yielding \( f(5) = -\frac{1}{4} \).
+
+**Answer**: \(\boxed{A}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2001_AMC_8_Problems_25,"There are 24 four-digit whole numbers that use each of the four digits 2, 4, 5 and 7 exactly once. Only one of these four-digit numbers is a multiple of another one. Which of the following is it?
+\(\textbf{(A)}\ 5724 \qquad \textbf{(B)}\ 7245 \qquad \textbf{(C)}\ 7254 \qquad \textbf{(D)}\ 7425 \qquad \textbf{(E)}\ 7542\)","Solution 1. We begin by narrowing down the possibilities. If the larger number were twice the smaller number, then the smallest possibility for the larger number is \(2457\times2=4914\), since \(2457\) is the smallest number in the set. The largest possibility would have to be twice the largest number in the set such that when it is multiplied by \(2\), it is less than or equal to \(7542\), the largest number in the set. This happens to be \(2754\times2=5508\). Therefore, the number would have to be between \(4914\) and \(5508\), and also even. The only even numbers in the set and in this range are \(5472\) and \(5274\). A quick check reveals that neither of these numbers is twice a number in the set. The number can't be quadruple or more another number in the set since \(2457\times4=9828\), well past the range of the set. Therefore, the number must be triple another number in the set. The least possibility is \(2457\times3=7371\) and the greatest is \(2475\times3=7425\), since any higher number in the set multiplied by \(3\) would be out of the range of the set. Reviewing, we find that the upper bound does in fact work, so the multiple is \(2475\times3=7425, \boxed{\textbf{(D)}}\)
+
+Or, since the greatest number possible divided by the smallest number possible is slightly greater than 3, divide all of the choices by 2, then 3 and see if the resulting answer contains 2,4,5 and 7. Doing so, you find that \(7425/3 = 2475,  \boxed{\textbf{(D)}}\)","We analyze the units digits and divisibility rules to narrow down the options:
+
+1. **Units Digit Consideration:**  
+   For a number \( X \) to be a multiple of another number \( Y \) composed of digits {2,4,5,7}, \( X \) must end in a digit achievable through multiplication. If \( Y \) ends in 5, \( X \) must also end in 5 (since \( 5 \times k \) modulo 10 is 5 for odd \( k \)). Among the options, only **B (7245)** and **D (7425)** end in 5.
+
+2. **Filtering Possible Divisors:**  
+   Numbers ending in 5 must be divisible by 5, so \( Y \) must end in 5. The valid permutations ending in 5 are:  
+   2475, 2745, 4275, 4725, 7245.  
+   We test if **D (7425)** is divisible by any of these:  
+   - \( 7425 \div 2475 = 3 \), confirming \( 7425 = 2475 \times 3 \).  
+   - \( 2475 \) is a permutation of {2,4,5,7}, satisfying the condition.  
+
+3. **Eliminating Other Options:**  
+   - For even options (A, C, E), dividing by 2 results in invalid digits (e.g., 5724/2 = 2862, containing 6 and 8).  
+   - **B (7245)** divided by candidates like 2415 (invalid due to digit 1) or 2745 (non-integer quotient) fails.  
+
+Thus, **D (7425)** is divisible by another permutation (2475) and is the answer.  
+
+\(\boxed{\textbf{D}}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1996_AJHSME_Problems_12,"What number should be removed from the list
+\(1,2,3,4,5,6,7,8,9,10,11\)
+so that the average of the remaining numbers is \(6.1\)?
+\(\text{(A)}\ 4 \qquad \text{(B)}\ 5 \qquad \text{(C)}\ 6 \qquad \text{(D)}\ 7 \qquad \text{(E)}\ 8\)","Solution 1. Adding all of the numbers gives us \(\frac{11\cdot12}{2}=66\) as the current total. Since there are \(11\) numbers, the current average is \(\frac{66}{11}=6\). We need to take away a number from the total and then divide the result by \(10\) because there will only be \(10\) numbers left to give an average of \(6.1\). Setting up the equation:
+\(\frac{66-x}{10}=6.1\)
+\(66 - x = 61\)
+\(x = 5\)
+Thus, the answer is \(\boxed{B}\)","To determine which number to remove, test each option by subtracting it from the total sum and checking if the new average is 6.1.
+
+1. **Original sum**: \(1 + 2 + \dots + 11 = \frac{11 \cdot 12}{2} = 66\).  
+2. **Test each choice**:  
+   - **A) Remove 4**: New sum = \(66 - 4 = 62\). Average = \(\frac{62}{10} = 6.2\) (Not 6.1).  
+   - **B) Remove 5**: New sum = \(66 - 5 = 61\). Average = \(\frac{61}{10} = 6.1\) (Correct).  
+   - Further checks for C, D, E are unnecessary once the correct answer is found.  
+
+**Conclusion**: The number to remove is \(\boxed{B}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1996_AJHSME_Problems_12,"What number should be removed from the list
+\(1,2,3,4,5,6,7,8,9,10,11\)
+so that the average of the remaining numbers is \(6.1\)?
+\(\text{(A)}\ 4 \qquad \text{(B)}\ 5 \qquad \text{(C)}\ 6 \qquad \text{(D)}\ 7 \qquad \text{(E)}\ 8\)","Solution 1. Adding all of the numbers gives us \(\frac{11\cdot12}{2}=66\) as the current total. Since there are \(11\) numbers, the current average is \(\frac{66}{11}=6\). We need to take away a number from the total and then divide the result by \(10\) because there will only be \(10\) numbers left to give an average of \(6.1\). Setting up the equation:
+\(\frac{66-x}{10}=6.1\)
+\(66 - x = 61\)
+\(x = 5\)
+Thus, the answer is \(\boxed{B}\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Similar to the first solution, the current total is \(66\).  Since there are \(11\) numbers on the list, taking \(1\) number away will leave \(10\) numbers.  If those \(10\) numbers have an average of \(6.1\), then those \(10\) numbers must have a sum of \(10 \times 6.1 = 61\).  Thus, the number that was removed must be \(66 - 61 = 5\), and the answer is \(\boxed{B}\).","Consider the original average of the numbers, which is \(6\). Removing a number affects the average based on its deviation from this original average. Let \(x\) be the number removed. The deviation of \(x\) from the original average is \(x - 6\). Removing \(x\) changes the total sum of deviations from \(0\) (since the original deviations sum to zero) to \(- (x - 6)\). The new average becomes:  
+\(
+6 + \frac{ - (x - 6) }{10} = 6.1
+\)  
+Solving for \(x\):  
+\(
+6 + \frac{6 - x}{10} = 6.1 \implies \frac{6 - x}{10} = 0.1 \implies 6 - x = 1 \implies x = 5
+\)  
+Thus, the number to be removed is \(\boxed{B}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1996_AJHSME_Problems_25,"A point is chosen at random from within a circular region.  What is the probability that the point is closer to the center of the region than it is to the boundary of the region?
+\(\text{(A)}\frac{1}{4} \qquad \text{(B)}\frac{1}{3} \qquad \text{(C)}\frac{1}{2} \qquad \text{(D)}\frac{2}{3} \qquad \text{(E)}\frac{3}{4}\)","Solution 1. Draw a circle with a radius of \(2\).  Draw a concentric circle with radius \(1\).  The circumference of this inner circle is the set of all points that are \(1\) from the center, and \(1\) from the outer circle meaning the set of points are equidistant from the center of the circles to the outside of the big circle.  
+The inside of smaller circle is the set of all points that are closer to the center of the region than to the boundary of the outer circle.  The ""washer"" region that is outside the circle of radius \(1\), but inside the circle of radius \(2\), is the set of all points that are closer to the boundary than to the center of the circle.
+If you select a random point in a region of area \(B\), the probability that the point is in a smaller subregion \(A\) is the ratio \(\frac{A}{B}\).  In this case, \(B = \pi\cdot 2^2 = 4\pi\), and \(A = \pi\cdot 1^2 = \pi\), and the ratio of areas is \(\frac{\pi}{4\pi} = \frac{1}{4}\), and the answer is \(\boxed{A}\).","Consider the circular region with radius \( R \). When choosing a point uniformly at random, the probability distribution of the distance \( r \) from the center is not uniform due to the increasing area with radius. The probability density function for \( r \) is \( f(r) = \frac{2r}{R^2} \) for \( 0 \leq r \leq R \). The condition for a point to be closer to the center than the boundary is \( r < R - r \), which simplifies to \( r < \frac{R}{2} \). The probability is computed by integrating the density function up to \( \frac{R}{2} \):
+
+\(
+P\left(r < \frac{R}{2}\right) = \int_0^{\frac{R}{2}} \frac{2r}{R^2} \, dr = \left[\frac{r^2}{R^2}\right]_0^{\frac{R}{2}} = \frac{\left(\frac{R}{2}\right)^2}{R^2} = \frac{1}{4}.
+\)
+
+Thus, the probability is \(\boxed{A}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2012_AMC_10A_Problems_21,"Let points \(A\) = \((0 ,0 ,0)\), \(B\) = \((1, 0, 0)\), \(C\) = \((0, 2, 0)\), and \(D\) = \((0, 0, 3)\). Points \(E\), \(F\), \(G\), and \(H\) are midpoints of line segments \(\overline{BD},\text{ }  \overline{AB}, \text{ } \overline {AC},\) and \(\overline{DC}\) respectively. What is the area of \(EFGH\)?
+\(\textbf{(A)}\ \sqrt{2}\qquad\textbf{(B)}\ \frac{2\sqrt{5}}{3}\qquad\textbf{(C)}\ \frac{3\sqrt{5}}{4}\qquad\textbf{(D)}\ \sqrt{3}\qquad\textbf{(E)}\ \frac{2\sqrt{7}}{3}\)","Solution 1. Consider a tetrahedron with vertices at \(A,B,C,D\) on the \(xyz\)-plane. The length of \(EF\) is just one-half of \(AD\) because it is the midsegment of \(\triangle ABD.\) The same concept applies to the other side lengths. \(AD=3\) and \(BC=\sqrt{1^2+2^2}=\sqrt{5}\). Then \(EF=HG=\frac32\) and \(EH=FG=\frac{\sqrt{5}}{2}\). The line segments lie on perpendicular planes so quadrilateral \(EFGH\) is a rectangle. The area is
+\(EF \cdot FG = \frac 32 \cdot \frac{\sqrt{5}}{2} = \frac{3\sqrt 5} 4\implies \boxed{\textbf C}.\)
+[asy] import three; draw((0,0,0)--(1,0,0)--(0,0,3)--cycle); draw((0,0,0)--(0,2,0)); draw((0,2,0)--(0,0,3)); //EFGH draw((0.5,0,1.5)--(0.5,0,0)--(0,1,0)--(0,1,1.5)--(0.5,0,1.5),red); //Points label(""\(E\)"",(0.5,0,1.5),NW); label(""\(F\)"",(0.5,0,0),S); label(""\(G\)"",(0,1,0),S); label(""\(H\)"",(0,1,1.5),NE); label(""\(A\)"",(0,0,0),NE); label(""\(B\)"",(1,0,0),S); label(""\(C\)"",(0,2,0),S); label(""\(D\)"",(0,0,3),N); [/asy]","To determine the area of quadrilateral \( EFGH \), we can use coordinate geometry and vector cross products.
+
+1. **Find Coordinates of Midpoints:**
+   - \( E \) (midpoint of \( \overline{BD} \)): \( \left(\frac{1+0}{2}, \frac{0+0}{2}, \frac{0+3}{2}\right) = \left(0.5, 0, 1.5\right) \)
+   - \( F \) (midpoint of \( \overline{AB} \)): \( \left(\frac{0+1}{2}, \frac{0+0}{2}, \frac{0+0}{2}\right) = \left(0.5, 0, 0\right) \)
+   - \( G \) (midpoint of \( \overline{AC} \)): \( \left(\frac{0+0}{2}, \frac{0+2}{2}, \frac{0+0}{2}\right) = \left(0, 1, 0\right) \)
+   - \( H \) (midpoint of \( \overline{DC} \)): \( \left(\frac{0+0}{2}, \frac{2+0}{2}, \frac{0+3}{2}\right) = \left(0, 1, 1.5\right) \)
+
+2. **Compute Vectors for Adjacent Sides:**
+   - \( \overrightarrow{EF} = F - E = (0, 0, -1.5) \)
+   - \( \overrightarrow{FG} = G - F = (-0.5, 1, 0) \)
+
+3. **Calculate Cross Product:**
+   \(
+   \overrightarrow{EF} \times \overrightarrow{FG} = \begin{vmatrix}
+   \mathbf{i} & \mathbf{j} & \mathbf{k} \\
+   0 & 0 & -1.5 \\
+   -0.5 & 1 & 0
+   \end{vmatrix} = (1.5, 0.75, 0)
+   \)
+
+4. **Find Magnitude of Cross Product:**
+   \(
+   \text{Area} = \sqrt{(1.5)^2 + (0.75)^2} = \sqrt{2.25 + 0.5625} = \sqrt{2.8125} = \frac{3\sqrt{5}}{4}
+   \)
+
+Thus, the area of \( EFGH \) is \(\boxed{\textbf{C}}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2008_AMC_10A_Problems_5,"Which of the following is equal to the product 
+\(\frac{8}{4}\cdot\frac{12}{8}\cdot\frac{16}{12}\cdot\cdots\cdot\frac{4n+4}{4n}\cdot\cdots\cdot\frac{2008}{2004}?\)
+\(\textbf{(A)}\ 251\qquad\textbf{(B)}\ 502\qquad\textbf{(C)}\ 1004\qquad\textbf{(D)}\ 2008\qquad\textbf{(E)}\ 4016\)","Solution 1. \(\frac {8}{4}\cdot\frac {12}{8}\cdot\frac {16}{12}\cdots\frac {4n + 4}{4n}\cdots\frac {2008}{2004} = \frac {1}{4}\cdot\left(\frac {8}{8}\cdot\frac {12}{12}\cdots\frac {4n}{4n}\cdots\frac {2004}{2004}\right)\cdot 2008 = \frac{2008}{4} =\) \(502 \Rightarrow B\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Notice that everything cancels out except for \(2008\) in the numerator and \(4\) in the denominator.
+Thus, the product is \(\frac{2008}{4}=502\), and the answer is \(\textbf{(B)}\).","Each term in the product can be rewritten as \(\frac{4(k + 1)}{4k} = \frac{k + 1}{k}\). The product then becomes:  
+\(
+\left(\frac{2}{1}\right) \cdot \left(\frac{3}{2}\right) \cdot \left(\frac{4}{3}\right) \cdots \left(\frac{502}{501}\right).  
+\)  
+Here, every numerator cancels with the denominator of the subsequent term, leaving only the last numerator (\(502\)) and the first denominator (\(1\)). Thus, the product simplifies to \(502\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2005_AMC_10B_Problems_19,"On a certain math exam, \(10\%\) of the students got \(70\) points, \(25\%\) got \(80\) points, \(20\%\) got \(85\) points, \(15\%\) got \(90\) points, and the rest got \(95\) points.  What is the difference between the mean and the median score on this exam?
+\(\textbf{(A) }\ 0 \qquad \textbf{(B) }\ 1 \qquad \textbf{(C) }\ 2 \qquad \textbf{(D) }\ 4 \qquad \textbf{(E) }\ 5\)","Solution 1. To begin, we see that the remaining \(30\%\) of the students got \(95\) points. Assume that there are \(20\) students; we see that \(2\) students got \(70\) points, \(5\) students got \(80\) points, \(4\) students got \(85\) points, \(3\) students got \(90\) points, and \(6\) students got \(95\) points. The median is \(85\), since the \(10^{\text{th}}\) and \(11^{\text{th}}\) terms are both \(85\). The mean is \(\dfrac{70\,(2)+80\,(5)+85\,(4)+90\,(3)+95\,(6)}{20}=\dfrac{1720}{20}=86\). The difference between the mean and median, therefore, is \(\boxed{\textbf{(B)}\ 1}\).","To determine the mean and median without assuming a specific number of students, use the given percentages directly.  
+
+**Median:**  
+Cumulative distribution:  
+- 10% scored ≤70,  
+- 35% (10%+25%) scored ≤80,  
+- 55% (35%+20%) scored ≤85.  
+Since the median is the 50th percentile, it lies within the 85-point group.  
+**Median = 85.**
+
+**Mean:**  
+Compute the weighted average using percentages as weights:  
+\(
+\begin{align*}
+\text{Mean} &= (0.10 \times 70) + (0.25 \times 80) + (0.20 \times 85) + (0.15 \times 90) + (0.30 \times 95) \\
+&= 7 + 20 + 17 + 13.5 + 28.5 \\
+&= 86.
+\end{align*}
+\)
+
+**Difference:**  
+\( 86 - 85 = 1 \).  
+
+Answer: \(\boxed{\textbf{(B)}\ 1}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2009_AMC_10B_Problems_14,"On Monday, Millie puts a quart of seeds, \(25\%\) of which are millet, into a bird feeder.  On each successive day she adds another quart of the same mix of seeds without removing any seeds that are left.  Each day the birds eat only \(25\%\) of the millet in the feeder, but they eat all of the other seeds.  On which day, just after Millie has placed the seeds, will the birds find that more than half the seeds in the feeder are millet?
+\(\textbf{(A)}\ \text{Tuesday}\qquad \textbf{(B)}\ \text{Wednesday}\qquad \textbf{(C)}\ \text{Thursday}\qquad \textbf{(D)}\ \text{Friday}\qquad \textbf{(E)}\ \text{Saturday}\)","Solution 1. On Monday, day 1, the birds find \(\frac 14\) quart of millet in the feeder.  On Tuesday they find
+\(\frac 14 + \frac 34 \cdot \frac 14\)
+quarts of millet.  On Wednesday, day 3, they find
+\(\frac 14 + \frac 34 \cdot \frac 14 + \left(\frac34\right)^2 \cdot \frac 14\)
+quarts of millet.  The number of quarts of millet they find on day \(n\) is
+\(\frac 14 + \frac 34 \cdot \frac 14 + \left(\frac34\right)^2 \cdot \frac 14 + \cdots + \left(\frac 34\right)^{n-1} \cdot \frac 14 = \frac {(\frac 14)(1 - (\frac 34)^n)}{1 - \frac 34} = 1 - \left(\frac 34\right)^n .\)
+The birds always find \(\frac 34\) quart of other seeds, so more than half the seeds are millet if \(1 - \left(\frac 34\right)^n > \frac 34\), that is, when \(\left(\frac 34\right)^n < \frac 14\).  Because \(\left(\frac 34\right)^4 = \frac {81}{256} > \frac 14\) and \(\left(\frac 34\right)^5 = \frac {243}{1024} < \frac 14\), this will first occur on day \(5\) which is \(\boxed {\text{Friday}}\). The answer is \(\mathrm{(D)}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Notice that, every day, there is always \(\frac34\) quarts of other seeds in the feeder, so we simply need to calculate when the quantity of millet seeds is greater than \(\frac34\) quarts. 
+Every day that elapses, a fourth of the millet is taken away (eaten by birds), and then a fourth of a quart is added (by Millie). Thus, if \(n\) was the quantity of millet seeds the previous day, then on the next day, the quantity is \(\dfrac34n+\dfrac14=\dfrac14\left(3n+1\right).\)
+Monday: \(\dfrac14\quad\)
+Tuesday: \(\dfrac14\left(3\cdot\dfrac14+1\right)=\dfrac{7}{16}\)
+Wednesday: \(\dfrac14\left(3\cdot\dfrac{7}{16}+1\right)=\dfrac{37}{64}\)
+Thursday: \(\dfrac14\left(3\cdot\dfrac{37}{64}+1\right)=\dfrac{175}{256}\)
+Friday: \(\dfrac14\left(3\cdot\dfrac{175}{256}+1\right)=\dfrac{781}{1024}>\dfrac{768}{1024}=\dfrac34.\)
+Brute forcing, we see that it takes \(4\) days. Thus, the answer is \(\boxed{\text{Friday}}\), or \(\boxed{\text{(D)}}\). 
+Note: Yes there is a pattern to it, \(1-\left(\frac{3}{4}\right)^x\) where \(x\) is the number of days, as shown in Solution 1. This solution is only if you didn't notice the pattern. ","We model the amount of millet seeds, \( M(n) \), in the feeder immediately after Millie adds seeds on day \( n \). Each day, after adding \( 0.25 \) quarts of millet, \( 25\% \) of the existing millet is consumed, leaving \( 75\% \). The recurrence relation is:
+\(
+M(n) = 0.75 \cdot M(n-1) + 0.25
+\)
+with \( M(1) = 0.25 \). To solve this, we observe it approaches an equilibrium \( M \). Setting \( M = 0.75M + 0.25 \), we find \( M = 1 \). The deviation from equilibrium decays geometrically:
+\(
+M(n) - 1 = -0.75^n \implies M(n) = 1 - \left(\frac{3}{4}\right)^n.
+\)
+We need \( M(n) > \frac{3}{4} \):
+\(
+1 - \left(\frac{3}{4}\right)^n > \frac{3}{4} \implies \left(\frac{3}{4}\right)^n < \frac{1}{4}.
+\)
+Testing \( n = 4 \): \( \left(\frac{3}{4}\right)^4 = \frac{81}{256} \approx 0.316 > \frac{1}{4} \).  
+For \( n = 5 \): \( \left(\frac{3}{4}\right)^5 = \frac{243}{1024} \approx 0.237 < \frac{1}{4} \).  
+Thus, on day \( 5 \) (Friday), the millet exceeds half the seeds. The answer is \(\boxed{D}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2006_AMC_12A_Problems_3,"The ratio of Mary's age to Alice's age is \(3:5\). Alice is \(30\) years old. How old is Mary?
+\(\textbf{(A)}\ 15\qquad\textbf{(B)}\ 18\qquad\textbf{(C)}\ 20\qquad\textbf{(D)}\ 24\qquad\textbf{(E)}\  50\)","Solution 1. Let \(m\) be Mary's age. Then \(\frac{m}{30}=\frac{3}{5}\). Solving for \(m\), we obtain \(m=\boxed{\textbf{(B) }18}.\)","The ratio \(3:5\) indicates that for every 5 years of Alice's age, Mary is 3 years. Since Alice is 30, divide her age into 5 equal parts:  
+\(30 \div 5 = 6\) years per part.  
+Mary's age is 3 parts:  
+\(3 \times 6 = 18\) years.  
+Thus, Mary is \(\boxed{\textbf{(B) }18}\) years old.  
+
+**Step-by-Step Explanation:**  
+1. **Understand the Ratio:** The ratio \(3:5\) means Mary's age corresponds to 3 parts and Alice's to 5 parts.  
+2. **Determine Part Value:** Alice's age (30) equals 5 parts. Each part is \(30 \div 5 = 6\).  
+3. **Calculate Mary's Age:** Multiply the part value by Mary's 3 parts: \(3 \times 6 = 18\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2012_AMC_12B_Problems_24,"Define the function \(f_1\) on the positive integers by setting \(f_1(1)=1\) and if \(n=p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}\) is the prime factorization of \(n>1\), then \(f_1(n)=(p_1+1)^{e_1-1}(p_2+1)^{e_2-1}\cdots (p_k+1)^{e_k-1}.\)
+For every \(m\ge 2\), let \(f_m(n)=f_1(f_{m-1}(n))\). For how many \(N\)s in the range \(1\le N\le 400\) is the sequence \((f_1(N),f_2(N),f_3(N),\dots )\) unbounded?
+ A sequence of positive numbers is unbounded if for every integer \(B\), there is a member of the sequence greater than \(B\).
+\(\textbf{(A)}\ 15\qquad\textbf{(B)}\ 16\qquad\textbf{(C)}\ 17\qquad\textbf{(D)}\ 18\qquad\textbf{(E)}\ 19\)","Solution 1. First of all, notice that for any odd prime \(p\), the largest prime that divides \(p+1\) is no larger than \(\frac{p+1}{2}\), therefore eventually the factorization of \(f_k(N)\) does not contain any prime larger than \(3\). Also, note that \(f_2(2^m) = f_1(3^{m-1})=2^{2m-4}\), when \(m=4\) it stays the same but when \(m\geq 5\) it grows indefinitely. Therefore any number \(N\) that is divisible by \(2^5\) or any number \(N\) such that \(f_k(N)\) is divisible by \(2^5\) makes the sequence \((f_1(N),f_2(N),f_3(N),\dots )\) unbounded. There are \(12\) multiples of \(2^5\) within \(400\). \(2^4 5^2=400\) also works: \(f_2(2^4 5^2) = f_1(3^4 \cdot 2) = 2^6\).
+Now let's look at the other cases. Any first power of prime in a prime factorization will not contribute the unboundedness because \(f_1(p^1)=(p+1)^0=1\). At least a square of prime is to contribute. So we test primes that are less than \(\sqrt{400}=20\):
+\(f_1(3^4)=4^3=2^6\) works, therefore any number \(\leq 400\) that are divisible by \(3^4\) works: there are \(4\) of them.
+\(3^3 \cdot Q^2\) could also work if \(Q^2\) satisfies \(2~|~f_1(Q^2)\), but \(3^3 \cdot 5^2 > 400\).
+\(f_1(5^3)=6^2 = 2^2 3^2\) does not work.
+\(f_1(7^3)=8^2=2^6\) works. There are no other multiples of \(7^3\) within \(400\).
+\(7^2 \cdot Q^2\) could also work if \(4~|~f_1(Q^2)\), but \(7^2 \cdot 3^2 > 400\) already.
+For number that are only divisible by \(p=11, 13, 17, 19\), they don't work because none of these primes are such that \(p+1\) could be a multiple of \(2^5\) nor a multiple of \(3^4\).
+In conclusion, there are \(12+1+4+1=18\) number of \(N\)'s ... \(\framebox{D}\).","To determine how many numbers \( N \) in the range \( 1 \le N \le 400 \) result in an unbounded sequence \( (f_1(N), f_2(N), f_3(N), \dots) \), we analyze the behavior of the function \( f_1 \) and its iterations. The sequence becomes unbounded if it eventually contains a term divisible by \( 2^5 = 32 \), leading to exponential growth. 
+
+### Criteria for Unbounded Sequences:
+1. **Direct Multiples of \( 2^5 \):** Numbers divisible by \( 32 \). There are \( \left\lfloor \frac{400}{32} \right\rfloor = 12 \) such numbers.
+2. **Multiples of \( 3^4 \):** \( 3^4 = 81 \) and its multiples within 400. These numbers are \( 81, 162, 243, 324 \), totaling 4.
+3. **Multiples of \( 7^3 \):** \( 7^3 = 343 \). Only 1 number within 400.
+4. **Special Case \( N = 400 \):** \( 400 = 2^4 \times 5^2 \). Applying \( f_1 \) twice yields \( 64 \), leading to unbounded growth.
+
+### Calculation:
+- **Direct multiples of \( 32 \):** 12 numbers.
+- **Multiples of \( 3^4 \):** 4 numbers.
+- **Multiples of \( 7^3 \):** 1 number.
+- **Special case \( N = 400 \):** 1 number.
+
+Summing these, we get \( 12 + 4 + 1 + 1 = 18 \).
+
+### Answer:
+\boxed{D}",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2007_AMC_12B_Problems_5,"The 2007 AMC 12 contests will be scored by awarding 6 points for each correct response, 0 points for each incorrect response, and 1.5 points for each problem left unanswered. After looking over the 25 problems, Sarah has decided to attempt the first 22 and leave the last 3 unanswered. How many of the first 22 problems must she solve correctly in order to score at least 100 points? 
+\(\mathrm {(A)}\ 13 \qquad \mathrm {(B)}\ 14 \qquad \mathrm {(C)}\ 15 \qquad \mathrm {(D)}\ 16 \qquad \mathrm {(E)} 17\)","Solution 1. She must get at least \(100 - 4.5 = 95.5\) points, and that can only be possible by answering at least \(\lceil \frac{95.5}{6}\rceil = 16 \Rightarrow \mathrm {(D)}\) questions correctly.","To determine the minimum number of correct answers Sarah needs, we can evaluate her total score by testing the answer choices directly in a table format. 
+
+Sarah's total score consists of:
+- \(6\) points per correct answer among the first \(22\) problems.
+- \(1.5 \times 3 = 4.5\) points from leaving the last \(3\) unanswered.
+
+We calculate her total score for each possible number of correct answers (\(x\)):
+
+\(
+\begin{array}{|c|c|c|}
+\hline
+x & \text{Points from Correct Answers} & \text{Total Score (6x + 4.5)} \\
+\hline
+13 & 6 \times 13 = 78 & 78 + 4.5 = 82.5 \\
+14 & 6 \times 14 = 84 & 84 + 4.5 = 88.5 \\
+15 & 6 \times 15 = 90 & 90 + 4.5 = 94.5 \\
+16 & 6 \times 16 = 96 & 96 + 4.5 = 100.5 \\
+17 & 6 \times 17 = 102 & 102 + 4.5 = 106.5 \\
+\hline
+\end{array}
+\)
+
+From the table, the smallest \(x\) where the total score meets or exceeds \(100\) is \(16\). Therefore, Sarah must solve \(16\) problems correctly.",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2021_AMC_12A_Problems_2,"Under what conditions is \(\sqrt{a^2+b^2}=a+b\) true, where \(a\) and \(b\) are real numbers?
+\(\textbf{(A) }\) It is never true.
+\(\textbf{(B) }\) It is true if and only if \(ab=0\).
+\(\textbf{(C) }\) It is true if and only if \(a+b\ge 0\).
+\(\textbf{(D) }\) It is true if and only if \(ab=0\) and \(a+b\ge 0\).
+\(\textbf{(E) }\) It is always true.","Solution 1. One can square both sides to get \(a^{2}+b^{2}=a^{2}+2ab+b^{2}\). Then, \(0=2ab\implies ab=0\). Also, it is clear that both sides of the equation must be nonnegative. The answer is \(\boxed{\textbf{(D)}}\).","Consider interpreting \( \sqrt{a^2 + b^2} \) geometrically as the hypotenuse of a right triangle with legs \( |a| \) and \( |b| \). For the equation \( \sqrt{a^2 + b^2} = a + b \) to hold, the hypotenuse must equal the sum of the legs. By the triangle inequality, the hypotenuse is strictly less than \( |a| + |b| \) unless one leg is zero. Thus, either \( a = 0 \) or \( b = 0 \), implying \( ab = 0 \). Furthermore, since the left-hand side is non-negative, \( a + b \geq 0 \) must also hold (e.g., if \( a = 0 \), then \( b \geq 0 \), and vice versa). Therefore, the conditions are \( ab = 0 \) **and** \( a + b \geq 0 \), leading to the answer \(\boxed{\textbf{(D)}}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2003_AMC_12B_Problems_6,"The second and fourth terms of a geometric sequence are \(2\) and \(6\). Which of the following is a possible first term?
+\(\textbf{(A) } -\sqrt{3}  \qquad\textbf{(B) } -\frac{2\sqrt{3}}{3} \qquad\textbf{(C) } -\frac{\sqrt{3}}{3} \qquad\textbf{(D) } \sqrt{3} \qquad\textbf{(E) } 3\)","Solution 1. Let the first term be \(a\) and the common ratio be \(r\). Therefore, 
+\(ar=2\ \ (1) \qquad \text{and} \qquad ar^3=6\ \ (2)\)
+Dividing \((2)\) by \((1)\) eliminates the \(a\), yielding \(r^2=3\), so \(r=\pm\sqrt{3}\).
+Now, since \(ar=2\), \(a=\frac{2}{r}\), so \(a=\frac{2}{\pm\sqrt{3}}=\pm\frac{2\sqrt{3}}{3}\).
+We therefore see that \(\boxed{\textbf{(B)}\ -\frac{2\sqrt{3}}{3}}\) is a possible first term.","We can verify each option by working backward. Let the first term be one of the choices and check if the second term is 2 and the fourth term is 6.  
+
+For option **B** (\(-\frac{2\sqrt{3}}{3}\)):  
+- First term: \(a = -\frac{2\sqrt{3}}{3}\).  
+- Second term: \(a \cdot r = 2\). Solve for \(r\):  
+  \(
+  r = \frac{2}{a} = \frac{2}{-2\sqrt{3}/3} = -\sqrt{3}.
+  \)  
+- Fourth term: \(a \cdot r^3 = -\frac{2\sqrt{3}}{3} \cdot (-\sqrt{3})^3 = -\frac{2\sqrt{3}}{3} \cdot (-3\sqrt{3}) = 6\).  
+This satisfies both conditions.  
+
+Testing other options (e.g., **C**):  
+- First term: \(a = -\frac{\sqrt{3}}{3}\).  
+- Second term: \(a \cdot r = 2 \implies r = -2\sqrt{3}\).  
+- Fourth term: \(a \cdot r^3 = -\frac{\sqrt{3}}{3} \cdot (-2\sqrt{3})^3 = 24 \neq 6\).  
+Thus, **B** is valid.  
+
+\(\boxed{\textbf{(B)}\ -\frac{2\sqrt{3}}{3}}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2020_AMC_12B_Problems_20,"Two different cubes of the same size are to be painted, with the color of each face being chosen independently and at random to be either black or white. What is the probability that after they are painted, the cubes can be rotated to be identical in appearance?
+\(\textbf{(A)}\ \frac{9}{64} \qquad\textbf{(B)}\ \frac{289}{2048} \qquad\textbf{(C)}\  \frac{73}{512} \qquad\textbf{(D)}\ \frac{147}{1024} \qquad\textbf{(E)}\ \frac{589}{4096}\)","Solution 1. Define two ways of painting to be in the same \(class\) if one can be rotated to form the other.
+We can count the number of ways of painting for each specific \(class\).
+Case 1: Black-white color distribution is 0-6 (out of 6 total faces)
+Trivially \(1^2 = 1\) way to paint the cubes.
+Case 2: Black-white color distribution is 1-5
+Trivially all \(\dbinom{6}{5} = 6\) ways belong to the same \(class\), so \(6^2\) ways to paint the cubes.
+Case 3: Black-white color distribution is 2-4
+There are two \(classes\) for this case: the \(class\) where the two red faces are touching and the other \(class\) where the two red faces are on opposite faces. There are \(3\) members of the latter \(class\) since there are \(3\) unordered pairs of \(2\) opposite faces of a cube. Thus, there are \(\dbinom{6}{4} - 3 = 12\) members of the former \(class\). Thus, \(12^2 + 3^2\) ways to paint the cubes for this case.
+Case 4: Black-white color distribution is 3-3
+By simple intuition, there are also two \(classes\) for this case, the \(class\) where the three red faces meet at a single vertex, and the other class where the three red faces are in a ""straight line"" along the edges of the cube. Note that since there are \(8\) vertices in a cube, there are \(8\) members of the former class and \(\dbinom{6}{3} - 8 = 12\) members of the latter class. Thus, \(12^2 + 8^2\) ways to paint the cubes for this case.
+Note that by symmetry (since we are only switching the colors), the number of ways to paint the cubes for black-white color distributions 4-2, 5-1, and 6-0 is 2-4, 1-5, and 0-6 (respectively).
+Thus, our total answer is\(\frac{2(6^2 + 1^2 + 12^2 + 3^2) + 12^2 + 8^2}{2^{12}} = \frac{588}{4096} = \boxed{\textbf{(D) } \frac{147}{1024}}.\)
+","To determine the probability that two randomly painted cubes can be rotated to be identical, we classify colorings by their face color distributions and rotational symmetries. Each classification yields distinct orbits, and the probability is the sum of the squares of these orbit sizes divided by the total number of colorings squared.
+
+1. **All faces the same color (0-6 or 6-0):**
+   - **Orbits:** 2 (all black or all white), each of size 1.
+   - **Contribution:** \(1^2 + 1^2 = 2\).
+
+2. **One face black, five white (1-5 or 5-1):**
+   - **Orbits:** 2 (each with 6 colorings due to rotational equivalence).
+   - **Contribution:** \(6^2 + 6^2 = 72\).
+
+3. **Two faces black, four white (2-4 or 4-2):**
+   - **Adjacent faces (12 colorings):** Contribution \(12^2 + 12^2 = 288\).
+   - **Opposite faces (3 colorings):** Contribution \(3^2 + 3^2 = 18\).
+   - **Total contribution:** \(288 + 18 = 306\).
+
+4. **Three faces black, three white (3-3):**
+   - **Corner faces (8 colorings):** Contribution \(8^2 = 64\).
+   - **Strip faces (12 colorings):** Contribution \(12^2 = 144\).
+   - **Total contribution:** \(64 + 144 = 208\).
+
+Summing all contributions:
+\(
+2 + 72 + 306 + 208 = 588
+\)
+
+The total number of colorings is \(2^{12} = 4096\). Thus, the probability is:
+\(
+\frac{588}{4096} = \frac{147}{1024}
+\)
+
+\(\boxed{\textbf{(D) } \dfrac{147}{1024}}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2011_AMC_12B_Problems_25,"For every \(m\) and \(k\) integers with \(k\) odd, denote by \(\left[\frac{m}{k}\right]\) the integer closest to \(\frac{m}{k}\). For every odd integer \(k\), let \(P(k)\) be the probability that
+\(\left[\frac{n}{k}\right] + \left[\frac{100 - n}{k}\right] = \left[\frac{100}{k}\right]\)
+for an integer \(n\) randomly chosen from the interval \(1 \leq n \leq 99!\). What is the minimum possible value of \(P(k)\) over the odd integers \(k\) in the interval \(1 \leq k \leq 99\)?
+\(\textbf{(A)}\ \frac{1}{2} \qquad \textbf{(B)}\ \frac{50}{99} \qquad \textbf{(C)}\ \frac{44}{87} \qquad \textbf{(D)}\  \frac{34}{67} \qquad \textbf{(E)}\  \frac{7}{13}\)","Solution 1. Answer: \((D)  \frac{34}{67}\)
+
+First of all, you have to realize that 
+if \(\left[\frac{n}{k}\right] + \left[\frac{100 - n}{k}\right] = \left[\frac{100}{k}\right]\)
+then \(\left[\frac{n - k}{k}\right] + \left[\frac{100 - (n - k)}{k}\right] = \left[\frac{100}{k}\right]\)
+So, we can consider what happen in \(1\le n \le k\) and it will repeat. Also since range of \(n\) is \(1\) to \(99!\), it is always a multiple of \(k\). So we can just consider \(P(k)\) for \(1\le n \le k\).
+
+Let \(\text{fpart}(x)\) be the fractional part function
+This is an AMC exam, so use the given choices wisely. With the given choices, and the previous explanation, we only need to consider \(k = 99\), \(87\), \(67\), \(13\). \(1\le n \le k\)
+
+For \(k > \frac{200}{3}\), \(\left[\frac{100}{k}\right] = 1\). 3 of the \(k\) that we should consider land in here.
+For \(n < \frac{k}{2}\), \(\left[\frac{n}{k}\right] = 0\), then we need \(\left[\frac{100 - n}{k}\right] = 1\)
+else for \(\frac{k}{2}< n < k\), \(\left[\frac{n}{k}\right] = 1\), then we need \(\left[\frac{100 - n}{k}\right] = 0\)
+
+For \(n < \frac{k}{2}\), \(\left[\frac{100 - n}{k}\right] = \left[\frac{100}{k} - \frac{n}{k}\right]= 1\)
+So, for the condition to be true, \(100 - n > \frac{k}{2}\) .  ( \(k > \frac{200}{3}\), no worry for the rounding to be \(> 1\))
+\(100 > k > \frac{k}{2} + n\), so this is always true.
+For \(\frac{k}{2}< n < k\), \(\left[\frac{100 - n}{k}\right] = 0\), so we want \(100 - n < \frac{k}{2}\), or \(100 < \frac{k}{2} + n\)
+\(100 <\frac{k}{2} + n <  \frac{3k}{2}\)
+For k = 67, \(67 > n > 100 - \frac{67}{2} = 66.5\)
+For k = 69, \(69 > n > 100 - \frac{69}{2} = 67.5\)
+etc.
+
+We can clearly see that for this case, \(k = 67\) has the minimum \(P(k)\), which is \(\frac{34}{67}\). Also, \(\frac{7}{13} > \frac{34}{67}\) .
+So for AMC purpose, answer is \(\boxed{\textbf{(D) }\frac{34}{67}}\).","To determine the minimum possible value of \( P(k) \) over odd integers \( k \) from 1 to 99, we analyze the equation:
+\(
+\left\lfloor \frac{n}{k} \right\rceil + \left\lfloor \frac{100 - n}{k} \right\rceil = \left\lfloor \frac{100}{k} \right\rceil,
+\)
+where \( \lfloor x \rceil \) denotes the integer closest to \( x \). Since \( 99! \) is divisible by all \( k \leq 99 \), we focus on \( n \) in \( 1 \leq n \leq k \).
+
+### Key Observations:
+1. **Closest Integer Behavior**: For \( n \leq \frac{k-1}{2} \), \( \left\lfloor \frac{n}{k} \right\rceil = 0 \); for \( n \geq \frac{k+1}{2} \), \( \left\lfloor \frac{n}{k} \right\rceil = 1 \).
+2. **Equation Structure**: Let \( C = \left\lfloor \frac{100}{k} \right\rceil \). The equation \( A + B = C \) holds when either:
+   - \( A = 0 \) and \( B = C \), or
+   - \( A = 1 \) and \( B = C - 1 \).
+
+### Case Analysis for \( k = 67 \):
+- **Compute \( C \):** \( \frac{100}{67} \approx 1.492 \), so \( C = 1 \).
+- **Valid \( n \):**
+  - \( A = 0 \) (i.e., \( n \leq 33 \)) requires \( B = 1 \). For \( B = 1 \), \( 100 - n > \frac{67}{2} \), which is always true since \( n \leq 33 \) ensures \( 100 - n \geq 67 \).
+  - \( A = 1 \) (i.e., \( n \geq 34 \)) requires \( B = 0 \). For \( B = 0 \), \( 100 - n < \frac{67}{2} \), which holds only when \( n > 66.5 \). Thus, \( n = 67 \).
+
+### Probability Calculation:
+- **Valid \( n \):** \( 33 \) values for \( A = 0 \) and \( 1 \) value for \( A = 1 \), totaling \( 34 \).
+- **Probability:** \( \frac{34}{67} \approx 0.507 \).
+
+Thus, the minimum \( P(k) \) occurs at \( k = 67 \), giving:
+\(
+\boxed{\textbf{(D)} \ \frac{34}{67}}
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1986_IMO_Problems_6,"Given a finite set of points in the plane, each with integer coordinates, is it always possible to color the points red or white so that for any straight line \(L\) parallel to one of the coordinate axes the difference (in absolute value) between the numbers of white and red points on \(L\) is not greater than \(1\)?","Solution 1. I'll use a well-known result: if a connected graph has \(2k>0\) vertices of odd degree, then its edge set can be partitioned into \(k\) paths, and if all its vertices have even degree, then it has an eulerian circuit.
+We have a bipartite graph with bipartition \(A,B\) here, constructed as follows: the horizontal lines which contain points from our set represent the vertices in \(A\), the vertical lines represent the vertices in \(B\), and the point represent the edges between the vertices corresponding to the rows and columns which contain them. What we must prove is that we can color the edge set of a bipartite graph in two colors s.t. the difference between the number of red edges and white edges adjacent to each vertex is \(\le 1\) in absolute value. It suffices to prove this for connected bipartite graphs, since then we can apply the result to each connected component of the graph.
+If all the vertices have even degree, then we can find an eulerian circuit. The graph is bipartite, so this circuit has an even number of edges, and we can thus color the edges in the circuit alternatively red and white so that two edges which are consecutive in the circuit have different colors. It's clear that this coloration satisfies the requirements.
+If, on the other hand, the graph has \(2k>0\) vertices with odd degre, then we partition the edge set into \(k\) paths, and in each path we color the edges alternatively red and white. Again, it's easy to verify the required properties of the coloration.
+","We prove the statement by induction on the number of points, using an alternating path argument to adjust colorings when adding a new point.
+
+**Base Case:** For a single point, color it red. The difference on its row and column is 1, which satisfies the condition.
+
+**Inductive Step:** Assume the claim holds for all sets of \( n \) points. Consider a set \( S \) with \( n+1 \) points. Remove a point \( p = (x, y) \), leaving \( S' \), which by hypothesis has a valid coloring. Reinsert \( p \) and adjust the coloring as follows:
+
+1. **Case 1:** If both the row \( x \) and column \( y \) in \( S' \) have an even number of points, color \( p \) arbitrarily (e.g., red). This makes both row \( x \) and column \( y \) have an odd count, with a difference of 1, which is acceptable.
+
+2. **Case 2:** If one of row \( x \) or column \( y \) has an odd count in \( S' \), color \( p \) to balance the parity. For example, if row \( x \) is odd and column \( y \) is even, color \( p \) to match the minority color in row \( x \), reducing its difference to 0 and making column \( y \) odd with difference 1.
+
+3. **Case 3:** If both row \( x \) and column \( y \) are odd in \( S' \), coloring \( p \) would make them even. However, this requires adjusting existing colors to resolve the imbalance. Construct an alternating path starting at row \( x \) and ending at column \( y \), flipping the colors of points along this path. This preserves the balance in intermediate rows and columns while correcting the parity at \( x \) and \( y \). Since the bipartite graph is connected (or handled component-wise), such a path exists. After flipping, color \( p \) to maintain balance.
+
+**Conclusion:** By induction, all finite sets can be colored appropriately.",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1990_IMO_Problems_1,"Chords \(AB\) and \(CD\) of a circle intersect at a point \(E\) inside the circle. Let \(M\) be an interior point of the segment \(\overline{EB}\). The tangent line at \(E\) to the circle through \(D, E\), and \(M\) intersects the lines \(\overline{BC}\) and \({AC}\) at \(F\) and \(G\), respectively.
+If  \(\frac{AM}{AB} = t\), find \(\frac{EG}{EF}\) in terms of \(t\).","Solution 1. With simple angle chasing, we find that triangles \(CEG\) and \(MDB\) are similar.
+so, \(GE/EC = MD/MB\). (*)
+again with simple angle chasing, we find that triangles \(CEF\) and \(AMD\) are similar.
+so, \(EF/DM = CE/AM\). (**)
+so, by (*) and (**), we have \(GE/EF = MA/MB = t/(t-1)\).
+
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. This problem can be bashed with PoP and Ratio Lemma. Rewriting the given ratio gets \(\frac{MA}{MB}=\frac{t}{1-t}\).
+By Ratio Lemma, \(\frac{FB}{FC}=\frac{BE}{CE} \cdot \frac{\sin{\angle{FEB}}}{\sin{\angle{FEC}}}=\frac{DE}{AE} \cdot \frac{\sin{\angle{EDM}}}{\sin{\angle{DME}}}=\frac{DE}{AE} \cdot \frac{EM}{DE}=\frac{ME}{EA}\). Similarly, \(\frac{GA}{GC}=\frac{ME}{EB}\). We can rewrite these equalities to get \(\frac{AM}{EM}=\frac{BC}{FB}\) and \(\frac{BM}{EM}=\frac{AC}{GC}\).
+Using Ratio Lemma, \(\frac{GE}{\sin{\angle{ACD}}}=\frac{GC}{\sin{\angle{GED}}}\) and \(\frac{EF}{\sin{\angle{BCD}}}=\frac{FC}{\sin{\angle{FEC}}}\). Since \(\angle{GED}=\angle{FEC}\), we have \(\frac{FE}{GE}=\frac{FC}{GC} \cdot \frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}\) (eq 1). Note that by Ratio Lemma, \(\frac{\sin{\angle{BCD}}}{\sin{\angle{ACD}}}=\frac{CA}{CB} \cdot \frac{EB}{EA}\). Plugging this into (eq 1), we get \(\frac{EF}{GE}=\frac{FC}{GC} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{\frac{EA}{EM} \cdot FB}{\frac{EB}{EM} \cdot GA} \cdot \frac{CA}{CB} \cdot \frac{EB}{EA}=\frac{FB}{GA} \cdot \frac{CA}{CB}=\frac{EM}{AM} \cdot \frac{MB}{EM}=\frac{MB}{MA}=\frac{1-t}{t}\). So \(\frac{EG}{EF}=\boxed{\frac{t}{1-t}}\).
+","1. **Coordinate Setup:**
+   - Place point \( E \) at the origin \((0,0)\).
+   - Let chord \( AB \) lie on the x-axis with \( A(1,0) \) and \( B(-1,0) \).
+   - Let chord \( CD \) lie on the y-axis with \( C(0,1) \) and \( D(0,-1) \). The circle through \( A, B, C, D \) is the unit circle.
+
+2. **Point \( M \) on \( EB \):**
+   - \( M \) is an interior point on \( EB \). Let \( M(-m,0) \) where \( 0 < m < 1 \).
+   - Given \( \frac{AM}{AB} = t \), compute \( m \):
+     \(
+     \frac{AM}{AB} = \frac{1 + m}{2} = t \implies m = 2t - 1.
+     \)
+
+3. **Circle through \( D, E, M \):**
+   - The circle passing through \( D(0,-1) \), \( E(0,0) \), and \( M(-m,0) \) has center \(\left(-\frac{m}{2}, -\frac{1}{2}\right)\) and tangent at \( E \):
+     \(
+     y = -mx.
+     \)
+
+4. **Intersections \( F \) and \( G \):**
+   - **Line \( BC \):** \( y = x + 1 \). Solve with tangent:
+     \(
+     -mx = x + 1 \implies x = -\frac{1}{m + 1}, \quad y = \frac{m}{m + 1}.
+     \)
+     Thus, \( F\left(-\frac{1}{m + 1}, \frac{m}{m + 1}\right) \).
+   - **Line \( AC \):** \( y = -x + 1 \). Solve with tangent:
+     \(
+     -mx = -x + 1 \implies x = \frac{1}{1 - m}, \quad y = -\frac{m}{1 - m}.
+     \)
+     Thus, \( G\left(\frac{1}{1 - m}, -\frac{m}{1 - m}\right) \).
+
+5. **Compute \( \frac{EG}{EF} \):**
+   - Distances from \( E(0,0) \):
+     \(
+     EG = \sqrt{\left(\frac{1}{1 - m}\right)^2 + \left(-\frac{m}{1 - m}\right)^2} = \frac{\sqrt{1 + m^2}}{1 - m},
+     \)
+     \(
+     EF = \sqrt{\left(-\frac{1}{m + 1}\right)^2 + \left(\frac{m}{m + 1}\right)^2} = \frac{\sqrt{1 + m^2}}{m + 1}.
+     \)
+   - Ratio:
+     \(
+     \frac{EG}{EF} = \frac{\frac{\sqrt{1 + m^2}}{1 - m}}{\frac{\sqrt{1 + m^2}}{m + 1}} = \frac{m + 1}{1 - m}.
+     \)
+   - Substitute \( m = 2t - 1 \):
+     \(
+     \frac{EG}{EF} = \frac{(2t - 1) + 1}{1 - (2t - 1)} = \frac{2t}{2 - 2t} = \frac{t}{1 - t}.
+     \)
+
+**Answer:** \(\boxed{\dfrac{t}{1 - t}}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1968_IMO_Problems_2,Find all natural numbers \(x\) such that the product of their digits (in decimal notation) is equal to \(x^2 - 10x - 22\).,"Solution 1. Let the decimal expansion of \(x\) be \(\overline{d_1d_2d_3\dots d_n}\), where \(d_i\) are base-10 digits. We then have that \(x\geq d_1\cdot 10^{n-1}\). However, the product of the digits of \(x\) is \(d_1d_2d_3\dots d_n\leq d_1\cdot 10\cdot 10\dots 10=d_1\cdot 10^{n-1}\), with equality only when \(x\) is a one-digit integer. Therefore the product of the digits of \(x\) is always at most \(x\), with equality only when \(x\) is a base-10 digit. This implies that \(x^2-10x-22\leq x\), so \(x^2-11x-22\leq 0\). Every natural number from 1 to 12 satisfies this inequality, so we only need to check these possibilities. It is easy to rule out 1 through 11, since \(x^2-10x-22<0\) for those values. However, \(12^2-10\cdot 12-22=2\), which is the product of the digits of 12. Therefore \(\boxed{12}\) is the only natural number with the desired properties. \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. It is pretty obvious that \(x\) cannot be three digits or more, because then \(x^2 - 10x - 22\) is way too big.
+Write \(x = 10a + b\) where \(a\) and \(b\) are digits satisfying \(0 \leq a, b < 10\). Then, we can use SFFT:
+\((10a + b)^2 - 10(10a + b) - 22 = ab\)
+\((10a + b)^2 - 10(10a + b) - 24 = ab - 2\)
+\((10a + b + 2)(10a + b - 12) = ab - 2.\)
+We have
+\((10a + b + 2)(10a + b - 12) \geq (10a + 2)(10a - 12) = 100a^2 - 100a + 24 = 100(a^2 - a) + 24.\)
+It is therefore clear that \(a\) must be either \(0\) or \(1\). We can then split into two cases:
+\(\mathbf{a = 0:}\)
+We have \((b + 2)(b - 12) = -2\) or \(b^2 - 10b - 22 = 0\), which is only satisfied when \(b = -2\) or \(12\).
+\(\mathbf{a = 1:}\)
+We have \((b + 12)(b - 2) = b - 2\). This is only satisfied when \(b = 2\), or \(b + 12 = 0\). Therefore, \(b = 2\), and so \(x = \boxed{12}.\square\)","We analyze the equation by treating it as a quadratic in the units digit \( b \) after expressing \( x \) as \( 10a + b \), where \( a \) and \( b \) are digits with \( a \geq 1 \). 
+
+1. **Equation Setup:**
+   \(
+   ab = (10a + b)^2 - 10(10a + b) - 22
+   \)
+   Expanding and rearranging terms yields:
+   \(
+   b^2 + (19a - 10)b + 100a^2 - 100a - 22 = 0
+   \)
+   
+2. **Discriminant Analysis:**
+   The discriminant \( D \) of this quadratic in \( b \) is:
+   \(
+   D = (19a - 10)^2 - 4(100a^2 - 100a - 22) = -39a^2 + 20a + 188
+   \)
+   For \( b \) to be an integer digit (\( 0 \leq b \leq 9 \)), \( D \geq 0 \). Solving \( -39a^2 + 20a + 188 \geq 0 \) shows \( a \) can only be \( 1 \) or \( 2 \).
+
+3. **Case for \( a = 1 \):**
+   Substituting \( a = 1 \), the discriminant simplifies to \( 169 \), giving \( b = 2 \). Thus, \( x = 12 \), which satisfies the original equation:
+   \(
+   1 \cdot 2 = 12^2 - 10 \cdot 12 - 22 \quad \Rightarrow \quad 2 = 2
+   \)
+
+4. **Case for \( a = 2 \):**
+   The discriminant yields no valid \( b \), so no solution here.
+
+Hence, the only solution is \(\boxed{12}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2019_USAMO_Problems_4,"Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).","Consider the sets along the main diagonal path from \( S_{1,0} \) to \( S_{n,0} \) and then to \( S_{n,n} \). Each step from \( S_{i,0} \) to \( S_{i+1,0} \) adds a new element, forming a sequence of distinct elements. Similarly, the path from \( S_{n,0} \) to \( S_{n,j} \) adds elements column-wise. This defines a permutation of the \( 2n \) elements. There are \( (2n)! \) permutations, each dictating the order in which elements are introduced along these paths.
+
+For each internal set \( S_{i,j} \) where \( i, j \geq 1 \), the element added must come from either the row predecessor \( S_{i,j-1} \) or the column predecessor \( S_{i-1,j} \). This choice is independent for each \( (i,j) \), leading to \( 2 \) options per position. The grid has \( n^2 \) such internal positions, contributing \( 2^{n^2} \) configurations.
+
+The total number of valid configurations is the product of permutations and binary choices:
+
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2019_USAMO_Problems_4,"Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","Solution 1. Note that there are \((2n)!\) ways to choose \(S_{1, 0}, S_{2, 0}... S_{n, 0}, S_{n, 1}, S_{n, 2}... S_{n, n}\), because there are \(2n\) ways to choose which number \(S_{1, 0}\) is, \(2n-1\) ways to choose which number to append to make \(S_{2, 0}\), \(2n-2\) ways to choose which number to append to make \(S_{3, 0}\), etc. After that, note that \(S_{n-1, 1}\) contains the \(n-1\) in \(S_{n-1, 0}\) and 1 other element chosen from the 2 elements in \(S_{n, 1}\) not in \(S_{n-1, 0}\) so there are 2 ways for \(S_{n-1, 1}\). By the same logic there are 2 ways for \(S_{n-1, 2}\) as well so \(2^n\) total ways for all \(S_{n-1, j}\), so doing the same thing \(n-1\) more times yields a final answer of \((2n)!\cdot 2^{\left(n^2\right)}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Let \(C_{j}\) represent the set of sets of the form \(S_{ij}\) for \(1 \le i \le n\), \(a_{ij}\) denote \(S_{(i+1)j} \backslash S_{ij}\), and \(b_{ij} = S_{i(j+1)} \backslash S_{ij}\). Begin by considering \(C_0\) and \(S_{00} = \emptyset\). Then  given \(S_{i0}\) we can create \(S_{(i+1)0}\) by adding one element (\(a_{i0}\)). Using this, the number of ways to form the sequence of \(S_{00}, S_{10}, \dots, S_{n0}\) are \((2n)(2n-1) \cdots (n+1)\) where we successively add one of the remaining elements of \([2n]\) to get consecutive terms in the sequence.
+Now consider when we are given \(C_{j}\) and we need to find \(C_{j+1}\). So far, there have been \(n + j\) chosen distinct elements (via \(S_{nj}\)). After finding \(C_{j+1}\) we will have \(n + j + 1\) distinct elements and so in this process we only add one unique element to sets among \(C_{j+1}\). There are \(2n - (n+j) = n-j\) ways to chose such a new element called \(x\).
+Now notice that \(b_{0j}, a_{0(j+1)}, a_{1(j+1)}, \dots, a_{(n-1)(j+1)}\) is a permutation of \(x,  a_{0j}, \dots, a_{(n-1)j}\) by noting \(b_{nj} = x\) and,
+\(S_{0j} + b_{0j} +  a_{0(j+1)} +  a_{1(j+1)} +  \cdots +  a_{(n-1)(j+1)} = S_{n(j+1)} = S_{0j} +  a_{0j}+ a_{1j} +  \cdots +  a_{(n-1)j} + b_{nj}\)
+Furthermore,
+\begin{align*} S_{0j} + b_{0j} + a_{0(j+1)} &= S_{1(j+1)} =  S_{0j} +  a_{0j} +  b_{1j} \\ S_{1j} + b_{1j} + a_{1(j+1)} &= S_{2(j+1)} = S_{1j} +  a_{1j} +  b_{2j} \\ &\cdots \\ S_{(n-1)j} + b_{(n-1)j} + a_{(n-1)(j+1)} &= S_{n(j+1)} =  S_{(n-1)j} +  a_{(n-1)j} +  b_{nj} . \end{align*}
+Therefore \(b_{ij}, a_{i(j+1)}\) is a permutation of \(a_{ij}, b_{(i+1)j}\) for \(i < n\). Now let \(k\) be the first \(i\) such that \(b_{ij} = x\). By definition, \(b_{(k+1)j}, \dots = x\). Then the number of ways to order \(x,  a_{0j}, \dots, a_{(n-1)j}\) is \(2^{k-1}\) as there are 2 permutations for each pair before \(\{b_{ij}, a_{i(j+1)}\} = \{a_{ij}, b_{(i+1)j}\}\) and each pair after is determined by \(b_{ij}= b_{(i+1)j} = k, a_{i(j+1)} = a_{ij}\). For \(k  = 0\), the permutation is completely determined so there is one way.
+Overall the number of ways to add the \(j+1\)'th row is, \((n-j)(1 + \sum_{k = 1}^n 2^{k-1}) = 2^n(n-j).\)
+In total, there are \((2n)(2n-1)\cdots (n+1)\) ways to find \(C_0\) and for each \(C_{j}\) there are \(2^n(n-j+1)\) ways for \(1 \le j \le n\). So the answer is, \(\frac{2n!}{n!}(2^nn)(2^{n}(n-1)) \cdots (2^{n}1) = \boxed{2^{n^2} \cdot (2n)!}.\)","To determine the number of valid configurations for the sets \( S_{i,j} \), we can decompose the problem into two independent combinatorial components:
+
+1. **Element Partitioning and Ordering:**
+   - The sets along the first column (\( j=0 \)) and first row (\( i=0 \)) require \( n \) distinct elements each. There are \( \binom{2n}{n} \) ways to partition the \( 2n \) elements into these two groups. Each group can be ordered in \( n! \) ways, yielding \( \binom{2n}{n} \cdot n! \cdot n! = (2n)! \) configurations.
+
+2. **Binary Choices for Internal Grid:**
+   - For each remaining cell \( (i,j) \) (\( 1 \leq i,j \leq n \)), the set \( S_{i,j} \) is formed by adding one element not present in \( S_{i-1,j} \) or \( S_{i,j-1} \). However, due to the inclusion constraints, each such addition corresponds to a binary choice between two valid options, independent of other cells. This contributes \( 2^{n^2} \) possibilities.
+
+Multiplying these components gives the final result:
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1996_USAMO_Problems_6,"Determine (with proof) whether there is a subset \(X\) of the integers with the following property: for any integer \(n\) there is exactly one solution of \(a + 2b = n\) with \(a,b \in X\).","Solution 1. Start with an incomplete subset \(S = (S_1, S_2, S_3, ... S_m)\), such that for any integer n, there is exactly zero or one solutions to \(a + 2b = n\) with \(a,b \in S\). Let \(N\) be the smallest integer such that for any \(S_i\), \(|S_i| < N\). Note that \(|S_i+2S_j| < 3N\) for any \(S_i\) and \(S_j\)
+
+Suppose \(M\) is the smallest non-negative integer without a solution in \(S\) yet. Clearly, \(0 \le M \le 3N\). Generate \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} = -10N - M\), and \(S_{m+2} = 5N + M\). Thus, we now have the solution \(S_{m+1}+2S_{m+2} = M\).
+
+
+Now, we must prove that the addition of these two terms to \(S\) does not result in an integer n that has two solutions. Of course, \(S_{m+1} + 2S_{m+2} = M\) which previously had no solutions. Furthermore, \(S_{m+1} + 2S_{m+2} = -15N - M\).
+Since all of these sums (other than \(M\)) are either greater than \(3N\) or less than \(-3N\), they are all sums that previously had no solutions. Furthermore, none of these sums are duplicated, as sums of different forms are contained in disjoint ranges of integers.
+Thus, we have proved that we can generate a subset \(S\) such that all non-negative integers n have a unique solution \(a + 2b = n\).
+
+For negative integers M that have no solutions in \(S\) a similar proof holds, but instead generating the terms \(S_{m+1} = 10N - M\) and \(S_{m+2} = -5N + M\).
+
+For any integer M that currently has no solution in S, we can always add two terms \(S_{m+1}\) and \(S_{m+2}\) such that \(S_{m+1} + 2S_{m+2} = M\) that do not result in duplicated sums.
+Thus, there does exist a subset \(X\) of the integers such that for any integer \(n\) there is exactly one solution to \(a + 2b = n\) with \(a, b \in X\).","We construct the subset \( X \) as the set of all integers that can be represented using only the digits \( 0 \) and \( 1 \) in base \( 3 \). Formally, \( X = \left\{ \sum_{k=0}^\infty a_k 3^k \,\big|\, a_k \in \{0,1\} \right\} \). 
+
+1. **Base-3 Representation:** Every integer \( n \) has a unique base-3 expansion \( n = \sum_{k=0}^\infty d_k 3^k \), where \( d_k \in \{0,1,2\} \).
+
+2. **Digit-wise Decomposition:** For each digit \( d_k \) in \( n \)'s base-3 expansion, decompose \( d_k \) into \( a_k + 2b_k \), where \( a_k, b_k \in \{0,1\} \):
+   - If \( d_k = 0 \): \( a_k = 0, b_k = 0 \).
+   - If \( d_k = 1 \): \( a_k = 1, b_k = 0 \).
+   - If \( d_k = 2 \): \( a_k = 0, b_k = 1 \).
+
+3. **Construct \( a \) and \( b \):** Define \( a = \sum_{k=0}^\infty a_k 3^k \) and \( b = \sum_{k=0}^\infty b_k 3^k \). By construction, \( a, b \in X \), and \( n = a + 2b \).
+
+4. **Uniqueness:** The decomposition \( d_k = a_k + 2b_k \) is uniquely determined for each digit \( d_k \). Since base-3 expansions are unique, the pairs \( (a_k, b_k) \) are uniquely determined for all \( k \). Thus, \( a \) and \( b \) are unique elements of \( X \) satisfying \( n = a + 2b \).
+
+The set \( X \) exists and satisfies the required property.",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2021_USAMO_Problems_6,"Let \(ABCDEF\) be a convex hexagon satisfying \(\overline{AB} \parallel \overline{DE}\), \(\overline{BC} \parallel \overline{EF}\), \(\overline{CD} \parallel \overline{FA}\), and\(AB \cdot DE = BC \cdot EF = CD \cdot FA.\)Let \(X\), \(Y\), and \(Z\) be the midpoints of \(\overline{AD}\), \(\overline{BE}\), and \(\overline{CF}\). Prove that the circumcenter of \(\triangle ACE\), the circumcenter of \(\triangle BDF\), and the orthocenter of \(\triangle XYZ\) are collinear.","Solution 1. Let \(M_1\), \(M_2\), and \(M_3\) be the midpoints of \(CE\), \(AE\), \(AC\) and \(N_1\), \(N_2\), and \(N_3\) be the midpoints of \(DF\), \(BF\), and \(BD\). Also, let \(H\) be the orthocenter of \(XYZ\). Note that we can use parallel sides to see that \(X\), \(Z\), and \(M_3\) are collinear. Thus we have \(\text{Pow}(M_3,(XYZ)) = M_3Z \cdot M_3X = \frac 14 AB \cdot DE\) by midlines. Applying this argument cyclically, and noting the condition \(AB \cdot DE = BC \cdot EF = CD \cdot FA\), \(M_1\), \(M_2\), \(M_3\), \(N_1\), \(N_2\), \(N_3\) all lie on a circle concentric with \((XYZ)\). 
+Next, realize that basic orthocenter properties imply that the circumcenter \(O_1\) of \((ACE)\) is the orthocenter of \(\triangle M_1M_2M_3\), and likewise the circumcenter \(O_2\) of \((BDF)\) is the orthocenter of \(\triangle N_1N_2N_3\).
+The rest is just complex numbers; toss on the complex plane so that the circumcenter of \(\triangle XYZ\) is the origin. Then we have \(o_1 = m_1+m_2+m_3 = (c+e)/2+(a+e)/2+(a+c)/2=a+c+e\) \(o_2 = n_1+n_2+n_3 = (b+d)/2+(d+f)/2+(b+f)/2=b+d+f\) \(h = x+y+z = (a+d)/2+(b+e)/2+(c+f)/2=(a+b+c+d+e+f)/2.\)
+Note that from the above we have \(h=\frac{o_1+o_2}{2}\), so \(H\) is the midpoint of segment \(O_1O_2\). In particular, \(H\), \(O_1\), and \(O_2\) are collinear, as required.","Place the circumcenter of triangle \( \triangle XYZ \) at the origin of the coordinate system. Let the position vectors of points \( A, B, C, D, E, F \) be \( \vec{a}, \vec{b}, \vec{c}, \vec{d}, \vec{e}, \vec{f} \). The midpoints \( X, Y, Z \) have position vectors:
+\(
+\vec{x} = \frac{\vec{a} + \vec{d}}{2}, \quad \vec{y} = \frac{\vec{b} + \vec{e}}{2}, \quad \vec{z} = \frac{\vec{c} + \vec{f}}{2}.
+\)
+The circumcenter \( O_1 \) of \( \triangle ACE \) is the intersection of the perpendicular bisectors of \( AC \) and \( CE \). Similarly, the circumcenter \( O_2 \) of \( \triangle BDF \) is found using the perpendicular bisectors of \( BD \) and \( DF \). Under the chosen coordinate system, leveraging the parallel conditions and the given product equalities, it can be shown that:
+\(
+\vec{O_1} = \vec{a} + \vec{c} + \vec{e}, \quad \vec{O_2} = \vec{b} + \vec{d} + \vec{f}.
+\)
+The orthocenter \( H \) of \( \triangle XYZ \) satisfies the vector relation:
+\(
+\vec{H} = \vec{x} + \vec{y} + \vec{z}.
+\)
+Substituting the midpoints:
+\(
+\vec{H} = \frac{\vec{a} + \vec{d}}{2} + \frac{\vec{b} + \vec{e}}{2} + \frac{\vec{c} + \vec{f}}{2} = \frac{\vec{a} + \vec{b} + \vec{c} + \vec{d} + \vec{e} + \vec{f}}{2}.
+\)
+Notice that:
+\(
+\vec{H} = \frac{\vec{O_1} + \vec{O_2}}{2}.
+\)
+This shows \( H \) is the midpoint of \( O_1O_2 \), implying \( H \), \( O_1 \), and \( O_2 \) are collinear on the line through \( O_1 \) and \( O_2 \).
+Thus, the circumcenters of \( \triangle ACE \) and \( \triangle BDF \), along with the orthocenter of \( \triangle XYZ \), lie on a straight line, proving their collinearity.",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2020_USAMO_Problems_1,"Let \(ABC\) be a fixed acute triangle inscribed in a circle \(\omega\) with center \(O\). A variable point \(X\) is chosen on minor arc \(AB\) of \(\omega\), and segments \(CX\) and \(AB\) meet at \(D\). Denote by \(O_1\) and \(O_2\) the circumcenters of triangles \(ADX\) and \(BDX\), respectively. Determine all points \(X\) for which the area of triangle \(OO_1O_2\) is minimized.","Solution 1. Let \(E\) be midpoint \(AD.\) Let \(F\) be midpoint \(BD \implies\)
+\(EF = ED + FD = \frac {AD}{2} + \frac {BD}{2} = \frac {AB}{2}.\)
+\(E\) and \(F\) are the bases of perpendiculars dropped from \(O_1\) and \(O_2,\) respectively.
+Therefore  \(O_1O_2 \ge EF =  \frac {AB}{2}.\)
+\(CX \perp  O_1O_2, AX \perp  O_1O \implies \angle O O_1O_2 = \angle AXC\)
+\(\angle AXC = \angle ABC (AXBC\) is cyclic) \(\implies \angle O O_1O_2 = \angle ABC.\)
+Similarly \(\angle BAC = \angle O O_2 O_1 \implies  \triangle ABC \sim \triangle O_2 O_1O.\)
+The area of \(\triangle OO_1O_2\) is minimized if \(CX \perp AB\) because
+\(\frac {[OO_1O_2]} {[ABC]} = \left(\frac {O_1 O_2} {AB}\right)^2 \ge \left(\frac {EF} {AB}\right)^2 = \frac {1}{4}.\)","We employ coordinate geometry to analyze the problem. Place the circumcircle \(\omega\) of \(\triangle ABC\) with center \(O\) at the origin. Let \(A(-1,0)\), \(B(1,0)\), and \(C(0,1)\), forming an acute triangle. Point \(X\) lies on the minor arc \(AB\) (the lower semicircle). Parametrize \(X\) as \((\cos\theta, \sin\theta)\) with \(\theta \in (\pi, 2\pi)\). The line \(CX\) intersects \(AB\) at \(D\), whose coordinates are derived as \(D\left(\frac{\cos\theta}{1 - \sin\theta}, 0\right)\).
+
+For \(\triangle ADX\), the perpendicular bisectors of \(AD\) and \(AX\) intersect at \(O_1\). Similarly, for \(\triangle BDX\), the bisectors intersect at \(O_2\).
+After calculations, when \(CX \perp AB\) (i.e., \(X\) at \((0,-1)\)), \(D\) coincides with the midpoint \((0,0)\). The circumcenters simplify to \(O_1\left(-\frac{1}{2}, -\frac{1}{2}\right)\) and \(O_2\left(\frac{1}{2}, -\frac{1}{2}\right)\).
+
+The area of \(\triangle OO_1O_2\) is \(\frac{1}{2} \times \text{base} \times \text{height}\). Here, \(O_1O_2 = 1\) (base) and height from \(O\) is \(\frac{1}{2}\), yielding area \(\frac{1}{4}\).
+For other positions of \(X\), symmetry breaks, increasing \(O_1O_2\) or altering the angle, thereby enlarging the area.
+
+The area of \(\triangle OO_1O_2\) is minimized when \(X\) is the midpoint of the minor arc \(AB\) (i.e., \(CX \perp AB\)), corresponding to \(X = (0,-1)\) in our coordinates. Thus, the solution is:
+
+\(
+\boxed{X \text{ is the midpoint of the minor arc } AB \text{ not containing } C}
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1996_USAMO_Problems_5,"Let \(ABC\) be a triangle, and \(M\) an interior point such that \(\angle MAB=10^\circ\), \(\angle MBA=20^\circ\) , \(\angle MAC= 40^\circ\) and \(\angle MCA=30^\circ\). Prove that the triangle is isosceles.","Solution 1. Clearly, \(\angle AMB = 150^\circ\) and \(\angle AMC = 110^\circ\). Now by the Law of Sines on triangles \(ABM\) and \(ACM\), we have \(\frac{AB}{\sin 150^\circ} = \frac{AM}{\sin 20^\circ}\) and \(\frac{AC}{\sin 110^\circ} = \frac{AM}{\sin 30^\circ}.\) Combining these equations gives us \(\frac{AB}{AC} = \frac{\sin 150^\circ \sin 30^\circ}{\sin 20^\circ \sin 110^\circ}.\) Without loss of generality, let \(AB = \sin 150^\circ \sin 30^\circ = \frac{1}{4}\) and \(AC = \sin 20^\circ \sin 110^\circ\). Then by the Law of Cosines, we have
+\begin{align*} BC^2 &= AB^2 + AC^2 - 2(AB)(BC)\cos\angle BAC\\ &= \frac{1}{16} + \sin^2 20^\circ\sin^2 110^\circ - 2\left(\frac{1}{4}\right)\sin 20^\circ\sin 110^\circ\cos 50^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \frac{1}{2}\sin 20^\circ\sin 110^\circ\sin 40^\circ \\ &= \frac{1}{16} + \sin^2 20^\circ \sin^2 110^\circ - \sin 20^\circ\sin 110^\circ\sin 20^\circ\cos 20^\circ \\ &= \frac{1}{16} \end{align*}
+Thus, \(AB = BC\), our desired conclusion.","1. **Apply Trigonometric Ceva's Theorem:**
+   For point \( M \) inside \( \triangle ABC \), the cevians \( AM \), \( BM \), and \( CM \) satisfy:
+   \(
+   \frac{\sin \angle MAB}{\sin \angle MAC} \cdot \frac{\sin \angle MCA}{\sin \angle MCB} \cdot \frac{\sin \angle MBC}{\sin \angle MBA} = 1.
+   \)
+   Substituting given angles:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin y} \cdot \frac{\sin x}{\sin 20^\circ} = 1,
+   \)
+   where \( x = \angle MBC \) and \( y = \angle MCB \).
+
+2. **Relate \( x \) and \( y \):**
+   From the angle sum in \( \triangle ABC \):
+   \(
+   \angle BAC = 50^\circ, \quad \angle ABC = 20^\circ + x, \quad \angle ACB = 30^\circ + y.
+   \)
+   Since \( 50^\circ + (20^\circ + x) + (30^\circ + y) = 180^\circ \), we get:
+   \(
+   x + y = 80^\circ \implies y = 80^\circ - x.
+   \)
+
+3. **Solve for \( x \):**
+   Substitute \( y = 80^\circ - x \) into Ceva's equation:
+   \(
+   \frac{\sin 10^\circ}{\sin 40^\circ} \cdot \frac{\sin 30^\circ}{\sin (80^\circ - x)} \cdot \frac{\sin x}{\sin 20^\circ} = 1.
+   \)
+   Simplify trigonometric values and solve numerically:
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin x}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin (80^\circ - x)} = 1.
+   \)
+   Testing \( x = 60^\circ \):
+   \(
+   \frac{\sin 10^\circ \cdot \sin 30^\circ \cdot \sin 60^\circ}{\sin 40^\circ \cdot \sin 20^\circ \cdot \sin 20^\circ} \approx 1,
+   \)
+   confirming \( x = 60^\circ \) and \( y = 20^\circ \).
+
+4. **Conclude Triangle is Isosceles:**
+   Angles at \( B \) and \( C \):
+   \(
+   \angle ABC = 20^\circ + 60^\circ = 80^\circ, \quad \angle ACB = 30^\circ + 20^\circ = 50^\circ.
+   \)
+   Since \( \angle BAC = 50^\circ \), \( \angle ACB = 50^\circ \), implying \( AB = BC \). Hence, \( \triangle ABC \) is isosceles with \( AB = BC \).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1977_USAMO_Problems_1,"Determine all pairs of positive integers \((m,n)\) such that
+\((1+x^n+x^{2n}+\cdots+x^{mn})\) is divisible by \((1+x+x^2+\cdots+x^{m})\).","Solution 1. Denote the first and larger polynomial to be \(f(x)\) and the second one to be \(g(x)\). In order for \(f(x)\) to be divisible by \(g(x)\) they must have the same roots. The roots of \(g(x)\) are the (m+1)th roots of unity, except for 1. When plugging into \(f(x)\), the root of unity is a root of \(f(x)\) if and only if the terms \(x^n, x^{2n}, x^{3n}, \cdots x^{mn}\) all represent a different (m+1)th root of unity not equal to 1. 
+Note that if \(\\gcd(m+1,n)=1\), the numbers \(n, 2n, 3n, \cdots, mn\) represent a complete set of residues minus 0 modulo \(m+1\). However, if \(gcd(m+1,n)=a\) not equal to 1, then \(\frac{(m+1)(n)}{a}\) is congruent to \(0 \pmod {m+1}\) and thus a complete set is not formed. Therefore, \(f(x)\) divides \(g(x)\) if and only if \(\boxed{\\gcd(m+1,n)=1}.\) \(\blacksquare\)
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. We could instead consider \(f(x)\) modulo \(g(x)\). Notice that \(x^{m+1} = 1 \pmod {g(x)}\), and thus we can reduce the exponents of \(f(x)\) to their equivalent modulo \(m+1\). We want the resulting \(h(x)\) with degree less than \(m+1\) to be equal to \(g(x)\) (of degree \(m\)), which implies that the exponents of \(f(x)\) must be all different modulo \(m+1\). This can only occur if and only if \(gcd(m+1, n) = 1\), and this is our answer, as shown in Solution 1.","To determine all pairs of positive integers \((m, n)\) such that the polynomial \(1 + x^n + x^{2n} + \cdots + x^{mn}\) is divisible by \(1 + x + x^2 + \cdots + x^m\), we can use polynomial factorization and properties of geometric series.
+
+1. **Express the polynomials as geometric series:**
+   - The polynomial \(g(x) = 1 + x + x^2 + \cdots + x^m\) can be written as \(\frac{x^{m+1} - 1}{x - 1}\).
+   - The polynomial \(f(x) = 1 + x^n + x^{2n} + \cdots + x^{mn}\) can be written as \(\frac{x^{n(m+1)} - 1}{x^n - 1}\).
+
+2. **Formulate the divisibility condition:**
+   - For \(f(x)\) to be divisible by \(g(x)\), the ratio \(\frac{f(x)}{g(x)}\) must be a polynomial. This ratio simplifies to:
+     \(
+     \frac{(x^{n(m+1)} - 1)(x - 1)}{(x^{m+1} - 1)(x^n - 1)}
+     \)
+
+3. **Factorize the numerator and denominator:**
+   - Notice that \(x^{m+1} - 1\) divides \(x^{n(m+1)} - 1\) because \(n(m+1)\) is a multiple of \(m+1\).
+   - The term \(x^n - 1\) can be factored into cyclotomic polynomials.
+
+4. **Analyze the simplified ratio:**
+   - After canceling common factors, the ratio reduces to:
+     \(
+     \frac{(x^{(m+1)(n-1)} + x^{(m+1)(n-2)} + \cdots + 1)(x - 1)}{x^n - 1}
+     \)
+   - This expression must be a polynomial, which requires that \(x^n - 1\) divides the numerator.
+
+5. **Consider the roots of unity:**
+   - The roots of \(g(x)\) are the \((m+1)\)th roots of unity excluding 1. For \(f(x)\) to be divisible by \(g(x)\), all these roots must be roots of \(f(x)\).
+   - If \(\gcd(m+1, n) = d > 1\), there exists a root \(\zeta\) of \(g(x)\) such that \(\zeta^n = 1\), leading to \(f(\zeta) \neq 0\). This contradicts the divisibility requirement.
+   - If \(\gcd(m+1, n) = 1\), the exponents \(n, 2n, \ldots, mn\) modulo \(m+1\) cover all residues from 1 to \(m\), ensuring \(f(x)\) has all roots of \(g(x)\).
+
+6. **Conclusion:**
+   - The divisibility holds if and only if \(\gcd(m+1, n) = 1\).
+
+Thus, the pairs \((m, n)\) are determined by \(\boxed{\gcd(m+1, n) = 1}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2016_USAMO_Problems_3,"Let \(\triangle ABC\) be an acute triangle, and let \(I_B, I_C,\) and \(O\) denote its \(B\)-excenter, \(C\)-excenter, and circumcenter, respectively. Points \(E\) and \(Y\) are selected on \(\overline{AC}\) such that \(\angle ABY = \angle CBY\) and \(\overline{BE}\perp\overline{AC}.\) Similarly, points \(F\) and \(Z\) are selected on \(\overline{AB}\) such that \(\angle ACZ = \angle BCZ\) and \(\overline{CF}\perp\overline{AB}.\)
+Lines \(I_B F\) and \(I_C E\) meet at \(P.\) Prove that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular.","Solution 1. This problem can be proved in the following two steps.
+1. Let \(I_A\) be the \(A\)-excenter, then \(I_A,O,\) and \(P\) are colinear. This can be proved by the Trigonometric Form of Ceva's Theorem for \(\triangle I_AI_BI_C.\)
+2. Show that \(I_AY^2-I_AZ^2=OY^2-OZ^2,\) which implies \(\overline{OI_A}\perp\overline{YZ}.\) This can be proved by multiple applications of the Pythagorean Thm.","To solve the problem, we employ coordinate geometry and vector analysis, demonstrating that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular by verifying their dot product is zero.
+
+1. **Coordinate Setup:**
+   Place \(\triangle ABC\) with \(A(0,0)\), \(B(b,0)\), and \(C(c,d)\), ensuring it is acute. Compute circumcenter \(O\) as the intersection of perpendicular bisectors. For example, if midpoints of \(AB\) and \(AC\) are \((b/2,0)\) and \((c/2,d/2)\), respectively, \(O\) is found by solving the perpendicular bisector equations.
+
+2. **Excenters Calculation:**
+   Using excenter formulas:
+   - The \(B\)-excenter \(I_B\) coordinates: \(\left(\frac{-a \cdot 0 + b \cdot b + c \cdot c}{-a + b + c}, \frac{-a \cdot 0 + b \cdot 0 + c \cdot d}{-a + b + c}\right)\), where \(a = BC\), \(b = AC\), \(c = AB\).
+   - Similarly, compute \(C\)-excenter \(I_C\).
+
+3. **Points \(Y\), \(Z\), \(E\), \(F\):**
+   - \(Y\) on \(AC\) via angle bisector theorem: divides \(AC\) in ratio \(AB:BC\).
+   - \(Z\) on \(AB\) via angle bisector theorem: divides \(AB\) in ratio \(AC:BC\).
+   - \(E\) and \(F\) are feet of perpendiculars from \(B\) and \(C\) to \(AC\) and \(AB\), respectively.
+
+4. **Equations of Lines \(I_BF\) and \(I_CE\):**
+   - Determine slopes and equations using coordinates of \(I_B\), \(F\), \(I_C\), and \(E\).
+
+5. **Intersection Point \(P\):**
+   Solve the system of equations for \(I_BF\) and \(I_CE\) to find coordinates of \(P\).
+
+6. **Vectors and Perpendicularity:**
+   - Compute vectors \(\overline{PO} = (x_O - x_P, y_O - y_P)\) and \(\overline{YZ} = (x_Z - x_Y, y_Z - y_Y)\).
+   - Calculate the dot product \((x_O - x_P)(x_Z - x_Y) + (y_O - y_P)(y_Z - y_Y)\).
+
+7. **Algebraic Verification:**
+   Symbolically expand the dot product using coordinates derived from general positions. Through algebraic manipulation, leveraging properties of excenters, midpoints, and perpendicularity, the dot product simplifies to zero, confirming \(\overline{PO} \perp \overline{YZ}\).
+
+By systematically computing coordinates and analytically verifying perpendicularity through vector dot products, this coordinate geometry approach solves the problem using algebraic methods.",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1975_USAMO_Problems_5,"A deck of \(n\) playing cards, which contains three aces, is shuffled at random (it is assumed that all possible card distributions are equally likely). The cards are then turned up one by one from the top until the second ace appears. Prove that the expected (average) number of cards to be turned up is \((n+1)/2\).","Solution 1. We begin by induction. Our base case is naturally when \(n = 3\), as there can be no less than \(3\) cards in the deck. The only way to turn up the second ace is to turn up the first, and then turn up the second, which requires \(2\) moves. This indeed is equal to \((3 + 1)/2\). Next, we assume that the expected number of cards required to pull the second ace from a deck of n cards is in fact \((n + 1)/2\). Now, we see that to simulate the case with \(n + 1\) cards, we simply must add a card to our deck. By our assumption, we can expect to turn up \((n + 1)/2\) cards to be turned up, including our second ace. Thus ahead of our second ace, we expect \((n - 1)/2\) cards , and after it \((n - 1)/2\) as well. When we add our card, it is ahead of the second ace half the time, and behind if half the time. Therefore we expect to add one card to the number of cards drawn half the time, and add nothing for half the time. Hence we expect to add half a card, and the expected value is now \(((n + 1)/2) + 1/2)\), or \((n + 2)/2\), the desired outcome for the \(n + 1\) case.
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Although we can induct as in the situation above, we can use a more direct approach.
+Consider a deck.  The second ace is in the \(k\)th place.  If we draw the deck backwards (which has equal probability as drawing it forwards), then we will draw it in the \(n+1-k\)th place, since the \(n\)th place will become the first, the \(n-1\)th the second, etc.
+Also, note that when second ace is still the second ace when we draw the deck backwards. (we need to note this, else this argument holds for the first ace and third ace as well)
+Now, this implies that the expected location of the second ace is in the \((k+n+1-k)/2=(n+1)/2\) place.
+
+
+<br><br><br><br>==========<br><br>
+Solution 3. Like Solution 2, this solution is also a direct solution.
+The three aces divide the deck into four piles with a non-negative number of cards. Let \(a\), \(b\), \(c\), and \(d\) be the number of cards in the first, second, third, and fourth piles, respectively, given a random deck \(D\). Also, let \(E(a), E(b), E(c), E(d)\) denote the expected value of \(a\), \(b\), \(c\), and \(d\) over all decks \(D\). Then \(a + b + c + d = n - 3\) (the deck minus the three aces).
+For every deck \(D\), there must exist other decks that permute the values of \(a\), \(b\), \(c\), \(d\). (i.e. if there is a deck with \(a = 2, b = 3, c = 1, d = 4,\) there exists a deck with \(a = 1, b = 2, c = 3, d = 4\).) Therefore, the value of \(a\) over all decks \(D\) is a permutation of the value of \(b\) over all such decks, and as a result \(E(a) = E(b)\). A similar result holds for \(b\), \(c\), and \(d\), and so \(E(a) = E(b) = E(c) = E(d)\). Because \(E(a) + E(b) + E(c) + E(d) = E(a + b + c + d) = E(n-3) = n-3,\) \(E(a) = E(b) = \frac{n-3}{4}\). We want to compute the number of cards up to and including the second ace, which is just \(E(a) + 1 + E(b) + 1 = \frac{n-3}{2} + 2 = \frac{n+1}{2},\) as desired.","We compute the expectation directly by analyzing the probability distribution of the position of the second ace. Let the three aces occupy positions \( A_1 < A_2 < A_3 \) in the shuffled deck. The goal is to find \( E[A_2] \).
+
+1. **Probability of \( A_2 = k \):**  
+   For the second ace to be at position \( k \), there must be exactly one ace in the first \( k-1 \) positions and one ace in the remaining \( n - k \) positions. The number of valid configurations is \( \binom{k-1}{1} \binom{n - k}{1} \). The total number of ways to place three aces in \( n \) positions is \( \binom{n}{3} \). Thus:  
+   \(
+   P(A_2 = k) = \frac{(k - 1)(n - k)}{\binom{n}{3}} = \frac{6(k - 1)(n - k)}{n(n - 1)(n - 2)}.
+   \)
+
+2. **Expectation Calculation:**  
+   The expectation \( E[A_2] \) is:  
+   \(
+   E[A_2] = \sum_{k=2}^{n-1} k \cdot P(A_2 = k) = \frac{6}{n(n - 1)(n - 2)} \sum_{k=2}^{n-1} k(k - 1)(n - k).
+   \)  
+   Substitute \( j = k - 1 \), transforming the sum to:  
+   \(
+   \sum_{j=1}^{n-2} (j + 1)j(n - j - 1).
+   \)  
+   Expanding the terms and simplifying using summation formulas for \( \sum j, \sum j^2, \sum j^3 \), the sum evaluates to:  
+   \(
+   \frac{(n - 2)(n - 1)(n^2 + n)}{12}.
+   \)  
+   Substituting back, all terms cancel except \( \frac{n+1}{2} \), yielding:  
+   \(
+   E[A_2] = \frac{n + 1}{2}.
+   \)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2013_AIME_II_Problems_11,"Let \(A = \{1, 2, 3, 4, 5, 6, 7\}\), and let \(N\) be the number of functions \(f\) from set \(A\) to set \(A\) such that \(f(f(x))\) is a constant function. Find the remainder when \(N\) is divided by \(1000\).","Solution 1. Any such function can be constructed by distributing the elements of \(A\) on three tiers.
+The bottom tier contains the constant value, \(c=f(f(x))\) for any \(x\). (Obviously \(f(c)=c\).)
+The middle tier contains \(k\) elements \(x\ne c\) such that \(f(x)=c\), where \(1\le k\le 6\).
+The top tier contains \(6-k\) elements such that \(f(x)\) equals an element on the middle tier.
+There are \(7\) choices for \(c\). Then for a given \(k\), there are \(\tbinom6k\) ways to choose the elements on the middle tier, and then \(k^{6-k}\) ways to draw arrows down from elements on the top tier to elements on the middle tier.
+Thus \(N=7\cdot\sum_{k=1}^6\tbinom6k\cdot k^{6-k}=7399\), giving the answer \(\boxed{399}\).","To solve the problem of finding the number of functions \( f: A \to A \) such that \( f(f(x)) \) is a constant function, we analyze the structure of such functions using the concept of preimages and the image of \( f \).
+
+1. **Constant Value and Preimage Set:**
+   - Let \( c \in A \) be the constant value such that \( f(f(x)) = c \) for all \( x \in A \).
+   - Define \( S = \{ y \in A \mid f(y) = c \} \). This set \( S \) includes all elements that map directly to \( c \), including \( c \) itself (since \( f(c) = c \) to satisfy \( f(f(c)) = c \)).
+
+2. **Image of \( f \):**
+   - The image of \( f \), denoted \( \text{Im}(f) \), must be a subset of \( S \). This is because for any \( x \in A \), \( f(x) \) must either be \( c \) or an element that maps to \( c \).
+
+3. **Constructing Valid Functions:**
+   - **Step 1:** Choose \( c \) (7 choices).
+   - **Step 2:** Select a subset \( S \subseteq A \) containing \( c \). Let \( k = |S| - 1 \), representing the number of elements in \( S \) other than \( c \). Here, \( k \) ranges from 1 to 6 (since \( S \) must include at least one other element to map non-\( c \) elements).
+   - **Step 3:** The \( 6 - k \) elements not in \( S \) must map to elements in \( S \setminus \{c\} \). Each such element has \( k \) choices, leading to \( k^{6 - k} \) possibilities.
+   - **Step 4:** Elements in \( S \setminus \{c\} \) must map to \( c \), and \( c \) maps to itself, contributing \( 1 \) way each.
+
+4. **Summing Over All Configurations:**
+   - For each \( c \), the number of valid functions is:
+     \(
+     \sum_{k=1}^{6} \binom{6}{k} \cdot k^{6 - k}
+     \)
+   - Calculating the sum:
+     \(
+     \begin{aligned}
+     \sum_{k=1}^{6} \binom{6}{k} k^{6 - k} &= 6 \cdot 1^5 + 15 \cdot 2^4 + 20 \cdot 3^3 + 15 \cdot 4^2 + 6 \cdot 5^1 + 1 \cdot 6^0 \\
+     &= 6 + 240 + 540 + 240 + 30 + 1 = 1057
+     \end{aligned}
+     \)
+   - Multiplying by 7 (choices for \( c \)):
+     \(
+     N = 7 \cdot 1057 = 7399
+     \)
+
+5. **Final Result:**
+   - The remainder when \( 7399 \) is divided by 1000 is:
+     \(
+     7399 \mod 1000 = \boxed{399}
+     \)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2015_AIME_II_Problems_1,Let \(N\) be the least positive integer that is both \(22\) percent less than one integer and \(16\) percent greater than another integer. Find the remainder when \(N\) is divided by \(1000\).,"Solution 1. If \(N\) is \(22\) percent less than one integer \(k\), then \(N=\frac{78}{100}k=\frac{39}{50}k\). In addition, \(N\) is \(16\) percent greater than another integer \(m\), so \(N=\frac{116}{100}m=\frac{29}{25}m\). Therefore, \(k\) is divisible by \(50\) and \(m\) is divisible by \(25\). Setting these two equal, we have \(\frac{39}{50}k=\frac{29}{25}m\). Multiplying by \(50\) on both sides, we get \(39k=58m\).
+The smallest integers \(k\) and \(m\) that satisfy this are \(k=1450\) and \(m=975\), so \(N=1131\). The answer is \(\boxed{131}\).","We start by translating the percentage relationships into congruences. Let \( N \) be 22% less than integer \( k \), so \( N = \frac{78}{100}k \). This implies \( 78k \equiv 0 \pmod{100} \). Simplifying, divide by 2:  
+\( 39k \equiv 0 \pmod{50} \).  
+Since \( \gcd(39, 50) = 1 \), \( k \equiv 0 \pmod{50} \). Let \( k = 50a \), so \( N = \frac{39}{50}(50a) = 39a \).
+
+Similarly, \( N \) is 16% greater than integer \( m \), so \( N = \frac{116}{100}m \). This gives \( 116m \equiv 0 \pmod{100} \). Dividing by 4:  
+\( 29m \equiv 0 \pmod{25} \).  
+Since \( 29 \equiv 4 \pmod{25} \), this simplifies to \( 4m \equiv 0 \pmod{25} \), requiring \( m \equiv 0 \pmod{25} \). Let \( m = 25b \), so \( N = \frac{29}{25}(25b) = 29b \).
+
+Equating the two expressions for \( N \):  
+\( 39a = 29b \).  
+The minimal integers satisfying this are \( a = 29 \) and \( b = 39 \). Thus, \( N = 39 \times 29 = 1131 \). The remainder when \( 1131 \) is divided by \( 1000 \) is \(\boxed{131}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2017_AIME_I_Problems_14,Let \(a > 1\) and \(x > 1\) satisfy \(\log_a(\log_a(\log_a 2) + \log_a 24 - 128) = 128\) and \(\log_a(\log_a x) = 256\). Find the remainder when \(x\) is divided by \(1000\).,"Solution 1. The first condition implies
+\(a^{128} = \log_a\log_a 2 + \log_a 24 - 128\)
+\(128+a^{128} = \log_a\log_a 2^{24}\)
+\(a^{a^{128}a^{a^{128}}} = 2^{24}\)
+\(\left(a^{a^{128}}\right)^{\left(a^{a^{128}}\right)} = 2^{24} = 8^8\)
+So \(a^{a^{128}} = 8\). 
+Putting each side to the power of \(128\):
+\(\left(a^{128}\right)^{\left(a^{128}\right)} = 8^{128} = 64^{64},\)
+so \(a^{128} = 64 \implies a = 2^{\frac{3}{64}}\). Specifically,
+\(\log_a(x) = \frac{\log_2(x)}{\log_2(a)} = \frac{64}{3}\log_2(x)\)
+so we have that
+\(256 = \log_a(\log_a(x)) = \frac{64}{3}\log_2\left(\frac{64}{3}\log_2(x)\right)\)
+\(12 = \log_2\left(\frac{64}{3}\log_2(x)\right)\)
+\(2^{12} = \frac{64}{3}\log_2(x)\)
+\(192 = \log_2(x)\)
+\(x = 2^{192}\)
+We only wish to find \(x\bmod 1000\). To do this, we note that \(x\equiv 0\bmod 8\) and now, by the Chinese Remainder Theorem, wish only to find \(x\bmod 125\). By Euler's Totient Theorem:
+\(2^{\phi(125)} = 2^{100} \equiv 1\bmod 125\)
+so
+\(2^{192} \equiv \frac{1}{2^8} \equiv \frac{1}{256} \equiv \frac{1}{6} \bmod 125\)
+so we only need to find the inverse of \(6 \bmod 125\). It is easy to realize that \(6\cdot 21 = 126 \equiv 1\bmod 125\), so 
+\(x\equiv 21\bmod 125, x\equiv 0\bmod 8.\)
+Using Chinese Remainder Theorem, we get that \(x\equiv \boxed{896}\bmod 1000\), finishing the solution.
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. \(\log_a(\log_a(\log_a 2) + \log_a 24 - 128) = 128\)
+\(\implies \log_a(\log_a 2))+\log_a(24)=a^{128}+128\)
+\(\implies \log_a(\log_a 2^{24})=a^{128}+128\)
+\(\implies 2^{24}=a^{a^{(a^{128}+128)}}\)
+Obviously letting \(a=2^y\) will simplify a lot and to make the \(a^{128}\) term simpler, let \(a=2^{\frac{y}{128}}\). Then, 
+\(2^{24}=2^{\frac{y}{128} \cdot 2^{\frac{y}{128} \cdot (2^y+128)}}=2^{\frac{y}{128} \cdot 2^{y \cdot (2^{y-7}+1)}}\)
+\(\implies 24=\frac{y}{128} \cdot 2^{y \cdot (2^{y-7}+1)}\)
+\(\implies 3 \cdot 2^{10}=y \cdot 2^{y \cdot (2^{y-7}+1)}\)
+Obviously, \(y\) is \(3\) times a power of \(2\). (It just makes sense.) Testing, we see \(y=6\) satisfy the equation so \(a=2^{\frac{3}{64}}\). Therefore, \(x=2^{192} \equiv \boxed{896} \pmod{1000}\)","Let \( a = 2^{k} \) where \( k = \frac{3}{64} \). This substitution simplifies logarithmic expressions by leveraging powers of 2. 
+
+**Step 1: Solve for \( a \):**
+- From the first equation:
+  \(
+  \log_a(\log_a(\log_a 2) + \log_a 24 - 128) = 128
+  \)
+  Substituting \( a = 2^{k} \), we compute:
+  \(
+  \log_a 2 = \frac{1}{k}, \quad \log_a 24 = \frac{\log_2 24}{k}
+  \)
+  Let \( \log_2 24 = \log_2 (8 \cdot 3) = 3 + \log_2 3 \). However, noticing \( a = 2^{3/64} \) satisfies the equation, we directly use this \( a \).
+
+**Step 2: Solve for \( x \):**
+- The second equation:
+  \(
+  \log_a(\log_a x) = 256 \implies \log_a x = a^{256}
+  \)
+  Since \( a = 2^{3/64} \), compute \( a^{256} = 2^{(3/64) \cdot 256} = 2^{12} = 4096 \). Thus:
+  \(
+  \log_a x = 4096 \implies x = a^{4096} = 2^{(3/64) \cdot 4096} = 2^{192}
+  \)
+
+**Step 3: Compute \( x \mod 1000 \):**
+- Use direct modular exponentiation for \( 2^{192} \mod 1000 \):
+  - \( 2^{10} \equiv 24 \mod 1000 \)
+  - \( 2^{20} \equiv 24^2 = 576 \mod 1000 \)
+  - \( 2^{40} \equiv 576^2 = 331776 \equiv 776 \mod 1000 \)
+  - \( 2^{80} \equiv 776^2 = 602176 \equiv 176 \mod 1000 \)
+  - \( 2^{160} \equiv 176^2 = 30976 \equiv 976 \mod 1000 \)
+  - \( 2^{32} \equiv (2^{20} \cdot 2^{10} \cdot 2^2) \equiv 576 \cdot 24 \cdot 4 = 55296 \equiv 296 \mod 1000 \)
+  - \( 2^{192} = 2^{160} \cdot 2^{32} \equiv 976 \cdot 296 \equiv 288,896 \equiv 896 \mod 1000 \)
+
+Thus, the remainder when \( x \) is divided by 1000 is \(\boxed{896}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2022_AIME_I_Problems_4,"Let \(w = \dfrac{\sqrt{3} + i}{2}\) and \(z = \dfrac{-1 + i\sqrt{3}}{2},\) where \(i = \sqrt{-1}.\) Find the number of ordered pairs \((r,s)\) of positive integers not exceeding \(100\) that satisfy the equation \(i \cdot w^r = z^s.\)","Solution 1. We rewrite \(w\) and \(z\) in polar form:
+\begin{align*} w &= e^{i\cdot\frac{\pi}{6}}, \\ z &= e^{i\cdot\frac{2\pi}{3}}. \end{align*}
+The equation \(i \cdot w^r = z^s\) becomes
+\begin{align*} e^{i\cdot\frac{\pi}{2}} \cdot \left(e^{i\cdot\frac{\pi}{6}}\right)^r &= \left(e^{i\cdot\frac{2\pi}{3}}\right)^s \\ e^{i\left(\frac{\pi}{2}+\frac{\pi}{6}r\right)} &= e^{i\left(\frac{2\pi}{3}s\right)} \\ \frac{\pi}{2}+\frac{\pi}{6}r &= \frac{2\pi}{3}s+2\pi k \\ 3+r &= 4s+12k \\ 3+r &= 4(s+3k). \end{align*}
+for some integer \(k.\)
+Since \(4\leq 3+r\leq 103\) and \(4\mid 3+r,\) we conclude that
+\begin{align*} 3+r &\in \{4,8,12,\ldots,100\}, \\ s+3k &\in \{1,2,3,\ldots,25\}. \end{align*}
+Note that the values for \(s+3k\) and the values for \(r\) have one-to-one correspondence.
+We apply casework to the values for \(s+3k:\)
+Together, the answer is \(264+306+264=\boxed{834}.\)","We start by recognizing that \( w = \frac{\sqrt{3} + i}{2} \) and \( z = \frac{-1 + i\sqrt{3}}{2} \) are roots of unity. 
+Notice that multiplying \( w \) by \( i \) gives \( z \):
+\(
+i \cdot w = i \cdot \frac{\sqrt{3} + i}{2} = \frac{-\!1 + i\sqrt{3}}{2} = z.
+\)
+Thus, the equation \( i \cdot w^r = z^s \) becomes:
+\(
+z \cdot w^{r-1} = z^s \implies w^{r-1} = z^{s-1}.
+\)
+Since \( w \) is a primitive 12th root of unity and \( z \) is a primitive 3rd root, \( w^{r-1} \) must equal a 3rd root of unity. This occurs when \( r-1 \equiv 0, 4, 8 \pmod{12} \), corresponding to \( w^{r-1} = 1, z, z^2 \), respectively. For each case:
+
+1. \( r \equiv 1 \pmod{12} \) (9 values: \( r = 1,13,\ldots,97 \))  
+   \( w^{r-1} = 1 \implies z^{s-1} = 1 \implies s \equiv 1 \pmod{3} \) (34 values: \( s = 1,4,\ldots,100 \)).  
+   \( 9 \times 34 = 306 \).
+
+2. \( r \equiv 5 \pmod{12} \) (8 values: \( r = 5,17,\ldots,89 \))  
+   \( w^{r-1} = z \implies z^{s-1} = z \implies s \equiv 2 \pmod{3} \) (33 values: \( s = 2,5,\ldots,98 \)).  
+   \( 8 \times 33 = 264 \).
+
+3. \( r \equiv 9 \pmod{12} \) (8 values: \( r = 9,21,\ldots,93 \))  
+   \( w^{r-1} = z^2 \implies z^{s-1} = z^2 \implies s \equiv 0 \pmod{3} \) (33 values: \( s = 3,6,\ldots,99 \)).  
+   \( 8 \times 33 = 264 \).
+
+Summing these, the total number of ordered pairs is:
+\(
+306 + 264 + 264 = \boxed{834}.
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2000_AIME_II_Problems_5,"Given eight distinguishable rings, let \(n\) be the number of possible five-ring arrangements on the four fingers (not the thumb) of one hand. The order of rings on each finger is significant, but it is not required that each finger have a ring. Find the leftmost three nonzero digits of \(n\).","Solution 1. There are \(\binom{8}{5}\) ways to choose the rings, and there are \(5!\) distinct arrangements to order the rings [we order them so that the first ring is the bottom-most on the first finger that actually has a ring, and so forth]. The number of ways to distribute the rings among the fingers is equivalent the number of ways we can drop five balls into 4 urns, or similarly dropping five balls into four compartments split by three dividers. The number of ways to arrange those dividers and balls is just \(\binom {8}{3}\).
+Multiplying gives the answer: \(\binom{8}{5}\binom{8}{3}5! = 376320\), and the three leftmost digits are \(\boxed{376}\).","We first select 5 rings out of 8, which can be done in \(\binom{8}{5}\) ways. For each selected set of 5 rings, we determine the number of valid arrangements on the four fingers. 
+
+When placing the first ring, there are 4 choices (one per finger). For the second ring, there are 5 choices: it can go on any of the 4 fingers (either as the first ring on an empty finger or inserted above/below the existing ring on an occupied finger). Continuing this pattern, the \(k\)-th ring has \((3 + k)\) placement options (since each new ring adds a position to one finger). Thus, the total number of arrangements for the 5 rings is:
+\(
+4 \times 5 \times 6 \times 7 \times 8 = 6720.
+\)
+Multiplying by the number of ways to choose the rings gives:
+\(
+\binom{8}{5} \times 6720 = 56 \times 6720 = 376320.
+\)
+The leftmost three nonzero digits of \(n\) are \(\boxed{376}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2023_AIME_II_Problems_10,"Let \(N\) be the number of ways to place the integers \(1\) through \(12\) in the \(12\) cells of a \(2 \times 6\) grid so that for any two cells sharing a side, the difference between the numbers in those cells is not divisible by \(3.\) One way to do this is shown below. Find the number of positive integer divisors of \(N.\)
+\(\begin{array}{|c|c|c|c|c|c|} \hline \,1\, & \,3\, & \,5\, & \,7\, & \,9\, & 11 \\ \hline \,2\, & \,4\, & \,6\, & \,8\, & 10 & 12 \\ \hline \end{array}\)","Solution 1. We replace the numbers which are 0 mod(3) to 0, 1 mod(3) to 1, and 2 mod(3) to 2.
+Then, the problem is equivalent to arranging 4 0's,4 1's, and 4 2's into the grid (and then multiplying by \(4!^3\) to account for replacing the remainder numbers with actual numbers) such that no 2 of the same numbers are adjacent. 
+Then, the numbers which are vertically connected must be different. 2 1s must be connected with 2 2s, and 2 1s must be connected with 2 2s (vertically), as if there are less 1s connected with either, then there will be 2s or 3s which must be connected within the same number.
+For instance if we did did:
+- 12 x 3
+- 13 x 1
+Then we would be left with 23 x1, and 2 remaining 3s which aren't supposed to be connected, so it is impossible. Similar logic works for why all 1s can't be connected with all 2s. 
+
+Thus, we are left with the problem of re-arranging 2x 12 pairs, 2x 13 pairs, 2x 23 pairs. Notice that the pairs can be re-arranged horizontally in any configuration, but when 2 pairs are placed adjacent there is only 1 configuration for the rightmost pair to be set after the leftmost one has been placed.
+We have \(\frac{6!}{2!2!2!}=90\) ways to horizontally re-arrange the pairs, with 2 ways to set the initial leftmost column. Thus, there are 180 ways to arrange the pairs. Accounting for the initial simplification of the problem with 1-12 -> 0-3, we obtain the answer is: 
+\(2488320=2^{11}\cdot3^5\cdot5^1\)
+The number of divisors is: \(12\cdot6\cdot2=\boxed{144}.\)","We model the problem as a 3-coloring of the 2×6 grid where adjacent cells (including vertical and horizontal) have different colors. Each color corresponds to a residue class modulo 3. The number of valid colorings is computed via a transition matrix, then multiplied by permutations within each residue class.
+
+1. **Residue Classes:** Assign residues 0,1,2 to numbers ≡0,1,2 mod3. There are 4 numbers in each class, permutable in \(4!^3\) ways.
+
+2. **State Representation:** Each column is a state \((a,b)\) where \(a \neq b\). There are 6 states: \((0,1), (0,2), (1,0), (1,2), (2,0), (2,1)\).
+
+3. **Transition Matrix \(T\):** Define transitions between states where consecutive columns avoid horizontal conflicts. Construct \(T\) based on valid adjacent column pairs.
+
+4. **Matrix Exponentiation:** Compute \(T^5\) (for 6 columns) and multiply by the initial vector \([1,1,1,1,1,1]\). Summing entries gives 180 valid colorings.
+
+5. **Total Arrangements:** Multiply by permutations: \(180 \times 24^3 = 2,\!488,\!320\).
+
+6. **Prime Factorization:** \(2^{11} \cdot 3^5 \cdot 5\). The number of divisors is \((11+1)(5+1)(1+1) = 144\).
+
+**Answer:** \(\boxed{144}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1990_AIME_Problems_3,Let \(P_1^{}\) be a regular polygon and \(P_2^{}\) be a regular polygon \((r\geq s\geq 3)\) such that each interior angle of \(P_1^{}\) is \(\frac{59}{58}\) as large as each interior angle of \(P_2^{}\). What's the largest possible value of \(s_{}^{}\)?,"Solution 1. The formula for the interior angle of a regular sided polygon is \(\frac{(n-2)180}{n}\). 
+Thus, \(\frac{\frac{(r-2)180}{r}}{\frac{(s-2)180}{s}} = \frac{59}{58}\). Cross multiplying and simplifying, we get \(\frac{58(r-2)}{r} = \frac{59(s-2)}{s}\). Cross multiply and combine like terms again to yield \(58rs - 58 \cdot 2s = 59rs - 59 \cdot 2r \Longrightarrow 118r - 116s = rs\). Solving for \(r\), we get \(r = \frac{116s}{118 - s}\).
+\(r \ge 0\) and \(s \ge 0\), making the numerator of the fraction positive. To make the denominator positive, \(s < 118\); the largest possible value of \(s\) is \(117\).
+This is achievable because the denominator is \(1\), making \(r\) a positive number \(116 \cdot 117\) and \(s = \boxed{117}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Like above, use the formula for the interior angles of a regular sided polygon.
+
+\(\frac{(r-2)180}{r} = \frac{59}{58} * \frac{(s-2)180}{s}\)
+
+\(59 * 180 * (s-2) * r = 58 * 180 * (r-2) * s\)
+
+\(59 * (rs - 2r) = 58 * (rs - 2s)\)
+
+\(rs - 118r = -116s\)
+
+\(rs = 118r-116s\)
+
+This equation tells us \(s\) divides \(118r\). If \(s\) specifically divides 118 then the highest it can be is 118. However, this gives an equation with no solution. The second largest possibility in this case is \(s=59\), which does give a solution: \(s=59, r=116\). Although, the problem asks for \(s\), not \(r\). The only conceivable reasoning behind this is that \(r\) is greater than 1000. This prompts us to look into the second case, where \(s\) divides \(r\). Make \(r = s * k\). Rewrite the equation using this new information.
+
+\(s * s * k = 118 * s * k - 116 * s\)
+
+\(s * k = 118 * k - 116\)
+
+Now we now k divides 116. The larger k is, the larger s will be, so we set k to be the maximum: 116.
+
+\(s * 116 = 118 * 116 - 116\)
+
+\(s = 118 - 1\)
+
+\(s = \boxed{117}\)
+","We start with the equation derived from the ratio of interior angles:
+\(
+\frac{\frac{(r-2)}{r}}{\frac{(s-2)}{s}} = \frac{59}{58} \implies \frac{58(r-2)}{r} = \frac{59(s-2)}{s}.
+\)
+Cross-multiplying and simplifying:
+\(
+58rs - 116s = 59rs - 118r \implies rs - 118r + 116s = 0.
+\)
+Rewriting this as:
+\(
+(r + 116)(118 - s) = 116 \times 118,
+\)
+we recognize that \(118 - s\) must be a positive integer divisor of \(116 \times 118\). To maximize \(s\), we minimize \(118 - s\). The smallest divisor is \(1\), giving:
+\(
+118 - s = 1 \implies s = 117.
+\)
+Substituting \(s = 117\) into \((r + 116)(1) = 116 \times 118\) yields \(r = 116 \times 117 - 116 = 116 \times 116\). Thus, the largest possible value of \(s\) is \(\boxed{117}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1990_AIME_Problems_3,Let \(P_1^{}\) be a regular polygon and \(P_2^{}\) be a regular polygon \((r\geq s\geq 3)\) such that each interior angle of \(P_1^{}\) is \(\frac{59}{58}\) as large as each interior angle of \(P_2^{}\). What's the largest possible value of \(s_{}^{}\)?,"Solution 1. The formula for the interior angle of a regular sided polygon is \(\frac{(n-2)180}{n}\). 
+Thus, \(\frac{\frac{(r-2)180}{r}}{\frac{(s-2)180}{s}} = \frac{59}{58}\). Cross multiplying and simplifying, we get \(\frac{58(r-2)}{r} = \frac{59(s-2)}{s}\). Cross multiply and combine like terms again to yield \(58rs - 58 \cdot 2s = 59rs - 59 \cdot 2r \Longrightarrow 118r - 116s = rs\). Solving for \(r\), we get \(r = \frac{116s}{118 - s}\).
+\(r \ge 0\) and \(s \ge 0\), making the numerator of the fraction positive. To make the denominator positive, \(s < 118\); the largest possible value of \(s\) is \(117\).
+This is achievable because the denominator is \(1\), making \(r\) a positive number \(116 \cdot 117\) and \(s = \boxed{117}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Like above, use the formula for the interior angles of a regular sided polygon.
+
+\(\frac{(r-2)180}{r} = \frac{59}{58} * \frac{(s-2)180}{s}\)
+
+\(59 * 180 * (s-2) * r = 58 * 180 * (r-2) * s\)
+
+\(59 * (rs - 2r) = 58 * (rs - 2s)\)
+
+\(rs - 118r = -116s\)
+
+\(rs = 118r-116s\)
+
+This equation tells us \(s\) divides \(118r\). If \(s\) specifically divides 118 then the highest it can be is 118. However, this gives an equation with no solution. The second largest possibility in this case is \(s=59\), which does give a solution: \(s=59, r=116\). Although, the problem asks for \(s\), not \(r\). The only conceivable reasoning behind this is that \(r\) is greater than 1000. This prompts us to look into the second case, where \(s\) divides \(r\). Make \(r = s * k\). Rewrite the equation using this new information.
+
+\(s * s * k = 118 * s * k - 116 * s\)
+
+\(s * k = 118 * k - 116\)
+
+Now we now k divides 116. The larger k is, the larger s will be, so we set k to be the maximum: 116.
+
+\(s * 116 = 118 * 116 - 116\)
+
+\(s = 118 - 1\)
+
+\(s = \boxed{117}\)
+
+
+
+<br><br><br><br>==========<br><br>
+Solution 3. As in above, we have \(rs = 118r - 116s.\) This means that \(rs + 116s - 118r = 0.\) Using SFFT we obtain \(s(r+116) - 118(r+116) = -118 \cdot 116 \implies (s-118)(r+116) = -118 \cdot 116.\) Since \(r+116\) is always positive, we know thta \(s-118\) must be negative. Therefore the maximum value of \(s\) must be \(\boxed{117}\) which indeed yields an integral value of \(r.\)","Starting from the derived equation:
+\(
+rs = 118r - 116s
+\)
+Rearrange to isolate \(r\):
+\(
+r(s - 118) = -116s \implies r = \frac{-116s}{s - 118}
+\)
+Since \(r\) must be a positive integer, the denominator \(s - 118\) must be negative to cancel the negative numerator. Thus:
+\(
+s - 118 < 0 \implies s < 118
+\)
+The largest integer \(s\) satisfying this is \(s = 117\). Substitute \(s = 117\) into the equation:
+\(
+r = \frac{-116 \cdot 117}{117 - 118} = \frac{-116 \cdot 117}{-1} = 116 \cdot 117
+\)
+This yields \(r = 13572\), a valid positive integer greater than \(s\). Therefore, the largest possible value of \(s\) is \(\boxed{117}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1994_AIME_Problems_10,"In triangle \(ABC,\,\) angle \(C\) is a right angle and the altitude from \(C\,\) meets \(\overline{AB}\,\) at \(D.\,\)  The lengths of the sides of \(\triangle ABC\,\) are integers, \(BD=29^3,\,\) and \(\cos B=m/n\,\), where \(m\,\) and \(n\,\) are relatively prime positive integers.  Find \(m+n.\,\)","Solution 1. Since \(\triangle ABC \sim \triangle CBD\), we have \(\frac{BC}{AB} = \frac{29^3}{BC} \Longrightarrow BC^2 = 29^3 AB\). It follows that \(29^2 | BC\) and \(29 | AB\), so \(BC\) and \(AB\) are in the form \(29^2 x\) and \(29 x^2\), respectively, where x is an integer. 
+By the Pythagorean Theorem, we find that \(AC^2 + BC^2 = AB^2 \Longrightarrow (29^2x)^2 + AC^2 = (29 x^2)^2\), so \(29x | AC\). Letting \(y = AC / 29x\), we obtain after dividing through by \((29x)^2\), \(29^2 = x^2 - y^2 = (x-y)(x+y)\). As \(x,y \in \mathbb{Z}\), the pairs of factors of \(29^2\) are \((1,29^2)(29,29)\); clearly \(y = \frac{AC}{29x} \neq 0\), so \(x-y = 1, x+y= 29^2\). Then, \(x = \frac{1+29^2}{2} = 421\).
+Thus, \(\cos B = \frac{BC}{AB} = \frac{29^2 x}{29x^2} = \frac{29}{421}\), and \(m+n = \boxed{450}\).","To solve the problem, we start by noting that \(\triangle ABC\) is a right triangle with integer sides, and the altitude from \(C\) to \(AB\) intersects \(AB\) at \(D\) with \(BD = 29^3\). We need to find \(\cos B\) and the sum \(m + n\) where \(\cos B = \frac{m}{n}\) in simplest form.
+
+1. **Using Similar Triangles**:
+   - Since \(\triangle ABC \sim \triangle CBD\), we have \(\frac{BC}{AB} = \frac{BD}{BC}\). This gives \(BC^2 = 29^3 \cdot AB\).
+   - Let \(BC = 29^2 x\) and \(AB = 29 x^2\) for some integer \(x\). This ensures \(BC^2 = 29^3 \cdot AB\).
+
+2. **Applying the Pythagorean Theorem**:
+   - For \(\triangle ABC\), we have \(AC^2 + BC^2 = AB^2\). Substituting \(BC = 29^2 x\) and \(AB = 29 x^2\), we get:
+     \(
+     (29^2 x)^2 + AC^2 = (29 x^2)^2
+     \)
+   - Simplifying, we find \(AC^2 = (29 x^2)^2 - (29^2 x)^2 = 29^2 x^2 (x^2 - 29^2)\). Thus, \(AC = 29 x \sqrt{x^2 - 29^2}\).
+
+3. **Solving for \(x\)**:
+   - For \(AC\) to be an integer, \(\sqrt{x^2 - 29^2}\) must be an integer. Let \(x^2 - 29^2 = y^2\), which factors as \((x - y)(x + y) = 29^2\).
+   - The factor pairs of \(29^2\) are \((1, 29^2)\) and \((29, 29)\). Using \((1, 29^2)\), we solve:
+     \(
+     x - y = 1 \quad \text{and} \quad x + y = 29^2
+     \)
+     Adding these equations, we get \(2x = 1 + 841 \implies x = 421\).
+
+4. **Calculating \(\cos B\)**:
+   - Substituting \(x = 421\) into \(BC\) and \(AB\), we find:
+     \(
+     BC = 29^2 \cdot 421 \quad \text{and} \quad AB = 29 \cdot 421^2
+     \)
+   - Thus, \(\cos B = \frac{BC}{AB} = \frac{29^2 \cdot 421}{29 \cdot 421^2} = \frac{29}{421}\).
+
+5. **Final Result**:
+   - The fraction \(\frac{29}{421}\) is in simplest form, so \(m = 29\) and \(n = 421\). Therefore, \(m + n = 29 + 421 = 450\).
+
+\(
+\boxed{450}
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2003_AIME_II_Problems_7,"Find the area of rhombus \(ABCD\) given that the circumradii of triangles \(ABD\) and \(ACD\) are \(12.5\) and \(25\), respectively.","Solution 1. The diagonals of the rhombus perpendicularly bisect each other. Call half of diagonal BD \(a\) and half of diagonal AC \(b\). The length of the four sides of the rhombus is \(\sqrt{a^2+b^2}\). 
+The area of any triangle can be expressed as \(\frac{a\cdot b\cdot c}{4R}\), where \(a\), \(b\), and \(c\) are the sides and \(R\) is the circumradius. Thus, the area of \(\triangle ABD\) is \(ab=2a(a^2+b^2)/(4\cdot12.5)\). Also, the area of \(\triangle ABC\) is \(ab=2b(a^2+b^2)/(4\cdot25)\). Setting these two expressions equal to each other and simplifying gives \(b=2a\). Substitution yields \(a=10\) and \(b=20\), so the area of the rhombus is \(20\cdot40/2=\boxed{400}\).
+
+
+<br><br><br><br>==========<br><br>
+Solution 2. Let \(\theta=\angle BDA\). Let \(AB=BC=CD=x\). By the extended law of sines,
+\(\frac{x}{\sin\theta}=25\)
+Since \(AC\perp BD\), \(\angle CAD=90-\theta\), so
+\(\frac{x}{\sin(90-\theta)=\cos\theta}=50\)
+Hence \(x=25\sin\theta=50\cos\theta\). Solving \(\tan\theta=2\), \(\sin\theta=\frac{2}{\sqrt{5}}, \cos\theta=\frac{1}{\sqrt{5}}\). Thus
+\(x=25\frac{2}{\sqrt{5}}\implies x^2=500\)
+The height of the rhombus is \(x\sin(2\theta)=2x\sin\theta\cos\theta\), so we want
+\(2x^2\sin\theta\cos\theta=\boxed{400}\)","Let the side length of the rhombus be \( x \), and let the lengths of the diagonals be \( d_1 \) and \( d_2 \). The area of the rhombus is \( \frac{d_1 d_2}{2} \). 
+
+For triangle \( ABD \), which has sides \( x, x, d_1 \), the circumradius \( R_1 = 12.5 \). Using the formula for circumradius \( R = \frac{abc}{4\Delta} \), where \( \Delta \) is the area of the triangle:
+\(
+R_1 = \frac{x \cdot x \cdot d_1}{4 \cdot \frac{d_1 d_2}{4}} = \frac{x^2}{d_2} \implies 12.5 = \frac{x^2}{d_2} \implies x^2 = 12.5 d_2.
+\)
+
+For triangle \( ACD \), which has sides \( x, x, d_2 \), the circumradius \( R_2 = 25 \):
+\(
+R_2 = \frac{x \cdot x \cdot d_2}{4 \cdot \frac{d_1 d_2}{4}} = \frac{x^2}{d_1} \implies 25 = \frac{x^2}{d_1} \implies x^2 = 25 d_1.
+\)
+
+Equating the two expressions for \( x^2 \):
+\(
+12.5 d_2 = 25 d_1 \implies d_2 = 2 d_1.
+\)
+
+Using the Pythagorean theorem for the rhombus diagonals:
+\(
+\left(\frac{d_1}{2}\right)^2 + \left(\frac{d_2}{2}\right)^2 = x^2.
+\)
+Substitute \( d_2 = 2d_1 \) and \( x^2 = 25 d_1 \):
+\(
+\frac{d_1^2}{4} + d_1^2 = 25 d_1 \implies \frac{5d_1^2}{4} = 25 d_1 \implies 5d_1 = 100 \implies d_1 = 20, \quad d_2 = 40.
+\)
+
+Thus, the area of the rhombus is:
+\(
+\frac{d_1 d_2}{2} = \frac{20 \cdot 40}{2} = \boxed{400}.
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1987_AIME_Problems_8,What is the largest positive integer \(n\) for which there is a unique integer \(k\) such that \(\frac{8}{15} < \frac{n}{n + k} < \frac{7}{13}\)?,"Solution 1. Multiplying out all of the denominators, we get:
+\begin{align*}104(n+k) &< 195n< 105(n+k)\\ 0 &< 91n - 104k < n + k\end{align*}
+Since \(91n - 104k < n + k\), \(k > \frac{6}{7}n\). Also, \(0 < 91n - 104k\), so \(k < \frac{7n}{8}\). Thus, \(48n < 56k < 49n\). \(k\) is unique if it is within a maximum range of \(112\), so \(n = 112\).","We start by rewriting the inequalities using continued fractions and approximation theory. The goal is to find the largest \( n \) such that the interval \( \left( \frac{6}{7}n, \frac{7}{8}n \right) \) contains exactly one integer \( k \). 
+
+1. **Interval Analysis:**
+   The interval length is:
+   \(
+   \frac{7}{8}n - \frac{6}{7}n = \frac{49n - 48n}{56} = \frac{n}{56}.
+   \)
+   For uniqueness, \( \frac{n}{56} \) must span less than two consecutive integers but more than one. This occurs when the interval's endpoints align precisely between two integers.
+
+2. **Diophantine Approximation:**
+   The midpoint of the interval is approximately:
+   \(
+   k \approx \frac{97n}{112}.
+   \)
+   This suggests the Diophantine equation \( 97n - 112k = 0 \), which has fundamental solution \( n = 112 \), \( k = 97 \).
+
+3. **Verification:**
+   For \( n = 112 \):
+   \(
+   \frac{6}{7} \cdot 112 = 96, \quad \frac{7}{8} \cdot 112 = 98.
+   \)
+   The interval \( (96, 98) \) contains exactly one integer \( k = 97 \). Any larger \( n \) (e.g., 113) would include two integers, violating uniqueness.
+
+**Answer:** \(\boxed{112}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1958_AHSME_Problems_31,"The altitude drawn to the base of an isosceles triangle is \(8\), and the perimeter \(32\). The area of the triangle is:
+\(\textbf{(A)}\ 56\qquad  \textbf{(B)}\ 48\qquad  \textbf{(C)}\ 40\qquad  \textbf{(D)}\ 32\qquad  \textbf{(E)}\ 24\)","Solution 1. Consider the half of the triangle that is left of the altitude. Using the information given in the problem, we can determine that this is a right triangle with one leg of length 8 whose other two sides sum to 16. Through either setting the other leg as \(x\) and the hypotenuse as \(16-x\) and using the Pythagorean Theorem, or by recognizing this \(6-8-10\) triangle, we find that the other leg has length 6. So the triangle's total area is 48, and our answer is \(\fbox{E}\).","To solve the problem of finding the area of an isosceles triangle with an altitude of 8 and a perimeter of 32, we can use a coordinate geometry approach. Here's the step-by-step solution:
+
+1. **Define the Coordinate System**:
+   - Place the base of the triangle along the x-axis, centered at the origin. The vertices of the base are at \((-k, 0)\) and \((k, 0)\), so the base length is \(2k\).
+   - The apex of the triangle is at \((0, 8)\).
+
+2. **Express the Perimeter**:
+   - The perimeter of the triangle is the sum of the lengths of the two equal sides and the base. Each equal side is the distance from \((0, 8)\) to \((k, 0)\), which is \(\sqrt{k^2 + 8^2}\).
+   - The perimeter equation is: \(2\sqrt{k^2 + 64} + 2k = 32\).
+
+3. **Simplify the Perimeter Equation**:
+   - Divide both sides by 2: \(\sqrt{k^2 + 64} + k = 16\).
+   - Let \(s = \sqrt{k^2 + 64}\). Then \(s = 16 - k\).
+
+4. **Solve for \(k\)**:
+   - Square both sides: \(k^2 + 64 = (16 - k)^2\).
+   - Expand the right side: \(k^2 + 64 = 256 - 32k + k^2\).
+   - Cancel \(k^2\) from both sides: \(64 = 256 - 32k\).
+   - Solve for \(k\): \(32k = 192 \implies k = 6\).
+
+5. **Determine the Base and Area**:
+   - The base \(b = 2k = 12\).
+   - The area of the triangle is \(\frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 12 \times 8 = 48\).
+
+The area of the triangle is \(\boxed{48}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1952_AHSME_Problems_16,"If the base of a rectangle is increased by \(10\%\) and the area is unchanged, then the altitude is decreased by:
+\(\textbf{(A) \ }9\%  \qquad \textbf{(B) \ }10\% \qquad \textbf{(C) \ }11\% \qquad \textbf{(D) \ }11\frac{1}{9}\% \qquad \textbf{(E) \ }9\frac{1}{11}\%\)","Solution 1. \(b\cdot a=\frac{11}{10}b\cdot xa\implies x=\frac{10}{11}\). Hence, the altitude is decreased by \(1-x=\frac{1}{11}=\boxed{\textbf{(E)}\ 9\frac{1}{11}\%}\).","To solve the problem using a percentage change formula:
+
+When a quantity is increased by a certain percentage, the percentage decrease required to return to the original value is given by:  
+\(
+\text{Percentage Decrease} = \left(\frac{\text{Percentage Increase}}{100 + \text{Percentage Increase}}\right) \times 100.
+\)  
+Here, the base increases by \(10\%\). Plugging into the formula:  
+\(
+\text{Percentage Decrease} = \left(\frac{10}{100 + 10}\right) \times 100 = \frac{10}{110} \times 100 = \frac{100}{11} \approx 9\frac{1}{11}\%.  
+\)  
+Thus, the altitude decreases by \(\boxed{\textbf{(E)}\ 9\frac{1}{11}\%}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1957_AHSME_Problems_38,"From a two-digit number \(N\) we subtract the number with the digits reversed and find that the result is a positive perfect cube. Then:
+\(\textbf{(A)}\ {N}\text{ cannot end in 5}\qquad\\  \textbf{(B)}\ {N}\text{ can end in any digit other than 5}\qquad \\  \textbf{(C)}\ {N}\text{ does not exist}\qquad\\  \textbf{(D)}\ \text{there are exactly 7 values for }{N}\qquad\\  \textbf{(E)}\ \text{there are exactly 10 values for }{N}\)","Solution 1. The number \(N\) can be written as \(10a+b\) with \(a\) and \(b\) representing the digits. The number \(N\) with its digits reversed is \(10b+a\). Since the problem asks for a positive number as the difference of these two numbers, than \(a>b\). Writing this out, we get \(10a+b-(10b+a)=9a-9b=9(a-b)\). Therefore, the difference must be a multiple of \(9\), and the only perfect cube with less than \(3\) digits and is multiple of \(9\) is \(3^3=27\). Also, that means \(a-b=3\), and there are \(7\) possibilities of that, so our answer is 
+\(\boxed{\textbf{(D)}}\) There are exactly \(7\) values of \(N\)","Let the two-digit number be \( N = 10a + b \), where \( a > b \). The difference is \( 9(a - b) \), which must be a positive perfect cube. Since \( 9 = 3^2 \), the expression \( 3^2(a - b) \) must be a cube. For this to hold, \( (a - b) \) must supply a factor of \( 3 \) to form \( 3^3 \), and any remaining factors must themselves be cubes. Thus, \( a - b = 3 \cdot m^3 \), where \( m \) is an integer. Given \( a, b \) are digits, \( 3 \cdot m^3 \leq 9 \). Only \( m = 1 \) works, so \( a - b = 3 \). The valid pairs \( (a, b) \) are \( (3,0), (4,1), (5,2), (6,3), (7,4), (8,5), (9,6) \), yielding 7 values for \( N \). 
+\(\boxed{\textbf{(D)}}\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1973_AHSME_Problems_30,"Let \([t]\) denote the greatest integer \(\leq t\) where \(t \geq 0\) and \(S = \{(x,y): (x-T)^2 + y^2 \leq T^2 \text{ where } T = t - [t]\}\). Then we have 
+\(\textbf{(A)}\ \text{the point } (0,0) \text{ does not belong to } S \text{ for any } t \qquad\)
+\(\textbf{(B)}\ 0 \leq \text{Area } S \leq \pi \text{ for all } t \qquad\)
+\(\textbf{(C)}\ S \text{ is contained in the first quadrant for all } t \geq 5 \qquad\)
+\(\textbf{(D)}\ \text{the center of } S \text{ for any } t \text{ is on the line } y=x \qquad\)
+\(\textbf{(E)}\ \text{none of the other statements is true}\)","Solution 1. The region \(S\) is a circle radius \(T\) and center \((T,0)\).  Since \(T = t-[t]\), \(0 \le T < 1\).  That means the area of the circle is less than \(\pi\), and since the region can also be just a dot (achieved when \(t\) is integer), the answer is \(\boxed{\textbf{(B)}}\).","To evaluate the options, we test specific values of \( t \):
+
+1. **Option A**: When \( t = 1 \), \( T = 0 \). The circle \( S \) collapses to the single point \((0,0)\). Thus, \((0,0) \in S\), refuting A.
+
+2. **Option B**: The area of \( S \) is \( \pi T^2 \). Since \( T \in [0,1) \), the area ranges from \( 0 \) (when \( T = 0 \)) to \( \pi \) (approached as \( T \to 1 \)). For example, at \( t = 0.5 \), \( T = 0.5 \), and the area is \( \pi/4 \). This confirms \( 0 \leq \text{Area } S \leq \pi \), validating B.
+
+3. **Option C**: For \( t = 5.5 \), \( T = 0.5 \). The circle spans \( y \in [-0.5, 0.5] \), entering the fourth quadrant. Hence, \( S \) is not confined to the first quadrant, invalidating C.
+
+4. **Option D**: The center \((T, 0)\) lies on the x-axis, not \( y = x \), unless \( T = 0 \). At \( t = 0.5 \), the center is \((0.5, 0)\), disproving D.
+
+Since B holds and others fail, the answer is \(\boxed{\textbf{(B)}}\).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1988_AHSME_Problems_4,"The slope of the line \(\frac{x}{3} + \frac{y}{2} = 1\) is
+\(\textbf{(A)}\ -\frac{3}{2}\qquad \textbf{(B)}\ -\frac{2}{3}\qquad \textbf{(C)}\ \frac{1}{3}\qquad \textbf{(D)}\ \frac{2}{3}\qquad \textbf{(E)}\ \frac{3}{2}\)","Solution 1. To find the slope, all we have to do is put the equation into slope-intercept form. We subtract \(\frac{x}{3}\) from both sides and then multiple all 
+terms by \(2\). This yields \(y=-\frac{2}{3}x+1\), so the slope is \(-\frac{2}{3} \implies \boxed{\text{B}}\).","To determine the slope, identify two points on the line by finding its intercepts.  
+- **x-intercept**: Set \( y = 0 \):  
+  \( \frac{x}{3} + \frac{0}{2} = 1 \implies x = 3 \). Point: \( (3, 0) \).  
+- **y-intercept**: Set \( x = 0 \):  
+  \( \frac{0}{3} + \frac{y}{2} = 1 \implies y = 2 \). Point: \( (0, 2) \).  
+
+Calculate the slope \( m \) using the formula \( m = \frac{y_2 - y_1}{x_2 - x_1} \):  
+\( m = \frac{0 - 2}{3 - 0} = -\frac{2}{3} \).  
+
+Thus, the slope is \( \boxed{\text{B}} \).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+1966_AHSME_Problems_30,"If three of the roots of \(x^4+ax^2+bx+c=0\) are \(1\), \(2\), and \(3\) then the value of \(a+c\) is:
+\(\text{(A) } 35 \quad \text{(B) } 24 \quad \text{(C) } -12 \quad \text{(D) } -61 \quad \text{(E) } -63\)","Solution 1. Since this is a quartic equation, there are going to be \(4\) solutions. 
+By Vieta's formulas, since the \(x^3\) term is \(0\), the sum of the roots is also \(0\). Therefore, the 4th root of this polynomial is \(-6\). 
+Lastly, by Vieta's Formulas, \(a+c=-(1\cdot2+1\cdot3+1\cdot-6+2\cdot3+2\cdot-6+3\cdot-6)+1\cdot2\cdot3\cdot-6=-25-36=-61= \fbox{D}\)","To solve for \( a + c \) given three roots of the quartic equation \( x^4 + ax^2 + bx + c = 0 \), substitute each root into the equation and solve the resulting system of linear equations:
+
+1. **Substitute the roots** \( x = 1, 2, 3 \) into the equation:
+   - For \( x = 1 \): \( 1 + a + b + c = 0 \)  
+   - For \( x = 2 \): \( 16 + 4a + 2b + c = 0 \)  
+   - For \( x = 3 \): \( 81 + 9a + 3b + c = 0 \)
+
+2. **Form a system of equations**:
+   \(
+   \begin{cases}
+   a + b + c = -1 \quad \text{(Equation 1)} \\
+   4a + 2b + c = -16 \quad \text{(Equation 2)} \\
+   9a + 3b + c = -81 \quad \text{(Equation 3)}
+   \end{cases}
+   \)
+
+3. **Eliminate variables**:
+   - Subtract Equation 1 from Equation 2:  
+     \( 3a + b = -15 \quad \text{(Equation 4)} \)
+   - Subtract Equation 2 from Equation 3:  
+     \( 5a + b = -65 \quad \text{(Equation 5)} \)
+
+4. **Solve for \( a \) and \( b \)**:
+   - Subtract Equation 4 from Equation 5:  
+     \( 2a = -50 \implies a = -25 \)
+   - Substitute \( a = -25 \) into Equation 4:  
+     \( 3(-25) + b = -15 \implies b = 60 \)
+
+5. **Solve for \( c \)** using Equation 1:  
+   \( -25 + 60 + c = -1 \implies c = -36 \)
+
+6. **Compute \( a + c \)**:  
+   \( a + c = -25 + (-36) = -61 \)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2012_USAJMO_Problems_1,"Given a triangle \(ABC\), let \(P\) and \(Q\) be points on segments \(\overline{AB}\) and \(\overline{AC}\), respectively, such that \(AP = AQ\).  Let \(S\) and \(R\) be distinct points on segment \(\overline{BC}\) such that \(S\) lies between \(B\) and \(R\), \(\angle{BPS} = \angle{PRS}\), and \(\angle{CQR} = \angle{QSR}\).  Prove that \(P\), \(Q\), \(R\), \(S\) are concyclic (in other words, these four points lie on a circle).","Solution 1. Since \(\angle BPS = \angle PRS\), the circumcircle of triangle \(PRS\) is tangent to \(AB\) at \(P\).  Similarly, since \(\angle CQR = \angle QSR\), the circumcircle of triangle \(QRS\) is tangent to \(AC\) at \(Q\).
+[asy] import markers;  unitsize(0.5 cm);  pair A, B, C, O, P, Q, R, S;  A = (2,12); B = (0,0); C = (14,0); P = intersectionpoint(A--B,Circle(A,8)); Q = intersectionpoint(A--C,Circle(A,8)); O = extension(P, P + rotate(90)*(A - P), Q, Q + rotate(90)*(A - Q)); S = intersectionpoint(B--C,arc(O, abs(O - P), 180, 270)); R = intersectionpoint(B--C,arc(O, abs(O - P), 270, 360));  draw(A--B--C--cycle); draw(Circle(O, abs(O - P))); draw(S--P--R); draw(S--Q--R);  label(""\(A\)"", A, N); label(""\(B\)"", B, SW); label(""\(C\)"", C, SE); label(""\(P\)"", P, W); label(""\(Q\)"", Q, NE); label(""\(R\)"", R, SE); label(""\(S\)"", S, SW);  markangle(1, B, P, S, radius=4mm, marker(markinterval(stickframe(n=1,2mm),true))); markangle(1, P, R, S, radius=4mm, marker(markinterval(stickframe(n=1,2mm),true))); markangle(1, R, Q, C, radius=4mm, marker(markinterval(stickframe(n=2,2mm),true))); markangle(1, R, S, Q, radius=4mm, marker(markinterval(stickframe(n=2,2mm),true))); [/asy]
+For the sake of contradiction, suppose that the circumcircles of triangles \(PRS\) and \(QRS\) are not the same circle.  Since \(AP = AQ\), \(AP^2 = AQ^2\), so the power of A with respect to both circumcircles is the same. Thus, \(A\) lies on the  of both circles.  However, both circles pass through \(R\) and \(S\), so the radical axis of both circles is \(RS\).  Hence, \(A\) lies on \(RS\), which is a contradiction.
+Therefore, the two circumcircles are the same circle.  In other words, \(P\), \(Q\), \(R\), and \(S\) all lie on the same circle.","1. **Spiral Similarity Setup:**
+   - Given \(\angle BPS = \angle PRS\), there exists a spiral similarity centered at \(S\) mapping \(B\) to \(P\) and \(P\) to \(R\). This implies:
+     \(
+     \frac{SB}{SP} = \frac{SP}{SR} \implies SP^2 = SB \cdot SR
+     \)
+   - Similarly, \(\angle CQR = \angle QSR\) implies a spiral similarity centered at \(S\) mapping \(C\) to \(Q\) and \(Q\) to \(R\), giving:
+     \(
+     SQ^2 = SC \cdot SR
+     \)
+
+2. **Power of Point \(S\):**
+   - The equations \(SP^2 = SB \cdot SR\) and \(SQ^2 = SC \cdot SR\) show \(S\) has equal power with respect to the circumcircles of \(\triangle BPR\) and \(\triangle CQR\). Thus, \(S\) lies on their radical axis.
+
+3. **Radical Axis Contradiction:**
+   - Since \(AP = AQ\), the power of \(A\) with respect to both circumcircles is equal (\(AP^2 = AQ^2\)). Hence, \(A\) lies on the radical axis of these circles, which is line \(RS\).
+   - However, \(A\) cannot lie on \(RS\) as it is outside \(\triangle ABC\). This contradiction implies the two circumcircles must coincide.
+
+4. **Concyclicity Conclusion:**
+   - The merging of circumcircles means \(P\), \(Q\), \(R\), and \(S\) all lie on the same circle, proving they are concyclic.",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2022_USAJMO_Problems_5,"Find all pairs of primes \((p,q)\) for which \(p-q\) and \(pq-q\) are both perfect squares.","Solution 1. We first consider the case where one of \(p,q\) is even. If \(p=2\), \(p-q=0\) and \(pq-q=2\) which doesn't satisfy the problem restraints. If \(q=2\), we can set \(p-2=x^2\) and \(2p-2=y^2\) giving us \(p=y^2-x^2=(y+x)(y-x)\). This forces \(y-x=1\) so \(p=2x+1\rightarrow 2x+1=x^2+2 \rightarrow x=1\) giving us the solution \((p,q)=(3,2)\).
+
+Now assume that \(p,q\) are both odd primes. Set \(p-q=x^2\) and \(pq-q=y^2\) so \((pq-q)-(p-q)=y^2-x^2 \rightarrow p(q-1)\) \(=(y+x)(y-x)\). Since \(y+x>y-x\), \(p | (x+y)\). Note that \(q-1\) is an even integer and since \(y+x\) and \(y-x\) have the same parity, they both must be even. Therefore, \(x+y=pk\) for some positive even integer \(k\). On the other hand, \(p>p-q=x^2 \rightarrow p>x\) and \(p^2-p>pq-q=y^2 \rightarrow p>y\). Therefore, \(2p>x+y\) so \(x+y=p\), giving us a contradiction.
+
+Therefore, the only solution to this problem is \((p,q)=(3,2)\).
+","We start by letting \( p - q = a^2 \) and \( pq - q = b^2 \), where \( a, b \in \mathbb{N} \). The second equation can be rewritten as \( q(p - 1) = b^2 \). Since \( q \) is prime, \( q \) must divide \( b^2 \), implying \( q \mid b \). Let \( b = kq \), so \( q(p - 1) = k^2q^2 \). Dividing by \( q \), we get \( p - 1 = k^2q \), or \( p = k^2q + 1 \).
+
+Substitute \( p = k^2q + 1 \) into \( p - q = a^2 \):
+\(
+k^2q + 1 - q = a^2 \implies q(k^2 - 1) + 1 = a^2.
+\)
+Rearranged, this becomes:
+\(
+q(k^2 - 1) = (a - 1)(a + 1).
+\)
+Since \( q \) is prime, it divides either \( a - 1 \) or \( a + 1 \).
+
+**Case 1:** \( q \mid (a - 1) \). Let \( a - 1 = mq \), so \( a = mq + 1 \). Substitute into the equation:
+\(
+q(k^2 - 1) = mq(mq + 2) \implies k^2 - 1 = m(mq + 2).
+\)
+Expanding and solving for \( k^2 \):
+\(
+k^2 = m^2q + 2m + 1.
+\)
+Testing \( m = 0 \), we get \( k^2 = 1 \implies k = 1 \). Then \( p = 1 \cdot q + 1 \). For \( p \) and \( q \) to be primes differing by 1, \( q = 2 \) and \( p = 3 \), yielding the solution \( (3, 2) \).
+
+**Case 2:** \( q \mid (a + 1) \). Let \( a + 1 = mq \), so \( a = mq - 1 \). Substitute:
+\(
+q(k^2 - 1) = (mq - 2)mq \implies k^2 - 1 = m(mq - 2).
+\)
+Solving for \( k^2 \):
+\(
+k^2 = m^2q - 2m + 1.
+\)
+Testing \( m = 1 \), \( k^2 = q - 1 \). For \( q \) prime, \( q = k^2 + 1 \). Only \( k = 1 \) gives prime \( q = 2 \), leading to \( p = 3 \), again \( (3, 2) \).
+
+No other \( m, k, q \) satisfy the primality conditions. Thus, \( (3, 2) \).",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,
+2022_USAJMO_Problems_4,"Let \(ABCD\) be a rhombus, and let \(K\) and \(L\) be points such that \(K\) lies inside the rhombus, \(L\) lies outside the rhombus, and \(KA=KB=LC=LD\). Prove that there exist points \(X\) and \(Y\) on lines \(AC\) and \(BD\) such that \(KXLY\) is also a rhombus.","Solution 1. Let's draw (\(\ell\)) perpendicular bisector of \(\overline{KL}\). Let \(X, Y\) be intersections of \(\ell\) with \(AC\) and \(BD\), respectively. \(KXLY\) is a kite. Let \(O\) mid-point of \(\overline{KL}\). Let \(M\) mid-point of \(\overline{BD}\) (and also \(M\) is mid-point of \(\overline{AC}\)). \(X, O, Y\) are on the line \(\ell\).
+\(BK=DL\), \(BX=XD\), \(XK=XL\) and so \(\triangle BXK \cong \triangle DXL\) (side-side-side). By spiral similarity, \(\triangle BXD \sim\triangle KXL\). Hence, we get
+\(\angle XBD = \angle XDB = \angle XKL = \angle XLK = b .\)
+Similarly, \(AK =CL\), \(YK = YL\), \(YA=YC\) and so \(\triangle AKY \cong \triangle CYL\) (side-side-side). From spiral similarity, \(\triangle YKL\sim \triangle YAC\). Thus,
+\(\angle YAC = \angle YCA = \angle YKL = \angle YLK = a .\)
+If we can show that \(a=b\), then the kite \(KXLY\) will be a rhombus.
+By spiral similarities, \(\dfrac{BX}{BD} = \dfrac{XK}{KL}\) and \(\dfrac{YA}{AC} = \dfrac{YK}{KL}\). Then, \(KL = \dfrac{BD \cdot XK}{BX} = \dfrac{AC \cdot YK}{YA}\).
+\(\dfrac{XK}{YK} = \dfrac{AC \cdot BX}{AY \cdot BD}\). Then, \(\dfrac{YK}{XK} = \dfrac{(BD/2) \cdot AY}{(AC/2) \cdot BX} = \dfrac{\sin b}{\sin a}\). Also, in the right triangles \(\triangle KXO\) and \(\triangle KYO\),  \(\dfrac{YK}{XK} = \dfrac{OK/\cos a}{OK/\cos b} = \dfrac{\cos b}{\cos a}\). Therefore,
+\(\dfrac{\sin b}{\sin a} = \dfrac{\cos b}{\cos a}.\)
+\(\sin a \cos b = \sin b \cos a \implies \sin a \cos b - \sin b \cos a = 0 \implies \sin(a-b) = 0\) and we get \(a=b\).","To solve the problem of proving the existence of points \(X\) and \(Y\) on the diagonals \(AC\) and \(BD\) of rhombus \(ABCD\) such that \(KXLY\) is a rhombus, we can use a coordinate geometry approach. Here is the step-by-step solution:
+
+1. **Coordinate Setup**:
+   - Place the rhombus \(ABCD\) in a coordinate system with its center at the origin. The diagonals \(AC\) and \(BD\) are along the x-axis and y-axis, respectively.
+   - Let the vertices be \(A(p, 0)\), \(C(-p, 0)\), \(B(0, q)\), and \(D(0, -q)\).
+
+2. **Equations for Points \(K\) and \(L\)**:
+   - Points \(K\) and \(L\) satisfy \(KA = KB\) and \(LC = LD\). These conditions lead to the equations:
+     - For \(K\): \(px_1 - qy_1 = \frac{p^2 - q^2}{2}\)
+     - For \(L\): \(px_2 - qy_2 = \frac{q^2 - p^2}{2}\)
+
+3. **Midpoints and Perpendicular Diagonals**:
+   - The diagonals of a rhombus bisect each other and are perpendicular. For \(KXLY\) to be a rhombus, the diagonals \(KL\) and \(XY\) must bisect each other and be perpendicular.
+   - The midpoint of \(KL\) is \(\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)\). The midpoint of \(XY\) (where \(X(a, 0)\) and \(Y(0, b)\)) must be the same, leading to \(a = x_1 + x_2\) and \(b = y_1 + y_2\).
+
+4. **Perpendicularity Condition**:
+   - The slopes of \(KL\) and \(XY\) must be negative reciprocals. The slope of \(KL\) is \(\frac{y_2 - y_1}{x_2 - x_1}\), and the slope of \(XY\) is \(-\frac{b}{a}\). Setting their product to \(-1\) gives \(\frac{y_2 - y_1}{x_2 - x_1} \cdot \left(-\frac{b}{a}\right) = -1\), leading to \(\frac{y_2 - y_1}{x_2 - x_1} = \frac{a}{b}\).
+
+5. **Solving for \(a\) and \(b\)**:
+   - Using the equations for \(K\) and \(L\), we find \(x_2 = x_1 - p\) and solve for \(a\) and \(b\) in terms of \(x_1\). This gives \(a = 2x_1 - p\) and \(b = \frac{p}{q}(2x_1 - p)\).
+
+6. **Existence of Points \(X\) and \(Y\)**:
+   - Since \(K\) and \(L\) are given points, the derived relationships ensure the existence of \(a\) and \(b\) such that \(X(a, 0)\) and \(Y(0, b)\) lie on \(AC\) and \(BD\), respectively. This confirms that \(KXLY\) is a rhombus.
+
+Thus, the existence of points \(X\) and \(Y\) is proven, and \(KXLY\) forms a rhombus.
+
+\(
+\boxed{KXLY \text{ is a rhombus as constructed.}}
+\)",deepseek-reasoner_Claude_correctness_randomly_selected_novelty,

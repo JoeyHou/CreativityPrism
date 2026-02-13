@@ -1,0 +1,314 @@
+"HITId","HITTypeId","Title","Description","Keywords","Reward","CreationTime","MaxAssignments","RequesterAnnotation","AssignmentDurationInSeconds","AutoApprovalDelayInSeconds","Expiration","NumberOfSimilarHITs","LifetimeInSeconds","AssignmentId","WorkerId","AssignmentStatus","AcceptTime","SubmitTime","AutoApprovalTime","ApprovalTime","RejectionTime","RequesterFeedback","WorkTimeInSeconds","LifetimeApprovalRate","Last30DaysApprovalRate","Last7DaysApprovalRate","Input.problem_id","Input.problem","Input.cleaned_references","Input.cleaned_response","Input.model","Input.image_in_problem","Answer.correctness.correct","Answer.correctness.incorrect","Answer.novelty.not_novel","Answer.novelty.novel","Answer.worker_feedbacks","Approve","Reject"
+"3HXCEECSR59YI51SKI3OIFF2AB5YZU","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","3ND9UOO814IDBVNIGJ0TDNE3ZMKLWO","ASQIP0BTUIBHO","Submitted","Mon Dec 15 16:09:58 PST 2025","Mon Dec 15 16:16:27 PST 2025","Thu Dec 18 16:16:27 PST 2025","","","","389","100% (215/215)","100% (73/73)","100% (73/73)","2010_USAMO_Problems_6","A blackboard contains 68 pairs of nonzero integers.  Suppose that for each positive integer \(k\) at most one of the pairs \((k, k)\) and \((-k, -k)\) is written on the blackboard.  A student erases some of the 136 integers, subject to the condition that no two erased integers may add to 0.  The student then scores one point for each of the 68 pairs in which at least one integer is erased.  Determine, with proof, the largest number \(N\) of points that the student can guarantee to score regardless of which 68 pairs have been written on the board.","Solution 1. Answer: 43
+
+Attainability: Consider 8 distinct positive numbers. Let there be 5 pairs for each of the numbers including 2 clones of that number. Let there also be 28 pairs that include the negatives of those numbers such that each negative associates with another negative once and exactly once (in graph theoretic terms, a K8). Let x be the number of positives chosen out of these 8 (assume the other chosen numbers are negatives) for erasing; then, the number of points the student scores is \(28 + 5x - {x \choose 2}\), which is maximized at x=5 and x=6, and the maximum value is \(43\). Choosing the first 5 numbers as positive and the other three as negative attains this. Hence, 43 is a possible maximum possible score.
+
+Bounding: We use expected values. WLOG all the pairs of numbers with both numbers identical have only positive values. Consider flipping a weighted coin whether to choose the positive number or its negation for each positive number; it chooses positive with probability p. The pairs with both numbers same are chosen with probability p, the pairs (k, -k) are chosen with probability 1, and the pairs (x, y) for distinct x and y that sum to a nonzero number are chosen with probability \(1-p^2\). We are trying to minimize the expected value, so we can assume that no pairs (k, -k) exist. Let A be the number of (k, k) pairs, and 68-A be the number of (x, y) pairs. The expected number of points scored is \(Ap + (68-A)(1-p^2)\). We want to prove this is larger than 42 at all times for some choice of p. If \(A < 36\), \(1/2\) works for p to give this bound. If \(A > 36\), \(5/8\) works for p for p to give the desired bound. If \(A = 36\), we can use \(3/5\) for p to get the desired bound. Hence, in any case, the expected value for the number of points scored across all of these weighted processes is larger than 42, so there exists some case that gives a score of 43. Hence, bounding is complete. We are done with both parts. Q.E.D.","To determine the largest number \( N \) of points that the student can guarantee to score regardless of which 68 pairs have been written on the board, we can use a combinatorial argument involving the pigeonhole principle and careful construction of erasure sets.
+
+### Key Steps and Reasoning:
+
+1. **Problem Understanding**:
+   - The student needs to erase integers such that no two erased integers are additive inverses.
+   - Each pair on the blackboard contributes a point if at least one integer is erased.
+   - The goal is to maximize the minimum guaranteed score over all possible configurations of pairs.
+
+2. **Graph Theoretical Insight**:
+   - Consider the integers as nodes in a graph where edges represent pairs.
+   - The student's task is to select an independent set (no two nodes are additive inverses) that covers as many edges (pairs) as possible.
+
+3. **Adversarial Configuration**:
+   - The worst-case scenario involves pairs structured to minimize the student's score. This includes pairs like \((k, -k)\) and dense configurations of other pairs.
+   - For example, a configuration with 28 pairs forming a complete graph \( K_8 \) among negatives and 5 pairs for each of 8 positives.
+
+4. **Balanced Erasure Strategy**:
+   - The student can balance erasures between positive and negative integers to cover the maximum number of pairs.
+   - For each positive integer \( k \), erasing \( k \) or \(-k \) affects the coverage of pairs involving \( k \) or \(-k \).
+
+5. **Combinatorial Bounding**:
+   - Using a specific example, erasing 5 out of 8 positives and 3 negatives maximizes the score.
+   - The formula \( 28 + 5x - \binom{x}{2} \) is maximized at \( x = 5 \) or \( x = 6 \), giving a score of 43.
+
+6. **Generalization and Lower Bound**:
+   - For any configuration, the expected number of pairs covered using a probabilistic method (choosing positives with probability \( p \)) is shown to be at least 43.
+   - This expectation ensures the existence of a deterministic strategy achieving at least 43 points.
+
+### Conclusion:
+By carefully analyzing the worst-case configurations and using a balanced strategy to erase integers, the student can guarantee scoring at least 43 points regardless of the initial pairs. Thus, the largest number \( N \) of points that can be guaranteed is:
+
+\(
+\boxed{43}
+\)","deepseek-reasoner","","true","false","true","false",""
+"37SDSEDIOSIM83P2Z3W2R87O4HQ18V","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","3BDCF01OGHAH00IIVKIHYKZJAUKLYN","ASQIP0BTUIBHO","Submitted","Mon Dec 15 18:44:45 PST 2025","Mon Dec 15 18:47:19 PST 2025","Thu Dec 18 18:47:19 PST 2025","","","","154","100% (215/215)","100% (73/73)","100% (73/73)","2023_USAJMO_Problems_5","A positive integer \(a\) is selected, and some positive integers are written on a board. Alice and Bob play the following game. On Alice's turn, she must replace some integer \(n\) on the board with \(n+a\), and on Bob's turn he must replace some even integer \(n\) on the board with \(n/2\). Alice goes first and they alternate turns. If on his turn Bob has no valid moves, the game ends.
+After analyzing the integers on the board, Bob realizes that, regardless of what moves Alice makes, he will be able to force the game to end eventually. Show that, in fact, for this value of \(a\) and these integers on the board, the game is guaranteed to end regardless of Alice's or Bob's moves.","Solution 1. We claim that the game will always end if and only if \(\nu_{2}(n) < \nu_{2} (a)\) for all \(n\) that are in the list of positive integers.
+
+First, we will prove the if direction. Notice that if Alice adds \(a\) to \(n,\) since we have \(\nu_{2} (ka+n) = \nu_{2} (n) < \nu_{2} (a)\) for all integers \(k>0,\) eventually Bob will decrease \(\nu_{2} (n)\) by \(1,\) and Alice will not be able to change \(\nu_{2} (n),\) and so \(\nu_{2}(n)\) will eventually become \(0.\)
+Similarly, all of the other numbers on the list will have the same fate as \(n,\) and so, no matter what Bob or Alice do, the game will end.
+
+Now, we complete the only if direction, i.e. if \(\nu_{2} (n) \ge \nu_{2} (a),\) where \(n\) is one of the numbers in the list, we will prove that Alice can keep the game going forever. 
+
+Notice that Bob can only decrease \(\nu_{2} (n)\) by \(1\) at a time, and so if \(\nu_{2} (n) \le \nu_{2} (a),\) we need \(\nu_{2} (n) = \nu_{2} (a)\) at some point. But, then, if this is true, take \(n = 2^{k}(2m+1),\) and \(a = 2^{k}(2\ell+1),\) and notice that 
+\(a+n = 2^{k}(2m+1)+2^{k}(2\ell+1) = 2^{k}(2m+2\ell+2) = 2^{k+1}(m+\ell+1),\) so
+\(\nu_{2}(a+n) > \nu_{2} (n).\)
+Thus, if Bob gets \(\nu_{2} (n)\) equal to \(\nu_{2} (a),\) Alice can simply add \(a\) to \(n,\) and then \(\nu_{2} (n) > \nu_{2} (a)\) again. Thus, Alice can keep the game going forever, and hence we are done.","We analyze the game using a *potential function* approach. For each integer \( n \) on the board, define its potential as \( \nu_2(n) \), the exponent of 2 in its prime factorization. The total potential of the board is the sum of potentials of all numbers. We show this potential strictly decreases over time under the given conditions, ensuring termination.
+
+1. **Initial Setup:** Suppose all integers \( n \) on the board satisfy \( \nu_2(n) < \nu_2(a) \). Let \( S = \sum_{n \text{ on board}} \nu_2(n) \) be the total potential.
+
+2. **Alice's Move:** When Alice adds \( a \) to a number \( n \), since \( \nu_2(n) < \nu_2(a) \), we have \( \nu_2(n + a) = \nu_2(n) \). This follows because \( a = 2^{\nu_2(a)} \cdot k \) (where \( k \) is odd), and \( n = 2^{\nu_2(n)} \cdot m \) (with \( m \) odd and \( \nu_2(n) < \nu_2(a) \)). Then \( n + a = 2^{\nu_2(n)}(m + 2^{\nu_2(a) - \nu_2(n)}k) \), where the term in parentheses is odd. Thus, \( \nu_2(n + a) = \nu_2(n) \), leaving the total potential \( S \) unchanged.
+
+3. **Bob's Move:** Bob replaces an even \( n \) with \( n/2 \), reducing \( \nu_2(n) \) by 1. This strictly decreases \( S \).
+
+4. **Termination Argument:** Initially, \( S \) is finite. Since Alice cannot increase \( S \) and Bob repeatedly decreases it, \( S \) must eventually reach 0. When \( S = 0 \), all numbers are odd, leaving Bob with no valid moves. Hence, the game terminates.","deepseek-reasoner","","true","false","true","false",""
+"372AGES0JNL0G9PR55N9DY6UZOSXRU","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","3TU5ZICBRXHDCR7DALSJGTABRL4Q83","ASQIP0BTUIBHO","Submitted","Mon Dec 15 16:03:07 PST 2025","Mon Dec 15 16:06:45 PST 2025","Thu Dec 18 16:06:45 PST 2025","","","","218","100% (215/215)","100% (73/73)","100% (73/73)","2003_AMC_8_Problems_18","Each of the twenty dots on the graph below represents one of Sarah's classmates.  Classmates who are friends are connected with a line segment.  For her birthday party, Sarah is inviting only the following:  all of her friends and all of those classmates who are friends with at least one of her friends.  How many classmates will not be invited to Sarah's party?
+[asy] pair a=(102,256), b=(68,131), c=(162,101), d=(134,150); pair e=(269,105), f=(359,104), g=(303,12), h=(579,211); pair i=(534, 342), j=(442,432), k=(374,484), l=(278,501); pair m=(282,411), n=(147,451), o=(103,437), p=(31,373); pair q=(419,175), r=(462,209), s=(477,288), t=(443,358); pair oval=(282,303); draw(l--m--n--cycle); draw(p--oval); draw(o--oval); draw(b--d--oval); draw(c--d--e--oval); draw(e--f--g--h--i--j--oval); draw(k--oval); draw(q--oval); draw(s--oval); draw(r--s--t--oval); dot(a); dot(b); dot(c); dot(d); dot(e); dot(f); dot(g); dot(h); dot(i); dot(j); dot(k); dot(l); dot(m); dot(n); dot(o); dot(p); dot(q); dot(r); dot(s); dot(t); filldraw(yscale(.5)*Circle((282,606),80),white,black); label(scale(0.75)*""Sarah"", oval);[/asy]
+\(\textbf{(A)}\ 1\qquad\textbf{(B)}\ 4\qquad\textbf{(C)}\ 5\qquad\textbf{(D)}\ 6\qquad\textbf{(E)}\ 7\)","Solution 1. There are \(3\) people who are friends with only each other who won't be invited, plus \(1\) person who has no friends, and \(2\) people who are friends of friends of friends who won’t be invited. So the answer is \(\boxed{\textbf{(D)}\ 6}\).","We model the problem using graph theory. Sarah's classmates form a graph where edges represent friendships. Sarah (not a node) is connected to her friends. Invited classmates include her direct friends and their friends.  
+
+1. **Identify Sarah's friends (direct neighbors):** From the Asymptote code, nodes connected to Sarah (oval) are \( p, o, d, e, j, k, q, s \).  
+2. **Find friends of friends:** For each friend, list their adjacent classmates (excluding Sarah):  
+   - \( d \) connects to \( b, c, e \)  
+   - \( e \) connects to \( d, c, f \)  
+   - \( j \) connects to \( i \)  
+   - \( s \) connects to \( r, t \)  
+   Others (\( p, o, k, q \)) have no classmates as friends.  
+3. **Combine invited sets:**  
+   - Direct friends: \( \{p, o, d, e, j, k, q, s\} \) (8 people).  
+   - Friends of friends: \( \{b, c, f, i, r, t\} \) (6 people).  
+   Total invited: \( 8 + 6 = 14 \).  
+
+4. **Calculate uninvited:** \( 20 - 14 = 6 \).  
+
+Uninvited classmates are \( a \) (isolated), \( g, h \) (friends of friends of friends), and \( l, m, n \) (closed trio). Thus, the answer is \(\boxed{\textbf{(D)}\ 6}\).","deepseek-reasoner","","true","false","false","true","boarderline"
+"3TZDZ3Y0KBMMM88C4V2GR42ZON819K","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","39GAF6DQWBGN6ZJ9XZDE76MBU7DV1I","ASQIP0BTUIBHO","Submitted","Mon Dec 15 19:59:46 PST 2025","Mon Dec 15 20:08:18 PST 2025","Thu Dec 18 20:08:18 PST 2025","","","","512","100% (215/215)","100% (73/73)","100% (73/73)","2011_AIME_I_Problems_12","Six men and some number of women stand in a line in random order. Let \(p\) be the probability that a group of at least four men stand together in the line, given that every man stands next to at least one other man. Find the least number of women in the line such that \(p\) does not exceed 1 percent.","Solution 1. Let \(n\) be the number of women present, and let _ be some positive number of women between groups of men.  Since the problem states that every man stands next to another man, there cannot be isolated men.  Thus, there are five cases to consider, where \((k)\) refers to a consecutive group of \(k\) men:
+For the first case, we can place the three groups of men in between women.  We can think of the groups of men as dividers splitting up the \(n\) women.  Since there are \(n+1\) possible places to insert the dividers, and we need to choose any three of these locations, we have \(\dbinom{n+1}{3}\) ways.
+The second, third, and fourth cases are like the first, only that we need to insert two dividers among the \(n+1\) possible locations.  Each gives us \(\dbinom{n+1}{2}\) ways, for a total of \(3\dbinom{n+1}{2}\) ways.
+The last case gives us \(\dbinom{n+1}{1}=n+1\) ways.
+Therefore, the total number of possible ways where there are no isolated men is
+\(\dbinom{n+1}{3}+3\dbinom{n+1}{2}+(n+1).\)
+The total number of ways where there is a group of at least four men together is the sum of the third, fourth, and fifth case, or
+\(2\dbinom{n+1}{2}+(n+1).\)
+Thus, we want to find the minimum possible value of \(n\) where \(n\) is a positive integer such that
+\(\dfrac{2\dbinom{n+1}{2}+(n+1)}{\dbinom{n+1}{3}+3\dbinom{n+1}{2}+(n+1)}\le\dfrac{1}{100}.\)
+After simplification, we arrive at \(\dfrac{6(n+1)}{n^2+8n+6}\le\dfrac{1}{100}.\)
+Simplifying again, we see that we seek the smallest positive integer value of \(n\) such that \(n(n-592)\ge594\). Clearly \(n>592\), or the left side will not even be positive; we quickly see that \(n=593\) is too small but \(n=\boxed{594}\) satisfies the inequality.","To solve the problem, we need to find the minimum number of women \( n \) such that the probability \( p \) of having at least four men standing together, given that every man stands next to at least one other man, does not exceed 1%.
+
+### Key Steps:
+
+1. **Valid Arrangements**:
+   - We consider the valid arrangements where all men are in groups of at least 2. The possible groupings are:
+     - One group of 6 men.
+     - One group of 4 men and one group of 2 men.
+     - Two groups of 3 men.
+     - Three groups of 2 men.
+   - The number of ways to place these groups among \( n \) women is calculated using combinations.
+
+2. **Favorable Arrangements**:
+   - The favorable arrangements are those with at least one group of 4 or more men. This includes:
+     - One group of 6 men.
+     - One group of 4 men and one group of 2 men.
+
+3. **Probability Calculation**:
+   - The probability \( p \) is the ratio of favorable arrangements to valid arrangements.
+   - Using combinatorial methods, we derive the expression for \( p \).
+
+4. **Inequality Setup**:
+   - We set up the inequality to ensure \( p \leq \frac{1}{100} \):
+     \(
+     \frac{6(n + 1)}{n^2 + 8n + 6} \leq \frac{1}{100}
+     \)
+   - Simplifying this inequality leads to solving a quadratic equation, which gives the minimum value of \( n \).
+
+### Solution:
+
+1. **Valid Arrangements**:
+   - The total number of valid arrangements is given by:
+     \(
+     \binom{n+1}{3} + 3\binom{n+1}{2} + (n+1)
+     \)
+
+2. **Favorable Arrangements**:
+   - The number of favorable arrangements is given by:
+     \(
+     2\binom{n+1}{2} + (n+1)
+     \)
+
+3. **Probability Expression**:
+   - The probability \( p \) is:
+     \(
+     p = \frac{2\binom{n+1}{2} + (n+1)}{\binom{n+1}{3} + 3\binom{n+1}{2} + (n+1)}
+     \)
+
+4. **Simplifying the Inequality**:
+   - After simplification, the inequality becomes:
+     \(
+     \frac{6(n + 1)}{n^2 + 8n + 6} \leq \frac{1}{100}
+     \)
+   - Solving this inequality leads to the quadratic equation:
+     \(
+     n^2 - 592n - 594 \geq 0
+     \)
+   - The smallest integer solution to this inequality is \( n = 594 \).
+
+### Final Answer:
+\(
+\boxed{594}
+\)","deepseek-reasoner","","true","false","true","false",""
+"37Y5RYYI18LCHOP4KUNE38BQLQBXSI","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","3F1567XTNGLDQWQNFDYXGP5MBRMQ9S","ASQIP0BTUIBHO","Submitted","Mon Dec 15 19:29:06 PST 2025","Mon Dec 15 19:33:32 PST 2025","Thu Dec 18 19:33:32 PST 2025","","","","266","100% (215/215)","100% (73/73)","100% (73/73)","2004_USAMO_Problems_6","A circle \(\omega\) is inscribed in a quadrilateral \(ABCD\).  Let \(I\) be the center of \(\omega\).  Suppose that
+Prove that \(ABCD\) is an .","Solution 1. Our proof is based on the following key Lemma.
+: If a circle \(\omega\), centered at \(I\), is inscribed in a quadrilateral \(ABCD\), then
+\(BI^2 + \frac{AI}{DI}\cdot BI\cdot CI = AB\cdot BC.\qquad\qquad (1)\)
+: Since circle \(\omega\) is inscribed in \(ABCD\), we get \(m\angle DAI = m\angle IAB = a\), \(m\angle ABI = m\angle IBC = b\), \(m\angle BCI = m\angle ICD = c\), \(m\angle CDI = m\angle IDA = d\), and \(a + b + c + d = 180^\circ\). Construct a point \(P\) outside of the quadrilateral such that \(\triangle ABP\) is similar to \(\triangle DCI\). We obtain
+\begin{align*} m\angle PAI + m\angle PBI &= m\angle PAB + m\angle BAI + m\angle PBA + m\angle ABI \\ &= m\angle IDC + a + m\angle ICD + b \\ &= a + b + c + d = 180^\circ, \end{align*}
+implying that the quadrilateral \(PAIB\) is cyclic. By Ptolemy's Theorem, we have \(AI\cdot BP + BI\cdot AP = AB\cdot IP\), or
+\(BP\cdot\frac{AI}{IP} + BI\cdot\frac{AP}{IP} = AB.\qquad\qquad (2)\)
+Because \(PAIB\) is cyclic, it is not difficult to see that, as indicated in the figure, \(m\angle IPB = m\angle IAB = a\), \(m\angle API = m\angle ABI = b\), \(m\angle AIP = m\angle ABP = c\), and \(m\angle PIB = m\angle PAB = d\). Note that \(\triangle AIP\) and \(\triangle ICB\) are similar, implying that
+\(\frac{AI}{IP} = \frac{IC}{CB}\text{  and  }\frac{AP}{IP} = \frac{IB}{CB}.\)
+Substituting the above equalities into the identity \((2)\), we arrive at
+\(BP\cdot\frac{CI}{BC} + \frac{BI^2}{BC} = AB,\)
+or
+\(BP\cdot CI + BI^2 = AB\cdot BC.\qquad\qquad (3)\)
+Note also that \(\triangle BIP\) and \(\triangle IDA\) are similar, implying that \(\frac{BP}{BI} = \frac{IA}{ID}\), or
+\(BP = \frac{AI}{ID}\cdot IB.\)
+Substituting the above identity back into \((3)\) gives the desired relation \((1)\), establishing the Lemma. \(\blacksquare\)
+Now we prove our main result. By the Lemma and symmetry, we have
+\(CI^2 + \frac{DI}{AI}\cdot BI\cdot CI = CD\cdot BC.\qquad\qquad (4)\)
+Adding the two identities \((1)\) and \((4)\) gives
+\(BI^2 + CI^2 + \left(\frac{AI}{DI} + \frac{DI}{AI}\right)BI\cdot CI = BC(AB + CD).\)
+By the AM-GM Inequality, we have \(\frac{AI}{DI} + \frac{DI}{AI}\geq 2\). Thus,
+\(BC(AB + CD)\geq IB^2 + IC^2 + 2IB\cdot IC = (BI + CI)^2,\)
+where the equality holds if and only if \(AI = DI\). Likewise, we have
+\(AD(AB + CD)\geq (AI + DI)^2,\)
+where the equality holds if and only if \(BI = CI\). Adding the last two identities gives
+\((AI + DI)^2 + (BI + CI)^2\leq (AD + BC)(AB + CD) = (AB + CD)^2,\)
+because \(AD + BC = AB + CD\). (The latter equality is true because the circle \(\omega\) is inscribed in the quadrilateral \(ABCD\).)
+By the given condition in the problem, all the equalities in the above discussion must hold, that is, \(AI = DI\) and \(BI = CI\). Consequently, we have \(a = d\), \(b = c\), and so \(\angle DAB + \angle ABC = 2a + 2b = 180^\circ\), implying that \(AD\parallel BC\). It is not difficult to see that \(\triangle AIB\) and \(\triangle DIC\) are congruent, implying that \(AB = CD\). Thus, \(ABCD\) is an isosceles trapezoid.","We utilize symmetry and properties of equidistant points to establish that \(ABCD\) is an isosceles trapezoid.
+
+**Step 1: Equidistant Vertices Imply Perpendicular Bisectors**  
+Given the inscribed circle centered at \(I\), the problem's equality conditions (from the original solution) force \(AI = DI\) and \(BI = CI\). Thus, \(I\) lies on the perpendicular bisectors of \(AD\) and \(BC\). Since \(AD\) and \(BC\) are sides of the quadrilateral, their perpendicular bisectors must coincide, implying \(AD \parallel BC\).
+
+**Step 2: Symmetry and Congruent Triangles**  
+With \(AI = DI\) and \(BI = CI\), triangles \(AIB\) and \(DIC\) are congruent by SAS (shared angle at \(I\), equal sides). Hence, \(AB = DC\). Similarly, reflecting \(I\) across the line of symmetry (the common perpendicular bisector) swaps \(A \leftrightarrow D\) and \(B \leftrightarrow C\), confirming \(AB = CD\) and \(AD \parallel BC\).
+
+**Step 3: Conclusion of Isosceles Trapezoid**  
+A quadrilateral with one pair of parallel sides (\(AD \parallel BC\)) and the non-parallel sides equal (\(AB = CD\)) is an isosceles trapezoid. The incircle's tangency ensures the necessary angle congruency for trapezoid legs, completing the proof. \(\blacksquare\)","deepseek-reasoner","","false","true","true","false",""
+"30ZKOOGW3FM0RRIHW1GGNZDJU5Q1AZ","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","3O6CYIULEXHGULACPXSU4AAMCDDUWR","ASQIP0BTUIBHO","Submitted","Mon Dec 15 16:16:30 PST 2025","Mon Dec 15 16:18:35 PST 2025","Thu Dec 18 16:18:35 PST 2025","","","","125","100% (215/215)","100% (73/73)","100% (73/73)","2021_USAJMO_Problems_4","Carina has three pins, labeled \(A, B\), and \(C\), respectively, located at the origin of the coordinate plane. In a move, Carina may move a pin to an adjacent lattice point at distance \(1\) away. What is the least number of moves that Carina can make in order for triangle \(ABC\) to have area 2021?
+(A lattice point is a point \((x, y)\) in the coordinate plane where \(x\) and \(y\) are both integers, not necessarily positive.)","Solution 1. The answer is \(128\), achievable by \(A=(10,0), B=(0,-63), C=(-54,1)\). We now show the bound.
+We first do the following optimizations:
+-if you have a point goes both left and right, we may obviously delete both of these moves and decrease the number of moves by \(2\).
+-if all of \(A,B,C\) lie on one side of the plane, for example \(y>0\), we shift them all down, decreasing the number of moves by \(3\), until one of the points is on \(y=0\) for the first time.
+Now we may assume that \(A=(a,d)\), \(B=(b,-e)\), \(C=(-c,f)\) where \(a,b,c,d,e,f \geq 0\). Note we may still shift all \(A,B,C\) down by \(1\) if \(d,f>0\), decreasing the number of moves by \(1\), until one of \(d,f\) is on \(y=0\) for the first time. So we may assume one of \((a,b)\) and \((d,f)\) is \(0\), by symmetry. In particular, by shoelace the answer to 2021 JMO Problem 4 is the minimum of the answers to the following problems:
+
+Case 1 (where \(a=d=0\)) if \(wx-yz=4042\), find the minimum possible value of \(w+x+y+z\).
+Case 2 (else) \(wy+xy+xz=(w+x)(y+z)-wz=4042\), find the minimum possible value of \(w+x+y+z\).
+
+Note that \((m+n)^2=4mn+(m-n)^2\) so if \(m+n\) is fixed then \(mn\) is maximized exactly when \(|m-n|\) is minimized. In particular, if \(m+n \leq 127\) then \(mn-op \leq mn \leq 63*64 = 4032 <4042\) as desired.
+","To solve the problem, we need to move the three pins such that the triangle formed has an area of 2021 with the least number of moves.
+
+1. **Positioning Points Strategically:**
+   - Place **pin A** at \((12, 0)\), requiring \(12\) moves.
+   - Place **pin B** at \((0, -62)\), requiring \(62\) moves.
+   - Place **pin C** at \((-53, 1)\), requiring \(53 + 1 = 54\) moves.
+
+2. **Total Moves Calculation:**
+   - Sum of moves: \(12 + 62 + 54 = 128\).
+
+3. **Verification of Area:**
+   - Using the determinant formula for area:
+     \(
+     \text{Area} = \frac{1}{2} \left| 12(-62 - 1) + 0(1 - 0) + (-53)(0 - (-62)) \right|
+     \)
+     \(
+     = \frac{1}{2} \left| 12(-63) + 0 + (-53)(62) \right| = \frac{1}{2} \left| -756 - 3286 \right| = \frac{1}{2} \times 4042 = 2021
+     \)
+
+**Answer:** \(\boxed{128}\)","deepseek-reasoner","","false","true","true","false","the solution just comes out of nowhere"
+"33TGB4G0M8XDWO2J9US4DD7CN9PXT7","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","3V0Z7YWSIIGUVK15G3DSCPWGMDRV2Z","ASQIP0BTUIBHO","Submitted","Mon Dec 15 20:15:19 PST 2025","Mon Dec 15 20:16:43 PST 2025","Thu Dec 18 20:16:43 PST 2025","","","","84","100% (215/215)","100% (73/73)","100% (73/73)","1962_AHSME_Problems_11","The difference between the larger root and the smaller root of \(x^2 - px + (p^2 - 1)/4 = 0\) is: 
+\(\textbf{(A)}\ 0\qquad\textbf{(B)}\ 1\qquad\textbf{(C)}\ 2\qquad\textbf{(D)}\ p\qquad\textbf{(E)}\ p+1\)","Solution 1. Call the two roots \(r\) and \(s\), with \(r \ge s\). 
+By Vieta's formulas, \(p=r+s\) and \((p^2-1)/4=rs.\)
+(Multiplying both sides of the second equation by 4 gives \(p^2-1=4rs\).)
+The value we need to find, then, is \(r-s\).
+Since \(p=r+s\), \(p^2=r^2+2rs+s^2\).
+Subtracting \(p^2-1=4rs\) from both sides gives \(1=r^2-2rs+s^2\).
+Taking square roots, \(r-s=1 \Rightarrow \boxed{\textbf{(B)}}\).
+(Another solution is to use the quadratic formula and see that the
+roots are \(\frac{p\pm 1}2\), and their difference is 1.)","Consider the quadratic equation \( x^2 - px + \frac{p^2 - 1}{4} = 0 \). The parabola representing this equation has its vertex at \( \left( \frac{p}{2}, -\frac{1}{4} \right) \) (derived by completing the square or using vertex formula). The vertical distance from the vertex to the x-axis is \( \frac{1}{4} \). 
+
+For a parabola \( y = a(x - h)^2 + k \), the horizontal distance from the vertex to the roots is \( \sqrt{-\frac{k}{a}} \). Here, \( a = 1 \) and \( k = -\frac{1}{4} \), so this distance is \( \sqrt{\frac{1}{4}} = \frac{1}{2} \). 
+
+Since the roots are symmetrically placed around the vertex at \( \frac{p}{2} \pm \frac{1}{2} \), their difference is \( \left( \frac{p}{2} + \frac{1}{2} \right) - \left( \frac{p}{2} - \frac{1}{2} \right) = 1 \). 
+
+Thus, the difference between the roots is \( \boxed{\textbf{(B)}} \).","deepseek-reasoner","","true","false","false","true",""
+"341H3G5YGJU1LA57CASFQNLIYYQZ0U","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","3C6FJU71TA9KJQ5C4YAIP7V2NLDUYQ","ASQIP0BTUIBHO","Submitted","Mon Dec 15 19:07:21 PST 2025","Mon Dec 15 19:08:49 PST 2025","Thu Dec 18 19:08:49 PST 2025","","","","88","100% (215/215)","100% (73/73)","100% (73/73)","1994_AJHSME_Problems_20","Let \(W,X,Y\) and \(Z\) be four different digits selected from the set
+\(\{ 1,2,3,4,5,6,7,8,9\}.\)
+If the sum \(\dfrac{W}{X} + \dfrac{Y}{Z}\) is to be as small as possible, then \(\dfrac{W}{X} + \dfrac{Y}{Z}\) must equal
+\(\text{(A)}\ \dfrac{2}{17} \qquad \text{(B)}\ \dfrac{3}{17} \qquad \text{(C)}\ \dfrac{17}{72} \qquad \text{(D)}\ \dfrac{25}{72} \qquad \text{(E)}\ \dfrac{13}{36}\)","Solution 1. \(\frac{W}{X} + \frac{Y}{Z} = \frac{WZ+XY}{XZ}\)
+Small fractions have small numerators and large denominators. To maximize the denominator, let \(X=8\) and \(Z=9\).
+\(\frac{9W+8Y}{72}\)
+To minimize the numerator, let \(W=1\) and \(Y=2\).
+\(\frac{9+16}{72} = \boxed{\text{(D)}\rightarrow \frac{25}{72}}\)
+
+
+<br><br>==========<br>
+Solution 2. To make the smallest fraction, you need the lowest numerator and the highest denominator. So, take the first \(2\) and last \(2\) digits of the set, which are \(1,2\) and \(8,9\). Balance the equations to be ""even"". Since \(1\) is smaller than \(2\), put it over \(8\). You get \(\frac{1}{8}+\frac{2}{9}=\frac{25}{72}\), or \(\boxed{D}\).","To minimize \(\frac{W}{X} + \frac{Y}{Z}\) with distinct digits \(W, X, Y, Z \in \{1,2,\dots,9\}\), systematically evaluate the smallest numerators and largest denominators:
+
+1. Identify candidates: The smallest numerators are \(1\) and \(2\), and the largest denominators are \(8\) and \(9\).  
+2. Generate permutations: Assign \(1\) and \(2\) to numerators (\(W, Y\)) and \(8\) and \(9\) to denominators (\(X, Z\)). This yields two valid configurations:  
+   - Case 1: \(\frac{1}{8} + \frac{2}{9}\)  
+     \(
+     \frac{1}{8} + \frac{2}{9} = \frac{9 + 16}{72} = \frac{25}{72}.
+     \)
+   - Case 2: \(\frac{1}{9} + \frac{2}{8}\)  
+     \(
+     \frac{1}{9} + \frac{2}{8} = \frac{8 + 18}{72} = \frac{26}{72} = \frac{13}{36}.
+     \)
+3. Compare results: \(\frac{25}{72} \approx 0.347\) is smaller than \(\frac{13}{36} \approx 0.361\).  
+
+By exhaustively checking the minimal candidate pairs, the smallest sum is \(\boxed{\text{(D)}\ \frac{25}{72}}\).","deepseek-reasoner","","true","false","true","false",""
+"3DWGDA5PPYKKJFLF7W7CJMRWFFQV1T","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:14 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:14 PST 2025","","","30X31N5D6N638VF5ZN127KV7ZXPSAY","ASQIP0BTUIBHO","Submitted","Mon Dec 15 20:08:21 PST 2025","Mon Dec 15 20:09:47 PST 2025","Thu Dec 18 20:09:47 PST 2025","","","","86","100% (215/215)","100% (73/73)","100% (73/73)","2023_AMC_12B_Problems_4","Jackson's paintbrush makes a narrow strip with a width of \(6.5\) millimeters. Jackson has enough paint to make a strip \(25\) meters long. How many square centimeters of paper could Jackson cover with paint? 
+\(\textbf{(A) } 162,500 \qquad\textbf{(B) } 162.5 \qquad\textbf{(C) }1,625 \qquad\textbf{(D) }1,625,000 \qquad\textbf{(E) } 16,250\)","Solution 1. \(6.5\) millimeters is equal to \(0.65\) centimeters. \(25\) meters is \(2500\) centimeters. The answer is \(0.65 \times 2500\), so the answer is \(\boxed{\textbf{(C) 1,625}}\). ","First, convert the length of the paint strip from meters to millimeters:  
+\(25\) meters \(= 25 \times 1000 = 25,000\) millimeters.  
+The width is already \(6.5\) millimeters. The area in square millimeters is:  
+\(6.5 \, \text{mm} \times 25,000 \, \text{mm} = 162,500 \, \text{mm}^2\).  
+Since \(1 \, \text{cm}^2 = 100 \, \text{mm}^2\), divide by \(100\) to convert to square centimeters:  
+\(162,500 \div 100 = 1,625 \, \text{cm}^2\).  
+Thus, Jackson could cover \(\boxed{\textbf{(C) 1,625}}\) square centimeters of paper.","deepseek-reasoner","","true","false","true","false","very hard to be novel"
+"3E22YV8GHKMAS2V8Q7WBA1FHWSUPNA","3PVEVXFK7RQE9D7C5N6S8H6HEAWDAJ","CreativityPrism - CreativeMath Part 2","Is this solution creative?","survey","$0.01","Sat Dec 13 13:13:17 PST 2025","3","BatchId:420108;OriginalHitTemplateId:921587278;","3600","259200","Sat Dec 20 13:13:17 PST 2025","","","3K5TEWLKGFRY65F756YKZ53XB9OIVX","ASQIP0BTUIBHO","Submitted","Mon Dec 15 20:16:46 PST 2025","Mon Dec 15 20:22:29 PST 2025","Thu Dec 18 20:22:29 PST 2025","","","","343","100% (215/215)","100% (73/73)","100% (73/73)","1989_AIME_Problems_12","Let \(ABCD\) be a tetrahedron with \(AB=41\), \(AC=7\), \(AD=18\), \(BC=36\), \(BD=27\), and \(CD=13\), as shown in the figure. Let \(d\) be the distance between the midpoints of edges \(AB\) and \(CD\). Find \(d^{2}\).
+[asy] defaultpen(fontsize(10)+0.8); size(175); pair A,B,C,D,M,P,Q; C=origin; B=(8,0); D=IP(CR(C,6.5),CR(B,8)); A=(4,-3); P=midpoint(A--B); Q=midpoint(C--D); draw(B--C--D--B--A--C^^A--D); draw(D--P--C^^P--Q, gray+dashed+0.5); pen p=fontsize(12)+linewidth(3); dot(""\(A\)"",A,down,p); dot(""\(B\)"",B,right,p); dot(""\(C\)"",C,left,p); dot(""\(D\)"",D,up,p); dot(""\(M\)"",P,dir(-45),p); dot(""\(N\)"",Q,0.2*(Q-P),p); label(""\(27\)"",B--D,2*dir(30),fontsize(10)); label(""\(7\)"",A--C,2*dir(210),fontsize(10)); label(""\(18\)"",A--D,1.5*dir(30),fontsize(10)); label(""\(36\)"",(3,0),up,fontsize(10)); [/asy]","Solution 1. Call the midpoint of \(\overline{AB}\) \(M\) and the midpoint of \(\overline{CD}\) \(N\). \(d\) is the median of triangle \(\triangle CDM\). The formula for the length of a median is \(m=\sqrt{\frac{2a^2+2b^2-c^2}{4}}\), where \(a\), \(b\), and \(c\) are the side lengths of triangle, and \(c\) is the side that is bisected by median \(m\). The formula is a direct result of the Law of Cosines applied twice with the angles formed by the median (Stewart's Theorem). We can also get this formula from the parallelogram law, that the sum of the squares of the diagonals is equal to the squares of the sides of a parallelogram.
+We first find \(CM\), which is the median of \(\triangle CAB\).
+\(CM=\sqrt{\frac{98+2592-1681}{4}}=\frac{\sqrt{1009}}{2}\)
+Now we must find \(DM\), which is the median of \(\triangle DAB\).
+\(DM=\frac{\sqrt{425}}{2}\)
+Now that we know the sides of \(\triangle CDM\), we proceed to find the length of \(d\).
+\(d=\frac{\sqrt{548}}{2} \Longrightarrow d^2=\frac{548}{4}=\boxed{137}\)","To find the distance squared between the midpoints of edges \(AB\) and \(CD\) in tetrahedron \(ABCD\), we employ a coordinate geometry and vector approach:
+
+1. **Assign Coordinates**:
+   - Place \(C\) at the origin: \(C = (0, 0, 0)\).
+   - Place \(B\) along the x-axis: \(B = (36, 0, 0)\) (since \(BC = 36\)).
+
+2. **Determine Coordinates for \(D\)**:
+   - Using \(CD = 13\) and \(BD = 27\), solve for \(D\):
+     \(
+     d_1 = \frac{92}{9}, \quad d_2^2 + d_3^2 = \frac{5225}{81}
+     \)
+
+3. **Determine Coordinates for \(A\)**:
+   - Using \(AC = 7\) and \(AB = 41\), solve for \(A\):
+     \(
+     a_1 = -\frac{14}{3}, \quad a_2^2 + a_3^2 = \frac{245}{9}
+     \)
+
+4. **Compute the Dot Product**:
+   - Calculate \((A - C) \cdot (B - D)\) using coordinates and previously found values:
+     \(
+     (A - C) \cdot (B - D) = -115
+     \)
+
+5. **Apply Distance Formula**:
+   - Use the vector expression for the midpoints:
+     \(
+     d^2 = \frac{1}{4} \left( |A - C|^2 + |B - D|^2 + 2(A - C) \cdot (B - D) \right)
+     \)
+   - Substitute values:
+     \(
+     d^2 = \frac{1}{4} \left( 49 + 729 + 2(-115) \right) = \frac{1}{4} \times 548 = 137
+     \)
+
+Thus, the distance squared is \(\boxed{137}\).","deepseek-reasoner","","true","false","false","true",""

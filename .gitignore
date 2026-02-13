@@ -5,7 +5,9 @@ log/
 vllm/
 paper/
 */data/outputs/*
+*/data/output/*
 human_annotation/data/raw/
+*/archived/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

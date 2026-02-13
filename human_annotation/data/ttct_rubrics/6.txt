@@ -1,0 +1,10 @@
+- Definition: Improvement. This task focuses on assessing an individual′s ability to enhance or modify existing objects or ideas. The given object is similar to the unusual uses task.
+- Example: Creativity Improvement Task. You'll be presented with a object, and your task is to suggest as many ways as you can think of to improve the object. Let's think step by step. Here's the object: Shopping Cart
+
+
+| Dimension       | What to Look For                                                                        | 1                | 3                                         | 5                                                                                         |
+| --------------- | --------------------------------------------------------------------------------------- | ---------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------- |
+| **Fluency**     | Number of improvement ideas                                                             | 1–2              | 5–7                                       | ≥12                                                                                       |
+| **Flexibility** | Variety of improvement domains (material, ergonomic, aesthetic, systemic, ecological …) | 1–2              | 3–4                                       | ≥6                                                                                        |
+| **Originality** | Novelty of improvements                                                                 | incremental only | some creative features (“dual-loop clip”) | radical re-conceptualizations (“self-heating shape-memory clip that welds itself closed”) |
+| **Elaboration** | Detail and function mechanism                                                           | names only       | basic “how it works”                      | technical mechanisms + materials + user context + trade-offs      
