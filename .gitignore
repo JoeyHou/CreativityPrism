@@ -8,6 +8,10 @@ paper/
 */data/output/*
 human_annotation/data/raw/
 */archived/*
+tasks/ttct/data/evaluations/*
+tasks/ttct/data/outputs/*
+tasks/ttct/data/archived/*
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
