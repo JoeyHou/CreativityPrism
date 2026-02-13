@@ -95,6 +95,7 @@ class AUTInference(InferenceDriver):
     def inference(self):
         ## 1. load data
         input_data_dir = self.config.get('input_data_dir', 'data/processed/aut/aut_push_skipped.json') # creative_bench/data/processed/aut/aut_push_all.json
+        print("Loading data from the directory: ", input_data_dir)
         input_data = load_json(input_data_dir)
         if input_data == {}:
             print('[ERROR] Input not found!!')
