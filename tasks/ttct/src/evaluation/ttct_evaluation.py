@@ -22,7 +22,8 @@ DEFAULT_SUBSET = [
     '1_unusual_uses', '5_common_problems', '4_situation', '6_improvement', '2_consequences'
 ]
 def csv2json(csv_data, subset = []):
-    input_data = pd.read_csv('/ihome/xli/joh227/developer/creativityprism_git_workspace/tasks/ttct/data/outputs/basefile.csv')
+    # TODO: change to dynamic path
+    input_data = pd.read_csv('/ihome/xli/joh227/developer/creativityprism_git_workspace/tasks/ttct/data/processed/basefile.csv')
     assert len(csv_data) == len(input_data)
 
     json_data = []
