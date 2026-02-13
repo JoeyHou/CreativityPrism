@@ -6,7 +6,7 @@ api_keys.json
 test_slurm.sh
 
 ## data
-data/processed/*
+# data/processed/*
 data/output/*
 
 ## cache

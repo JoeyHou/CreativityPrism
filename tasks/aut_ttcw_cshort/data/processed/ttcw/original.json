@@ -1,0 +1,230 @@
+[
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "0_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "A woman experiences a disorienting night in a maternity ward where she encounters other similarly disoriented new mothers, leading to an uncanny mix-up where she leaves the hospital with a baby that she realizes is not her own, yet accepts the situation with an inexplicable sense of happiness.",
+                "plot_id": 0,
+                "avg_len": 1989
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/magazine/2023/05/15/maintenance-hvidovre-fiction-olga-ravn"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "1_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "Navigating a complex social landscape, the protagonist experiences a series of complex relationships and emotional turmoil in a student environment, and engages in self-discovery and self-reflection as she interacts with the characters Carl, Martin, Lizzy, and Johan, resulting in a journey of introspection, betrayal, love, and personal growth.",
+                "plot_id": 1,
+                "avg_len": 1827
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/listening-for-the-click"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "2_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "An academic faculty housed in a building with a critical waterproofing layer missing experiences a series of disruptive and problematic construction repairs, causing tension, inconvenience, and health concerns among the tenants, but ultimately leading to resignation and endurance in hopes of better future circumstances.\n",
+                "plot_id": 2,
+                "avg_len": 1629
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/the-facade-renovation-thats-going-well"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "3_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "A young teenager recounts her experiences of fitting into her father's gay lifestyle, highlighted by a seven-day cruise with hundreds of gay men, where she experienced acceptance and connection, had her first genuine interaction with a boy, and shared a last dance with her terminally ill father.",
+                "plot_id": 3,
+                "avg_len": 2224
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/culture/personal-history/the-last-dance-with-my-dad"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "4_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "A solitary man walking in a remote mountainous region comes across a car crash, and stays by the side of the lifeless female victim, narrating stories of his past and reflecting on the impermanence of events and life itself, while awaiting emergency services amidst the looming presence of wilderness.\n",
+                "plot_id": 4,
+                "avg_len": 1604
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/beyond-nature"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "5_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "A woman unexpectedly marries the son of a successful, ambitious woman named Miss Emily, finding both acceptance and critique from her mother-in-law as she navigates this new relationship and confronts the stark contrasts between her former life as a supermarket cashier and her new life as part of a well-off family.",
+                "plot_id": 5,
+                "avg_len": 2336
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/magazine/2022/06/13/trash"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "6_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "On February 12, 1966, a heavily pregnant woman named Barbara experienced a shocking incident in her synagogue in Southfield, Detroit, where a young man shot and killed the renowned Rabbi Adler before turning the gun on himself, and though Barbara tried to reach the shooter, she was swept away by the fleeing crowd.",
+                "plot_id": 6,
+                "avg_len": 1586
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/barbara-detroit-1966"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "7_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "The narrator visits their elderly mother in her small town, spending a day with her that is filled with nostalgia, conversation, and old habits, only to return a month later after her hospitalization due to a sunstroke, finding remnants of their last visit.\"",
+                "plot_id": 7,
+                "avg_len": 1889
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/magazine/2022/11/14/returns"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "8_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "An observer becomes entranced by a seemingly ordinary couple on the street, follows them home, and then watches them from outside in the rising floodwaters, drawing an eerie connection between the woman and a discarded, burned chair they'd noticed earlier.",
+                "plot_id": 8,
+                "avg_len": 1153
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/a-triangle"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "9_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "Two individuals, who are at a residency together, navigate the complexity of their ephemeral relationship during their final beach trip, framed by misadventures, subtle tensions, unspoken desires, and looming departures.",
+                "plot_id": 9,
+                "avg_len": 1671
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/certain-european-movies"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "10_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "Daniel, struggling with recurring dreams of his ex-wife Rachel and a mysterious unused flat, eventually discusses them with his current partner Isabel, sparking various reflections and conversations about their past relationships, until a real-life discovery of old keys triggers a nostalgic memory and helps him find a way to reconnect with his present relationship through canoeing.",
+                "plot_id": 10,
+                "avg_len": 1653
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/keys"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "creative_writing_eval",
+            "id": "11_NewYorker",
+            "eval_func": null
+        },
+        "input": {
+            "text": "Write a New Yorker-style story given the plot below. Make sure it is atleast {{word_count}} words. Directly start with the story, do not say things like \u2018Here\u2019s the story [...]:",
+            "file": "",
+            "others": {
+                "plot": "The narrator recounts their college friendship with the seemingly flawless Q, and after a decade apart, they accidentally cross paths at a pool, where the narrator anonymously observes Q's failed attempt to let down a woman about a work-related issue, demonstrating that Q, too, has his share of difficulties.",
+                "plot_id": 11,
+                "avg_len": 1530
+            }
+        },
+        "output": {
+            "content": "https://www.newyorker.com/books/flash-fiction/the-kingdom-that-failed"
+        }
+    }
+]
