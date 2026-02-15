@@ -8,7 +8,6 @@ from tqdm import tqdm
 from src.utils.helpers import load_json, load_prompts_as_list, save_json
 # from src.utils.run_api import run_api
 
-os.environ['HF_TOKEN'] = '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' # TODO: remove it before public release!
 MAX_TOKENS = 3072
 TOP_P = 1
 TOP_K = 50

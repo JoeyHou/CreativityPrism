@@ -23,10 +23,10 @@ pip install -r requirements.txt
 ```
 - Run infernece
 ```
-python main_inference.py --task [task_name]
+HF_TOKEN={your_huggingface_token} python main_inference.py --task [task_name]
 ```
 
 - Run evaluation
 ```
-python main_evaluation.py --task [task_name]
+HF_TOKEN={your_huggingface_token} python main_evaluation.py --task [task_name]
 ```

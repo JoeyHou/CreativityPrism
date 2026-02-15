@@ -11,7 +11,7 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 for MODEL in "${MODELS[@]}"
 do
     echo "Running $MODEL for inference"
-    export HF_TOKEN=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
+    # export HF_TOKEN={your_huggingface_token}
     python3 ./src/inference/ttct_inference.py \
         -model_name "$MODEL" \
         -temp 1
