@@ -26,7 +26,7 @@ Creativity is often seen as a hallmark of human intelligence. While large langua
 <div class="section">
     <h2 id="overview">Overview</h2>
     <figure>
-        <img src="assets/img/CreativePrism_light.png" alt="CreativityPrism overview diagram">
+        <img src="assets/img/main_figure_v2.png" alt="CreativityPrism overview diagram">
         <figcaption>Domains, tasks, and metric dimensions.</figcaption>
     </figure>
 </div>
