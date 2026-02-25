@@ -12,16 +12,14 @@
 <!-- KPIs (edit the numbers or compute them later) -->
 <div class="kpis">
     <div class="card"><div class="num">17</div><div class="label">LLMs</div></div>
-    <div class="card"><div class="num">9</div><div class="label">Datasets</div></div>
+    <div class="card"><div class="num">8</div><div class="label">Tasks</div></div>
     <div class="card"><div class="num">3</div><div class="label">Dimensions</div></div>
-    <div class="card"><div class="num">21</div><div class="label">Metrics</div></div>
+    <div class="card"><div class="num">17</div><div class="label">Metrics</div></div>
 </div>
 
 
 ## What is CreativityPrism?
-Inspired by the hypothesis that creativity is not one fixed idea, we propose, CreativityPrism, an evaluation analysis framework that decomposes creativity into three dimensions: quality, novelty, and diversity. CreativityPrism incorporates nine tasks and twenty evaluation metrics, which measure each dimension in task-specific, unique ways.
-We evaluate 17 state-of-the-art (SoTA) proprietary and open-sourced LLMs on CreativityPrism and analyze the performance correlations among different metrics and the effect of post-training on the model's level of creativity. 
-Our results reveal a notable gap between proprietary and open-sourced models, especially in logical reasoning tasks and creative writing tasks, and also in diversity and quality dimensions. We find that models' performances in the same domain are highly correlated with each other. We also observe a similar correlation in diversity and quality metrics, whereas those in novelty metrics are showing mixed correlation signals. We believe this sheds light on the complex nature of the definition and measurement of novelty.
+Creativity is often seen as a hallmark of human intelligence. While large language models (LLMs) are increasingly perceived as generating creative text, there is still no holistic and scalable framework to evaluate their creativity across diverse scenarios. Existing methods of LLM creativity evaluation either heavily rely on humans, limiting speed and scalability, or are fragmented across different domains and different definitions of creativity. To address this gap, we propose CREATIVITYPRISM, an evaluation analysis framework that consolidates eight tasks from three domains, divergent thinking, creative writing, and logical reasoning, into a taxonomy of creativity that emphasizes three dimensions: quality, novelty, and diversity of LLM generations. The framework is designed to be scalable with reliable automatic evaluation judges that have been validated against human annotations. We evaluate 17 state-of-the-art (SoTA) proprietary and open-sourced LLMs on CREATIVITYPRISM and find that while proprietary LLMs dominate creative writing and logical reasoning tasks by a 15% lead over open-sourced ones, they offer no significant advantage in divergent thinking, a domain much less explored in existing post-training regimes. Our analysis also shows that high performance in one creative dimension or domain rarely generalizes to others; specifically, novelty metrics often show weak or negative correlations with other metrics. This fragmentation confirms that a holistic, multi-dimensional framework like CREATIVITYPRISM is essential for meaningful assessment of LLM creativity.
 
 ---
 
@@ -29,7 +27,7 @@ Our results reveal a notable gap between proprietary and open-sourced models, es
     <h2 id="overview">Overview</h2>
     <figure>
         <img src="assets/img/CreativePrism_light.png" alt="CreativityPrism overview diagram">
-        <figcaption>Domains, datasets, and metric dimensions.</figcaption>
+        <figcaption>Domains, tasks, and metric dimensions.</figcaption>
     </figure>
 </div>
 
