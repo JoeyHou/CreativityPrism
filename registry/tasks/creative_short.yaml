@@ -1,0 +1,8 @@
+name: creative_short
+display_name: "Creative Short Story"
+domain: creative_writing
+folder: tasks/aut_ttcw_cshort
+adapter: registry/adapters/creative_short.sh
+environment: modern
+description: "Five-sentence stories using required keywords in unconventional ways."
+limit_supported: true

@@ -1,0 +1,8 @@
+name: ttct
+display_name: "Torrance Test of Creative Thinking"
+domain: divergent_thinking
+folder: tasks/ttct
+adapter: registry/adapters/ttct.sh
+environment: modern
+description: "Open-ended creative-thinking questions across multiple subsets."
+limit_supported: true

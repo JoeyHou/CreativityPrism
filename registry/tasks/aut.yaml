@@ -1,0 +1,8 @@
+name: aut
+display_name: "Alternative Uses Task"
+domain: divergent_thinking
+folder: tasks/aut_ttcw_cshort
+adapter: registry/adapters/aut.sh
+environment: modern
+description: "Generate creative alternative uses for common objects."
+limit_supported: true

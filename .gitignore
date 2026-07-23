@@ -6,11 +6,18 @@ vllm/
 paper/
 */data/outputs/*
 */data/output/*
+cs4/story_generator/output/
 human_annotation/data/raw/
 */archived/*
 tasks/ttct/data/evaluations/*
 tasks/ttct/data/outputs/*
 tasks/ttct/data/archived/*
+crc.sh
+registry/environments/.location
+registry/environments/.hf_home
+registry/environments/.cluster_env.sh
+api_keys.json
+/claude_docs/PERSONAL-GITHUB-PUSH-PROMPT.md
 
 
 # Byte-compiled / optimized / DLL files

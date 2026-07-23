@@ -1,0 +1,47 @@
+# CreativityPrism "modern" environment
+# Covers: tasks/aut_ttcw_cshort (aut, ttcw, creative_short) and tasks/ttct
+# Runtime: vllm 0.7.x, torch 2.5.x, Python 3.12, CUDA 12.x
+#
+# Create:  bash scripts/setup_envs.sh --env modern
+# Manual:  conda env create -f registry/environments/modern.yml -p /your/prefix/creativityprism-modern
+
+name: creativityprism-modern
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.12
+  - pip
+  - pytorch::pytorch=2.5.1
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - pytorch::pytorch-cuda=12.4
+  - conda-forge::pyyaml
+  - conda-forge::pandas
+  - conda-forge::numpy
+  - conda-forge::tqdm
+  - conda-forge::requests
+  - conda-forge::spacy          # pre-built binary; avoids blis C compilation failure
+  - pip:
+    - vllm==0.7.2
+    - openai>=1.64.0
+    - anthropic>=0.51.0
+    - google-genai>=1.0.0
+    - huggingface_hub>=0.29.0
+    - transformers>=4.49.0,<5.0.0
+    - safetensors
+    - tiktoken
+    - sentencepiece
+    - protobuf
+    - accelerate
+    # aut_ttcw_cshort utilities
+    - jsonlines
+    - sentence-transformers
+    - scikit-learn
+    - spacy-syllables
+    - benepar
+    - nltk

@@ -1,0 +1,8 @@
+name: ttcw
+display_name: "Torrance Test of Creative Writing"
+domain: creative_writing
+folder: tasks/aut_ttcw_cshort
+adapter: registry/adapters/ttcw.sh
+environment: modern
+description: "Write New Yorker-style stories from plot prompts."
+limit_supported: true

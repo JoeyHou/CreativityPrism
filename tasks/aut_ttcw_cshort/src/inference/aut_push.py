@@ -88,7 +88,8 @@ class AUTInference(InferenceDriver):
                 } ## TODO: update all other prompt_data format and also the `llm_batch_inference` function
                 all_prompt_data.append(prompt_data)
 
-            if len(all_prompt_data) > test_size: break # stop when number of prompts hits test_size
+            if test_size > -1 and len(all_prompt_data) >= test_size:
+                break # stop when number of prompts hits test_size
 
         return all_prompt_data
 

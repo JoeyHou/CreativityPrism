@@ -8,13 +8,30 @@ from tqdm import tqdm
 from src.utils.helpers import load_json, load_prompts_as_list, save_json
 # from src.utils.run_api import run_api
 
+def _load_hf_token(api_key_path: str) -> str:
+    """Read HF token from credentials file (``hf`` key), fall back to env."""
+    try:
+        import json
+        with open(api_key_path) as _f:
+            return json.load(_f).get("hf", "")
+    except Exception:
+        return ""
+
+_api_key_path_default = os.environ.get(
+    "CREATIVITYPRISM_API_KEYS",
+    "/ihome/xli/joh227/developer/creativityprism_git_workspace/api_keys.json"
+)
+if not os.environ.get("HF_TOKEN"):
+    _hf = _load_hf_token(_api_key_path_default)
+    if _hf:
+        os.environ["HF_TOKEN"] = _hf
 MAX_TOKENS = 3072
 TOP_P = 1
 TOP_K = 50
 DEFAULT_SUBSET = [
     '1_unusual_uses', '5_common_problems', '4_situation', '6_improvement', '2_consequences'
 ]
-def main(model_name, temp, cache_dir, subset, prompt_formats, api_key_path, data_path = 'data/processed/ttct.json'):
+def main(model_name, temp, cache_dir, subset, prompt_formats, api_key_path, data_path = 'data/processed/ttct.json', run_id="", num_samples=-1):
 
     logger = logging.getLogger(__name__)
     full_data = [item for item in load_json(data_path)]
@@ -38,6 +55,13 @@ def main(model_name, temp, cache_dir, subset, prompt_formats, api_key_path, data
         text_cot_list = load_prompts_as_list(data_path=data_path, prompt_type="text_cot", subset=subset)
     else:
         text_cot_list = ['SKIPPED'] * len(full_data)
+
+    if num_samples > 0:
+        full_data = full_data[:num_samples]
+        text_basic_list = text_basic_list[:num_samples]
+        text_instructive_list = text_instructive_list[:num_samples]
+        text_cot_list = text_cot_list[:num_samples]
+        print(f'Limiting to {num_samples} samples (smoke-test mode)')
 
     print('=> Non-skipped counts:')
     for prompt_format in ['basic', 'instructive', 'cot']:
@@ -146,7 +170,10 @@ def main(model_name, temp, cache_dir, subset, prompt_formats, api_key_path, data
 
     # Save the updated data to a JSON file
     model_name_short = '_'.join(model_name.split('/')[1:] if '/' in model_name else [model_name])
-    output_file_name = f'data/outputs/temp_{temp}/{model_name_short}.json'
+    if run_id:
+        output_file_name = f'data/outputs/{run_id}/{model_name_short}.json'
+    else:
+        output_file_name = f'data/outputs/temp_{temp}/{model_name_short}.json'
     save_json(full_data, output_file_name)
     logger.info(f"Inference completed using {model_name}.")
     print(f"Inference completed using {model_name}\n\n\n\n\n.")
@@ -180,8 +207,11 @@ if __name__ == "__main__":
                         )
     parser.add_argument('-api_key_path',
                         type=str,
-                        default='/ihome/xli/joh227/developer/creativityprism_git_workspace/api_keys.json',
-                        help=f'Path to API key json file.'
+                        default=os.environ.get(
+                            "CREATIVITYPRISM_API_KEYS",
+                            "/ihome/xli/joh227/developer/creativityprism_git_workspace/api_keys.json"
+                        ),
+                        help='Path to API key json file (overrides CREATIVITYPRISM_API_KEYS env var).'
                         )
     parser.add_argument('-data_path',
                         type=str,
@@ -192,6 +222,16 @@ if __name__ == "__main__":
                         type=str,
                         default='all',
                         help=f'List of settings to include in the evaluation.'
+                        )
+    parser.add_argument('-run_id',
+                        type=str,
+                        default="",
+                        help=f'Optional run id; when set, outputs go to data/outputs/<run_id>/<model>.json (mirrors -run_id in ttct_evaluation.py).'
+                        )
+    parser.add_argument('-num_samples',
+                        type=int,
+                        default=-1,
+                        help='Limit inference to first N samples (smoke-test mode). -1 means no limit.'
                         )
     args = parser.parse_args()
     main(**vars(args)) 

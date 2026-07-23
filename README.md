@@ -9,6 +9,11 @@
     - `/neocoder_dat`: evaluation codebase for [neocoder](https://arxiv.org/pdf/2407.09007), and [dat](https://openreview.net/forum?id=BpibUh0aB3)
     - `/ttct`: evaluation codebase for [ttct](https://arxiv.org/abs/2401.12491)
     - `/math_n_index`: evaluation codebase for [creative_math](https://arxiv.org/pdf/2410.18336) and [creativity_index](https://arxiv.org/abs/2410.04265)
+- `/registry`: task metadata, model aliases, adapters, and environment declarations
+- `/runner`: unified benchmark CLI and behavior tests
+- `/runs`: reproducible run configurations
+
+> Note: the CS4 task was removed from the benchmark during the v2 restructuring.
 
 ## Requirement
 - `vllm`: [0.7.2](https://docs.vllm.ai/en/v0.7.2/getting_started/installation/index.html) (or >= 0.7.0)
@@ -16,17 +21,33 @@
 - `cuda`: >= 12.1
 
 ## Get Started
-- Install necessary dependency
-```
-conda create -n creativity_prism python=3.12
-pip install -r requirements.txt
-```
-- Run infernece
-```
-HF_TOKEN={your_huggingface_token} python main_inference.py --task [task_name]
+
+Create the declared Conda environment:
+
+```bash
+bash scripts/setup_envs.sh --env modern
 ```
 
-- Run evaluation
+Inspect available tasks and models:
+
+```bash
+python runner/run.py --list-tasks
+python runner/run.py --list-models
 ```
-HF_TOKEN={your_huggingface_token} python main_evaluation.py --task [task_name]
+
+Preview a run without loading models or calling an API:
+
+```bash
+python runner/run.py \
+    --task aut \
+    --model GPT4.1 \
+    --judge-model GPT4.1-mini \
+    --label smoke \
+    --limit 5 \
+    --dry-run
 ```
+
+`--limit` must be a positive integer. Omit it to run the full task dataset.
+
+See `claude_docs/WORKFLOW.md` for the current workflow and
+`claude_docs/RESTRUCTURING_PLAN.md` for the phased architecture plan.

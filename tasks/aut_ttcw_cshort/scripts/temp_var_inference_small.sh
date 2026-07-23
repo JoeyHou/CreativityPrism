@@ -1,15 +1,3 @@
-# good - CS4 sft inf
-python cs4_story_generator.py configs/olmo_sft.json
-
-# good - CS4 tmp_var inf
-python cs4_story_generator.py configs/tmp_var/inference_olmo_0.json
-python cs4_story_generator.py configs/tmp_var/inference_olmo_1.json
-python cs4_story_generator.py configs/tmp_var/inference_olmo_05.json
-python cs4_story_generator.py configs/tmp_var/inference_olmo_025.json
-
-# change dir
-cd ../../creative_bench/
-
 # good - AUT/TTCT/CreativeShort sft inf
 python run_inference.py configs/aut/inference/olmo_sft.json
 python run_inference.py configs/ttcw/inference/olmo_sft.json
