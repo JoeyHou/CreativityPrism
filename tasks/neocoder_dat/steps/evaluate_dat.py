@@ -16,7 +16,15 @@ def main(result_path):
     text = """## Okay, here are 10 single-word nouns chosen for maximum irrelevance across their meanings and typical contexts:\n\n1.  **Quark** (a fundamental particle in physics)\n2.  **Horizon** (the line where the earth's surface and the sky appear to meet)\n3.  **Syllable** (a unit of pronunciation having one vowel sound)\n4.  **Gasket** (a shaped piece or ring of rubber or other material sealing the junction between two surfaces)\n5.  **Nostalgia** (a sentimental longing or wistful affection for a period in the past)\n6.  **Fungus** (any of a group of spore-producing organisms feeding on organic matter, e.g., molds, yeast, mushrooms)\n7.  **Kilogram** (the SI base unit of mass)\n8.  **Tundra** (a vast, flat, treeless Arctic region in which the subsoil is permanently frozen)\n9.  **Ambiguity** (the quality of being open to more than one interpretation; inexactness)\n10. **Waltz** (a dance in triple time performed by a couple)"""
 
     def parse_first_seven(item):
-        text = item['output'].strip()
+        # API generators write {'output': str}; the vLLM open-model generator
+        # writes {'outputs': [str, ...]} — accept both schemas.
+        if 'output' in item:
+            raw = item['output']
+        else:
+            raw = item['outputs']
+        if isinstance(raw, list):
+            raw = raw[0]
+        text = raw.strip()
 
         # remove string before the first colon
         text = re.sub(r'^[^:]*:', '', text)
