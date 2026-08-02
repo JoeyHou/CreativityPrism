@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from vllm import LLM, SamplingParams
+import os
 import torch 
 
 from src.utils.api_wrapper import ModelWrapper
@@ -77,7 +78,13 @@ class Driver(ABC):
                 "hf_dir": "allenai/OLMo-2-1124-13B-SFT"
             },
         }
-        self.api_models = load_json('./api_keys.json')  ### Change if you are not Joey
+        # Credentials: prefer the path the runner exports (CREATIVITYPRISM_API_KEYS),
+        # fall back to the historical task-local ./api_keys.json when it is unset or
+        # points at a file that does not exist.
+        _api_keys_path = os.environ.get('CREATIVITYPRISM_API_KEYS', '')
+        if not _api_keys_path or not os.path.isfile(_api_keys_path):
+            _api_keys_path = './api_keys.json'
+        self.api_models = load_json(_api_keys_path)
         self.parsing_output_len = 256 # length limit of parsing output 
         self.local_parsing_model = 'Qwen/Qwen2.5-7B-Instruct'
         self.test_size = config.get('test_size', 10e5) # test_size is large by default

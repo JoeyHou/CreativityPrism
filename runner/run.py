@@ -5,6 +5,8 @@ Reads registry/tasks/*.yaml and registry/models.yaml, builds an adapter
 invocation, and runs (or prints) it.
 
 Phase 2.1a: --config support, mandatory judge model, --label.
+Phase 2A: artifact markers are parsed from adapter stdout and materialized
+under outputs/{label}/{task}/{model}/ together with metadata.json.
 """
 import argparse
 import json
@@ -16,11 +18,17 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from runner import artifacts
+except ImportError:  # executed as a script: runner/ is already on sys.path
+    import artifacts
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = REPO_ROOT / "registry"
 TASKS_DIR = REGISTRY / "tasks"
 MODELS_FILE = REGISTRY / "models.yaml"
 LOCATION_FILE = REGISTRY / "environments" / ".location"
+OUTPUTS_ROOT = REPO_ROOT / "outputs"
 DEFAULT_API_KEYS = REPO_ROOT / "api_keys.json"
 
 REQUIRED_CONFIG_FIELDS = ("task", "inference_model", "judge_model")
@@ -171,7 +179,9 @@ def build_adapter_command(task_meta, inference_model, judge_model, label, limit,
         "--judge-model", judge_model,
         "--run-id", label,
     ]
-    out_dir = REPO_ROOT / "outputs" / label / task_meta["name"] / inference_model
+    out_dir = artifacts.centralized_output_dir(
+        OUTPUTS_ROOT, label, task_meta["name"], inference_model
+    )
     cmd += ["--output-dir", str(out_dir)]
     if limit is not None:
         cmd += ["--limit", str(limit)]
@@ -180,6 +190,20 @@ def build_adapter_command(task_meta, inference_model, judge_model, label, limit,
     elif mode == "eval":
         cmd += ["--eval-only"]
     return cmd
+
+
+def run_adapter(cmd, env):
+    """Run the adapter, echoing stdout live while capturing it for markers."""
+    proc = subprocess.Popen(
+        cmd, env=env, stdout=subprocess.PIPE, text=True, errors="replace", bufsize=1
+    )
+    captured = []
+    with proc.stdout:
+        for line in proc.stdout:
+            sys.stdout.write(line)
+            sys.stdout.flush()
+            captured.append(line)
+    return proc.wait(), captured
 
 
 # ---------- CLI ----------
@@ -348,10 +372,23 @@ def main():
                 f"Warning: CREATIVITYPRISM_API_KEYS={env['CREATIVITYPRISM_API_KEYS']} not found. "
                 f"API-based models will fail.\n"
             )
-        rc = subprocess.call(cmd, env=env)
+        rc, stdout_lines = run_adapter(cmd, env)
         if rc != 0:
             sys.stderr.write(f"[{tname}] adapter exited with code {rc}\n")
             exit_code = rc
+
+        target_dir, _metadata, warnings = artifacts.materialize_run_outputs(
+            OUTPUTS_ROOT,
+            inv["label"],
+            meta,
+            {**inv, "mode": mode},
+            cmd,
+            rc,
+            stdout_lines,
+        )
+        for warning in warnings:
+            sys.stderr.write(f"[{tname}] {warning}\n")
+        print(f"[{tname}] centralized outputs: {target_dir}")
     return exit_code
 
 

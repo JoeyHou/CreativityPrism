@@ -35,6 +35,22 @@ parse_adapter_args() {
     fi
 }
 
+# ---- Artifact contract ----
+# Announce a produced artifact to the runner, which links it into
+# outputs/<label>/<task>/<model>/ and records it in metadata.json.
+#   emit_artifact inference "$NATIVE_OUT"
+#   emit_artifact eval      "$EVAL_OUT"
+# Emit a marker only for a phase that actually ran. Paths must be absolute.
+emit_artifact() {
+    local kind="$1"
+    local path="$2"
+    case "$kind" in
+        inference|eval) ;;
+        *) echo "emit_artifact: unknown kind '$kind'" >&2; return 2 ;;
+    esac
+    echo "CP_ARTIFACT ${kind} ${path}"
+}
+
 # ---- models.yaml lookup (pure python, no PyYAML required at adapter level) ----
 # Usage: lookup_alias <canonical_model> <task_key>
 # Echoes the alias to stdout, or exits non-zero if not found.

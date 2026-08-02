@@ -16,10 +16,10 @@ CreativityPrism is a benchmark suite for evaluating the creativity of large lang
 | TTCW (Torrance Tests of Creative Writing) | Creative writing | Runnable (Phase 1) |
 | Creative Short | Creative writing | Runnable (Phase 1) |
 | TTCT (Torrance Tests of Creative Thinking) | Divergent thinking | Runnable (Phase 1) |
-| NeoCoder | Logical reasoning | Planned (Phase 2) |
-| DAT (Divergent Association Task) | Divergent thinking | Planned (Phase 2) |
-| Creative Math | Logical reasoning | Planned (Phase 2) |
-| Creativity Index | Divergent thinking | Planned (Phase 2) |
+| NeoCoder | Logical reasoning | Planned (Phase 2C) |
+| DAT (Divergent Association Task) | Divergent thinking | Planned (Phase 2C) |
+| Creative Math | Logical reasoning | Planned (Phase 2C) |
+| Creativity Index | Divergent thinking | Planned (Phase 2C) |
 
 ---
 
@@ -68,7 +68,9 @@ python runner/run.py --list-models
 
 Users always refer to models by their **canonical name** (e.g., `GPT4.1`, `Qwen2.5-72B`, `Claude3-Sonnet`). The system handles translating these to whatever format each task expects internally.
 
-When provided, `--limit` must be a positive integer. Omit it to run the full dataset. Evaluation dispatch is planned for Phase 2; the current adapters perform inference and leave their eval branches stubbed.
+When provided, `--limit` must be a positive integer. Omit it to run the full dataset.
+
+Every run does inference and evaluation by default. Use `--inference-only` or `--eval-only` to run a single phase; `--eval-only` reuses the inference results already stored under the same `--label`, so the label must match the run you want to score. `--judge-model` is always required, but `creative_short` ignores it: its evaluation is fully automated and uses no LLM judge.
 
 ### Planned: Pitt CRC submission (Phase 3)
 
@@ -90,15 +92,28 @@ The implemented non-SLURM `runner/run.py` commands work on Linux machines with c
 
 ### Where outputs go
 
-Phase 1 outputs remain in each task's native location. The bundled tasks use:
+Tasks keep writing to their own native locations. The bundled tasks use:
 
 ```
 tasks/aut_ttcw_cshort/data/output/{label}/{task}/{model_alias}/
 ```
 
-TTCT uses `tasks/ttct/data/outputs/{label}/{model_alias}.json`. Each adapter prints its native `OUTPUT_PATH` on success.
+TTCT uses `tasks/ttct/data/outputs/{label}/{model_alias}.json`.
 
-Phase 2 will add the centralized `outputs/{label}/{task}/{canonical_model}/` view, metadata, and links to native artifacts without duplicating data.
+On top of that, the runner builds a centralized, uniform view of every run:
+
+```
+outputs/{label}/{task}/{canonical_model}/
+├── inference_output[.json]   # link to the native artifact
+├── eval_output[.json]        # link to the per-item evaluation output
+└── metadata.json            # models, limit, mode, command, exit code, timestamps, native paths
+```
+
+Nothing is copied — these are symlinks, so a direct task rerun stays visible through them. On platforms where symlinks are unavailable (Windows without Developer Mode), the runner writes a `{kind}_output.path` file containing the native path instead. `metadata.json` always records the native path either way, so analysis code can rely on it alone.
+
+For the bundled tasks the evaluator writes its results back into the inference directory, so `eval_output.json` points at `eval_output_cleaned.json` (per-item judge output) and the aggregate `eval_report.csv` sits beside it, reachable through the `inference_output` link.
+
+`outputs/` is gitignored.
 
 ---
 
@@ -131,7 +146,14 @@ description: "A brief description of what this task measures"
 The adapter is a short shell script (~30 lines) that:
 1. Receives standardized arguments (`--model`, `--run-id`, etc.)
 2. Calls your task's existing code
-3. Prints the output file path when done
+3. Announces each artifact it produced, using the helper from `registry/adapters/_common.sh`:
+
+```bash
+emit_artifact inference "$NATIVE_OUT"   # prints: CP_ARTIFACT inference <path>
+emit_artifact eval "$EVAL_OUT"
+```
+
+Emit a marker only for a phase that actually ran and succeeded — an `--eval-only` invocation must not announce an inference artifact. The path may be a file or a directory. The runner links it into `outputs/` and records it in `metadata.json`; it never reads or interprets the contents.
 
 Contributors can write their task code in **any language** — Python, R, Julia, etc. The adapter is the only required glue.
 

@@ -22,15 +22,27 @@ TEMP="${CREATIVITYPRISM_TTCT_TEMP:-1}"
 NUM_SAMPLES_ARG=()
 [[ -n "$LIMIT" ]] && NUM_SAMPLES_ARG=(-num_samples "$LIMIT")
 
+# Native output: data/outputs/<run_id>/<model_short>.json
+MODEL_SHORT="${ALIAS##*/}"
+NATIVE_OUT="$TASK_DIR/data/outputs/${RUN_ID}/${MODEL_SHORT}.json"
+
 if [[ "$MODE" == "inference" || "$MODE" == "both" ]]; then
     python3 ./src/inference/ttct_inference.py \
         -model_name "$ALIAS" \
         -temp "$TEMP" \
         -run_id "$RUN_ID" \
         "${NUM_SAMPLES_ARG[@]}"
+    emit_artifact inference "$NATIVE_OUT"
 fi
 
-# Native output: data/outputs/<run_id>/<model_short>.json
-MODEL_SHORT="${ALIAS##*/}"
-NATIVE_OUT="$TASK_DIR/data/outputs/${RUN_ID}/${MODEL_SHORT}.json"
-echo "OUTPUT_PATH=${NATIVE_OUT}"
+if [[ "$MODE" == "eval" || "$MODE" == "both" ]]; then
+    JUDGE_ID="$(lookup_alias "$JUDGE" ttct)"
+    # -temp is only used to derive the fallback data path when -run_id is empty, so it
+    # is deliberately not passed here. -api_key_path overrides a hardcoded site default.
+    python3 ./src/evaluation/ttct_evaluation.py \
+        -infer_model_name "$MODEL_SHORT" \
+        -eval_model_name "$JUDGE_ID" \
+        -run_id "$RUN_ID" \
+        -api_key_path "$CREATIVITYPRISM_API_KEYS"
+    emit_artifact eval "$TASK_DIR/data/evaluations/${RUN_ID}/${MODEL_SHORT}.json"
+fi

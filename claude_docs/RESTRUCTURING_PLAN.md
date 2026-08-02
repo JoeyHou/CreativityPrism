@@ -4,6 +4,106 @@ This document is the source of truth for the ongoing effort to restructure the C
 
 ---
 
+## Current Development Checkpoint (2026-08-01)
+
+### Canonical workspace and Git state
+
+- Continue restructuring work in the clean worktree whose directory basename is **`creativityprism_v2-mainv2-clean`**.
+- Its local branch is **`main_v2_publish`**, tracking **`personal/main_v2`**.
+- The verified Phase 1 checkpoint is commit **`56cfbd3ce564535a2416cb847641660da2a70118`** (`Add registry-driven Phase 1 runner`).
+- The `personal` remote uses `git@github-personal:JoeyHou/CreativityPrism.git`. The existing HTTPS `origin` is preserved and must not be rewritten as part of restructuring work.
+- Public `main` was not modified by the Phase 1 publication; Phase 1 was pushed to the separate remote branch `main_v2`.
+
+On Joey's current Windows machine, the parent development directory contains:
+
+```text
+creativityprism_v2/
+├── .venv/                         # local environment; never commit
+├── creativityprism_v2/            # old/dirty worktree; read-only reference
+└── creativityprism_v2-mainv2-clean/ # canonical restructuring worktree
+```
+
+The old `creativityprism_v2/` worktree mixes ZIP-derived missing files, remote history, and local changes. **Do not develop, stage, reset, clean, or push from it.** Keep it as a read-only migration source until its remaining research assets have been explicitly audited. Do not delete it yet.
+
+### New-session startup gate
+
+After opening `creativityprism_v2-mainv2-clean` as the VS Code workspace root, run:
+
+```bash
+git status --short --branch
+git rev-parse HEAD
+bash runner/test_phase1.sh
+bash runner/test_phase2a.sh
+```
+
+Expected baseline:
+
+```text
+branch/upstream: main_v2_publish...personal/main_v2
+HEAD:            56cfbd3ce564535a2416cb847641660da2a70118
+worktree:        clean
+Phase 1 gate:    19 passed, 0 failed
+Phase 2A gate:   4 passed, 0 failed (33 unit tests)
+```
+
+If the branch has advanced normally, the exact HEAD may differ; require a clean worktree, review intervening commits, and rerun the gate before editing. Never reset a newer valid branch merely to reproduce the checkpoint hash.
+
+### Next implementation slice
+
+**Phase 2A (artifact contract) and Phase 2B (evaluation dispatch) are complete.** Continue with **Phase 2C: remaining task adapters**:
+
+1. Add YAMLs + adapters for `neocoder`, `dat`, `creative_math`, `creativity_index`.
+2. Add `registry/environments/legacy.{txt,yml}` (vllm 0.5.3, torch 2.3.1) for the `neocoder_dat` bundle and teach `scripts/setup_envs.sh` about it.
+3. Run the Phase 2 end-to-end verification block below on the cluster.
+
+### Evaluation dispatch (Phase 2B)
+
+Each adapter's eval branch runs behind `[[ "$MODE" == "eval" || "$MODE" == "both" ]]` and emits `CP_ARTIFACT eval <path>` only after the eval command returns zero (`set -e` guarantees this).
+
+| Task | Eval entry point | Judge alias key | Announced eval artifact |
+|------|------------------|-----------------|--------------------------|
+| aut | `run_evaluation.py <cfg>` with `task: aut_push` | `api_call`, else `aut_ttcw_cshort` | `data/output/<run_id>/aut/<alias>/eval_output_cleaned.json` |
+| ttcw | `run_evaluation.py <cfg>` with `task: creative_writing` | `api_call`, else `aut_ttcw_cshort` | `data/output/<run_id>/ttcw/<alias>/eval_output_cleaned.json` |
+| creative_short | `run_evaluation.py <cfg>` with `task: creative_short` | **none — automated metrics** | `data/output/<run_id>/creative_short/<alias>/eval_output_cleaned.json` |
+| ttct | `src/evaluation/ttct_evaluation.py` | `ttct` | `data/evaluations/<run_id>/<model_short>.json` |
+
+Key constraints discovered while wiring this, all verified in the task sources:
+
+- **The eval config's `run_id` must equal the inference config's `run_id`.** The bundled evaluator hardcodes its input as `data/output/<run_id>/inference_output.json`; there is no path option. A gate test asserts each bundled adapter contains that `run_id` entry exactly twice.
+- **In a bundled *eval* config, `model_name` is the judge**, not the model under test. The model under test is identified only by `run_id`.
+- **The bundled evaluator writes back into the inference directory** (`eval_output_cleaned.json` plus `eval_report.csv`). The announced eval artifact is therefore the specific per-item file, not the directory, so that the `eval` link does not simply duplicate the `inference` link. `eval_report.csv` stays reachable one hop away through the inference link.
+- **`creative_short` uses no LLM judge.** Its evaluation is fully automated (DSI, n-gram diversity, inverse homogenization, novelty, theme uniqueness). `--judge-model` is still required by the runner but has no effect. Its metric models (`thenlper/gte-large`, `en_core_web_sm`, `benepar_en3`) download lazily on first use.
+- **`ttct_evaluation.py` defaults `-api_key_path` to a hardcoded `/ihome/xli/joh227/...` path**, so the adapter always passes `-api_key_path "$CREATIVITYPRISM_API_KEYS"`. Its `-temp` only selects a fallback input directory when `-run_id` is empty, so it is deliberately not forwarded; its `-summary`/`-demo`/`-pairwise` flags are `type=bool`, which in argparse makes any non-empty string truthy, so they are left at their defaults rather than passed explicitly.
+
+#### Credentials: passed by path, never copied
+
+`tasks/aut_ttcw_cshort/src/driver.py` loaded `./api_keys.json` relative to the task directory, while the runner exports `CREATIVITYPRISM_API_KEYS` pointing at repo root. Those are different files, so an API judge could never find keys. The fix mirrors the Phase 1 precedent in `ttct_inference.py`: prefer the env var when it names an existing file, otherwise fall back to `./api_keys.json`. This is deliberately non-regressive — a machine that only has the task-local file keeps working.
+
+Adapters must **never** copy or symlink the credentials file into the repo tree. A gate test enforces this.
+
+### Deferred cleanup backlog
+
+Accumulated rough edges. None are blocking; do them as one focused slice **after** Phase 2 lands, so that a cleanup diff never mixes with a behavior diff.
+
+| Item | Where | Why it is deferred |
+|------|-------|--------------------|
+| Inconsistent phase labels in the module docstring (`Phase 2.1a` vs `Phase 2A`) | `runner/run.py` header | Cosmetic, but confusing to new readers |
+| `main()` does argument resolution, env setup, the task loop, and output materialization in one ~90-line function | `runner/run.py` | Should split into `run_one_task()` + `main()`; no behavior change intended, so it needs its own diff |
+| `--run-id` retained as a deprecated alias for `--label` | `runner/run.py` | Remove once no local scripts or notebooks pass it; grep first |
+| `try: from runner import artifacts / except ImportError: import artifacts` | `runner/run.py` | Needed because the file is used both as a script and as an importable module. Cleaner fix is a real `runner/__init__.py` plus `python -m runner.run`, which changes the documented CLI, so it needs a deliberate decision |
+| Two separate gate scripts (`test_phase1.sh`, `test_phase2a.sh`) | `runner/` | Fine for now; consider one `runner/test_all.sh` wrapper once Phase 2 is complete |
+| Six near-identical ephemeral-config heredocs (three adapters x inference/eval) | `registry/adapters/{aut,ttcw,creative_short}.sh` | Now clear what varies: `run_id`, `task`, `model_name`, and an optional `test_size`, so a `_common.sh` helper is feasible. Deferred because `test_phase1_behavior.py` asserts each adapter's source literally contains its own task-qualified `run_id` entry; hoisting the heredoc removes those literals, so the refactor must land with a rewritten Phase 1 assertion in its own diff. |
+
+### Safety constraints carried forward
+
+- Do not read, print, stage, or commit credential values. `api_keys.json` and site-local environment files remain ignored.
+- `claude_docs/PERSONAL-GITHUB-PUSH-PROMPT.md` is local-only and must never enter Git history.
+- Do not use `git add .`, force push, or push restructuring changes directly to public `main`.
+- Preserve unrelated user changes and the old worktree until migration completeness is proven.
+- Paid API smoke tests require explicit cost review; use deterministic tests and dry runs first.
+
+---
+
 ## Goals
 
 Two driving goals shape every decision in this plan:
@@ -53,8 +153,8 @@ creativityprism_v2/
 ├── scripts/
 │   └── setup_envs.sh         # Creates conda envs from registry/environments/*.txt
 │
-├── outputs/                  # Centralized symlinks to all task outputs
-│   └── {run_id}/
+├── outputs/                  # Centralized view of all task outputs (gitignored)
+│   └── {label}/
 │       └── {task}/
 │           └── {canonical_model}/
 │               ├── inference_output.json   # symlink to native location
@@ -82,9 +182,9 @@ creativityprism_v2/
    - Receives unified args: `--model`, `--run-id`, `--output-dir`, `--limit`, etc.
    - Translates the canonical model name to whatever the task expects (via `models.yaml`)
    - Calls the task's existing scripts
-   - Prints `OUTPUT_PATH=<native_path>` on stdout so the runner can create symlinks
+   - Prints `CP_ARTIFACT <kind> <native_path>` on stdout so the runner can link the result
 
-4. **Centralized `outputs/` via symlinks.** Tasks write to their native output location. After completion, the runner creates symlinks under `outputs/{run_id}/{task}/{canonical_model}/`. No double storage; direct task reruns still work.
+4. **Centralized `outputs/` via links.** Tasks write to their native output location. After completion, the runner links them under `outputs/{label}/{task}/{canonical_model}/`. No double storage; direct task reruns still work.
 
 5. **Canonical model names enforced at runner level.** Users always pass `GPT4.1`, never `gpt-4.1-2025-04-14`. `registry/models.yaml` is the single source of truth for translation.
 
@@ -163,10 +263,55 @@ The adapter must:
 2. Parse those CLI args
 3. Look up the task-specific model alias from `registry/models.yaml`
 4. Invoke the task's existing inference (and/or evaluation) code
-5. On success, print `OUTPUT_PATH=<absolute path to task's native output dir>` to stdout
+5. Announce each artifact it actually produced (see the artifact contract below)
 6. Exit 0 on success, non-zero on failure
 
-The runner uses `OUTPUT_PATH` to create symlinks under `outputs/`.
+### Artifact contract (Phase 2A)
+
+Adapters announce produced artifacts by printing marker lines on stdout:
+
+```text
+CP_ARTIFACT inference /abs/path/to/native/inference/output
+CP_ARTIFACT eval /abs/path/to/native/eval/output
+```
+
+Use the `emit_artifact <kind> <path>` helper from `registry/adapters/_common.sh`.
+
+Rules:
+
+- Valid kinds are `inference` and `eval`. Unknown kinds are warned about and ignored.
+- A marker must be emitted **only for a phase that actually ran and succeeded**. An `--eval-only` invocation must not announce an inference artifact.
+- The path may be a file or a directory, and may contain spaces. The last marker of a kind wins.
+- The Phase 1 marker `OUTPUT_PATH=<path>` is still parsed as an `inference` artifact for backward compatibility. An explicit `CP_ARTIFACT inference` marker overrides it.
+
+The runner (`runner/artifacts.py`) then, per adapter invocation:
+
+- Creates `outputs/{label}/{task}/{canonical_model}/`.
+- Links each announced artifact as `{kind}_output` (directories) or `{kind}_output{suffix}` (files, e.g. `inference_output.json`). Symlink targets are relative for in-repo artifacts and absolute otherwise.
+- Falls back to a one-line `{kind}_output.path` **reference file** when symlinks are unavailable (Windows without Developer Mode, exotic filesystems). Native outputs are never copied.
+- Writes `metadata.json` (label, task, models, limit, mode, environment, adapter, command, exit code, timestamps, and one record per artifact). Artifact records accumulate across runs of the same triple, so an `--eval-only` rerun does not drop the earlier inference record.
+- Never fails the run on a contract problem: a missing/nonexistent artifact is warned about on stderr and recorded with `"exists": false`. Adapter exit codes remain the only failure signal.
+
+#### Platform behavior: symlink vs. `.path` reference
+
+| Platform | What gets created | `link_type` in metadata |
+|----------|-------------------|-------------------------|
+| Linux / macOS (including the Pitt CRC cluster) | A real symlink, e.g. `inference_output -> ../../../../tasks/aut_ttcw_cshort/data/output/v3/aut/gpt_4.1` | `symlink` |
+| Windows **with** Developer Mode or admin | A real symlink | `symlink` |
+| Windows **without** Developer Mode | A one-line text file `inference_output.path` containing the native absolute path | `reference` |
+
+**The `.path` fallback is a Windows-only degradation, not the normal case.** On the cluster you will always get real symlinks, and `readlink outputs/.../inference_output` behaves as the verification block below expects. The fallback exists so that a dev machine without symlink privilege (`WinError 1314`) can still run the pipeline instead of crashing.
+
+Analysis code should therefore **read `metadata.json` rather than assume a symlink exists** — `artifacts.{kind}.native_path` is always populated on both platforms. This is what `result_analysis/loader.py` will do in Phase 3.
+
+#### Marker durability (important for Phase 3)
+
+Markers are **transient**. The runner captures them from the adapter's stdout pipe while the process is alive; nothing writes the marker lines themselves to disk. This is safe today because:
+
+- Nested processes inherit the adapter's stdout, so a marker emitted by a helper script or a nested `bash` still reaches the runner's pipe.
+- The durable record is `metadata.json`, written immediately after the adapter exits.
+
+It breaks under **Phase 3 SLURM submission**, where the adapter runs detached inside a batch job and its stdout goes to a SLURM log file the runner never reads. Phase 3 must therefore either parse the job's stdout log after completion, or have `emit_artifact` additionally append to a marker file inside the run's output directory. Decide this when Phase 3 starts; do not retrofit it now.
 
 ### Environment management: `scripts/setup_envs.sh`
 
@@ -345,24 +490,42 @@ bash runner/test_phase1.sh
 
 ### Phase 2: Evaluation + Centralized Outputs
 
-**Status:** Not started
+**Status:** Phase 2A complete (2026-08-01); Phase 2B (evaluation dispatch) and remaining task adapters not started
 
 **Scope:**
 - Add evaluation support to existing AUT bundle + TTCT adapters.
 - Add adapters + YAMLs for the remaining tasks: **neocoder, dat, creative_math, creativity_index**.
-- Implement centralized `outputs/` directory with symlinks.
+- Implement centralized `outputs/` directory with links. *(Done in 2A.)*
 
 **Adapter changes:**
 - Each adapter learns to accept `--inference-only` and `--eval-only` (default = both).
-- Each adapter prints `OUTPUT_PATH=...` after success so the runner can symlink.
+- Each adapter emits `CP_ARTIFACT <kind> <path>` for each phase that actually succeeded. *(Done in 2A for `inference`.)*
 
-**Runner changes:**
-- After successful adapter run, parse `OUTPUT_PATH` from stdout.
-- Create `outputs/{run_id}/{task}/{canonical_model}/` directory.
-- Symlink files from the native output path into it.
-- Write `metadata.json` (run timestamp, canonical model name, native path, command used, exit code).
+**Runner changes:** *(Done in 2A.)*
+- Parse artifact markers from adapter stdout while streaming it live to the terminal.
+- Create `outputs/{label}/{task}/{canonical_model}/`.
+- Link native artifacts into it, with a `.path` reference fallback where symlinks are unavailable.
+- Write `metadata.json` (run timestamps, canonical model names, native paths, command used, exit code).
 
-**Verification steps:**
+**Phase 2A deviations from the original plan:**
+
+1. The marker is `CP_ARTIFACT <kind> <path>`, not `OUTPUT_PATH=<path>`. The original single-valued marker could not distinguish inference from eval artifacts, and a namespaced prefix is far less likely to collide with arbitrary task stdout. `OUTPUT_PATH=` is still parsed as `inference`.
+2. Parsing and materialization live in `runner/artifacts.py`, not inline in `runner/run.py`. The module has zero task-specific knowledge, which is what "the runner is dumb" actually requires, and it is unit-testable without a subprocess.
+3. Link names are not always `*.json`. Directory artifacts (the AUT bundle) get an extensionless `{kind}_output` link; file artifacts (TTCT) keep the native suffix, e.g. `inference_output.json`.
+4. `metadata.json` is written even when the adapter exits non-zero, so `outputs/` is a complete ledger of attempted runs rather than only successful ones. This is what makes the recorded `exit_code` meaningful.
+5. The runner now streams adapter stdout through a pipe instead of `subprocess.call`. Lines are echoed as they arrive, so long GPU runs still show live progress. stderr is left inherited and is never captured.
+6. `outputs/` is gitignored.
+
+**Phase 2A verification:**
+
+```bash
+bash runner/test_phase2a.sh     # 4 checks, 29 unit tests
+bash runner/test_phase1.sh      # 19 checks; must stay green
+```
+
+The Phase 2A gate is deterministic: it invokes no models, no paid APIs, and no conda environments.
+
+**Verification steps (Phase 2B, end-to-end):**
 
 ```bash
 # Run all tasks
@@ -373,15 +536,15 @@ ls outputs/phase2_test/
 # → aut/ ttcw/ creative_short/ ttct/ neocoder/ dat/ creative_math/ creativity_index/
 
 ls outputs/phase2_test/aut/GPT4.1-mini/
-# → inference_output.json (symlink)  eval_output.json (symlink)  metadata.json
+# → inference_output (link)  eval_output.json (link)  metadata.json
 
-# Verify symlinks point to real files
-readlink outputs/phase2_test/aut/GPT4.1-mini/inference_output.json
-# → ../../../../tasks/aut_ttcw_cshort/data/output/phase2_test/gpt_4.1_mini/inference_output.json
+# Verify links point to real files
+readlink outputs/phase2_test/aut/GPT4.1-mini/inference_output
+# → ../../../../tasks/aut_ttcw_cshort/data/output/phase2_test/aut/gpt_4.1_mini
 
-# Direct task rerun should still work (symlinks should remain valid)
+# Direct task rerun should still work (links should remain valid)
 cd tasks/aut_ttcw_cshort && python run_inference.py configs/aut/inference/gpt.json phase2_test
-cat ../../outputs/phase2_test/aut/GPT4.1-mini/inference_output.json   # still readable
+cat ../../outputs/phase2_test/aut/GPT4.1-mini/inference_output/*.json   # still readable
 ```
 
 **Out of scope for Phase 2:**
@@ -417,7 +580,7 @@ df = load_outputs(run_id="v3", task="aut", model="GPT4.1")
 ```
 
 - One parser function per task (knows the native format).
-- Reads from `outputs/{run_id}/...` only (relies on Phase 2 symlinks).
+- Reads from `outputs/{run_id}/...` only, resolving artifacts via `metadata.json` (which records native paths whether or not symlinks were available).
 - Reuses canonical model names from `registry/models.yaml`.
 
 **Verification steps:**

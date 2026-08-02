@@ -6,13 +6,107 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 
 ---
 
-## Status snapshot (2026-07-22)
+## Status snapshot (2026-08-01)
 
 | Phase | Status | Notes |
 |-------|--------|-------|
-| Phase 1 — Foundation (inference + registry + cleanup) | **Complete + Behavior-gated (2026-07-22)** | 4 tasks wired; 19/19 Phase 1 checks pass |
-| Phase 2 — Evaluation + Centralized Outputs | **Not started** | Eval branches stubbed; `outputs/` symlinks pending; neocoder/dat/creative_math/creativity_index not wired |
+| Phase 1 — Foundation (inference + registry + cleanup) | **Complete + Published to `main_v2` (2026-07-22)** | 4 tasks wired; 19/19 Phase 1 checks pass |
+| Phase 2A — Artifact contract + centralized outputs | **Complete (2026-08-01)** | `CP_ARTIFACT` markers, `outputs/` materialization, `metadata.json`; 4/4 gate checks, 29 unit tests |
+| Phase 2B — Evaluation dispatch | **Complete (2026-08-01)** | Eval branches wired for all four tasks; 33 unit tests. Not yet run against paid judges. |
+| Phase 2C — Remaining task adapters | **Not started** | neocoder/dat/creative_math/creativity_index not wired; no `legacy` env |
 | Phase 3 — SLURM + Analysis Loader | **Not started** | No `--slurm` flag, no `loader.py` |
+
+---
+
+## Workspace and publication checkpoint (verified 2026-08-01)
+
+- Canonical development worktree: `creativityprism_v2-mainv2-clean`.
+- Local branch `main_v2_publish` tracks remote branch `personal/main_v2`.
+- Published Phase 1 commit: `56cfbd3ce564535a2416cb847641660da2a70118`.
+- Commit author and committer: `Joey Hou (MS) <joeyhou.work@gmail.com>`.
+- Local HEAD, upstream, and GitHub remote hashes were independently verified equal after push; ahead/behind was `0/0`.
+- Public `main` remained at `4705a830501e47b999481a0ec0c62ac2cca10c86` during publication.
+- Original `creativityprism_v2/` worktree remains an intentionally untouched, dirty, read-only migration source. It must not be used for new development or deleted before asset review.
+- Next slice: Phase 2C — adapters for the remaining four tasks plus the `legacy` conda env.
+
+See the top of `RESTRUCTURING_PLAN.md` for the new-session startup gate and safety constraints.
+
+---
+
+## Phase 2A — Complete (2026-08-01)
+
+### What was built
+
+| File | Change |
+|------|--------|
+| `runner/artifacts.py` | **New.** Marker parsing, link/reference materialization, `metadata.json` writer. No task-specific logic. |
+| `runner/run.py` | Streams adapter stdout via `Popen` instead of `subprocess.call`, captures it, and materializes `outputs/{label}/{task}/{model}/` after every invocation. `--output-dir` now comes from `artifacts.centralized_output_dir`, so the path handed to adapters and the path the runner materializes cannot drift. |
+| `registry/adapters/_common.sh` | Added `emit_artifact <kind> <path>`; rejects kinds other than `inference`/`eval`. |
+| `registry/adapters/{aut,ttcw,creative_short,ttct}.sh` | Replaced the unconditional trailing `echo "OUTPUT_PATH=..."` with `emit_artifact inference "$NATIVE_OUT"` **inside** the inference guard. |
+| `runner/test_phase2a_artifacts.py` | **New.** 29 tests: marker parsing, linking, path isolation, metadata, missing artifacts, reruns, symlink targets, adapter source contract, stdout streaming. |
+| `runner/test_phase2a.sh` | **New.** Phase 2A gate: unit tests, dry-run has no side effects, adapters receive the centralized `--output-dir`, `outputs/` is gitignored. |
+| `.gitignore` | Added `/outputs/`. |
+
+### The contract
+
+```text
+CP_ARTIFACT inference <abs path>
+CP_ARTIFACT eval <abs path>
+```
+
+Emitted only for a phase that actually ran and succeeded. `OUTPUT_PATH=<path>` is still parsed as `inference` for backward compatibility; an explicit marker overrides it.
+
+### Deviations from the plan
+
+| # | Deviation | Why |
+|---|-----------|-----|
+| 1 | Marker is `CP_ARTIFACT <kind> <path>`, not `OUTPUT_PATH=<path>` | The old marker cannot express inference vs. eval, and a namespaced prefix will not collide with arbitrary task stdout. Legacy form still accepted. |
+| 2 | Logic lives in `runner/artifacts.py`, not inline in `run.py` | Unit-testable without subprocesses; keeps `run.py` readable. Still zero task-specific knowledge. |
+| 3 | Link names are not always `*.json` | Directory artifacts (AUT bundle) get `inference_output`; file artifacts (TTCT) keep the native suffix. |
+| 4 | `.path` reference file when symlinks are unavailable | The plan permits "link to **or reference**". Windows without Developer Mode cannot create symlinks; the run must not fail over a convenience layer. Verified live on this machine (`WinError 1314` → clean fallback). |
+| 5 | `metadata.json` is written even when the adapter fails | Makes the recorded `exit_code` meaningful and `outputs/` a complete ledger. |
+| 6 | Contract violations warn, never fail | A nonexistent announced path is recorded as `"exists": false` and warned on stderr. Adapter exit codes stay the only failure signal, so a path-shape mismatch cannot break a real GPU run. |
+
+### Verification
+
+- `bash runner/test_phase2a.sh` — 4 passed, 0 failed (29 unit tests).
+- `bash runner/test_phase1.sh` — 19 passed, 0 failed (unchanged baseline).
+- End-to-end: a throwaway probe task exercised the real `python runner/run.py` path and produced `outputs/e2e_probe/_e2e_probe/GPT4.1/{inference_output.path,metadata.json}` with the correct native path, command, and exit code. The probe task, adapter, and outputs were removed afterwards.
+- No models, paid APIs, or conda environments are touched by either gate.
+
+---
+
+## Phase 2B — Complete (2026-08-01)
+
+### What was built
+
+| File | Change |
+|------|--------|
+| `registry/adapters/{aut,ttcw,creative_short}.sh` | Added an eval branch that writes a second ephemeral config (same `run_id` as inference, `task` = the evaluator's dispatch string, `model_name` = the judge), runs `run_evaluation.py`, then emits `CP_ARTIFACT eval <run dir>/eval_output_cleaned.json`. |
+| `registry/adapters/ttct.sh` | Added an eval branch calling `src/evaluation/ttct_evaluation.py` with `-infer_model_name`, `-eval_model_name`, `-run_id`, and `-api_key_path`, then emitting `CP_ARTIFACT eval data/evaluations/<run_id>/<model_short>.json`. |
+| `tasks/aut_ttcw_cshort/src/driver.py` | Credentials now resolve from `CREATIVITYPRISM_API_KEYS` when it names an existing file, falling back to the historical `./api_keys.json`. |
+| `runner/test_phase2a_artifacts.py` | +4 tests (33 total): eval marker sits behind an eval guard and after the inference branch; bundled eval reuses the inference `run_id`; TTCT eval is pinned to the inference run; adapters never copy the credentials file. |
+
+No change was needed in `runner/run.py` or `runner/artifacts.py` — the Phase 2A contract already carried the `eval` kind.
+
+### Deviations from the plan
+
+| # | Deviation | Why |
+|---|-----------|-----|
+| 1 | The eval artifact is a **file** (`eval_output_cleaned.json`), not the run directory | The bundled evaluator writes back into the inference directory, so announcing the directory would make the `eval` link an exact duplicate of the `inference` link. The per-item file is also what the analysis notebooks read most. |
+| 2 | `driver.py` credential resolution was patched | The task read a task-relative `./api_keys.json` while the runner exported a repo-root path, so an API judge could never find keys. Mirrors the Phase 1 `ttct_inference.py` precedent. The fallback keeps existing cluster setups working. |
+| 3 | Credentials are **not** copied into the task directory | Duplicating a secrets file into the repo tree is a security regression; a gate test now forbids `cp`/`mv`/`ln` of `CREATIVITYPRISM_API_KEYS` in adapters. |
+| 4 | `creative_short` still requires `--judge-model` | Its evaluation is fully automated and ignores the judge. Relaxing the runner's mandatory-judge rule per task was deferred rather than special-cased. |
+| 5 | The six ephemeral-config heredocs were left duplicated | Factoring them into `_common.sh` would break the Phase 1 assertion that each adapter's source literally contains its own task-qualified `run_id`. Kept in the cleanup backlog so a refactor diff never mixes with a behavior diff. |
+| 6 | TTCT `-temp`, `-summary`, `-demo`, `-pairwise` are not forwarded | `-temp` only selects a fallback input dir when `-run_id` is empty; the other three are `type=bool`, where argparse treats any non-empty string as `True`, so forwarding them cannot express `false`. |
+
+### Verification
+
+- `bash runner/test_phase2a.sh` — 4 passed, 0 failed (33 unit tests).
+- `bash runner/test_phase1.sh` — 19 passed, 0 failed (unchanged baseline).
+- `bash -n` clean on all five adapter scripts.
+- Materialization probe: an `inference` marker (directory) and an `eval` marker (file) produce two distinct entries in `metadata.json` and two distinct links.
+- **Not verified:** no evaluation has been run against a real judge model. The first cluster run is expected to surface runtime issues that no static gate can catch.
 
 ---
 
@@ -54,7 +148,7 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 
 | # | Bug or gap | Fix location |
 |---|------------|--------------|
-| 5 | AUT, TTCW, and Creative Short shared `data/output/{run_id}/{alias}` and could overwrite one another | Their adapters now use `data/output/{run_id}/{task}/{alias}` for both logical run IDs and `OUTPUT_PATH` |
+| 5 | AUT, TTCW, and Creative Short shared `data/output/{run_id}/{alias}` and could overwrite one another | Their adapters now use `data/output/{run_id}/{task}/{alias}` for both logical run IDs and the announced artifact path |
 | 6 | The three bundled prompt producers returned `N+1` items for `--limit N` | Their post-append stop checks now use `>=`; real producer regressions cover limits 1, 3, above-dataset, and internal unlimited mode |
 | 7 | Public `limit <= 0` semantics were undefined, and all task YAMLs still claimed no limit support | `runner/run.py` accepts only positive limits, validates task capability, and all four verified YAMLs set `limit_supported: true` |
 | 8 | Structural smoke tests could not catch sample-count or path-isolation regressions | Added `runner/test_phase1_behavior.py` and integrated it into `runner/test_phase1.sh` |
@@ -73,23 +167,19 @@ These are the historical API/GPU runs; they were not rerun on 2026-07-22. The cu
 
 ---
 
-## Phase 2 — Not started
+## Phase 2 — In progress
 
-### Confirmed gaps (verified 2026-05-15)
+### Confirmed gaps (verified 2026-08-01)
 
-- **No `outputs/` directory** at the repo root. `runner/run.py:97` still marks `--output-dir` as informational ("reserved for Phase 2 symlinks").
-- **Eval branches stubbed in all four adapters.** Example: `registry/adapters/aut.sh:35` reads `# Eval is Phase 2; intentionally not implemented yet.`. The `--eval-only` flag is parsed in `_common.sh:26` but never dispatched to task code.
 - **Missing task wiring.** Folders `tasks/math_n_index/` and `tasks/neocoder_dat/` exist, but no YAMLs/adapters for `neocoder`, `dat`, `creative_math`, `creativity_index`.
 - **No `legacy` env.** Only `modern.txt`/`modern.yml` are present; `legacy.txt` (vllm 0.5.3, torch 2.3.1) for the `neocoder_dat` bundle is not yet created.
-- **No `metadata.json` writer** in the runner.
+- **No judge has actually been run.** Eval dispatch is wired and statically verified, but never executed end-to-end against a paid or local judge model.
 
-### Work remaining for Phase 2
+### Work remaining for Phase 2C
 
-1. Add eval support to existing adapters (`aut.sh`, `ttcw.sh`, `creative_short.sh`, `ttct.sh`).
-2. Add adapters + YAMLs for `neocoder`, `dat`, `creative_math`, `creativity_index`.
-3. Add `registry/environments/legacy.{txt,yml}` and ensure `scripts/setup_envs.sh` handles it.
-4. Implement symlink creation in `runner/run.py`: parse `OUTPUT_PATH` from adapter stdout, materialize `outputs/{run_id}/{task}/{canonical_model}/`, write `metadata.json`.
-5. Run the Phase 2 verification block from the plan.
+1. Add adapters + YAMLs for `neocoder`, `dat`, `creative_math`, `creativity_index`.
+2. Add `registry/environments/legacy.{txt,yml}` and ensure `scripts/setup_envs.sh` handles it.
+3. Run the Phase 2 end-to-end verification block from the plan, including a small-`--limit` eval run.
 
 ---
 

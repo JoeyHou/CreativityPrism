@@ -13,6 +13,7 @@ tasks/ttct/data/evaluations/*
 tasks/ttct/data/outputs/*
 tasks/ttct/data/archived/*
 crc.sh
+/outputs/
 registry/environments/.location
 registry/environments/.hf_home
 registry/environments/.cluster_env.sh
