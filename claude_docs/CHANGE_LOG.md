@@ -18,14 +18,38 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 
 ---
 
+## Commit ledger
+
+Anchors each phase to the commit that implemented it, so a future session can jump straight to the diff. This table deliberately does **not** duplicate file lists or line numbers — `git show <hash> --stat` and `git show <hash> -- <path>` are the authoritative per-file record and never go stale. What lives here instead is the mapping and the verification state, which git does not capture.
+
+| Commit | Date | Phase | Scope | Gates at commit time | Pushed to `personal/main_v2` |
+|--------|------|-------|-------|----------------------|------------------------------|
+| `747a5ba` | 2026-08-01 | 2A + 2B | Artifact contract (`CP_ARTIFACT` markers, `runner/artifacts.py`, `outputs/` materialization, `metadata.json`) and evaluation dispatch for all four wired tasks; credential path resolution in the bundled task driver | Phase 1 19/19, Phase 2A 4/4 (33 unit tests) | Yes |
+| `56cfbd3` | 2026-07-22 | 1 | Registry-driven runner: `registry/{tasks,adapters,models.yaml}`, `runner/run.py`, Phase 1 gate; 4 tasks wired for inference | Phase 1 19/19 | Yes |
+| `4705a83` | 2026-05-14 | — | Pre-restructuring baseline; also the tip of public `main` | n/a | n/a (public `main`) |
+
+To see exactly what a commit changed:
+
+```bash
+git show 747a5ba --stat                       # files touched
+git show 747a5ba -- registry/adapters/aut.sh   # one file's hunks
+git log -p --follow runner/artifacts.py        # one file's whole history
+```
+
+Rationale for each change lives in the per-phase sections below; the "Deviations from the plan" tables are the part that git cannot tell you.
+
+---
+
 ## Workspace and publication checkpoint (verified 2026-08-01)
 
 - Canonical development worktree: `creativityprism_v2-mainv2-clean`.
 - Local branch `main_v2_publish` tracks remote branch `personal/main_v2`.
 - Published Phase 1 commit: `56cfbd3ce564535a2416cb847641660da2a70118`.
+- Published Phase 2A + 2B commit: `747a5ba1dcc4848410d807f921991bd93d122fb9`.
 - Commit author and committer: `Joey Hou (MS) <joeyhou.work@gmail.com>`.
 - Local HEAD, upstream, and GitHub remote hashes were independently verified equal after push; ahead/behind was `0/0`.
 - Public `main` remained at `4705a830501e47b999481a0ec0c62ac2cca10c86` during publication.
+- Pushes are performed from the VS Code Git UI, not from an agent-run terminal — see `RESTRUCTURING_PLAN.md` "Publishing procedure" for why.
 - Original `creativityprism_v2/` worktree remains an intentionally untouched, dirty, read-only migration source. It must not be used for new development or deleted before asset review.
 - Next slice: Phase 2C — adapters for the remaining four tasks plus the `legacy` conda env.
 
@@ -192,6 +216,7 @@ No `--slurm` flag in the runner, no `runner/slurm_template.sbatch`, no `result_a
 ## How to update this file
 
 - When a phase advances, flip its row in the status snapshot and add the relevant date.
+- Add a row to the commit ledger for every commit that changes behavior, and update its "Pushed" cell once the push is verified. Record the hash, not the file list — the ledger row for a commit is written in the *following* commit, since a commit cannot contain its own hash.
 - Record concrete deviations (paths, line numbers, bug fixes) rather than aspirations — aspirations live in `RESTRUCTURING_PLAN.md`.
 - New post-completion bugfixes go under the relevant phase's "Post-completion fixes" subsection.
 - Keep this file scannable: tables for status, bullets for facts, no narrative prose.

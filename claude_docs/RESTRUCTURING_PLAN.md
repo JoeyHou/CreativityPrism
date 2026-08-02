@@ -11,8 +11,23 @@ This document is the source of truth for the ongoing effort to restructure the C
 - Continue restructuring work in the clean worktree whose directory basename is **`creativityprism_v2-mainv2-clean`**.
 - Its local branch is **`main_v2_publish`**, tracking **`personal/main_v2`**.
 - The verified Phase 1 checkpoint is commit **`56cfbd3ce564535a2416cb847641660da2a70118`** (`Add registry-driven Phase 1 runner`).
+- The verified Phase 2A + 2B checkpoint is commit **`747a5ba1dcc4848410d807f921991bd93d122fb9`** (`Add artifact contract, centralized outputs, and evaluation dispatch`).
 - The `personal` remote uses `git@github-personal:JoeyHou/CreativityPrism.git`. The existing HTTPS `origin` is preserved and must not be rewritten as part of restructuring work.
-- Public `main` was not modified by the Phase 1 publication; Phase 1 was pushed to the separate remote branch `main_v2`.
+- Public `main` was not modified by either publication; both were pushed to the separate remote branch `main_v2`.
+
+### Publishing procedure
+
+**Push from the VS Code Git UI (Source Control view), not from an agent-run terminal.** The `personal` remote is SSH with a passphrase-protected key, and `git push`/`git fetch` from a terminal blocks on an invisible `Enter passphrase` prompt; the VS Code UI surfaces it as a dialog instead. An agent must therefore stop at the commit and hand the push over.
+
+Verify a push without touching SSH — the local tracking ref is updated by a successful UI push, and the public repo answers `ls-remote` anonymously over HTTPS:
+
+```bash
+git rev-parse HEAD personal/main_v2          # must match
+git rev-list --left-right --count HEAD...personal/main_v2   # must be 0  0
+GIT_TERMINAL_PROMPT=0 git ls-remote https://github.com/JoeyHou/CreativityPrism.git 'refs/heads/*'
+```
+
+The last command is the authoritative check: `refs/heads/main_v2` must equal local `HEAD`, and `refs/heads/main` must still be `4705a830501e47b999481a0ec0c62ac2cca10c86`.
 
 On Joey's current Windows machine, the parent development directory contains:
 
@@ -40,7 +55,7 @@ Expected baseline:
 
 ```text
 branch/upstream: main_v2_publish...personal/main_v2
-HEAD:            56cfbd3ce564535a2416cb847641660da2a70118
+HEAD:            747a5ba1dcc4848410d807f921991bd93d122fb9, or a later docs-only commit on top of it
 worktree:        clean
 Phase 1 gate:    19 passed, 0 failed
 Phase 2A gate:   4 passed, 0 failed (33 unit tests)
