@@ -1,7 +1,10 @@
 {
-  // Without this, schemastore matches **/tasks/*.yaml against the Ansible tasks
-  // schema and flags every field in registry/tasks/*.yaml as "not allowed".
+  // Backstop for any task YAML that forgets the `# yaml-language-server: $schema=`
+  // modeline. Without one of the two, schemastore matches **/tasks/*.yaml against the
+  // Ansible tasks schema and flags every field in registry/tasks/*.yaml as "not allowed".
+  // Note this setting only takes effect after the YAML extension reloads; the modeline
+  // works immediately and outside VS Code, so it is the primary mechanism.
   "yaml.schemas": {
-    "./registry/tasks/_task.schema.json": "registry/tasks/*.yaml"
+    "./registry/tasks/_task.schema.json": "**/registry/tasks/*.yaml"
   }
 }

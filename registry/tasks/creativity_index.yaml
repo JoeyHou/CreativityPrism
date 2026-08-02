@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=./_task.schema.json
 name: creativity_index
 display_name: "Creativity Index"
 domain: creative_writing

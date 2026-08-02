@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=./_task.schema.json
 name: aut
 display_name: "Alternative Uses Task"
 domain: divergent_thinking

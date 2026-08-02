@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=./_task.schema.json
 name: ttcw
 display_name: "Torrance Test of Creative Writing"
 domain: creative_writing
