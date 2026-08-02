@@ -1,0 +1,8 @@
+name: creative_math
+display_name: "Creative Math"
+domain: creative_problem_solving
+folder: tasks/math_n_index
+adapter: registry/adapters/creative_math.sh
+environment: modern
+description: "Produce novel alternative solutions to math problems with a known reference solution."
+limit_supported: true

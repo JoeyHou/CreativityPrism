@@ -74,8 +74,10 @@ class CreativeIndexInference(InferenceDriver):
         # Use full dataset or a portion
         portion = self.config.get("portion", 1)
         amount_used = int(len(data) * portion)
-        # need to revise back later
-        data = data[:amount_used][:100]
+        test_size = self.config.get("test_size", -1)
+        if test_size > 0:
+            amount_used = min(amount_used, test_size)
+        data = data[:amount_used]
         
         if self.model_name in self.open_source_models:
             all_prompt_data = self.create_batched_prompt(data)

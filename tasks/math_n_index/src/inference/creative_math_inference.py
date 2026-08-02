@@ -90,6 +90,9 @@ class CreativeMathInference(InferenceDriver):
 
         portion = self.config.get("portion", 1.0)
         amount_used = int(len(data) * portion)
+        test_size = self.config.get("test_size", -1)
+        if test_size > 0:
+            amount_used = min(amount_used, test_size)
         data = data[:amount_used]
 
         print("\n================= generating prompts =================")

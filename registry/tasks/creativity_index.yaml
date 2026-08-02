@@ -1,0 +1,8 @@
+name: creativity_index
+display_name: "Creativity Index"
+domain: creative_writing
+folder: tasks/math_n_index
+adapter: registry/adapters/creativity_index.sh
+environment: modern
+description: "Continue book, poem and speech prompts; scored by n-gram overlap against a web-scale corpus."
+limit_supported: true

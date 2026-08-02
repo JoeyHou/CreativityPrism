@@ -13,7 +13,7 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 | Phase 1 — Foundation (inference + registry + cleanup) | **Complete + Published to `main_v2` (2026-07-22)** | 4 tasks wired; 19/19 Phase 1 checks pass |
 | Phase 2A — Artifact contract + centralized outputs | **Complete (2026-08-01)** | `CP_ARTIFACT` markers, `outputs/` materialization, `metadata.json`; 4/4 gate checks, 29 unit tests |
 | Phase 2B — Evaluation dispatch | **Complete (2026-08-01)** | Eval branches wired for all four tasks; 33 unit tests. Not yet run against paid judges. |
-| Phase 2C — Remaining task adapters | **Not started** | neocoder/dat/creative_math/creativity_index not wired; no `legacy` env |
+| Phase 2C — Remaining task adapters | **Batch 1 complete (2026-08-01)** | `neocoder`, `creative_math`, `creativity_index` wired; `legacy` env authored; 35 unit tests. `dat` (batch 2) still pending. |
 | Phase 3 — SLURM + Analysis Loader | **Not started** | No `--slurm` flag, no `loader.py` |
 
 ---
@@ -51,9 +51,57 @@ Rationale for each change lives in the per-phase sections below; the "Deviations
 - Public `main` remained at `4705a830501e47b999481a0ec0c62ac2cca10c86` during publication.
 - Pushes are performed from the VS Code Git UI, not from an agent-run terminal — see `RESTRUCTURING_PLAN.md` "Publishing procedure" for why.
 - Original `creativityprism_v2/` worktree remains an intentionally untouched, dirty, read-only migration source. It must not be used for new development or deleted before asset review.
-- Next slice: Phase 2C — adapters for the remaining four tasks plus the `legacy` conda env.
+- Next slice: Phase 2C batch 2 — the `dat` adapter plus the GloVe download convention.
 
 See the top of `RESTRUCTURING_PLAN.md` for the new-session startup gate and safety constraints.
+
+---
+
+## Phase 2C batch 1 — Complete (2026-08-01)
+
+Wires three of the four remaining tasks: `neocoder`, `creative_math`, `creativity_index`.
+`dat` is deliberately held back to batch 2 because it needs a GloVe download convention
+that does not exist yet.
+
+### What was built
+
+| File | Change |
+|------|--------|
+| `registry/environments/legacy.yml` | **New.** vllm 0.5.3.post1 / torch 2.3.1 / Python 3.11 / CUDA 12.1 for the `neocoder_dat` bundle. `scripts/setup_envs.sh` auto-discovers `registry/environments/*.yml`, so no script change was needed. |
+| `registry/tasks/{neocoder,creative_math,creativity_index}.yaml` | **New.** |
+| `registry/adapters/{neocoder,creative_math,creativity_index}.sh` | **New.** |
+| `registry/adapters/_provider_keys.py` | **New.** Reads `api_keys.json` and prints shell-quoted `export` lines for the provider env vars the two bundles read natively. |
+| `registry/adapters/_common.sh` | Added `export_provider_keys`. Also fixed the `nvjitlink` `LD_LIBRARY_PATH` probe, which hardcoded `python3.12` and would have silently skipped the Python 3.11 `legacy` env. |
+| `registry/models.yaml` | Added `neocoder_dat` aliases (13 models) and `math_n_index` aliases (18 models). A missing alias is intentional and means the bundle does not support that model. |
+| `tasks/math_n_index/src/inference/creative_index_inference.py` | Removed the unconditional `data[:100]` cap; added `test_size`. |
+| `tasks/math_n_index/src/inference/creative_math_inference.py` | Added `test_size`. |
+| `tasks/math_n_index/src/inference/inference_driver.py` | Closed-source API keys now resolve from provider env vars, falling back to the config value. |
+| `tasks/math_n_index/src/evaluation/creative_math_eval_api.py` | Config path now comes from `CREATIVITYPRISM_MATH_EVAL_CONFIG`; judge keys come from provider env vars instead of placeholders. |
+| `tasks/neocoder_dat/src/models/model.py` | `CACHE_DIR` now honours `HF_HOME` (exported by `_common.sh`) instead of a hardcoded `/scratch365/...` path. |
+| `runner/test_phase2a_artifacts.py` | +2 tests (35 total). Split the `$NATIVE_OUT` assertion away from the guard-ordering assertions so directory-artifact adapters are covered, and added a test that every `registry/adapters/*.sh` is listed in the gate. |
+
+### Deviations from the plan
+
+| # | Deviation | Why |
+|---|-----------|-----|
+| 1 | `legacy.yml` only; no `legacy.txt` | `.txt` files are `conda list --export` snapshots. One cannot be authored for an environment that has never been built. |
+| 2 | `--limit` is expressed as an exact `test_size`, not as a float `portion` | The tasks only exposed `portion`, and converting an integer limit to a fraction is lossy and off-by-one prone. `test_size` matches the convention the AUT bundle already uses and that `ExactLimitTests` covers. |
+| 3 | Provider keys travel through env vars, not through the generated configs | `tasks/neocoder_dat` already reads `OPENAI_API_KEY`/`ANTHROPIC_API_KEY`/`GENAI_API_KEY`/`DEEPSEEK_API_KEY` natively, so this needed zero patching there. It also keeps secrets out of any file the adapter writes. `api_keys.json` stays model-keyed for the older tasks; the provider block is additive and optional. |
+| 4 | `neocoder` and `creativity_index` announce a **directory** artifact | NeoCoder's output filename embeds a sample count computed inside the task; `creativity_index` writes one file per domain. Both directories are run-scoped, so the artifact is still unambiguous. |
+| 5 | `--judge-model` is a no-op for all three tasks | `creative_math` uses a fixed three-judge majority vote, `creativity_index` uses an n-gram metric with no judge, and NeoCoder's technique detector hardcodes `gpt-4-turbo`. Honouring the flag would silently produce numbers that are not comparable to the published ones. |
+| 6 | One registry task covers all three `creativity_index` domains | The benchmark reports Creativity Index over book/poem/speech together. The adapter loops; `CREATIVITYPRISM_INDEX_DOMAINS` narrows it. |
+| 7 | `creativity_index` eval defaults to the full 5..12 `min_ngram` sweep | That is what the bundled `book_creative_par.sh` and friends do. `CREATIVITYPRISM_INDEX_MIN_NGRAM` allows a cheaper single-`n` run. |
+| 8 | `creative_math_eval_api.py` gained an env-var config override | It loads its config at **import time** from a fixed relative path, so an adapter cannot pass one as an argument. The checked-in `configs/eval_creative_math.json` is also the wrong shape for it (`experiments_list` vs. flat) and would raise `KeyError`. |
+
+### Verification
+
+- `bash runner/test_phase1.sh` — 19 passed, 0 failed.
+- `bash runner/test_phase2a.sh` — 4 passed, 0 failed (35 unit tests).
+- `bash -n` clean on all eight adapters; `py_compile` clean on every patched Python file; every registry YAML parses.
+- `python runner/run.py --list-tasks` shows 7 tasks; `--dry-run` exits 0 for all three new tasks.
+- `--limit 5` on `neocoder` is rejected with exit 5, matching `limit_supported: false`.
+- `_provider_keys.py` exercised against a synthetic file: placeholders and empty strings skipped, values with spaces quoted, preexisting env vars left untouched, missing file is a silent no-op.
+- **Not verified:** nothing has been run on the cluster. No `legacy` env has been built, no model loaded, no paid judge called. The first real run is expected to surface issues no static gate can catch.
 
 ---
 
@@ -195,14 +243,14 @@ These are the historical API/GPU runs; they were not rerun on 2026-07-22. The cu
 
 ### Confirmed gaps (verified 2026-08-01)
 
-- **Missing task wiring.** Folders `tasks/math_n_index/` and `tasks/neocoder_dat/` exist, but no YAMLs/adapters for `neocoder`, `dat`, `creative_math`, `creativity_index`.
-- **No `legacy` env.** Only `modern.txt`/`modern.yml` are present; `legacy.txt` (vllm 0.5.3, torch 2.3.1) for the `neocoder_dat` bundle is not yet created.
-- **No judge has actually been run.** Eval dispatch is wired and statically verified, but never executed end-to-end against a paid or local judge model.
+- **`dat` is still unwired.** Batch 2. It needs a GloVe download convention first — `steps/evaluate_dat.py` hardcodes a site-local `glove.840B.300d.txt` path.
+- **No environment has been built for `legacy`.** `registry/environments/legacy.yml` is authored but never installed, so its pins are unproven.
+- **No judge has actually been run.** Eval dispatch is wired and statically verified for seven tasks, but never executed end-to-end against a paid or local judge model.
 
 ### Work remaining for Phase 2C
 
-1. Add adapters + YAMLs for `neocoder`, `dat`, `creative_math`, `creativity_index`.
-2. Add `registry/environments/legacy.{txt,yml}` and ensure `scripts/setup_envs.sh` handles it.
+1. Batch 2: parameterize the GloVe path, git-ignore `tasks/neocoder_dat/embeddings/`, document the download, then add `registry/tasks/dat.yaml` + `registry/adapters/dat.sh`.
+2. Build the `legacy` env on the cluster and capture a `legacy.txt` snapshot from it.
 3. Run the Phase 2 end-to-end verification block from the plan, including a small-`--limit` eval run.
 
 ---

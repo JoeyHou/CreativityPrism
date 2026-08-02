@@ -31,6 +31,25 @@ CreativityPrism is a benchmark suite for evaluating the creativity of large lang
 2. **API keys** (for API models) — placed in a local `api_keys.json` file.
 3. **GPU access** (for open-weight models) — at least one GPU with sufficient VRAM.
 
+#### `api_keys.json`
+
+The file is model-keyed (`"gpt-4.1": "sk-..."`) for the AUT/TTCW/Creative Short and
+TTCT tasks. `neocoder`, `creative_math` and `creativity_index` instead read provider
+environment variables, so add a provider block alongside the model entries:
+
+```json
+{
+  "OPENAI_API_KEY": "...",
+  "ANTHROPIC_API_KEY": "...",
+  "GENAI_API_KEY": "...",
+  "DEEPSEEK_API_KEY": "..."
+}
+```
+
+Adapters export these into the environment at run time. Keys already set in your shell
+take priority, and the file is never copied into the repo tree. `api_keys.json` is
+gitignored — keep it that way.
+
 ### Setup (one-time)
 
 ```bash
@@ -43,6 +62,11 @@ bash scripts/setup_envs.sh
 # (Optional) Use a custom install location for conda envs
 bash scripts/setup_envs.sh --prefix /your/storage/path/conda_envs
 ```
+
+There are two environments. `modern` (vllm 0.7.2 / torch 2.5.1) serves most tasks;
+`legacy` (vllm 0.5.3.post1 / torch 2.3.1 / Python 3.11) is required by `neocoder`
+because that bundle cannot run on the newer vLLM. Each task YAML names the one it
+needs, and the runner refuses to start if it is missing.
 
 ### Running tasks
 
@@ -69,8 +93,28 @@ python runner/run.py --list-models
 Users always refer to models by their **canonical name** (e.g., `GPT4.1`, `Qwen2.5-72B`, `Claude3-Sonnet`). The system handles translating these to whatever format each task expects internally.
 
 When provided, `--limit` must be a positive integer. Omit it to run the full dataset.
+Not every task supports it: `neocoder` exposes no sample-count knob, so
+`--limit` is rejected there with a clear error rather than silently ignored.
 
-Every run does inference and evaluation by default. Use `--inference-only` or `--eval-only` to run a single phase; `--eval-only` reuses the inference results already stored under the same `--label`, so the label must match the run you want to score. `--judge-model` is always required, but `creative_short` ignores it: its evaluation is fully automated and uses no LLM judge.
+Every run does inference and evaluation by default. Use `--inference-only` or `--eval-only` to run a single phase; `--eval-only` reuses the inference results already stored under the same `--label`, so the label must match the run you want to score. `--judge-model` is always required by the CLI, but several tasks ignore it:
+
+| Task | Does `--judge-model` do anything? |
+|------|-----------------------------------|
+| `aut`, `ttcw`, `ttct` | Yes — it selects the LLM judge. |
+| `creative_short` | No — evaluation is fully automated (no LLM judge). |
+| `creativity_index` | No — the metric is exact n-gram overlap, not a judge. |
+| `creative_math` | No — a fixed three-judge panel (gpt-4.1, claude-3-7-sonnet, gemini-2.0-flash) votes by majority. |
+| `neocoder` | No — technique detection hardcodes `gpt-4-turbo`. |
+
+Two tasks have costs worth knowing before you start them:
+
+- **`neocoder`** executes model-generated Python during correctness scoring, and bills
+  one `gpt-4-turbo` call per generated solution during technique detection. Run it only
+  where executing untrusted code is acceptable.
+- **`creativity_index`** queries `https://api.infini-gram.io/` during evaluation, so the
+  compute node needs outbound internet. By default it sweeps `min_ngram` 5..12 across
+  all three domains; set `CREATIVITYPRISM_INDEX_MIN_NGRAM=5` and/or
+  `CREATIVITYPRISM_INDEX_DOMAINS=poem` for a cheaper run.
 
 ### Planned: Pitt CRC submission (Phase 3)
 
@@ -99,6 +143,14 @@ tasks/aut_ttcw_cshort/data/output/{label}/{task}/{model_alias}/
 ```
 
 TTCT uses `tasks/ttct/data/outputs/{label}/{model_alias}.json`.
+
+The Phase 2C tasks use:
+
+| Task | Native inference output | Native evaluation output |
+|------|-------------------------|--------------------------|
+| `neocoder` | `tasks/neocoder_dat/results/{label}/neocoder/inference/` | `.../evaluation/{correctness,creativity}/` |
+| `creative_math` | `tasks/math_n_index/data/outputs/{label}/creative_math/{alias}/{alias}.json` | `tasks/math_n_index/data/evaluations/{label}/creative_math/` |
+| `creativity_index` | `tasks/math_n_index/data/outputs/{label}/creative_index/{alias}/` | `tasks/math_n_index/data/evaluations/{label}/creative_index/{alias}/` |
 
 On top of that, the runner builds a centralized, uniform view of every run:
 

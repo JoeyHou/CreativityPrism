@@ -65,11 +65,71 @@ If the branch has advanced normally, the exact HEAD may differ; require a clean 
 
 ### Next implementation slice
 
-**Phase 2A (artifact contract) and Phase 2B (evaluation dispatch) are complete.** Continue with **Phase 2C: remaining task adapters**:
+**Phase 2A (artifact contract), 2B (evaluation dispatch), and 2C batch 1 are complete.**
+Batch 1 added `neocoder`, `creative_math` and `creativity_index`. Continue with
+**Phase 2C batch 2: DAT**:
 
-1. Add YAMLs + adapters for `neocoder`, `dat`, `creative_math`, `creativity_index`.
-2. Add `registry/environments/legacy.{txt,yml}` (vllm 0.5.3, torch 2.3.1) for the `neocoder_dat` bundle and teach `scripts/setup_envs.sh` about it.
-3. Run the Phase 2 end-to-end verification block below on the cluster.
+1. Parameterize the GloVe path in `tasks/neocoder_dat/steps/evaluate_dat.py` (default
+   `tasks/neocoder_dat/embeddings/glove/glove.840B.300d.txt`, overridable via
+   `CREATIVITYPRISM_GLOVE_PATH`); the word list `tasks/neocoder_dat/words.txt` is
+   already in the repo.
+2. Git-ignore `tasks/neocoder_dat/embeddings/` and document "download GloVe first"
+   as a DAT-only setup step in `WORKFLOW.md` and the task README.
+3. Add `registry/tasks/dat.yaml` (`folder: tasks/neocoder_dat`, `environment: legacy`)
+   and `registry/adapters/dat.sh`.
+4. Run the Phase 2 end-to-end verification block below on the cluster.
+
+### Task adapters (Phase 2C batch 1)
+
+| Task | Bundle | Env | `--limit` | `--judge-model` |
+|------|--------|-----|-----------|-----------------|
+| `neocoder` | `tasks/neocoder_dat` | `legacy` | not supported | **no-op** — technique detection hardcodes `gpt-4-turbo` |
+| `creative_math` | `tasks/math_n_index` | `modern` | supported | **no-op** — fixed 3-judge majority vote |
+| `creativity_index` | `tasks/math_n_index` | `modern` | supported | **no-op** — n-gram metric, no LLM judge |
+
+Constraints discovered while wiring these, all verified in the task sources:
+
+- **`creative_math_eval_api.py` loads its config at import time** from a fixed relative
+  path, so the adapter cannot pass one as an argument. It now reads
+  `CREATIVITYPRISM_MATH_EVAL_CONFIG` first. That script also wants a **flat** config
+  (`config["file_paths"]`), whereas the checked-in `configs/eval_creative_math.json`
+  is `experiments_list`-shaped and would raise `KeyError` — another reason the adapter
+  generates its own.
+- **The two creative_math paths agree only by convention.** Inference writes
+  `<generation>/<alias>.json`; eval rebuilds `<generation>/<alias>/<alias>.json`. The
+  adapter therefore hands inference `.../creative_math/<alias>` and eval the parent
+  `.../creative_math`.
+- **`creativity_index` eval `--subset` defaults to 100 and silently truncates.** The
+  adapter always passes it explicitly: `--limit` when given, otherwise the generation
+  file's real length.
+- **`creative_index_inference.py` capped every run at `data[:100]`** regardless of
+  `portion`. Removed; both math drivers now honour an exact `test_size`, which is how
+  the runner's integer `--limit` is expressed (converting it to a float `portion`
+  would be lossy).
+- **NeoCoder evaluation is a strict three-step chain**: `correctness` -> `detection` ->
+  `creativity`, because `calculate_creativity()` asserts that both `correctness` and
+  `techniques` have been written back into the inference file. `correctness` and
+  `creativity` also write the *same* `<model>_sample=..._creativity.json` filename, so
+  the adapter gives them separate save folders.
+- **NeoCoder `correctness` executes model-generated Python** and `detection` bills one
+  `gpt-4-turbo` call per generated solution. Both are inherent to the benchmark; the
+  adapter documents them in its header.
+- **`dp_rounds` must match between inference and scoring.** `calculate_creativity()`
+  defaults to 5 while `inference_dp.py` defaults to 3, so the adapter pins 5.
+- **Two adapters announce a directory, not a file.** NeoCoder's filename embeds a
+  sample count only the task can compute, and `creativity_index` produces one file per
+  domain. Both directories are run-scoped, so the artifact stays unambiguous.
+
+#### Provider API keys
+
+`tasks/neocoder_dat` reads `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` / `GENAI_API_KEY` /
+`DEEPSEEK_API_KEY` straight from the environment, so `tasks/math_n_index` was patched
+to do the same instead of reading keys out of its JSON configs. `_common.sh` gained
+`export_provider_keys`, which runs `registry/adapters/_provider_keys.py` against
+`$CREATIVITYPRISM_API_KEYS` and evals the resulting shell-quoted `export` lines.
+Keys already present in the environment win; placeholder values (`YOUR_...`) and empty
+strings are skipped. `api_keys.json` stays model-keyed for the older tasks — the
+provider block is purely additive.
 
 ### Evaluation dispatch (Phase 2B)
 
@@ -108,6 +168,8 @@ Accumulated rough edges. None are blocking; do them as one focused slice **after
 | `try: from runner import artifacts / except ImportError: import artifacts` | `runner/run.py` | Needed because the file is used both as a script and as an importable module. Cleaner fix is a real `runner/__init__.py` plus `python -m runner.run`, which changes the documented CLI, so it needs a deliberate decision |
 | Two separate gate scripts (`test_phase1.sh`, `test_phase2a.sh`) | `runner/` | Fine for now; consider one `runner/test_all.sh` wrapper once Phase 2 is complete |
 | Six near-identical ephemeral-config heredocs (three adapters x inference/eval) | `registry/adapters/{aut,ttcw,creative_short}.sh` | Now clear what varies: `run_id`, `task`, `model_name`, and an optional `test_size`, so a `_common.sh` helper is feasible. Deferred because `test_phase1_behavior.py` asserts each adapter's source literally contains its own task-qualified `run_id` entry; hoisting the heredoc removes those literals, so the refactor must land with a rewritten Phase 1 assertion in its own diff. |
+| `technique_detection()` writes `human_solution_techniques.json` back into the tracked dataset directory, and `creative_math_eval_api.py` appends to `evaluation_results_all_models.jsonl` in the CWD | `tasks/neocoder_dat/src/utils/configs.py`, `tasks/math_n_index/src/evaluation/creative_math_eval_api.py` | Both are outside run isolation. The first is idempotent in practice (the file is already populated and is only extended for unseen problem ids); the second is append-only. Fixing them means changing task-internal output contracts, so it needs its own diff. |
+| `registry/environments/legacy.yml` has no `legacy.txt` counterpart | `registry/environments/` | `.txt` files are `conda list --export` snapshots; one can only be produced after the env has actually been built on the cluster. |
 
 ### Safety constraints carried forward
 

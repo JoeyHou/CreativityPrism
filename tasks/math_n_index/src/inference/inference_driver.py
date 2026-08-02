@@ -8,6 +8,26 @@ from api_warpper import ModelWrapper
 from vllm import LLM, SamplingParams
 import torch
 
+# Provider order matches ModelWrapper's own substring dispatch in api_warpper.py.
+_PROVIDER_ENV_VARS = (
+    ("gpt", ("OPENAI_API_KEY",)),
+    ("claude", ("ANTHROPIC_API_KEY",)),
+    ("gemini", ("GENAI_API_KEY", "GEMINI_API_KEY")),
+    ("deepseek", ("DEEPSEEK_API_KEY",)),
+)
+
+
+def api_key_from_env(model_name):
+    """Provider keys are exported by the adapter from api_keys.json; never stored in this repo."""
+    lowered = model_name.lower()
+    for token, env_vars in _PROVIDER_ENV_VARS:
+        if token in lowered:
+            for env_var in env_vars:
+                if os.environ.get(env_var):
+                    return os.environ[env_var]
+    return ""
+
+
 class InferenceDriver(ABC):    
     open_source_models = {
         # open-samll
@@ -107,7 +127,7 @@ class InferenceDriver(ABC):
             )
             # print("max_tokens: ", model_config.get("max_new_tokens", 288))
         elif self.model_name in self.closed_source_model:
-            access_token = self.closed_source_model[self.model_name]['token']
+            access_token = api_key_from_env(self.model_name) or self.closed_source_model[self.model_name]['token']
             self.api_model = ModelWrapper(model_name=self.model_name, api_key=access_token)
         else:
             raise NotImplementedError

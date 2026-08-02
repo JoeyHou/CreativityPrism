@@ -394,7 +394,12 @@ class RerunTests(MaterializeTestCase):
 
 
 class AdapterContractTests(unittest.TestCase):
+    # Adapters whose native output path is a single file known up front, held in
+    # $NATIVE_OUT. Tasks whose filenames are computed inside the task (neocoder)
+    # or that produce a directory of files (creativity_index) announce a
+    # run-scoped directory instead and are therefore not in this tuple.
     ADAPTERS = ("aut", "ttcw", "creative_short", "ttct")
+    ALL_ADAPTERS = ADAPTERS + ("neocoder", "creative_math", "creativity_index")
     # adapter name -> the `task` string the bundled evaluator dispatches on.
     BUNDLED_EVAL_TASKS = {
         "aut": "aut_push",
@@ -402,11 +407,23 @@ class AdapterContractTests(unittest.TestCase):
         "creative_short": "creative_short",
     }
 
-    def test_adapters_emit_markers_only_for_phases_they_run(self):
+    def test_every_registered_adapter_is_covered(self):
+        """A new adapter must be added here, not silently skipped by the gate."""
+        on_disk = sorted(
+            p.stem for p in ADAPTER_DIR.glob("*.sh") if not p.name.startswith("_")
+        )
+        self.assertEqual(on_disk, sorted(self.ALL_ADAPTERS))
+
+    def test_native_out_adapters_emit_the_shared_variable(self):
         for name in self.ADAPTERS:
             with self.subTest(adapter=name):
                 source = (ADAPTER_DIR / f"{name}.sh").read_text(encoding="utf-8")
                 self.assertIn('emit_artifact inference "$NATIVE_OUT"', source)
+
+    def test_adapters_emit_markers_only_for_phases_they_run(self):
+        for name in self.ALL_ADAPTERS:
+            with self.subTest(adapter=name):
+                source = (ADAPTER_DIR / f"{name}.sh").read_text(encoding="utf-8")
                 self.assertNotIn("OUTPUT_PATH=", source)
                 marker_line = next(
                     i for i, line in enumerate(source.splitlines())
@@ -419,7 +436,7 @@ class AdapterContractTests(unittest.TestCase):
                 self.assertLess(guard_line, marker_line)
 
     def test_adapters_emit_eval_markers_behind_an_eval_guard(self):
-        for name in self.ADAPTERS:
+        for name in self.ALL_ADAPTERS:
             with self.subTest(adapter=name):
                 lines = (ADAPTER_DIR / f"{name}.sh").read_text(
                     encoding="utf-8"
@@ -462,7 +479,7 @@ class AdapterContractTests(unittest.TestCase):
 
     def test_adapters_never_copy_the_credentials_file(self):
         """Credentials are passed by path, never duplicated into the repo tree."""
-        for name in self.ADAPTERS:
+        for name in self.ALL_ADAPTERS:
             with self.subTest(adapter=name):
                 source = (ADAPTER_DIR / f"{name}.sh").read_text(encoding="utf-8")
                 self.assertNotRegex(

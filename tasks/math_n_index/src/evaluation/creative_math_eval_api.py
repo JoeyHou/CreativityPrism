@@ -13,14 +13,18 @@ def load_config(input_file):
     with open(file_path, "r") as file:
         return json.load(file)
 
-config = load_config(input_file="configs/eval_creative_math.json")
+config = load_config(
+    input_file=os.environ.get(
+        "CREATIVITYPRISM_MATH_EVAL_CONFIG", "configs/eval_creative_math.json"
+    )
+)
 save_interval = 5
 
-# define API keys for each provider
+# Provider keys are exported by the adapter from api_keys.json; never stored in this repo.
 API_KEYS = {
-    "openai": "key",
-    "anthropic": "key",
-    "google": "key"
+    "openai": os.environ.get("OPENAI_API_KEY", ""),
+    "anthropic": os.environ.get("ANTHROPIC_API_KEY", ""),
+    "google": os.environ.get("GENAI_API_KEY") or os.environ.get("GEMINI_API_KEY", ""),
 }
 # define judge models
 JUDGE_MODELS = {

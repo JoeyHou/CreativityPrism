@@ -18,7 +18,8 @@ from google import genai
 from google.genai import types
 from vllm import LLM
 
-CACHE_DIR="/scratch365/ylu33/hf-models"
+# HF_HOME is exported by registry/adapters/_common.sh; the literal is the historical default.
+CACHE_DIR = os.environ.get("HF_HOME", "/scratch365/ylu33/hf-models")
 
 completion_tokens = prompt_tokens = 0
 

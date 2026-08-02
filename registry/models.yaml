@@ -12,8 +12,14 @@
 #     api_call:           the exact id used in api requests (api models)
 #     aut_ttcw_cshort:    folder/alias used by tasks/aut_ttcw_cshort
 #     ttct:               -model_name passed to ttct_inference.py
-#     neocoder_dat:       (Phase 2)
-#     math_n_index:       (Phase 2)
+#     neocoder_dat:       --model-name for tasks/neocoder_dat; must be a key of
+#                         __MODEL_TO_CLASS__ in that bundle's src/utils/configs.py
+#     math_n_index:       model_name for tasks/math_n_index; must be a key of
+#                         open_source_models or closed_source_model in that
+#                         bundle's src/inference/inference_driver.py
+#
+# A missing alias is intentional: it means the bundle does not support that
+# model, and lookup_alias fails with an explicit message rather than guessing.
 
 models:
 
@@ -25,6 +31,8 @@ models:
       api_call: gpt-4.1-2025-04-14
       aut_ttcw_cshort: gpt_4.1
       ttct: gpt-4.1-2025-04-14
+      neocoder_dat: gpt-4.1
+      math_n_index: gpt-4.1
 
   GPT4.1-mini:
     type: api
@@ -33,6 +41,8 @@ models:
       api_call: gpt-4.1-mini-2025-04-14
       aut_ttcw_cshort: gpt_4.1_mini
       ttct: gpt-4.1-mini-2025-04-14
+      neocoder_dat: gpt-4.1-mini
+      math_n_index: gpt-4.1-mini
 
   Claude3-Sonnet:
     type: api
@@ -41,6 +51,8 @@ models:
       api_call: claude-3-7-sonnet-20250219
       aut_ttcw_cshort: claude_37_sonnet
       ttct: claude-3-7-sonnet-20250219
+      neocoder_dat: claude-3-7-sonnet-20250219
+      math_n_index: claude-3-7-sonnet-20250219
 
   Claude3-Haiku:
     type: api
@@ -57,6 +69,8 @@ models:
       api_call: gemini-2.0-flash
       aut_ttcw_cshort: gemini_2_flash
       ttct: gemini-2.0-flash
+      neocoder_dat: gemini-2.0-flash
+      math_n_index: gemini-2.0-flash
 
   Gemini2.0-Pro:
     type: api
@@ -72,6 +86,8 @@ models:
       api_call: deepseek-reasoner
       aut_ttcw_cshort: deepseek_r1
       ttct: deepseek-reasoner
+      neocoder_dat: deepseek-reasoner
+      math_n_index: deepseek-reasoner
 
   DeepSeek-V3:
     type: api
@@ -80,6 +96,8 @@ models:
       api_call: deepseek-chat
       aut_ttcw_cshort: deepseek_v3
       ttct: deepseek-chat
+      neocoder_dat: deepseek-chat
+      math_n_index: deepseek-chat
 
   # ===== Open models =====
   Mistral-7B:
@@ -89,6 +107,8 @@ models:
     aliases:
       aut_ttcw_cshort: mistral_7b_instr
       ttct: Mistral-7B-Instruct-v0.3
+      neocoder_dat: mistralai/Mistral-7B-Instruct-v0.3
+      math_n_index: mistral-7b-instruct
 
   Qwen2.5-7B:
     type: open
@@ -97,6 +117,8 @@ models:
     aliases:
       aut_ttcw_cshort: qwen_7b_instruct
       ttct: Qwen2.5-7B-Instruct
+      neocoder_dat: Qwen/Qwen2.5-7B-Instruct
+      math_n_index: qwen-7b-instruct
 
   OLMo2-7B:
     type: open
@@ -105,6 +127,8 @@ models:
     aliases:
       aut_ttcw_cshort: olmo_7b
       ttct: OLMo-2-1124-7B-Instruct
+      neocoder_dat: allenai/OLMo-2-1124-7B-Instruct
+      math_n_index: OLMo-7B-instruct
 
   Llama3.1-8B:
     type: open
@@ -113,6 +137,8 @@ models:
     aliases:
       aut_ttcw_cshort: llama3_8b_instr
       ttct: Llama-3.1-8B-Instruct
+      neocoder_dat: meta-llama/Llama-3.1-8B-Instruct
+      math_n_index: Llama-31-8B-instruct
 
   OLMo2-13B:
     type: open
@@ -121,6 +147,8 @@ models:
     aliases:
       aut_ttcw_cshort: olmo_13b
       ttct: OLMo-2-1124-13B-Instruct
+      neocoder_dat: allenai/OLMo-2-1124-13B-Instruct
+      math_n_index: OLMo2-13B-instruct
 
   OLMo2-13B-SFT:
     type: open
@@ -128,6 +156,8 @@ models:
     hf_id: allenai/OLMo-2-1124-13B-SFT
     aliases:
       aut_ttcw_cshort: olmo_13b_sft
+      neocoder_dat: allenai/OLMo-2-1124-13B-SFT
+      math_n_index: OLMo2-13B-sft
 
   OLMo2-13B-DPO:
     type: open
@@ -135,6 +165,8 @@ models:
     hf_id: allenai/OLMo-2-1124-13B-DPO
     aliases:
       aut_ttcw_cshort: olmo_13b_dpo
+      neocoder_dat: allenai/OLMo-2-1124-13B-DPO
+      math_n_index: OLMo2-13B-dpo
 
   Mistral-24B:
     type: open
@@ -143,6 +175,7 @@ models:
     aliases:
       aut_ttcw_cshort: mistral_small_24b
       ttct: Mistral-Small-24B-Instruct-2501
+      math_n_index: Mistral-24B-instruct
 
   Qwen2.5-32B:
     type: open
@@ -151,6 +184,7 @@ models:
     aliases:
       aut_ttcw_cshort: qwen_32b_instruct
       ttct: Qwen2.5-32B-Instruct
+      math_n_index: qwen-32b-instruct
 
   Mixtral-8x7B:
     type: open
@@ -159,6 +193,7 @@ models:
     aliases:
       aut_ttcw_cshort: mixtral_8x7b
       ttct: Mixtral-8x7B-Instruct-v0.1
+      math_n_index: Mistral-8x7B-instruct
 
   Llama3.3-70B:
     type: open
@@ -167,6 +202,7 @@ models:
     aliases:
       aut_ttcw_cshort: llama3_70b_instruct
       ttct: Llama-3.3-70B-Instruct
+      math_n_index: Llama-33-70B-instruct
 
   Qwen2.5-72B:
     type: open
@@ -175,6 +211,7 @@ models:
     aliases:
       aut_ttcw_cshort: qwen_72b_instruct
       ttct: Qwen2.5-72B-Instruct
+      math_n_index: qwen-72B-instruct
 
   DeepSeek-Llama-70B:
     type: open

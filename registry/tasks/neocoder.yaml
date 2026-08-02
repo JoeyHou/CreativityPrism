@@ -1,0 +1,8 @@
+name: neocoder
+display_name: "NeoCoder"
+domain: creative_problem_solving
+folder: tasks/neocoder_dat
+adapter: registry/adapters/neocoder.sh
+environment: legacy
+description: "Solve Codeforces problems under denial-of-prompt technique constraints."
+limit_supported: false

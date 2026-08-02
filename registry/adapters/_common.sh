@@ -97,6 +97,18 @@ if [[ -z "${CREATIVITYPRISM_API_KEYS:-}" ]]; then
 fi
 export CREATIVITYPRISM_API_KEYS
 
+# tasks/neocoder_dat reads OPENAI_API_KEY / ANTHROPIC_API_KEY / GENAI_API_KEY /
+# DEEPSEEK_API_KEY straight from the environment, and tasks/math_n_index was
+# patched to do the same. Resolve them from the credentials file so no key is
+# ever written into the repo tree. Keys already set in the environment win.
+export_provider_keys() {
+    [[ -f "${CREATIVITYPRISM_API_KEYS:-}" ]] || return 0
+    local exports
+    exports="$(python3 "$ADAPTER_DIR/_provider_keys.py" "$CREATIVITYPRISM_API_KEYS")" || return 0
+    [[ -n "$exports" ]] && eval "$exports"
+    return 0
+}
+
 # ---- Conda env activation ----
 # Reads registry/environments/.location if present.
 activate_env() {
@@ -177,10 +189,14 @@ activate_env() {
     # Needed on clusters where the system CUDA module doesn't include nvjitlink
     # (e.g. CRC with cuda/12.1). The nvidia-nvjitlink-cu12 pip package ships the
     # library; we discover its path from $env_dir so it's not hardcoded per-user.
-    local nvjitlink_dir="${env_dir}/lib/python3.12/site-packages/nvidia/nvjitlink/lib"
-    if [[ -d "$nvjitlink_dir" ]]; then
-        export LD_LIBRARY_PATH="${nvjitlink_dir}:${LD_LIBRARY_PATH:-}"
-    fi
+    # Globbed because envs differ in Python version (modern 3.12, legacy 3.11).
+    local nvjitlink_dir
+    for nvjitlink_dir in "${env_dir}"/lib/python*/site-packages/nvidia/nvjitlink/lib; do
+        if [[ -d "$nvjitlink_dir" ]]; then
+            export LD_LIBRARY_PATH="${nvjitlink_dir}:${LD_LIBRARY_PATH:-}"
+            break
+        fi
+    done
 
     # vLLM multiprocessing: spawn avoids fork-related CUDA issues on some clusters.
     # Safe to set on all clusters; override with VLLM_WORKER_MULTIPROC_METHOD if needed.
