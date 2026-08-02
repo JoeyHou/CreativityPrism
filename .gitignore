@@ -12,6 +12,10 @@ human_annotation/data/raw/
 tasks/ttct/data/evaluations/*
 tasks/ttct/data/outputs/*
 tasks/ttct/data/archived/*
+# The */data/output(s)/* patterns above only match one segment before data/,
+# so the math_n_index bundle needs its own entries.
+tasks/math_n_index/data/outputs/
+tasks/math_n_index/data/evaluations/
 crc.sh
 /outputs/
 registry/environments/.location

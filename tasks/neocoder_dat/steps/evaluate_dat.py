@@ -1,13 +1,40 @@
+import os
 import re
 import json
 import click
+from pathlib import Path
 from src.utils.dat_score import Model
+
+TASK_ROOT = Path(__file__).resolve().parent.parent
+# ~2 GB, not redistributed with this repo; see the task README for the download step.
+DEFAULT_GLOVE_PATH = TASK_ROOT / "embeddings" / "glove" / "glove.840B.300d.txt"
+DEFAULT_WORDS_PATH = TASK_ROOT / "words.txt"
+GLOVE_DOWNLOAD_URL = "https://nlp.stanford.edu/data/glove.840B.300d.zip"
+
 
 @click.command()
 @click.option("--result-path", type=str)
+@click.option("--output-path", type=str, default=None,
+              help="Where to write scores. Default: --result-path with 'inference' replaced by 'evaluation'.")
+@click.option("--glove-path", type=str, default=None,
+              help="GloVe vectors. Falls back to $CREATIVITYPRISM_GLOVE_PATH, then embeddings/glove/glove.840B.300d.txt.")
+@click.option("--words-path", type=str, default=None,
+              help="Word list. Falls back to $CREATIVITYPRISM_DAT_WORDS, then the bundled words.txt.")
 
-def main(result_path):
-    model = Model("/afs/crc.nd.edu/group/dmsquare/vol4/ylu33/projects/creativity/glove.840B.300d.txt", "/afs/crc.nd.edu/user/y/ylu33/Private/workspace/NeoCoder/words.txt")
+def main(result_path, output_path, glove_path, words_path):
+    glove_path = glove_path or os.environ.get("CREATIVITYPRISM_GLOVE_PATH") or str(DEFAULT_GLOVE_PATH)
+    words_path = words_path or os.environ.get("CREATIVITYPRISM_DAT_WORDS") or str(DEFAULT_WORDS_PATH)
+
+    if not os.path.exists(glove_path):
+        raise SystemExit(
+            f"DAT scoring needs GloVe vectors, which are not shipped with this repo.\n"
+            f"Looked for: {glove_path}\n"
+            f"Download {GLOVE_DOWNLOAD_URL} and unzip glove.840B.300d.txt into\n"
+            f"  {DEFAULT_GLOVE_PATH.parent}\n"
+            f"or point --glove-path / $CREATIVITYPRISM_GLOVE_PATH at an existing copy."
+        )
+
+    model = Model(glove_path, words_path)
     dat_inference_result_path = result_path
 
     with open(dat_inference_result_path, "r") as f:
@@ -67,8 +94,15 @@ def main(result_path):
             "words": words,
             "score": score
         })
-    # Save file path by replacing inference in the result-path by evaluation
-    dat_save_path = dat_inference_result_path.replace("inference", "evaluation")
+    # The historical default rewrites the path in place, which silently overwrites the
+    # inference file when it contains no "inference" segment. Callers should pass --output-path.
+    dat_save_path = output_path or dat_inference_result_path.replace("inference", "evaluation")
+    if os.path.abspath(dat_save_path) == os.path.abspath(dat_inference_result_path):
+        raise SystemExit(
+            f"Refusing to overwrite the inference file: {dat_inference_result_path}\n"
+            "Pass --output-path explicitly."
+        )
+    os.makedirs(os.path.dirname(dat_save_path) or ".", exist_ok=True)
 
     with open(dat_save_path, "w") as f:
         json.dump(results, f, indent=4)

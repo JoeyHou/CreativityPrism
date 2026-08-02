@@ -64,9 +64,24 @@ bash scripts/setup_envs.sh --prefix /your/storage/path/conda_envs
 ```
 
 There are two environments. `modern` (vllm 0.7.2 / torch 2.5.1) serves most tasks;
-`legacy` (vllm 0.5.3.post1 / torch 2.3.1 / Python 3.11) is required by `neocoder`
-because that bundle cannot run on the newer vLLM. Each task YAML names the one it
+`legacy` (vllm 0.5.3.post1 / torch 2.3.1 / Python 3.11) is required by `neocoder` and
+`dat` because that bundle cannot run on the newer vLLM. Each task YAML names the one it
 needs, and the runner refuses to start if it is missing.
+
+#### Extra download for `dat`
+
+DAT scoring needs `glove.840B.300d.txt` (~2 GB), which is not redistributed here:
+
+```bash
+cd tasks/neocoder_dat
+mkdir -p embeddings/glove
+curl -L -o /tmp/glove.zip https://nlp.stanford.edu/data/glove.840B.300d.zip
+unzip /tmp/glove.zip -d embeddings/glove
+```
+
+`embeddings/` is gitignored. Point `$CREATIVITYPRISM_GLOVE_PATH` at an existing copy to
+skip the download. Only `dat` evaluation needs it — every other task, and DAT inference,
+run without it.
 
 ### Running tasks
 
@@ -94,7 +109,10 @@ Users always refer to models by their **canonical name** (e.g., `GPT4.1`, `Qwen2
 
 When provided, `--limit` must be a positive integer. Omit it to run the full dataset.
 Not every task supports it: `neocoder` exposes no sample-count knob, so
-`--limit` is rejected there with a clear error rather than silently ignored.
+`--limit` is rejected there with a clear error rather than silently ignored. Because of
+that, `--task all --limit N` is rejected outright. For `dat`, `--limit` maps to
+`--repeat`: DAT has a single fixed prompt rather than a dataset, so the repeat count *is*
+the sample count.
 
 Every run does inference and evaluation by default. Use `--inference-only` or `--eval-only` to run a single phase; `--eval-only` reuses the inference results already stored under the same `--label`, so the label must match the run you want to score. `--judge-model` is always required by the CLI, but several tasks ignore it:
 
@@ -103,6 +121,7 @@ Every run does inference and evaluation by default. Use `--inference-only` or `-
 | `aut`, `ttcw`, `ttct` | Yes — it selects the LLM judge. |
 | `creative_short` | No — evaluation is fully automated (no LLM judge). |
 | `creativity_index` | No — the metric is exact n-gram overlap, not a judge. |
+| `dat` | No — the metric is mean pairwise GloVe distance. |
 | `creative_math` | No — a fixed three-judge panel (gpt-4.1, claude-3-7-sonnet, gemini-2.0-flash) votes by majority. |
 | `neocoder` | No — technique detection hardcodes `gpt-4-turbo`. |
 
@@ -149,6 +168,7 @@ The Phase 2C tasks use:
 | Task | Native inference output | Native evaluation output |
 |------|-------------------------|--------------------------|
 | `neocoder` | `tasks/neocoder_dat/results/{label}/neocoder/inference/` | `.../evaluation/{correctness,creativity}/` |
+| `dat` | `tasks/neocoder_dat/results/{label}/dat/inference/` | `.../dat/evaluation/` |
 | `creative_math` | `tasks/math_n_index/data/outputs/{label}/creative_math/{alias}/{alias}.json` | `tasks/math_n_index/data/evaluations/{label}/creative_math/` |
 | `creativity_index` | `tasks/math_n_index/data/outputs/{label}/creative_index/{alias}/` | `tasks/math_n_index/data/evaluations/{label}/creative_index/{alias}/` |
 

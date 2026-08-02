@@ -13,7 +13,7 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 | Phase 1 — Foundation (inference + registry + cleanup) | **Complete + Published to `main_v2` (2026-07-22)** | 4 tasks wired; 19/19 Phase 1 checks pass |
 | Phase 2A — Artifact contract + centralized outputs | **Complete (2026-08-01)** | `CP_ARTIFACT` markers, `outputs/` materialization, `metadata.json`; 4/4 gate checks, 29 unit tests |
 | Phase 2B — Evaluation dispatch | **Complete (2026-08-01)** | Eval branches wired for all four tasks; 33 unit tests. Not yet run against paid judges. |
-| Phase 2C — Remaining task adapters | **Batch 1 complete (2026-08-01)** | `neocoder`, `creative_math`, `creativity_index` wired; `legacy` env authored; 35 unit tests. `dat` (batch 2) still pending. |
+| Phase 2C — Remaining task adapters | **Complete (2026-08-01)** | All eight tasks wired; `legacy` env authored; 35 unit tests. Nothing run on the cluster yet. |
 | Phase 3 — SLURM + Analysis Loader | **Not started** | No `--slurm` flag, no `loader.py` |
 
 ---
@@ -24,6 +24,7 @@ Anchors each phase to the commit that implemented it, so a future session can ju
 
 | Commit | Date | Phase | Scope | Gates at commit time | Pushed to `personal/main_v2` |
 |--------|------|-------|-------|----------------------|------------------------------|
+| `7fd6da3` | 2026-08-01 | 2C batch 1 | `neocoder`, `creative_math`, `creativity_index` registry entries and adapters; `legacy` env; provider-key export; removal of the `data[:100]` cap in the creativity-index driver | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Yes |
 | `747a5ba` | 2026-08-01 | 2A + 2B | Artifact contract (`CP_ARTIFACT` markers, `runner/artifacts.py`, `outputs/` materialization, `metadata.json`) and evaluation dispatch for all four wired tasks; credential path resolution in the bundled task driver | Phase 1 19/19, Phase 2A 4/4 (33 unit tests) | Yes |
 | `56cfbd3` | 2026-07-22 | 1 | Registry-driven runner: `registry/{tasks,adapters,models.yaml}`, `runner/run.py`, Phase 1 gate; 4 tasks wired for inference | Phase 1 19/19 | Yes |
 | `4705a83` | 2026-05-14 | — | Pre-restructuring baseline; also the tip of public `main` | n/a | n/a (public `main`) |
@@ -51,9 +52,45 @@ Rationale for each change lives in the per-phase sections below; the "Deviations
 - Public `main` remained at `4705a830501e47b999481a0ec0c62ac2cca10c86` during publication.
 - Pushes are performed from the VS Code Git UI, not from an agent-run terminal — see `RESTRUCTURING_PLAN.md` "Publishing procedure" for why.
 - Original `creativityprism_v2/` worktree remains an intentionally untouched, dirty, read-only migration source. It must not be used for new development or deleted before asset review.
-- Next slice: Phase 2C batch 2 — the `dat` adapter plus the GloVe download convention.
+- Next slice: build the `legacy` env on the cluster and run Phase 2 end-to-end, then Phase 3.
 
 See the top of `RESTRUCTURING_PLAN.md` for the new-session startup gate and safety constraints.
+
+---
+
+## Phase 2C batch 2 — Complete (2026-08-01)
+
+Wires the last task, `dat`. All eight benchmark tasks now run through `runner/run.py`.
+
+### What was built
+
+| File | Change |
+|------|--------|
+| `registry/tasks/dat.yaml`, `registry/adapters/dat.sh` | **New.** |
+| `tasks/neocoder_dat/steps/evaluate_dat.py` | The GloVe and word-list paths were hardcoded to a site-local AFS location. They now come from `--glove-path` / `--words-path`, then `$CREATIVITYPRISM_GLOVE_PATH` / `$CREATIVITYPRISM_DAT_WORDS`, then `embeddings/glove/glove.840B.300d.txt` and the bundled `words.txt`. A missing GloVe file now fails with download instructions instead of a bare `FileNotFoundError`. Added `--output-path`. |
+| `tasks/neocoder_dat/.gitignore` | Added `embeddings/`. |
+| `tasks/neocoder_dat/README.md` | Documented the GloVe download and the `--output-path` caveat. |
+| `.gitignore` | Added `tasks/math_n_index/data/{outputs,evaluations}/`. |
+| `runner/test_phase2a_artifacts.py` | Added `dat` to `ALL_ADAPTERS`. |
+| `.vscode/settings.json`, `registry/tasks/_task.schema.json` | **New.** |
+
+### Deviations from the plan
+
+| # | Deviation | Why |
+|---|-----------|-----|
+| 1 | `dat` sets `limit_supported: true`, with `--limit` mapped to `--repeat` | DAT has one fixed prompt rather than a dataset, so the repeat count *is* the sample count. This is the same semantic `--limit` has elsewhere, not a reinterpretation. |
+| 2 | `evaluate_dat.py` gained `--output-path` and an overwrite guard | Its only output rule was `result_path.replace("inference", "evaluation")`, which **overwrites the inference file** when the path contains no `inference` segment. That is silent data loss, and the file was already being edited for the GloVe path. |
+| 3 | The adapter globs the inference directory instead of reconstructing the filename | The name embeds `int(temperature * 100)`, which floating point makes unreliable to reproduce in shell (`0.29` truncates to `28`). The directory is run-scoped, so exactly one file is present; the adapter fails loudly if that is not true. |
+| 4 | `.gitignore` gained explicit `tasks/math_n_index/data/` entries | The pre-existing `*/data/outputs/*` pattern only matches **one** path segment before `data/`, so it never covered `tasks/math_n_index/...`. Batch 1's adapters would have left generated outputs untracked-but-visible. Caught while adding the GloVe ignore. |
+| 5 | A JSON schema and workspace setting were added for `registry/tasks/*.yaml` | schemastore maps `**/tasks/*.yaml` to the Ansible tasks schema, so every field in every task YAML showed as an editor error. Purely cosmetic, but it also now validates the registry contract in-editor. |
+
+### Verification
+
+- `bash runner/test_phase1.sh` — 19 passed, 0 failed. `bash runner/test_phase2a.sh` — 4 passed, 0 failed (35 unit tests).
+- `python runner/run.py --list-tasks` shows all 8 tasks; `--task dat --limit 5 --dry-run` exits 0.
+- `evaluate_dat.py` guards exercised with the scorer stubbed: the missing-GloVe path raises the documented message, `--output-path` equal to the input is refused, and a normal run creates parent directories, writes scores, and leaves the input untouched.
+- `git check-ignore` confirms `tasks/neocoder_dat/embeddings/`, `tasks/math_n_index/data/outputs/` and `.../data/evaluations/` are now ignored.
+- **Not verified:** nothing has been run on the cluster. No `legacy` env built, no GloVe downloaded, no model loaded, no paid judge called.
 
 ---
 
@@ -243,15 +280,14 @@ These are the historical API/GPU runs; they were not rerun on 2026-07-22. The cu
 
 ### Confirmed gaps (verified 2026-08-01)
 
-- **`dat` is still unwired.** Batch 2. It needs a GloVe download convention first — `steps/evaluate_dat.py` hardcodes a site-local `glove.840B.300d.txt` path.
 - **No environment has been built for `legacy`.** `registry/environments/legacy.yml` is authored but never installed, so its pins are unproven.
-- **No judge has actually been run.** Eval dispatch is wired and statically verified for seven tasks, but never executed end-to-end against a paid or local judge model.
+- **No GloVe vectors are present**, so `dat` evaluation cannot run until they are downloaded.
+- **No judge has actually been run.** Eval dispatch is wired and statically verified for all eight tasks, but never executed end-to-end against a paid or local judge model.
 
-### Work remaining for Phase 2C
+### Work remaining for Phase 2
 
-1. Batch 2: parameterize the GloVe path, git-ignore `tasks/neocoder_dat/embeddings/`, document the download, then add `registry/tasks/dat.yaml` + `registry/adapters/dat.sh`.
-2. Build the `legacy` env on the cluster and capture a `legacy.txt` snapshot from it.
-3. Run the Phase 2 end-to-end verification block from the plan, including a small-`--limit` eval run.
+1. Build the `legacy` env on the cluster and capture a `legacy.txt` snapshot from it.
+2. Run the Phase 2 end-to-end verification block from the plan, including a small-`--limit` eval run.
 
 ---
 

@@ -399,7 +399,7 @@ class AdapterContractTests(unittest.TestCase):
     # or that produce a directory of files (creativity_index) announce a
     # run-scoped directory instead and are therefore not in this tuple.
     ADAPTERS = ("aut", "ttcw", "creative_short", "ttct")
-    ALL_ADAPTERS = ADAPTERS + ("neocoder", "creative_math", "creativity_index")
+    ALL_ADAPTERS = ADAPTERS + ("neocoder", "dat", "creative_math", "creativity_index")
     # adapter name -> the `task` string the bundled evaluator dispatches on.
     BUNDLED_EVAL_TASKS = {
         "aut": "aut_push",

@@ -1,0 +1,7 @@
+{
+  // Without this, schemastore matches **/tasks/*.yaml against the Ansible tasks
+  // schema and flags every field in registry/tasks/*.yaml as "not allowed".
+  "yaml.schemas": {
+    "./registry/tasks/_task.schema.json": "registry/tasks/*.yaml"
+  }
+}

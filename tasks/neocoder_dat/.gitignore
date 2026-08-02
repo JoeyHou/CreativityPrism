@@ -1,2 +1,4 @@
 __pycache__/
 results/
+# GloVe vectors for DAT: ~2 GB, downloaded by the user (see README).
+embeddings/

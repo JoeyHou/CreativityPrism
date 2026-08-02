@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreativityPrism task registry entry",
+  "description": "Contract consumed by runner/run.py and runner/artifacts.py. Exists mainly so editors stop guessing; schemastore maps **/tasks/*.yaml to the Ansible tasks schema, which these files are not.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "display_name", "folder", "adapter"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Registry key. Must match the file name and the --task argument.",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable name shown by --list-tasks."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Grouping label for reporting only; not consumed by the runner."
+    },
+    "folder": {
+      "type": "string",
+      "description": "Repo-relative path to the task bundle."
+    },
+    "adapter": {
+      "type": "string",
+      "description": "Repo-relative path to the adapter script.",
+      "pattern": "^registry/adapters/[a-z0-9_]+\\.sh$"
+    },
+    "environment": {
+      "type": "string",
+      "description": "Short env name; the runner pre-flights creativityprism-<environment>. Defaults to modern.",
+      "enum": ["modern", "legacy"]
+    },
+    "description": {
+      "type": "string"
+    },
+    "limit_supported": {
+      "type": "boolean",
+      "description": "Whether the task can honour --limit. Absent means false, and the runner rejects --limit."
+    }
+  }
+}

@@ -1,0 +1,8 @@
+name: dat
+display_name: "Divergent Association Task"
+domain: divergent_thinking
+folder: tasks/neocoder_dat
+adapter: registry/adapters/dat.sh
+environment: legacy
+description: "Name ten maximally unrelated nouns; scored by mean GloVe embedding distance."
+limit_supported: true

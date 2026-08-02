@@ -65,25 +65,22 @@ If the branch has advanced normally, the exact HEAD may differ; require a clean 
 
 ### Next implementation slice
 
-**Phase 2A (artifact contract), 2B (evaluation dispatch), and 2C batch 1 are complete.**
-Batch 1 added `neocoder`, `creative_math` and `creativity_index`. Continue with
-**Phase 2C batch 2: DAT**:
+**Phase 2A (artifact contract), 2B (evaluation dispatch), and 2C (all remaining task
+adapters) are complete.** All eight tasks now run through `runner/run.py`. Nothing has
+been executed on the cluster yet, so the next slice is verification, not more wiring:
 
-1. Parameterize the GloVe path in `tasks/neocoder_dat/steps/evaluate_dat.py` (default
-   `tasks/neocoder_dat/embeddings/glove/glove.840B.300d.txt`, overridable via
-   `CREATIVITYPRISM_GLOVE_PATH`); the word list `tasks/neocoder_dat/words.txt` is
-   already in the repo.
-2. Git-ignore `tasks/neocoder_dat/embeddings/` and document "download GloVe first"
-   as a DAT-only setup step in `WORKFLOW.md` and the task README.
-3. Add `registry/tasks/dat.yaml` (`folder: tasks/neocoder_dat`, `environment: legacy`)
-   and `registry/adapters/dat.sh`.
-4. Run the Phase 2 end-to-end verification block below on the cluster.
+1. Build the `legacy` env (`bash scripts/setup_envs.sh --env legacy`) and capture a
+   `registry/environments/legacy.txt` snapshot from the result.
+2. Download GloVe into `tasks/neocoder_dat/embeddings/glove/` (needed only by `dat` eval).
+3. Run the Phase 2 end-to-end verification block below, including a small-`--limit`
+   eval run against a real judge.
 
-### Task adapters (Phase 2C batch 1)
+### Task adapters (Phase 2C)
 
 | Task | Bundle | Env | `--limit` | `--judge-model` |
 |------|--------|-----|-----------|-----------------|
 | `neocoder` | `tasks/neocoder_dat` | `legacy` | not supported | **no-op** — technique detection hardcodes `gpt-4-turbo` |
+| `dat` | `tasks/neocoder_dat` | `legacy` | maps to `--repeat` | **no-op** — GloVe distance, no LLM judge |
 | `creative_math` | `tasks/math_n_index` | `modern` | supported | **no-op** — fixed 3-judge majority vote |
 | `creativity_index` | `tasks/math_n_index` | `modern` | supported | **no-op** — n-gram metric, no LLM judge |
 
@@ -119,6 +116,17 @@ Constraints discovered while wiring these, all verified in the task sources:
 - **Two adapters announce a directory, not a file.** NeoCoder's filename embeds a
   sample count only the task can compute, and `creativity_index` produces one file per
   domain. Both directories are run-scoped, so the artifact stays unambiguous.
+- **`evaluate_dat.py` had no output-path option**; it derived one by replacing the
+  substring `inference` with `evaluation` inside the input path, which **overwrites the
+  inference file** when no such segment exists. It now takes `--output-path`, refuses to
+  write over its input, and the adapter always passes the flag.
+- **DAT's GloVe and word-list paths were hardcoded to a site-local AFS location.** They
+  now resolve from flags, then env vars, then `embeddings/glove/glove.840B.300d.txt` and
+  the bundled `words.txt`. GloVe is ~2 GB and is not redistributed; `embeddings/` is
+  gitignored and the missing-file error prints download instructions.
+- **The root `.gitignore` pattern `*/data/outputs/*` matches only one path segment**
+  before `data/`, so it never covered `tasks/math_n_index/`. Explicit entries were added;
+  `tasks/neocoder_dat/results/` was already covered by that bundle's own `.gitignore`.
 
 #### Provider API keys
 
