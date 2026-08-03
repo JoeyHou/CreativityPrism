@@ -310,6 +310,49 @@ For the bundled tasks the evaluator writes its results back into the inference d
 
 `outputs/` is gitignored.
 
+### Reading results back
+
+`result_analysis/loader.py` turns every task's output into one long table, so a notebook
+does not have to know that `aut` nests responses under a prompt variant while `neocoder`
+scores land in a CSV.
+
+```python
+# from the repo root
+from result_analysis.loader import load_records, load_outputs, list_runs
+
+# from a notebook inside result_analysis/
+import loader
+
+list_runs()                              # labels present under outputs/
+rows = load_records("v3")                # list of dicts, no pandas needed
+df   = load_outputs("v3")                # same rows as a DataFrame
+```
+
+Columns are `run_id, task, model, sample_id, metric, prompt, output, eval_score`.
+
+Two things to know before using it:
+
+- **It flattens, it does not aggregate.** One row per scored unit. Taking the mean is
+  the notebook's job, because what counts as "the score" of a task is an analysis
+  decision.
+- **`eval_score` is only meaningful next to `metric`.** One task's score is a semantic
+  distance around 86, another's is a coverage fraction in [0, 1], another's is a binary
+  verdict. Always group by `metric` (and `task`) before averaging:
+
+  ```python
+  df.groupby(["task", "metric"])["eval_score"].mean()
+  ```
+
+A unit that was generated but never scored is kept as a row with `metric = None` and
+`eval_score = None` rather than dropped, so the row count still reflects what actually
+ran. Filter those out explicitly when you want only scored rows.
+
+Artifacts are found through `metadata.json`, and a run produced on the cluster can be read
+on a laptop: absolute paths recorded in the metadata are re-rooted at the current repo when
+the original location does not exist.
+
+`runner/test_loader.sh` is the gate, 20 checks.
+
 ---
 
 ## For Community Contributors (Adding a New Task)

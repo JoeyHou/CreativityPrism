@@ -645,11 +645,11 @@ cat ../../outputs/phase2_test/aut/GPT4.1-mini/inference_output/*.json   # still 
 
 ### Phase 3: SLURM + Analysis Loader
 
-**Status:** SLURM built 2026-08-02 but never submitted to a real cluster; loader not started
+**Status:** SLURM built 2026-08-02 but never submitted to a real cluster; loader complete 2026-08-03
 
 **Scope:**
 - Add `--slurm` flag to the runner. — **Done**
-- Build `result_analysis/loader.py` for unified output loading. — **Not started**
+- Build `result_analysis/loader.py` for unified output loading. — **Done**
 
 **Runner changes:** *(implemented; see CHANGE_LOG for the design decision)*
 - `--slurm` generates an sbatch script wrapping the same command, then calls `sbatch` (unless `--no-submit`).
@@ -657,28 +657,49 @@ cat ../../outputs/phase2_test/aut/GPT4.1-mini/inference_output/*.json   # still 
 - Generated scripts go to `slurm_scripts/{label}/{task}_{model}.sbatch`; logs to `slurm_scripts/{label}/logs/`. Both git-ignored.
 - The script wraps `runner/run.py`, **not** the adapter, so artifact materialization happens inside the job. Scripts contain no absolute paths.
 
-**`result_analysis/loader.py`:**
+**`result_analysis/loader.py`:** *(implemented; deviations from this plan noted below)*
 
 ```python
-from result_analysis.loader import load_outputs
+import sys; sys.path.insert(0, "result_analysis")
+import loader
 
 # Load all outputs for a run
-df = load_outputs(run_id="v3")
-# → DataFrame: run_id, task, model, sample_id, prompt, output, eval_score
+df = loader.load_outputs(run_id="v3")
+# → DataFrame: run_id, task, model, sample_id, metric, prompt, output, eval_score
 
 # Filter by task and/or model
-df = load_outputs(run_id="v3", task="aut", model="GPT4.1")
+df = loader.load_outputs(run_id="v3", task="aut", model="GPT4.1")
 ```
 
 - One parser function per task (knows the native format).
 - Reads from `outputs/{run_id}/...` only, resolving artifacts via `metadata.json` (which records native paths whether or not symlinks were available).
 - Reuses canonical model names from `registry/models.yaml`.
 
+**Deviations from the plan, decided during implementation:**
+
+- **A `metric` column was added — 8 columns, not the 7 listed above.** A single `eval_score`
+  column would otherwise mix a DAT semantic distance (~86), an n-gram coverage in [0, 1] and
+  a binary rubric verdict into one number. `eval_score` is only interpretable next to `metric`.
+- **The loader flattens and never aggregates.** One row per scored unit; the notebook takes
+  the mean. Deciding what "the score" of a task is belongs in the analysis.
+- **pandas is optional.** `load_records()` returns dicts with no third-party import;
+  `load_outputs()` imports pandas lazily.
+- **A generated-but-unscored unit is kept** as a row with `metric = None`, so the row count
+  reflects what ran rather than what the evaluator managed to score.
+- **The planned `from result_analysis.loader import load_outputs` works, but only from the
+  repo root.** There is no `__init__.py`; it resolves as a namespace package. A notebook in
+  `result_analysis/` — which is where `visualization.ipynb` lives — must use `import loader`
+  instead. Both spellings are documented in the module docstring.
+
 **Verification steps:**
 
 ```bash
 # Laptop-runnable gate: script generation, override resolution, fan-out, marker durability
 bash runner/test_phase3.sh          # 28/28 as of 2026-08-02
+
+# Loader gate: synthetic fixtures frozen from real artifact shapes, covering the
+# scored paths a mock judge cannot produce
+bash runner/test_loader.sh          # 20/20 as of 2026-08-03
 
 # SLURM dry-run
 python runner/run.py --task aut --model GPT4.1 --judge-model GPT4.1-mini --label v3 --slurm --no-submit

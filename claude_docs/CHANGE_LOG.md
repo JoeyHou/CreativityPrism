@@ -16,7 +16,7 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 | Phase 2C — Remaining task adapters | **Complete (2026-08-01)** | All eight tasks wired; `legacy` env authored; 35 unit tests. Nothing run on the cluster yet. |
 | API-only local execution | **Complete (2026-08-02)** | `api` venv env + `CREATIVITYPRISM_FORCE_ENV`; vLLM imports made lazy so API paths need no GPU. |
 | Phase 3 — SLURM submission | **Built, not cluster-verified (2026-08-02)** | `--slurm`/`--no-submit`/`--slurm-override`, `runner/slurm.py`, durable artifact markers; 28/28 gate checks. No `sbatch` has ever been run. |
-| Phase 3 — Analysis loader | **Not started** | No `result_analysis/loader.py` |
+| Phase 3 — Analysis loader | **Complete (2026-08-03)** | `result_analysis/loader.py`; all eight parsers validated against real artifacts; 20/20 gate checks |
 
 ---
 
@@ -26,6 +26,7 @@ Anchors each phase to the commit that implemented it, so a future session can ju
 
 | Commit | Date | Phase | Scope | Gates at commit time | Pushed to `personal/main_v2` |
 |--------|------|-------|-------|----------------------|------------------------------|
+| `b00ed40` | 2026-08-02 | API-only + 3 (SLURM) | `api` venv environment and lazy vLLM imports; `--slurm`/`--no-submit`/`--slurm-override`, `runner/slurm.py`, `runner/slurm_template.sbatch`; durable `.cp_artifacts` sidecar; `.gitattributes` LF pin for `*.sh`; pre-existing bugs fixed in `creative_math` (uninvoked cleaning step, hardcoded model), `neocoder` and `ttct` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21 | Pending |
 | `0d35eef` | 2026-08-01 | 2C batch 2 | Task schema applied via a per-file `yaml-language-server` modeline, since the workspace `yaml.schemas` setting only takes effect after an extension reload | Phase 1 19/19, Phase 2A 4/4 | Pending |
 | `e7d852f` | 2026-08-01 | 2C batch 2 | `dat` registry entry and adapter; `evaluate_dat.py` GloVe/word-list paths and `--output-path`; `.gitignore` gap for `tasks/math_n_index/data/`; task JSON schema | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Pending |
 | `7fd6da3` | 2026-08-01 | 2C batch 1 | `neocoder`, `creative_math`, `creativity_index` registry entries and adapters; `legacy` env; provider-key export; removal of the `data[:100]` cap in the creativity-index driver | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Yes |
@@ -426,9 +427,77 @@ These are the historical API/GPU runs; they were not rerun on 2026-07-22. The cu
 
 ---
 
-## Phase 3 — Not started
+## Phase 3 — Analysis loader — Complete (2026-08-03)
 
-No `--slurm` flag in the runner, no `runner/slurm_template.sbatch`, no `result_analysis/loader.py`. Picked up only after Phase 2 lands.
+### Why
+
+Eight tasks write eight unrelated output shapes: a dict keyed by sample id, a dict keyed by
+sample id whose values are keyed by prompt variant, a flat list, a directory of per-n-gram
+files, and — for `neocoder` — a CSV. Every notebook that wanted to compare two models was
+re-deriving those shapes by hand. `result_analysis/loader.py` turns all eight into one
+long table.
+
+### The two decisions worth reviewing
+
+**The loader flattens, it never aggregates.** One row per scored unit; the notebook does the
+mean. An aggregating loader would have had to decide what "the score" of a task is, and
+that decision belongs in the analysis, not in the reader.
+
+**A `metric` column was added, so the schema is 8 columns rather than the 7 in the plan.**
+Without it a single `eval_score` column silently mixes a DAT semantic distance (~86), an
+n-gram coverage in [0, 1], and a binary rubric verdict. Grouping by `metric` is now
+mandatory to get a meaningful number, which is the point: `eval_score` is only interpretable
+next to `metric`.
+
+### Shape
+
+```
+run_id  task  model  sample_id  metric  prompt  output  eval_score
+```
+
+`load_records()` returns dicts and has no third-party dependency; `load_outputs()` imports
+pandas lazily and returns a DataFrame. Analysis needs pandas, reading does not.
+
+Artifacts are located through `outputs/<label>/<task>/<model>/metadata.json`, and resolved
+via symlink → `.path` reference file → recorded native path → the same path re-rooted at the
+current repo. The re-rooting is what lets a run produced on the cluster be read on a laptop.
+
+### Bugs found while validating against real artifacts
+
+The parsers were first written from a survey of the evaluation *code*. Checking them against
+actual files falsified four of the eight:
+
+| Task | What the code survey implied | What the artifacts actually contain |
+|---|---|---|
+| `creativity_index` | documents keyed by an `item["dataset"]` field | `dataset` is the constant `"creativity_index"`; the domain is in the `prompt_id` prefix. The join was unnecessary anyway — each evaluation file already copies `prompt` and `response`. |
+| `aut` / `ttcw` / `creative_short` | one shared "aut-family" shape | three different shapes: variant-keyed, flat-per-story, and per-story-with-`eval_result` |
+| `ttct` | evaluation aligns with inference by index | evaluation drops skipped rows, so indices shift. It also carries no id, so the only stable join key is `(question_type, input.text_cot)`. |
+| `neocoder` | evaluation is JSON | the announced evaluation artifact is a **CSV** keyed by `(problem_id, dp)`, and it is shorter than the inference — the evaluator drops rounds it cannot score |
+
+Two further problems were found by re-reading the parsers rather than by running them:
+`aut` was putting the *judge's rubric text* in the `prompt` column, which every other task
+uses for the prompt given to the model under test; and `creative_math` dropped a criterion
+whose verdict block was empty instead of keeping it as an unscored row.
+
+Throughout, a unit that ran but was not scored is kept as a row with `metric = None` and
+`eval_score = None`. Dropping it would make the generation count look like the evaluation
+count and hide how much the evaluator skipped — for `neocoder` that is 136 of 1194 rounds.
+
+### Verification
+
+`runner/test_loader.sh`, 20 checks. The fixtures are synthetic but their shapes are frozen
+from real artifacts, because the local mock judge returns prose and therefore cannot produce
+a populated `aut` `cleaned_output`, a non-zero rubric verdict, or a `YES` creative-math
+decision. Those are exactly the paths an end-to-end mock run cannot reach.
+
+All eight parsers were also run against real artifacts from the local mock runs: 4040 rows
+total, no unexpected nulls.
+
+### Caveat
+
+Every artifact the parsers were validated against was produced by a **mock** endpoint. The
+shapes are real, the values are not. A parser that mis-reads a *value* range — as opposed to
+a structure — would not be caught by anything run so far.
 
 ---
 
