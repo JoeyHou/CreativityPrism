@@ -1,18 +1,22 @@
 import openai
+import re
 from abc import ABC, abstractmethod
 from api_warpper import ModelWrapper
+
+# Whole words only, and the first verdict wins. Substring matching read "NOT", "CANNOT",
+# "KNOW", "NOTE" and "NOVEL" as NO votes, and tested YES anywhere in the string first, so a
+# judge opening with "I need to know whether..." was recorded as YES. Every prompt asks for
+# the verdict first and the explanation after, so the leading match is the verdict.
+_VERDICT_RE = re.compile(r"\b(YES|NO)\b", re.IGNORECASE)
+
 
 def extract_yes_no(text):
     """
     A simple helper function to extract a YES/NO decision from a judge's output.
     This is an exmaple of the postprocessing function.
     """
-    text = text.strip().upper()
-    if "YES" in text:
-        return "YES"
-    elif "NO" in text:
-        return "NO"
-    return "UNCLEAR"
+    match = _VERDICT_RE.search(text)
+    return match.group(1).upper() if match else "UNCLEAR"
 
 class BaseLLMEvaluator(ABC):
     """

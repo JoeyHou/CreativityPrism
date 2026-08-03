@@ -28,7 +28,7 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 Every run to date used either a local mock endpoint or no judge at all, so the whole
 inference→judge→score path had never been exercised with a model that reasons before it answers.
 The mock returns short prose and always parsed to `UNCLEAR`, which looked like a mock limitation.
-It was not — it was hiding four real bugs.
+It was not — it was hiding twelve real bugs.
 
 ### What the first paid run found
 
@@ -45,18 +45,13 @@ It was not — it was hiding four real bugs.
 | 9 | `neocoder`'s timeout helper started **non-daemon** threads | A timed-out thread is abandoned, never killed. The interpreter's shutdown handler joins non-daemon threads, so the process hung **forever after its results had already been written**. Observed: correctness finished and saved at 09:25, the process was still alive and idle 20 minutes later. On a scheduler this burns the entire wall-clock allocation. | `thread.daemon = True` in `function_with_timeout`. No score changes — the `TimeoutError` path is untouched and the abandoned thread's result was already discarded. |
 | 10 | Adapters inherited the runner's **stdin** | Tasks execute model-generated code, and Codeforces solutions read stdin. Attached to a terminal, that code blocks on a prompt nobody is watching. `neocoder` scored **55 of 60** generations as `code execution timeout` for this reason alone; with stdin closed the same artifacts give **0 of 60** timeouts. | `stdin=subprocess.DEVNULL` in `run_adapter`, which is what a batch scheduler would have supplied anyway. |
 | 11 | A diagnostic `print` could kill an evaluation | The `infini-gram` retry handler prints from eight worker threads to one redirected stdout. On Windows that raised `OSError: [Errno 22]` *from inside the exception handler*, ending a 40-minute evaluation. | The print is wrapped so it can never propagate. |
+| 12 | `extract_yes_no()` matched substrings | `"NO"` is inside `NOT`, `CANNOT`, `KNOW`, `NOTE` and `NOVEL`, and `"YES"` was tested first and anywhere in the string, so `"The answer is not YES"` scored `YES`. A judge opening with "I need to know whether…" was recorded as a `NO` vote — observed live. | All three copies now take the first **whole-word** `YES`/`NO`, case-insensitively, since every prompt asks for the verdict before the explanation. Each copy keeps its original fallback, and a reply with no verdict token becomes `UNCLEAR`, which every downstream tally already counts exactly like `NO`. |
 
 Retired judge model IDs were also replaced: `claude-3-7-sonnet-20250219` →
 `claude-sonnet-4-5-20250929`, `gemini-2.0-flash` → `gemini-2.5-flash`. Both must be changed in
 **two** places — `configs/eval_creative_math.json` *and* the hardcoded `JUDGE_MODELS` dict.
 
 ### Deliberately not fixed
-
-`extract_yes_no()` in `api_eval.py` substring-matches: `"NO"` is inside `NOT`, `CANNOT` and
-`KNOW`, and `"YES"` is tested first anywhere in the string. A judge opening with "I need to know
-whether…" is recorded as a `NO` vote — observed live. Correcting this changes published scoring
-semantics, so it is documented in `RESTRUCTURING_PLAN.md` → "Read before run" and left for the
-maintainer to decide.
 
 `ttct` scores only the `cot` variant: `ttct_evaluation.py` hardcodes `SKIPPED` for `basic` and
 `instructive` in both branches under a `# TODO: change this`. Upstream behaviour, left alone.

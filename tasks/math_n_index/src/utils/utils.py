@@ -1,6 +1,7 @@
 import json
 import logging
 import os
+import re
 
 
 def load_json(data_path):
@@ -19,7 +20,7 @@ def save_json(data, data_path):
 
 
 def extract_yes_no(response):
-    if "YES" in response:
-        return "YES"
-    else:
-        return "NO"
+    # Whole words only, first verdict wins: "YES" in response also fired on "YESTERDAY", and
+    # a lowercase "yes" used to score as NO. Prompts put the verdict before the explanation.
+    match = re.search(r"\b(YES|NO)\b", response, re.IGNORECASE)
+    return match.group(1).upper() if match else "NO"

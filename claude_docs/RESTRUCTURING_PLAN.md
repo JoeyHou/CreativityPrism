@@ -85,16 +85,20 @@ In `tasks/math_n_index/src/evaluation/creative_math_eval_api.py` and `api_eval.p
 - The judge panel is the hardcoded `JUDGE_MODELS` dict, **not** the config JSON. Renaming a judge
   requires editing both, or `get_api_key()` returns `None`.
 
-**Still unfixed — `extract_yes_no()` in `api_eval.py` matches substrings.** It upper-cases the
-reply and asks `if "YES" in text ... elif "NO" in text`. Two consequences:
+**Fixed 2026-08-03 — `extract_yes_no()` used to match substrings.** It upper-cased the reply and
+asked `if "YES" in text ... elif "NO" in text`, which meant:
 
-- `"NO"` is a substring of **`NOT`, `CANNOT`, `KNOW`, `NOTE`, `NOVEL`**. A judge that opens with
-  "I need to know whether…" is recorded as a `NO` vote. This was observed live on 2026-08-03.
-- `"YES"` is tested first and anywhere in the string, so `"The answer is not YES"` scores `YES`.
+- `"NO"` is a substring of **`NOT`, `CANNOT`, `KNOW`, `NOTE`, `NOVEL`**. A judge that opened with
+  "I need to know whether…" was recorded as a `NO` vote. Observed live on 2026-08-03.
+- `"YES"` was tested first and anywhere in the string, so `"The answer is not YES"` scored `YES`.
 
-This was **deliberately left as-is**: correcting it changes the published scoring semantics, which
-is the maintainer's call, not a cleanup. Until it is decided, treat `creative_math` correctness as
-unreliable and read `reasons` before trusting any ratio.
+All three copies (`api_eval.py`, `src/utils/utils.py`, `src/utils/helpers.py`) now take the first
+**whole-word** `YES`/`NO`, case-insensitively — every prompt asks for the verdict first and the
+explanation after. Each copy keeps its original fallback, so `api_eval.py` still returns `UNCLEAR`
+and the vLLM copies still return `NO`. Net effect on published numbers: a false `YES` caused by the
+word appearing later in an explanation now resolves to the real verdict, and a reply with no verdict
+token at all becomes `UNCLEAR`, which every downstream tally already counts exactly like `NO`. The
+vLLM copies additionally recognise a lower-case `yes`, which previously scored `NO`.
 
 ### `creativity_index` depends on a public API that rate-limits hard
 

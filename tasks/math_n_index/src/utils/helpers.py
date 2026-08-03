@@ -8,6 +8,7 @@ import base64
 import mimetypes
 import os
 import logging
+import re
 
 def load_txt_prompt(filename):
     """
@@ -101,8 +102,7 @@ def save_json(data, data_path):
 
 
 def extract_yes_no(response):
-    if "YES" in response:
-        return "YES"
-    else:
-        return "NO"
+    # Kept identical to src/utils/utils.py so the two copies cannot drift apart again.
+    match = re.search(r"\b(YES|NO)\b", response, re.IGNORECASE)
+    return match.group(1).upper() if match else "NO"
 #=========================================
