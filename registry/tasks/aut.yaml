@@ -7,3 +7,12 @@ adapter: registry/adapters/aut.sh
 environment: modern
 description: "Generate creative alternative uses for common objects."
 limit_supported: true
+
+# Optional per-task SBATCH overrides for --slurm. Left unset so the task inherits
+# runner/slurm_template.sbatch. Partition and account names are cluster-specific,
+# so fill these in for your cluster rather than trusting a default:
+# slurm:
+#   partition: gpu
+#   time: "2:00:00"
+#   mem: 32G
+#   gres: "gpu:1"

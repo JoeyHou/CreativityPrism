@@ -16,7 +16,7 @@ ALIAS="$(lookup_alias "$MODEL" math_n_index)"
 
 TASK_DIR="$REPO_ROOT/tasks/math_n_index"
 cd "$TASK_DIR"
-export PYTHONPATH="${PYTHONPATH:-}:$(pwd)"
+add_pythonpath "$(pwd)"
 
 # One registry task covers all three domains, matching how the benchmark reports
 # Creativity Index. Override to run a subset, e.g. CREATIVITYPRISM_INDEX_DOMAINS="poem".

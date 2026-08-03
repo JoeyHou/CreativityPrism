@@ -67,6 +67,23 @@ def parse_artifact_markers(lines):
     return artifacts, warnings
 
 
+SIDECAR_FILENAME = ".cp_artifacts"
+
+
+def read_sidecar_markers(target_dir):
+    """Markers `emit_artifact` appended beside the run's outputs.
+
+    Under SLURM the adapter's stdout is a batch log the runner never sees, so the
+    sidecar is the only surviving copy. Missing or unreadable is not an error.
+    """
+    sidecar = Path(target_dir) / SIDECAR_FILENAME
+    try:
+        lines = sidecar.read_text(encoding="utf-8", errors="replace").splitlines()
+    except OSError:
+        return {}, []
+    return parse_artifact_markers(lines)
+
+
 # ---------- Linking ----------
 
 def _clear_managed_entries(target_dir, kind, warnings):
@@ -205,6 +222,13 @@ def materialize_run_outputs(outputs_root, label, task_meta, invocation,
     )
     target_dir.mkdir(parents=True, exist_ok=True)
 
+    # stdout wins when both exist: it is the live run, while a stale sidecar can
+    # survive from an earlier run into the same (label, task, model) directory.
+    sidecar, sidecar_warnings = read_sidecar_markers(target_dir)
+    if sidecar:
+        warnings.extend(sidecar_warnings)
+        announced = {**sidecar, **announced}
+
     records = {}
     for kind in ARTIFACT_KINDS:
         if kind in announced:
@@ -227,7 +251,10 @@ def materialize_run_outputs(outputs_root, label, task_meta, invocation,
             "judge_model": invocation["judge_model"],
             "limit": invocation.get("limit"),
             "mode": invocation.get("mode"),
-            "environment": task_meta.get("environment"),
+            # The env actually used, which CREATIVITYPRISM_FORCE_ENV can override.
+            "environment": os.environ.get(
+                "CREATIVITYPRISM_FORCE_ENV", task_meta.get("environment")
+            ),
             "adapter": task_meta.get("adapter"),
             "command": list(command),
             "exit_code": exit_code,

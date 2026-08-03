@@ -1,12 +1,6 @@
 from src.evaluation.eval_driver import EvalDriver
-from src.evaluation.story_metrics import (
-    compute_dsi,
-    compute_surprise,
-    compute_n_gram_diversity,
-    compute_inverse_homogenization,
-    compute_novelty,
-    compute_theme_uniqueness
-)
+# story_metrics pulls in spacy/benepar/sentence-transformers, so it is imported inside the
+# methods that need it; aut and ttcw share this file's module but not these metrics.
 from src.utils.helpers import load_json, llm_batch_inference, write_json
 from src.prompt_engineering.templates import creative_writing_evaluation_template, creative_writing_evaluation_fewshot
 
@@ -37,6 +31,12 @@ class CreativeShortStoryEval(EvalDriver):
             }
 
         '''
+        from src.evaluation.story_metrics import (
+            compute_inverse_homogenization,
+            compute_novelty,
+            compute_theme_uniqueness,
+        )
+
         # self.logger.info(eval_output_cleaned)
         avg_dsi = round(np.mean([dp['eval_result']['dsi'] for dp in eval_output_cleaned.values()]), 4)
         avg_sur = round(np.mean([dp['eval_result']['surprise'] for dp in eval_output_cleaned.values()]), 4)
@@ -76,6 +76,12 @@ class CreativeShortStoryEval(EvalDriver):
             cleaned_eval_outputs = {
             }
         '''
+        from src.evaluation.story_metrics import (
+            compute_dsi,
+            compute_n_gram_diversity,
+            compute_surprise,
+        )
+
         inference_results = load_json('data/output/{}/{}'.format(
             self.config['run_id'], 
             'inference_output.json')

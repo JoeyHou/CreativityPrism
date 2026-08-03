@@ -50,6 +50,14 @@ Adapters export these into the environment at run time. Keys already set in your
 take priority, and the file is never copied into the repo tree. `api_keys.json` is
 gitignored — keep it that way.
 
+`tasks/ttct` does not read the provider fields; it looks the key up by the **model
+alias** (`all_api_keys[model_name.lower()]`). Copy `api_keys.example.json`, which lists
+every alias the registry can emit, rather than writing the file from scratch:
+
+```bash
+cp api_keys.example.json api_keys.json   # then fill in
+```
+
 ### Setup (one-time)
 
 ```bash
@@ -63,10 +71,88 @@ bash scripts/setup_envs.sh
 bash scripts/setup_envs.sh --prefix /your/storage/path/conda_envs
 ```
 
-There are two environments. `modern` (vllm 0.7.2 / torch 2.5.1) serves most tasks;
-`legacy` (vllm 0.5.3.post1 / torch 2.3.1 / Python 3.11) is required by `neocoder` and
-`dat` because that bundle cannot run on the newer vLLM. Each task YAML names the one it
-needs, and the runner refuses to start if it is missing.
+There are three environments.
+
+| Env | Backend | Contents | Used by |
+|-----|---------|----------|---------|
+| `modern` | conda (`modern.yml`) | vllm 0.7.2 / torch 2.5.1 | most tasks |
+| `legacy` | conda (`legacy.yml`) | vllm 0.5.3.post1 / torch 2.3.1 / py3.11 | `neocoder`, `dat` — that bundle cannot run on the newer vLLM |
+| `api` | **venv** (`api.requirements.txt`) | no vLLM, CPU torch only | API-model runs on any OS, including machines without conda or a GPU |
+
+Each task YAML names the environment it needs, and the runner refuses to start if it is
+missing. `scripts/setup_envs.sh` picks the backend from the spec file extension, so
+`--env api` needs only a Python ≥ 3.10 on PATH.
+
+#### Running API models without conda or a GPU
+
+vLLM is Linux-only and every open-weight path needs it, but the API paths do not. Set
+`CREATIVITYPRISM_FORCE_ENV=api` to run any task against an API model on a laptop:
+
+```bash
+bash scripts/setup_envs.sh --env api
+export CREATIVITYPRISM_FORCE_ENV=api
+python runner/run.py --task ttct --model GPT4.1 --judge-model GPT4.1 --label local --limit 2
+```
+
+The override applies to every task, so `--task all` works too. Passing an open-weight
+model while it is set is rejected up front rather than failing inside the task code.
+The venv lands in `registry/environments/creativityprism-api/` (gitignored) unless
+`--prefix` says otherwise. Unset the variable to go back to the task's declared env.
+
+On Windows the default location is usually **too deep**: the repo path plus
+`.../site-packages/...` exceeds the 260-character limit and pip fails partway through
+with an `OSError`. Install to a short path instead:
+
+```bash
+bash scripts/setup_envs.sh --env api --prefix C:/cp-envs
+```
+
+The prefix is recorded in `registry/environments/.location` (gitignored), so the runner
+and adapters find it automatically afterwards.
+
+`bash runner/test_api_env.sh` guards this path: it imports every task module using the
+api venv's interpreter, which has no vLLM. Any module that regresses to a top-level
+`import vllm` fails the gate. It skips cleanly when the api venv is absent.
+
+Two Windows details are handled by the setup script and adapters, not by the user:
+venvs there ship `Scripts/python.exe` but no `python3.exe` (which every adapter calls),
+so a copy is made; and `activate_env` converts the venv path to POSIX form before
+prepending it to `PATH`, since a `C:/...` entry would be split at the colon.
+
+Without Developer Mode, Windows cannot create symlinks, so the centralized output dir
+gets an `*_output.path` text reference instead of `*_output.json`. `metadata.json`
+records this under `artifacts.<kind>.link_type: reference`.
+
+#### `--limit` and the ttct eval phase
+
+ttct's eval phase asserts the inference output has one row per
+`data/processed/basefile.csv` row (700), so `--limit N` cannot truncate the file. It keeps
+all 700 rows and queries only the **first N items of each scored question type**, marking
+the rest `skip` so the judge skips them too. `--task ttct --limit 2 --mode both` therefore
+issues 10 inference calls and scores 10 items.
+
+The dataset ships 7 question types but only 5 are scored: the LLM-judge rubric was aligned
+against human ratings for `1_unusual_uses`, `2_consequences`, `4_situation`,
+`5_common_problems` and `6_improvement` only. `3_just_suppose` and `7_story` ship for
+completeness and stay unscored. See `tasks/ttct/README.md`.
+
+#### The `creative_math` cleaning step
+
+`creative_math_eval_api.py` scores `sample["cleaned_response"]`, a field produced only by
+`src/utils/clean_data_creative_math.py`, which strips novelty commentary so the correctness
+judges see the mathematics alone. The adapter runs it at the start of the eval phase and
+skips it when the field is already present, so re-running eval costs nothing extra.
+
+The cleaner is a **fixed instrument, deliberately independent of the model under test**:
+letting it track the model being evaluated would make api-model and open-model scores
+non-comparable. It defaults to `vllm` with Llama-3.3-70B on 4 GPUs, the published setup.
+
+The api env cannot host that, so `creative_math --eval-only` there exits 4 with instructions
+rather than silently substituting a smaller cleaner. To clean via API, set
+`CREATIVITYPRISM_MATH_CLEANER_BACKEND=openai` (defaults to `gpt-4o-mini`, override with
+`CREATIVITYPRISM_MATH_CLEANER_MODEL`) — and use the **same** setting for every model in the
+comparison. Each item records `cleaner_model`, so a mixed set is detectable after the fact.
+Scores cleaned by anything other than Llama-3.3-70B are not comparable to the paper.
 
 #### Extra download for `dat`
 
@@ -135,19 +221,56 @@ Two tasks have costs worth knowing before you start them:
   all three domains; set `CREATIVITYPRISM_INDEX_MIN_NGRAM=5` and/or
   `CREATIVITYPRISM_INDEX_DOMAINS=poem` for a cheaper run.
 
-### Planned: Pitt CRC submission (Phase 3)
-
-The following is the target interface for users with access to the University of Pittsburgh's Center for Research Computing. `--slurm` and `--no-submit` are not implemented yet.
+### SLURM submission
 
 ```bash
-# Submit as a SLURM job
+# Submit one job per task
 python runner/run.py --task aut --model Qwen2.5-72B --judge-model GPT4.1-mini --label v3 --slurm
 
-# Generate the SLURM script without submitting (for review)
+# Generate the sbatch script without submitting it, for review
 python runner/run.py --task aut --model Qwen2.5-72B --judge-model GPT4.1-mini --label v3 --slurm --no-submit
 ```
 
-The planned task metadata will provide sensible SLURM defaults (partition, GPU count, time limit, memory) that can be overridden.
+Scripts land in `slurm_scripts/{label}/{task}_{model}.sbatch`, with job logs in
+`slurm_scripts/{label}/logs/`. Both are git-ignored. `--task all` fans out to one
+script and one queue slot per task, so a slow task does not hold up the rest.
+
+The generated script re-invokes `runner/run.py` inside the job with the same
+arguments minus the SLURM ones. That is deliberate: the runner in the job does the
+usual artifact linking and writes `metadata.json`, so a cluster run and a laptop run
+produce identical `outputs/` trees and nothing has to be collected afterwards.
+
+Nothing absolute is baked into the script. It resolves the repo root from its own
+location and calls `python3` from `PATH`, so a script generated on a laptop still
+runs on the cluster.
+
+#### Choosing resources
+
+Directives resolve in three layers, each overriding the one before:
+
+1. `runner/slurm_template.sbatch` — the defaults.
+2. The `slurm:` block in `registry/tasks/{name}.yaml`.
+3. `--slurm-override key=value` on the command line.
+
+A directive that resolves to an empty value is dropped, which is the way to turn a
+GPU job into a CPU-only one:
+
+```bash
+# API models never touch the GPU, so do not queue for one
+python runner/run.py --task all --model GPT4.1 --judge-model GPT4.1 --label v3 \
+    --slurm --slurm-override gres= --slurm-override partition=smp
+```
+
+Partition, account and time limits are cluster-specific, so the shipped defaults are
+a starting point rather than a recommendation. The `slurm:` blocks in the task files
+are commented out for the same reason.
+
+#### What is not covered by the test gate
+
+`runner/test_phase3.sh` checks script generation, override resolution, fan-out and
+marker durability, all of which run on a laptop. It cannot check that `sbatch`
+accepts the directives, that the partition names exist, or that the requested
+resources are enough. Run one job with `--limit` before launching a full matrix.
 
 ### Running on your own machine
 

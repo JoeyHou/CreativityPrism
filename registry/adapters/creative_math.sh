@@ -18,7 +18,7 @@ ALIAS="$(lookup_alias "$MODEL" math_n_index)"
 
 TASK_DIR="$REPO_ROOT/tasks/math_n_index"
 cd "$TASK_DIR"
-export PYTHONPATH="${PYTHONPATH:-}:$(pwd)"
+add_pythonpath "$(pwd)"
 
 DATASET="data/processed/creative_math.json"
 # creative_math_eval_api.py rebuilds the generation path as
@@ -76,6 +76,36 @@ PY
 fi
 
 if [[ "$MODE" == "eval" || "$MODE" == "both" ]]; then
+    # creative_math_eval_api.py scores sample["cleaned_response"], which only
+    # src/utils/clean_data_creative_math.py produces, so that step runs here rather than
+    # being left to the caller. It rewrites the generation file in place (adding fields,
+    # never dropping `response`) because eval hardcodes the <generation>/<alias>/<alias>.json
+    # path. Skipped when the field is already present so re-running eval costs nothing.
+    INFER_JSON="${GEN_DIR}/${ALIAS}.json"
+    if ! python3 -c "import json,sys; d=json.load(open(sys.argv[1])); sys.exit(0 if d and 'cleaned_response' in d[0] else 1)" "$INFER_JSON"; then
+        # The cleaner is deliberately FIXED and independent of the model under test: letting it
+        # vary would make api-model and open-model scores non-comparable. The api env cannot host
+        # the published 70B cleaner, so it must opt in explicitly rather than silently substitute.
+        CLEANER_BACKEND="${CREATIVITYPRISM_MATH_CLEANER_BACKEND:-vllm}"
+        if [[ "$CLEANER_BACKEND" == "vllm" && "${CREATIVITYPRISM_ACTIVE_ENV:-modern}" == "api" ]]; then
+            echo "creative_math.sh: eval needs the response cleaner, which defaults to vLLM +" >&2
+            echo "  meta-llama/Llama-3.3-70B-Instruct (4 GPUs) and cannot run in the api env." >&2
+            echo "  To clean via API instead, re-run with:" >&2
+            echo "    CREATIVITYPRISM_MATH_CLEANER_BACKEND=openai" >&2
+            echo "  Use the SAME cleaner for every model you intend to compare; scores cleaned by" >&2
+            echo "  different models are not comparable to each other or to the published numbers." >&2
+            exit 4
+        fi
+        echo "creative_math.sh: cleaning responses with the ${CLEANER_BACKEND} backend" >&2
+        CLEANED_TMP="$CONFIG_DIR/cleaned.json"
+        python3 -m src.utils.clean_data_creative_math \
+            --input_file "$INFER_JSON" \
+            --output_file "$CLEANED_TMP" \
+            --backend "$CLEANER_BACKEND" \
+            ${CREATIVITYPRISM_MATH_CLEANER_MODEL:+--model_name "$CREATIVITYPRISM_MATH_CLEANER_MODEL"}
+        mv "$CLEANED_TMP" "$INFER_JSON"
+    fi
+
     # creative_math_eval_api.py reads a FLAT config (config["file_paths"], not
     # experiments_list) at import time from CREATIVITYPRISM_MATH_EVAL_CONFIG.
     EVAL_CONFIG="$CONFIG_DIR/eval_creative_math.json"

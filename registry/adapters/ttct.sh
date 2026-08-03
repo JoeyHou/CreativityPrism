@@ -8,7 +8,7 @@ ALIAS="$(lookup_alias "$MODEL" ttct)"
 
 TASK_DIR="$REPO_ROOT/tasks/ttct"
 cd "$TASK_DIR"
-export PYTHONPATH="${PYTHONPATH:-}:$(pwd)"
+add_pythonpath "$(pwd)"
 
 # Set HF_TOKEN from credentials file if not already in env.
 if [[ -z "${HF_TOKEN:-}" && -f "${CREATIVITYPRISM_API_KEYS:-}" ]]; then

@@ -39,6 +39,13 @@
     "limit_supported": {
       "type": "boolean",
       "description": "Whether the task can honour --limit. Absent means false, and the runner rejects --limit."
+    },
+    "slurm": {
+      "type": "object",
+      "description": "Per-task SBATCH directive overrides for --slurm. Keys are directive names without the leading dashes; underscores are accepted for dashes (cpus_per_task -> cpus-per-task). A null or empty value drops the directive. These override runner/slurm_template.sbatch and are themselves overridden by --slurm-override. Values are cluster-specific, so partition and account names must be set for the cluster in use.",
+      "additionalProperties": {
+        "type": ["string", "number", "null"]
+      }
     }
   }
 }

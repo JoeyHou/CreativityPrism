@@ -1,7 +1,6 @@
 import sys
 
 from src.utils.helpers import load_json
-from src.inference.creative_writing import CreativeWritingInference
 from src.inference.creative_math_inference import CreativeMathInference
 from src.inference.creative_index_inference import CreativeIndexInference
 from src.inference.creative_math_selfimprove import CreativeMathImprove
@@ -9,6 +8,9 @@ def run_inference(exp_config):
     task = exp_config.get('task', 'creative_writing')
 
     if task == 'creative_writing':
+        # Not shipped in this repo; imported here so the other tasks still run.
+        from src.inference.creative_writing import CreativeWritingInference
+
         inference_driver = CreativeWritingInference(exp_config)
     elif task == 'creative_math':
         inference_driver = CreativeMathInference(exp_config)

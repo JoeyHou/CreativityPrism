@@ -5,7 +5,6 @@ from src.prompt_engineering.templates import creative_writing_evaluation_templat
 from tqdm import tqdm 
 import numpy as np 
 import pandas as pd 
-from vllm import LLM
 # import openai
 # import math
 

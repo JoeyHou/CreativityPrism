@@ -3,6 +3,7 @@ import json
 import logging
 import os
 from datetime import datetime
+from pathlib import Path
 
 from tqdm import tqdm
 
@@ -16,7 +17,8 @@ def load_config(input_file):
     with open(file_path, "r") as file:
         return json.load(file)
 
-config = load_config(input_file="/scratch/dkhasha1/bzhang90/creative_bench/configs/creative_math_config.json")
+TASK_ROOT = Path(__file__).resolve().parents[2]
+config = load_config(input_file=TASK_ROOT / "configs" / "creative_math_config.json")
 
 def main():
     # TODO: revise these

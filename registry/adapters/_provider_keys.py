@@ -20,6 +20,10 @@ PROVIDER_FIELDS = {
     # neocoder_dat reads GENAI_API_KEY; math_n_index accepts either spelling.
     "GENAI_API_KEY": ("GENAI_API_KEY", "GEMINI_API_KEY", "google", "gemini"),
     "GEMINI_API_KEY": ("GEMINI_API_KEY", "GENAI_API_KEY", "google", "gemini"),
+    # creativity_index downloads a gated Llama repo, which huggingface_hub will only
+    # serve to an authenticated account that has accepted the license.
+    "HF_TOKEN": ("HF_TOKEN", "hf", "huggingface"),
+    "HUGGING_FACE_HUB_TOKEN": ("HUGGING_FACE_HUB_TOKEN", "HF_TOKEN", "hf", "huggingface"),
 }
 
 PLACEHOLDER_PREFIXES = ("YOUR_", "<", "your_")

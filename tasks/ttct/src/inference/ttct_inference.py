@@ -3,6 +3,7 @@
 import argparse
 import logging
 import os
+from collections import Counter
 from tqdm import tqdm
 
 from src.utils.helpers import load_json, load_prompts_as_list, save_json
@@ -57,11 +58,23 @@ def main(model_name, temp, cache_dir, subset, prompt_formats, api_key_path, data
         text_cot_list = ['SKIPPED'] * len(full_data)
 
     if num_samples > 0:
-        full_data = full_data[:num_samples]
-        text_basic_list = text_basic_list[:num_samples]
-        text_instructive_list = text_instructive_list[:num_samples]
-        text_cot_list = text_cot_list[:num_samples]
-        print(f'Limiting to {num_samples} samples (smoke-test mode)')
+        # Evaluation asserts this file has one row per basefile.csv row, so cap each question
+        # type by marking the surplus SKIPPED rather than truncating. The `skip` flag rides
+        # through json2csv/csv2json so the judge does not score the capped rows either.
+        kept = Counter()
+        for i, item in enumerate(full_data):
+            question_type = item['meta_data']['question_type']
+            if subset and question_type not in subset:
+                continue
+            kept[question_type] += 1
+            if kept[question_type] > num_samples:
+                text_basic_list[i] = 'SKIPPED'
+                text_instructive_list[i] = 'SKIPPED'
+                text_cot_list[i] = 'SKIPPED'
+                item['skip'] = True
+        running = sum(min(c, num_samples) for c in kept.values())
+        print(f'Limiting to the first {num_samples} item(s) of each of the {len(kept)} question '
+              f'type(s): {running} of {len(full_data)} rows will be queried (smoke-test mode)')
 
     print('=> Non-skipped counts:')
     for prompt_format in ['basic', 'instructive', 'cot']:

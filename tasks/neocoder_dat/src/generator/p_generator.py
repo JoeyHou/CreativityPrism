@@ -7,8 +7,6 @@ from typing import Text, Dict, Any, Union
 import logging
 import os
 
-from vllm import SamplingParams
-
 from ..models.model import OpenAIModel, AnthropicModel, OpenModel, GenAIModel, DeepSeekModel
 
 logging.basicConfig(
@@ -86,6 +84,8 @@ class OpenModelSingleInference:
 
         if self.use_vllm:
             logger.info(f'Using VLLM for inference')
+            from vllm import SamplingParams
+
             config = SamplingParams(**self.config)
             records = self.vllm_inference(problem_statement, config, repeat)
         else:
@@ -97,7 +97,7 @@ class OpenModelSingleInference:
     
     def vllm_inference(self,
                        problem_statement: str, 
-                       config: SamplingParams,
+                       config: "SamplingParams",
                        repeat: int):
         if "inst" in self.model.model_name.lower():
             problem_statement = self.model.tokenizer.apply_chat_template(

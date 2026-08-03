@@ -1,7 +1,5 @@
 from abc import ABC, abstractmethod
-from vllm import LLM, SamplingParams
 import os
-import torch 
 
 from src.utils.api_wrapper import ModelWrapper
 from src.utils.helpers import load_json
@@ -91,6 +89,10 @@ class Driver(ABC):
         
         # 2. initialize llm
         if self.model_name in self.open_source_models:
+            # Imported here so API-only runs need neither vLLM nor a GPU.
+            from vllm import LLM, SamplingParams
+            import torch
+
             self.use_open_model = True
             self.api_key = ''
             hf_dir = self.open_source_models[self.model_name]['hf_dir']

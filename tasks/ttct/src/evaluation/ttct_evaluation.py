@@ -3,6 +3,7 @@
 import argparse
 import logging
 import os
+from pathlib import Path
 from src.utils.helpers import load_json, save_json
 import pandas as pd
 from tqdm import tqdm
@@ -18,12 +19,12 @@ from src.evaluation.eval_prompts import (
 )
 
 MAX_TOKENS = 1024
+TASK_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SUBSET = [
     '1_unusual_uses', '5_common_problems', '4_situation', '6_improvement', '2_consequences'
 ]
 def csv2json(csv_data, subset = []):
-    # TODO: change to dynamic path
-    input_data = pd.read_csv('/ihome/xli/joh227/developer/creativityprism_git_workspace/tasks/ttct/data/processed/basefile.csv')
+    input_data = pd.read_csv(TASK_ROOT / 'data' / 'processed' / 'basefile.csv')
     assert len(csv_data) == len(input_data)
 
     json_data = []

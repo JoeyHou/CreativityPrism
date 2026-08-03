@@ -20,8 +20,10 @@ import yaml
 
 try:
     from runner import artifacts
+    from runner import slurm as slurm_mod
 except ImportError:  # executed as a script: runner/ is already on sys.path
     import artifacts
+    import slurm as slurm_mod
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = REPO_ROOT / "registry"
@@ -132,11 +134,15 @@ def validate_run_config(cfg, tasks, models, source_label):
 # ---------- Pre-flight ----------
 
 def env_exists(env_short):
-    """Check whether the conda env for `env_short` exists."""
+    """Check whether the env for `env_short` exists, as a venv or a conda env."""
     env_name = f"creativityprism-{env_short}"
     prefix = os.environ.get("CREATIVITYPRISM_ENV_PREFIX")
     if prefix is None and LOCATION_FILE.is_file():
         prefix = LOCATION_FILE.read_text().strip()
+
+    venv_dir = Path(prefix) / env_name if prefix else LOCATION_FILE.parent / env_name
+    if (venv_dir / "bin" / "python").exists() or (venv_dir / "Scripts" / "python.exe").exists():
+        return True
 
     if prefix:
         return (Path(prefix) / env_name).is_dir()
@@ -153,8 +159,27 @@ def env_exists(env_short):
     return False
 
 
+def check_env_model_compat(models=None, model_names=()):
+    """Pure config validation, so it runs during --dry-run too."""
+    forced = os.environ.get("CREATIVITYPRISM_FORCE_ENV")
+    if not forced:
+        return
+    # The API-only env has no vLLM, so an open-weight model would fail deep inside
+    # the task code. Reject it here instead.
+    for name in model_names:
+        if (models or {}).get(name, {}).get("type") == "open":
+            sys.stderr.write(
+                f"CREATIVITYPRISM_FORCE_ENV={forced} but '{name}' is an open-weight "
+                f"model, which needs vLLM and a GPU. Use an api-type model "
+                f"(python runner/run.py --list-models) or unset the override.\n"
+            )
+            sys.exit(5)
+
+
 def preflight(task_meta):
-    env_short = task_meta.get("environment", "modern")
+    env_short = os.environ.get(
+        "CREATIVITYPRISM_FORCE_ENV", task_meta.get("environment", "modern")
+    )
     if not env_exists(env_short):
         sys.stderr.write(
             f"Environment 'creativityprism-{env_short}' not found. "
@@ -294,6 +319,39 @@ def resolve_invocation(args, tasks, models):
     }
 
 
+def submit_slurm_jobs(args, inv, tasks, selected):
+    """Render one sbatch script per selected task, and submit unless --no-submit."""
+    try:
+        overrides = slurm_mod.parse_overrides(args.slurm_override)
+    except ValueError as e:
+        sys.stderr.write(f"{e}\n")
+        return 5
+
+    exit_code = 0
+    for tname in selected:
+        try:
+            script_path, _content = slurm_mod.build_job(
+                REPO_ROOT, tname, tasks[tname], inv["inference_model"],
+                inv["label"], sys.argv[1:], overrides,
+            )
+        except (OSError, ValueError) as e:
+            sys.stderr.write(f"[{tname}] could not build sbatch script: {e}\n")
+            exit_code = 6
+            continue
+
+        rel = script_path.relative_to(REPO_ROOT)
+        if args.no_submit:
+            print(f"[{tname}] wrote {rel} (not submitted)")
+            continue
+        job_id, message = slurm_mod.submit(script_path)
+        if job_id is None:
+            sys.stderr.write(f"[{tname}] submission failed: {message}\n")
+            exit_code = 7
+        else:
+            print(f"[{tname}] submitted {rel} as job {job_id}")
+    return exit_code
+
+
 def main():
     p = argparse.ArgumentParser(
         prog="run.py",
@@ -314,6 +372,13 @@ def main():
     p.add_argument("--eval-only", action="store_true")
     p.add_argument("--dry-run", action="store_true",
                    help="Print the adapter command(s) but do not execute")
+    p.add_argument("--slurm", action="store_true",
+                   help="Generate an sbatch script per task and submit it")
+    p.add_argument("--no-submit", action="store_true",
+                   help="With --slurm, write the sbatch script(s) but do not call sbatch")
+    p.add_argument("--slurm-override", action="append", metavar="KEY=VALUE", default=[],
+                   help="Override an SBATCH directive, e.g. time=8:00:00. "
+                        "An empty value drops it: gres=")
     args = p.parse_args()
 
     tasks = load_tasks()
@@ -342,6 +407,11 @@ def main():
         selected = [inv["task"]]
 
     exit_code = 0
+    check_env_model_compat(models, (inv["inference_model"], inv["judge_model"]))
+
+    if args.slurm:
+        return submit_slurm_jobs(args, inv, tasks, selected)
+
     for tname in selected:
         meta = tasks[tname]
         if not args.dry_run:

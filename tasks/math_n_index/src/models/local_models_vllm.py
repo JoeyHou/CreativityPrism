@@ -4,7 +4,8 @@ import json
 import torch
 import os
 from transformers import AutoTokenizer
-from vllm import LLM, SamplingParams
+# vLLM is imported inside each function: src/__init__.py reaches this module eagerly,
+# so a module-scope import would make every API-only run require vLLM.
 # from vllm.utils import get_openai_chat_template
 def load_config(input_file):
     file_path = input_file
@@ -39,7 +40,9 @@ def load_local_model_vllm(model_name):
     and `tokenizer` is AutoTokenizer (if needed).
     """
     logger = logging.getLogger(__name__)
-    
+
+    from vllm import LLM
+
     # Get model ID from config
     model_id = config["model_version"].get(model_name)
     if not model_id:
@@ -87,6 +90,8 @@ def generate_local_response_vllm(model_name, model, tokenizer, messages):
     )
 
     # TODO: decide what parameters are needed
+    from vllm import SamplingParams
+
     sampling_params = SamplingParams(
         max_tokens=max_new_tokens,
         temperature=temperature,
@@ -138,6 +143,8 @@ def generate_local_batch_response_vllm(model_name, model, tokenizer, messages_li
     
     # Define sampling parameters. These variables (max_new_tokens, temperature, top_p, top_k)
     # should be defined globally.
+    from vllm import SamplingParams
+
     sampling_params = SamplingParams(
         max_tokens=max_new_tokens,
         temperature=temperature,

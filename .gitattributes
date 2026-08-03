@@ -1,0 +1,8 @@
+# Line-ending policy. Git normalizes text files to LF inside the repository and, with
+# core.autocrlf=true (the Windows default), rewrites them to CRLF on checkout. A shell
+# script checked out with CRLF fails on Linux and in Git Bash with `$'\r': command not
+# found`, so the adapters and setup scripts are pinned to LF everywhere.
+*.sh text eol=lf
+
+# conda parses these line by line and a trailing \r ends up inside the package spec.
+registry/environments/*.txt text eol=lf

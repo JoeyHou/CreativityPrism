@@ -16,7 +16,6 @@ from overrides import overrides
 from openai import OpenAI
 from google import genai
 from google.genai import types
-from vllm import LLM
 
 # HF_HOME is exported by registry/adapters/_common.sh; the literal is the historical default.
 CACHE_DIR = os.environ.get("HF_HOME", "/scratch365/ylu33/hf-models")
@@ -68,6 +67,9 @@ class OpenModelVLLM(OpenModel):
 
     @overrides
     def load_model(self):
+        # Imported here so API-only runs need neither vLLM nor a GPU.
+        from vllm import LLM
+
         num_gpus = torch.cuda.device_count()
         self.model = LLM(model=self.model_name, 
                          download_dir=CACHE_DIR, 

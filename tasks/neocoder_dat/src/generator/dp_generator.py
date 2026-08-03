@@ -13,11 +13,10 @@ import os
 import torch
 from torch.utils.data import DataLoader
 from torch import Tensor
-from vllm import SamplingParams
 
 from ..models.model import OpenAIModel, AnthropicModel, OpenModel, GenAIModel, DeepSeekModel
 from .generator import CodeGenerator
-from ..evaluators.evaluation_utils import enumerate_resume, write_jsonl
+from ..evaluators.evaluation_utils import enumerate_resume
 
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(name)s -   %(message)s",
@@ -50,7 +49,13 @@ class APIModelParallelThreadDPInference(CodeGenerator):
         #     logger.warning(f"File {save_path} exists. To overwrite, please use --overwrite flag.")
         #     return
         
+        # Seeded with what is already on disk: enumerate_resume skips those batches, so they
+        # would otherwise be dropped when the full array is rewritten below.
         records = []
+        if os.path.exists(save_path):
+            with open(save_path, "r") as f:
+                records = json.load(f)
+
         for batch in enumerate_resume(dataloader, save_path):
 
             problem_statements: List[Text] = batch['inputs'] # 1 x dp_rounds
@@ -92,11 +97,9 @@ class APIModelParallelThreadDPInference(CodeGenerator):
                 records.append(record)
             else:
                 raise ValueError(f'Unsupported model type')
-            
-            write_jsonl(save_path, [record], append=True)
 
-        # with open(save_path, "w") as f:
-        #     json.dump(records, f, indent=4)
+        with open(save_path, "w") as f:
+            json.dump(records, f, indent=4)
 
 
         if hasattr(self.model, 'gpt_usage'):
@@ -130,6 +133,8 @@ class OpenModelParallelThreadDPInference(CodeGenerator):
 
         if self.use_vllm:
             logger.info(f'Using VLLM for inference')
+            from vllm import SamplingParams
+
             config = SamplingParams(**self.config)
             records = self.vllm_inference(dataloader, config)
         else:
@@ -141,7 +146,7 @@ class OpenModelParallelThreadDPInference(CodeGenerator):
     
     def vllm_inference(self, 
                        dataloader: DataLoader,
-                       config: SamplingParams):
+                       config: "SamplingParams"):
         records = []
         for batch in tqdm(dataloader, desc="Inferencing DP"):
             

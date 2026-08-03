@@ -5,8 +5,7 @@ from api_warpper import ModelWrapper
 # os.environ["TOKENIZERS_PARALLELISM"] = "false"
 # os.environ["VLLM_WORKER_MULTIPROC_METHOD"] = "spawn"
 
-from vllm import LLM, SamplingParams
-import torch
+# vLLM and torch are imported in the open-model branch so API-only runs need neither.
 
 # Provider order matches ModelWrapper's own substring dispatch in api_warpper.py.
 _PROVIDER_ENV_VARS = (
@@ -109,6 +108,9 @@ class InferenceDriver(ABC):
         self.config = config 
 
         if self.model_name in self.open_source_models:
+            from vllm import LLM, SamplingParams
+            import torch
+
             hf_dir = self.open_source_models[self.model_name]['hf_dir']
             # max_model_len = self.open_source_models[self.model_name].get('max_model_len', None)
             self.llm = LLM(

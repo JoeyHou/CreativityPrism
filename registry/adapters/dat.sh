@@ -18,7 +18,7 @@ ALIAS="$(lookup_alias "$MODEL" neocoder_dat)"
 
 TASK_DIR="$REPO_ROOT/tasks/neocoder_dat"
 cd "$TASK_DIR"
-export PYTHONPATH="${PYTHONPATH:-}:$(pwd)"
+add_pythonpath "$(pwd)"
 
 REPEAT="${LIMIT:-${CREATIVITYPRISM_DAT_REPEAT:-100}}"
 TEMP="${CREATIVITYPRISM_DAT_TEMP:-0.75}"

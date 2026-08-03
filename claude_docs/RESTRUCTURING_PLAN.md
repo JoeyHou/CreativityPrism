@@ -49,6 +49,7 @@ git status --short --branch
 git rev-parse HEAD
 bash runner/test_phase1.sh
 bash runner/test_phase2a.sh
+bash runner/test_api_env.sh   # skips unless the api venv exists
 ```
 
 Expected baseline:
@@ -389,14 +390,18 @@ The runner (`runner/artifacts.py`) then, per adapter invocation:
 
 Analysis code should therefore **read `metadata.json` rather than assume a symlink exists** — `artifacts.{kind}.native_path` is always populated on both platforms. This is what `result_analysis/loader.py` will do in Phase 3.
 
-#### Marker durability (important for Phase 3)
+#### Marker durability (resolved in Phase 3, 2026-08-02)
 
-Markers are **transient**. The runner captures them from the adapter's stdout pipe while the process is alive; nothing writes the marker lines themselves to disk. This is safe today because:
+Markers were **transient**. The runner captured them from the adapter's stdout pipe while the process was alive; nothing wrote the marker lines themselves to disk. That was safe locally because:
 
 - Nested processes inherit the adapter's stdout, so a marker emitted by a helper script or a nested `bash` still reaches the runner's pipe.
 - The durable record is `metadata.json`, written immediately after the adapter exits.
 
-It breaks under **Phase 3 SLURM submission**, where the adapter runs detached inside a batch job and its stdout goes to a SLURM log file the runner never reads. Phase 3 must therefore either parse the job's stdout log after completion, or have `emit_artifact` additionally append to a marker file inside the run's output directory. Decide this when Phase 3 starts; do not retrofit it now.
+It broke under **SLURM submission**, where the adapter runs detached inside a batch job and its stdout goes to a SLURM log file the runner never reads. Two fixes were expected here — parse the job's stdout log after completion, or append markers to a file in the run's output directory.
+
+**What was actually done takes the problem off the table instead.** The generated sbatch script re-invokes `runner/run.py` (minus the SLURM flags) rather than the adapter, so the runner runs *inside* the job and captures stdout exactly as it does locally. There is one code path, not two, and no post-hoc log parsing.
+
+The marker file was implemented anyway as a second line of defence: `emit_artifact` appends to `$OUTPUT_DIR/.cp_artifacts`, and `materialize_run_outputs` merges that with stdout, **preferring stdout** because a stale sidecar can survive into a re-run of the same `(label, task, model)` directory.
 
 ### Environment management: `scripts/setup_envs.sh`
 
@@ -640,16 +645,17 @@ cat ../../outputs/phase2_test/aut/GPT4.1-mini/inference_output/*.json   # still 
 
 ### Phase 3: SLURM + Analysis Loader
 
-**Status:** Not started
+**Status:** SLURM built 2026-08-02 but never submitted to a real cluster; loader not started
 
 **Scope:**
-- Add `--slurm` flag to the runner.
-- Build `result_analysis/loader.py` for unified output loading.
+- Add `--slurm` flag to the runner. — **Done**
+- Build `result_analysis/loader.py` for unified output loading. — **Not started**
 
-**Runner changes:**
+**Runner changes:** *(implemented; see CHANGE_LOG for the design decision)*
 - `--slurm` generates an sbatch script wrapping the same command, then calls `sbatch` (unless `--no-submit`).
-- SLURM headers come from `runner/slurm_template.sbatch`, with per-task overrides from `registry/tasks/{name}.yaml`.
-- Generated scripts go to `slurm_scripts/{run_id}/{task}_{model}.sbatch`.
+- SLURM headers come from `runner/slurm_template.sbatch`, with per-task overrides from `registry/tasks/{name}.yaml`, and a third layer of `--slurm-override key=value` flags. An empty value drops the directive.
+- Generated scripts go to `slurm_scripts/{label}/{task}_{model}.sbatch`; logs to `slurm_scripts/{label}/logs/`. Both git-ignored.
+- The script wraps `runner/run.py`, **not** the adapter, so artifact materialization happens inside the job. Scripts contain no absolute paths.
 
 **`result_analysis/loader.py`:**
 
@@ -671,11 +677,14 @@ df = load_outputs(run_id="v3", task="aut", model="GPT4.1")
 **Verification steps:**
 
 ```bash
+# Laptop-runnable gate: script generation, override resolution, fan-out, marker durability
+bash runner/test_phase3.sh          # 28/28 as of 2026-08-02
+
 # SLURM dry-run
 python runner/run.py --task aut --model GPT4.1 --judge-model GPT4.1-mini --label v3 --slurm --no-submit
 cat slurm_scripts/v3/aut_GPT4.1.sbatch   # verify sbatch script is well-formed
 
-# Full SLURM submission (real)
+# Full SLURM submission (real) — NOT YET DONE, no cluster access from the dev machine
 python runner/run.py --task all --model Qwen2.5-72B --judge-model GPT4.1-mini --label v3 --slurm
 squeue -u $USER   # verify jobs queued
 
@@ -687,6 +696,11 @@ print(df.head())
 print(df.groupby(['task', 'model']).size())
 "
 ```
+
+**Open on the cluster, cannot be closed locally:**
+- `sbatch` accepting the generated directives; partition/account names existing.
+- Whether the template defaults are adequate resources for open-model inference.
+- The `cygpath` branches added to `_common.sh` for the API env — guarded on `uname -s`, so they should be inert on Linux, but that has never been executed there.
 
 ---
 

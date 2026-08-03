@@ -7,3 +7,9 @@ adapter: registry/adapters/dat.sh
 environment: legacy
 description: "Name ten maximally unrelated nouns; scored by mean GloVe embedding distance."
 limit_supported: true
+
+# Scoring loads glove.840B.300d.txt (5.3 GB on disk, several times that once parsed
+# into per-word vectors), so raise mem here if the job is OOM-killed during eval.
+# slurm:
+#   mem: 64G
+

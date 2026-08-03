@@ -48,7 +48,18 @@ emit_artifact() {
         inference|eval) ;;
         *) echo "emit_artifact: unknown kind '$kind'" >&2; return 2 ;;
     esac
+    # The runner is Python, so hand it a path its os.path understands.
+    case "$(uname -s)" in
+        MINGW*|MSYS*|CYGWIN*) path="$(cygpath -w "$path")" ;;
+    esac
     echo "CP_ARTIFACT ${kind} ${path}"
+    # Under SLURM the adapter's stdout goes to a batch log the runner never reads, so the
+    # same marker is also appended beside the run's outputs, where a later collect step
+    # can find it. Harmless locally: the runner merges both sources and prefers stdout.
+    if [[ -n "${OUTPUT_DIR:-}" ]]; then
+        mkdir -p "$OUTPUT_DIR" 2>/dev/null \
+            && printf 'CP_ARTIFACT %s %s\n' "$kind" "$path" >> "${OUTPUT_DIR}/.cp_artifacts"
+    fi
 }
 
 # ---- models.yaml lookup (pure python, no PyYAML required at adapter level) ----
@@ -109,16 +120,65 @@ export_provider_keys() {
     return 0
 }
 
+# ---- PYTHONPATH ----
+# Task bundles are imported as the top-level package `src`, so the task dir must be
+# importable. Git Bash `pwd` yields "/c/...", which Windows Python cannot read, and
+# there the separator is ';' rather than ':'.
+add_pythonpath() {
+    local dir="$1"
+    local sep=":"
+    case "$(uname -s)" in
+        MINGW*|MSYS*|CYGWIN*)
+            dir="$(cygpath -w "$dir")"
+            sep=";"
+            ;;
+    esac
+    if [[ -n "${PYTHONPATH:-}" ]]; then
+        export PYTHONPATH="${PYTHONPATH}${sep}${dir}"
+    else
+        export PYTHONPATH="$dir"
+    fi
+}
+
 # ---- Conda env activation ----
 # Reads registry/environments/.location if present.
 activate_env() {
     local env_short="$1"  # e.g. modern
+
+    # CREATIVITYPRISM_FORCE_ENV overrides the task's declared environment. Intended for
+    # the API-only venv, where the GPU stack is absent but every API path still works.
+    if [[ -n "${CREATIVITYPRISM_FORCE_ENV:-}" ]]; then
+        env_short="$CREATIVITYPRISM_FORCE_ENV"
+    fi
+    # Adapters that need a GPU-free fallback branch on this.
+    export CREATIVITYPRISM_ACTIVE_ENV="$env_short"
+
     local env_name="creativityprism-${env_short}"
     local prefix=""
     if [[ -n "${CREATIVITYPRISM_ENV_PREFIX:-}" ]]; then
         prefix="$CREATIVITYPRISM_ENV_PREFIX"
     elif [[ -f "$REPO_ROOT/registry/environments/.location" ]]; then
         prefix="$(cat "$REPO_ROOT/registry/environments/.location")"
+    fi
+
+    # A venv-backed env is a plain directory; conda is not involved.
+    local venv_dir=""
+    if [[ -n "$prefix" ]]; then
+        venv_dir="${prefix%/}/${env_name}"
+    else
+        venv_dir="$REPO_ROOT/registry/environments/${env_name}"
+    fi
+    if [[ -x "${venv_dir}/bin/python" || -x "${venv_dir}/Scripts/python.exe" ]]; then
+        local bin_dir="${venv_dir}/bin"
+        [[ -x "${venv_dir}/Scripts/python.exe" ]] && bin_dir="${venv_dir}/Scripts"
+        # PATH is colon-separated, so a "C:/..." entry would be torn in two under Git Bash.
+        if command -v cygpath >/dev/null 2>&1; then
+            bin_dir="$(cygpath -u "$bin_dir")"
+        fi
+        export PATH="${bin_dir}:${PATH}"
+        export VIRTUAL_ENV="$venv_dir"
+        unset PYTHONHOME
+        return 0
     fi
 
     if ! command -v conda >/dev/null 2>&1; then

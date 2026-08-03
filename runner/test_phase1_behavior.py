@@ -248,7 +248,8 @@ class TTCTExactLimitTests(unittest.TestCase):
     def setUpClass(cls):
         install_import_stubs()
         cls.dataset = [
-            {"meta_data": {"id": f"ttct-{index}", "question_type": "1_unusual_uses"}}
+            {"meta_data": {"id": f"ttct-{question_type}-{index}", "question_type": question_type}}
+            for question_type in ("1_unusual_uses", "2_consequences")
             for index in range(5)
         ]
         cls.saved_data = []
@@ -306,11 +307,15 @@ class TTCTExactLimitTests(unittest.TestCase):
             )
         return self.saved_data
 
-    def test_positive_limits_are_exact_and_lists_remain_aligned(self):
-        for limit, expected in ((1, 1), (3, 3), (10, 5)):
+    def test_positive_limits_cap_each_question_type_and_keep_row_count(self):
+        # The row count must not shrink: ttct evaluation asserts it matches basefile.csv,
+        # so a limit marks the surplus `skip` instead of truncating.
+        for limit, expected_queried in ((1, 2), (3, 6), (10, 10)):
             with self.subTest(limit=limit):
                 result = self.run_ttct(limit)
-                self.assertEqual(len(result), expected)
+                self.assertEqual(len(result), len(self.dataset))
+                queried = [item for item in result if not item.get("skip", False)]
+                self.assertEqual(len(queried), expected_queried)
                 for item in result:
                     self.assertEqual(
                         set(item["output"]),

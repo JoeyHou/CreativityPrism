@@ -14,7 +14,9 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 | Phase 2A — Artifact contract + centralized outputs | **Complete (2026-08-01)** | `CP_ARTIFACT` markers, `outputs/` materialization, `metadata.json`; 4/4 gate checks, 29 unit tests |
 | Phase 2B — Evaluation dispatch | **Complete (2026-08-01)** | Eval branches wired for all four tasks; 33 unit tests. Not yet run against paid judges. |
 | Phase 2C — Remaining task adapters | **Complete (2026-08-01)** | All eight tasks wired; `legacy` env authored; 35 unit tests. Nothing run on the cluster yet. |
-| Phase 3 — SLURM + Analysis Loader | **Not started** | No `--slurm` flag, no `loader.py` |
+| API-only local execution | **Complete (2026-08-02)** | `api` venv env + `CREATIVITYPRISM_FORCE_ENV`; vLLM imports made lazy so API paths need no GPU. |
+| Phase 3 — SLURM submission | **Built, not cluster-verified (2026-08-02)** | `--slurm`/`--no-submit`/`--slurm-override`, `runner/slurm.py`, durable artifact markers; 28/28 gate checks. No `sbatch` has ever been run. |
+| Phase 3 — Analysis loader | **Not started** | No `result_analysis/loader.py` |
 
 ---
 
@@ -24,6 +26,8 @@ Anchors each phase to the commit that implemented it, so a future session can ju
 
 | Commit | Date | Phase | Scope | Gates at commit time | Pushed to `personal/main_v2` |
 |--------|------|-------|-------|----------------------|------------------------------|
+| `0d35eef` | 2026-08-01 | 2C batch 2 | Task schema applied via a per-file `yaml-language-server` modeline, since the workspace `yaml.schemas` setting only takes effect after an extension reload | Phase 1 19/19, Phase 2A 4/4 | Pending |
+| `e7d852f` | 2026-08-01 | 2C batch 2 | `dat` registry entry and adapter; `evaluate_dat.py` GloVe/word-list paths and `--output-path`; `.gitignore` gap for `tasks/math_n_index/data/`; task JSON schema | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Pending |
 | `7fd6da3` | 2026-08-01 | 2C batch 1 | `neocoder`, `creative_math`, `creativity_index` registry entries and adapters; `legacy` env; provider-key export; removal of the `data[:100]` cap in the creativity-index driver | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Yes |
 | `747a5ba` | 2026-08-01 | 2A + 2B | Artifact contract (`CP_ARTIFACT` markers, `runner/artifacts.py`, `outputs/` materialization, `metadata.json`) and evaluation dispatch for all four wired tasks; credential path resolution in the bundled task driver | Phase 1 19/19, Phase 2A 4/4 (33 unit tests) | Yes |
 | `56cfbd3` | 2026-07-22 | 1 | Registry-driven runner: `registry/{tasks,adapters,models.yaml}`, `runner/run.py`, Phase 1 gate; 4 tasks wired for inference | Phase 1 19/19 | Yes |
@@ -55,6 +59,137 @@ Rationale for each change lives in the per-phase sections below; the "Deviations
 - Next slice: build the `legacy` env on the cluster and run Phase 2 end-to-end, then Phase 3.
 
 See the top of `RESTRUCTURING_PLAN.md` for the new-session startup gate and safety constraints.
+
+---
+
+## Phase 3 — SLURM submission — Built, not cluster-verified (2026-08-02)
+
+### Why
+
+Phase 2 left the runner able to execute a task locally but not to queue one. The blocker
+recorded in the plan was that `CP_ARTIFACT` stdout markers cannot survive a batch job: the
+adapter runs detached and its stdout goes to a SLURM log the runner never reads.
+
+### The design decision worth reviewing
+
+The plan offered two ways out — parse the job's stdout log after it finishes, or make the
+markers durable. Neither was chosen as specified. What is implemented instead:
+
+**The batch job re-invokes `runner/run.py`, not the adapter.** The generated script runs
+the same command line minus the SLURM flags, so the runner *inside the job* does the
+artifact linking and writes `metadata.json`. A cluster run and a laptop run therefore
+produce byte-identical `outputs/` trees, submission stays asynchronous, and there is no
+collect step to forget. The alternative — submitting the adapter directly and reconciling
+afterwards — would have meant two code paths for the same contract.
+
+**Markers were made durable anyway, as a second line of defence.** `emit_artifact` now also
+appends `CP_ARTIFACT <kind> <path>` to `$OUTPUT_DIR/.cp_artifacts`. If a job is killed
+between the adapter finishing and the runner materializing, the record survives.
+`materialize_run_outputs` merges the sidecar with stdout and **prefers stdout**, because a
+stale sidecar can persist in a `(label, task, model)` directory that is re-run.
+
+### What was built
+
+| Piece | Notes |
+|---|---|
+| `--slurm`, `--no-submit`, `--slurm-override key=value` | `--task all` fans out to one script and one queue slot per task |
+| `runner/slurm.py` | Directive resolution, script rendering, `sbatch` invocation |
+| `runner/slurm_template.sbatch` | Defaults only; `#~` lines are template documentation and are stripped on render |
+| `slurm` block in `registry/tasks/_task.schema.json` | Per-task directive overrides; `cpus_per_task` accepted for `cpus-per-task` |
+| `runner/test_phase3.sh` | 28 checks, all laptop-runnable |
+
+Directives resolve template → task YAML → `--slurm-override`, and an empty value drops the
+directive. That is how an API-model run stops queueing for a GPU it will never use:
+`--slurm-override gres=`.
+
+Generated scripts contain **no absolute paths**. The repo root comes from the script's own
+location and the interpreter is `python3` from `PATH`, so a script generated on Windows still
+runs on a Linux cluster. This is checked by the gate.
+
+### Deliberately not chosen
+
+Per-task `slurm:` blocks are shipped **commented out**. Partition names, accounts and time
+limits are properties of a specific cluster, and a plausible-looking wrong default is worse
+than an obvious missing one. The one substantive note left in a task file is on `dat`, where
+eval parses a 5.3 GB GloVe file and may need more memory than the template default.
+
+### Verification
+
+28/28 Phase 3 checks; Phase 1 19/19 and Phase 2A 4/4 still pass after the `artifacts.py` and
+`_common.sh` changes.
+
+### Caveat carried forward
+
+**No `sbatch` has ever been run.** The gate can prove the script is well-formed, portable and
+carries the right flags; it cannot prove the partition exists, that the directives are
+accepted, or that the resources are sufficient. Submit one `--limit` job before a full matrix.
+
+---
+
+## API-only local execution — Complete (2026-08-02)
+
+### Why
+
+The cluster is unavailable for roughly half a month. This slice makes every task runnable
+on a laptop against hosted APIs, with no conda, no GPU and no vLLM.
+
+### What was built
+
+- `registry/environments/api.requirements.txt` — a third environment spec. `scripts/setup_envs.sh`
+  now dispatches on the spec **file extension**: `.yml` and `.txt` stay conda, `.requirements.txt`
+  is a plain `venv`. No vLLM, CPU-only torch.
+- `CREATIVITYPRISM_FORCE_ENV` — overrides the env an adapter activates, so a task whose
+  registry entry says `modern` can run in `api`. `runner/artifacts.py` records the effective
+  env in `metadata.json`.
+- `runner/run.py check_env_model_compat` — exits 5 with a readable message when an open-weights
+  model is requested in the `api` env, instead of failing deep inside vLLM. Runs during `--dry-run`.
+- vLLM imports made lazy in 7 modules, so importing an inference driver no longer requires a GPU.
+- `registry/adapters/_common.sh` — `cygpath` conversion for env activation and artifact paths,
+  plus `add_pythonpath()`. Only triggers under MINGW/MSYS/CYGWIN; the cluster path is unchanged.
+- `runner/test_api_env.sh` (21 checks) and `api_keys.example.json`.
+
+### Pre-existing bugs found by being the first to run the API path end-to-end
+
+| Bug | Scope | Fix |
+| --- | --- | --- |
+| `dp_generator.py` wrote JSONL on the API branch while all three readers used `json.load` | neocoder, API models only — the vLLM branch wrote a real array | Restored the array write, and seeded `records` from the existing file so `enumerate_resume` no longer drops previously completed batches when the array is rewritten |
+| `calculate_creativity` asserts both `correctness` and `techniques`, but the adapter ran correctness before detection, leaving the two fields in different files | neocoder, all models — the creativity step could never have run | Reordered to detection → correctness → creativity and pointed creativity at the correctness output |
+| `--limit N` truncated ttct inference, but eval asserts one row per `basefile.csv` row | ttct, all models | `--limit` now keeps all 700 rows and queries the first N of each scored question type, marking the surplus `skip` so the judge skips them too |
+| `creative_short_story.py` imported `story_metrics` at module scope, so a missing spacy broke aut and ttcw eval as well | aut, ttcw, creative_short | Import moved into the two methods that use it |
+| Six missing dependencies (`scikit-learn`, `unidecode`, `sacremoses`, `openpyxl`, `scipy`, `gensim`) | creativity_index, dat, creative_short | Added to the api spec; found by AST-scanning task imports rather than by repeated re-runs |
+| Eval reads `sample["cleaned_response"]`, a field only `clean_data_creative_math.py` produces — and the adapter never called it | creative_math, all models — eval always died with `KeyError` | The adapter now runs the cleaning step at the start of eval, skipping it when the field is already present. The script gained an `openai` backend (default stays vllm + Llama-3.3-70B) and records `cleaner_model` per item |
+
+### Verification
+
+Inference runs for all 8 tasks; evaluation runs for aut, ttcw, ttct, creative_short,
+neocoder and creative_math against a local mock OpenAI server. Gates: Phase 1 19/19,
+Phase 2A 4/4, api env 21/21.
+
+Two tasks still cannot be evaluated locally, for reasons that are **not** regressions:
+
+- `dat` needs GloVe 840B.300d (~2GB), not shipped. The task already prints a clean message.
+- `creativity_index` needs the gated HF repo `meta-llama/Llama-2-7b-hf`.
+
+### Comparability caveat for `creative_math`
+
+The cleaner is fixed and independent of the model under test, because a cleaner that tracked
+the evaluated model would make api-model and open-model scores non-comparable. It defaults to
+`vllm`/Llama-3.3-70B everywhere, so the cluster path is unchanged; the api env exits 4 with
+instructions rather than silently substituting a smaller cleaner. Opt in with
+`CREATIVITYPRISM_MATH_CLEANER_BACKEND=openai` (and optionally
+`CREATIVITYPRISM_MATH_CLEANER_MODEL`), using the same value across the whole comparison.
+Each item records `cleaner_model`.
+
+### Line endings
+
+Added `.gitattributes` pinning `*.sh` and the env specs to LF. The repo has
+`core.autocrlf=true` and no prior attributes file, so any future checkout would have rewritten
+the adapters to CRLF and broken them under Git Bash and on the cluster.
+
+### Caveat carried forward
+
+The `cygpath` work in `_common.sh` also touches the cluster code path. It is guarded on
+`$OSTYPE`, but it has not been exercised on the cluster.
 
 ---
 

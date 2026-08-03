@@ -22,7 +22,7 @@ MODEL_SHORT="${ALIAS##*/}"
 
 TASK_DIR="$REPO_ROOT/tasks/neocoder_dat"
 cd "$TASK_DIR"
-export PYTHONPATH="${PYTHONPATH:-}:$(pwd)"
+add_pythonpath "$(pwd)"
 
 DATASET="datasets/CodeForce/NeoCoder/NeoCoder.json"
 HUMAN_SOLUTIONS="datasets/CodeForce/NeoCoder/human_solutions.json"
@@ -74,20 +74,31 @@ if [[ "$MODE" == "eval" || "$MODE" == "both" ]]; then
 
     mkdir -p "$CORRECTNESS_DIR" "$CREATIVITY_DIR"
 
-    python3 steps/evaluate_neogauge.py \
-        --task correctness \
-        --inference-result-path "$INFER_FILE" \
-        --test-case-path "$TEST_CASES" \
-        --save-folder "$CORRECTNESS_DIR"
-
+    # Detection runs first because it writes `techniques` back into the inference file;
+    # correctness then carries that field into its own output, which is the only file
+    # holding both of the fields calculate_creativity asserts on.
     python3 steps/evaluate_neogauge.py \
         --task detection \
         --inference-result-path "$INFER_FILE" \
         --human-solution-path "$HUMAN_SOLUTIONS"
 
     python3 steps/evaluate_neogauge.py \
-        --task creativity \
+        --task correctness \
         --inference-result-path "$INFER_FILE" \
+        --test-case-path "$TEST_CASES" \
+        --save-folder "$CORRECTNESS_DIR"
+
+    shopt -s nullglob
+    SCORED_FILES=("${CORRECTNESS_DIR}"/*.json)
+    shopt -u nullglob
+    if [[ ${#SCORED_FILES[@]} -ne 1 ]]; then
+        echo "neocoder.sh: expected exactly 1 correctness file in ${CORRECTNESS_DIR}, found ${#SCORED_FILES[@]}" >&2
+        exit 1
+    fi
+
+    python3 steps/evaluate_neogauge.py \
+        --task creativity \
+        --inference-result-path "${SCORED_FILES[0]}" \
         --human-solution-path "$HUMAN_SOLUTIONS" \
         --save-folder "$CREATIVITY_DIR"
 
