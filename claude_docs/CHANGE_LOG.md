@@ -26,6 +26,7 @@ Anchors each phase to the commit that implemented it, so a future session can ju
 
 | Commit | Date | Phase | Scope | Gates at commit time | Pushed to `personal/main_v2` |
 |--------|------|-------|-------|----------------------|------------------------------|
+| `5ddbe04` | 2026-08-03 | 3 (loader) | `result_analysis/loader.py` and `runner/test_loader.sh`; eight per-task parsers validated against real artifacts | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Pending |
 | `b00ed40` | 2026-08-02 | API-only + 3 (SLURM) | `api` venv environment and lazy vLLM imports; `--slurm`/`--no-submit`/`--slurm-override`, `runner/slurm.py`, `runner/slurm_template.sbatch`; durable `.cp_artifacts` sidecar; `.gitattributes` LF pin for `*.sh`; pre-existing bugs fixed in `creative_math` (uninvoked cleaning step, hardcoded model), `neocoder` and `ttct` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21 | Pending |
 | `0d35eef` | 2026-08-01 | 2C batch 2 | Task schema applied via a per-file `yaml-language-server` modeline, since the workspace `yaml.schemas` setting only takes effect after an extension reload | Phase 1 19/19, Phase 2A 4/4 | Pending |
 | `e7d852f` | 2026-08-01 | 2C batch 2 | `dat` registry entry and adapter; `evaluate_dat.py` GloVe/word-list paths and `--output-path`; `.gitignore` gap for `tasks/math_n_index/data/`; task JSON schema | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Pending |
