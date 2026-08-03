@@ -27,10 +27,13 @@ API_KEYS = {
     "google": os.environ.get("GENAI_API_KEY") or os.environ.get("GEMINI_API_KEY", ""),
 }
 # define judge models
+# Pinned to dated snapshots so a score stays reproducible. When a provider retires one,
+# replace it with the same tier rather than the newest model: the panel votes unanimously
+# for correctness, so a stronger or weaker judge shifts every score.
 JUDGE_MODELS = {
     "gpt-4.1": "openai",
-    "claude-3-7-sonnet-20250219": "anthropic",
-    "gemini-2.0-flash": "google"
+    "claude-sonnet-4-5-20250929": "anthropic",
+    "gemini-2.5-flash": "google"
 }
 
 def get_api_key(model_name):

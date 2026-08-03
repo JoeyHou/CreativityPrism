@@ -4,6 +4,242 @@ This document is the source of truth for the ongoing effort to restructure the C
 
 ---
 
+## Read before run
+
+Everything below was built and verified on one Windows laptop against hosted APIs. That machine
+cannot build a conda environment, cannot create a symlink, and has never seen the cluster. The
+gates are green on it, which proves the code is internally consistent — **it does not prove the
+code runs on the cluster.** This section collects every "we skipped this because of the current
+environment" note that is otherwise scattered across three documents, so the first person with
+cluster access knows exactly what is still unproven.
+
+### The environment everything was verified on
+
+| | |
+|---|---|
+| OS / shell | Windows, Git Bash (MINGW64). No WSL. |
+| conda | **Not installed.** The `modern` and `legacy` environments are conda specs that have never been instantiated here. |
+| Python actually used | System Python 3.12.10 (no pandas) + a plain venv at `C:/cp-envs/creativityprism-api` (the `api` env, has pandas). |
+| GPU / vLLM | None. No open-weight model has ever been loaded. |
+| Symlink privilege | **Absent** (`WinError 1314`). Developer Mode is off. |
+| SLURM | No `sbatch`, no `squeue`, no cluster login. |
+| Network | Corporate. `api.deepseek.com` fails TLS handshake; OpenAI / Anthropic / Google all reachable. |
+
+### Never executed anywhere — verify these first on the cluster
+
+| Item | Why it is unproven | Where it lives |
+|---|---|---|
+| The `legacy` conda env | conda is not installed here, so `legacy.yml` has never been solved. There is deliberately no `legacy.txt`, because a `conda list --export` snapshot cannot be authored for an environment that has never been built. | `registry/environments/` |
+| `neocoder` and `dat` on `legacy` | Both were only ever run by forcing the `api` env. Their pinned vllm 0.5.3.post1 / torch 2.3.1 stack is untested. | `registry/tasks/{neocoder,dat}.yaml` |
+| `sbatch` accepting the generated directives | Script generation is gated (`test_phase3.sh`, 28/28), but no job has ever been submitted. Partition and account names are unverified guesses. | `runner/run.py`, `runs/*.yaml` |
+| Whether the SLURM resource defaults are adequate | Never ran an open-model inference job. | `runs/*.yaml` |
+| The `cygpath` branches in `_common.sh` | Guarded on `uname -s`, so they *should* be inert on Linux — but that branch has never been executed there. | `registry/adapters/_common.sh` |
+| Any open-weight model | Every run to date used a hosted API model. | `registry/models.yaml` |
+
+### Windows-only degradations (these disappear on the cluster)
+
+- **`outputs/` contains `.path` reference files, not symlinks.** Without symlink privilege the
+  runner writes a one-line `{kind}_output.path` file holding the native path. On Linux you get a
+  real symlink and `readlink outputs/.../inference_output` works as documented.
+- **Consequence for analysis code:** read `metadata.json` → `artifacts.{kind}.native_path`, which
+  is populated identically on both platforms. Never assume a symlink exists. `result_analysis/loader.py`
+  already does this; anything new should too.
+- The `readlink` verification step in the Phase 2 checklist is therefore **impossible to run here**
+  and remains unchecked, not failed.
+
+### Live API facts as of 2026-08-03
+
+Model IDs rot. These were probed directly with the repo's own keys on that date:
+
+| Finding | Detail |
+|---|---|
+| Retired: `claude-3-7-sonnet-20250219`, `claude-3-haiku-20240307` | HTTP 404 `not_found_error`. The key is valid — a dead key returns 401, not a structured 404. |
+| Retired: `gemini-2.0-flash`, `gemini-2.5-flash-lite` | HTTP 404 "no longer available". |
+| **Listing ≠ serving** | `gemini-2.0-flash` still appears in `GET /v1beta/models` while refusing to serve. Do not trust the listing endpoint as an availability check; send a real one-token request. |
+| **Gemini 2.5+ spends the output budget on thinking** | With a small `max_output_tokens` the response comes back `finishReason=MAX_TOKENS` with **no `parts` key at all** → `KeyError`/empty text. Fixed for the judge path by setting `thinking_config=ThinkingConfig(thinking_budget=0)`. |
+| DeepSeek unreachable | `SSLV3_ALERT_HANDSHAKE_FAILURE` from this network. Not a key problem; not needed for judging. |
+
+**Three Gemini wrappers still lack the thinking fix.** Only `tasks/math_n_index/api_warpper.py`
+was corrected, because that is the judge path actually exercised. If you point a Gemini model at
+another task, fix it there first or it will silently return empty text:
+
+| File | Line | Status |
+|---|---|---|
+| `tasks/math_n_index/api_warpper.py` | ~79 | **Fixed** (`thinking_budget=0`) |
+| `tasks/aut_ttcw_cshort/src/utils/api_wrapper.py` | ~75 | Not fixed |
+| `tasks/ttct/src/utils/api_wrapper.py` | ~55 | Not fixed |
+| `tasks/neocoder_dat/src/models/model.py` (`GenAIModel`) | ~268 | Not fixed |
+
+### Scoring landmines — a dead judge does not look like an error
+
+In `tasks/math_n_index/src/evaluation/creative_math_eval_api.py` and `api_eval.py`:
+
+- Three of the four wrappers **return the exception as a string** instead of raising. That string
+  is then compared against `"YES"`, so **any API failure is recorded as a `NO` vote.** A real
+  artifact in this repo shows it happening: a Gemini `API_KEY_INVALID` message was stored as
+  `"gemini-2.0-flash": "NO"` with the error text sitting in `reasons`.
+- Correctness requires **unanimity** (`all(d == "YES" ...)`), so **one dead provider silently
+  drives correctness to 0%** — indistinguishable from a genuinely wrong solution.
+- Failures then **cascade**: correctness `NO` forces coarse novelty `NO`, which forces fine
+  novelty `NO`. One retired model ID can zero an entire run.
+- The judge panel is the hardcoded `JUDGE_MODELS` dict, **not** the config JSON. Renaming a judge
+  requires editing both, or `get_api_key()` returns `None`.
+
+**Still unfixed — `extract_yes_no()` in `api_eval.py` matches substrings.** It upper-cases the
+reply and asks `if "YES" in text ... elif "NO" in text`. Two consequences:
+
+- `"NO"` is a substring of **`NOT`, `CANNOT`, `KNOW`, `NOTE`, `NOVEL`**. A judge that opens with
+  "I need to know whether…" is recorded as a `NO` vote. This was observed live on 2026-08-03.
+- `"YES"` is tested first and anywhere in the string, so `"The answer is not YES"` scores `YES`.
+
+This was **deliberately left as-is**: correcting it changes the published scoring semantics, which
+is the maintainer's call, not a cleanup. Until it is decided, treat `creative_math` correctness as
+unreliable and read `reasons` before trusting any ratio.
+
+### `creativity_index` depends on a public API that rate-limits hard
+
+`evaluation_creative_index_parr.py` resolves every n-gram against `https://api.infini-gram.io/`,
+a free public endpoint with no key. Measured from this machine on 2026-08-03 it answered a plain
+`403 {"message":"Forbidden"}` for **roughly half of all requests, even at one request per second**
+— it is not a payload problem (the legacy `corpus`/`engine` fields still work alongside the
+documented `index` field) and not a header problem (curl and `requests` fail at the same rate).
+The default `--num_workers 8` with a 0.1 s throttle makes it far worse.
+
+Two things followed from that:
+
+- The retry loop used a **flat 0.2 s delay over 5 attempts**, i.e. every attempt landed inside the
+  same throttle window. It now uses 8 attempts with exponential backoff and jitter.
+- On exhaustion it fell through to `occurrence = 0`, which is **the same value as "this n-gram is
+  not in the corpus"**. Lost lookups therefore lowered coverage, and lower coverage *raises* the
+  reported creativity index — a run degraded silently and in a flattering direction. It now raises
+  instead. **Any previously published `creativity_index` number computed while the API was
+  throttled is suspect.**
+
+`creativity_index` inference works locally; its evaluation could not be completed here.
+
+### The loader's `creative_math` join key collided (fixed)
+
+`_parse_creative_math` joined inference to evaluation on `(problem_id, question_number)`. The same
+problem is asked several times with different `k` (the number of reference solutions shown), so an
+18-record run collapsed to **10 distinct keys** and every collision inherited the last record's
+verdicts. Measured effect: the loader reported correctness `27.78%` where the evaluation script
+printed `55.56%`. The key now includes `k` and the two agree exactly. If you have notebooks or
+figures built from a loader run older than 2026-08-03, regenerate them.
+
+### `ttct` only ever scores the `cot` variant
+
+`ttct_evaluation.py` hardcodes `basic_eval_pred = ["SKIPPED" for _ in data]` and the same for
+`instructive`, in **both** the vLLM and the API branch, each under a `# TODO: change this`. The
+real judge call is made only for `cot`. So a ttct run pays for three generations per item and
+scores one. This is upstream behaviour and was left alone.
+
+Two related notes:
+
+- The inference script marks surplus in-subset rows with `skip`, but rows **outside** the
+  configured subset are never marked — their prompts are the literal string `SKIPPED`. The loader
+  now drops any variant whose output is that sentinel (a 10-item run went from 630 rows, 600 of
+  them placeholders, to 30).
+- `-num_samples` is **per question type**, not a total, and is multiplied by the three prompt
+  formats. `--limit 2` over 5 question types means 10 items and 30 generations.
+
+**Open decision:** ttct currently contributes **no numeric score at all**. `_parse_ttct` fills
+`eval_score` only when the judge's answer is itself a number, and the ttct judge answers in prose.
+But the rubric prompt does mandate a trailing block, and it came back clean on **10 of 10** samples
+on 2026-08-03:
+
+```
+### Scores ###
+Fluency: 5
+Flexibility: 5
+Originality: 4
+Elaboration: 4
+```
+
+Parsing those four dimensions would make ttct loadable and cannot corrupt an existing metric,
+because there is no existing metric. It was **not** implemented, because deciding what the
+benchmark reports is the maintainer's call.
+
+### Token limits: the adapter's `max_new_tokens` was silently ignored for API models
+
+Fixed on 2026-08-03, but worth understanding because the failure was invisible:
+`ModelWrapper` in `tasks/math_n_index/api_warpper.py` hardcoded `max_tokens=30` for all
+providers. The vLLM path honoured the configured `max_new_tokens`, the API path did not — so
+`CREATIVITYPRISM_MATH_MAX_NEW_TOKENS=2000` had no effect and **every API generation was a
+~150-character stub**. The judges then correctly reported the solutions as "incomplete" and the
+run scored 0%. `ModelWrapper` now takes `max_tokens`; `inference_driver.py` passes the configured
+value, and judges fall back to `CREATIVITYPRISM_MATH_API_MAX_TOKENS` (default 512, set it to 30
+to reproduce the old truncated numbers).
+
+**Any published `creative_math` number produced by an API model before this date was computed
+from 30-token generations.**
+
+### Windows console encoding
+
+Model output routinely contains characters outside the Windows ANSI code page (a judge writing
+`✓` is enough). Python then defaults stdout to cp1252 and a mid-run `print` raises
+`UnicodeEncodeError`, aborting an evaluation that had already made every paid call. The runner
+now exports `PYTHONIOENCODING=utf-8` to adapters and decodes their stdout as UTF-8. Inert on
+Linux, where UTF-8 is already the default.
+
+### A silent task is usually a buffered task
+
+The adapter's stdout is a pipe, so Python block-buffers it. `ttct` ran for over an hour showing
+literally nothing — not even its first `print()` — and looked hung. The runner now also exports
+`PYTHONUNBUFFERED=1`, so progress appears live. If you wrap a long run in `cmd | tail -N`,
+expect the same symptom from the shell side: `tail` holds *all* output until the command exits.
+Redirect to a log file and `tail` the file instead.
+
+
+### neocoder executes generated code, and that used to poison both liveness and scores
+
+Two defects met here, and neither announced itself.
+
+The runner used to hand its own stdin to the adapter. Codeforces solutions read stdin, so attached
+to a terminal the generated code blocked on a prompt nobody was watching. Every one of those calls
+hit the harness's 6-second limit: **55 of 60** generations were recorded as `code execution
+timeout`. Re-running the identical artifacts with stdin closed gives **0 of 60**. The runner now
+passes `stdin=subprocess.DEVNULL`, which is what a batch scheduler supplies anyway — but if you
+ever invoke an adapter by hand, close its stdin or you will publish a near-zero correctness score
+that has nothing to do with the model.
+
+The harness's timeout helper also started **non-daemon** threads. Python cannot kill a thread, so a
+timed-out one is merely abandoned — and the interpreter's shutdown handler then waits for it. The
+process therefore hung *after* its results were written: correctness saved at 09:25 and the process
+was still alive and idle 20 minutes later. Fixed with `thread.daemon = True`, which changes no
+score.
+
+**Still open, and it is a scoring decision.** With both fixed, `neocoder` correctness is still
+`0/60`. The code is executable and all 60 samples do define `solve()`, yet the per-test-case path
+records `None` for every case — `solve()` raises each time. Suspects, all upstream and all
+score-moving: `parse_code()` truncates at the first `def` and may drop needed context;
+`mock_input()` feeds one joined line per input row, which will not match a solution that reads a
+different number of lines; and the entry point is hardcoded to `solve()`. Two smaller oddities from
+the same artifacts: `new_techniques_ratio` is `1.0` for all 55 scored rows, and 5 of 60 generations
+never reach the creativity CSV because the upstream evaluator drops them. Decide what `neocoder`
+should report before treating its numbers as publishable.
+
+
+### Diagnostics must not be able to end a run
+
+The `infini-gram` retry handler printed from eight worker threads into one redirected stdout. On
+Windows that raised `OSError: [Errno 22]` *inside the exception handler*, killing a 40-minute
+evaluation. The print is now wrapped so it cannot propagate. Worth copying that habit: anything
+logged from a worker thread during a paid run should be unable to abort the run.
+
+
+### Gate gotcha
+
+Run the gates in a shell where these are unset, or they will inherit a forced env / a dead mock
+endpoint from a previous session and fail confusingly:
+
+```bash
+unset CREATIVITYPRISM_FORCE_ENV OPENAI_BASE_URL
+bash runner/test_phase1.sh && bash runner/test_phase2a.sh && bash runner/test_phase3.sh
+bash runner/test_api_env.sh && bash runner/test_loader.sh
+```
+
+---
+
 ## Current Development Checkpoint (2026-08-01)
 
 ### Canonical workspace and Git state
@@ -718,10 +954,9 @@ print(df.groupby(['task', 'model']).size())
 "
 ```
 
-**Open on the cluster, cannot be closed locally:**
-- `sbatch` accepting the generated directives; partition/account names existing.
-- Whether the template defaults are adequate resources for open-model inference.
-- The `cygpath` branches added to `_common.sh` for the API env — guarded on `uname -s`, so they should be inert on Linux, but that has never been executed there.
+**Open on the cluster, cannot be closed locally:** consolidated into
+[Read before run](#read-before-run) — `sbatch` accepting the generated directives, whether the
+resource defaults suffice, and the `uname`-guarded `cygpath` branches in `_common.sh`.
 
 ---
 

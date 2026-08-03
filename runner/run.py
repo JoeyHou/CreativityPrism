@@ -219,8 +219,24 @@ def build_adapter_command(task_meta, inference_model, judge_model, label, limit,
 
 def run_adapter(cmd, env):
     """Run the adapter, echoing stdout live while capturing it for markers."""
+    # The adapter is told to emit UTF-8 (PYTHONIOENCODING), so decode it as UTF-8 rather
+    # than as the locale code page -- otherwise model output arrives as U+FFFD. Our own
+    # stdout is reconfigured to match, because echoing that text through a cp1252 console
+    # would raise UnicodeEncodeError and abort a run that had already succeeded.
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
     proc = subprocess.Popen(
-        cmd, env=env, stdout=subprocess.PIPE, text=True, errors="replace", bufsize=1
+        cmd, env=env, stdout=subprocess.PIPE, text=True,
+        # No task reads from stdin, but several execute model-generated code that does.
+        # Inheriting an interactive terminal makes that code block on a prompt nobody is
+        # watching. neocoder's correctness stage scored 55 of 60 solutions as "code
+        # execution timeout" purely because of this, and then hung forever on the threads
+        # it had abandoned. DEVNULL turns the same call into an instant EOFError, which is
+        # what a batch scheduler would have produced anyway.
+        stdin=subprocess.DEVNULL,
+        encoding="utf-8", errors="replace", bufsize=1
     )
     captured = []
     with proc.stdout:
@@ -434,6 +450,14 @@ def main():
         if args.dry_run:
             continue
         env = os.environ.copy()
+        # Tasks print raw model output, which routinely contains characters outside the
+        # Windows ANSI code page (a judge writing "✓" is enough). Without this, Python
+        # defaults stdout to cp1252 there and a mid-run print raises UnicodeEncodeError,
+        # killing an otherwise finished evaluation. Already the default on Linux/macOS.
+        env.setdefault("PYTHONIOENCODING", "utf-8")
+        # The adapter's stdout is a pipe, so Python block-buffers it: a task that runs for
+        # an hour looks completely hung because its progress prints sit in a 8 KiB buffer.
+        env.setdefault("PYTHONUNBUFFERED", "1")
         if "CREATIVITYPRISM_API_KEYS" not in env:
             api_keys_path = os.environ.get("CREATIVITYPRISM_API_KEYS", str(DEFAULT_API_KEYS))
             env["CREATIVITYPRISM_API_KEYS"] = api_keys_path

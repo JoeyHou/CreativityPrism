@@ -4,7 +4,16 @@ from google import genai
 from google.genai import types
 from openai import OpenAI
 import json
+import os
 import time
+
+# Applies to callers that do not pass max_tokens explicitly -- in practice the judges.
+# Every judge prompt asks for a verdict *and* an explanation, and most current models write
+# the explanation first. At the original hardcoded 30 tokens the reply is cut off before the
+# verdict appears, extract_yes_no() sees no YES/NO, and the sample scores as UNCLEAR/NO --
+# which the unanimity rule turns into a 0% correctness ratio for the whole run.
+# Set CREATIVITYPRISM_MATH_API_MAX_TOKENS=30 to reproduce the original truncated behavior.
+DEFAULT_MAX_TOKENS = int(os.environ.get("CREATIVITYPRISM_MATH_API_MAX_TOKENS", "512"))
 
 class ModelWrapper:
     """
@@ -12,9 +21,11 @@ class ModelWrapper:
     Supports OpenAI (GPT), Anthropic (Claude), and Google Gemini.
     Can extends to more if needed.
     """
-    def __init__(self, model_name, api_key):
+    def __init__(self, model_name, api_key, max_tokens=None):
         self.model_name = model_name
         self.api_key = api_key
+        # Generation callers pass the configured max_new_tokens; judges leave it unset.
+        self.max_tokens = int(max_tokens) if max_tokens else DEFAULT_MAX_TOKENS
         
         if "gpt" in self.model_name.lower():
             self.client = openai.OpenAI(api_key=api_key)
@@ -52,7 +63,7 @@ class ModelWrapper:
             response = self.client.chat.completions.create(
                 model=self.model_name,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=30,
+                max_tokens=self.max_tokens,
                 temperature=0,
                 seed=42
             )
@@ -68,7 +79,7 @@ class ModelWrapper:
             response = self.client.messages.create(
                 model=self.model_name,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=30,
+                max_tokens=self.max_tokens,
                 temperature=0.0
                 # no seed can be added
             )
@@ -87,9 +98,12 @@ class ModelWrapper:
                     model=self.model_name,
                     contents=prompt,
                     config=types.GenerateContentConfig(
-                        max_output_tokens=30,
+                        max_output_tokens=self.max_tokens,
                         temperature=0,
-                        seed=42
+                        seed=42,
+                        # Gemini 2.5+ spends the output budget on thinking first, so a
+                        # 30-token verdict comes back with no text at all unless it is off.
+                        thinking_config=types.ThinkingConfig(thinking_budget=0)
                     )
                 )
                 return response.text

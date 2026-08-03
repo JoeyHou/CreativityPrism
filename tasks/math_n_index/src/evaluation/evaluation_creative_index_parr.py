@@ -3,6 +3,7 @@ import re
 import nltk
 import json
 import time
+import random
 import requests
 import argparse
 import numpy as np
@@ -106,9 +107,13 @@ def find_exact_match(detokenize: Callable, doc: Document, min_ngram: int):
             'query': span_text,
         }
 
-        max_retries = 5
-        retry_delay = 0.2
-        search_result = {}  # Initialize to avoid NameError
+        # The public endpoint throttles bursts and answers a plain 403 while doing so --
+        # measured at 30-50% of requests when several workers query it in parallel. The
+        # original loop retried 5 times 0.2s apart, i.e. entirely inside one throttle
+        # window, so it usually exhausted every attempt.
+        max_retries = 8
+        base_delay = 0.5
+        search_result = None
 
         for attempt in range(max_retries):
             try:
@@ -116,16 +121,33 @@ def find_exact_match(detokenize: Callable, doc: Document, min_ngram: int):
                 response = requests.post(API_URL, json=request_data)
                 response.raise_for_status()  # raises HTTPError for bad status
                 search_result = response.json()
-                print(f"attempt {attempt} successful")
                 break
             except (requests.RequestException, ValueError) as e:
-                print(f"[Retry {attempt + 1}/{max_retries}] Error: {e}")
-                if attempt == max_retries - 1:
-                    print(f"[Failed] Span '{span_text}' skipped after {max_retries} attempts.")
-                else:
-                    time.sleep(retry_delay)
-        # search_result = requests.post(API_URL, json=request_data).json()
-        occurrence = 0 if 'count' not in search_result else search_result['count']
+                # Diagnostics must never be able to end the run. Eight worker threads
+                # writing to the same redirected stdout raised OSError(EINVAL) on Windows
+                # and killed a 40-minute evaluation from inside the retry handler.
+                try:
+                    print(f"[Retry {attempt + 1}/{max_retries}] Error: {e}")
+                except OSError:
+                    pass
+                if attempt < max_retries - 1:
+                    # Exponential backoff with jitter, so parallel workers do not retry in
+                    # lockstep and we outlast the throttle window.
+                    time.sleep(base_delay * (2 ** attempt) + random.uniform(0, base_delay))
+
+        if search_result is None or 'count' not in search_result:
+            # Do not fall through to occurrence = 0. "The API refused us" and "this n-gram
+            # does not appear in the corpus" are the same value here, and the second one
+            # lowers coverage, which *raises* the reported creativity index. A run that
+            # silently loses lookups publishes a number that is wrong in a flattering
+            # direction, so fail loudly instead.
+            raise RuntimeError(
+                f"infini-gram lookup failed after {max_retries} attempts for span "
+                f"{span_text!r} (last response: {search_result!r}). Refusing to score this "
+                f"document, because a missing lookup is indistinguishable from a zero count "
+                f"and would inflate the creativity index."
+            )
+        occurrence = search_result['count']
 
         if occurrence:
             matched_span = Span(start_index=first_pointer,

@@ -2,6 +2,12 @@
 
 This document describes how researchers and community contributors interact with the CreativityPrism benchmark.
 
+> **Before your first run on a new machine**, read the
+> [Read before run](RESTRUCTURING_PLAN.md#read-before-run) section of the restructuring plan.
+> It lists what has and has not actually been executed, which environments were never built,
+> and which model IDs have since been retired. This document describes the intended workflow;
+> that one describes how far it has been verified.
+
 ---
 
 ## What is CreativityPrism?

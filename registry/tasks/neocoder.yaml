@@ -6,4 +6,6 @@ folder: tasks/neocoder_dat
 adapter: registry/adapters/neocoder.sh
 environment: legacy
 description: "Solve Codeforces problems under denial-of-prompt technique constraints."
-limit_supported: false
+# --limit caps the number of problems, not prompts: each problem still runs all of its
+# denial rounds, since a partial ladder is not scoreable.
+limit_supported: true

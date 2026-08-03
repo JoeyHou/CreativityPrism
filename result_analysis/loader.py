@@ -406,6 +406,12 @@ def _parse_ttct(inference, evaluation):
             outputs = item.get("output") or {}
             verdicts = scored.get((meta.get("question_type"), inputs.get("text_cot")), {})
             for variant, response in outputs.items():
+                # "SKIPPED" is the sentinel the inference script writes for prompts it
+                # never sent. It also lands on every row outside the configured subset,
+                # which `skip` above does not cover, so a 10-item smoke run otherwise
+                # yields 630 rows of which 600 are this placeholder.
+                if isinstance(response, str) and response.strip().upper() == "SKIPPED":
+                    continue
                 verdict = verdicts.get(variant)
                 if isinstance(verdict, str) and verdict.strip().upper() == "SKIPPED":
                     verdict = None
@@ -422,18 +428,28 @@ def _parse_ttct(inference, evaluation):
 CREATIVE_MATH_CRITERIA = ("correctness", "coarse_grained_novelty", "fine_grained_novelty")
 
 
+def _creative_math_key(item):
+    return (str(item.get("problem_id")), item.get("question_number"), item.get("k"))
+
+
 def _parse_creative_math(inference, evaluation):
     """`creative_math`: three independent YES/NO verdicts per problem.
 
     Each verdict is a majority vote of a fixed three-judge panel. All three are
     emitted as separate rows, because `correctness` and the two novelty grades
     answer different questions and averaging them together is meaningless.
+
+    The join key has to include `k`, the number of reference solutions the model was
+    shown. The same problem is asked several times with different `k`, so
+    `(problem_id, question_number)` alone collides -- an 18-record run collapses to
+    10 distinct keys, and every collision silently inherits the last record's
+    verdicts. That halved the reported correctness of the first real run.
     """
     scored = {}
     for _name, data in evaluation:
         for item in data if isinstance(data, list) else []:
             if isinstance(item, dict):
-                scored[(str(item.get("problem_id")), item.get("question_number"))] = item
+                scored[_creative_math_key(item)] = item
 
     rows = []
     for _name, data in inference:
@@ -442,10 +458,10 @@ def _parse_creative_math(inference, evaluation):
                 continue
             pid = str(item.get("problem_id"))
             qnum = item.get("question_number")
-            key = f"{pid}|{qnum}"
+            key = f"{pid}|{qnum}|k{item.get('k')}"
             prompt = item.get("problem")
             output = _first(item, "cleaned_response", "response")
-            verdicts = scored.get((pid, qnum))
+            verdicts = scored.get(_creative_math_key(item))
             if not verdicts:
                 rows.append({"sample_id": key, "metric": None, "prompt": prompt,
                              "output": output, "eval_score": None})

@@ -130,7 +130,13 @@ class InferenceDriver(ABC):
             # print("max_tokens: ", model_config.get("max_new_tokens", 288))
         elif self.model_name in self.closed_source_model:
             access_token = api_key_from_env(self.model_name) or self.closed_source_model[self.model_name]['token']
-            self.api_model = ModelWrapper(model_name=self.model_name, api_key=access_token)
+            # Without this the wrapper falls back to its judge-sized default and the
+            # configured max_new_tokens is silently ignored for every API model.
+            self.api_model = ModelWrapper(
+                model_name=self.model_name,
+                api_key=access_token,
+                max_tokens=config.get("model_config", {}).get("max_new_tokens", 2000),
+            )
         else:
             raise NotImplementedError
         print('=> Done initialization!')

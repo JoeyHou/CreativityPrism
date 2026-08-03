@@ -17,6 +17,79 @@ New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this fi
 | API-only local execution | **Complete (2026-08-02)** | `api` venv env + `CREATIVITYPRISM_FORCE_ENV`; vLLM imports made lazy so API paths need no GPU. |
 | Phase 3 — SLURM submission | **Built, not cluster-verified (2026-08-02)** | `--slurm`/`--no-submit`/`--slurm-override`, `runner/slurm.py`, durable artifact markers; 28/28 gate checks. No `sbatch` has ever been run. |
 | Phase 3 — Analysis loader | **Complete (2026-08-03)** | `result_analysis/loader.py`; all eight parsers validated against real artifacts; 20/20 gate checks |
+| Real-judge verification | **In progress (2026-08-03)** | First runs against paid APIs at `--limit 10`. Surfaced four pre-existing bugs that no mock run could reach — see below. |
+
+---
+
+## Real-judge verification (2026-08-03)
+
+### Why
+
+Every run to date used either a local mock endpoint or no judge at all, so the whole
+inference→judge→score path had never been exercised with a model that reasons before it answers.
+The mock returns short prose and always parsed to `UNCLEAR`, which looked like a mock limitation.
+It was not — it was hiding four real bugs.
+
+### What the first paid run found
+
+| # | Bug | Effect | Fix |
+|---|---|---|---|
+| 1 | `ModelWrapper` hardcoded `max_tokens=30` for every provider | The vLLM path honoured the configured `max_new_tokens`; the API path ignored it. **Every `creative_math` API generation was a ~150-character stub**, and judges correctly called the solutions "incomplete" → 0% correctness. | `ModelWrapper` now takes `max_tokens`; `inference_driver.py` passes the configured value. Judges default to `CREATIVITYPRISM_MATH_API_MAX_TOKENS` (512). |
+| 2 | Same 30-token cap applied to the judges | Models that explain before answering were cut off before stating a verdict, so `extract_yes_no` saw no verdict. | Same fix. Set the env var to `30` to reproduce old numbers. |
+| 3 | Gemini 2.5+ spends the output budget on thinking | With a small budget the response contains **no `parts` at all** — not an error, just nothing. | `thinking_config=ThinkingConfig(thinking_budget=0)` in `_query_gemini`. |
+| 4 | Windows cp1252 stdout | A judge writing `✓` raised `UnicodeEncodeError` mid-run, aborting an evaluation after every paid call had already been made. | Runner exports `PYTHONIOENCODING=utf-8` and decodes adapter stdout as UTF-8. |
+| 5 | Adapter stdout is a pipe, so Python block-buffers it | `ttct` ran for over an hour printing **nothing at all** — not even its first `print()` — and was mistaken for a hang. | Runner also exports `PYTHONUNBUFFERED=1`. |
+| 6 | `infini-gram` lookups fell through to `occurrence = 0` on failure | A failed request is indistinguishable from "n-gram not in corpus". Lost lookups lower coverage, and lower coverage **raises** the reported creativity index, so a throttled run degrades silently and flatteringly. The endpoint 403s about half the time. | 8 retries with exponential backoff and jitter; raises instead of scoring a failed lookup as zero. |
+| 7 | Loader joined `creative_math` on `(problem_id, question_number)` | The same problem appears several times with different `k`, so 18 records collapsed to **10 keys** and collisions inherited the last record's verdicts. The loader reported correctness `27.78%` where the evaluation script printed `55.56%`. | Join key now includes `k`; loader and script agree exactly. |
+| 8 | Loader emitted `ttct` placeholder rows | Rows outside the configured subset carry the literal output `SKIPPED` and are not marked `skip`. A 10-item run produced 630 rows, 600 of them placeholders. | Loader drops variants whose output is the `SKIPPED` sentinel; the same run now yields 30 rows. |
+| 9 | `neocoder`'s timeout helper started **non-daemon** threads | A timed-out thread is abandoned, never killed. The interpreter's shutdown handler joins non-daemon threads, so the process hung **forever after its results had already been written**. Observed: correctness finished and saved at 09:25, the process was still alive and idle 20 minutes later. On a scheduler this burns the entire wall-clock allocation. | `thread.daemon = True` in `function_with_timeout`. No score changes — the `TimeoutError` path is untouched and the abandoned thread's result was already discarded. |
+| 10 | Adapters inherited the runner's **stdin** | Tasks execute model-generated code, and Codeforces solutions read stdin. Attached to a terminal, that code blocks on a prompt nobody is watching. `neocoder` scored **55 of 60** generations as `code execution timeout` for this reason alone; with stdin closed the same artifacts give **0 of 60** timeouts. | `stdin=subprocess.DEVNULL` in `run_adapter`, which is what a batch scheduler would have supplied anyway. |
+| 11 | A diagnostic `print` could kill an evaluation | The `infini-gram` retry handler prints from eight worker threads to one redirected stdout. On Windows that raised `OSError: [Errno 22]` *from inside the exception handler*, ending a 40-minute evaluation. | The print is wrapped so it can never propagate. |
+
+Retired judge model IDs were also replaced: `claude-3-7-sonnet-20250219` →
+`claude-sonnet-4-5-20250929`, `gemini-2.0-flash` → `gemini-2.5-flash`. Both must be changed in
+**two** places — `configs/eval_creative_math.json` *and* the hardcoded `JUDGE_MODELS` dict.
+
+### Deliberately not fixed
+
+`extract_yes_no()` in `api_eval.py` substring-matches: `"NO"` is inside `NOT`, `CANNOT` and
+`KNOW`, and `"YES"` is tested first anywhere in the string. A judge opening with "I need to know
+whether…" is recorded as a `NO` vote — observed live. Correcting this changes published scoring
+semantics, so it is documented in `RESTRUCTURING_PLAN.md` → "Read before run" and left for the
+maintainer to decide.
+
+`ttct` scores only the `cot` variant: `ttct_evaluation.py` hardcodes `SKIPPED` for `basic` and
+`instructive` in both branches under a `# TODO: change this`. Upstream behaviour, left alone.
+Separately, ttct contributes **no numeric score** to the loader today, even though the judge
+emitted a clean `### Scores ###` block with four named dimensions on 10 of 10 samples. Parsing it
+would make ttct loadable without touching any existing metric, but deciding what the benchmark
+reports is the maintainer's call.
+
+### Also in this slice
+
+`neocoder` gained `--limit`. It previously had no way to process fewer than all 199 problems, so
+the smallest possible run was 199 × 6 rounds = **1194 paid calls**. The limit caps problems, not
+prompts, so each problem keeps its full denial ladder.
+
+### Coverage of the `real10` verification run
+
+Seven of eight tasks completed end to end against real paid APIs at n≈10:
+`aut`, `dat`, `ttcw`, `creative_short`, `creative_math`, `ttct`, `neocoder`.
+`creativity_index` completed inference but **could not complete evaluation**, because the public
+`infini-gram` endpoint refused roughly half of all requests from this network. That is an external
+service limit, not a repository defect.
+
+All eight tasks are now visible to the loader (764 rows), including `creativity_index` and
+`neocoder`. `creativity_index` contributes inference rows with no score, for the reason above.
+
+One unresolved observation, deliberately **not** acted on: even after the stdin fix removed every
+spurious timeout, `neocoder` correctness is `0/60`. The generated code is executable and all 60
+samples do define `solve()`, but the per-test-case path records `None` for every case, i.e.
+`solve()` raises each time. That is the upstream harness (`parse_code` truncation, `mock_input`
+line arity, and the hardcoded `solve()` entry point), not the runner, and changing it would move
+published numbers. Two smaller oddities from the same artifacts: `new_techniques_ratio` is `1.0`
+for all 55 scored rows, and 5 of 60 generations are absent from the creativity CSV because the
+upstream evaluator drops them. See `RESTRUCTURING_PLAN.md` → "Read before run".
 
 ---
 

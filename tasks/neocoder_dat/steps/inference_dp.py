@@ -2,7 +2,7 @@
 """
 import click
 import os
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, Subset
 
 from src.generator.generator import CodeGenerator
 from src.utils.configs import get_dp_inference_params
@@ -17,6 +17,7 @@ from src.utils.configs import get_dp_inference_params
 @click.option("--temperature", type=float, default=0.7, help="The temperature for sampling.")
 @click.option("--top-p", type=float, default=1.0, help="The top p for sampling.")
 @click.option("--max-tokens", type=int, default=512, help="The maximum number of tokens to generate.")
+@click.option("--limit", type=int, default=None, help="Only process the first N problems. Omit to process all.")
 
 def main(
     dataset_path,
@@ -27,7 +28,8 @@ def main(
     overwrite,
     temperature,
     top_p,
-    max_tokens
+    max_tokens,
+    limit
 ):
 
     params = get_dp_inference_params(dataset_path,
@@ -41,6 +43,18 @@ def main(
     
     generator: CodeGenerator = params['generator']
     dataloader: DataLoader = params['dataloader']
+
+    # Applied before num_sample is read, so a limited run writes its own filename and
+    # cannot be mistaken for a full one. Limiting problems rather than batches keeps
+    # every problem's denial rounds intact.
+    if limit is not None and limit < len(dataloader.dataset):
+        dataloader = DataLoader(
+            Subset(dataloader.dataset, range(limit)),
+            batch_size=dataloader.batch_size,
+            sampler=None,
+            shuffle=False,
+            collate_fn=dataloader.collate_fn,
+        )
 
     # difficulty level
     num_sample = len(dataloader.dataset)

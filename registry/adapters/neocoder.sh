@@ -46,6 +46,8 @@ CREATIVITY_DIR="results/${RUN_ID}/neocoder/evaluation/creativity"
 
 if [[ "$MODE" == "inference" || "$MODE" == "both" ]]; then
     mkdir -p "$INFER_DIR"
+    LIMIT_ARG=()
+    [[ -n "$LIMIT" ]] && LIMIT_ARG=(--limit "$LIMIT")
     python3 steps/inference_dp.py \
         --dataset-path "$DATASET" \
         --model-name "$ALIAS" \
@@ -55,7 +57,8 @@ if [[ "$MODE" == "inference" || "$MODE" == "both" ]]; then
         --overwrite \
         --temperature "$TEMP" \
         --top-p "$TOP_P" \
-        --max-tokens "$MAX_TOKENS"
+        --max-tokens "$MAX_TOKENS" \
+        "${LIMIT_ARG[@]}"
     # The filename embeds sample count and temperature, which only the task can
     # compute, so announce the run-scoped directory instead of guessing.
     emit_artifact inference "$TASK_DIR/${INFER_DIR}"

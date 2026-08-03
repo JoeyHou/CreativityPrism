@@ -124,6 +124,15 @@ def function_with_timeout(func, args, timeout):
         result_container.append(func(*args))
 
     thread = PropagatingThread(target=wrapper)
+    # A timed-out thread is abandoned, never killed -- Python cannot kill a thread.
+    # Without daemon=True the interpreter's shutdown handler joins it, so the whole
+    # process hangs after the last result has already been written. That is not
+    # hypothetical: model solutions written as top-level scripts call input() during
+    # exec(), i.e. before mock_input() is installed, so they block on the real stdin
+    # forever. A 10-problem run left 55 such threads behind and never exited.
+    # daemon=True changes no score: the TimeoutError path below is untouched, and the
+    # abandoned thread's result was already being discarded.
+    thread.daemon = True
     thread.start()
     thread.join(timeout)
 
