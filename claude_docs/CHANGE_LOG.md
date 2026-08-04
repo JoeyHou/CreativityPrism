@@ -53,12 +53,11 @@ Retired judge model IDs were also replaced: `claude-3-7-sonnet-20250219` →
 
 ### Deliberately not fixed
 
-`ttct` scores only the `cot` variant: `ttct_evaluation.py` hardcodes `SKIPPED` for `basic` and
-`instructive` in both branches under a `# TODO: change this`. Upstream behaviour, left alone.
-Separately, ttct contributes **no numeric score** to the loader today, even though the judge
-emitted a clean `### Scores ###` block with four named dimensions on 10 of 10 samples. Parsing it
-would make ttct loadable without touching any existing metric, but deciding what the benchmark
-reports is the maintainer's call.
+`ttct_evaluation.py` still hardcodes `SKIPPED` for the `basic` and `instructive` judge calls in
+both branches, under a `# TODO: change this`. That upstream code is untouched — the adapter now
+just stops generating the two variants in the first place, so nothing reaches those lines that
+could have been scored anyway. Deleting the variants from the schema outright was rejected; see
+`RESTRUCTURING_PLAN.md` → "`ttct` only ever scores the `cot` variant" for why.
 
 ### Also in this slice
 
@@ -74,17 +73,32 @@ Seven of eight tasks completed end to end against real paid APIs at n≈10:
 `infini-gram` endpoint refused roughly half of all requests from this network. That is an external
 service limit, not a repository defect.
 
-All eight tasks are now visible to the loader (764 rows), including `creativity_index` and
+All eight tasks are now visible to the loader (794 rows), including `creativity_index` and
 `neocoder`. `creativity_index` contributes inference rows with no score, for the reason above.
 
-One unresolved observation, deliberately **not** acted on: even after the stdin fix removed every
-spurious timeout, `neocoder` correctness is `0/60`. The generated code is executable and all 60
-samples do define `solve()`, but the per-test-case path records `None` for every case, i.e.
-`solve()` raises each time. That is the upstream harness (`parse_code` truncation, `mock_input`
-line arity, and the hardcoded `solve()` entry point), not the runner, and changing it would move
-published numbers. Two smaller oddities from the same artifacts: `new_techniques_ratio` is `1.0`
-for all 55 scored rows, and 5 of 60 generations are absent from the creativity CSV because the
-upstream evaluator drops them. See `RESTRUCTURING_PLAN.md` → "Read before run".
+`neocoder`'s `0/60` correctness was **diagnosed** after this run and traced to a single cause. The
+bare `except:` in `test_correctness` was hiding `IndexError: list index out of range` on 54 of 60
+first-try executions and 256 of the per-case retries. `parse_code` and `exec` are innocent: every
+one of the 60 generations parses, executes and defines `solve()`. The problem is that **55 of 60**
+of them open with the standard competitive-programming idiom
+
+```python
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+```
+
+which binds a *local* name to the real stdin reader and so never sees `mock_input`'s patched
+`builtins.input`. `parse_code`'s textual rewrites only match the parenthesised forms
+(`sys.stdin.read()`, `.readline()`, `.readlines()`), and this idiom has no parentheses. With the
+inherited terminal stdin those 55 blocked forever — that is where the "code execution timeout"
+epidemic came from; with stdin at `/dev/null` they read `''`, so `data` is empty and the first
+subscript raises. The 5 generations that use plain `input()` are the only ones the harness has
+ever actually evaluated. Fixing it moves published numbers and is left to the maintainer; see
+`RESTRUCTURING_PLAN.md` for the two candidate fixes. Two smaller oddities from the same artifacts:
+`new_techniques_ratio` is `1.0` for all 55 scored rows, and 5 of 60 generations are absent from the
+creativity CSV because the upstream evaluator drops them.
 
 ---
 

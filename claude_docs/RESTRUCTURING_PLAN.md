@@ -134,22 +134,38 @@ figures built from a loader run older than 2026-08-03, regenerate them.
 
 `ttct_evaluation.py` hardcodes `basic_eval_pred = ["SKIPPED" for _ in data]` and the same for
 `instructive`, in **both** the vLLM and the API branch, each under a `# TODO: change this`. The
-real judge call is made only for `cot`. So a ttct run pays for three generations per item and
-scores one. This is upstream behaviour and was left alone.
+real judge call is made only for `cot`. So a ttct run used to pay for three generations per item
+and score one.
 
-Two related notes:
+**Fixed 2026-08-03 in the adapter, not by deletion.** `ttct_inference.py` already accepts
+`-prompt_formats`, and already fills a variant with `SKIPPED` when it is not requested; the
+adapter simply never passed the flag, so it defaulted to `all`. `registry/adapters/ttct.sh` now
+passes `-prompt_formats cot`, which removes the entire wasted two thirds of the generation bill
+in one line. Deleting the two variants outright was considered and rejected: `basefile.csv` and
+the `csv2json`/`json2csv` round trip in `ttct_evaluation.py` (lines 33-38 and 55-60) address six
+`infer_*` columns by name, and the 45 committed judge-output files under
+`human_annotation/data/mturk_anno/ttct/v1.1_llmj_output/` hold **real** basic and instructive
+generations (675 of each) that the agreement analysis is built on. The flag reaches the same
+outcome without touching either.
 
-- The inference script marks surplus in-subset rows with `skip`, but rows **outside** the
-  configured subset are never marked — their prompts are the literal string `SKIPPED`. The loader
-  now drops any variant whose output is that sentinel (a 10-item run went from 630 rows, 600 of
-  them placeholders, to 30).
-- `-num_samples` is **per question type**, not a total, and is multiplied by the three prompt
-  formats. `--limit 2` over 5 question types means 10 items and 30 generations.
+Note that `assert len(csv_data) == len(input_data)` at line 28 compares **row** counts against
+`basefile.csv`'s 700. The three variants are columns of one row, so neither the flag nor a
+deletion would trip it — do not treat that assertion as a guard on this.
 
-**Open decision:** ttct currently contributes **no numeric score at all**. `_parse_ttct` fills
-`eval_score` only when the judge's answer is itself a number, and the ttct judge answers in prose.
-But the rubric prompt does mandate a trailing block, and it came back clean on **10 of 10** samples
-on 2026-08-03:
+One related note: the inference script marks surplus in-subset rows with `skip`, but rows
+**outside** the configured subset are never marked — their prompts are the literal string
+`SKIPPED`. The loader drops any variant whose output is that sentinel (a 10-item run went from
+630 rows, 600 of them placeholders, to 30).
+
+`-num_samples` is **per question type**, not a total. It used to be multiplied by the three
+prompt formats; with `-prompt_formats cot` a `--limit 2` over 5 question types is 10 items and
+10 generations, not 30.
+
+### `ttct` now reports the four TTCT traits
+
+Resolved on 2026-08-03. ttct previously contributed **no numeric score at all**, because
+`_parse_ttct` filled `eval_score` only when the judge's answer was itself a number and the ttct
+judge answers in prose ending with a rubric block:
 
 ```
 ### Scores ###
@@ -159,9 +175,15 @@ Originality: 4
 Elaboration: 4
 ```
 
-Parsing those four dimensions would make ttct loadable and cannot corrupt an existing metric,
-because there is no existing metric. It was **not** implemented, because deciding what the
-benchmark reports is the maintainer's call.
+The parser for that block already existed — it just lived in a notebook, `extract_scores` in
+`human_annotation/notebooks/mturk_agreement.ipynb`, and had never been ported. `loader.py` now
+carries it verbatim as `_parse_ttct_scores`, down to the `split("### Scores ###")[1]` that reads
+the text after the *first* marker, so the loader and the published agreement numbers cannot
+disagree. A scored variant expands into four rows (`fluency`, `flexibility`, `originality`,
+`elaboration`) the way `ttcw` expands into one row per rubric question; averaging them is a
+reporting decision and stays out of the loader. Verified on 90 judge responses across the six
+`zero_shot` corpora in `human_annotation/data/` — 4/4 traits parsed on every one — and the
+`real10` run went from 0 numeric scores to 40.
 
 ### Token limits: the adapter's `max_new_tokens` was silently ignored for API models
 
@@ -212,15 +234,51 @@ process therefore hung *after* its results were written: correctness saved at 09
 was still alive and idle 20 minutes later. Fixed with `thread.daemon = True`, which changes no
 score.
 
-**Still open, and it is a scoring decision.** With both fixed, `neocoder` correctness is still
-`0/60`. The code is executable and all 60 samples do define `solve()`, yet the per-test-case path
-records `None` for every case — `solve()` raises each time. Suspects, all upstream and all
-score-moving: `parse_code()` truncates at the first `def` and may drop needed context;
-`mock_input()` feeds one joined line per input row, which will not match a solution that reads a
-different number of lines; and the entry point is hardcoded to `solve()`. Two smaller oddities from
-the same artifacts: `new_techniques_ratio` is `1.0` for all 55 scored rows, and 5 of 60 generations
-never reach the creativity CSV because the upstream evaluator drops them. Decide what `neocoder`
-should report before treating its numbers as publishable.
+**Still open, and it is a scoring decision — but no longer a mystery.** With both fixed,
+`neocoder` correctness is still `0/60`. Instrumenting the bare `except:` in `test_correctness`
+against the existing `real10` artifacts (no API calls) named the cause exactly:
+
+```
+=== exec / parse stage ===            (nothing: all 60 parse, exec and define solve)
+=== first try (all cases at once) ===
+    54  IndexError: list index out of range
+     4  ran but mismatched
+     1  SyntaxError: invalid syntax
+     1  AttributeError: module 'sys' has no attribute 'input'
+=== second try (one case at a time) ===
+   256  IndexError: list index out of range
+```
+
+`parse_code` is not the culprit and neither is `exec`. **55 of the 60 generations** begin like this:
+
+```python
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+```
+
+That binds a *local* `input` to the real stdin reader, so `mock_input()`'s patch of
+`builtins.input` is never consulted. `parse_code` does try to rewrite stdin reads, but every one
+of its six rules requires parentheses — `sys.stdin.read()`, `.readline()`, `.readlines()` — and
+the idiom above has none. Under the old inherited terminal stdin those 55 blocked forever, which
+is precisely where the 55 "code execution timeout" verdicts came from; with stdin at `/dev/null`
+they instead read `''`, leaving `data` empty so the first subscript raises. Only the 5 generations
+that call plain `input()` have ever actually been evaluated by this harness.
+
+Two ways out, both moving published numbers:
+
+- **Extend the rewrite.** Catch the parenthesis-free assignment as well. Awkward, because
+  `sys.stdin.read` returns the *whole* input in one call while `mock_input` yields one line at a
+  time, so the replacement has to be a closure over the remaining lines rather than `input`.
+- **Run the solution in a subprocess with the test case on real stdin.** This is what Codeforces
+  itself does, it makes `input()`, `sys.stdin.read` and `sys.stdin.readline` all behave, and it
+  deletes the whole monkeypatching layer along with its timeout-thread problems.
+  `evaluation_utils.py` already contains an unused subprocess-based `check_correctness`.
+
+Two smaller oddities from the same artifacts: `new_techniques_ratio` is `1.0` for all 55 scored
+rows, and 5 of 60 generations never reach the creativity CSV because the upstream evaluator drops
+them. Decide what `neocoder` should report before treating its numbers as publishable.
 
 
 ### Diagnostics must not be able to end a run

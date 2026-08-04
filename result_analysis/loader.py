@@ -36,6 +36,7 @@ names the metric its score belongs to. Filter on `metric` before aggregating.
 """
 import csv
 import json
+import re
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -376,8 +377,36 @@ def _parse_creative_short(inference, evaluation):
     return rows
 
 
+TTCT_TRAITS = ("Fluency", "Flexibility", "Originality", "Elaboration")
+
+_TTCT_SCORE_RE = re.compile(r"(\w+): (\d+)")
+
+
+def _parse_ttct_scores(eval_output):
+    """Pull the four TTCT trait scores out of one judge response.
+
+    Deliberately identical to `extract_scores` in
+    `human_annotation/notebooks/mturk_agreement.ipynb`, which is what produced the
+    published human-agreement numbers: same regex, and the same `split(...)[1]` that
+    reads the text after the *first* `### Scores ###` marker and falls back to the whole
+    response when the judge omits the marker. Where the judge emits more than one block,
+    a later repeat of a trait therefore wins -- kept as-is so the loader and the notebook
+    cannot disagree about a score.
+
+    The one departure is that only the four known traits are returned. The regex is broad
+    enough to match any `Word: 7` pair, and in the no-marker fallback that would invent
+    metric names out of the judge's prose; the notebook is unaffected because it only ever
+    reads the four keys back out.
+    """
+    if not isinstance(eval_output, str):
+        return {}
+    body = eval_output.split("### Scores ###")[1] if "### Scores ###" in eval_output else eval_output
+    found = {name: int(value) for name, value in _TTCT_SCORE_RE.findall(body)}
+    return {trait.lower(): found[trait] for trait in TTCT_TRAITS if trait in found}
+
+
 def _parse_ttct(inference, evaluation):
-    """`ttct`: one row per (question, prompt variant).
+    """`ttct`: one row per (question, prompt variant, trait).
 
     Each item carries three prompt variants (`text_basic`, `text_instructive`,
     `text_cot`) and only `text_cot` is scored; the rest are stored as "SKIPPED".
@@ -386,8 +415,12 @@ def _parse_ttct(inference, evaluation):
     joined by position or by key. It is joined on `question_type` plus the exact
     `text_cot` prompt, which is the only stable identifier both files share.
 
-    The judge answers in prose, so `eval_score` is filled only when that answer is
-    itself a number. Regex-mining a score out of free text would be worse than a null.
+    The judge replies in prose and ends with a `### Scores ###` block holding one integer
+    per TTCT trait, so a scored variant expands into four rows -- `fluency`,
+    `flexibility`, `originality`, `elaboration` -- the way `ttcw` expands into one row per
+    rubric question. Averaging the four here would bury a research decision in a loader.
+    A response the parser cannot read still yields its single unscored row rather than
+    vanishing.
     """
     scored = {}
     for _name, data in evaluation:
@@ -415,13 +448,25 @@ def _parse_ttct(inference, evaluation):
                 verdict = verdicts.get(variant)
                 if isinstance(verdict, str) and verdict.strip().upper() == "SKIPPED":
                     verdict = None
-                rows.append({
-                    "sample_id": f"{meta.get('id')}|{index}|{variant}",
-                    "metric": "judge_score" if verdict is not None else None,
-                    "prompt": inputs.get(variant),
-                    "output": response,
-                    "eval_score": _as_number(verdict),
-                })
+                sample_id = f"{meta.get('id')}|{index}|{variant}"
+                traits = _parse_ttct_scores(verdict)
+                if not traits:
+                    rows.append({
+                        "sample_id": sample_id,
+                        "metric": None,
+                        "prompt": inputs.get(variant),
+                        "output": response,
+                        "eval_score": None,
+                    })
+                    continue
+                for trait, score in traits.items():
+                    rows.append({
+                        "sample_id": sample_id,
+                        "metric": trait,
+                        "prompt": inputs.get(variant),
+                        "output": response,
+                        "eval_score": score,
+                    })
     return rows
 
 

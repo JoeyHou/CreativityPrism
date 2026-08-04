@@ -27,10 +27,16 @@ MODEL_SHORT="${ALIAS##*/}"
 NATIVE_OUT="$TASK_DIR/data/outputs/${RUN_ID}/${MODEL_SHORT}.json"
 
 if [[ "$MODE" == "inference" || "$MODE" == "both" ]]; then
+    # cot only. The script defaults to "all", which generates a basic, an instructive and
+    # a cot answer for every question -- but ttct_evaluation.py judges cot alone and hands
+    # back "SKIPPED" for the other two, so two thirds of the generation bill bought nothing
+    # that could ever be scored. Passing the flag rather than deleting the two variants
+    # keeps basefile.csv's columns and the csv2json/json2csv round trip untouched.
     python3 ./src/inference/ttct_inference.py \
         -model_name "$ALIAS" \
         -temp "$TEMP" \
         -run_id "$RUN_ID" \
+        -prompt_formats cot \
         "${NUM_SAMPLES_ARG[@]}"
     emit_artifact inference "$NATIVE_OUT"
 fi
