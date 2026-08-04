@@ -29,6 +29,9 @@ if not os.environ.get("HF_TOKEN"):
 MAX_TOKENS = 3072
 TOP_P = 1
 TOP_K = 50
+# 5 of the 7 question types in basefile.csv, 100 items each, so a default run is 500 items.
+# The judge rubric was human-aligned for these five only; 3_just_suppose and 7_story ship
+# unscored and their 200 rows stay in the file as SKIPPED to keep the csv schema fixed.
 DEFAULT_SUBSET = [
     '1_unusual_uses', '5_common_problems', '4_situation', '6_improvement', '2_consequences'
 ]
@@ -233,8 +236,10 @@ if __name__ == "__main__":
                         )
     parser.add_argument('-prompt_formats',
                         type=str,
-                        default='all',
-                        help=f'List of settings to include in the evaluation.'
+                        default='cot',
+                        help='Comma-separated prompt variants to generate, or "all". Only cot is '
+                             'ever judged, so the other two cost money and produce nothing '
+                             'scoreable; unrequested variants are written as SKIPPED.'
                         )
     parser.add_argument('-run_id',
                         type=str,

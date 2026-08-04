@@ -54,10 +54,15 @@ Retired judge model IDs were also replaced: `claude-3-7-sonnet-20250219` →
 ### Deliberately not fixed
 
 `ttct_evaluation.py` still hardcodes `SKIPPED` for the `basic` and `instructive` judge calls in
-both branches, under a `# TODO: change this`. That upstream code is untouched — the adapter now
-just stops generating the two variants in the first place, so nothing reaches those lines that
-could have been scored anyway. Deleting the variants from the schema outright was rejected; see
-`RESTRUCTURING_PLAN.md` → "`ttct` only ever scores the `cot` variant" for why.
+both branches, under a `# TODO: change this`. That upstream code is untouched — inference now just
+defaults to `cot`, so nothing reaches those lines that could have been scored anyway. Deleting the
+variants from the schema outright was rejected; see `RESTRUCTURING_PLAN.md` → "`ttct` only ever
+scores the `cot` variant" for why.
+
+`neocoder`'s comparison layer: the first try zips per-line output against per-case expected output
+and always throws; the per-case retry omits the test-count header that the stored cases assume; and
+both exact-match a single reference answer for problems that accept many. All three move published
+numbers and belong to whoever decides what `neocoder` reports.
 
 ### Also in this slice
 
@@ -76,10 +81,10 @@ service limit, not a repository defect.
 All eight tasks are now visible to the loader (794 rows), including `creativity_index` and
 `neocoder`. `creativity_index` contributes inference rows with no score, for the reason above.
 
-`neocoder`'s `0/60` correctness was **diagnosed** after this run and traced to a single cause. The
-bare `except:` in `test_correctness` was hiding `IndexError: list index out of range` on 54 of 60
+`neocoder`'s `0/60` correctness was **diagnosed and its execution layer fixed**. The bare
+`except:` in `test_correctness` was hiding `IndexError: list index out of range` on 54 of 60
 first-try executions and 256 of the per-case retries. `parse_code` and `exec` are innocent: every
-one of the 60 generations parses, executes and defines `solve()`. The problem is that **55 of 60**
+one of the 60 generations parses, executes and defines `solve()`. The problem was that **55 of 60**
 of them open with the standard competitive-programming idiom
 
 ```python
@@ -94,11 +99,16 @@ which binds a *local* name to the real stdin reader and so never sees `mock_inpu
 (`sys.stdin.read()`, `.readline()`, `.readlines()`), and this idiom has no parentheses. With the
 inherited terminal stdin those 55 blocked forever — that is where the "code execution timeout"
 epidemic came from; with stdin at `/dev/null` they read `''`, so `data` is empty and the first
-subscript raises. The 5 generations that use plain `input()` are the only ones the harness has
-ever actually evaluated. Fixing it moves published numbers and is left to the maintainer; see
-`RESTRUCTURING_PLAN.md` for the two candidate fixes. Two smaller oddities from the same artifacts:
-`new_techniques_ratio` is `1.0` for all 55 scored rows, and 5 of 60 generations are absent from the
-creativity CSV because the upstream evaluator drops them.
+subscript raises. Solutions now run in a subprocess with the case piped to real stdin, which makes
+`input()`, `sys.stdin.read` and `sys.stdin.readline` all behave and gives the timeout something the
+OS can enforce. **"Code not executable" went from 60 of 60 to 0 of 60.**
+
+The score itself only moves from 0 to 3 of 60, because `neocoder`'s *comparison* layer is
+independently broken and repairing it is a benchmark decision rather than a runner one. See
+`RESTRUCTURING_PLAN.md` for the three specific faults — the sharpest being that these problems
+admit many valid answers and are exact-matched against a single reference. Two smaller oddities
+from the same artifacts: `new_techniques_ratio` is `1.0` for all 55 scored rows, and 5 of 60
+generations are absent from the creativity CSV because the upstream evaluator drops them.
 
 ---
 

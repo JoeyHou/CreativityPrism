@@ -137,23 +137,29 @@ figures built from a loader run older than 2026-08-03, regenerate them.
 real judge call is made only for `cot`. So a ttct run used to pay for three generations per item
 and score one.
 
-**Fixed 2026-08-03 in the adapter, not by deletion.** `ttct_inference.py` already accepts
-`-prompt_formats`, and already fills a variant with `SKIPPED` when it is not requested; the
-adapter simply never passed the flag, so it defaulted to `all`. `registry/adapters/ttct.sh` now
-passes `-prompt_formats cot`, which removes the entire wasted two thirds of the generation bill
-in one line. Deleting the two variants outright was considered and rejected: `basefile.csv` and
-the `csv2json`/`json2csv` round trip in `ttct_evaluation.py` (lines 33-38 and 55-60) address six
-`infer_*` columns by name, and the 45 committed judge-output files under
+**Fixed 2026-08-03, by defaulting rather than deleting.** `ttct_inference.py` already accepts
+`-prompt_formats` and already fills a variant with `SKIPPED` when it is not requested; the flag
+just defaulted to `all` and the adapter never passed it. The default is now `cot`, and
+`registry/adapters/ttct.sh` passes `-prompt_formats cot` as well so the pipeline stays cot-only
+even if that default moves again. Deleting the two variants outright was considered and rejected:
+`basefile.csv` and the `csv2json`/`json2csv` round trip in `ttct_evaluation.py` (lines 33-38 and
+55-60) address six `infer_*` columns by name, and the 45 committed judge-output files under
 `human_annotation/data/mturk_anno/ttct/v1.1_llmj_output/` hold **real** basic and instructive
 generations (675 of each) that the agreement analysis is built on. The flag reaches the same
 outcome without touching either.
 
+**A default ttct run is 500 items, not 700.** `basefile.csv` holds 7 question types x 100, but
+`DEFAULT_SUBSET` scores 5 of them -- the judge rubric was human-aligned for those five only, and
+`3_just_suppose` and `7_story` ship unscored. Their 200 rows stay in the file, carrying `SKIPPED`,
+so the csv schema and the row-count assertion below stay fixed. 500 items x 1 variant is now the
+full cost of a ttct run; it used to be 1500 generations.
+
 Note that `assert len(csv_data) == len(input_data)` at line 28 compares **row** counts against
 `basefile.csv`'s 700. The three variants are columns of one row, so neither the flag nor a
-deletion would trip it — do not treat that assertion as a guard on this.
+deletion would trip it -- do not treat that assertion as a guard on this.
 
 One related note: the inference script marks surplus in-subset rows with `skip`, but rows
-**outside** the configured subset are never marked — their prompts are the literal string
+**outside** the configured subset are never marked -- their prompts are the literal string
 `SKIPPED`. The loader drops any variant whose output is that sentinel (a 10-item run went from
 630 rows, 600 of them placeholders, to 30).
 
@@ -274,7 +280,38 @@ Two ways out, both moving published numbers:
 - **Run the solution in a subprocess with the test case on real stdin.** This is what Codeforces
   itself does, it makes `input()`, `sys.stdin.read` and `sys.stdin.readline` all behave, and it
   deletes the whole monkeypatching layer along with its timeout-thread problems.
-  `evaluation_utils.py` already contains an unused subprocess-based `check_correctness`.
+
+**The second was implemented on 2026-08-03.** `evaluation_utils.run_solution` writes the parsed
+code to a temp directory, runs it under `sys.executable` with the case piped to real stdin, and
+enforces a timeout the OS can actually act on. `test_correctness` no longer `exec`s into the
+evaluator's own globals — which also removes the `del globals()['solve']` cleanup and the risk of
+one problem's `solve` leaking into the next — and detects unrunnable code with `compile()` instead.
+Measured against the same `real10` artifacts: **"code not executable" went from 60 of 60 to 0 of
+60.** Every generation now runs.
+
+### neocoder's *comparison* layer is still wrong, and that is a separate decision
+
+With execution fixed, `neocoder` scores 3 of 60 rather than 0 of 60. The remaining gap is not the
+runner and not the models. Three distinct problems, in the order they bite:
+
+1. **The first try cannot ever compare.** It flattens every case's output into one list of lines
+   and zips it against `test_case_outputs`, which is a list *per case*. So
+   `type_agnostic_compare('9', ['9', '10 1', '15 5'])` runs `eval('9')` and then
+   `list(map(str, 9))`, which raises. The first try therefore always falls through to the retry.
+2. **The per-case retry feeds a malformed file.** A stored case such as
+   `[['2'], ['15', '1', '10', '5']]` is `n` followed by the data — it carries no leading test
+   count, because the harness is supposed to supply one. The first try does
+   (`test_input.insert(0, str(num_test_cases))`); the retry does not. Solutions written for
+   Codeforces multi-test input read the `n` line as `t` and then crash.
+3. **Even corrected, it exact-matches a single reference answer.** Feeding the retry a `1` header
+   and comparing line by line still yields 3 passes, 4 crashes and 53 "differs from reference".
+   The one case inspected in full, `1895B`, is a *correct* answer: the model printed the same
+   optimal cost and a different but equally optimal pairing (`1 10` where the reference has
+   `10 1`). Codeforces scores that class of problem with a per-problem checker, which NeoCoder
+   does not ship. How many of the other 52 are genuine failures is unmeasured — do not assume.
+
+Fixing 1 and 2 is mechanical. Fixing 3 is a benchmark design question. Neither was done, because
+both move published numbers and neither is a runner concern.
 
 Two smaller oddities from the same artifacts: `new_techniques_ratio` is `1.0` for all 55 scored
 rows, and 5 of 60 generations never reach the creativity CSV because the upstream evaluator drops

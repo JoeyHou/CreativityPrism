@@ -4,8 +4,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from overrides import overrides
 from typing import Text, Dict, Any, List, Optional, Tuple, Union
 from .evaluator import Evaluator
-from .evaluation_utils import (mock_input, 
-                               capture_output, 
+from .evaluation_utils import (SOLUTION_TIMEOUT,
+                               run_solution,
                                type_agnostic_compare,
                                function_with_timeout,
                                read_json)
@@ -66,17 +66,19 @@ class CodeForceCorrectnessEvaluator(Evaluator):
                     assert len(test_case['input']) == len(test_case['output'])
 
                     try:
-                        (correctness, output) = function_with_timeout(self.test_correctness, (code, test_case['input'], test_case['output']), timeout=6)
+                        # Backstop only. Each attempt is a subprocess that enforces its own
+                        # timeout, and the first try plus one retry per case needs more wall
+                        # clock than the flat 6s this used to allow.
+                        (correctness, output) = function_with_timeout(
+                            self.test_correctness,
+                            (code, test_case['input'], test_case['output']),
+                            timeout=SOLUTION_TIMEOUT * (len(test_case['input']) + 1) + 5,
+                        )
                     except TimeoutError:
                         # correctness: False, output: "code execution timeout"
                         correctness_all_dps.append(False)
                         output_all_dps.append("code execution timeout")
                         continue
-                    finally:
-                        # remove solve() function if exists
-                        if 'solve' in globals():
-                            del globals()['solve']
-
 
                     if output is None:
                         # correctness: False, output: "code not executable"
@@ -180,43 +182,43 @@ class CodeForceCorrectnessEvaluator(Evaluator):
         """
 
         try:
-            exec(code, globals())
-        except:
+            compile(code, "<solution>", "exec")
+        except SyntaxError:
             # code is not executable
             return False, None
-        
-        try:
-            # first try: feed testing cases at once
-            num_test_cases = len(test_case_inputs)
-            test_input = [" ".join(row) for case in test_case_inputs for row in case]
-            test_input.insert(0, str(num_test_cases))
-            with mock_input(test_input):
-                with capture_output() as out:
-                    solve()     
-                    output = out.getvalue().strip().split('\n')
-                    # if isinstance(test_case_outputs[0], list):
-                    #     test_case_outputs = [item for sublist in test_case_outputs for item in sublist]
-                    # output = [item for item in output if item] # remove empty string
 
-            correctness = [type_agnostic_compare(out, test_out) for out, test_out in zip(output, test_case_outputs)]
-            return all(correctness), output             
-        except:
-            # second try: feed testing cases one by one
-            output = []
-            correctness = []
-            for test_case_input, test_case_output in zip(test_case_inputs, test_case_outputs):
-                test_input = [" ".join(row) for row in test_case_input]
-                with mock_input(test_input):
-                    with capture_output() as out:
-                        try:
-                            solve()
-                            output_ = out.getvalue().strip()
-                            # if isinstance(test_case_output, list):
-                            #     output_ = output_.split('\n')
-                            correctness.append(type_agnostic_compare(output_, test_case_output))
-                            output.append(output_)
-                        except:
-                            # code is not executable
-                            correctness.append(False)
-                            output.append(None)
-            return all(correctness), output
+        # First try: feed the testing cases at once, the way a Codeforces multi-test file
+        # is laid out.
+        num_test_cases = len(test_case_inputs)
+        test_input = [" ".join(row) for case in test_case_inputs for row in case]
+        test_input.insert(0, str(num_test_cases))
+        stdout = run_solution(code, test_input)
+        if stdout is not None:
+            try:
+                output = stdout.strip().split('\n')
+                correctness = [type_agnostic_compare(out, test_out)
+                               for out, test_out in zip(output, test_case_outputs)]
+                return all(correctness), output
+            except Exception:
+                # type_agnostic_compare eval()s the solution's own stdout when the expected
+                # output is a list, so a solution that prints prose lands here.
+                pass
+
+        # Second try: feed the testing cases one by one.
+        output = []
+        correctness = []
+        for test_case_input, test_case_output in zip(test_case_inputs, test_case_outputs):
+            stdout = run_solution(code, [" ".join(row) for row in test_case_input])
+            if stdout is None:
+                # code is not executable for this case
+                correctness.append(False)
+                output.append(None)
+                continue
+            try:
+                output_ = stdout.strip()
+                correctness.append(type_agnostic_compare(output_, test_case_output))
+                output.append(output_)
+            except Exception:
+                correctness.append(False)
+                output.append(None)
+        return all(correctness), output

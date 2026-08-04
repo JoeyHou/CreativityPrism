@@ -7,7 +7,9 @@ import io
 import os
 import multiprocessing
 import platform
+import re
 import signal
+import subprocess
 import tempfile
 import builtins
 import itertools
@@ -148,7 +150,49 @@ def type_agnostic_compare(output: str, test_output: Union[str, List[str]]) -> bo
         return output == test_output
     else:
         return output == test_output
-    
+
+
+SOLUTION_TIMEOUT = 6.0
+
+_TOP_LEVEL_SOLVE_CALL = re.compile(r"^solve\s*\(\s*\)", re.MULTILINE)
+
+
+def run_solution(code: Text,
+                 stdin_lines: List[Text],
+                 timeout: float = SOLUTION_TIMEOUT) -> Optional[Text]:
+    """Run one model solution in a subprocess with the test case on real stdin.
+
+    Returns its stdout, or None if it crashed, timed out or exited non-zero.
+
+    Running it in-process behind a patched `builtins.input` cannot work. The standard
+    competitive-programming opening `input = sys.stdin.read` binds a *local* name to the
+    real reader, which never consults builtins, and `parse_code`'s rewrites all require
+    parentheses so they miss it. 55 of the 60 solutions in the first real run opened that
+    way: they read nothing and scored zero. A real pipe is also what Codeforces gives
+    them, and a subprocess can actually be killed on timeout, which a thread cannot.
+
+    `parse_code` usually truncates the driver that calls `solve()`, so one is appended --
+    but only when the parsed code has not kept a top-level call of its own, which would
+    otherwise run the solution twice.
+    """
+    script = code if _TOP_LEVEL_SOLVE_CALL.search(code) else code + "\n\nsolve()\n"
+    env = dict(os.environ, PYTHONIOENCODING="utf-8")
+    with tempfile.TemporaryDirectory() as tmpdir:
+        path = os.path.join(tmpdir, "solution.py")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(script)
+        try:
+            proc = subprocess.run(
+                [sys.executable, path],
+                input="\n".join(stdin_lines) + "\n",
+                capture_output=True,
+                text=True, encoding="utf-8", errors="replace",
+                timeout=timeout, env=env, cwd=tmpdir,
+            )
+        except (subprocess.TimeoutExpired, OSError):
+            return None
+    return proc.stdout if proc.returncode == 0 else None
+
 def check_correctness(problem: Dict, completion: str, timeout: float,
                       completion_id: Optional[int] = None) -> Dict:
     """
