@@ -2,6 +2,10 @@
 
 This document describes how researchers and community contributors interact with the CreativityPrism benchmark.
 
+> **For operational instructions, read [RUNNING_GUIDE.md](RUNNING_GUIDE.md) instead.** It is
+> organised by audience, is kept current, and supersedes the how-to material below. This file is
+> retained for the conceptual overview and the contribution narrative.
+>
 > **Before your first run on a new machine**, read the
 > [Read before run](RESTRUCTURING_PLAN.md#read-before-run) section of the restructuring plan.
 > It lists what has and has not actually been executed, which environments were never built,
@@ -14,18 +18,19 @@ This document describes how researchers and community contributors interact with
 
 CreativityPrism is a benchmark suite for evaluating the creativity of large language models. It covers three domains — **divergent thinking**, **creative writing**, and **logical reasoning** — across eight tasks, measuring quality, novelty, and diversity of model outputs.
 
-**Benchmark tasks:**
+**Benchmark tasks:** all eight are runnable through the runner as of 2026-08-02, and all eight
+were run end to end against real APIs on 2026-08-03.
 
-| Task | Domain | Runner status |
-|------|--------|---------------|
-| AUT (Alternative Uses Task) | Divergent thinking | Runnable (Phase 1) |
-| TTCW (Torrance Tests of Creative Writing) | Creative writing | Runnable (Phase 1) |
-| Creative Short | Creative writing | Runnable (Phase 1) |
-| TTCT (Torrance Tests of Creative Thinking) | Divergent thinking | Runnable (Phase 1) |
-| NeoCoder | Logical reasoning | Planned (Phase 2C) |
-| DAT (Divergent Association Task) | Divergent thinking | Planned (Phase 2C) |
-| Creative Math | Logical reasoning | Planned (Phase 2C) |
-| Creativity Index | Divergent thinking | Planned (Phase 2C) |
+| Task | Domain | Bundle |
+|------|--------|--------|
+| AUT (Alternative Uses Task) | Divergent thinking | `tasks/aut_ttcw_cshort` |
+| TTCW (Torrance Tests of Creative Writing) | Creative writing | `tasks/aut_ttcw_cshort` |
+| Creative Short | Creative writing | `tasks/aut_ttcw_cshort` |
+| TTCT (Torrance Tests of Creative Thinking) | Divergent thinking | `tasks/ttct` |
+| NeoCoder | Logical reasoning | `tasks/neocoder_dat` |
+| DAT (Divergent Association Task) | Divergent thinking | `tasks/neocoder_dat` |
+| Creative Math | Logical reasoning | `tasks/math_n_index` |
+| Creativity Index | Divergent thinking | `tasks/math_n_index` |
 
 ---
 
