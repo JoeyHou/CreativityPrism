@@ -4,6 +4,9 @@ A running record of restructuring progress. Companion to [RESTRUCTURING_PLAN.md]
 
 New sessions: read `RESTRUCTURING_PLAN.md` first for design intent, then this file for current state, then verify against the codebase before acting.
 
+For the present tense rather than the history, read [WORK_SUMMARY.md](WORK_SUMMARY.md); for how to run
+anything, [RUNNING_GUIDE.md](RUNNING_GUIDE.md).
+
 ---
 
 ## Status snapshot (2026-08-01)
@@ -118,18 +121,24 @@ Anchors each phase to the commit that implemented it, so a future session can ju
 
 | Commit | Date | Phase | Scope | Gates at commit time | Pushed to `personal/main_v2` |
 |--------|------|-------|-------|----------------------|------------------------------|
-| `15a497d` | 2026-08-03 | 3 (verification) | `neocoder` solutions run in a subprocess on real stdin instead of in-process behind a patched `builtins.input` — "code not executable" 60/60 → 0/60; `ttct` inference defaults to `-prompt_formats cot`, a full run being 500 items × 1 generation | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Pending |
-| `25a7888` | 2026-08-03 | 3 (verification) | `ttct` scoring: `extract_scores` ported from `mturk_agreement.ipynb` into `loader.py` as `_parse_ttct_scores` (four trait rows per judged variant); adapter passes `-prompt_formats cot`; `neocoder` `0/60` diagnosed to `mock_input` being bypassed by `input = sys.stdin.read` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Pending |
-| `aab4c81` | 2026-08-03 | 3 (verification) | `extract_yes_no` in all three copies: whole-word `\b(YES\|NO)\b`, first verdict wins, case-insensitive; substring matching had read `NOT`, `CANNOT`, `KNOW`, `NOTE` and `NOVEL` as NO votes | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Pending |
-| `d6e4cf4` | 2026-08-03 | 3 (verification) | Eleven bugs found by the first real-judge run of all eight tasks: API token caps, Gemini thinking budget, runner stdout encoding / buffering / stdin, `infini-gram` silent zeros, `neocoder` non-daemon threads, a fatal diagnostic print, and two loader join bugs; `neocoder --limit` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | `fc2789a` and earlier are pushed |
-| `5ddbe04` | 2026-08-03 | 3 (loader) | `result_analysis/loader.py` and `runner/test_loader.sh`; eight per-task parsers validated against real artifacts | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Pending |
-| `b00ed40` | 2026-08-02 | API-only + 3 (SLURM) | `api` venv environment and lazy vLLM imports; `--slurm`/`--no-submit`/`--slurm-override`, `runner/slurm.py`, `runner/slurm_template.sbatch`; durable `.cp_artifacts` sidecar; `.gitattributes` LF pin for `*.sh`; pre-existing bugs fixed in `creative_math` (uninvoked cleaning step, hardcoded model), `neocoder` and `ttct` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21 | Pending |
-| `0d35eef` | 2026-08-01 | 2C batch 2 | Task schema applied via a per-file `yaml-language-server` modeline, since the workspace `yaml.schemas` setting only takes effect after an extension reload | Phase 1 19/19, Phase 2A 4/4 | Pending |
-| `e7d852f` | 2026-08-01 | 2C batch 2 | `dat` registry entry and adapter; `evaluate_dat.py` GloVe/word-list paths and `--output-path`; `.gitignore` gap for `tasks/math_n_index/data/`; task JSON schema | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Pending |
+| `abba23f` | 2026-08-03 | 3 (verification) | `claude_docs/WORK_SUMMARY.md` (standalone: architecture, every bug found, decisions with their rejected alternatives, and what the fixed code assumes) and `claude_docs/RUNNING_GUIDE.md` (one track each for continuing the restructure, adding a task, and benchmarking a model); `WORKFLOW.md` task table corrected and pointed at the guide | n/a (docs only) | Pending |
+| `7920650` | 2026-08-03 | 3 (verification) | Ledger row for `15a497d`; corrected the stale Phase 2 status line ("2B not started", four months after it shipped) and made Phase 3's say that real-cluster `sbatch` is the last unverified item in the plan | n/a (docs only) | Yes |
+| `fca5e85` | 2026-08-03 | 3 (verification) | Ledger rows for `aab4c81` and `25a7888` | n/a (docs only) | Yes |
+| `15a497d` | 2026-08-03 | 3 (verification) | `neocoder` solutions run in a subprocess on real stdin instead of in-process behind a patched `builtins.input` — "code not executable" 60/60 → 0/60; `ttct` inference defaults to `-prompt_formats cot`, a full run being 500 items × 1 generation | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Yes |
+| `25a7888` | 2026-08-03 | 3 (verification) | `ttct` scoring: `extract_scores` ported from `mturk_agreement.ipynb` into `loader.py` as `_parse_ttct_scores` (four trait rows per judged variant); adapter passes `-prompt_formats cot`; `neocoder` `0/60` diagnosed to `mock_input` being bypassed by `input = sys.stdin.read` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Yes |
+| `aab4c81` | 2026-08-03 | 3 (verification) | `extract_yes_no` in all three copies: whole-word `\b(YES\|NO)\b`, first verdict wins, case-insensitive; substring matching had read `NOT`, `CANNOT`, `KNOW`, `NOTE` and `NOVEL` as NO votes | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Yes |
+| `d6e4cf4` | 2026-08-03 | 3 (verification) | Eleven bugs found by the first real-judge run of all eight tasks: API token caps, Gemini thinking budget, runner stdout encoding / buffering / stdin, `infini-gram` silent zeros, `neocoder` non-daemon threads, a fatal diagnostic print, and two loader join bugs; `neocoder --limit` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Yes |
+| `5ddbe04` | 2026-08-03 | 3 (loader) | `result_analysis/loader.py` and `runner/test_loader.sh`; eight per-task parsers validated against real artifacts | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21, loader 20/20 | Yes |
+| `b00ed40` | 2026-08-02 | API-only + 3 (SLURM) | `api` venv environment and lazy vLLM imports; `--slurm`/`--no-submit`/`--slurm-override`, `runner/slurm.py`, `runner/slurm_template.sbatch`; durable `.cp_artifacts` sidecar; `.gitattributes` LF pin for `*.sh`; pre-existing bugs fixed in `creative_math` (uninvoked cleaning step, hardcoded model), `neocoder` and `ttct` | Phase 1 19/19, 2A 4/4, Phase 3 28/28, API env 21/21 | Yes |
+| `0d35eef` | 2026-08-01 | 2C batch 2 | Task schema applied via a per-file `yaml-language-server` modeline, since the workspace `yaml.schemas` setting only takes effect after an extension reload | Phase 1 19/19, Phase 2A 4/4 | Yes |
+| `e7d852f` | 2026-08-01 | 2C batch 2 | `dat` registry entry and adapter; `evaluate_dat.py` GloVe/word-list paths and `--output-path`; `.gitignore` gap for `tasks/math_n_index/data/`; task JSON schema | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Yes |
 | `7fd6da3` | 2026-08-01 | 2C batch 1 | `neocoder`, `creative_math`, `creativity_index` registry entries and adapters; `legacy` env; provider-key export; removal of the `data[:100]` cap in the creativity-index driver | Phase 1 19/19, Phase 2A 4/4 (35 unit tests) | Yes |
 | `747a5ba` | 2026-08-01 | 2A + 2B | Artifact contract (`CP_ARTIFACT` markers, `runner/artifacts.py`, `outputs/` materialization, `metadata.json`) and evaluation dispatch for all four wired tasks; credential path resolution in the bundled task driver | Phase 1 19/19, Phase 2A 4/4 (33 unit tests) | Yes |
 | `56cfbd3` | 2026-07-22 | 1 | Registry-driven runner: `registry/{tasks,adapters,models.yaml}`, `runner/run.py`, Phase 1 gate; 4 tasks wired for inference | Phase 1 19/19 | Yes |
 | `4705a83` | 2026-05-14 | — | Pre-restructuring baseline; also the tip of public `main` | n/a | n/a (public `main`) |
+
+`personal/main_v2` was at `7920650` when this table was last checked, so everything below the
+top row is pushed. Verify rather than trust it: `git rev-list --left-right --count HEAD...personal/main_v2`.
 
 To see exactly what a commit changed:
 

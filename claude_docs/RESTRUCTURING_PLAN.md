@@ -2,6 +2,10 @@
 
 This document is the source of truth for the ongoing effort to restructure the CreativityPrism benchmark codebase. It captures the design rationale, the agreed architecture, and a phased implementation roadmap. New Claude Code sessions working on this project should read this file first.
 
+Two companions: [WORK_SUMMARY.md](WORK_SUMMARY.md) states what is currently true — architecture,
+known bugs, decisions, and the assumptions the code makes — without the phase framing, and
+[RUNNING_GUIDE.md](RUNNING_GUIDE.md) is the operational entry point, split by audience.
+
 ---
 
 ## Read before run
