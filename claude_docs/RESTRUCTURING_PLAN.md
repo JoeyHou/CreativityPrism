@@ -915,7 +915,9 @@ bash runner/test_phase1.sh
 
 ### Phase 2: Evaluation + Centralized Outputs
 
-**Status:** Phase 2A complete (2026-08-01); Phase 2B (evaluation dispatch) and remaining task adapters not started
+**Status:** Complete. 2A 2026-08-01; 2B evaluation dispatch and 2C adapters for all eight tasks
+landed 2026-08-02, and every one of them was run end to end against real paid APIs on 2026-08-03
+(`creativity_index` reached evaluation but is blocked by an external rate limit, not by this repo).
 
 **Scope:**
 - Add evaluation support to existing AUT bundle + TTCT adapters.
@@ -980,7 +982,9 @@ cat ../../outputs/phase2_test/aut/GPT4.1-mini/inference_output/*.json   # still 
 
 ### Phase 3: SLURM + Analysis Loader
 
-**Status:** SLURM built 2026-08-02 but never submitted to a real cluster; loader complete 2026-08-03
+**Status:** Code complete; loader finished 2026-08-03. **The one thing still unverified anywhere is
+SLURM against a real cluster** — every sbatch path has only ever been exercised with
+`--slurm --no-submit` on a laptop with no scheduler. That is the last open item in this plan.
 
 **Scope:**
 - Add `--slurm` flag to the runner. — **Done**
