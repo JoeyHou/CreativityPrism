@@ -1,0 +1,10 @@
+{
+  "competition_id": "2014_AMC_10B_Problems",
+  "problem_id": 3,
+  "difficulty": 1,
+  "problem": "Randy drove the first third of his trip on a gravel road, the next $20$ miles on pavement, and the remaining one-fifth on a dirt road. In miles, how long was Randy's trip?\n$\\textbf {(A) } 30 \\qquad \\textbf {(B) } \\frac{400}{11} \\qquad \\textbf {(C) } \\frac{75}{2} \\qquad \\textbf {(D) } 40 \\qquad \\textbf {(E) } \\frac{300}{7}$",
+  "solutions": {
+    "Solution 1": "Let the total distance be $x$. We have $\\dfrac{x}{3} + 20 + \\dfrac{x}{5} = x$, or $\\dfrac{8x}{15} + 20 = x$. Subtracting $\\dfrac{8x}{15}$ from both sides gives us $20 = \\dfrac{7x}{15}$. Multiplying by $\\dfrac{15}{7}$ gives us $x = \\boxed{{\\textbf{(E) }\\dfrac{300}{7}}}$",
+    "Solution 2": "The first third of his distance added to the last one-fifth of his distance equals $\\frac{8}{15}$. Therefore, $\\frac{7}{15}$ of his distance is $20$. Let $x$ be his total distance, and solve for $x$. Therefore, $x$ is equal to $\\frac{300}{7}$, or $E$."
+  }
+}

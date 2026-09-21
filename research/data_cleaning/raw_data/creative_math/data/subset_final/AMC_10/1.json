@@ -1,0 +1,10 @@
+{
+  "competition_id": "2023_AMC_10B_Problems",
+  "problem_id": 4,
+  "difficulty": 1,
+  "problem": "Jackson's paintbrush makes a narrow strip with a width of $6.5$ millimeters. Jackson has enough paint to make a strip $25$ meters long. How many square centimeters of paper could Jackson cover with paint? \n$\\textbf{(A) } 162,500 \\qquad\\textbf{(B) } 162.5 \\qquad\\textbf{(C) }1,625 \\qquad\\textbf{(D) }1,625,000 \\qquad\\textbf{(E) } 16,250$",
+  "solutions": {
+    "Solution 1": "$6.5$ millimeters is equal to $0.65$ centimeters. $25$ meters is $2500$ centimeters. The answer is $0.65 \\times 2500$, so the answer is $\\boxed{\\textbf{(C) 1,625}}$. ",
+    "Solution 2 (Scientific Form)": "$6.5$ millimeters can be represented as $65 \\times 10^{-2}$ centimeters. $25$ meters is $25 \\times 10^{2}$ centimeters. Multiplying out these results in $(65 \\times 10^{-2}) \\times (25 \\times 10^{2})$, which is $65 \\times 25$ making the answer $\\boxed{\\textbf{(C) 1,625}}$."
+  }
+}

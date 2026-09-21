@@ -1,0 +1,10 @@
+{
+  "competition_id": "1983_USAMO_Problems",
+  "problem_id": 2,
+  "difficulty": 8,
+  "problem": "Prove that the zeros of\n\\[x^5+ax^4+bx^3+cx^2+dx+e=0\\]\ncannot all be real if $2a^2<5b$.",
+  "solutions": {
+    "Solution": "We prove the contrapositive: if the polynomial in question has the five real roots $x_1, x_2, x_3, x_4, x_5$, then $5b \\le 2a^2$.\nBecause $a = -(x_1 + x_2 + x_3 + x_4 + x_5)$ and $b = x_1x_2 + x_1x_3 + ... + x_4x_5$ by Vieta's Formulae, we have\n\\[2b = 2x_1x_2 + 2x_1x_3 + ... + 2x_4x_5 = (x_1 + x_2 + x_3 + x_4 + x_5)^2 - (x_1^2 + x_2^2 + x_3^2 + x_4^2 + x_5^2)\\]\n\\[=a^2 - \\frac{(1+1+1+1+1)(x_1^2 + x_2^2 + x_3^2 + x_4^2 + x_5^2)}{5}\\]\n\\[\\le a^2 - \\frac{(x_1 + x_2 + x_3 + x_4 + x_5)^2}{5}\\] (by Cauchy-Schwarz)\n\\[=\\frac{4a^2}{5},\\]\nso $5b \\le 2a^2$, as desired.",
+    "Solution 2": "For all real numbers $x_1,x_2,\\cdots x_5$,\n\\[2(x_1^2+x_2^2+\\cdots+x_5^2)\\ge\\]\n\\[x_1x_2+x_1x_3+\\cdots+x_4x_5\\]\nBy the trivial inequality,\n\\[x^2+y^2\\ge 2xy \\Rightarrow \\frac{x^2}{2} + \\frac{y^2}{2} \\ge xy\\]\nMaking such an inequality for all the variable pairs and summing them, we find the lemma is true.\nNow, let our roots be $x_1,x_2,\\cdots,x_5$. By Vieta's, $a=x_1+x_2+\\cdots+x_5$ and $b=x_1x_2+x_1x_3+\\cdots+x_4x_5$\nIf we show that for all real $x_1,x_2,\\cdots, x_5$ that $2a^2\\ge 5b$, then we have a contradiction and all of $x_1,x_2,\\cdots, x_5$ cannot be real. We start by rewriting $2a^2\\ge 5b$ as\n\\[2(x_1+x_2+\\cdots+x_5)^2\\ge 5(x_1x_2+x_1x_3+\\cdots+x_4x_5)\\]\nWe divide by $2$ and find\n\\[(x_1+x_2+\\cdots+x_5)^2\\ge \\frac{5}{2}(x_1x_2+x_1x_3+\\cdots+x_4x_5)\\]\nExpanding the LHS, we have\n\\[x_1^2+x_2^2+\\cdots+x_5^2+2(x_1x_2+x_1x_3+\\cdots+x_4x_5)\\ge\\frac{5}{2}(x_1x_2+x_1x_3+\\cdots+x_4x_5)\\]\nWe subtract the sum in brackets, and then multiply by $2$ to find\n\\[2x_1^2+2x_2^2+\\cdots+2x_5^2\\ge x_1x_2+x_1x_3+\\cdots+x_4x_5\\]\nwhich is true by our lemma."
+  }
+}

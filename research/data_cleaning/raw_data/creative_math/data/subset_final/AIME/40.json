@@ -1,0 +1,9 @@
+{
+  "competition_id": "2008_AIME_II_Problems",
+  "problem_id": 6,
+  "difficulty": 4,
+  "problem": "The sequence $\\{a_n\\}$ is defined by\n\\[a_0 = 1,a_1 = 1, \\text{ and } a_n = a_{n - 1} + \\frac {a_{n - 1}^2}{a_{n - 2}}\\text{ for }n\\ge2.\\]\nThe sequence $\\{b_n\\}$ is defined by\n\\[b_0 = 1,b_1 = 3, \\text{ and } b_n = b_{n - 1} + \\frac {b_{n - 1}^2}{b_{n - 2}}\\text{ for }n\\ge2.\\]\nFind $\\frac {b_{32}}{a_{32}}$.",
+  "solutions": {
+    "Solution": "Rearranging the definitions, we have\n\\[\\frac{a_n}{a_{n-1}} = \\frac{a_{n-1}}{a_{n-2}} + 1,\\quad \\frac{b_n}{b_{n-1}} = \\frac{b_{n-1}}{b_{n-2}} + 1\\]\nfrom which it follows that $\\frac{a_n}{a_{n-1}} = 1+ \\frac{a_{n-1}}{a_{n-2}} = \\cdots = (n-1) + \\frac{a_{1}}{a_0} = n$ and $\\frac{b_n}{b_{n-1}} = (n-1) + \\frac{b_{1}}{b_0} = n+2$. These recursions, $a_{n} = na_{n-1}$ and $b_{n} = (n+2)b_{n-1}$, respectively, correspond to the explicit functions $a_n = n!$ and $b_n = \\frac{(n+2)!}{2}$ (after applying our initial conditions). It follows that $\\frac{b_{32}}{a_{32}} = \\frac{\\frac{34!}{2}}{32!} = \\frac{34 \\cdot 33}{2} = \\boxed{561}$.\nFrom this, we can determine that the sequence $\\frac {b_n}{a_n}$ corresponds to the triangular numbers."
+  }
+}

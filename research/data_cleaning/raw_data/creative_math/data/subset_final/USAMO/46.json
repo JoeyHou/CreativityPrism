@@ -1,0 +1,9 @@
+{
+  "competition_id": "1973_USAMO_Problems",
+  "problem_id": 2,
+  "difficulty": 8,
+  "problem": "Let $\\{X_n\\}$ and $\\{Y_n\\}$ denote two sequences of integers defined as follows:\nThus, the first few terms of the sequences are:\nProve that, except for the \"1\", there is no term which occurs in both sequences.",
+  "solutions": {
+    "Solution": "We can look at each sequence $\\bmod{8}$:\nThe third and fourth terms are $3$ and $5$ $\\bmod{8}$. Plugging into the formula, we see that the next term is $11\\equiv 3\\bmod{8}$, and plugging $5$ and $3$, we get that the next term is $13\\equiv 5\\bmod{8}$. Thus the sequence $X$ repeats, and the pattern is $3,5,3,5,\\dots$.\nThe first and second terms are $1$ and $7$ $\\bmod{8}$. Plugging into the formula, we see that the next term is $17\\equiv 1\\bmod{8}$, and plugging $7$ and $1$, we get that the next term is $23\\equiv 7\\bmod{8}$. Thus the sequence $Y$ repeats, and the pattern is $1,7,1,7,\\dots$.\n\nCombining both results, we see that $X_i$ and $Y_j$ are not congruent $\\bmod{8}$ when $i\\geq 3$ and $j\\geq 2$. Thus after the \"1\", the terms of each sequence are not equal."
+  }
+}

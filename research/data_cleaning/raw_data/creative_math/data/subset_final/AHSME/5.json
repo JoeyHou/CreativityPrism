@@ -1,0 +1,8 @@
+{
+  "competition_id": "1994_AHSME_Problems",
+  "problem_id": 24,
+  "problem": "A sample consisting of five observations has an arithmetic mean of $10$ and a median of $12$. The smallest value that the range (largest observation minus smallest) can assume for such a sample is\n$\\textbf{(A)}\\ 2 \\qquad\\textbf{(B)}\\ 3 \\qquad\\textbf{(C)}\\ 5 \\qquad\\textbf{(D)}\\ 7 \\qquad\\textbf{(E)}\\ 10$",
+  "solutions": {
+    "Solution": "The minimum range occurs in the set $\\{7,7,12,12,12\\}$, so the answer is $\\boxed{\\textbf{(C)}\\ 5}$"
+  }
+}

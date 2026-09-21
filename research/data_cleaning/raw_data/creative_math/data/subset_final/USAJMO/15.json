@@ -1,0 +1,9 @@
+{
+  "competition_id": "2022_USAJMO_Problems",
+  "problem_id": 5,
+  "difficulty": 6.5,
+  "problem": "Find all pairs of primes $(p,q)$ for which $p-q$ and $pq-q$ are both perfect squares.",
+  "solutions": {
+    "Solution 1": "We first consider the case where one of $p,q$ is even. If $p=2$, $p-q=0$ and $pq-q=2$ which doesn't satisfy the problem restraints. If $q=2$, we can set $p-2=x^2$ and $2p-2=y^2$ giving us $p=y^2-x^2=(y+x)(y-x)$. This forces $y-x=1$ so $p=2x+1\\rightarrow 2x+1=x^2+2 \\rightarrow x=1$ giving us the solution $(p,q)=(3,2)$.\n\nNow assume that $p,q$ are both odd primes. Set $p-q=x^2$ and $pq-q=y^2$ so $(pq-q)-(p-q)=y^2-x^2 \\rightarrow p(q-1)$ $=(y+x)(y-x)$. Since $y+x>y-x$, $p | (x+y)$. Note that $q-1$ is an even integer and since $y+x$ and $y-x$ have the same parity, they both must be even. Therefore, $x+y=pk$ for some positive even integer $k$. On the other hand, $p>p-q=x^2 \\rightarrow p>x$ and $p^2-p>pq-q=y^2 \\rightarrow p>y$. Therefore, $2p>x+y$ so $x+y=p$, giving us a contradiction.\n\nTherefore, the only solution to this problem is $(p,q)=(3,2)$.\n"
+  }
+}

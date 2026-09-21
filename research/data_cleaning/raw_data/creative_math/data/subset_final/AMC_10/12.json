@@ -1,0 +1,10 @@
+{
+  "competition_id": "2014_AMC_10B_Problems",
+  "problem_id": 2,
+  "difficulty": 1,
+  "problem": "What is $\\frac{2^3 + 2^3}{2^{-3} + 2^{-3}}$?\n$\\textbf {(A) } 16 \\qquad \\textbf {(B) } 24 \\qquad \\textbf {(C) } 32 \\qquad \\textbf {(D) } 48 \\qquad \\textbf {(E) } 64$",
+  "solutions": {
+    "Solution 1": "We can synchronously multiply ${2^3}$ to the expresions both above and below the fraction bar. Thus, \n\\[\\frac{2^3+2^3}{2^{-3}+2^{-3}}\\\\=\\frac{2^6+2^6}{1+1}\\\\={2^6}.\\]\nHence, the fraction equals to $\\boxed{{\\textbf{(E) }64}}$.",
+    "Solution 2": "We have \n\\[\\frac{2^3+2^3}{2^{-3}+2^{-3}} = \\frac{8 + 8}{\\frac{1}{8} + \\frac{1}{8}} = \\frac{16}{\\frac{1}{4}} = 16 \\cdot 4 = 64,\\] so our answer is $\\boxed{{(\\textbf{E) }64}}$."
+  }
+}

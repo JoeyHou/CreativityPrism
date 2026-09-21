@@ -1,0 +1,8 @@
+{
+  "competition_id": "1995_AHSME_Problems",
+  "problem_id": 5,
+  "problem": "A rectangular field is 300 feet wide and 400 feet long. Random sampling indicates that there are, on the average, three ants per square inch through out the field. [12 inches = 1 foot.] Of the following, the number that most closely approximates the number of ants in the field is \n\n$\\mathrm{(A) \\ \\text{500 thousand} } \\qquad \\mathrm{(B) \\ \\text{5 million} } \\qquad \\mathrm{(C) \\ \\text{50 million} } \\qquad \\mathrm{(D) \\ \\text{500 million} } \\qquad \\mathrm{(E) \\ \\text{5 billion} }$",
+  "solutions": {
+    "Solution": "The rectangular field is $300 \\text{ feet} \\cdot \\frac{12 \\text{ inches}}{1 \\text{ foot}} =  3600 \\text{ inches}$ wide and $400 \\text{ feet} \\cdot \\frac{12 \\text{ inches}}{1 \\text{ foot}} =  4800 \\text{ inches}$ inches long.\nIt has an area of $3.6\\cdot 10^3 \\cdot 4.8 \\cdot 10^3 = 17.28 \\cdot 10^6$ square inches. \nWe multiply by $3$ to account for the ants to get approximately $50 \\cdot 10^6$, which is $50$ million $\\Rightarrow \\mathrm{(C)}$"
+  }
+}

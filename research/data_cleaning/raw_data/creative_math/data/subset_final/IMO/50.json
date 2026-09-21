@@ -1,0 +1,9 @@
+{
+  "competition_id": "1987_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Let $n$ be an integer greater than or equal to 3.  Prove that there is a set of $n$ points in the plane such that the distance between any two points is irrational and each set of three points determines a non-degenerate triangle with rational area.",
+  "solutions": {
+    "Solution": "Consider the set of points $S = \\{ (x,x^2) \\mid 1 \\le x \\le n , x \\in \\mathbb{N} \\}$ in the $xy$-plane. \n\nThe distance between any two distinct points $(x_1,x^2_1)$ and $(x_2,x^2_2)$ in $S$ (with $x_1 \\neq x_2$) is: \n$d = \\sqrt{(x_1-x_2)^2+\\left(x^2_1-x^2_2\\right)^2} =$ $\\sqrt{(x_1-x_2)^2+(x_1-x_2)^2(x_1+x_2)^2} = |x_1-x_2|\\sqrt{1+(x_1+x_2)^2}$. \nSince $1+(x_1+x_2)^2$ is an integer and not a perfect square, $\\sqrt{1+(x_1+x_2)^2}$ is irrational. \nSince $|x_1-x_2|$ is a non-zero integer, $d$ is irrational as desired. \n\nAll the points in $S$ lie on the parabola $y = x^2$. Thus, it is impossible of any set of three points to be collinear, since no line can intersect a parabola at more than two points. Therefore, any triangle with all vertices in $S$ must be non-degenerate as desired. \n\nSince all the points in $S$ are lattice points, by Pick's Theorem, the area of any triangle with all vertices in $S$ must be in the form $A = I + \\dfrac{B}{2} - 1$ where $I$ and $B$ are integers. Thus, the area of the triangle must be rational as desired. \n\nThis completes the proof."
+  }
+}

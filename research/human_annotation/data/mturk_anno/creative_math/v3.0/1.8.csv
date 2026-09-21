@@ -1,0 +1,94 @@
+"HITId","HITTypeId","Title","Description","Keywords","Reward","CreationTime","MaxAssignments","RequesterAnnotation","AssignmentDurationInSeconds","AutoApprovalDelayInSeconds","Expiration","NumberOfSimilarHITs","LifetimeInSeconds","AssignmentId","WorkerId","AssignmentStatus","AcceptTime","SubmitTime","AutoApprovalTime","ApprovalTime","RejectionTime","RequesterFeedback","WorkTimeInSeconds","LifetimeApprovalRate","Last30DaysApprovalRate","Last7DaysApprovalRate","Input.problem_id","Input.problem","Input.cleaned_references","Input.cleaned_response","Input.image_in_problem","Answer.correctness.correct","Answer.correctness.incorrect","Answer.novelty.not_novel","Answer.novelty.novel","Approve","Reject"
+"3UY4PIS8RA17BAC655LL95XJTGEN12","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Sun Dec 28 18:35:54 PST 2025","3","BatchId:420181;OriginalHitTemplateId:921587278;","3600","259200","Sun Jan 04 18:35:54 PST 2026","","","3VNL7UK1XZZZJM9SZ3SKVQ2KYWITF3","AFA0H6QL832IJ","Approved","Tue Dec 30 02:05:03 PST 2025","Tue Dec 30 02:05:58 PST 2025","Fri Jan 02 02:05:58 PST 2026","Fri Jan 02 02:06:08 PST 2026","","","55","100% (114/114)","100% (90/90)","100% (30/30)","2015_USAJMO_Problems_5","Let \(ABCD\) be a cyclic quadrilateral. Prove that there exists a point \(X\) on segment \(\overline{BD}\) such that \(\angle BAC=\angle XAD\) and \(\angle BCA=\angle XCD\) if and only if there exists a point \(Y\) on segment \(\overline{AC}\) such that \(\angle CBD=\angle YBA\) and \(\angle CDB=\angle YDA\).","Solution 1. Note that lines \(AC, AX\) are isogonal in \(\triangle ABD\), so an inversion centered at \(A\) with power \(r^2=AB\cdot AD\) composed with a reflection about the angle bisector of \(\angle DAB\) swaps the pairs \((D,B)\) and \((C,X)\). Thus, \(\frac{AD}{XD}\cdot \frac{XD}{CD}=\frac{AC}{BC}\cdot \frac{AB}{CA}\Longrightarrow (A,C;B,D)=-1\)so that \(ACBD\) is a harmonic quadrilateral. By symmetry, if \(Y\) exists, then \((B,D;A,C)=-1\). We have shown the two conditions are equivalent, whence both directions follow.
+
+
+<br><br>==========<br>
+Solution 2. All angles are directed. Note that lines \(AC, AX\) are isogonal in \(\triangle ABD\) and \(CD, CE\) are isogonal in \(\triangle CDB\). From the law of sines it follows that 
+\(\frac{DX}{XB}\cdot \frac{DE}{ED}=\left(\frac{AD}{DB}\right)^2=\left(\frac{DC}{BC}\right)^2.\)
+Therefore, the ratio equals \(\frac{AD\cdot DC}{DB\cdot BC}.\)
+Now let \(Y\) be a point of \(AC\) such that \(\angle{ABE}=\angle{CBY}\). We apply the above identities for \(Y\) to get that \(\frac{CY}{YA}\cdot \frac{CE}{EA}=\left(\frac{CD}{DA}\right)^2\). So \(\angle{CDY}=\angle{EDA}\), the converse follows since all our steps are reversible.
+
+Beware that directed angles, or angles \(\bmod\) \(180\), are not standard olympiad material. If you use them, provide a definition.","**Forward Direction (⇒):**
+
+1. **Assume Existence of \( X \):** Let \( X \) be on \( BD \) such that \( \angle BAC = \angle XAD \) and \( \angle BCA = \angle XCD \).
+
+2. **Cyclic Quadrilateral Properties:**  
+   Since \( ABCD \) is cyclic:
+   - \( \angle BAC = \angle BDC \) (subtends arc \( BC \)).
+   - \( \angle BCA = \angle BDA \) (subtends arc \( BA \)).
+   Thus, \( \angle XAD = \angle BDC \) and \( \angle XCD = \angle BDA \).
+
+3. **Establish Similar Triangles:**  
+   - In \( \triangle XAD \) and \( \triangle BDC \):  
+     \( \angle XAD = \angle BDC \) and \( \angle AX D = \angle BCD \) (since \( \angle BCD = \angle BAD \), cyclic).  
+     Hence, \( \triangle XAD \sim \triangle BDC \) (AA similarity).  
+   - In \( \triangle XCD \) and \( \triangle BDA \):  
+     \( \angle XCD = \angle BDA \) and \( \angle CX D = \angle BAD \).  
+     Hence, \( \triangle XCD \sim \triangle BDA \) (AA similarity).
+
+4. **Proportional Relationships:**  
+   From similarity:  
+   - \( \frac{XA}{BD} = \frac{AD}{BC} \implies XA = \frac{AD \cdot BD}{BC} \).  
+   - \( \frac{XC}{BD} = \frac{CD}{BA} \implies XC = \frac{CD \cdot BD}{BA} \).
+
+5. **Menelaus' Theorem on \( \triangle ABD \):**  
+   With transversal \( XC \):  
+   \(
+   \frac{BX}{XD} \cdot \frac{DC}{CA} \cdot \frac{AY}{YB} = 1.
+   \)  
+   Substituting the proportional relations from step 4 and solving for \( \frac{AY}{YB} \), we find \( Y \) on \( AC \) such that \( \angle YBA = \angle CBD \) and \( \angle YDA = \angle CDB \).
+
+**Reverse Direction (⇐):**  
+Symmetrically, assuming \( Y \) exists on \( AC \), analogous steps with Menelaus' theorem and similarity establish the existence of \( X \) on \( BD \).
+
+**Conclusion:**  
+The equivalence follows by the symmetric application of similar triangles and Menelaus’ theorem, ensuring mutual existence of \( X \) and \( Y \) under the given angle conditions.","","false","true","true","false"
+"3GITHABADH1E0VU2O9LZEO7OLMSN2J","36I764H9FR05M4CQ2M6I9EWUWYZVB7","CreativityPrism - CreativeMath","Is this solution creative?","survey","$0.01","Sun Dec 28 18:35:54 PST 2025","3","BatchId:420181;OriginalHitTemplateId:921587278;","3600","259200","Sun Jan 04 18:35:54 PST 2026","","","340UGXU9DIH3FWA7ZNNYI8R854DVUK","AFA0H6QL832IJ","Approved","Tue Dec 30 02:13:02 PST 2025","Tue Dec 30 02:13:25 PST 2025","Fri Jan 02 02:13:25 PST 2026","Fri Jan 02 02:14:08 PST 2026","","","23","100% (114/114)","100% (90/90)","100% (30/30)","1990_USAMO_Problems_1","A certain state issues license plates consisting of six digits (from 0 through 9). The state requires that any two plates differ in at least two places. (Thus the plates \(\boxed{027592}\) and \(\boxed{020592}\) cannot both be used.) Determine, with proof, the maximum number of distinct license plates that the state can use.","Solution 1. Consider license plates of \(n\) digits, for some fixed \(n\), issued with the same criteria.
+We first note that by the pigeonhole principle, we may have at most \(10^{n-1}\) distinct plates.  Indeed, if we have more, then there must be two plates which agree on the first \(n-1\) digits; these plates thus differ only on one digit, the last one.
+We now show that it is possible to issue \(10^{n-1}\) distinct license plates which satisfy the problem's criteria.  Indeed, we issue plates with all \(10^{n-1}\) possible combinations for the first \(n-1\) digit, and for each plate, we let the last digit be the sum of the preceding digits taken mod 10.  This way, if two plates agree on the first \(n-1\) digits, they agree on the last digit and are thus the same plate, and if two plates differ in only one of the first \(n-1\) digits, they must differ as well in the last digit.
+It then follows that \(10^{n-1}\) is the greatest number of license plates the state can issue.  For \(n=6\), as in the problem, this number is \(10^5\).  \(\blacksquare\)","To determine the maximum number of distinct license plates that a state can issue, where each plate consists of six digits and any two plates must differ in at least two places, we can use a combinatorial approach involving error-correcting codes. Specifically, we will use the concept of a Hamming code, which is designed to detect and correct errors in data transmission.
+
+### Solution 2: Using Hamming Codes
+
+1. **Understanding the Problem**:
+   - We need to find the maximum number of 6-digit license plates such that any two plates differ in at least two positions.
+   - This problem can be translated into finding the maximum number of codewords in a binary code of length 6 with a minimum Hamming distance of 2.
+
+2. **Hamming Distance**:
+   - The Hamming distance between two strings of equal length is the number of positions at which the corresponding symbols are different.
+   - For our problem, we need a code where the minimum Hamming distance is 2.
+
+3. **Binary Representation**:
+   - Each digit in the license plate can be represented using 4 bits (since \(2^4 = 16\) covers all digits from 0 to 9).
+   - Therefore, a 6-digit license plate can be represented as a binary string of length \(6 \times 4 = 24\) bits.
+
+4. **Hamming Code Construction**:
+   - A Hamming code of length \(n\) can correct up to 1 error and has a minimum Hamming distance of 3.
+   - However, we can use a modified version of the Hamming code to ensure a minimum distance of 2.
+
+5. **Modified Hamming Code**:
+   - For a 6-digit license plate, we can use a Hamming code of length 24 with a minimum distance of 2.
+   - The number of codewords in a Hamming code of length \(n\) with a minimum distance of 2 is given by \(2^{n-k}\), where \(k\) is the number of parity bits.
+
+6. **Calculating the Number of Codewords**:
+   - For a 24-bit binary string, we need to determine the number of parity bits \(k\) required to ensure a minimum distance of 2.
+   - The number of parity bits \(k\) is determined by the inequality \(2^k \geq k + 24 + 1\).
+   - Solving this inequality, we find that \(k = 5\) is sufficient (since \(2^5 = 32 \geq 29\)).
+
+7. **Number of Codewords**:
+   - The number of codewords in this Hamming code is \(2^{24-5} = 2^{19}\).
+
+8. **Mapping Back to Decimal**:
+   - Each codeword in the Hamming code corresponds to a unique 6-digit license plate.
+   - Since each 6-digit license plate can be represented by a 24-bit binary string, the number of distinct license plates is \(2^{19}\).
+
+9. **Final Calculation**:
+   - \(2^{19} = 524288\).
+
+However, this number is much larger than the maximum number of distinct 6-digit license plates (which is \(10^6\)). Therefore, we need to consider the constraints of the problem more carefully.
+
+10. **Revisiting the Problem**:
+    - The maximum number of distinct 6-digit license plates, where each plate differs in at least two positions, is actually \(10^5\), as shown in the first solution.
+
+### Conclusion:
+The maximum number of distinct license plates that the state can issue, ensuring that any two plates differ in at least two places, is \(\boxed{100000}\).","","false","true","true","false"

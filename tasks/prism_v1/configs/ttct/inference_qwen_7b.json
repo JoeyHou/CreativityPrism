@@ -1,0 +1,19 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "ttct",
+            "run_id": "ttct_smoke_open",
+            "model_name": "qwen_7b_instruct",
+            "input_data_dir": "data/processed/ttct/ttct.json",
+            "prompt_formats": ["cot"],
+            "num_samples": 2,
+
+            "_hyperparams": "Paper appendix, TTCT/Experiment Configurations. The original ttct_inference.py pinned MAX_TOKENS=3072 and defaulted -temp 1, which disagrees with the paper on both; top_k=50 was only in the code.",
+            "temperature": 0.75,
+            "top_p": 1,
+            "top_k": 50,
+            "max_tokens": 4096
+        }
+    ]
+}

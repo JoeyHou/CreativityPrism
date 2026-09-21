@@ -1,0 +1,9 @@
+{
+  "competition_id": "1976_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "We consider the following system\nwith $q = 2p$:\n$\\begin{matrix} a_{11}x_{1} + \\ldots + a_{1q}x_{q} = 0, \\\\ a_{21}x_{1} + \\ldots + a_{2q}x_{q} = 0, \\\\ \\ldots , \\\\ a_{p1}x_{1} + \\ldots + a_{pq}x_{q} = 0, \\\\ \\end{matrix}$\nin which every coefficient is an element from the set $\\{ - 1,0,1\\}$$.$ Prove that there exists a solution $x_{1}, \\ldots,x_{q}$ for the system with the properties:\n all $x_{j}, j = 1,\\ldots,q$ are integers$;$\n there exists at least one j for which $x_{j} \\neq 0;$\n $|x_{j}| \\leq q$ for any $j = 1, \\ldots ,q.$",
+  "solutions": {
+    "Solution": "First of all note that we have $(q + 1)^q - 1$ possible nonzero vectors $(x_1,\\cdots,x_q)$ such that $0\\leq x_i\\leq q$ are integers.\n\nBut $a_{j1}x_1 + \\cdots + a_{jq}x_q$ can only assume $q^2 + 1$ different values, because if it is maximized/minimized by $(M_1,M_2,\\cdots,M_q)/(m_1,m_2,\\cdots,m_q)$, we have that $\\sum_{i = 1}^{q}a_{ji}(M_i - m_i)\\leq q\\times q = q^2$ (if $a_{ji} = 0$, it doesn't affect the sum, if it is $1$, $M_i = q,m_i = 0$, and if it is $- 1$, $M_i = 0,m_i = q$).\n\nFrom this we conclude that there are at most $(q^2 + 1)^p = (q^2 + 1)^{q/2}$ possible values for the vector $(a_{11}x_{1} + \\ldots + a_{1q}x_{q},\\cdots,a_{p1}x_{1} + \\ldots + a_{pq}x_{q})$.\nBut we have that:\n$(q + 1)^q - 1 = (q^2 + 1 + 2q)^{q/2} - 1 =$\n$= (q^2 + 1)^{q/2} + \\left( - 1 + \\sum_{j = 1}^{q/2}{{q/2}\\choose j}(q^2 + 1)^{q/2 - j}(2q)^j\\right) > (q^2 + 1)^{q/2}$\nWe conclude that by the pigeonhole principle there are two distinct vectors being mapped to the same vector. Taking their difference we have a vector with the desired properties.\n"
+  }
+}

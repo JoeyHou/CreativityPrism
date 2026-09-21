@@ -1,0 +1,9 @@
+{
+  "competition_id": "1996_AJHSME_Problems",
+  "problem_id": 24,
+  "difficulty": 1.5,
+  "problem": "The measure of angle $ABC$ is $50^\\circ$, $\\overline{AD}$ bisects angle $BAC$, and $\\overline{DC}$ bisects angle $BCA$.  The measure of angle $ADC$ is\n[asy] pair A,B,C,D; A = (0,0); B = (9,10); C = (10,0); D = (6.66,3); dot(A); dot(B); dot(C); dot(D); draw(A--B--C--cycle); draw(A--D--C);  label(\"$A$\",A,SW); label(\"$B$\",B,N); label(\"$C$\",C,SE); label(\"$D$\",D,N); label(\"$50^\\circ $\",(9.4,8.8),SW); [/asy]\n$\\text{(A)}\\ 90^\\circ \\qquad \\text{(B)}\\ 100^\\circ \\qquad \\text{(C)}\\ 115^\\circ \\qquad \\text{(D)}\\ 122.5^\\circ \\qquad \\text{(E)}\\ 125^\\circ$",
+  "solutions": {
+    "Solution": "Let $\\angle CAD = \\angle BAD = x$, and let $\\angle ACD = \\angle BCD = y$\nFrom $\\triangle ABC$, we know that $50 + 2x + 2y = 180$, leading to $x + y = 65$.\nFrom $\\triangle ADC$, we know that $x + y + \\angle D = 180$.  Plugging in $x + y = 65$, we get $\\angle D = 180 - 65 = 115$, which is answer $\\boxed{C}$."
+  }
+}

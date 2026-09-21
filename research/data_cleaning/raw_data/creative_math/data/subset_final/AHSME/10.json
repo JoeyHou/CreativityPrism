@@ -1,0 +1,8 @@
+{
+  "competition_id": "1954_AHSME_Problems",
+  "problem_id": 38,
+  "problem": "If $\\log 2 = .3010$ and $\\log 3 = .4771$, the value of $x$ when $3^{x+3} = 135$ is approximately\n$\\textbf{(A) \\ } 5  \\qquad \\textbf{(B) \\ } 1.47 \\qquad \\textbf{(C) \\ } 1.67 \\qquad \\textbf{(D) \\ } 1.78 \\qquad \\textbf{(E) \\ } 1.63$",
+  "solutions": {
+    "Solution": "Taking the logarithm in base $3$ of both sides, we get $x+3 = \\log_3 135$. Using the property $\\log ab = \\log a + \\log b$, we get $x+3 = \\log_3 5 + \\log_3 3^3$, or $x = \\log_3 5$. Converting into base $10$ gives $x = \\frac{\\log 5}{\\log 3} = \\frac{1 - \\log 2}{\\log 3}$. Now, plugging in the values yeilds $\\boxed{\\textbf{(B) \\ } 1.47  }$."
+  }
+}

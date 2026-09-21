@@ -1,0 +1,9 @@
+{
+  "competition_id": "2002_AMC_10B_Problems",
+  "problem_id": 12,
+  "difficulty": 2,
+  "problem": "For which of the following values of $k$ does the equation $\\frac{x-1}{x-2} = \\frac{x-k}{x-6}$ have no solution for $x$?\n$\\textbf{(A) } 1 \\qquad \\textbf{(B) } 2 \\qquad \\textbf{(C) } 3 \\qquad \\textbf{(D) } 4 \\qquad \\textbf{(E) } 5$",
+  "solutions": {
+    "Solution": "The domain over which we solve the equation is $\\mathbb{R} \\setminus \\{2,6\\}$.\nWe can now cross-multiply to get rid of the fractions, we get $(x-1)(x-6)=(x-k)(x-2)$.\nSimplifying that, we get $7x-6 = (k+2)x - 2k$. Clearly for $k=5$\u00a0we get the equation $-6=-10$\u00a0which is never true. The answer is $\\boxed{\\mathrm{ (E)}\\ 5}$\nFor other $k$, one can solve for $x$: $x(5-k) = 6-2k$, hence $x=\\frac {6-2k}{5-k}$. We can easily verify that for none of the other 4 possible values of $k$ is this equal to $2$ or $6$, hence there is a solution for $x$ in each of the other cases."
+  }
+}

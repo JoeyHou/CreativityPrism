@@ -1,0 +1,9 @@
+{
+  "competition_id": "1961_IMO_Problems",
+  "problem_id": 3,
+  "difficulty": 9.5,
+  "problem": "Solve the equation \n$\\cos^n{x} - \\sin^n{x} = 1$\nwhere $n$ is a given positive integer.",
+  "solutions": {
+    "Solution": "Since $cos^2x + sin^2x = 1$, we cannot have solutions with $n\\ne2$ and $0<|cos(x)|,|sin(x)|<1$. Nor can we have solutions with $n=2$, because the sign is wrong. So the only solutions have $sin (x) = 0$ or $cos (x) = 0$, and these are: $x =$ multiple of $\\pi$, and $n$ even; $x$ even multiple of $\\pi$ and $n$ odd; $x$ = even multiple of $\\pi + \\frac{3\\pi}{2}$ and $n$ odd."
+  }
+}

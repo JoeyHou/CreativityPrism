@@ -1,0 +1,19 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "ttct",
+            "run_id": "ttct_smoke_api",
+            "model_name": "gpt-4.1-mini",
+            "eval_input_dir": "data/output/ttct_smoke_api/inference_output.json",
+            "eval_prompt_format": "cot",
+            "demo": false,
+            "pairwise": false,
+            "summary": false,
+
+            "_hyperparams": "Judge runs greedy; the original pinned temperature 0.0 and MAX_TOKENS 1024.",
+            "temperature": 0.0,
+            "max_tokens": 1024
+        }
+    ]
+}

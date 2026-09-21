@@ -1,0 +1,17 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "creativity_index",
+            "run_id": "b1/creativity_index/gpt41mini",
+            "eval_input_dir": "data/output/b1/creativity_index/gpt41mini/inference_output.json",
+            "corpus": "v4_dolma-v1_7_llama",
+            "lm_tokenizer": true,
+            "num_workers": 1,
+            "request_delay": 0.15,
+            "progress_every": 25,
+            "_scale": "15 responses x 8 n-gram sizes. Endpoint measured healthy 2026-09-04: 60/60 sequential ok at 7.3 req/s, median latency 0.13s. Checkpointed per sweep; re-run to resume.",
+            "_throughput": "Measured 2026-09-04, and the measurement itself is the warning. Single-threaded sustained 8.0 req/s for a real sweep (160 requests, steady). Short concurrency bursts looked better (3 workers 12.5/s, 6 workers 20.7/s) but those were 3-second bursts and did NOT hold: a 6-worker sweep made zero progress in 6 minutes, and a 4-minute sustained load test (10,803 requests across 1/2/4/8 workers) got this machine's IP a plain HTTP 403 'Forbidden' from the public endpoint. Do not benchmark this endpoint. num_workers=1 is the setting with sustained evidence behind it; raising it is how the 403 was earned."
+        }
+    ]
+}

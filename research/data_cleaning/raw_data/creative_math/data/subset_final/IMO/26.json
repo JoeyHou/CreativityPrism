@@ -1,0 +1,9 @@
+{
+  "competition_id": "2014_IMO_Problems",
+  "problem_id": 1,
+  "difficulty": 6.5,
+  "problem": "Let $a_0<a_1<a_2<\\cdots \\quad$ be an infinite sequence of positive integers, Prove that there exists a unique integer $n\\ge1$ such that \n\\[a_n<\\frac{a_0+a_1+\\cdots + a_n}{n}\\le a_{n+1}.\\]",
+  "solutions": {
+    "Solution": "Define $f(n) = a_0 + a_1 + \\dots + a_n - n a_{n+1}$. (In particular, $f(0) = a_0.$) Notice that because $a_{n+2} \\ge a_{n+1}$, we have\n\\[a_0 + a_1 + \\dots + a_n - n a_{n+1} > a_0 + a_1 + \\dots + a_n + a_{n+1} - (n+1) a_{n+2}.\\]\nThus, $f(n) > f(n+1)$; i.e., $f$ is monotonic decreasing. Therefore, because $f(0) > 0$, there exists a unique $N$ such that $f(N-1) > 0 \\ge f(N)$. In other words,\n\\[a_0 + a_1 + \\dots + a_{N-1} - (N-1) a_N > 0\\]\n\\[a_0 + a_1 + \\dots + a_N - n a_{N+1} \\le 0.\\]\nThis rearranges to give\n\\[a_N < \\frac{a_0 + a_1 + \\dots + a_N}{N} \\le a_{N+1}.\\]\nDefine $g(n) = a_0 + a_1 + \\dots + a_n - n a_n$. Then because $a_{n+1} > a_n$, we have\n\\[a_0 + a_1 + \\dots + a_n - n a_n > a_0 + a_1 + \\dots + a_n + a_{n+1} - (n+1) a_{n+1}.\\]\nTherefore, $g$ is also monotonic decreasing. Note that $g(N+1) = a_0 + a_1 + \\dots + a_{N+1} - (N+1) a_{N+1} \\le 0$ from our inequality, and so $g(k) \\le 0$ for all $k > N$. Thus, the given inequality, which requires that $g(n) > 0$, cannot be satisfied for $n > N$, and so $N$ is the unique solution to this inequality."
+  }
+}

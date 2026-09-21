@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: creative_math
+display_name: "Creative Math"
+domain: creative_problem_solving
+folder: tasks/prism_v1
+adapter: registry/adapters/creative_math.sh
+environment: modern
+description: "Produce novel alternative solutions to math problems with a known reference solution."
+uses_judge: false
+loader_parser: result_analysis.loader:_parse_creative_math
+limit_supported: true
+
+# See the note in aut.yaml.
+upstream:
+  name: CreativeMath
+  url: https://github.com/JunyiYe/CreativeMath
+  license: MIT
+  paper: https://arxiv.org/abs/2410.18336
+  modifications: >-
+    373 problems with their reference solutions, reformatted to our row schema.

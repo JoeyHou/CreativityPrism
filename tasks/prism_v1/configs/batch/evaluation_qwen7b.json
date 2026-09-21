@@ -1,0 +1,68 @@
+{
+    "_note": "Overnight batch eval. creativity_index is deliberately absent: its scoring is one HTTP lookup per n-gram and the public infini-gram endpoint rate-limits below what a real sweep needs (pitfall 10). Its inference still ran.",
+    "experiments_list": [
+        {
+            "task": "ttct",
+            "run_id": "b1/ttct/qwen7b",
+            "model_name": "gpt-4.1-mini",
+            "eval_input_dir": "data/output/b1/ttct/qwen7b/inference_output.json",
+            "eval_prompt_format": "cot",
+            "demo": false,
+            "pairwise": false,
+            "summary": false,
+            "temperature": 0.0,
+            "max_tokens": 1024
+        },
+        {
+            "task": "dat",
+            "run_id": "b1/dat/qwen7b",
+            "eval_input_dir": "data/output/b1/dat/qwen7b/inference_output.json",
+            "words_path": "data/processed/dat_words.txt",
+            "minimum_words": 7
+        },
+        {
+            "task": "creative_math",
+            "run_id": "b1/creative_math/qwen7b",
+            "eval_input_dir": "data/output/b1/creative_math/qwen7b/inference_output.json",
+            "judges": [
+                "claude-sonnet-4-5-20250929",
+                "gpt-4.1"
+            ],
+            "judge_credentials": {
+                "claude-sonnet-4-5-20250929": "claude-3-7-sonnet-20250219"
+            },
+            "correctness_rule": "single",
+            "correctness_judge": "claude-sonnet-4-5-20250929",
+            "fine_grained": false,
+            "judge_temperature": 0.0,
+            "judge_max_tokens": 1024
+        },
+        {
+            "task": "neocoder",
+            "run_id": "b1/neocoder/qwen7b",
+            "eval_input_dir": "data/output/b1/neocoder/qwen7b/inference_output.json",
+            "test_case_path": "data/processed/neocoder/test_cases_annotated.json",
+            "code_extractor": "fenced",
+            "stage": "correctness"
+        },
+        {
+            "task": "aut_push",
+            "run_id": "b1/aut/qwen7b",
+            "model_name": "gpt-4.1-mini",
+            "max_tokens": 512
+        },
+        {
+            "task": "creative_writing",
+            "run_id": "b1/ttcw/qwen7b",
+            "model_name": "gpt-4.1-mini",
+            "few_shot": true,
+            "max_tokens": 512
+        },
+        {
+            "task": "creative_short",
+            "run_id": "b1/creative_short/qwen7b",
+            "model_name": "gpt-4.1-mini",
+            "max_tokens": 512
+        }
+    ]
+}

@@ -1,0 +1,80 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "creative_short_tmp_var/qwen_0",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },{
+            "run_id": "creative_short_tmp_var/qwen_025",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },{
+            "run_id": "creative_short_tmp_var/qwen_05",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },
+        {
+            "run_id": "creative_short_tmp_var/qwen_1",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },
+        {
+            "run_id": "creative_short_tmp_var/olmo_0",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },{
+            "run_id": "creative_short_tmp_var/olmo_025",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },{
+            "run_id": "creative_short_tmp_var/olmo_05",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },
+        {
+            "run_id": "creative_short_tmp_var/olmo_1",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },
+        {
+            "run_id": "creative_short_v1_0/olmo_13b_sft",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        },
+        {
+            "run_id": "creative_short_v1_0/olmo_13b_dpo",
+            "task": "creative_short",
+            "model_name": "gpt-4o-mini",
+            "eval_output_raw": false,
+            "test_size": 2e10
+        }
+    ]
+}
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 

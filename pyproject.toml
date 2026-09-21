@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "creativityprism"
+version = "0.1.0"
+description = "A cross-domain benchmark for large language model creativity"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+keywords = ["creativity", "benchmark", "llm", "evaluation"]
+authors = [{ name = "Zhaoyi Joey Hou", email = "joey.hou@pitt.edu" }]
+
+# The harness itself. A task's own dependencies are heavier and not all of them
+# are needed for all tasks, so they are extras rather than hard requirements --
+# `pip install creativityprism` should not pull vLLM onto a laptop.
+dependencies = [
+    "pyyaml>=6.0",
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+# Everything the eight built-in tasks import. See tasks/prism_v1/requirements.txt
+# for which task needs which.
+tasks = [
+    "numpy", "pandas", "scipy", "scikit-learn", "tqdm",
+    "openai>=1.0", "anthropic", "google-genai",
+    "nltk", "spacy", "sacremoses", "unidecode",
+    "transformers", "sentence-transformers", "torch",
+]
+# Local open-weight inference. Pulls CUDA; only needed for --model <open model>.
+open = ["vllm>=0.7.0"]
+analysis = ["pandas"]
+dev = ["datasets", "huggingface-hub"]
+
+[project.urls]
+Homepage = "https://github.com/JoeyHou/CreativityPrism"
+Documentation = "https://github.com/JoeyHou/CreativityPrism/blob/main/README.md"
+
+[project.scripts]
+creativityprism = "task_runner.run:main"
+
+[tool.setuptools]
+# Explicit, because the repo root holds directories that are not packages
+# (docs/, research/, outputs/) and find-packages would guess.
+packages = [
+    "task_runner", "task_runner.tests", "registry", "model_hub", "model_hub.providers",
+    "result_analysis",
+    # The task bundle ships as files, not as an importable API: its modules
+    # import each other as `from src.…`, which resolves because every adapter
+    # cd's into the bundle before running. Listing it here is what gets those
+    # files into the wheel at all.
+    "tasks", "tasks.prism_v1",
+]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"tasks.prism_v1" = [
+    "run_*.py", "requirements*.txt", "*.sh",
+    "src/**/*.py", "configs/**/*.json", "tests/*.py",
+]
+registry = ["tasks/*.yaml", "tasks/*.json", "adapters/*.sh", "adapters/*.py", "models.yaml", "environments/*"]
+task_runner = ["*.sbatch", "fixtures/*.yaml"]

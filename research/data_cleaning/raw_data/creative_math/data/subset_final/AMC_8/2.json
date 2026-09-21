@@ -1,0 +1,12 @@
+{
+  "competition_id": "2016_AMC_8_Problems",
+  "problem_id": 15,
+  "difficulty": 1.5,
+  "problem": "What is the largest power of $2$ that is a divisor of $13^4 - 11^4$?\n$\\textbf{(A)}\\mbox{ }8\\qquad \\textbf{(B)}\\mbox{ }16\\qquad \\textbf{(C)}\\mbox{ }32\\qquad \\textbf{(D)}\\mbox{ }64\\qquad \\textbf{(E)}\\mbox{ }128$",
+  "solutions": {
+    "Solution 1": "First, we use difference of squares on $13^4 - 11^4 = (13^2)^2 - (11^2)^2$ to get $13^4 - 11^4 = (13^2 + 11^2)(13^2 - 11^2)$. Using difference of squares again and simplifying, we get $(169 + 121)(13+11)(13-11) = 290 \\cdot 24 \\cdot 2 = (2\\cdot 8 \\cdot 2) \\cdot (3 \\cdot 145)$. Realizing that we don't need the right-hand side because it doesn't contain any factor of 2, we see that the greatest power of $2$ that is a divisor $13^4 - 11^4$ is $\\boxed{\\textbf{(C)}\\ 32}$.",
+    "Solution 2 (a variant of Solution 1)": "Just like in the above solution, we use the difference-of-squares factorization, but only once to get $13^4-11^4=(13^2-11^2)(13^2+11^2).$ We can then compute that this is equal to $48\\cdot290.$ Note that $290=2\\cdot145$ (we don't need to factorize any further as $145$ is already odd) thus the largest power of $2$ that divides $290$ is only $2^1=2,$ while $48=2^4\\cdot3,$ so the largest power of $2$ that divides $48$ is $2^4=16.$ Hence, the largest power of $2$ that is a divisor of $13^4-11^4$ is $2\\cdot16=\\boxed{\\textbf{(C)}~32}.$",
+    "Solution 3 (Lifting the exponent)": "Let $n=13^4-11^4.$ We wish to find the largest power of $2$ that divides $n$.\nDenote $v_p(k)$ as the largest exponent of $p$ in the prime factorization of $n$. In this problem, we have $p=2$. \nBy the Lifting the Exponent Lemma on $n$, \n\\[v_2(13^4-11^4)=v_2(13-11)+v_2(4)+v_2(13+11)-1\\]\n\\[=v_2(2)+v_2(4)+v_2(24)-1\\]\n\\[=1+2+3-1=5.\\]\nTherefore, exponent of the largest power of $2$ that divids $13^4-11^4$ is $5,$ so the largest power of $2$ that divides this number is $2^5=\\boxed{\\textbf{(C)} 32}$.",
+    "Solution 4 (Brute Force)": "We can simply take 13 to the 4th power, which is 28561. We subtract that by 11 to the 4th power, which is 14641 (You can use Pascal's Triangle to find this). Finally, subtract the numbers to get 13920. \nTo test the options, since we need the largest one, we can go from top down. Testing, we see that both D and E are decimals,\nand 32 works. So, our answer is $\\boxed{\\textbf{(C)}~32}.$"
+  }
+}

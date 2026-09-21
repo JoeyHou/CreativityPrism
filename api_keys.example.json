@@ -1,0 +1,32 @@
+{
+  "_comment_1": "Copy to api_keys.json (gitignored) and fill in. Keep real keys out of git.",
+  "_comment_2": "Provider-level fields feed OPENAI_API_KEY / ANTHROPIC_API_KEY / GENAI_API_KEY / DEEPSEEK_API_KEY.",
+  "_comment_3": "tasks/ttct additionally looks the key up by the model alias, so those are listed too.",
+
+  "openai": "YOUR_OPENAI_KEY",
+  "anthropic": "YOUR_ANTHROPIC_KEY",
+  "google": "YOUR_GEMINI_KEY",
+  "deepseek": "YOUR_DEEPSEEK_KEY",
+  "hf": "YOUR_HUGGINGFACE_TOKEN",
+
+  "gpt_4.1": "YOUR_OPENAI_KEY",
+  "gpt-4.1": "YOUR_OPENAI_KEY",
+  "gpt-4.1-2025-04-14": "YOUR_OPENAI_KEY",
+  "gpt_4.1_mini": "YOUR_OPENAI_KEY",
+  "gpt-4.1-mini": "YOUR_OPENAI_KEY",
+  "gpt-4.1-mini-2025-04-14": "YOUR_OPENAI_KEY",
+
+  "claude_37_sonnet": "YOUR_ANTHROPIC_KEY",
+  "claude-3-7-sonnet-20250219": "YOUR_ANTHROPIC_KEY",
+  "claude_3_haiku": "YOUR_ANTHROPIC_KEY",
+  "claude-3-haiku-20240307": "YOUR_ANTHROPIC_KEY",
+
+  "gemini_2_flash": "YOUR_GEMINI_KEY",
+  "gemini-2.0-flash": "YOUR_GEMINI_KEY",
+  "gemini_2_pro": "YOUR_GEMINI_KEY",
+
+  "deepseek_r1": "YOUR_DEEPSEEK_KEY",
+  "deepseek-reasoner": "YOUR_DEEPSEEK_KEY",
+  "deepseek_v3": "YOUR_DEEPSEEK_KEY",
+  "deepseek-chat": "YOUR_DEEPSEEK_KEY"
+}

@@ -1,0 +1,8 @@
+{
+  "competition_id": "1966_AHSME_Problems",
+  "problem_id": 15,
+  "problem": "If $x-y>x$ and $x+y<y$, then\n$\\text{(A) } y<x \\quad \\text{(B) } x<y \\quad \\text{(C) } x<y<0 \\quad \\text{(D) } x<0,y<0 \\quad \\text{(E) } x<0,y>0$",
+  "solutions": {
+    "Solution": "From $x-y>x$, we get that $-y>0\\implies y<0$.\nFrom $x+y<y$, we get that $x<0$. \nSo, our final answer is $\\fbox{D}$."
+  }
+}

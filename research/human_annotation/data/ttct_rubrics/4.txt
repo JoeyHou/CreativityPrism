@@ -1,0 +1,10 @@
+- Definition: This task is designed to assess creative thinking by evaluating how individuals respond to and interpret a given situation. This task emphasizes understanding social dynamics, empathy, and the ability to consider multiple perspectives or solutions. For example, if all books were to disappear, how would you gain knowledge?
+- Example: If there were no more night-time, how would you sleep? Let's think step by step.
+
+
+| Dimension       | What to Look For                                                | 1                        | 3                                         | 5                                                                            |
+| --------------- | --------------------------------------------------------------- | ------------------------ | ----------------------------------------- | ---------------------------------------------------------------------------- |
+| **Fluency**     | Number of solutions/actions                                     | 1–2                      | 5–7                                       | ≥10                                                                          |
+| **Flexibility** | Range of approaches (tech, social, educational, emotional etc.) | one approach             | 3–4 approaches                            | ≥6 approaches                                                                |
+| **Originality** | Novelty of solutions                                            | obvious (“use internet”) | some non-obvious ideas (“oral libraries”) | highly original multi-layered solutions (“genetic memory backups in plants”) |
+| **Elaboration** | Depth of explanation and feasibility                            | labels                   | one-sentence reasoning                    | detailed plan with impacts, actors, trade-offs                               |

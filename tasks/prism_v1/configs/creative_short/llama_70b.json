@@ -1,0 +1,9 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "creative_short_v1_0/llama3_70b_instruct",
+            "task": "creative_short",
+            "model_name": "llama3_70b_instruct"
+        }
+    ]
+}

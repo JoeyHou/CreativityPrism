@@ -1,0 +1,9 @@
+{
+  "competition_id": "2021_USAJMO_Problems",
+  "problem_id": 2,
+  "difficulty": 6.5,
+  "problem": "Rectangles $BCC_1B_2,$ $CAA_1C_2,$ and $ABB_1A_2$ are erected outside an acute triangle $ABC.$ Suppose that\\[\\angle BC_1C+\\angle CA_1A+\\angle AB_1B=180^{\\circ}.\\]Prove that lines $B_1C_2,$ $C_1A_2,$ and $A_1B_2$ are concurrent.",
+  "solutions": {
+    "Solution": "We first claim that the three circles $(BCC_1B_2),$ $(CAA_1C_2),$ and $(ABB_1A_2)$ share a common intersection.\nLet the second intersection of $(BCC_1B_2)$ and $(ABB_1A_2)$ be $X$. Then \n\\begin{align*} \\angle AXC &= 360^\\circ - \\angle BXA - \\angle CXB \\\\ &= 360^\\circ - (180^\\circ - \\angle AB_1B + 180^\\circ - \\angle BC_1C) \\\\& = 180^\\circ - \\angle CA_1A, \\end{align*}\nwhich implies that $AA_1C_2CX$ is cyclic as desired.\nNow we show that $X$ is the intersection of $B_1C_2,$ $C_1A_2,$ and $A_1B_2.$ Note that $\\angle C_1XB = \\angle BXA_2 = 90^\\circ,$ so $A_2, X, C_1$ are collinear. Similarly, $B_1, X, C_2$ and $A_1, X, B_2$ are collinear, so the three lines concur and we are done."
+  }
+}

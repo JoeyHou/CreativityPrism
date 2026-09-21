@@ -1,0 +1,10 @@
+{
+  "competition_id": "1990_IMO_Problems",
+  "problem_id": 1,
+  "difficulty": 6.5,
+  "problem": "Chords $AB$ and $CD$ of a circle intersect at a point $E$ inside the circle. Let $M$ be an interior point of the segment $\\overline{EB}$. The tangent line at $E$ to the circle through $D, E$, and $M$ intersects the lines $\\overline{BC}$ and ${AC}$ at $F$ and $G$, respectively.\nIf  $\\frac{AM}{AB} = t$, find $\\frac{EG}{EF}$ in terms of $t$.",
+  "solutions": {
+    "Solution 1": "With simple angle chasing, we find that triangles $CEG$ and $MDB$ are similar.\nso, $GE/EC = MD/MB$. (*)\nagain with simple angle chasing, we find that triangles $CEF$ and $AMD$ are similar.\nso, $EF/DM = CE/AM$. (**)\nso, by (*) and (**), we have $GE/EF = MA/MB = t/(t-1)$.\n",
+    "Solution 2": "This problem can be bashed with PoP and Ratio Lemma. Rewriting the given ratio gets $\\frac{MA}{MB}=\\frac{t}{1-t}$.\nBy Ratio Lemma, $\\frac{FB}{FC}=\\frac{BE}{CE} \\cdot \\frac{\\sin{\\angle{FEB}}}{\\sin{\\angle{FEC}}}=\\frac{DE}{AE} \\cdot \\frac{\\sin{\\angle{EDM}}}{\\sin{\\angle{DME}}}=\\frac{DE}{AE} \\cdot \\frac{EM}{DE}=\\frac{ME}{EA}$. Similarly, $\\frac{GA}{GC}=\\frac{ME}{EB}$. We can rewrite these equalities to get $\\frac{AM}{EM}=\\frac{BC}{FB}$ and $\\frac{BM}{EM}=\\frac{AC}{GC}$.\nUsing Ratio Lemma, $\\frac{GE}{\\sin{\\angle{ACD}}}=\\frac{GC}{\\sin{\\angle{GED}}}$ and $\\frac{EF}{\\sin{\\angle{BCD}}}=\\frac{FC}{\\sin{\\angle{FEC}}}$. Since $\\angle{GED}=\\angle{FEC}$, we have $\\frac{FE}{GE}=\\frac{FC}{GC} \\cdot \\frac{\\sin{\\angle{BCD}}}{\\sin{\\angle{ACD}}}$ (eq 1). Note that by Ratio Lemma, $\\frac{\\sin{\\angle{BCD}}}{\\sin{\\angle{ACD}}}=\\frac{CA}{CB} \\cdot \\frac{EB}{EA}$. Plugging this into (eq 1), we get $\\frac{EF}{GE}=\\frac{FC}{GC} \\cdot \\frac{CA}{CB} \\cdot \\frac{EB}{EA}=\\frac{\\frac{EA}{EM} \\cdot FB}{\\frac{EB}{EM} \\cdot GA} \\cdot \\frac{CA}{CB} \\cdot \\frac{EB}{EA}=\\frac{FB}{GA} \\cdot \\frac{CA}{CB}=\\frac{EM}{AM} \\cdot \\frac{MB}{EM}=\\frac{MB}{MA}=\\frac{1-t}{t}$. So $\\frac{EG}{EF}=\\boxed{\\frac{t}{1-t}}$.\n"
+  }
+}

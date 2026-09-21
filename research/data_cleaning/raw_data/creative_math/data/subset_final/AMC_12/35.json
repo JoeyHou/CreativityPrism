@@ -1,0 +1,10 @@
+{
+  "competition_id": "2007_AMC_12A_Problems",
+  "problem_id": 18,
+  "difficulty": 3,
+  "problem": "The polynomial $f(x) = x^{4} + ax^{3} + bx^{2} + cx + d$ has real coefficients, and $f(2i) = f(2 + i) = 0.$ What is $a + b + c + d?$\n$\\mathrm{(A)}\\ 0 \\qquad \\mathrm{(B)}\\ 1 \\qquad \\mathrm{(C)}\\ 4 \\qquad \\mathrm{(D)}\\ 9 \\qquad \\mathrm{(E)}\\ 16$",
+  "solutions": {
+    "Solution 1": "A fourth degree polynomial has four roots. Since the coefficients are real(meaning that complex roots come in conjugate pairs), the remaining two roots must be the complex conjugates of the two given roots. By the factor theorem, our roots are $2-i,-2i$. Now we work backwards for the polynomial:\nThus our answer is $- 4 + 9 - 16 + 20 = 9\\ \\mathrm{(D)}$.",
+    "Solution 2": "Just like in Solution 1 we realize that the roots come in conjugate pairs. Which means the roots are $2i,i+2,-2i,2-i$\nSo our polynomial is  \n $f(x) = (x-2i)(x+2i)(x-i-2)(x-2+i)$\nLooking at the equation of the polynomial $f(x) = x^4+ax^3+bx^2+cx+d$. We see that $a+b+c+d = f(1)-1$\nIf we plug in $1$ into equation  we get $f(1) = (1-2i)(1+2i)(-1-i)(-1+i)$. \nNow if we multiply a complex number by its conjugate we get the sum of the squares of its real and imaginary parts. Using this property on the above we multiply  and get $f(1) = (1-2i)(1+2i)(-1-i)(-1+i) = (1^2+2^2)(1^2+1^2) = 10$\nSo the answer is $f(1) -1 = 10 - 1  = 9$. $\\framebox{D}$"
+  }
+}

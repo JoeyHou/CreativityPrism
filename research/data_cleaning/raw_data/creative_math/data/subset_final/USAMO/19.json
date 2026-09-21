@@ -1,0 +1,9 @@
+{
+  "competition_id": "1990_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "A certain state issues license plates consisting of six digits (from 0 through 9). The state requires that any two plates differ in at least two places. (Thus the plates $\\boxed{027592}$ and $\\boxed{020592}$ cannot both be used.) Determine, with proof, the maximum number of distinct license plates that the state can use.",
+  "solutions": {
+    "Solutions": "Consider license plates of $n$ digits, for some fixed $n$, issued with the same criteria.\nWe first note that by the pigeonhole principle, we may have at most $10^{n-1}$ distinct plates.  Indeed, if we have more, then there must be two plates which agree on the first $n-1$ digits; these plates thus differ only on one digit, the last one.\nWe now show that it is possible to issue $10^{n-1}$ distinct license plates which satisfy the problem's criteria.  Indeed, we issue plates with all $10^{n-1}$ possible combinations for the first $n-1$ digit, and for each plate, we let the last digit be the sum of the preceding digits taken mod 10.  This way, if two plates agree on the first $n-1$ digits, they agree on the last digit and are thus the same plate, and if two plates differ in only one of the first $n-1$ digits, they must differ as well in the last digit.\nIt then follows that $10^{n-1}$ is the greatest number of license plates the state can issue.  For $n=6$, as in the problem, this number is $10^5$.  $\\blacksquare$"
+  }
+}

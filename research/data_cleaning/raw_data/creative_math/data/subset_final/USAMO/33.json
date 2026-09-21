@@ -1,0 +1,11 @@
+{
+  "competition_id": "1978_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "Given that $a,b,c,d,e$ are real numbers such that\n$a+b+c+d+e=8$,\n$a^2+b^2+c^2+d^2+e^2=16$.\nDetermine the maximum value of $e$.",
+  "solutions": {
+    "Solution 1": "By Cauchy Schwarz, we can see that $(1+1+1+1)(a^2+b^2+c^2+d^2)\\geq (a+b+c+d)^2$\nthus $4(16-e^2)\\geq (8-e)^2$ \nFinally, $e(5e-16) \\geq 0$ which means $\\frac{16}{5} \\geq e \\geq 0$\nso the maximum value of $e$ is $\\frac{16}{5}$.",
+    "Solution 2": "Seeing as we have an inequality with constraints, we can use Lagrange multipliers to solve this problem.\nWe get the following equations:\n$(1)\\hspace*{0.5cm} a+b+c+d+e=8\\\\ (2)\\hspace*{0.5cm} a^{2}+b^{2}+c^{2}+d^{2}+e^{2}=16\\\\ (3)\\hspace*{0.5cm} 0=\\lambda+2a\\mu\\\\ (4)\\hspace*{0.5cm} 0=\\lambda+2b\\mu\\\\ (5)\\hspace*{0.5cm} 0=\\lambda+2c\\mu\\\\ (6)\\hspace*{0.5cm} 0=\\lambda+2d\\mu\\\\ (7)\\hspace*{0.5cm} 1=\\lambda+2e\\mu$\nIf $\\mu=0$, then $\\lambda=0$ according to $(6)$ and $\\lambda=1$ according to $(7)$, so $\\mu \\neq 0$. Setting the right sides of $(3)$ and $(4)$ equal yields $\\lambda+2a \\mu= \\lambda+2b \\mu \\implies 2a\\mu=2b \\mu \\implies a=b$. Similar steps yield that $a=b=c=d$. Thus, $(1)$ becomes $4d+e=8$ and $(2)$ becomes $4d^{2}+e^{2}=16$. Solving the system yields $e=0,\\frac{16}{5}$, so the maximum possible value of $e$ is $\\frac{16}{5}$.",
+    "Solution 3": "A re-writing of Solution 1 to avoid the use of Cauchy Schwarz. We have\n\\[(a+b+c+d)^2=(8-e)^2,\\] and \n\\[a^2+b^2+c^2+d^2=16-e^2.\\]\nThe second equation times 4, then minus the first equation, \n\\[(a-b)^2+(a-c)^2+(a-d)^2+(b-c)^2+(b-d)^2+(c-d)^2=4(16-e^2)-(8-e)^2.\\]\nThe rest follows."
+  }
+}

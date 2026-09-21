@@ -1,0 +1,256 @@
+problem_id,problem,cleaned_references,cleaned_response,image_in_problem
+2020_USAJMO_Problems_2,"Let \(\omega\) be the incircle of a fixed equilateral triangle \(ABC\). Let \(\ell\) be a variable line that is tangent to \(\omega\) and meets the interior of segments \(BC\) and \(CA\) at points \(P\) and \(Q\), respectively. A point \(R\) is chosen such that \(PR = PA\) and \(QR = QB\). Find all possible locations of the point \(R\), over all choices of \(\ell\).","Solution 1. Call a point  if it is a possible location for \(R\).
+Let the incircle of \(\triangle ABC\) touch \(BC\) at \(D\), \(AC\) at \(E\), and \(\ell\) at \(T\). Also, let the center of the incircle be \(I\). Clearly, a point is good iff it lies on the circle containing \(A\) with center \(P\) as well as the circle containing \(B\) with center \(Q\). Call these circles \(\omega_1\) and \(\omega_2\), respectively.
+Note that point \(T\) can only lie on minor arc \(\overarc{DE}\) (excluding the endpoints). 
+ A point \(X\) is good iff \(XT\perp PQ\) and \(XT=AD=BE\).
+ WLOG, let \(X\) be on the same side of \(PQ\) as \(I\). Then we have that \(T, I, X\) are collinear. In particular, we have \(\angle XTP=90^{\circ}\). Then \(TX=AD\), \(PT=PD\), \(\angle XTP=\angle ADP\), so that \(\triangle ADP\cong \triangle XTP\rightarrow PA=PX\). Similarly, \(QB=QX\), so \(X\) is good. Then \(X'\), the reflection of \(X\) across \(T\), is also good. But \(\omega_1\) and \(\omega_2\) have at most two intersections, so \(X\) and \(X'\) must be these intersections, and since a point is good iff it lies on both circles, we are done.
+Now, we know that \(R, I, T\) are collinear. Then we have two cases:
+ \(R\) and \(I\) lie on the same side of \(PQ\). Then we have \(RI+IT=AI+ID=BI+IE\), so that \(RI=AI=BI\). Then we have that \(R, A, B\) lie on a circle with center \(I\). Note that because \(T\) lies on \(\overarc{DE}\), \(R\) must lie on \(\overarc{AB}\). So, one of the solutions is \(\boxed{R \text{ in arc } AB\text{ (excluding the endpoints)}}\).
+ \(R\) and \(I\) lie on opposite sides of \(PQ\). Then extend \(ID\) out from \(D\) to \(X\) such that \(DX=TR\), and extend \(IE\) out from \(E\) to \(Y\) such that \(EY=TR\). Then we see that \(IR=IX=IY\), so that \(\boxed{R \text{ lies on arc } XY\text{ (excluding the endpoints)}}\).","To find all possible locations of the point \( R \) over all choices of the line \( \ell \), we will use a different approach that focuses on the geometric properties of the equilateral triangle and the tangency conditions.
+
+### Solution 2: Geometric Construction and Symmetry
+
+1. **Setup and Definitions:**
+   - Let \( \triangle ABC \) be an equilateral triangle with side length \( s \).
+   - Let \( \omega \) be the incircle of \( \triangle ABC \) with center \( I \) and radius \( r \).
+   - Let \( \ell \) be a variable line tangent to \( \omega \) at point \( T \).
+   - Let \( \ell \) intersect \( BC \) at \( P \) and \( CA \) at \( Q \).
+   - Let \( R \) be a point such that \( PR = PA \) and \( QR = QB \).
+
+2. **Key Observations:**
+   - Since \( \triangle ABC \) is equilateral, the incenter \( I \) is also the centroid and the circumcenter.
+   - The tangency point \( T \) lies on the incircle \( \omega \), and \( \ell \) is tangent to \( \omega \) at \( T \).
+
+3. **Geometric Properties:**
+   - The line \( \ell \) is tangent to the incircle, and the tangency point \( T \) lies on the minor arc \( DE \) of the incircle, where \( D \) and \( E \) are the points where the incircle touches \( BC \) and \( CA \), respectively.
+   - The distances \( PA \) and \( QB \) are equal to the distances from \( P \) and \( Q \) to the tangency point \( T \) plus the inradius \( r \).
+
+4. **Symmetry and Reflection:**
+   - Consider the reflection of \( A \) and \( B \) across the line \( \ell \). Let \( A' \) and \( B' \) be the reflections of \( A \) and \( B \) across \( \ell \), respectively.
+   - Since \( \ell \) is tangent to the incircle, the reflection of the incircle across \( \ell \) is another circle congruent to \( \omega \) and tangent to \( \ell \) at \( T \).
+
+5. **Intersection of Circles:**
+   - The point \( R \) must lie on the circle centered at \( P \) with radius \( PA \) and on the circle centered at \( Q \) with radius \( QB \).
+   - These two circles intersect at two points, which are symmetric with respect to the line \( \ell \).
+
+6. **Possible Locations of \( R \):**
+   - One of the intersection points \( R \) lies on the same side of \( \ell \) as \( I \), and the other lies on the opposite side.
+   - The point \( R \) on the same side of \( \ell \) as \( I \) must lie on the circumcircle of \( \triangle ABC \) because it is equidistant from \( A \) and \( B \) and lies on the perpendicular bisector of \( AB \).
+   - The point \( R \) on the opposite side of \( \ell \) from \( I \) must lie on a circle centered at \( I \) with radius \( IR \).
+
+7. **Conclusion:**
+   - The point \( R \) on the same side of \( \ell \) as \( I \) lies on the arc \( AB \) of the circumcircle of \( \triangle ABC \) (excluding the endpoints \( A \) and \( B \)).
+   - The point \( R \) on the opposite side of \( \ell \) from \( I \) lies on a circle centered at \( I \) with radius \( IR \), which is the reflection of the circumcircle of \( \triangle ABC \) across \( \ell \).
+
+Thus, the possible locations of the point \( R \) are:
+\(
+\boxed{R \text{ in arc } AB \text{ (excluding the endpoints)} \text{ or } R \text{ on the circle centered at } I \text{ with radius } IR \text{ (excluding the endpoints of the arc } XY\text{)}}
+\)",
+2012_USAJMO_Problems_6,"Let \(P\) be a point in the plane of triangle \(ABC\), and \(\gamma\) a line passing through \(P\).  Let \(A'\), \(B'\), \(C'\) be the points where the reflections of lines \(PA\), \(PB\), \(PC\) with respect to \(\gamma\) intersect lines \(BC\), \(AC\), \(AB\), respectively.  Prove that \(A'\), \(B'\), \(C'\) are collinear.","Solution 1. By the  on triangle \(AB'P\),
+\(\frac{AB'}{\sin \angle APB'} = \frac{AP}{\sin \angle AB'P},\)
+so
+\(AB' = AP \cdot \frac{\sin \angle APB'}{\sin \angle AB'P}.\)
+[asy] import graph; import geometry;  unitsize(0.5 cm);  pair[] A, B, C; pair P, R;  A[0] = (2,12); B[0] = (0,0); C[0] = (14,0); P = (4,5); R = 5*dir(70); A[1] = extension(B[0],C[0],P,reflect(P + R,P - R)*(A[0])); B[1] = extension(C[0],A[0],P,reflect(P + R,P - R)*(B[0])); C[1] = extension(A[0],B[0],P,reflect(P + R,P - R)*(C[0]));  draw((P - R)--(P + R),red); draw(A[1]--B[1]--C[1]--cycle,blue); draw(A[0]--B[0]--C[0]--cycle); draw(A[0]--P); draw(B[0]--P); draw(C[0]--P); draw(P--A[1]); draw(P--B[1]); draw(P--C[1]); draw(A[1]--B[0]); draw(A[1]--B[0]);  label(""\(A\)"", A[0], N); label(""\(B\)"", B[0], S); label(""\(C\)"", C[0], SE); dot(""\(A'\)"", A[1], SW); dot(""\(B'\)"", B[1], NE); dot(""\(C'\)"", C[1], W); dot(""\(P\)"", P, SE); label(""\(\gamma\)"", P + R, N); [/asy]
+Similarly,
+\begin{align*} B'C &= CP \cdot \frac{\sin \angle CPB'}{\sin \angle CB'P}, \\ CA' &= CP \cdot \frac{\sin \angle CPA'}{\sin \angle CA'P}, \\ A'B &= BP \cdot \frac{\sin \angle BPA'}{\sin \angle BA'P}, \\ BC' &= BP \cdot \frac{\sin \angle BPC'}{\sin \angle BC'P}, \\ C'A &= AP \cdot \frac{\sin \angle APC'}{\sin \angle AC'P}. \end{align*}
+Hence,
+\begin{align*} &\frac{AB'}{B'C} \cdot \frac{CA'}{A'B} \cdot \frac{BC'}{C'A} \\ &= \frac{\sin \angle APB'}{\sin \angle AB'P} \cdot \frac{\sin \angle CB'P}{\sin \angle CPB'} \cdot \frac{\sin \angle CPA'}{\sin \angle CA'P} \cdot \frac{\sin \angle BA'P}{\sin \angle BPA'} \cdot \frac{\sin \angle BPC'}{\sin \angle BC'P} \cdot \frac{\sin \angle AC'P}{\sin \angle APC'}. \end{align*}
+Since angles \(\angle AB'P\) and \(\angle CB'P\) are supplementary or equal, depending on the position of \(B'\) on \(AC\),
+\(\sin \angle AB'P = \sin \angle CB'P.\)
+Similarly,
+\begin{align*} \sin \angle CA'P &= \sin \angle BA'P, \\ \sin \angle BC'P &= \sin \angle AC'P. \end{align*}
+By the reflective property, \(\angle APB'\) and \(\angle BPA'\) are supplementary or equal, so
+\(\sin \angle APB' = \sin \angle BPA'.\)
+Similarly,
+\begin{align*} \sin \angle CPA' &= \sin \angle APC', \\ \sin \angle BPC' &= \sin \angle CPB'. \end{align*}
+Therefore,
+\(\frac{AB'}{B'C} \cdot \frac{CA'}{A'B} \cdot \frac{BC'}{C'A} = 1,\)
+so by , \(A'\), \(B'\), and \(C'\) are collinear.
+
+
+<br><br>==========<br>
+Solution 2. We will perform barycentric coordinates on the triangle \(PCC'\), with \(P=(1,0,0)\), \(C'=(0,1,0)\), and \(C=(0,0,1)\). Set \(a = CC'\), \(b = CP\), \(c = C'P\) as usual. Since \(A\), \(B\), \(C'\) are collinear, we will define \(A = (p : k : q)\) and \(B = (p : \ell : q)\).
+Claim: Line \(\gamma\) is the angle bisector of \(\angle APA'\), \(\angle BPB'\), and \(\angle CPC'\). 
+This is proved by observing that since \(A'P\) is the reflection of \(AP\) across \(\gamma\), etc.
+Thus \(B'\) is the intersection of the isogonal of \(B\) with respect to \(\angle P\)
+with the line \(CA\); that is,
+\(B' = \left( \frac pk \frac{b^2}{\ell}: \frac{b^2}{\ell} : \frac{c^2}{q} \right).\)
+Analogously, \(A'\) is the intersection of the isogonal of \(A\) with respect to \(\angle P\)
+with the line \(CB\); that is,
+\(A' = \left( \frac{p}{\ell} \frac{b^2}{k} : \frac{b^2}{k} : \frac{c^2}{q} \right).\)
+The ratio of the first to third coordinate in these two points
+is both \(b^2pq : c^2k\ell\), so it follows \(A'\), \(B'\), and \(C'\) are collinear.","To prove that points \( A' \), \( B' \), and \( C' \) are collinear, we employ **Hjelmslev's theorem**, which relates isometric mappings to collinearity. 
+
+**Hjelmslev's Theorem** states that if two triangles are related by an isometry (e.g., reflection), the intersections of corresponding sides lie on a straight line. Here, reflecting triangle \( ABC \) over line \( \gamma \) (passing through \( P \)) produces triangle \( A^\gamma B^\gamma C^\gamma \). The original cevians \( PA \), \( PB \), \( PC \) reflect to \( PA^\gamma \), \( PB^\gamma \), \( PC^\gamma \). 
+
+By the theorem, the intersections \( A' \), \( B' \), \( C' \) of these reflected cevians with sides \( BC \), \( AC \), \( AB \) must lie on a common line—the **Hjelmslev line**—thus establishing their collinearity.",
+1981_USAMO_Problems_1,"Prove that if \(n\) is not a multiple of \(3\), then the angle \(\frac{\pi}{n}\) can be trisected with ruler and compasses.","Solution 1. Let \(n=3k+1\).  Multiply throughout by \(\pi/3n\). We get 
+\(\frac{\pi}{3} = \frac{\pi \times k}{n} + \frac{\pi}{3n}\)
+Re-arranging, we get
+\(\frac{\pi}{3} - \frac{\pi \times k}{n} = \frac{\pi}{3n}\)
+A way to interpret it is that if we know the value \(k\), then the remainder angle of subtracting \(k\) times the given angle from \(\frac{\pi}{3}\) gives us \(\frac{\pi}{3n}\), the desired trisected angle.
+This can be extended to the case when \(n=3k+2\) where now, the equation becomes
+\(\frac{\pi}{3} - \frac{\pi \times k}{n} = \frac{2\pi}{3n}\)
+Hence in this case, we will have to subtract \(k\) times the original angle from \(\frac{\pi}{3}\) to get twice the the trisected angle. We can bisect it after that to get the trisected angle.","To prove that if \( n \) is not a multiple of 3, then the angle \(\frac{\pi}{n}\) can be trisected with ruler and compasses, we can use the properties of complex numbers and roots of unity.
+
+1. **Roots of Unity**:
+   Consider the \( n \)-th roots of unity, which are the complex numbers \( \omega_k = e^{2\pi i k / n} \) for \( k = 0, 1, 2, \ldots, n-1 \). These roots lie on the unit circle in the complex plane and are evenly spaced.
+
+2. **Trisecting the Angle**:
+   We need to show that the angle \(\frac{\pi}{n}\) can be trisected, i.e., we need to construct the angle \(\frac{\pi}{3n}\).
+
+3. **Complex Representation**:
+   The angle \(\frac{\pi}{n}\) corresponds to the complex number \( e^{i\pi/n} \). To trisect this angle, we need to find \( e^{i\pi/3n} \).
+
+4. **Cubic Roots**:
+   Consider the complex number \( z = e^{i\pi/n} \). We need to find a complex number \( w \) such that \( w^3 = z \). This \( w \) will correspond to the angle \(\frac{\pi}{3n}\).
+
+5. **Solving for \( w \)**:
+   The cubic roots of \( z \) are given by:
+   \(
+   w_k = e^{i(\pi/n + 2k\pi/3)} \quad \text{for} \quad k = 0, 1, 2
+   \)
+   These roots are:
+   \(
+   w_0 = e^{i\pi/3n}, \quad w_1 = e^{i(\pi/3n + 2\pi/3)}, \quad w_2 = e^{i(\pi/3n + 4\pi/3)}
+   \)
+
+6. **Constructibility**:
+   To show that \( e^{i\pi/3n} \) is constructible, we need to show that the angle \(\frac{\pi}{3n}\) can be constructed using ruler and compasses. This is equivalent to showing that the real and imaginary parts of \( e^{i\pi/3n} \) can be constructed.
+
+7. **Using Cosine and Sine**:
+   The real and imaginary parts of \( e^{i\pi/3n} \) are:
+   \(
+   \cos\left(\frac{\pi}{3n}\right) \quad \text{and} \quad \sin\left(\frac{\pi}{3n}\right)
+   \)
+   These can be constructed if and only if the angle \(\frac{\pi}{3n}\) is constructible.
+
+8. **Gauss's Theorem**:
+   According to Gauss's theorem on constructible angles, an angle \(\theta\) is constructible if and only if \(\cos(\theta)\) is a constructible number. Since \( n \) is not a multiple of 3, the angle \(\frac{\pi}{n}\) is not a multiple of \(\frac{\pi}{3}\), and thus \(\frac{\pi}{3n}\) is a constructible angle.
+
+9. **Conclusion**:
+   Therefore, the angle \(\frac{\pi}{3n}\) can be constructed using ruler and compasses, which means the angle \(\frac{\pi}{n}\) can be trisected.",
+1987_AIME_Problems_11,Find the largest possible value of \(k\) for which \(3^{11}\) is expressible as the sum of \(k\) consecutive positive integers.,"Solution 1. Let us write down one such sum, with \(m\) terms and first term \(n + 1\):
+\(3^{11} = (n + 1) + (n + 2) + \ldots + (n + m) = \frac{1}{2} m(2n + m + 1)\).
+Thus \(m(2n + m + 1) = 2 \cdot 3^{11}\) so \(m\) is a divisor of \(2\cdot 3^{11}\).  However, because \(n \geq 0\) we have \(m^2 < m(m + 1) \leq 2\cdot 3^{11}\) so \(m < \sqrt{2\cdot 3^{11}} < 3^6\).  Thus, we are looking for large factors of \(2\cdot 3^{11}\) which are less than \(3^6\).  The largest such factor is clearly \(2\cdot 3^5 = 486\); for this value of \(m\) we do indeed have the valid expression \(3^{11} = 122 + 123 + \ldots + 607\), for which \(k=\boxed{486}\).
+
+
+<br><br>==========<br>
+Solution 2. First note that if \(k\) is odd, and \(n\) is the middle term, the sum equals \(kn\). If \(k\) is even, then we have the sum equal to \(kn+k/2\), which will be even. Since \(3^{11}\) is odd, we see that \(k\) is odd. 
+Thus, we have \(nk=3^{11} \implies n=3^{11}/k\). Also, note \(n-(k+1)/2=0 \implies n=(k+1)/2.\) Subsituting \(n=3^{11}/k\), we have \(k^2+k=2*3^{11}\). Proceed as in solution 1.","To find the largest possible value of \( k \) for which \( 3^{11} \) is expressible as the sum of \( k \) consecutive positive integers, we can approach the problem using a method that focuses on the properties of the sum of an arithmetic series and the constraints on \( k \).
+
+### Solution 3: Using the Sum of an Arithmetic Series and Divisibility
+
+1. **Sum of Consecutive Integers**:
+   The sum of \( k \) consecutive integers starting from \( a \) is given by:
+   \(
+   S = a + (a+1) + (a+2) + \ldots + (a+k-1)
+   \)
+   This can be written as:
+   \(
+   S = \frac{k}{2} \left(2a + (k-1)\right)
+   \)
+   We need this sum to equal \( 3^{11} \):
+   \(
+   \frac{k}{2} \left(2a + (k-1)\right) = 3^{11}
+   \)
+   Multiplying both sides by 2, we get:
+   \(
+   k(2a + k - 1) = 2 \cdot 3^{11}
+   \)
+
+2. **Divisibility and Constraints**:
+   Since \( k \) must be a divisor of \( 2 \cdot 3^{11} \), we list the divisors of \( 2 \cdot 3^{11} \):
+   \(
+   2 \cdot 3^{11} = 2 \cdot 177147 = 354294
+   \)
+   The divisors of \( 354294 \) are:
+   \(
+   1, 2, 3, 6, 9, 18, 27, 54, 81, 162, 243, 486, 729, 1458, 2187, 4374, 6561, 13122, 19683, 39366, 59049, 118098, 177147, 354294
+   \)
+
+3. **Finding the Largest \( k \)**:
+   We need to find the largest \( k \) such that \( 2a + k - 1 \) is an integer and \( a \) is a positive integer. Since \( 2a + k - 1 \) must be a positive integer, we have:
+   \(
+   2a + k - 1 > 0 \implies 2a > 1 - k \implies a > \frac{1 - k}{2}
+   \)
+   For \( a \) to be a positive integer, \( \frac{1 - k}{2} \) must be less than 0, which implies \( k > 1 \).
+
+4. **Checking the Largest Divisors**:
+   We start with the largest divisors and check if they satisfy the conditions:
+   - For \( k = 354294 \):
+     \(
+     2a + 354294 - 1 = 2 \implies 2a = 2 - 354293 \implies 2a = -354291 \quad (\text{not possible})
+     \)
+   - For \( k = 177147 \):
+     \(
+     2a + 177147 - 1 = 2 \implies 2a = 2 - 177146 \implies 2a = -177144 \quad (\text{not possible})
+     \)
+   - For \( k = 118098 \):
+     \(
+     2a + 118098 - 1 = 2 \implies 2a = 2 - 118097 \implies 2a = -118095 \quad (\text{not possible})
+     \)
+   - For \( k = 59049 \):
+     \(
+     2a + 59049 - 1 = 2 \implies 2a = 2 - 59048 \implies 2a = -59046 \quad (\text{not possible})
+     \)
+   - For \( k = 39366 \):
+     \(
+     2a + 39366 - 1 = 2 \implies 2a = 2 - 39365 \implies 2a = -39363 \quad (\text{not possible})
+     \)
+   - For \( k = 2187 \):
+     \(
+     2a + 2187 - 1 = 2 \implies 2a = 2 - 2186 \implies 2a = -2184 \quad (\text{not possible})
+     \)
+   - For \( k = 1458 \):
+     \(
+     2a + 1458 - 1 = 2 \implies 2a = 2 - 1457 \implies 2a = -1455 \quad (\text{not possible})
+     \)
+   - For \( k = 729 \):
+     \(
+     2a + 729 - 1 = 2 \implies 2a = 2 - 728 \implies 2a = -726 \quad (\text{not possible})
+     \)
+   - For \( k = 486 \):
+     \(
+     2a + 486 - 1 = 2 \implies 2a = 2 - 485 \implies 2a = -483 \quad (\text{not possible})
+     \)
+   - For \( k = 243 \):
+     \(
+     2a + 243 - 1 = 2 \implies 2a = 2 - 242 \implies 2a = -240 \quad (\text{not possible})
+     \)
+   - For \( k = 162 \):
+     \(
+     2a + 162 - 1 = 2 \implies 2a = 2 - 161 \implies 2a = -159 \quad (\text{not possible})
+     \)
+   - For \( k = 81 \):
+     \(
+     2a + 81 - 1 = 2 \implies 2a = 2 - 80 \implies 2a = -78 \quad (\text{not possible})
+     \)
+   - For \( k = 54 \):
+     \(
+     2a + 54 - 1 = 2 \implies 2a = 2 - 53 \implies 2a = -51 \quad (\text{not possible})
+     \)
+   - For \( k = 27 \):
+     \(
+     2a + 27 - 1 = 2 \implies 2a = 2 - 26 \implies 2a = -24 \quad (\text{not possible})
+     \)
+   - For \( k = 18 \):
+     \(
+     2a + 18 - 1 = 2 \implies 2a = 2 - 17 \implies 2a = -15 \quad (\text{not possible})
+     \)
+   - For \( k = 9 \):
+     \(
+     2a + 9 - 1 = 2 \implies 2a = 2 - 8 \implies 2a = -6 \quad (\text{not possible})
+     \)
+   - For \( k = 6 \):
+     \(
+     2a + 6 - 1 = 2 \implies 2a = 2 - 5 \implies 2a = -3 \quad (\text{not possible})
+     \)
+   - For \( k = 3 \):
+     \(
+     2a + 3 - 1 = 2 \implies 2a = 2 - 2 \implies 2a = 0 \implies a = 0 \quad (\text{not possible})
+     \)
+   - For \( k = 2 \):
+     \(
+     2a + 2 - 1 = 2 \implies 2a = 2 - 1 \implies 2a = 1 \implies a = \frac{1}{2} \quad (\text{not possible})
+     \)",

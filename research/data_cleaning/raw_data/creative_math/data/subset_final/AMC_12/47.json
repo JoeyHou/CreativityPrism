@@ -1,0 +1,10 @@
+{
+  "competition_id": "2003_AMC_12B_Problems",
+  "problem_id": 19,
+  "difficulty": 3,
+  "problem": "Let $S$ be the set of permutations of the sequence $1,2,3,4,5$ for which the first term is not $1$. A permutation is chosen randomly from $S$. The probability that the second term is $2$, in lowest terms, is $a/b$. What is $a+b$? \n$\\mathrm{(A)}\\ 5 \\qquad\\mathrm{(B)}\\ 6 \\qquad\\mathrm{(C)}\\ 11 \\qquad\\mathrm{(D)}\\ 16 \\qquad\\mathrm{(E)}\\ 19$",
+  "solutions": {
+    "Solution": "There are $4$ choices for the first element of $S$, and for each of these choices there are $4!$ ways to arrange the remaining elements. If the second element must be $2$, then there are only $3$ choices for the first element and $3!$ ways to arrange the remaining elements. Hence the answer is $\\frac{3 \\cdot 3!}{4 \\cdot 4!} = \\frac {18}{96} = \\frac{3}{16}$, and $a+b=19 \\Rightarrow \\mathrm{(E)}$.",
+    "Solution 2": "There is a $\\frac {1}{4}$ chance that the number $1$ is the second term. Let $x$ be the chance that $2$ will be the second term. Since $3, 4,$ and $5$ are in similar situations as $2$, this becomes $\\frac {1}{4} + 4x = 1$\nSolving for $x$, we find it equals $\\frac {3}{16}$, therefore $3 + 16 = 19 \\Rightarrow \\mathrm{(E)}$"
+  }
+}

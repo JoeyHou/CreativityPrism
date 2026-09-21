@@ -1,0 +1,11 @@
+{
+  "competition_id": "2008_AIME_II_Problems",
+  "problem_id": 1,
+  "difficulty": 3,
+  "problem": "Let $N = 100^2 + 99^2 - 98^2 - 97^2 + 96^2 + \\cdots + 4^2 + 3^2 - 2^2 - 1^2$, where the additions and subtractions alternate in pairs. Find the remainder when $N$ is divided by $1000$.",
+  "solutions": {
+    "Solution 1": "Rewriting this sequence with more terms, we have\nFactoring this expression yields\nNext, we get\nThen,\nDividing $10100$ by $1000$ yields a remainder of $\\boxed{100}$.",
+    "Solution 2": "Since we want the remainder when $N$ is divided by $1000$, we may ignore the $100^2$ term. Then, applying the difference of squares factorization to consecutive terms,",
+    "Solution 3": "By observation, we realize that the sequence \\[(a+3)^2 + (a+2)^2 - (a+1)^2 - a^2\\] alternates every 4 terms. Simplifying, we get \\[(a+3)^2 + (a+2)^2 - (a+1)^2 - a^2 = 8a + 12\\], turning $N$ into a arithmetic sequence with 25 terms, them being $1, 5, 9, \\dots ,97$, as the series $8a + 12$ alternates every 4 terms.\nApplying the sum of arithmetic sequence formula, we get\nSo the answer would be \\[\\frac{10100}{1000} = \\boxed{100}\\].\n"
+  }
+}

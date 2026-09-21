@@ -1,0 +1,9 @@
+{
+  "competition_id": "1979_IMO_Problems",
+  "problem_id": 5,
+  "difficulty": 8,
+  "problem": "Determine all real numbers a for which there exists non-negative reals $x_{1}, \\ldots, x_{5}$ which satisfy the relations $\\sum_{k=1}^{5} kx_{k}=a,$ $\\sum_{k=1}^{5} k^{3}x_{k}=a^{2},$ $\\sum_{k=1}^{5} k^{5}x_{k}=a^{3}.$",
+  "solutions": {
+    "Solution": "Let $\\Sigma_1= \\sum_{k=1}^{5} kx_{k}$, $\\Sigma_2=\\sum_{k=1}^{5} k^{3}x_{k}$ and $\\Sigma_3=\\sum_{k=1}^{5} k^{5}x_{k}$. For all pairs $i,j\\in \\mathbb{Z}$, let\\[\\Sigma(i,j)=i^2j^2\\Sigma_1-(i^2+j^2)\\Sigma_2+\\Sigma_3\\]Then we have on one hand\\[\\Sigma(i,j)=i^2j^2\\Sigma_1-(i^2+j^2)\\Sigma_2+\\Sigma_3=\\sum_{k=1}^5(i^2j^2k-(i^2+j^2)k^3+k^5)x_k =\\sum_{k=1}^5k(i^2j^2-(i^2+j^2)k^2+k^4)x_k\\]Therefore \\\\(1)\\[\\Sigma(i,j)=\\sum_{k=1}^5k(k^2-i^2)(k^2-j^2)x_k\\]and on the other hand \\\\ (2)\\[\\Sigma(i,j)=i^2j^2a-(i^2+j^2)a^2+a^3=a(a-i^2)(a-j^2)\\]Then from (1) we have\\[\\Sigma(0,5)=\\sum_{k=1}^5k^3(k^2-5^2)x_k\\leq 0\\]and from (2)\\[\\Sigma(0,5)=a^2(a-25)\\]so $a\\in [0,25]$ Besides we also have from (1)\\[\\Sigma(0,1)=\\sum_{k=1}^5k^3(k^2-1)x_k\\geq 0\\]and from (2)\\[\\Sigma(0,1)=a^2(a-1)\\geq 0 \\implies a\\notin (0,1)\\]and for $n=1,2,3,4$\\[\\Sigma(n,n+1)=\\sum_{k=1}^5k(k^2-n^2)(k^2-(n+1)^2)x_k\\]where in the right hand we have that\\[k<n \\implies (k^2-n^2)<0, (k^2-(n+1)^2)<0\\], so\\[(k^2-n^2)(k^2-(n+1)^2)>0\\],\\[k=n,n+1 , \\implies (k^2-n^2)(k^2-(n+1)^2)=0\\]and\\[k>n \\implies (k^2-n^2)(k^2-(n+1)^2)>0\\], so\\[\\Sigma(n,n+1)\\geq 0\\]for $n=1,2,3,4$ From the latter and (2) we also have\\[\\Sigma(n,n+1)=a(a-n^2)(a-(n+1)^2))\\geq 0\\implies a\\notin (n^2,(n+1)^2)\\]So we have that\\[a\\in [0,25]-\\bigcup_{n=0}^4(n^2,(n+1^2))=\\{0,1,4,9,16,25\\}\\]\nIf $a=k^2$, $k=0,1,2,3,4,5$ take $x_k=k$, $x_j=0$ for $j\\neq k$. Then $\\Sigma_1=k^2=a$, $\\Sigma_2=k^3k=k^4=a^2$, and $\\Sigma_3=k^5k=k^6=a^3$"
+  }
+}

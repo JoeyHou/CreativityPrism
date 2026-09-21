@@ -1,0 +1,9 @@
+{
+  "competition_id": "2017_AMC_12A_Problems",
+  "problem_id": 21,
+  "difficulty": 4,
+  "problem": "A set $S$ is constructed as follows. To begin, $S = \\{0,10\\}$. Repeatedly, as long as possible, if $x$ is an integer root of some polynomial $a_{n}x^n + a_{n-1}x^{n-1} + \\dots + a_{1}x + a_0$ for some $n\\geq{1}$, all of whose coefficients $a_i$ are elements of $S$, then $x$ is put into $S$. When no more elements can be added to $S$, how many elements does $S$ have?\n$\\textbf{(A)}\\ 4 \\qquad \\textbf{(B)}\\ 5 \\qquad\\textbf{(C)}\\ 7 \\qquad\\textbf{(D)}\\ 9 \\qquad\\textbf{(E)}\\ 11$",
+  "solutions": {
+    "Solution": "At first, $S=\\{0,10\\}$.\n\\[\\begin{tabular}{r c l c l} \\(10x+10\\) & has root & \\(x=-1\\) & so now & \\(S=\\{-1,0,10\\}\\) \\\\ \\(-x^{10}-x^9-x^8-x^7-x^6-x^5-x^4-x^3-x^2-x+10\\) & has root & \\(x=1\\) & so now & \\(S=\\{-1,0,1,10\\}\\) \\\\ \\(x+10\\) & has root & \\(x=-10\\) & so now & \\(S=\\{-10,-1,0,1,10\\}\\) \\\\ \\(x^3+x-10\\) & has root & \\(x=2\\) & so now & \\(S=\\{-10,-1,0,1,2,10\\}\\) \\\\ \\(x+2\\) & has root & \\(x=-2\\) & so now & \\(S=\\{-10,-2,-1,0,1,2,10\\}\\) \\\\ \\(2x-10\\) & has root & \\(x=5\\) & so now & \\(S=\\{-10,-2,-1,0,1,2,5,10\\}\\) \\\\ \\(x+5\\) & has root & \\(x=-5\\) & so now & \\(S=\\{-10,-5,-2,-1,0,1,2,5,10\\}\\) \\end{tabular}\\]\nAt this point, no more elements can be added to $S$. To see this, let\n\\begin{align*} a_{n}x^n + a_{n-1}x^{n-1} + ... + a_{2}x^2 + a_{1}x + a_0 &= 0 \\\\ x(a_{n}x^{n-1} + a_{n-1}x^{n-2} + ... + a_{2}x + a_{1}) + a_0 &= 0 \\\\ x(a_{n}x^{n-1} + a_{n-1}x^{n-2} + ... + a_{2}x + a_{1}) &= -a_0 \\end{align*}\nwith each $a_i$ in $S$. $x$ is a factor of $a_0$, and $a_0$ is in $S$, so $x$ has to be a factor of some element in $S$. There are no such integers left, so there can be no more additional elements. $\\{-10,-5,-2,-1,0,1,2,5,10\\}$ has $9$ elements $\\to \\boxed{\\textbf{(D)}}$"
+  }
+}

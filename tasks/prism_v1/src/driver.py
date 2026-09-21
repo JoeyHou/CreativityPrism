@@ -1,0 +1,164 @@
+from abc import ABC, abstractmethod
+import os
+
+from src.utils.api_wrapper import ModelWrapper
+from src.utils.helpers import load_json
+
+class Driver(ABC):
+    
+    def __init__(self, config = {}):
+        super().__init__()
+
+        # 0. basic setups
+        self.config = config 
+        for key in config:
+            setattr(self, key, config[key])
+        self.logger = config['logger']
+
+        # 1. initialze class info
+        self.open_source_models = {
+            "Qwen2.5-1.5B-Instruct": {
+                "hf_dir": "Qwen/Qwen2.5-1.5B-Instruct",
+                "max_model_len": 32000
+            },
+            "mistral_7b_instruct": {
+                "hf_dir": "mistralai/Mistral-7B-Instruct-v0.3"
+            },
+            "llama3_8b_instruct": {
+                "hf_dir": "meta-llama/Llama-3.1-8B-Instruct",
+            },
+            "llama3_70b_instruct": {
+                "hf_dir": "meta-llama/Llama-3.3-70B-Instruct",
+                "max_model_len": 8000
+            },
+            "qwen_7b_instruct": {
+                "hf_dir": "Qwen/Qwen2.5-7B-Instruct"
+            },
+            "qwen_32b_instruct": {
+                "hf_dir": "Qwen/Qwen2.5-32B-Instruct",
+                "max_model_len": 8000
+            },
+            "qwen_72b_instruct": {
+                "hf_dir": "Qwen/Qwen2.5-72B-Instruct",
+                "max_model_len": 8000
+            },
+            "qwen_72b_instruct_long": {
+                "hf_dir": "Qwen/Qwen2.5-72B-Instruct",
+                "max_model_len": 12000
+            },
+            "deepseek_llama_70b": {
+                "hf_dir": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+                "max_model_len": 8000
+            },
+            "deepseek_qwen_32b": {
+                "hf_dir": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+                "max_model_len": 8000
+            },
+            "deepseek_qwen_7b": {
+                "hf_dir": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+            },
+            "olmo_7b": {
+                "hf_dir": "allenai/OLMo-2-1124-7B-Instruct"
+            },
+            "olmo_13b": {
+                "hf_dir": "allenai/OLMo-2-1124-13B-Instruct"
+            },
+            "mistral_small_24b": {
+                "hf_dir": "mistralai/Mistral-Small-24B-Instruct-2501"
+            },
+            "mixtral_8x7b": {
+                "hf_dir": "mistralai/Mixtral-8x7B-Instruct-v0.1"
+            },
+            "olmo_13b_dpo": {
+                "hf_dir": "allenai/OLMo-2-1124-13B-DPO"
+            },
+            "olmo_13b_sft": {
+                "hf_dir": "allenai/OLMo-2-1124-13B-SFT"
+            },
+        }
+        # Credentials: prefer the path the runner exports (CREATIVITYPRISM_API_KEYS),
+        # fall back to the historical task-local ./api_keys.json when it is unset or
+        # points at a file that does not exist.
+        _api_keys_path = os.environ.get('CREATIVITYPRISM_API_KEYS', '')
+        if not _api_keys_path or not os.path.isfile(_api_keys_path):
+            _api_keys_path = './api_keys.json'
+        # load_json returns {} for a file that is not there. Remember which it
+        # was: an absent credentials file and an unknown model name produce the
+        # same "not in the registry" symptom otherwise, and they need opposite
+        # fixes (export CREATIVITYPRISM_API_KEYS vs. correct the config).
+        self._api_keys_path = _api_keys_path
+        self._api_keys_found = os.path.isfile(_api_keys_path)
+        self.api_models = load_json(_api_keys_path)
+        self.parsing_output_len = 256 # length limit of parsing output 
+        self.local_parsing_model = 'Qwen/Qwen2.5-7B-Instruct'
+        self.test_size = config.get('test_size', 10e5) # test_size is large by default
+        
+        # 2. initialize llm
+        #
+        # Not every stage needs one. creativity_index scores by querying an n-gram
+        # index over HTTP and dat scores against GloVe vectors; loading a 7B model,
+        # or demanding an API key, just to reach that code would be wrong. A config
+        # that sets no model_name gets no model, and any task that then tries to
+        # generate fails on `self.llm is None` rather than silently doing nothing.
+        if not getattr(self, 'model_name', None):
+            self.use_open_model = False
+            self.api_key = ''
+            self.llm = None
+            self.sampling_params = None
+        elif self.model_name in self.open_source_models:
+            # Imported here so API-only runs need neither vLLM nor a GPU.
+            from vllm import LLM, SamplingParams
+            import torch
+
+            self.use_open_model = True
+            self.api_key = ''
+            hf_dir = self.open_source_models[self.model_name]['hf_dir']
+            max_model_len = self.open_source_models[self.model_name].get('max_model_len', None)
+            self.llm = LLM(
+                model=hf_dir, 
+                tensor_parallel_size=torch.cuda.device_count(), 
+                dtype="bfloat16", 
+                max_model_len=max_model_len
+            )
+            # top_k is -1 (disabled) unless a task asks for it: TTCT's original
+            # script pinned 50 and the paper's other tasks say nothing about it,
+            # so it has to be expressible per task rather than baked in here.
+            self.sampling_params = SamplingParams(
+                temperature = config.get("temperature", 0.75),
+                top_p = config.get("top_p", 1),
+                top_k = config.get("top_k", -1),
+                max_tokens = config.get("max_tokens", 4096)
+            )
+        elif self.model_name in self.api_models:
+            self.use_open_model = False
+            self.api_key = self.api_models[self.model_name]
+            self.llm = ModelWrapper(self.model_name, self.api_key)
+            self.sampling_params = None 
+            self.api_llm_config = {
+                "max_tokens": config.get("max_tokens", 1024),
+            }
+        elif not self._api_keys_found:
+            # Say the true cause. Falling through to the message below would
+            # blame the model name for what is really a missing file, and send
+            # someone editing configs when the fix is one export.
+            raise FileNotFoundError(
+                "no credentials file at {!r}, so no API model can be resolved -- "
+                "model_name {!r} may well be fine. Set CREATIVITYPRISM_API_KEYS to "
+                "the keys file, or run from a directory that has ./api_keys.json.".format(
+                    self._api_keys_path, self.model_name
+                )
+            )
+        else:
+            raise NotImplementedError(
+                "model_name {!r} is in neither registry. Open-weight names live in "
+                "Driver.open_source_models ({} of them); the credentials file {!r} "
+                "holds {} API name(s). Omit model_name entirely for a stage that "
+                "needs no model at all.".format(
+                    self.model_name, len(self.open_source_models),
+                    self._api_keys_path, len(self.api_models)
+                )
+            )
+        
+        # 3. ending
+        self.logger.debug('config:' + str(config))
+        self.logger.debug('=> Done initialization!')

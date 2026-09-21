@@ -1,0 +1,9 @@
+{
+  "competition_id": "2014_AMC_10A_Problems",
+  "problem_id": 3,
+  "difficulty": 1,
+  "problem": "Bridget bakes 48 loaves of bread for her bakery. She sells half of them in the morning for $\\textdollar 2.50$ each. In the afternoon she sells two thirds of what she has left, and because they are not fresh, she charges only half price. In the late afternoon she sells the remaining loaves at a dollar each. Each loaf costs $\\textdollar 0.75$ for her to make. In dollars, what is her profit for the day?\n$\\textbf{(A)}\\ 24\\qquad\\textbf{(B)}\\ 36\\qquad\\textbf{(C)}\\ 44\\qquad\\textbf{(D)}\\ 48\\qquad\\textbf{(E)}\\ 52$",
+  "solutions": {
+    "Solution": "She first sells one-half of her $48$ loaves, or $\\frac{48}{2}=24$ loaves. Each loaf sells for $\\textdollar 2.50$, so her total earnings in the morning is equal to \\[24\\cdot \\textdollar 2.50 = \\textdollar 60\\]\nThis leaves 24 loaves left, and Bridget will sell $\\dfrac{2}{3}\\times 24=16$ of them for a price of $\\textdollar\\frac{2.50}{2}=\\textdollar 1.25$. Thus, her total earnings for the afternoon is \\[16\\cdot \\textdollar 1.25  = \\textdollar 20\\]\nFinally, Bridget will sell the remaining $24-16=8$ loaves for a dollar each. This is a total of $\\textdollar 1\\cdot 8 = \\textdollar 8$\nThe total amount of money she makes is equal to $60+20+8=\\textdollar 88$.\nHowever, since Bridget spends $\\textdollar 0.75$ making each loaf of bread, the total cost to make the bread is equal to  $\\textdollar 0.75\\cdot48=\\textdollar 36$.\nHer total profit is the amount of money she spent subtracted from the amount of money she made, which is \\[88-36=52\\implies\\boxed{\\textbf{(E)} \\ 52}\\]"
+  }
+}

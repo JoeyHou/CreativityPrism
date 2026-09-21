@@ -1,0 +1,18 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "creativity_index",
+            "run_id": "ci_subset10",
+            "model_name": "gpt-4.1-mini",
+            "input_data_dir": "data/processed/creativity_index",
+            "_domains": "The three subsets in the paper: book, poem, speech.",
+            "domains": ["book", "poem", "speech"],
+            "test_size": 10,
+
+            "temperature": 1,
+            "top_p": 0.9,
+            "max_tokens": 288
+        }
+    ]
+}

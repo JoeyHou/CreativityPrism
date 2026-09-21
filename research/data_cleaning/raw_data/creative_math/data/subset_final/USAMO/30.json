@@ -1,0 +1,9 @@
+{
+  "competition_id": "1987_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "Find all solutions to $(m^2+n)(m + n^2)= (m - n)^3$, where m and n are non-zero integers.",
+  "solutions": {
+    "Solution": "Expanding both sides, \\[m^3+mn+m^2n^2+n^3=m^3-3m^2n+3mn^2-n^3\\]\nNote that $m^3$ can be canceled and as $n \\neq 0$, $n$ can be factored out.\nWriting this as a quadratic equation in $n$: \\[2n^2+(m^2-3m)n+(3m^2+m)=0\\].\nThe discriminant $b^2-4ac$ equals \\[(m^2-3m)^2-8(3m^2+m)\\]\n\\[=m^4-6m^3-15m^2-8m\\], which we want to be a perfect square.\nMiraculously, this factors as $m(m-8)(m+1)^2$. This is square iff (if and only if) $m^2-8m$ is square or $m+1=0$. It can be checked that the only nonzero $m$ that work are $-1, 8, 9$. Finally, plugging this in and discarding extraneous roots gives all possible ordered pairs $(m, n)$ as \\[\\{(-1,-1),(8,-10),(9,-6),(9,-21)\\}\\]."
+  }
+}

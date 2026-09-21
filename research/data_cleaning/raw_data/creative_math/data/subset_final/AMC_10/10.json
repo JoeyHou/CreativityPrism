@@ -1,0 +1,9 @@
+{
+  "competition_id": "2016_AMC_10A_Problems",
+  "problem_id": 16,
+  "difficulty": 2,
+  "problem": "A triangle with vertices $A(0, 2)$, $B(-3, 2)$, and $C(-3, 0)$ is reflected about the $x$-axis, then the image $\\triangle A'B'C'$ is rotated counterclockwise about the origin by $90^{\\circ}$ to produce $\\triangle A''B''C''$. Which of the following transformations will return $\\triangle A''B''C''$ to $\\triangle ABC$?\n$\\textbf{(A)}$ counterclockwise rotation about the origin by $90^{\\circ}$. \n$\\textbf{(B)}$ clockwise rotation about the origin by $90^{\\circ}$. \n$\\textbf{(C)}$ reflection about the $x$-axis \n$\\textbf{(D)}$ reflection about the line $y = x$\n$\\textbf{(E)}$ reflection about the $y$-axis.",
+  "solutions": {
+    "Solution": "Consider a point $(x, y)$. Reflecting it about the $x$-axis will map it to $(x, -y)$, and rotating it counterclockwise about the origin by $90^{\\circ}$ will map it to $(y, x)$. The operation that undoes this is a reflection about the $y = x$, so the answer is $\\boxed{\\textbf{(D)}}$."
+  }
+}

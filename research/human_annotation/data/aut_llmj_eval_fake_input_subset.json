@@ -1,0 +1,2682 @@
+[
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "bottle-0",
+            "eval_func": null,
+            "human_score": 1.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "water bottle"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "bottle-1",
+            "eval_func": null,
+            "human_score": 1.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "drink on it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "bottle-2",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "paint stamp"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "bottle-3",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use as flower pot"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "bottle-4",
+            "eval_func": null,
+            "human_score": 4.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use multiple bottles to make a raft"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "paperclip-0",
+            "eval_func": null,
+            "human_score": 2.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use to unlock door"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "paperclip-1",
+            "eval_func": null,
+            "human_score": 2.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to unhook and scrape the ground around flowers"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "paperclip-2",
+            "eval_func": null,
+            "human_score": 4.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Use as self locking anchor in stonework"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "paperclip-3",
+            "eval_func": null,
+            "human_score": 1.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "ornaments"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "paperclip-4",
+            "eval_func": null,
+            "human_score": 1.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "clip"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "spoon-0",
+            "eval_func": null,
+            "human_score": 2.1
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "a shovel"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "spoon-1",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "To make it into a liquid if it is a metal spoon so I could make cool things like a small metal-looking soccer ball."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "spoon-2",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "glue it on a fork"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "spoon-3",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "backscratcher"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "spoon-4",
+            "eval_func": null,
+            "human_score": 2.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "using it for drums"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "spoon-5",
+            "eval_func": null,
+            "human_score": 2.1
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "a shovel"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shovel-0",
+            "eval_func": null,
+            "human_score": 2.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "melt the metal and repurpose it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shovel-1",
+            "eval_func": null,
+            "human_score": 2.2
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "hit something"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shovel-2",
+            "eval_func": null,
+            "human_score": 2.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "support"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shovel-3",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "sit on it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shovel-4",
+            "eval_func": null,
+            "human_score": 1.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "a plow"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pants-0",
+            "eval_func": null,
+            "human_score": 2.2
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use fabric for different project"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pants-1",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "cover up an open wound"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pants-2",
+            "eval_func": null,
+            "human_score": 3.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "fill with air as a flotation device"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pants-3",
+            "eval_func": null,
+            "human_score": 3.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "cut and make jewelry"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pants-4",
+            "eval_func": null,
+            "human_score": 2.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use them as a makeshift rope to tie something up"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "knife-0",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "prop for favorite teddy bear"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "knife-1",
+            "eval_func": null,
+            "human_score": 1.2
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "dig in gardens"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "knife-2",
+            "eval_func": null,
+            "human_score": 1.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to try to get a door open"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "knife-3",
+            "eval_func": null,
+            "human_score": 1.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "playing games such as \"darts\""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "knife-4",
+            "eval_func": null,
+            "human_score": 1.7000000000000002
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "using it as a spoon or fork because you don't have one"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "brick-0",
+            "eval_func": null,
+            "human_score": 2.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "brick",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Anchor"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "brick-1",
+            "eval_func": null,
+            "human_score": 1.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "brick",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "something women can carry around as a rape weapon  instead of pepper spray"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "brick-2",
+            "eval_func": null,
+            "human_score": 1.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "brick",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "buddy you can dress up"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "brick-4",
+            "eval_func": null,
+            "human_score": 1.7000000000000002
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "brick",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "arm weight"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "box-0",
+            "eval_func": null,
+            "human_score": 1.1
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Shelter"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "box-1",
+            "eval_func": null,
+            "human_score": 1.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "object head"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "box-2",
+            "eval_func": null,
+            "human_score": 1.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "football"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "box-3",
+            "eval_func": null,
+            "human_score": 1.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "football"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "box-4",
+            "eval_func": null,
+            "human_score": 2.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "as a spaceship"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "tire-0",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "garden frame for veggie's"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "tire-1",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "water tube"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "tire-2",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to use for a swing"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "tire-3",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "roll it down hills for a game"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "tire-4",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "paint and put on wall as decorative"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "tire-22",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to use for a swing"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "tire-29",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to use for a swing"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "rope-0",
+            "eval_func": null,
+            "human_score": 1.7000000000000002
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "making a necklace"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "rope-1",
+            "eval_func": null,
+            "human_score": 1.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "us it for tug of war"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "rope-2",
+            "eval_func": null,
+            "human_score": 3.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "erotic"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "rope-3",
+            "eval_func": null,
+            "human_score": 1.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "whipping someone with it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "rope-4",
+            "eval_func": null,
+            "human_score": 1.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Tie your dog to a tree or post"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "rope-22",
+            "eval_func": null,
+            "human_score": 1.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "whipping someone with it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-0",
+            "eval_func": null,
+            "human_score": 1.9
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "put it on your feet"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-1",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "put eyes on it and now you have a puppet."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-2",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "a doll"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-3",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "put eyes on it and now you have a puppet."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-4",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to use it like a backpack or store money in it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-23",
+            "eval_func": null,
+            "human_score": 1.9
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "put it on your feet"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-25",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "a doll"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "sock-26",
+            "eval_func": null,
+            "human_score": 1.9
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "put it on your feet"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "book-0",
+            "eval_func": null,
+            "human_score": 3.2
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "wrapping paper"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "book-1",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "smush something"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "book-2",
+            "eval_func": null,
+            "human_score": 2.2
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "as a doorstop"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "book-3",
+            "eval_func": null,
+            "human_score": 3.2
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "cover your head from the sun"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "book-4",
+            "eval_func": null,
+            "human_score": 3.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "backpack armor at school shooting"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-0",
+            "eval_func": null,
+            "human_score": 3.9
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Melt the toothbrush on each side to make it sharp and you can make a DIY knife."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-1",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Use it for painting"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-2",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use it to brush your hair"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-3",
+            "eval_func": null,
+            "human_score": 4.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "people use sandpaper so instead of using sandpaper, you can use a toothbrush to smoothen wood"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-4",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to brush your pet's fur"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-17",
+            "eval_func": null,
+            "human_score": 4.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "people use sandpaper so instead of using sandpaper, you can use a toothbrush to smoothen wood"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-19",
+            "eval_func": null,
+            "human_score": 3.9
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Melt the toothbrush on each side to make it sharp and you can make a DIY knife."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "toothbrush-26",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to brush your pet's fur"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "table-0",
+            "eval_func": null,
+            "human_score": 2.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "gather"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "table-1",
+            "eval_func": null,
+            "human_score": 3.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use to start a fire"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "table-2",
+            "eval_func": null,
+            "human_score": 1.7000000000000002
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "storing stuff on"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "table-3",
+            "eval_func": null,
+            "human_score": 3.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "bullet shield"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "table-4",
+            "eval_func": null,
+            "human_score": 1.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "putting objects"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "table-6",
+            "eval_func": null,
+            "human_score": 3.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use to start a fire"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "table-37",
+            "eval_func": null,
+            "human_score": 1.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "putting objects"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-0",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Painting it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-1",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Painting it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-2",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can make it into a bee"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-3",
+            "eval_func": null,
+            "human_score": 2.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "You could use it as a trap for insects that bother you"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-4",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "as a firecracker"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-10",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Painting it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-24",
+            "eval_func": null,
+            "human_score": 2.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "You could use it as a trap for insects that bother you"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "lightbulb-37",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can make it into a bee"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-0",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "as a toothpick"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-1",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "fix things"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-2",
+            "eval_func": null,
+            "human_score": 2.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "puncture"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-3",
+            "eval_func": null,
+            "human_score": 1.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use as"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-4",
+            "eval_func": null,
+            "human_score": 4.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "barbie hair brush"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-7",
+            "eval_func": null,
+            "human_score": 2.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "puncture"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-15",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "as a toothpick"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-21",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "as a toothpick"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-23",
+            "eval_func": null,
+            "human_score": 2.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "puncture"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-27",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "as a toothpick"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "fork-34",
+            "eval_func": null,
+            "human_score": 4.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "barbie hair brush"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-0",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "A bow and arrow"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-1",
+            "eval_func": null,
+            "human_score": 1.9
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "draw on it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-2",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "seesaw"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-3",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Use it to type your keyboard keys"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-4",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "A surprising use for a pencil would be to make them trees"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-16",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Use it to type your keyboard keys"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-24",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Use it to type your keyboard keys"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-27",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "A bow and arrow"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "pencil-33",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "A surprising use for a pencil would be to make them trees"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "hat-0",
+            "eval_func": null,
+            "human_score": 4.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to transform it into a foot spa"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "hat-1",
+            "eval_func": null,
+            "human_score": 3.2
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "A cover for a big light."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "hat-2",
+            "eval_func": null,
+            "human_score": 2.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Wear it inside-out"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "hat-3",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can make a hat turn into a bed for your pet by flipping it over where the head goes then put little blankets in the and put your pet in there"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "hat-4",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Eat your food with it."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "hat-25",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can make a hat turn into a bed for your pet by flipping it over where the head goes then put little blankets in the and put your pet in there"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "hat-29",
+            "eval_func": null,
+            "human_score": 2.7
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "Eat your food with it."
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-0",
+            "eval_func": null,
+            "human_score": 4.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "use as a hammer"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-1",
+            "eval_func": null,
+            "human_score": 3.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "hang several on the wall and use them to store or display smaller items"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-2",
+            "eval_func": null,
+            "human_score": 2.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "hit someone"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-3",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to throw at someone"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-4",
+            "eval_func": null,
+            "human_score": 1.7000000000000002
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "donate"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-18",
+            "eval_func": null,
+            "human_score": 3.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "hang several on the wall and use them to store or display smaller items"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-28",
+            "eval_func": null,
+            "human_score": 2.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to throw at someone"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-35",
+            "eval_func": null,
+            "human_score": 2.8
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "hit someone"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "shoe-36",
+            "eval_func": null,
+            "human_score": 3.5
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "hang several on the wall and use them to store or display smaller items"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-0",
+            "eval_func": null,
+            "human_score": 3.3
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "making it a monster"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-1",
+            "eval_func": null,
+            "human_score": 2.1
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to roll on it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-2",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "getting clear strings and taping it to a ceiling and the ball so it can look like they're floating"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-3",
+            "eval_func": null,
+            "human_score": 1.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can bounce it so high like a bounce ball"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-4",
+            "eval_func": null,
+            "human_score": 3.0
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can attach more and more balls and you can make your favorite thing out of it and color it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-25",
+            "eval_func": null,
+            "human_score": 3.6
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "getting clear strings and taping it to a ceiling and the ball so it can look like they're floating"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-28",
+            "eval_func": null,
+            "human_score": 1.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can bounce it so high like a bounce ball"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-36",
+            "eval_func": null,
+            "human_score": 2.1
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "to roll on it"
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": "ball-38",
+            "eval_func": null,
+            "human_score": 1.4
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": "you can bounce it so high like a bounce ball"
+        }
+    }
+]

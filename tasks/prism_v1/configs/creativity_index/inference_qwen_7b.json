@@ -1,0 +1,17 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "creativity_index",
+            "run_id": "ci_smoke_open",
+            "model_name": "qwen_7b_instruct",
+            "input_data_dir": "data/processed/creativity_index",
+            "domains": ["book"],
+            "test_size": 2,
+
+            "temperature": 1,
+            "top_p": 0.9,
+            "max_tokens": 288
+        }
+    ]
+}

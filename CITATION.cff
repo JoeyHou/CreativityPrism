@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use CreativityPrism, please cite the paper below."
+title: "CreativityPrism: A Cross-Domain Evaluation Framework for Large Language Model Creativity"
+abstract: >-
+  A cross-domain benchmark for large language model creativity, spanning eight
+  tasks across divergent thinking, creative writing, mathematical creativity,
+  code creativity, and originality measurement.
+type: software
+license: Apache-2.0
+authors:
+  - given-names: "Zhaoyi Joey"
+    family-names: "Hou"
+    affiliation: "University of Pittsburgh"
+    email: "joey.hou@pitt.edu"
+  - given-names: "Bowei Alvin"
+    family-names: "Zhang"
+    affiliation: "Johns Hopkins University"
+  - given-names: "Yining"
+    family-names: "Lu"
+    affiliation: "University of Notre Dame"
+  - given-names: "Bhiman Kumar"
+    family-names: "Baghel"
+    affiliation: "University of Pittsburgh"
+  - given-names: "Anneliese"
+    family-names: "Brei"
+    affiliation: "University of North Carolina at Chapel Hill"
+  - given-names: "Ximing"
+    family-names: "Lu"
+    affiliation: "University of Washington"
+  - given-names: "Meng"
+    family-names: "Jiang"
+    affiliation: "University of Notre Dame"
+  - given-names: "Faeze"
+    family-names: "Brahman"
+    affiliation: "Allen Institute for Artificial Intelligence"
+  - given-names: "Snigdha"
+    family-names: "Chaturvedi"
+    affiliation: "University of North Carolina at Chapel Hill"
+  - given-names: "Haw-Shiuan"
+    family-names: "Chang"
+    affiliation: "University of Massachusetts Amherst"
+  - given-names: "Daniel"
+    family-names: "Khashabi"
+    affiliation: "Johns Hopkins University"
+  - given-names: "Xiang Lorraine"
+    family-names: "Li"
+    affiliation: "University of Pittsburgh"
+    email: "xianglli@pitt.edu"
+keywords:
+  - creativity
+  - large language models
+  - benchmark
+  - evaluation

@@ -1,0 +1,10 @@
+{
+  "competition_id": "2013_AMC_10A_Problems",
+  "problem_id": 10,
+  "difficulty": 2,
+  "problem": "A flower bouquet contains pink roses, red roses, pink carnations, and red carnations.  One third of the pink flowers are roses, three fourths of the red flowers are carnations, and six tenths of the flowers are pink.  What percent of the flowers are carnations?\n\n$\\textbf{(A)}\\ 15 \\qquad\\textbf{(B)}\\ 30  \\qquad\\textbf{(C)}\\ 40 \\qquad\\textbf{(D)}\\ 60 \\qquad\\textbf{(E)}\\ 70$",
+  "solutions": {
+    "Solution 1": "Let the total amount of flowers be $x$.  Thus, the number of pink flowers is $0.6x$, and the number of red flowers is $0.4x$.  The number of pink carnations is $\\frac{2}{3}(0.6x) = 0.4x$ and the number of red carnations is $\\frac{3}{4}(0.4x) = 0.3x$.  Summing these, the total number of carnations is $0.4x+0.3x=0.7x$.  Dividing, we see that  $\\frac{0.7x}{x} = 0.7 = \\boxed{\\textbf{(E) }70\\%}$",
+    "Solution 2": "We have $\\dfrac15$ for pink roses,$1-\\dfrac6{10}=\\dfrac4{10}=\\dfrac25$ red flowers, $\\dfrac6{10}-\\dfrac15=\\dfrac35-\\dfrac15=\\dfrac25$ pink carnations, $\\dfrac25\\cdot \\dfrac34=\\dfrac6{20}=\\dfrac3{10}$ red carnations we add them up to get $\\dfrac25+\\dfrac3{10}=\\dfrac7{10}=70\\%$ so our final answer is  or $\\boxed{(E)70\\%}$"
+  }
+}

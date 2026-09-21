@@ -1,0 +1,9 @@
+{
+  "competition_id": "1987_AJHSME_Problems",
+  "problem_id": 17,
+  "difficulty": 1.5,
+  "problem": "Abby, Bret, Carl, and Dana are seated in a row of four seats numbered #1 to #4.  Joe looks at them and says:\n Bret is next to Carl.\n Abby is between Bret and Carl. \nHowever each one of Joe's statements is false.  Bret is actually sitting in seat #3.  Who is sitting in seat #2?\n$\\text{(A)}\\ \\text{Abby} \\qquad \\text{(B)}\\ \\text{Bret} \\qquad \\text{(C)}\\ \\text{Carl} \\qquad \\text{(D)}\\ \\text{Dana} \\qquad \\text{(E)}\\ \\text{There is not enough information to be sure.}$",
+  "solutions": {
+    "Solution": "\\[\\text{-----}\\qquad \\text{-----} \\qquad \\text{Bret} \\qquad \\text{-----}\\]\nWe know that Carl does not sit next to Bret, so he must sit in seat #1.  Since Abby is not between Bret and Carl, she must sit in seat #4.  Finally, Dana has to take the last seat available, which is #2.\n$\\boxed{\\text{D}}$"
+  }
+}

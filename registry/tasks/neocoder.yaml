@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: neocoder
+display_name: "NeoCoder"
+domain: creative_problem_solving
+folder: tasks/prism_v1
+adapter: registry/adapters/neocoder.sh
+environment: modern
+description: "Solve Codeforces problems under denial-of-prompt technique constraints."
+# --limit caps the number of problems, not prompts: each problem still runs all of its
+# denial rounds, since a partial ladder is not scoreable.
+uses_judge: false
+loader_parser: result_analysis.loader:_parse_neocoder
+limit_supported: true
+
+# See the note in aut.yaml. Apache-2.0 requires that changes be stated; upstream
+# ships no NOTICE file, so there is none to carry.
+upstream:
+  name: NeoCoder
+  url: https://github.com/JHU-CLSP/NeoCoder
+  license: Apache-2.0
+  paper: https://arxiv.org/abs/2407.09007
+  modifications: >-
+    199 problems with their per-round denial statements, 499 annotated test cases
+    executed against, and the 199 human solution techniques used as the
+    divergence reference, all reformatted to our row schema.

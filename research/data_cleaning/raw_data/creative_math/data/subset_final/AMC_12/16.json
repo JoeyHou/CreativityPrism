@@ -1,0 +1,10 @@
+{
+  "competition_id": "2008_AMC_12A_Problems",
+  "problem_id": 6,
+  "difficulty": 2,
+  "problem": "Heather compares the price of a new computer at two different stores. Store $A$ offers $15\\%$ off the sticker price followed by a $$90$ rebate, and store $B$ offers $25\\%$ off the same sticker price with no rebate. Heather saves $$15$ by buying the computer at store $A$ instead of store $B$. What is the sticker price of the computer, in dollars?\n$\\mathrm{(A)}\\ 750\\qquad\\mathrm{(B)}\\ 900\\qquad\\mathrm{(C)}\\ 1000\\qquad\\mathrm{(D)}\\ 1050\\qquad\\mathrm{(E)}\\ 1500$",
+  "solutions": {
+    "Solution 1": "Let the sticker price be $x$.\nThe price of the computer is $0.85x-90$ at store $A$ and $0.75x$ at store $B$.\nHeather saves $$15$ at store $A$, so $0.85x-90+15=0.75x$.\nSolving, we find $x=750$, and thus the answer is $\\mathrm{(A)}$.",
+    "Solution 2": "The $$ 90$ at store $A$ is $$ 15$ greater than the additional $25\\%-15\\% = 10\\%$ off at store $B$.\nThus the $10\\%$ off is equal to $$ 90$ $-$ $$ 15$ $=$ $$ 75$, and therefore the sticker price is $$ 750$."
+  }
+}

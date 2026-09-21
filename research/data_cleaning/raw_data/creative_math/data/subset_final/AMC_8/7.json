@@ -1,0 +1,9 @@
+{
+  "competition_id": "2010_AMC_8_Problems",
+  "problem_id": 9,
+  "difficulty": 1,
+  "problem": "Ryan got $80\\%$ of the problems correct on a $25$-problem test, $90\\%$ on a $40$-problem test, and $70\\%$ on a $10$-problem test. What percent of all the problems did Ryan answer correctly? \n$\\textbf{(A)}\\ 64 \\qquad\\textbf{(B)}\\ 75\\qquad\\textbf{(C)}\\ 80\\qquad\\textbf{(D)}\\ 84\\qquad\\textbf{(E)}\\ 86$",
+  "solutions": {
+    "Solution": "Ryan answered $(0.8)(25)=20$ problems correct on the first test, $(0.9)(40)=36$ on the second, and $(0.7)(10)=7$ on the third. This amounts to a total of $20+36+7=63$ problems correct. The total number of problems is $25+40+10=75.$ Therefore, the percentage is $\\dfrac{63}{75} = 84\\% \\rightarrow \\boxed{\\textbf{(D)}\\ 84}$"
+  }
+}

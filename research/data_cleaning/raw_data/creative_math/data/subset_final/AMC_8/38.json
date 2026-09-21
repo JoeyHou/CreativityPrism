@@ -1,0 +1,9 @@
+{
+  "competition_id": "1996_AJHSME_Problems",
+  "problem_id": 25,
+  "difficulty": 1.5,
+  "problem": "A point is chosen at random from within a circular region.  What is the probability that the point is closer to the center of the region than it is to the boundary of the region?\n$\\text{(A)}\\frac{1}{4} \\qquad \\text{(B)}\\frac{1}{3} \\qquad \\text{(C)}\\frac{1}{2} \\qquad \\text{(D)}\\frac{2}{3} \\qquad \\text{(E)}\\frac{3}{4}$",
+  "solutions": {
+    "Solution": "Draw a circle with a radius of $2$.  Draw a concentric circle with radius $1$.  The circumference of this inner circle is the set of all points that are $1$ from the center, and $1$ from the outer circle meaning the set of points are equidistant from the center of the circles to the outside of the big circle.  \nThe inside of smaller circle is the set of all points that are closer to the center of the region than to the boundary of the outer circle.  The \"washer\" region that is outside the circle of radius $1$, but inside the circle of radius $2$, is the set of all points that are closer to the boundary than to the center of the circle.\nIf you select a random point in a region of area $B$, the probability that the point is in a smaller subregion $A$ is the ratio $\\frac{A}{B}$.  In this case, $B = \\pi\\cdot 2^2 = 4\\pi$, and $A = \\pi\\cdot 1^2 = \\pi$, and the ratio of areas is $\\frac{\\pi}{4\\pi} = \\frac{1}{4}$, and the answer is $\\boxed{A}$."
+  }
+}

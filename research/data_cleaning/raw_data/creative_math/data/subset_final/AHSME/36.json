@@ -1,0 +1,9 @@
+{
+  "competition_id": "1958_AHSME_Problems",
+  "problem_id": 49,
+  "problem": "In the expansion of $(a + b)^n$ there are $n + 1$ dissimilar terms. The number of dissimilar terms in the expansion of $(a + b + c)^{10}$ is:\n$\\textbf{(A)}\\ 11\\qquad  \\textbf{(B)}\\ 33\\qquad  \\textbf{(C)}\\ 55\\qquad  \\textbf{(D)}\\ 66\\qquad  \\textbf{(E)}\\ 132$",
+  "solutions": {
+    "Solution": "Expand the binomial $((a+b)+c)^n$ with the binomial theorem. We have:\n\\[\\sum\\limits_{k=0}^{10} \\binom{10}{k} (a+b)^k c^{10-k}\\]\nSo for each iteration of the summation operator, we add k+1 dissimilar terms. Therefore our answer is:\n\\[\\sum\\limits_{k=0}^{10} k+1 = \\frac{11(1+11)}{2} = 66 \\to \\boxed{\\textbf{D}}\\]",
+    "Solution 2 (Stars and Bars)": "Each term in the expansion of $(a+b+c)^{10}$ will have the form $a^i \\times b^j \\times c^k$, where $0\\le i, j, k\\le 10$ and $a+b+c=10$. So, we need to find the number of triplets of nonnegative integers $(a, b, c)$ such that $a+b+c=10$. Using Stars and Bars, this value is $\\binom{12}{2}=66$."
+  }
+}

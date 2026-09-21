@@ -1,0 +1,9 @@
+{
+  "competition_id": "1978_IMO_Problems",
+  "problem_id": 1,
+  "difficulty": 6.5,
+  "problem": "Let $m$ and $n$ be positive integers such that $1 \\le m < n$. In their decimal representations, the last three digits of $1978^m$ are equal, respectively, to the last three digits of $1978^n$. Find $m$ and $n$ such that $m + n$ has its least value.",
+  "solutions": {
+    "Solution": "We have $1978^m\\equiv 1978^n\\pmod {1000}$, or $978^m-978^n=1000k$ for some positive integer $k$ (if it is not positive just do $978^n-978^m=-1000k$). Hence $978^n\\mid 1000k$. So dividing through by $978^n$ we get $978^{m-n}-1=\\frac{1000k}{978^n}$. Observe that $2\\nmid LHS$, so $2\\nmid RHS$. So since $2|| 978^n$, clearly the minimum possible value of $n$ is $3$ (and then $489^n\\mid k$). We will show later that if $n$ is minimal then $m$ is minimal. We have $978^{m-3}-1\\equiv 0\\pmod {125}\\Leftrightarrow 103^{m-3}\\equiv 1\\pmod {125}$. Hence, $m-3\\mid \\varphi(125)\\Rightarrow m-3\\mid 100$. Checking by hand we find that only $m-3=100$ works (this also shows that minimality of $m$ depends on $n$, as claimed above). So $m=103$. Consequently, $m+n=106$ with $\\boxed{(m,n)=(103,3)}$.\n"
+  }
+}

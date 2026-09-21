@@ -1,0 +1,9 @@
+{
+  "competition_id": "1992_AJHSME_Problems",
+  "problem_id": 25,
+  "difficulty": 1.5,
+  "problem": "One half of the water is poured out of a full container.  Then one third of the remainder is poured out.  Continue the process: one fourth of the remainder for the third pouring, one fifth of the remainder for the fourth pouring, etc.  After how many pourings does exactly one tenth of the original water remain?\n$\\text{(A)}\\ 6 \\qquad \\text{(B)}\\ 7 \\qquad \\text{(C)}\\ 8 \\qquad \\text{(D)}\\ 9 \\qquad \\text{(E)}\\ 10$",
+  "solutions": {
+    "Solution": "1)Model the amount left in the container as follows:\nAfter the first pour $\\frac12$ remains, after the second $\\frac12 \\times \\frac23$ remains, etc.\nThis becomes the product $\\frac12 \\times \\frac23 \\times \\frac34 \\times \\cdots \\times \\frac{9}{10}$.\nNote that the terms cancel out leaving $\\frac{1}{10}$.\nNow all that remains is to count the number of terms or pourings, as the numerators form an arithmetic sequence with a common difference of 1 and endpoints (1,9), the number of pourings is $\\boxed{\\text{(D)}\\ 9}$."
+  }
+}

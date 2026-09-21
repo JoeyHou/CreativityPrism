@@ -1,0 +1,10 @@
+{
+  "competition_id": "2022_AMC_10A_Problems",
+  "problem_id": 9,
+  "difficulty": 2,
+  "problem": "A rectangle is partitioned into $5$ regions as shown. Each region is to be painted a solid color - red, orange, yellow, blue, or green - so that regions that touch are painted different colors, and colors can be used more than once. How many different colorings are possible?\n[asy] size(5.5cm); draw((0,0)--(0,2)--(2,2)--(2,0)--cycle); draw((2,0)--(8,0)--(8,2)--(2,2)--cycle); draw((8,0)--(12,0)--(12,2)--(8,2)--cycle); draw((0,2)--(6,2)--(6,4)--(0,4)--cycle); draw((6,2)--(12,2)--(12,4)--(6,4)--cycle); [/asy]\n$\\textbf{(A) }120\\qquad\\textbf{(B) }270\\qquad\\textbf{(C) }360\\qquad\\textbf{(D) }540\\qquad\\textbf{(E) }720$",
+  "solutions": {
+    "Solution 1": "The top left rectangle can be $5$ possible colors. Then the bottom left region can only be $4$ possible colors, and the bottom middle can only be $3$ colors since it is next to the top left and bottom left. Similarly, we have $3$ choices for the top right and $3$ choices for the bottom right, which gives us a total of $5\\cdot4\\cdot3\\cdot3\\cdot3=\\boxed{\\textbf{(D) }540}$.",
+    "Solution 2 (Casework)": "Case 1: All the rectangles are different colors. It would be $5! = 120$ choices. \nCase 2: Two rectangles that are the same color. Grouping these two rectangles as one gives us $5\\cdot4\\cdot3\\cdot2 = 120$. But, you need to multiply this number by three because the same-colored rectangles can be chosen at the top left and bottom right, the top right and bottom left, or the bottom right and bottom left, which gives us a grand total of $360$.\nCase 3: We have two sets of rectangles chosen from these choices (top right & bottom left, top left & bottom right) that have the same color. However, the choice of the bottom left and bottom right does not work for this case, as the second pair would be chosen from two touching rectangles. Again, grouping the same-colored rectangles gives us $5\\cdot4\\cdot3 = 60$. \nTherefore, we have $120 + 360 + 60 = \\boxed{\\textbf{(D) }540}$."
+  }
+}

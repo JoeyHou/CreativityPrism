@@ -1,0 +1,1105 @@
+"HITId","HITTypeId","Title","Description","Keywords","Reward","CreationTime","MaxAssignments","RequesterAnnotation","AssignmentDurationInSeconds","AutoApprovalDelayInSeconds","Expiration","NumberOfSimilarHITs","LifetimeInSeconds","AssignmentId","WorkerId","AssignmentStatus","AcceptTime","SubmitTime","AutoApprovalTime","ApprovalTime","RejectionTime","RequesterFeedback","WorkTimeInSeconds","LifetimeApprovalRate","Last30DaysApprovalRate","Last7DaysApprovalRate","Input.machine_solutions","Answer.technique.Kadanes_algorithm","Answer.technique.back_tracking","Answer.technique.binary_search","Answer.technique.break_statement","Answer.technique.continue_statement","Answer.technique.depth_first_search","Answer.technique.dictionary","Answer.technique.divide_&_conquer","Answer.technique.dynamic_programming","Answer.technique.for_loop","Answer.technique.graph","Answer.technique.graph_traversal","Answer.technique.greedy_algorithm","Answer.technique.hashmap","Answer.technique.heap","Answer.technique.if_statement","Answer.technique.linked_list","Answer.technique.match_statement","Answer.technique.matrix_operation","Answer.technique.minimax","Answer.technique.misc","Answer.technique.pass_statement","Answer.technique.queue","Answer.technique.recursion","Answer.technique.set","Answer.technique.sliding_window","Answer.technique.sorting","Answer.technique.stack","Answer.technique.topological_sort","Answer.technique.tree","Answer.technique.tuple","Answer.technique.two_pointers","Answer.technique.while_loop","Answer.technique.width_first_search","Approve","Reject"
+"3UXQ63NLBT2I08RDVPYV2P63992BLR","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","31N2WW6R9B6UK5BYKOMTDDYM4XMF3P","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:17:00 PDT 2025","Thu Oct 23 12:17:04 PDT 2025","Sun Oct 26 12:17:04 PDT 2025","Sun Oct 26 12:17:49 PDT 2025","","","4","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    from collections import Counter
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UXQ63NLBT2I08RDVPYV2P63992BLR","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3P529IW9KI1B091NQUQT9ZS34J9LF5","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:48:51 PDT 2025","Sun Oct 19 18:49:00 PDT 2025","Wed Oct 22 18:49:00 PDT 2025","Wed Oct 22 18:49:49 PDT 2025","","","9","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from collections import Counter
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UXQ63NLBT2I08RDVPYV2P63992BLR","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3PZDLQMM0D1YWBV5PMINMX8R16N2CJ","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:41:58 PDT 2025","Tue Oct 14 10:42:01 PDT 2025","Fri Oct 17 10:42:01 PDT 2025","Fri Oct 17 10:42:49 PDT 2025","","","3","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from collections import Counter
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"31JUPBOOS6KZYAT6SDELBNG213HL82","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","323Q6SJS82W9EDIXZ9BVH7ZWN2ZHFT","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:38:24 PDT 2025","Fri Oct 17 12:38:31 PDT 2025","Mon Oct 20 12:38:31 PDT 2025","Mon Oct 20 12:38:49 PDT 2025","","","7","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"31JUPBOOS6KZYAT6SDELBNG213HL82","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3LPW2N6LKDIMH2VSTW5LEAX9SGS5U4","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:40:55 PDT 2025","Thu Oct 23 12:41:00 PDT 2025","Sun Oct 26 12:41:00 PDT 2025","Sun Oct 26 12:41:49 PDT 2025","","","5","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"31JUPBOOS6KZYAT6SDELBNG213HL82","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3TR2532VI9A9MQKCMGBCZE2Y7V1J6Y","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:41:08 PDT 2025","Sun Oct 19 18:41:41 PDT 2025","Wed Oct 22 18:41:41 PDT 2025","Wed Oct 22 18:41:49 PDT 2025","","","33","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3PEG1BH7BX77G29VAPMUNPTOK9XBKO","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","33C7UALJV5EPVNNWP624FS23J9R815","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:47:24 PDT 2025","Sun Oct 19 18:48:48 PDT 2025","Wed Oct 22 18:48:48 PDT 2025","Wed Oct 22 18:48:49 PDT 2025","","","84","100% (60/60)","100% (60/60)","100% (40/40)","from typing import List
+
+def solve():
+    # Type your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3PEG1BH7BX77G29VAPMUNPTOK9XBKO","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3GFK2QRXXTXZ96KXOWKMWYI6DVV5WT","A189Q7EDEDSQ34","Approved","Thu Oct 09 15:46:21 PDT 2025","Thu Oct 09 15:46:30 PDT 2025","Sun Oct 12 15:46:30 PDT 2025","Sun Oct 12 15:46:49 PDT 2025","","","9","100% (65/65)","100% (65/65)","0% (0/0)","from typing import List
+
+def solve():
+    # Type your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3PEG1BH7BX77G29VAPMUNPTOK9XBKO","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3UN61F00HG5U1A3BP2AG9ZAPLHO5R0","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:40:37 PDT 2025","Thu Oct 23 12:40:41 PDT 2025","Sun Oct 26 12:40:41 PDT 2025","Sun Oct 26 12:40:49 PDT 2025","","","4","100% (111/111)","100% (49/49)","100% (49/49)","from typing import List
+
+def solve():
+    # Type your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3TZDZ3Y0KBMMM88C4V2GR42ZN3U919","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","31HQ4X3T3CQK4E69WEQSGYBIT93LSO","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:30:57 PDT 2025","Sun Oct 19 19:33:55 PDT 2025","Wed Oct 22 19:33:55 PDT 2025","Wed Oct 22 19:34:49 PDT 2025","","","178","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    index = 0
+    t = int(data[index])
+    index += 1
+    
+    results = []
+    for _ in range(t):
+        n = int(data[index])
+        index += 1
+        a = list(map(int, data[index:index+n]))
+        index += n
+        b = list(range(1, n+1))
+        
+        # Calculate the target sum for the first element
+        target_sum = a[0] + 1
+        
+        # Find the first element in b that can satisfy the condition
+        for i in range(n):
+            if a[i] + b[i] >= target_sum:
+                results.append(b[i])
+                b.pop(i)
+                break
+        
+        # Sort the remaining elements in b
+        for i in range(n-1):
+            for j in range(i+1, n):
+                if a[i] + b[i] <= a[j] + b[j]:
+                    b[i], b[j] = b[j], b[i]
+        
+        results.append(b)
+    
+    for result in results:
+        print(' '.join(map(str, result)))
+","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3TZDZ3Y0KBMMM88C4V2GR42ZN3U919","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3TEM0PF1QPD15TY5AV9KNFXUP8HD0C","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:55:03 PDT 2025","Fri Oct 17 12:56:55 PDT 2025","Mon Oct 20 12:56:55 PDT 2025","Mon Oct 20 12:57:49 PDT 2025","","","112","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    index = 0
+    t = int(data[index])
+    index += 1
+    
+    results = []
+    for _ in range(t):
+        n = int(data[index])
+        index += 1
+        a = list(map(int, data[index:index+n]))
+        index += n
+        b = list(range(1, n+1))
+        
+        # Calculate the target sum for the first element
+        target_sum = a[0] + 1
+        
+        # Find the first element in b that can satisfy the condition
+        for i in range(n):
+            if a[i] + b[i] >= target_sum:
+                results.append(b[i])
+                b.pop(i)
+                break
+        
+        # Sort the remaining elements in b
+        for i in range(n-1):
+            for j in range(i+1, n):
+                if a[i] + b[i] <= a[j] + b[j]:
+                    b[i], b[j] = b[j], b[i]
+        
+        results.append(b)
+    
+    for result in results:
+        print(' '.join(map(str, result)))
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3TZDZ3Y0KBMMM88C4V2GR42ZN3U919","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3W92K5RLWEXMUHKSYMFQAWZS6N15VT","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:41:03 PDT 2025","Thu Oct 23 12:42:42 PDT 2025","Sun Oct 26 12:42:42 PDT 2025","Sun Oct 26 12:42:49 PDT 2025","","","99","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    index = 0
+    t = int(data[index])
+    index += 1
+    
+    results = []
+    for _ in range(t):
+        n = int(data[index])
+        index += 1
+        a = list(map(int, data[index:index+n]))
+        index += n
+        b = list(range(1, n+1))
+        
+        # Calculate the target sum for the first element
+        target_sum = a[0] + 1
+        
+        # Find the first element in b that can satisfy the condition
+        for i in range(n):
+            if a[i] + b[i] >= target_sum:
+                results.append(b[i])
+                b.pop(i)
+                break
+        
+        # Sort the remaining elements in b
+        for i in range(n-1):
+            for j in range(i+1, n):
+                if a[i] + b[i] <= a[j] + b[j]:
+                    b[i], b[j] = b[j], b[i]
+        
+        results.append(b)
+    
+    for result in results:
+        print(' '.join(map(str, result)))
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","true","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3R868ACW5BSYWEGSQCHIBF8Y4V2GZW","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","33PPUNGG3SLS8ON0WQHWY3HKMGVZR0","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:13:03 PDT 2025","Thu Oct 23 12:13:36 PDT 2025","Sun Oct 26 12:13:36 PDT 2025","Sun Oct 26 12:13:49 PDT 2025","","","33","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    data = input().split()
+    
+    n = 0
+    idx = 0
+    result = []
+    
+    for i in range(0, len(data), 3):
+        n += 1
+        a, s, r = int(data[i]), int(data[i+1]), int(data[i+2])
+        max_val = s - r
+        if max_val > 6 or max_val < 1:
+            print(""No solution"")
+        else:
+            sequence = [max_val]
+            remaining_sum = s - max_val
+            used = set([max_val])
+            for _ in range(a-1):
+                for val in range(6, 0, -1):
+                    if val not in used and remaining_sum - val >= 0:
+                        sequence.append(val)
+                        used.add(val)
+                        remaining_sum -= val
+                        break
+            result.append(sequence)
+    
+    for seq in result:
+        print("" "".join(map(str, seq)))
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","true","false","false","true","false","false","false","false","true","false","false","false","false","false","false","false","false","false"
+"3R868ACW5BSYWEGSQCHIBF8Y4V2GZW","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3RUIQRXJBV4X01BJC5TR4CXN1FVLLA","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:00:39 PDT 2025","Sun Oct 19 19:02:24 PDT 2025","Wed Oct 22 19:02:24 PDT 2025","Wed Oct 22 19:02:49 PDT 2025","","","105","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    data = input().split()
+    
+    n = 0
+    idx = 0
+    result = []
+    
+    for i in range(0, len(data), 3):
+        n += 1
+        a, s, r = int(data[i]), int(data[i+1]), int(data[i+2])
+        max_val = s - r
+        if max_val > 6 or max_val < 1:
+            print(""No solution"")
+        else:
+            sequence = [max_val]
+            remaining_sum = s - max_val
+            used = set([max_val])
+            for _ in range(a-1):
+                for val in range(6, 0, -1):
+                    if val not in used and remaining_sum - val >= 0:
+                        sequence.append(val)
+                        used.add(val)
+                        remaining_sum -= val
+                        break
+            result.append(sequence)
+    
+    for seq in result:
+        print("" "".join(map(str, seq)))
+","false","false","false","true","false","false","false","false","false","true","false","false","true","false","false","true","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false"
+"3R868ACW5BSYWEGSQCHIBF8Y4V2GZW","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3XCC1ODXD5RJUWM99UYJ7A5GHD4RQS","A189Q7EDEDSQ34","Approved","Tue Oct 14 11:02:26 PDT 2025","Tue Oct 14 11:04:27 PDT 2025","Fri Oct 17 11:04:27 PDT 2025","Fri Oct 17 11:04:49 PDT 2025","","","121","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    data = input().split()
+    
+    n = 0
+    idx = 0
+    result = []
+    
+    for i in range(0, len(data), 3):
+        n += 1
+        a, s, r = int(data[i]), int(data[i+1]), int(data[i+2])
+        max_val = s - r
+        if max_val > 6 or max_val < 1:
+            print(""No solution"")
+        else:
+            sequence = [max_val]
+            remaining_sum = s - max_val
+            used = set([max_val])
+            for _ in range(a-1):
+                for val in range(6, 0, -1):
+                    if val not in used and remaining_sum - val >= 0:
+                        sequence.append(val)
+                        used.add(val)
+                        remaining_sum -= val
+                        break
+            result.append(sequence)
+    
+    for seq in result:
+        print("" "".join(map(str, seq)))
+","false","false","false","true","false","false","false","false","false","true","false","false","true","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3NQUW096OPOZCFCGX5KZBJBDL9ZL9R","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","369J354OFXQZVOUBEAQ921AIF3KG6R","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:06:43 PDT 2025","Sun Oct 19 19:10:24 PDT 2025","Wed Oct 22 19:10:24 PDT 2025","Wed Oct 22 19:10:49 PDT 2025","","","221","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    _t = int(input())
+    for _ in range(_t):
+        n = int(input())
+        a = list(map(int, input().split()))
+        count = 0
+        i = 0
+        while i < n-1:
+            if a[i] > a[i+1]:
+                count += 1
+                a[i+1] += a[i]
+                del a[i]
+                n -= 1
+                i -= 1
+            i += 1
+        print(count)
+","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false"
+"3NQUW096OPOZCFCGX5KZBJBDL9ZL9R","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3EKVH9QMEIK8131JPIDY63Q9M6Z2DJ","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:42:15 PDT 2025","Tue Oct 14 10:42:44 PDT 2025","Fri Oct 17 10:42:44 PDT 2025","Fri Oct 17 10:42:49 PDT 2025","","","29","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    _t = int(input())
+    for _ in range(_t):
+        n = int(input())
+        a = list(map(int, input().split()))
+        count = 0
+        i = 0
+        while i < n-1:
+            if a[i] > a[i+1]:
+                count += 1
+                a[i+1] += a[i]
+                del a[i]
+                n -= 1
+                i -= 1
+            i += 1
+        print(count)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false"
+"3NQUW096OPOZCFCGX5KZBJBDL9ZL9R","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3K3R2QNK8VJ5IPX4WMI2QQ2BEC49US","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:06:20 PDT 2025","Mon Oct 13 11:07:21 PDT 2025","Thu Oct 16 11:07:21 PDT 2025","Thu Oct 16 11:07:49 PDT 2025","","","61","100% (11/11)","100% (11/11)","0% (0/0)","def solve():
+    _t = int(input())
+    for _ in range(_t):
+        n = int(input())
+        a = list(map(int, input().split()))
+        count = 0
+        i = 0
+        while i < n-1:
+            if a[i] > a[i+1]:
+                count += 1
+                a[i+1] += a[i]
+                del a[i]
+                n -= 1
+                i -= 1
+            i += 1
+        print(count)
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","true","false"
+"35O6H0UNMBWAG2M4RUV5JOTJVOB5JI","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3MYYFCXHJNNLG1QXVMXU53Q4JCEG46","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:59:10 PDT 2025","Sun Oct 19 18:59:17 PDT 2025","Wed Oct 22 18:59:17 PDT 2025","Wed Oct 22 18:59:49 PDT 2025","","","7","100% (60/60)","100% (60/60)","100% (40/40)","import numpy as np
+
+def solve():
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"35O6H0UNMBWAG2M4RUV5JOTJVOB5JI","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3SEPORI8W7F0971JUFVA3DSAMC8AZ4","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:44:38 PDT 2025","Thu Oct 23 12:44:40 PDT 2025","Sun Oct 26 12:44:40 PDT 2025","Sun Oct 26 12:44:49 PDT 2025","","","2","100% (111/111)","100% (49/49)","100% (49/49)","import numpy as np
+
+def solve():
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"35O6H0UNMBWAG2M4RUV5JOTJVOB5JI","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3YT88D1N0SE50R3CLZDQTQQRCSV3K5","A189Q7EDEDSQ34","Approved","Thu Oct 09 16:08:12 PDT 2025","Thu Oct 09 16:08:18 PDT 2025","Sun Oct 12 16:08:18 PDT 2025","Sun Oct 12 16:08:49 PDT 2025","","","6","100% (65/65)","100% (65/65)","0% (0/0)","import numpy as np
+
+def solve():
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3FVBZG9CM2UFUP5D6OM8QGHD1OWH04","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3C8HJ7UOPRA1B8A8RILFC4NAGTTMZW","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:55:39 PDT 2025","Sun Oct 19 18:56:50 PDT 2025","Wed Oct 22 18:56:50 PDT 2025","Wed Oct 22 18:57:49 PDT 2025","","","71","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from collections import Counter
+    
+    def is_alternating(s):
+        prev_char = s[0]
+        for i in range(1, len(s)):
+            if s[i] == prev_char:
+                return False
+            prev_char = s[i]
+        return True
+    
+    def can_be_alternating(s):
+        char_count = Counter(s)
+        if len(char_count) > 2:
+            return False
+        if len(char_count) == 1:
+            return True
+        if len(char_count) == 2:
+            if abs(char_count.most_common(1)[0][1] - char_count.most_common(2)[1][1]) > 1:
+                return False
+            return is_alternating(s)
+        return True
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        s = input().strip()
+        if can_be_alternating(s):
+            print(""YES"")
+        else:
+            print(""NO"")
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3FVBZG9CM2UFUP5D6OM8QGHD1OWH04","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3KRVW3HTZ714AWOUWQR7GBQ7TEWMSU","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:09:16 PDT 2025","Thu Oct 23 12:10:16 PDT 2025","Sun Oct 26 12:10:16 PDT 2025","Sun Oct 26 12:10:49 PDT 2025","","","60","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    from collections import Counter
+    
+    def is_alternating(s):
+        prev_char = s[0]
+        for i in range(1, len(s)):
+            if s[i] == prev_char:
+                return False
+            prev_char = s[i]
+        return True
+    
+    def can_be_alternating(s):
+        char_count = Counter(s)
+        if len(char_count) > 2:
+            return False
+        if len(char_count) == 1:
+            return True
+        if len(char_count) == 2:
+            if abs(char_count.most_common(1)[0][1] - char_count.most_common(2)[1][1]) > 1:
+                return False
+            return is_alternating(s)
+        return True
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        s = input().strip()
+        if can_be_alternating(s):
+            print(""YES"")
+        else:
+            print(""NO"")
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3FVBZG9CM2UFUP5D6OM8QGHD1OWH04","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3S3AMIZX3ELLZLTLMB24IGZVYXCDC3","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:45:44 PDT 2025","Tue Oct 14 10:51:47 PDT 2025","Fri Oct 17 10:51:47 PDT 2025","Fri Oct 17 10:51:49 PDT 2025","","","363","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from collections import Counter
+    
+    def is_alternating(s):
+        prev_char = s[0]
+        for i in range(1, len(s)):
+            if s[i] == prev_char:
+                return False
+            prev_char = s[i]
+        return True
+    
+    def can_be_alternating(s):
+        char_count = Counter(s)
+        if len(char_count) > 2:
+            return False
+        if len(char_count) == 1:
+            return True
+        if len(char_count) == 2:
+            if abs(char_count.most_common(1)[0][1] - char_count.most_common(2)[1][1]) > 1:
+                return False
+            return is_alternating(s)
+        return True
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        s = input().strip()
+        if can_be_alternating(s):
+            print(""YES"")
+        else:
+            print(""NO"")
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3D7VY91L7OD26Q9YV1ZA22LS9ESBMT","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","36NEMU28XZTXHD53GV18D0TSZRPMW6","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:46:49 PDT 2025","Sun Oct 19 18:46:56 PDT 2025","Wed Oct 22 18:46:56 PDT 2025","Wed Oct 22 18:47:49 PDT 2025","","","7","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3D7VY91L7OD26Q9YV1ZA22LS9ESBMT","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3A1COHJ8N3B0ZY8ARV5P7FIA0XJ8HY","A189Q7EDEDSQ34","Approved","Thu Oct 09 15:46:08 PDT 2025","Thu Oct 09 15:46:17 PDT 2025","Sun Oct 12 15:46:17 PDT 2025","Sun Oct 12 15:46:49 PDT 2025","","","9","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3D7VY91L7OD26Q9YV1ZA22LS9ESBMT","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3RANCT1ZVZXO6IC1U6WYHWX12C7BU4","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:00:36 PDT 2025","Mon Oct 13 11:00:47 PDT 2025","Thu Oct 16 11:00:47 PDT 2025","Thu Oct 16 11:00:49 PDT 2025","","","11","100% (11/11)","100% (11/11)","0% (0/0)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UQ1LLR27TODHYMLPBYZ7EMXRRHLA6","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3C2NJ6JBKUXHNFSWECR128230A4N2P","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:30:03 PDT 2025","Sun Oct 19 19:30:57 PDT 2025","Wed Oct 22 19:30:57 PDT 2025","Wed Oct 22 19:31:49 PDT 2025","","","54","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from sys import stdin
+    
+    def is_reordering_possible(t):
+        if t == 1:
+            return 'YES'
+        
+        odd_count = sum(1 for _ in input().split() if int(_) % 2 != 0)
+        even_count = t - odd_count
+        
+        if even_count < odd_count:
+            return 'NO'
+        else:
+            return 'YES'
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        print(is_reordering_possible(n))
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UQ1LLR27TODHYMLPBYZ7EMXRRHLA6","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3FQ5JJ51254C4VWM3IX524OXHAPKN7","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:31:30 PDT 2025","Fri Oct 17 12:35:33 PDT 2025","Mon Oct 20 12:35:33 PDT 2025","Mon Oct 20 12:35:49 PDT 2025","","","243","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from sys import stdin
+    
+    def is_reordering_possible(t):
+        if t == 1:
+            return 'YES'
+        
+        odd_count = sum(1 for _ in input().split() if int(_) % 2 != 0)
+        even_count = t - odd_count
+        
+        if even_count < odd_count:
+            return 'NO'
+        else:
+            return 'YES'
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        print(is_reordering_possible(n))
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UQ1LLR27TODHYMLPBYZ7EMXRRHLA6","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3Z9WI9EOZJ4KUZAB0K2SXKR1VYLHK0","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:44:17 PDT 2025","Thu Oct 23 12:44:35 PDT 2025","Sun Oct 26 12:44:35 PDT 2025","Sun Oct 26 12:44:49 PDT 2025","","","18","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    from sys import stdin
+    
+    def is_reordering_possible(t):
+        if t == 1:
+            return 'YES'
+        
+        odd_count = sum(1 for _ in input().split() if int(_) % 2 != 0)
+        even_count = t - odd_count
+        
+        if even_count < odd_count:
+            return 'NO'
+        else:
+            return 'YES'
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        print(is_reordering_possible(n))
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3NCN4N1H2ZX8O8UY72EAFHASE42BNT","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","36W0OB37HGUFJU9X0L52KZFEZ6QZHU","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:05:50 PDT 2025","Mon Oct 13 11:06:19 PDT 2025","Thu Oct 16 11:06:19 PDT 2025","Thu Oct 16 11:06:49 PDT 2025","","","29","100% (11/11)","100% (11/11)","0% (0/0)","def solve():
+    import sys
+    input = lambda: input().strip()
+    
+    def is_beautiful_sequence(seq):
+        # Check if there's any index i such that seq[i] == i+1
+        return any(x == i + 1 for i, x in enumerate(seq))
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        seq = list(map(int, input().split()))
+        if is_beautiful_sequence(seq):
+            print(""YES"")
+        else:
+            print(""NO"")
+","false","false","false","false","false","false","false","true","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3NCN4N1H2ZX8O8UY72EAFHASE42BNT","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","39LOEL67OCLL5Q1BCAGN3LH0HT583X","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:05:42 PDT 2025","Sun Oct 19 19:06:43 PDT 2025","Wed Oct 22 19:06:43 PDT 2025","Wed Oct 22 19:06:49 PDT 2025","","","61","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    import sys
+    input = lambda: input().strip()
+    
+    def is_beautiful_sequence(seq):
+        # Check if there's any index i such that seq[i] == i+1
+        return any(x == i + 1 for i, x in enumerate(seq))
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        seq = list(map(int, input().split()))
+        if is_beautiful_sequence(seq):
+            print(""YES"")
+        else:
+            print(""NO"")
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3NCN4N1H2ZX8O8UY72EAFHASE42BNT","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3W8CV64QJMF0D3RKWNB37BDLK42H9Z","A189Q7EDEDSQ34","Approved","Tue Oct 14 11:05:30 PDT 2025","Tue Oct 14 11:07:26 PDT 2025","Fri Oct 17 11:07:26 PDT 2025","Fri Oct 17 11:07:49 PDT 2025","","","116","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    import sys
+    input = lambda: input().strip()
+    
+    def is_beautiful_sequence(seq):
+        # Check if there's any index i such that seq[i] == i+1
+        return any(x == i + 1 for i, x in enumerate(seq))
+    
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        seq = list(map(int, input().split()))
+        if is_beautiful_sequence(seq):
+            print(""YES"")
+        else:
+            print(""NO"")
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3FJ2RVH26IMTBTQ8NZ2UWNC4F9892Q","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","30X31N5D6N638VF5ZN127KV7ZX1ASS","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:36:10 PDT 2025","Tue Oct 14 10:40:33 PDT 2025","Fri Oct 17 10:40:33 PDT 2025","Fri Oct 17 10:40:49 PDT 2025","","","263","100% (65/65)","100% (65/65)","0% (0/0)","from itertools import product
+
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    n, k, x, *data = data
+    n, k, x = int(n), int(k), int(x)
+    t = int(data[0])
+    for _ in range(t):
+        n, k, x = map(int, data[:3])
+        data = data[3:]
+        if n == x:
+            print(""NO"")
+            continue
+        if k >= n and x != 1:
+            print(""YES"")
+            print(n)
+            print(n * ""1"")
+            continue
+        if k == 1 and x == 1:
+            print(""NO"")
+            continue
+        if n <= k * (k - 1) // 2:
+            print(""YES"")
+            m = n
+            res = []
+            for i in range(1, k + 1):
+                if i != x:
+                    count = min(m // i, k - 1)
+                    m -= count * i
+                    res.extend([i] * count)
+            print(len(res))
+            print("" "".join(map(str, res)))
+        else:
+            print(""NO"")
+","false","false","false","false","true","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3FJ2RVH26IMTBTQ8NZ2UWNC4F9892Q","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3B1NLC6UGJC75UCGT6PI811ZA8APG6","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:53:15 PDT 2025","Sun Oct 19 18:54:53 PDT 2025","Wed Oct 22 18:54:53 PDT 2025","Wed Oct 22 18:55:49 PDT 2025","","","98","100% (60/60)","100% (60/60)","100% (40/40)","from itertools import product
+
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    n, k, x, *data = data
+    n, k, x = int(n), int(k), int(x)
+    t = int(data[0])
+    for _ in range(t):
+        n, k, x = map(int, data[:3])
+        data = data[3:]
+        if n == x:
+            print(""NO"")
+            continue
+        if k >= n and x != 1:
+            print(""YES"")
+            print(n)
+            print(n * ""1"")
+            continue
+        if k == 1 and x == 1:
+            print(""NO"")
+            continue
+        if n <= k * (k - 1) // 2:
+            print(""YES"")
+            m = n
+            res = []
+            for i in range(1, k + 1):
+                if i != x:
+                    count = min(m // i, k - 1)
+                    m -= count * i
+                    res.extend([i] * count)
+            print(len(res))
+            print("" "".join(map(str, res)))
+        else:
+            print(""NO"")
+","false","false","false","false","true","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3FJ2RVH26IMTBTQ8NZ2UWNC4F9892Q","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:00 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3RKNTXVS36EK6ADU9M5K9HF1LHY4AF","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:00:47 PDT 2025","Mon Oct 13 11:02:04 PDT 2025","Thu Oct 16 11:02:04 PDT 2025","Thu Oct 16 11:02:49 PDT 2025","","","77","100% (11/11)","100% (11/11)","0% (0/0)","from itertools import product
+
+def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    n, k, x, *data = data
+    n, k, x = int(n), int(k), int(x)
+    t = int(data[0])
+    for _ in range(t):
+        n, k, x = map(int, data[:3])
+        data = data[3:]
+        if n == x:
+            print(""NO"")
+            continue
+        if k >= n and x != 1:
+            print(""YES"")
+            print(n)
+            print(n * ""1"")
+            continue
+        if k == 1 and x == 1:
+            print(""NO"")
+            continue
+        if n <= k * (k - 1) // 2:
+            print(""YES"")
+            m = n
+            res = []
+            for i in range(1, k + 1):
+                if i != x:
+                    count = min(m // i, k - 1)
+                    m -= count * i
+                    res.extend([i] * count)
+            print(len(res))
+            print("" "".join(map(str, res)))
+        else:
+            print(""NO"")
+","false","false","false","false","true","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3S4TINXCDJ3Q6TUA8HENU6AX4E7BO8","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","37M28K1J0ATA9SWFCTSOFJ4K3ERJAO","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:19:26 PDT 2025","Sun Oct 19 19:25:37 PDT 2025","Wed Oct 22 19:25:37 PDT 2025","Wed Oct 22 19:25:49 PDT 2025","","","371","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    import re
+    
+    def compare_sizes(a, b):
+        # Extract the number of Xs before S and L, and the size letter
+        a_parts = re.match(r""^(X*)S?(X*)L?$"", a)
+        b_parts = re.match(r""^(X*)S?(X*)L?$"", b)
+        
+        a_x1, a_s, a_x2 = a_parts.groups()
+        b_x1, b_s, b_x2 = b_parts.groups()
+        
+        # Compare the number of Xs before S
+        if a_s and b_s:
+            if len(a_x1) < len(b_x1):
+                return "">""
+            elif len(a_x1) > len(b_x1):
+                return ""<""
+            else:
+                return ""=""
+        elif a_s and not b_s:
+            return ""<""
+        elif not a_s and b_s:
+            return "">""
+        elif a_s:
+            return ""=""
+        
+        # Compare the number of Xs before L
+        if len(a_x2) < len(b_x2):
+            return "">""
+        elif len(a_x2) > len(b_x2):
+            return ""<""
+        else:
+            return ""=""
+    
+    # Read input
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    
+    t = int(data[0])
+    index = 1
+    results = []
+    
+    for _ in range(t):
+        a = data[index]
+        index += 1
+        b = data[index]
+        index += 1
+        result = compare_sizes(a, b)
+        results.append(result)
+    
+    # Print results
+    for result in results:
+        print(result)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3S4TINXCDJ3Q6TUA8HENU6AX4E7BO8","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3LUY3GC63JGOC11F03LO2OO6B5QP72","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:53:56 PDT 2025","Fri Oct 17 12:54:57 PDT 2025","Mon Oct 20 12:54:57 PDT 2025","Mon Oct 20 12:55:49 PDT 2025","","","61","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    import re
+    
+    def compare_sizes(a, b):
+        # Extract the number of Xs before S and L, and the size letter
+        a_parts = re.match(r""^(X*)S?(X*)L?$"", a)
+        b_parts = re.match(r""^(X*)S?(X*)L?$"", b)
+        
+        a_x1, a_s, a_x2 = a_parts.groups()
+        b_x1, b_s, b_x2 = b_parts.groups()
+        
+        # Compare the number of Xs before S
+        if a_s and b_s:
+            if len(a_x1) < len(b_x1):
+                return "">""
+            elif len(a_x1) > len(b_x1):
+                return ""<""
+            else:
+                return ""=""
+        elif a_s and not b_s:
+            return ""<""
+        elif not a_s and b_s:
+            return "">""
+        elif a_s:
+            return ""=""
+        
+        # Compare the number of Xs before L
+        if len(a_x2) < len(b_x2):
+            return "">""
+        elif len(a_x2) > len(b_x2):
+            return ""<""
+        else:
+            return ""=""
+    
+    # Read input
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    
+    t = int(data[0])
+    index = 1
+    results = []
+    
+    for _ in range(t):
+        a = data[index]
+        index += 1
+        b = data[index]
+        index += 1
+        result = compare_sizes(a, b)
+        results.append(result)
+    
+    # Print results
+    for result in results:
+        print(result)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3S4TINXCDJ3Q6TUA8HENU6AX4E7BO8","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3SB5N7Y3ONK4HD8WCLAST00R202G0U","ASQIP0BTUIBHO","Approved","Thu Oct 23 13:25:04 PDT 2025","Thu Oct 23 13:26:06 PDT 2025","Sun Oct 26 13:26:06 PDT 2025","Sun Oct 26 13:26:49 PDT 2025","","","62","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    import re
+    
+    def compare_sizes(a, b):
+        # Extract the number of Xs before S and L, and the size letter
+        a_parts = re.match(r""^(X*)S?(X*)L?$"", a)
+        b_parts = re.match(r""^(X*)S?(X*)L?$"", b)
+        
+        a_x1, a_s, a_x2 = a_parts.groups()
+        b_x1, b_s, b_x2 = b_parts.groups()
+        
+        # Compare the number of Xs before S
+        if a_s and b_s:
+            if len(a_x1) < len(b_x1):
+                return "">""
+            elif len(a_x1) > len(b_x1):
+                return ""<""
+            else:
+                return ""=""
+        elif a_s and not b_s:
+            return ""<""
+        elif not a_s and b_s:
+            return "">""
+        elif a_s:
+            return ""=""
+        
+        # Compare the number of Xs before L
+        if len(a_x2) < len(b_x2):
+            return "">""
+        elif len(a_x2) > len(b_x2):
+            return ""<""
+        else:
+            return ""=""
+    
+    # Read input
+    import sys
+    input = sys.stdin.read
+    data = input().strip().split()
+    
+    t = int(data[0])
+    index = 1
+    results = []
+    
+    for _ in range(t):
+        a = data[index]
+        index += 1
+        b = data[index]
+        index += 1
+        result = compare_sizes(a, b)
+        results.append(result)
+    
+    # Print results
+    for result in results:
+        print(result)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3Z8UJEJODITIWBMRRZGZFXHWLN8931","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","32Z9ZLUT1503KQVQYCUL418AF3VHOK","ASQIP0BTUIBHO","Approved","Thu Oct 23 13:03:42 PDT 2025","Thu Oct 23 13:04:50 PDT 2025","Sun Oct 26 13:04:50 PDT 2025","Sun Oct 26 13:05:49 PDT 2025","","","68","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    from sys import stdin, stdout
+    input = stdin.readline
+    print = stdout.write
+    
+    def min_melodies(s):
+        n = len(s)
+        last_note = None
+        count = 0
+        for i in range(n - 1):
+            current_note = s[i]
+            if current_note != last_note:
+                count += 1
+                last_note = current_note
+        if last_note != s[-1]:
+            count += 1
+        return count
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        s = input().strip()
+        result = min_melodies(s)
+        print(str(result) + '\n')
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3Z8UJEJODITIWBMRRZGZFXHWLN8931","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","39KFRKBFI7BP6LLF8CY9Q13D5Z1OYJ","A189Q7EDEDSQ34","Approved","Tue Oct 14 11:01:50 PDT 2025","Tue Oct 14 11:02:22 PDT 2025","Fri Oct 17 11:02:22 PDT 2025","Fri Oct 17 11:02:49 PDT 2025","","","32","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from sys import stdin, stdout
+    input = stdin.readline
+    print = stdout.write
+    
+    def min_melodies(s):
+        n = len(s)
+        last_note = None
+        count = 0
+        for i in range(n - 1):
+            current_note = s[i]
+            if current_note != last_note:
+                count += 1
+                last_note = current_note
+        if last_note != s[-1]:
+            count += 1
+        return count
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        s = input().strip()
+        result = min_melodies(s)
+        print(str(result) + '\n')
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3Z8UJEJODITIWBMRRZGZFXHWLN8931","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3KB8R4ZV1YN510B6A17HDHWAT4VGBC","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:39:48 PDT 2025","Sun Oct 19 19:40:55 PDT 2025","Wed Oct 22 19:40:55 PDT 2025","Wed Oct 22 19:41:49 PDT 2025","","","67","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from sys import stdin, stdout
+    input = stdin.readline
+    print = stdout.write
+    
+    def min_melodies(s):
+        n = len(s)
+        last_note = None
+        count = 0
+        for i in range(n - 1):
+            current_note = s[i]
+            if current_note != last_note:
+                count += 1
+                last_note = current_note
+        if last_note != s[-1]:
+            count += 1
+        return count
+    
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        s = input().strip()
+        result = min_melodies(s)
+        print(str(result) + '\n')
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3WPCIUYH2TOZYIX2IURSJ64K670DT3","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3F6HPJW4JXG7A91A6DIOYRFUTM72WU","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:27:28 PDT 2025","Fri Oct 17 12:31:20 PDT 2025","Mon Oct 20 12:31:20 PDT 2025","Mon Oct 20 12:31:49 PDT 2025","","","232","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    lines = input().splitlines()
+    t = int(lines[0])
+    n_values = lines[1:]
+    
+    for n in n_values:
+        n = int(n)
+        if n == 6:
+            print(0)
+        else:
+            min_diff = (n - 2) // 3
+            print(min_diff)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3WPCIUYH2TOZYIX2IURSJ64K670DT3","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3IUZPWIU18N2RP50VJOSYN1OAMYKW3","ASQIP0BTUIBHO","Approved","Thu Oct 23 13:24:06 PDT 2025","Thu Oct 23 13:24:19 PDT 2025","Sun Oct 26 13:24:19 PDT 2025","Sun Oct 26 13:24:49 PDT 2025","","","13","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    lines = input().splitlines()
+    t = int(lines[0])
+    n_values = lines[1:]
+    
+    for n in n_values:
+        n = int(n)
+        if n == 6:
+            print(0)
+        else:
+            min_diff = (n - 2) // 3
+            print(min_diff)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3WPCIUYH2TOZYIX2IURSJ64K670DT3","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3RWE2M8QW1QAR5PIZPNNJK9O3CKN05","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:13:52 PDT 2025","Sun Oct 19 19:14:12 PDT 2025","Wed Oct 22 19:14:12 PDT 2025","Wed Oct 22 19:14:49 PDT 2025","","","20","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    import sys
+    
+    input = sys.stdin.read
+    lines = input().splitlines()
+    t = int(lines[0])
+    n_values = lines[1:]
+    
+    for n in n_values:
+        n = int(n)
+        if n == 6:
+            print(0)
+        else:
+            min_diff = (n - 2) // 3
+            print(min_diff)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3KA7IJSNXPL8RT6BNHR2J6FNEJ3BPP","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","30MVJZJNH6TW49MAKNEOJOT0XW9J99","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:13:10 PDT 2025","Sun Oct 19 19:13:20 PDT 2025","Wed Oct 22 19:13:20 PDT 2025","Wed Oct 22 19:13:49 PDT 2025","","","10","100% (60/60)","100% (60/60)","100% (40/40)","importDefault
+user
+```python
+def solve():
+    from sympy import isprime, nextprime
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3KA7IJSNXPL8RT6BNHR2J6FNEJ3BPP","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3483FV8BEYZ9GUM4FV5K0XGH5KC26R","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:28:02 PDT 2025","Tue Oct 14 10:28:37 PDT 2025","Fri Oct 17 10:28:37 PDT 2025","Fri Oct 17 10:28:49 PDT 2025","","","35","100% (65/65)","100% (65/65)","0% (0/0)","importDefault
+user
+```python
+def solve():
+    from sympy import isprime, nextprime
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3KA7IJSNXPL8RT6BNHR2J6FNEJ3BPP","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","34QN5IT0TJ7POY2ETNY41NJTEHP08Y","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:45:51 PDT 2025","Thu Oct 23 12:45:59 PDT 2025","Sun Oct 26 12:45:59 PDT 2025","Sun Oct 26 12:46:49 PDT 2025","","","8","100% (111/111)","100% (49/49)","100% (49/49)","importDefault
+user
+```python
+def solve():
+    from sympy import isprime, nextprime
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3JTPR5MT0BS5RMSM9FVHK3TWADB5KH","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","32UTUBMZ70COJX11ZW63DIZKGJGBVT","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:02:41 PDT 2025","Mon Oct 13 11:03:05 PDT 2025","Thu Oct 16 11:03:05 PDT 2025","Thu Oct 16 11:03:49 PDT 2025","","","24","100% (11/11)","100% (11/11)","0% (0/0)","def solve():
+    from collections import Counter
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3JTPR5MT0BS5RMSM9FVHK3TWADB5KH","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3LEP4MGT30G2PG1F8B697WTDGCCDBW","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:45:39 PDT 2025","Tue Oct 14 10:45:41 PDT 2025","Fri Oct 17 10:45:41 PDT 2025","Fri Oct 17 10:45:49 PDT 2025","","","2","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from collections import Counter
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3JTPR5MT0BS5RMSM9FVHK3TWADB5KH","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3NLZY2D53958RYRW4A1NLYWHBLILQZ","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:14:13 PDT 2025","Sun Oct 19 19:14:19 PDT 2025","Wed Oct 22 19:14:19 PDT 2025","Wed Oct 22 19:14:49 PDT 2025","","","6","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from collections import Counter
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3QO7EE37373TR57QNU6RJB5XJFPBQG","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3GA6AFUKO84EY124FEATGYAZKBR3H1","A189Q7EDEDSQ34","Approved","Thu Oct 09 15:59:20 PDT 2025","Thu Oct 09 15:59:29 PDT 2025","Sun Oct 12 15:59:29 PDT 2025","Sun Oct 12 15:59:49 PDT 2025","","","9","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3QO7EE37373TR57QNU6RJB5XJFPBQG","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3RXCAC0YIB5MZ2DZ7PN7MF69LYAG8D","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:36:05 PDT 2025","Sun Oct 19 19:36:09 PDT 2025","Wed Oct 22 19:36:09 PDT 2025","Wed Oct 22 19:36:49 PDT 2025","","","4","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3QO7EE37373TR57QNU6RJB5XJFPBQG","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3VAR3R6G19HARFUXV80FROFBCK58OW","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:10:50 PDT 2025","Thu Oct 23 12:10:58 PDT 2025","Sun Oct 26 12:10:58 PDT 2025","Sun Oct 26 12:11:49 PDT 2025","","","8","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    from sys import stdin, stdout
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3EHVO81VOO1F1EQV27Q84L0N6G2H17","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:08 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3I3WADAZ9AKR4XBVXATCF45KAU45OR","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:11:56 PDT 2025","Thu Oct 23 12:13:01 PDT 2025","Sun Oct 26 12:13:01 PDT 2025","Sun Oct 26 12:13:49 PDT 2025","","","65","100% (111/111)","100% (49/49)","100% (49/49)","from collections import deque
+
+def solve():
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        dialog = input().strip()
+        queue = deque()
+        
+        for i in range(n):
+            if dialog[i] == ""Q"":
+                queue.append(""Q"")
+            elif dialog[i] == ""A"":
+                if not queue:
+                    print(""No"")
+                    break
+                else:
+                    queue.popleft()
+        else:
+            if not queue:
+                print(""Yes"")
+            else:
+                print(""No"")
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false"
+"3EHVO81VOO1F1EQV27Q84L0N6G2H17","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:08 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3LO69W1SUNTHE9XI1EWBRKSF5Y9LG4","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:49:03 PDT 2025","Sun Oct 19 18:50:04 PDT 2025","Wed Oct 22 18:50:04 PDT 2025","Wed Oct 22 18:50:49 PDT 2025","","","61","100% (60/60)","100% (60/60)","100% (40/40)","from collections import deque
+
+def solve():
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        dialog = input().strip()
+        queue = deque()
+        
+        for i in range(n):
+            if dialog[i] == ""Q"":
+                queue.append(""Q"")
+            elif dialog[i] == ""A"":
+                if not queue:
+                    print(""No"")
+                    break
+                else:
+                    queue.popleft()
+        else:
+            if not queue:
+                print(""Yes"")
+            else:
+                print(""No"")
+","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false"
+"3EHVO81VOO1F1EQV27Q84L0N6G2H17","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:08 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3MX2NQ3YCTAEY6PNY1G8YHWDMX15XM","A189Q7EDEDSQ34","Approved","Thu Oct 09 15:56:05 PDT 2025","Thu Oct 09 15:57:55 PDT 2025","Sun Oct 12 15:57:55 PDT 2025","Sun Oct 12 15:58:49 PDT 2025","","","110","100% (65/65)","100% (65/65)","0% (0/0)","from collections import deque
+
+def solve():
+    t = int(input().strip())
+    for _ in range(t):
+        n = int(input().strip())
+        dialog = input().strip()
+        queue = deque()
+        
+        for i in range(n):
+            if dialog[i] == ""Q"":
+                queue.append(""Q"")
+            elif dialog[i] == ""A"":
+                if not queue:
+                    print(""No"")
+                    break
+                else:
+                    queue.popleft()
+        else:
+            if not queue:
+                print(""Yes"")
+            else:
+                print(""No"")
+","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","true","false","true","false","false","false","false","false","false","false","false","false","false","false"
+"3OCZWXS707NGBSA4UF7IZ36BZDG5LK","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","32Q90QCQ1C18APJ9AJUMCHUO3IMKEG","A189Q7EDEDSQ34","Approved","Tue Oct 14 11:04:31 PDT 2025","Tue Oct 14 11:05:26 PDT 2025","Fri Oct 17 11:05:26 PDT 2025","Fri Oct 17 11:05:49 PDT 2025","","","55","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    def process_case(i):
+        n = int(data[i])
+        i += 1
+        a = list(map(int, data[i:i+n]))
+        i += n
+        evens = [x for x in a if x % 2 == 0]
+        odds = [x for x in a if x % 2 != 0]
+        
+        if len(evens) + len(odds) == n and len(set(evens)) + len(set(odds)) == len(evens) + len(odds):
+            print(""YES"")
+        else:
+            print(""NO"")
+    
+    t = int(data[0])
+    for _ in range(t):
+        process_case(1)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3OCZWXS707NGBSA4UF7IZ36BZDG5LK","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","379J5II418WJUV1RVJ6NRH73SIRELD","AKERE2HC8Y7H4","Approved","Mon Oct 13 22:37:12 PDT 2025","Mon Oct 13 22:38:49 PDT 2025","Thu Oct 16 22:38:49 PDT 2025","Thu Oct 16 22:39:49 PDT 2025","","","97","100% (14/14)","100% (12/12)","0% (0/0)","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    def process_case(i):
+        n = int(data[i])
+        i += 1
+        a = list(map(int, data[i:i+n]))
+        i += n
+        evens = [x for x in a if x % 2 == 0]
+        odds = [x for x in a if x % 2 != 0]
+        
+        if len(evens) + len(odds) == n and len(set(evens)) + len(set(odds)) == len(evens) + len(odds):
+            print(""YES"")
+        else:
+            print(""NO"")
+    
+    t = int(data[0])
+    for _ in range(t):
+        process_case(1)
+","false","false","false","false","false","false","false","true","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3OCZWXS707NGBSA4UF7IZ36BZDG5LK","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:57:01 PDT 2025","3","BatchId:418124;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:57:09 PST 2025","","","3A4NIXBJ7QFH6JT4CHU64PCC1KLLMC","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:02:24 PDT 2025","Sun Oct 19 19:05:41 PDT 2025","Wed Oct 22 19:05:41 PDT 2025","Wed Oct 22 19:05:49 PDT 2025","","","197","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    import sys
+    input = sys.stdin.read
+    data = input().split()
+    
+    def process_case(i):
+        n = int(data[i])
+        i += 1
+        a = list(map(int, data[i:i+n]))
+        i += n
+        evens = [x for x in a if x % 2 == 0]
+        odds = [x for x in a if x % 2 != 0]
+        
+        if len(evens) + len(odds) == n and len(set(evens)) + len(set(odds)) == len(evens) + len(odds):
+            print(""YES"")
+        else:
+            print(""NO"")
+    
+    t = int(data[0])
+    for _ in range(t):
+        process_case(1)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false"

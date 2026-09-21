@@ -1,0 +1,8 @@
+{
+  "competition_id": "1988_AHSME_Problems",
+  "problem_id": 4,
+  "problem": "The slope of the line $\\frac{x}{3} + \\frac{y}{2} = 1$ is\n$\\textbf{(A)}\\ -\\frac{3}{2}\\qquad \\textbf{(B)}\\ -\\frac{2}{3}\\qquad \\textbf{(C)}\\ \\frac{1}{3}\\qquad \\textbf{(D)}\\ \\frac{2}{3}\\qquad \\textbf{(E)}\\ \\frac{3}{2}$",
+  "solutions": {
+    "Solution": "To find the slope, all we have to do is put the equation into slope-intercept form. We subtract $\\frac{x}{3}$ from both sides and then multiple all \nterms by $2$. This yields $y=-\\frac{2}{3}x+1$, so the slope is $-\\frac{2}{3} \\implies \\boxed{\\text{B}}$."
+  }
+}

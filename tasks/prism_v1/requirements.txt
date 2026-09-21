@@ -1,0 +1,43 @@
+# Runtime dependencies for tasks/prism_v1, derived from the imports actually present
+# in src/ and the two entry points (2026-09-03).
+#
+# The previous file here was a 247-line `conda list --export` of the environment
+# that ran aut/ttcw/creative_short. It is kept as requirements-conda-freeze.txt,
+# but it is a record of one machine, not a dependency list, and it named none of
+# the packages the five newly ported tasks need. Three of them -- unidecode,
+# sacremoses, and spaCy's en_core_web_sm -- were missing on this cluster and each
+# one stopped a task at import time.
+
+# --- shared ---
+numpy
+pandas
+scipy
+tqdm
+jsonlines
+scikit-learn
+
+# --- model access ---
+openai
+anthropic
+google-genai
+transformers
+torch
+vllm                      # open-weight inference; not needed for API-only runs
+
+# --- creative_short: story_metrics ---
+spacy
+spacy-syllables
+benepar
+sentence-transformers     # pulls thenlper/gte-large on first use
+# spaCy's English pipeline is a model, not a package dependency:
+#   python -m spacy download en_core_web_sm
+
+# --- creativity_index ---
+requests
+nltk
+sacremoses
+unidecode
+
+# --- dat ---
+# gensim is imported lazily and only on the word2vec path. The GloVe path, which
+# is the one anyone uses, does not need it. Left out on purpose.

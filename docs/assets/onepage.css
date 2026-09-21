@@ -1,0 +1,201 @@
+/* ===== Leaderboard card ===== */
+.leaderboard-card {
+    padding: 1rem 1rem 1.25rem;
+    border-radius: 16px;
+    background: var(--md-default-bg-color);
+    box-shadow: 0 6px 24px rgba(0,0,0,.06);
+  }
+  
+  .lb-header {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; margin-bottom: .5rem;
+  }
+  .lb-header h2 { margin: 0 0 .25rem 0; }
+  .lb-updated { opacity: .7; font-size: .65rem; }
+  
+  .pill {
+    display: inline-block; padding: .25rem .55rem; border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.08); font-size: .85rem;
+    text-decoration: none;
+  }
+  .pill.link { border-color: rgba(0,0,0,.15); }
+  .pill.gold { background: #fff7d6; }
+  .pill.silver { background: #eef0f5; }
+  .pill.bronze { background: #f8ebe2; }
+  
+  .rank.top3 { font-weight: 700; }
+  
+  .mono { font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace; }
+  .num { font-variant-numeric: tabular-nums; }
+  
+  /* DataTables tweaks */
+  .dataTables_wrapper .dataTables_length select {
+    border-radius: 8px; padding: .2rem .4rem;
+  }
+  .dataTables_wrapper .dataTables_filter label { margin: 0; }
+  .dataTables_wrapper .dataTables_filter input {
+    border-radius: 10px; padding: .4rem .6rem; border: 1px solid rgba(0,0,0,.15);
+  }
+  .dataTables_wrapper .dataTables_filter > label::before {
+    /* remove the literal “Search:” text */
+    content: ''; margin-right: 0;
+  }
+  
+  #board thead th {
+    position: sticky; top: 0;
+    background: var(--md-default-bg-color);
+    z-index: 1;
+  }
+  
+  #board tbody tr:nth-child(odd) { background: rgba(0,0,0,.02); }
+  #board tbody tr:hover { background: rgba(0,0,0,.05); }
+  
+  #board td, #board th { padding: .6rem .7rem; }
+  #board { width: 100% !important; }
+  
+  /* keep controls tight and aligned */
+  .lb-top, .lb-bottom {
+    display: flex; justify-content: space-between; align-items: center; gap: .75rem;
+    margin: .5rem 0 .3rem;
+  }
+
+  
+
+
+/* center content, remove side clutter for a landing-page feel */
+.md-grid { max-width: 1100px; }
+.md-header__title { font-weight: 600; }
+.md-sidebar, .md-sidebar--primary, .md-sidebar--secondary { display: none; }
+.md-content { margin: 0 auto; }
+
+/* hero */
+.hero {
+  text-align: center; padding: 2.5rem 0 1.5rem;
+}
+.hero h1 { font-size: 2.1rem; margin: 0 0 .4rem; }
+.hero p.sub { opacity: .8; margin: 0 0 1rem; }
+.hero .btns a {
+  display: inline-block; margin: .25rem; padding: .55rem .9rem;
+  border-radius: 10px; border: 1px solid rgba(0,0,0,.08);
+}
+.kpis {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);  /* was 3 */
+    gap: .75rem;
+    margin: 1rem auto 2rem;
+    max-width: 1100px;   /* widen a bit if you want */
+  }
+  .kpis .card {
+  padding: .9rem; border-radius: 14px; box-shadow: 0 3px 12px rgba(0,0,0,.06);
+  background: var(--md-default-bg-color);
+  text-align: center;
+}
+.kpis .num { font-size: 1.5rem; font-weight: 700; }
+.kpis .label { opacity: .7; }
+
+/* sections */
+.section { margin: 2rem 0 2.5rem; }
+.section h2 { margin-bottom: .5rem; }
+figure { margin: 1rem 0; }
+figure img { width: 100%; border-radius: 8px; }
+figure figcaption { text-align: center; opacity: .75; font-size: .9rem; margin-top: .3rem; }
+
+/* leaderboard table */
+.dataTables_wrapper .dataTables_filter input { border-radius: 8px; }
+#board { width: 100% !important; }
+.footer-note { text-align:center; opacity:.6; font-size:.9rem; margin:2rem 0; }
+
+
+
+/************** NESTED TABS **************/
+/* nested tabs: make the 2nd row tighter and close to the 1st */
+.tabbed-set > .tabbed-set { margin-top: .4rem; }
+.tabbed-content figure { margin: .5rem 0 0; }
+.tabbed-content img {
+  width: 100%;
+  max-height: 420px;   /* adjust if you want */
+  object-fit: contain;
+  border-radius: 8px;
+}
+.tabbed-content figcaption {
+  text-align: center; opacity: .75; font-size: .9rem; margin-top: .25rem;
+}
+
+/************** Paper-like table styling **************/
+#board { width: 100% !important; border-collapse: separate; border-spacing: 0; }
+#board thead th {
+  font-weight: 700;
+  border-bottom: 2px solid rgba(0,0,0,.8);
+  padding: .55rem .7rem;
+}
+#board tbody td { padding: .55rem .7rem; }
+#board tbody tr:not(.group-row) td { border-top: 1px solid rgba(0,0,0,.12); }
+
+#board .model { font-weight: 600; }
+#board .num { font-variant-numeric: tabular-nums; text-align: center; }
+#board .num.best strong { font-weight: 700; }
+
+/* Paper-like compact table */
+.paper-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.6rem;               /* smaller font */
+  }
+  .paper-table thead th {
+    font-weight: 700;
+    padding: .42rem .55rem;           /* tighter header */
+    border-bottom: 2px solid rgba(0,0,0,.85);
+    user-select: none;
+    white-space: nowrap;
+  }
+  .paper-table tbody td {
+    padding: .38rem .55rem;           /* tighter body */
+    border-top: 1px solid rgba(0,0,0,.12);
+  }
+  .paper-table .model { font-weight: 600; }
+  .paper-table .num { font-variant-numeric: tabular-nums; text-align: center; }
+  .paper-table .num.best strong { font-weight: 800; }
+  
+  /* Group header rows */
+  .paper-table .group-row td {
+    font-weight: 700;
+    padding: .38rem .55rem;
+    background: rgba(0,0,0,.035);
+    border-top: 2px solid rgba(0,0,0,.85);
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+  
+  /* Optional zebra for readability */
+  .paper-table tbody tr:not(.group-row):nth-child(odd) td {
+    background: rgba(0,0,0,.02);
+  }
+  
+  /* Sortable header indicators */
+  .paper-table thead th.sortable { cursor: pointer; position: relative; }
+  .paper-table thead th.sorted-asc::after,
+  .paper-table thead th.sorted-desc::after {
+    content: '';
+    border: 5px solid transparent;
+    position: absolute;
+    right: 6px; top: 50%; transform: translateY(-50%);
+  }
+  .paper-table thead th.sorted-asc::after  { border-bottom-color: currentColor; margin-top: -4px; }
+  .paper-table thead th.sorted-desc::after { border-top-color: currentColor;  margin-top:  4px; }
+  
+/* keep model names on one line and give more space */
+.paper-table td.model,
+.paper-table th.th-model {
+  white-space: nowrap;   /* never wrap */
+  min-width: 140px;      /* adjust as needed */
+}
+
+.paper-table {
+    margin: 0 auto;
+  }
+  
+  .paper-table thead th {
+    font-size: 0.6rem;   /* smaller header font */
+    white-space: nowrap;  /* keep one line */
+  }
+  

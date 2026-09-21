@@ -1,0 +1,10 @@
+{
+  "competition_id": "2014_AMC_12B_Problems",
+  "problem_id": 2,
+  "difficulty": 2,
+  "problem": "Orvin went to the store with just enough money to buy $30$ balloons. When he arrived he discovered that the store had a special sale on balloons: buy $1$ balloon at the regular price and get a second at $\\frac{1}{3}$ off the regular price. What is the greatest number of balloons Orvin could buy?\n$\\textbf{(A)}\\ 33\\qquad\\textbf{(B)}\\ 34\\qquad\\textbf{(C)}\\ 36\\qquad\\textbf{(D)}\\ 38\\qquad\\textbf{(E)}\\ 39$",
+  "solutions": {
+    "Solution 1": "If every balloon costs $n$ dollars, then Orvin has $30n$ dollars.  For every balloon he buys for $n$ dollars, he can buy another for $\\frac{2n}{3}$ dollars.  This means it costs him $\\frac{5n}{3}$ dollars to buy a bundle of $2$ balloons.  With $30n$ dollars, he can buy $\\frac{30n}{\\frac{5n}{3}} = 18$ sets of two balloons, so the total number of balloons he can buy is $18\\times2  \\implies \\boxed{\\textbf{(C)}\\ 36 }$",
+    "Solution 2": "Similar to solution 1, but quicker. \nWe see the fraction $\\frac13,$ so we let each balloon cost $$3$ WLOG. Thus, Orvin has $$3\\cdot30=$90.$ \nEach pair of balloons (one full-priced and one a third off) costs $$3+\\left(1-\\frac13\\right)\\cdot$3=$3+$2=$5.$ Therefore, Orvin can buy $\\frac{$90}{$5}=18$ pairs of balloons, at maximum. $18\\cdot2=36$ balloons. "
+  }
+}

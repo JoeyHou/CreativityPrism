@@ -1,0 +1,8 @@
+{
+  "competition_id": "1973_AHSME_Problems",
+  "problem_id": 30,
+  "problem": "Let $[t]$ denote the greatest integer $\\leq t$ where $t \\geq 0$ and $S = \\{(x,y): (x-T)^2 + y^2 \\leq T^2 \\text{ where } T = t - [t]\\}$. Then we have \n$\\textbf{(A)}\\ \\text{the point } (0,0) \\text{ does not belong to } S \\text{ for any } t \\qquad$\n$\\textbf{(B)}\\ 0 \\leq \\text{Area } S \\leq \\pi \\text{ for all } t \\qquad$\n$\\textbf{(C)}\\ S \\text{ is contained in the first quadrant for all } t \\geq 5 \\qquad$\n$\\textbf{(D)}\\ \\text{the center of } S \\text{ for any } t \\text{ is on the line } y=x \\qquad$\n$\\textbf{(E)}\\ \\text{none of the other statements is true}$",
+  "solutions": {
+    "Solution": "The region $S$ is a circle radius $T$ and center $(T,0)$.  Since $T = t-[t]$, $0 \\le T < 1$.  That means the area of the circle is less than $\\pi$, and since the region can also be just a dot (achieved when $t$ is integer), the answer is $\\boxed{\\textbf{(B)}}$."
+  }
+}

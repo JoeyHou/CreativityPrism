@@ -1,0 +1,208 @@
+HITId,Input.problem,Input.cleaned_response,correctness_count,correctness
+3WYZV0QBG2TD0282981JDJ1QGI4XBR,"For every \(m\) and \(k\) integers with \(k\) odd, denote by \(\left[\frac{m}{k}\right]\) the integer closest to \(\frac{m}{k}\). For every odd integer \(k\), let \(P(k)\) be the probability that
+\(\left[\frac{n}{k}\right] + \left[\frac{100 - n}{k}\right] = \left[\frac{100}{k}\right]\)
+for an integer \(n\) randomly chosen from the interval \(1 \leq n \leq 99!\). What is the minimum possible value of \(P(k)\) over the odd integers \(k\) in the interval \(1 \leq k \leq 99\)?
+\(\textbf{(A)}\ \frac{1}{2} \qquad \textbf{(B)}\ \frac{50}{99} \qquad \textbf{(C)}\ \frac{44}{87} \qquad \textbf{(D)}\  \frac{34}{67} \qquad \textbf{(E)}\  \frac{7}{13}\)","To determine the minimum possible value of \( P(k) \) over odd integers \( k \) from 1 to 99, we analyze the equation:
+\(
+\left\lfloor \frac{n}{k} \right\rceil + \left\lfloor \frac{100 - n}{k} \right\rceil = \left\lfloor \frac{100}{k} \right\rceil,
+\)
+where \( \lfloor x \rceil \) denotes the integer closest to \( x \). Since \( 99! \) is divisible by all \( k \leq 99 \), we focus on \( n \) in \( 1 \leq n \leq k \).
+
+### Key Observations:
+1. **Closest Integer Behavior**: For \( n \leq \frac{k-1}{2} \), \( \left\lfloor \frac{n}{k} \right\rceil = 0 \); for \( n \geq \frac{k+1}{2} \), \( \left\lfloor \frac{n}{k} \right\rceil = 1 \).
+2. **Equation Structure**: Let \( C = \left\lfloor \frac{100}{k} \right\rceil \). The equation \( A + B = C \) holds when either:
+   - \( A = 0 \) and \( B = C \), or
+   - \( A = 1 \) and \( B = C - 1 \).
+
+### Case Analysis for \( k = 67 \):
+- **Compute \( C \):** \( \frac{100}{67} \approx 1.492 \), so \( C = 1 \).
+- **Valid \( n \):**
+  - \( A = 0 \) (i.e., \( n \leq 33 \)) requires \( B = 1 \). For \( B = 1 \), \( 100 - n > \frac{67}{2} \), which is always true since \( n \leq 33 \) ensures \( 100 - n \geq 67 \).
+  - \( A = 1 \) (i.e., \( n \geq 34 \)) requires \( B = 0 \). For \( B = 0 \), \( 100 - n < \frac{67}{2} \), which holds only when \( n > 66.5 \). Thus, \( n = 67 \).
+
+### Probability Calculation:
+- **Valid \( n \):** \( 33 \) values for \( A = 0 \) and \( 1 \) value for \( A = 1 \), totaling \( 34 \).
+- **Probability:** \( \frac{34}{67} \approx 0.507 \).
+
+Thus, the minimum \( P(k) \) occurs at \( k = 67 \), giving:
+\(
+\boxed{\textbf{(D)} \ \frac{34}{67}}
+\)",2,1
+3VMV5CHJ0RV2A27TKKS0PR7HJZ8GT8,"Given a finite set of points in the plane, each with integer coordinates, is it always possible to color the points red or white so that for any straight line \(L\) parallel to one of the coordinate axes the difference (in absolute value) between the numbers of white and red points on \(L\) is not greater than \(1\)?","We prove the statement by induction on the number of points, using an alternating path argument to adjust colorings when adding a new point.
+
+**Base Case:** For a single point, color it red. The difference on its row and column is 1, which satisfies the condition.
+
+**Inductive Step:** Assume the claim holds for all sets of \( n \) points. Consider a set \( S \) with \( n+1 \) points. Remove a point \( p = (x, y) \), leaving \( S' \), which by hypothesis has a valid coloring. Reinsert \( p \) and adjust the coloring as follows:
+
+1. **Case 1:** If both the row \( x \) and column \( y \) in \( S' \) have an even number of points, color \( p \) arbitrarily (e.g., red). This makes both row \( x \) and column \( y \) have an odd count, with a difference of 1, which is acceptable.
+
+2. **Case 2:** If one of row \( x \) or column \( y \) has an odd count in \( S' \), color \( p \) to balance the parity. For example, if row \( x \) is odd and column \( y \) is even, color \( p \) to match the minority color in row \( x \), reducing its difference to 0 and making column \( y \) odd with difference 1.
+
+3. **Case 3:** If both row \( x \) and column \( y \) are odd in \( S' \), coloring \( p \) would make them even. However, this requires adjusting existing colors to resolve the imbalance. Construct an alternating path starting at row \( x \) and ending at column \( y \), flipping the colors of points along this path. This preserves the balance in intermediate rows and columns while correcting the parity at \( x \) and \( y \). Since the bipartite graph is connected (or handled component-wise), such a path exists. After flipping, color \( p \) to maintain balance.
+
+**Conclusion:** By induction, all finite sets can be colored appropriately.",2,1
+3FTID4TN94EEDGKO5HCFA044UICYLL,"Chords \(AB\) and \(CD\) of a circle intersect at a point \(E\) inside the circle. Let \(M\) be an interior point of the segment \(\overline{EB}\). The tangent line at \(E\) to the circle through \(D, E\), and \(M\) intersects the lines \(\overline{BC}\) and \({AC}\) at \(F\) and \(G\), respectively.
+If  \(\frac{AM}{AB} = t\), find \(\frac{EG}{EF}\) in terms of \(t\).","1. **Coordinate Setup:**
+   - Place point \( E \) at the origin \((0,0)\).
+   - Let chord \( AB \) lie on the x-axis with \( A(1,0) \) and \( B(-1,0) \).
+   - Let chord \( CD \) lie on the y-axis with \( C(0,1) \) and \( D(0,-1) \). The circle through \( A, B, C, D \) is the unit circle.
+
+2. **Point \( M \) on \( EB \):**
+   - \( M \) is an interior point on \( EB \). Let \( M(-m,0) \) where \( 0 < m < 1 \).
+   - Given \( \frac{AM}{AB} = t \), compute \( m \):
+     \(
+     \frac{AM}{AB} = \frac{1 + m}{2} = t \implies m = 2t - 1.
+     \)
+
+3. **Circle through \( D, E, M \):**
+   - The circle passing through \( D(0,-1) \), \( E(0,0) \), and \( M(-m,0) \) has center \(\left(-\frac{m}{2}, -\frac{1}{2}\right)\) and tangent at \( E \):
+     \(
+     y = -mx.
+     \)
+
+4. **Intersections \( F \) and \( G \):**
+   - **Line \( BC \):** \( y = x + 1 \). Solve with tangent:
+     \(
+     -mx = x + 1 \implies x = -\frac{1}{m + 1}, \quad y = \frac{m}{m + 1}.
+     \)
+     Thus, \( F\left(-\frac{1}{m + 1}, \frac{m}{m + 1}\right) \).
+   - **Line \( AC \):** \( y = -x + 1 \). Solve with tangent:
+     \(
+     -mx = -x + 1 \implies x = \frac{1}{1 - m}, \quad y = -\frac{m}{1 - m}.
+     \)
+     Thus, \( G\left(\frac{1}{1 - m}, -\frac{m}{1 - m}\right) \).
+
+5. **Compute \( \frac{EG}{EF} \):**
+   - Distances from \( E(0,0) \):
+     \(
+     EG = \sqrt{\left(\frac{1}{1 - m}\right)^2 + \left(-\frac{m}{1 - m}\right)^2} = \frac{\sqrt{1 + m^2}}{1 - m},
+     \)
+     \(
+     EF = \sqrt{\left(-\frac{1}{m + 1}\right)^2 + \left(\frac{m}{m + 1}\right)^2} = \frac{\sqrt{1 + m^2}}{m + 1}.
+     \)
+   - Ratio:
+     \(
+     \frac{EG}{EF} = \frac{\frac{\sqrt{1 + m^2}}{1 - m}}{\frac{\sqrt{1 + m^2}}{m + 1}} = \frac{m + 1}{1 - m}.
+     \)
+   - Substitute \( m = 2t - 1 \):
+     \(
+     \frac{EG}{EF} = \frac{(2t - 1) + 1}{1 - (2t - 1)} = \frac{2t}{2 - 2t} = \frac{t}{1 - t}.
+     \)
+
+**Answer:** \(\boxed{\dfrac{t}{1 - t}}\)",2,0
+3UAU495MJ1852S3G88VIZW2LTZ6OUU,"Let \(n\) be a nonnegative integer. Determine the number of ways that one can choose \((n+1)^2\) sets \(S_{i,j}\subseteq\{1,2,\ldots,2n\}\), for integers \(i,j\) with \(0\leq i,j\leq n\), such that:
+\(\bullet\) for all \(0\leq i,j\leq n\), the set \(S_{i,j}\) has \(i+j\) elements; and
+\(\bullet\) \(S_{i,j}\subseteq S_{k,l}\) whenever \(0\leq i\leq k\leq n\) and \(0\leq j\leq l\leq n\).","To determine the number of valid configurations for the sets \( S_{i,j} \), we can decompose the problem into two independent combinatorial components:
+
+1. **Element Partitioning and Ordering:**
+   - The sets along the first column (\( j=0 \)) and first row (\( i=0 \)) require \( n \) distinct elements each. There are \( \binom{2n}{n} \) ways to partition the \( 2n \) elements into these two groups. Each group can be ordered in \( n! \) ways, yielding \( \binom{2n}{n} \cdot n! \cdot n! = (2n)! \) configurations.
+
+2. **Binary Choices for Internal Grid:**
+   - For each remaining cell \( (i,j) \) (\( 1 \leq i,j \leq n \)), the set \( S_{i,j} \) is formed by adding one element not present in \( S_{i-1,j} \) or \( S_{i,j-1} \). However, due to the inclusion constraints, each such addition corresponds to a binary choice between two valid options, independent of other cells. This contributes \( 2^{n^2} \) possibilities.
+
+Multiplying these components gives the final result:
+\(
+\boxed{(2n)! \cdot 2^{n^2}}
+\)",2,0
+3ZZAYRN1JP7Q2FOR8358U0GJALZOT3,"Determine (with proof) whether there is a subset \(X\) of the integers with the following property: for any integer \(n\) there is exactly one solution of \(a + 2b = n\) with \(a,b \in X\).","We construct the subset \( X \) as the set of all integers that can be represented using only the digits \( 0 \) and \( 1 \) in base \( 3 \). Formally, \( X = \left\{ \sum_{k=0}^\infty a_k 3^k \,\big|\, a_k \in \{0,1\} \right\} \). 
+
+1. **Base-3 Representation:** Every integer \( n \) has a unique base-3 expansion \( n = \sum_{k=0}^\infty d_k 3^k \), where \( d_k \in \{0,1,2\} \).
+
+2. **Digit-wise Decomposition:** For each digit \( d_k \) in \( n \)'s base-3 expansion, decompose \( d_k \) into \( a_k + 2b_k \), where \( a_k, b_k \in \{0,1\} \):
+   - If \( d_k = 0 \): \( a_k = 0, b_k = 0 \).
+   - If \( d_k = 1 \): \( a_k = 1, b_k = 0 \).
+   - If \( d_k = 2 \): \( a_k = 0, b_k = 1 \).
+
+3. **Construct \( a \) and \( b \):** Define \( a = \sum_{k=0}^\infty a_k 3^k \) and \( b = \sum_{k=0}^\infty b_k 3^k \). By construction, \( a, b \in X \), and \( n = a + 2b \).
+
+4. **Uniqueness:** The decomposition \( d_k = a_k + 2b_k \) is uniquely determined for each digit \( d_k \). Since base-3 expansions are unique, the pairs \( (a_k, b_k) \) are uniquely determined for all \( k \). Thus, \( a \) and \( b \) are unique elements of \( X \) satisfying \( n = a + 2b \).
+
+The set \( X \) exists and satisfies the required property.",2,0
+3A9LA2FRXBUNRFBO90BFZU4OBV9XH7,"Let \(ABC\) be a fixed acute triangle inscribed in a circle \(\omega\) with center \(O\). A variable point \(X\) is chosen on minor arc \(AB\) of \(\omega\), and segments \(CX\) and \(AB\) meet at \(D\). Denote by \(O_1\) and \(O_2\) the circumcenters of triangles \(ADX\) and \(BDX\), respectively. Determine all points \(X\) for which the area of triangle \(OO_1O_2\) is minimized.","We employ coordinate geometry to analyze the problem. Place the circumcircle \(\omega\) of \(\triangle ABC\) with center \(O\) at the origin. Let \(A(-1,0)\), \(B(1,0)\), and \(C(0,1)\), forming an acute triangle. Point \(X\) lies on the minor arc \(AB\) (the lower semicircle). Parametrize \(X\) as \((\cos\theta, \sin\theta)\) with \(\theta \in (\pi, 2\pi)\). The line \(CX\) intersects \(AB\) at \(D\), whose coordinates are derived as \(D\left(\frac{\cos\theta}{1 - \sin\theta}, 0\right)\).
+
+For \(\triangle ADX\), the perpendicular bisectors of \(AD\) and \(AX\) intersect at \(O_1\). Similarly, for \(\triangle BDX\), the bisectors intersect at \(O_2\).
+After calculations, when \(CX \perp AB\) (i.e., \(X\) at \((0,-1)\)), \(D\) coincides with the midpoint \((0,0)\). The circumcenters simplify to \(O_1\left(-\frac{1}{2}, -\frac{1}{2}\right)\) and \(O_2\left(\frac{1}{2}, -\frac{1}{2}\right)\).
+
+The area of \(\triangle OO_1O_2\) is \(\frac{1}{2} \times \text{base} \times \text{height}\). Here, \(O_1O_2 = 1\) (base) and height from \(O\) is \(\frac{1}{2}\), yielding area \(\frac{1}{4}\).
+For other positions of \(X\), symmetry breaks, increasing \(O_1O_2\) or altering the angle, thereby enlarging the area.
+
+The area of \(\triangle OO_1O_2\) is minimized when \(X\) is the midpoint of the minor arc \(AB\) (i.e., \(CX \perp AB\)), corresponding to \(X = (0,-1)\) in our coordinates. Thus, the solution is:
+
+\(
+\boxed{X \text{ is the midpoint of the minor arc } AB \text{ not containing } C}
+\)",1,0
+3VJ4PFXFKMNG0O9FYPQ0Y1IG4I2UA1,"Let \(\triangle ABC\) be an acute triangle, and let \(I_B, I_C,\) and \(O\) denote its \(B\)-excenter, \(C\)-excenter, and circumcenter, respectively. Points \(E\) and \(Y\) are selected on \(\overline{AC}\) such that \(\angle ABY = \angle CBY\) and \(\overline{BE}\perp\overline{AC}.\) Similarly, points \(F\) and \(Z\) are selected on \(\overline{AB}\) such that \(\angle ACZ = \angle BCZ\) and \(\overline{CF}\perp\overline{AB}.\)
+Lines \(I_B F\) and \(I_C E\) meet at \(P.\) Prove that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular.","To solve the problem, we employ coordinate geometry and vector analysis, demonstrating that \(\overline{PO}\) and \(\overline{YZ}\) are perpendicular by verifying their dot product is zero.
+
+1. **Coordinate Setup:**
+   Place \(\triangle ABC\) with \(A(0,0)\), \(B(b,0)\), and \(C(c,d)\), ensuring it is acute. Compute circumcenter \(O\) as the intersection of perpendicular bisectors. For example, if midpoints of \(AB\) and \(AC\) are \((b/2,0)\) and \((c/2,d/2)\), respectively, \(O\) is found by solving the perpendicular bisector equations.
+
+2. **Excenters Calculation:**
+   Using excenter formulas:
+   - The \(B\)-excenter \(I_B\) coordinates: \(\left(\frac{-a \cdot 0 + b \cdot b + c \cdot c}{-a + b + c}, \frac{-a \cdot 0 + b \cdot 0 + c \cdot d}{-a + b + c}\right)\), where \(a = BC\), \(b = AC\), \(c = AB\).
+   - Similarly, compute \(C\)-excenter \(I_C\).
+
+3. **Points \(Y\), \(Z\), \(E\), \(F\):**
+   - \(Y\) on \(AC\) via angle bisector theorem: divides \(AC\) in ratio \(AB:BC\).
+   - \(Z\) on \(AB\) via angle bisector theorem: divides \(AB\) in ratio \(AC:BC\).
+   - \(E\) and \(F\) are feet of perpendiculars from \(B\) and \(C\) to \(AC\) and \(AB\), respectively.
+
+4. **Equations of Lines \(I_BF\) and \(I_CE\):**
+   - Determine slopes and equations using coordinates of \(I_B\), \(F\), \(I_C\), and \(E\).
+
+5. **Intersection Point \(P\):**
+   Solve the system of equations for \(I_BF\) and \(I_CE\) to find coordinates of \(P\).
+
+6. **Vectors and Perpendicularity:**
+   - Compute vectors \(\overline{PO} = (x_O - x_P, y_O - y_P)\) and \(\overline{YZ} = (x_Z - x_Y, y_Z - y_Y)\).
+   - Calculate the dot product \((x_O - x_P)(x_Z - x_Y) + (y_O - y_P)(y_Z - y_Y)\).
+
+7. **Algebraic Verification:**
+   Symbolically expand the dot product using coordinates derived from general positions. Through algebraic manipulation, leveraging properties of excenters, midpoints, and perpendicularity, the dot product simplifies to zero, confirming \(\overline{PO} \perp \overline{YZ}\).
+
+By systematically computing coordinates and analytically verifying perpendicularity through vector dot products, this coordinate geometry approach solves the problem using algebraic methods.",2,0
+388FBO7J0A941GN9HUSUNS8TZDCYNN,"The altitude drawn to the base of an isosceles triangle is \(8\), and the perimeter \(32\). The area of the triangle is:
+\(\textbf{(A)}\ 56\qquad  \textbf{(B)}\ 48\qquad  \textbf{(C)}\ 40\qquad  \textbf{(D)}\ 32\qquad  \textbf{(E)}\ 24\)","To solve the problem of finding the area of an isosceles triangle with an altitude of 8 and a perimeter of 32, we can use a coordinate geometry approach. Here's the step-by-step solution:
+
+1. **Define the Coordinate System**:
+   - Place the base of the triangle along the x-axis, centered at the origin. The vertices of the base are at \((-k, 0)\) and \((k, 0)\), so the base length is \(2k\).
+   - The apex of the triangle is at \((0, 8)\).
+
+2. **Express the Perimeter**:
+   - The perimeter of the triangle is the sum of the lengths of the two equal sides and the base. Each equal side is the distance from \((0, 8)\) to \((k, 0)\), which is \(\sqrt{k^2 + 8^2}\).
+   - The perimeter equation is: \(2\sqrt{k^2 + 64} + 2k = 32\).
+
+3. **Simplify the Perimeter Equation**:
+   - Divide both sides by 2: \(\sqrt{k^2 + 64} + k = 16\).
+   - Let \(s = \sqrt{k^2 + 64}\). Then \(s = 16 - k\).
+
+4. **Solve for \(k\)**:
+   - Square both sides: \(k^2 + 64 = (16 - k)^2\).
+   - Expand the right side: \(k^2 + 64 = 256 - 32k + k^2\).
+   - Cancel \(k^2\) from both sides: \(64 = 256 - 32k\).
+   - Solve for \(k\): \(32k = 192 \implies k = 6\).
+
+5. **Determine the Base and Area**:
+   - The base \(b = 2k = 12\).
+   - The area of the triangle is \(\frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 12 \times 8 = 48\).
+
+The area of the triangle is \(\boxed{48}\).",1,1
+3KQC8JMJHV8BBH4APB4RSEFK4093HE,"Given a triangle \(ABC\), let \(P\) and \(Q\) be points on segments \(\overline{AB}\) and \(\overline{AC}\), respectively, such that \(AP = AQ\).  Let \(S\) and \(R\) be distinct points on segment \(\overline{BC}\) such that \(S\) lies between \(B\) and \(R\), \(\angle{BPS} = \angle{PRS}\), and \(\angle{CQR} = \angle{QSR}\).  Prove that \(P\), \(Q\), \(R\), \(S\) are concyclic (in other words, these four points lie on a circle).","1. **Spiral Similarity Setup:**
+   - Given \(\angle BPS = \angle PRS\), there exists a spiral similarity centered at \(S\) mapping \(B\) to \(P\) and \(P\) to \(R\). This implies:
+     \(
+     \frac{SB}{SP} = \frac{SP}{SR} \implies SP^2 = SB \cdot SR
+     \)
+   - Similarly, \(\angle CQR = \angle QSR\) implies a spiral similarity centered at \(S\) mapping \(C\) to \(Q\) and \(Q\) to \(R\), giving:
+     \(
+     SQ^2 = SC \cdot SR
+     \)
+
+2. **Power of Point \(S\):**
+   - The equations \(SP^2 = SB \cdot SR\) and \(SQ^2 = SC \cdot SR\) show \(S\) has equal power with respect to the circumcircles of \(\triangle BPR\) and \(\triangle CQR\). Thus, \(S\) lies on their radical axis.
+
+3. **Radical Axis Contradiction:**
+   - Since \(AP = AQ\), the power of \(A\) with respect to both circumcircles is equal (\(AP^2 = AQ^2\)). Hence, \(A\) lies on the radical axis of these circles, which is line \(RS\).
+   - However, \(A\) cannot lie on \(RS\) as it is outside \(\triangle ABC\). This contradiction implies the two circumcircles must coincide.
+
+4. **Concyclicity Conclusion:**
+   - The merging of circumcircles means \(P\), \(Q\), \(R\), and \(S\) all lie on the same circle, proving they are concyclic.",2,0

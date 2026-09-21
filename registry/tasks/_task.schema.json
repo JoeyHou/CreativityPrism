@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreativityPrism task registry entry",
+  "description": "Contract consumed by runner/run.py and runner/artifacts.py. Exists mainly so editors stop guessing; schemastore maps **/tasks/*.yaml to the Ansible tasks schema, which these files are not.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "display_name",
+    "folder",
+    "adapter"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Registry key. Must match the file name and the --task argument.",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-readable name shown by --list-tasks."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Grouping label for reporting only; not consumed by the runner."
+    },
+    "folder": {
+      "type": "string",
+      "description": "Repo-relative path to the task bundle."
+    },
+    "adapter": {
+      "type": "string",
+      "description": "Repo-relative path to the adapter script.",
+      "pattern": "^registry/adapters/[a-z0-9_]+\\.sh$"
+    },
+    "environment": {
+      "type": "string",
+      "description": "Short env name; the runner pre-flights creativityprism-<environment>. 'modern' and 'legacy' ship with the repo; a contributor may name their own and add registry/environments/<name>.yml. Defaults to modern.",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    "description": {
+      "type": "string"
+    },
+    "limit_supported": {
+      "type": "boolean",
+      "description": "Whether the task can honour --limit. Absent means false, and the runner rejects --limit."
+    },
+    "slurm": {
+      "type": "object",
+      "description": "Per-task SBATCH directive overrides for --slurm. Keys are directive names without the leading dashes; underscores are accepted for dashes (cpus_per_task -> cpus-per-task). A null or empty value drops the directive. These override runner/slurm_template.sbatch and are themselves overridden by --slurm-override. Values are cluster-specific, so partition and account names must be set for the cluster in use.",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "null"
+        ]
+      }
+    },
+    "uses_judge": {
+      "type": "boolean",
+      "description": "Whether evaluation calls an LLM judge. False means --judge-model is a documented no-op for this task (scoring is execution, embedding distance, an n-gram index, ...). Consumed by the gates and by RUNNING_GUIDE Track C; absent means false."
+    },
+    "loader_parser": {
+      "type": "string",
+      "description": "How result_analysis/loader.py turns this task's artifacts into rows: '<module>:<callable>'. The callable takes (inference, evaluation) as [(stem, data), ...] pairs and returns row dicts. Absent means the task's results stay out of the shared table.",
+      "pattern": "^[A-Za-z_][A-Za-z0-9_.]*:[A-Za-z_][A-Za-z0-9_]*$"
+    },
+    "stages": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "inference",
+          "eval"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true,
+      "description": "Which stages this task has. Defaults to both. A generation-only task that is scored by hand later declares ['inference'] and is then not expected -- by the gates or by the runner -- to produce an evaluation artifact."
+    },
+    "distribution": {
+      "enum": [
+        "bundled",
+        "fetch"
+      ],
+      "description": "How the task's data reaches users. 'bundled' (the default when absent): the Hub dataset ships it. 'fetch': upstream carries no license, so the Hub dataset ships item ids and source references with the text null, and release/scripts/fetch_upstream.py pulls the text from `upstream`. Flipping to 'bundled' is the whole change when upstream adds a license."
+    },
+    "upstream": {
+      "type": "object",
+      "description": "Where the task's data comes from: who published it, under what licence, and what we changed. A task with distribution: fetch must also pin `commit` and list `files`.",
+      "required": [
+        "name",
+        "url",
+        "license"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Upstream project or paper name."
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "license": {
+          "type": "string",
+          "description": "SPDX id where there is one; 'none' when the upstream carries no licence."
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$",
+          "description": "Full commit sha. A branch name would let upstream change the data under us."
+        },
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "ours",
+              "theirs",
+              "sha256",
+              "field",
+              "into"
+            ],
+            "properties": {
+              "ours": {
+                "type": "string",
+                "description": "Our data file, relative to the task bundle's data/processed/."
+              },
+              "theirs": {
+                "type": "string",
+                "description": "Upstream file, relative to the upstream repo root."
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "field": {
+                "type": "string",
+                "description": "Key read from each upstream row."
+              },
+              "into": {
+                "type": "string",
+                "description": "Dotted path in our row that receives prefix + the upstream value."
+              },
+              "prefix": {
+                "type": "string",
+                "default": ""
+              }
+            }
+          }
+        },
+        "paper": {
+          "type": "string",
+          "description": "Link to the paper the data was published with."
+        },
+        "modifications": {
+          "type": "string",
+          "description": "What we changed, in one sentence or two. CC-BY and Apache-2.0 upstreams require this to be stated."
+        }
+      }
+    }
+  }
+}

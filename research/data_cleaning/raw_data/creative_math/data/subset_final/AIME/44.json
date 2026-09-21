@@ -1,0 +1,11 @@
+{
+  "competition_id": "2015_AIME_I_Problems",
+  "problem_id": 1,
+  "difficulty": 3,
+  "problem": "The expressions $A$ = $1 \\times 2 + 3 \\times 4 + 5 \\times 6 + \\cdots + 37 \\times 38 + 39$ and $B$ = $1 + 2 \\times 3 + 4 \\times 5 + \\cdots + 36 \\times 37 + 38 \\times 39$ are obtained by writing multiplication and addition operators in an alternating pattern between successive integers.  Find the positive difference between integers $A$ and $B$.",
+  "solutions": {
+    "Solution 1": "We have \\[|A-B|=|1+3(4-2)+5(6-4)+ \\cdots + 37(38-36)-39(1-38)|\\]\\[\\implies |2(1+3+5+7+ \\cdots +37)-1-39(37)|\\]\\[\\implies |361(2)-1-39(37)|=|722-1-1443|=|-722|\\implies \\boxed{722}\\]",
+    "Solution 2": "We see that\n$A=(1\\times 2)+(3\\times 4)+(5\\times 6)+\\cdots +(35\\times 36)+(37\\times 38)+39$\nand\n$B=1+(2\\times 3)+(4\\times 5)+(6\\times 7)+\\cdots +(36\\times 37)+(38\\times 39)$.\nTherefore,\n$B-A=-38+(2\\times 2)+(2\\times 4)+(2\\times 6)+\\cdots +(2\\times 36)+(2\\times 38)$\n$=-38+4\\times (1+2+3+\\cdots+19)$\n$=-38+4\\times\\frac{20\\cdot 19}{2}=-38+760=\\boxed{722}.$",
+    "Solution 3 (slower solution)": "For those that aren't shrewd enough to recognize the above, we may use Newton's Little Formula to semi-bash the equations.\nWe write down the pairs of numbers after multiplication and solve each layer:\n\n\\[2, 12, 30, 56, 90...(39)\\]\n\\[6, 18, 26, 34...\\]\n\\[8, 8, 8...\\]\nand\n\\[(1) 6, 20, 42, 72...\\]\n\\[14, 22, 30...\\]\n\\[8, 8, 8...\\]\n\nThen we use Newton's Little Formula for the sum of $n$ terms in a sequence.\nNotice that there are $19$ terms in each sequence, plus the tails of $39$ and $1$ on the first and second equations, respectively.\n\nSo,\n\n\\[2\\binom{19}{1}+10\\binom{19}{2}+8\\binom{19}{3}+1\\]\n\n\\[6\\binom{19}{1}+14\\binom{19}{2}+8\\binom{19}{3}+39\\]\n\nSubtracting $A$ from $B$ gives:\n\n\\[4\\binom{19}{1}+4\\binom{19}{2}-38\\]\n\nWhich unsurprisingly gives us $\\boxed{722}.$"
+  }
+}

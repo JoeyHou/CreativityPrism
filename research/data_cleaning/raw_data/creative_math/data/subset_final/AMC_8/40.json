@@ -1,0 +1,11 @@
+{
+  "competition_id": "1996_AJHSME_Problems",
+  "problem_id": 1,
+  "difficulty": 1,
+  "problem": "How many positive factors of 36 are also multiples of 4?\n$\\text{(A)}\\ 2 \\qquad \\text{(B)}\\ 3 \\qquad \\text{(C)}\\ 4 \\qquad \\text{(D)}\\ 5 \\qquad \\text{(E)}\\ 6$",
+  "solutions": {
+    "Solution": "The factors of $36$ are $1, 2, 3, 4, 6, 9, 12, 18,$ and $36$.\nThe multiples of $4$ up to $36$ are $4, 8, 12, 16, 20, 24, 28, 32$ and $36$.\nOnly $4, 12$ and $36$ appear on both lists, so the answer is $3$, which is option $\\boxed{B}$.",
+    "Solution 2": "$36 = 4^1 \\cdot 3^2$. All possible factors of $36$ will be here, except for ones divisible by $2$ and not by $4$. $(1+1)\\cdot (2+1) = 6$. Subtract factors not divisible by $4$, which are $1$, $3^1$, and $3^2$. $6-3=3$, which is $\\boxed{B}$.",
+    "Solution 3": "Divide $36$ by $4$, and the remaining factors, when multiplied by $4$, will be factors of $36$.\n$36 \\div 4 = 9$, which has $3$ factors, giving us option $\\boxed{B}$."
+  }
+}

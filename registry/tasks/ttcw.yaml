@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: ttcw
+display_name: "Torrance Test of Creative Writing"
+domain: creative_writing
+folder: tasks/prism_v1
+adapter: registry/adapters/ttcw.sh
+environment: modern
+description: "Write New Yorker-style stories from plot prompts."
+uses_judge: true
+loader_parser: result_analysis.loader:_parse_ttcw
+limit_supported: true
+
+# See the note in aut.yaml.
+upstream:
+  name: "Art or Artifice? Large Language Models and the False Promise of Creativity"
+  url: https://github.com/salesforce/creativity_eval
+  license: BSD-3-Clause
+  paper: https://arxiv.org/abs/2309.14556
+  modifications: >-
+    The 12 story plots and the 14 binary rubric questions are reformatted to our
+    row schema. The New Yorker stories the plots come from are not included: the
+    rows link to them. all_stories.json holds the paper's own 36 GPT-4 / GPT-3.5 /
+    Claude stories, 8 of which are the judge's few-shot demos.

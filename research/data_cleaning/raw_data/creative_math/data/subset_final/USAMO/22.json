@@ -1,0 +1,9 @@
+{
+  "competition_id": "2009_USAMO_Problems",
+  "problem_id": 6,
+  "difficulty": 9,
+  "problem": "Let $s_1, s_2, s_3, \\ldots$ be an infinite, nonconstant sequence of rational numbers, meaning it is not the case that $s_1 = s_2 = s_3 = \\cdots.$  Suppose that $t_1, t_2, t_3, \\ldots$ is also an infinite, nonconstant sequence of rational numbers with the property that $(s_i - s_j)(t_i - t_j)$ is an integer for all $i$ and $j$.  Prove that there exists a rational number $r$ such that $(s_i - s_j)r$ and $(t_i - t_j)/r$ are integers for all $i$ and $j$.",
+  "solutions": {
+    "Solution": "Suppose the $s_i$ can be represented as $\\frac{a_i}{b_i}$ for every $i$, and suppose $t_i$ can be represented as $\\frac{c_i}{d_i}$. Let's start with only the first two terms in the two sequences, $s_1$ and $s_2$ for sequence $s$ and $t_1$ and $t_2$ for sequence $t$. Then by the conditions of the problem, we have $(s_2 - s_1)(t_2 - t_1)$ is an integer, or $(\\frac{a_2}{b_2} - \\frac{a_1}{b_1})(\\frac{c_2}{d_2} - \\frac{c_1}{d_1})$ is an integer. Now we can set $r = \\frac{b_1 b_2}{d_1 d_2}$, because the least common denominator of $s_2 - s_1$ is $b_1 b_2$ and of $t_2 - t_1$ is $d_1 d_2$, and multiplying or dividing appropriately by $\\frac{b_1 b_2}{d_1 d_2}$ will always give an integer. \nNow suppose we kept adding $s_i$ and $t_i$ until we get to $s_m = \\frac{a_m}{b_m}$ in sequence $s$ and $t_m = \\frac{c_m}{d_m}$ in sequence $t$ so that $(t_m - t_i)(s_m - s_i)$ is an integer for all $i$ with $1 \\le i < m$, where $m$ is a positive integer. At this point, we will have $r$ = $\\frac{\\prod_{n=1}^{m}b_n}{\\prod_{n=1}^{m}d_n}$, because these are the least common denominators of the two sequences up to $m$. As we keep adding $s_i$ and $t_i$, $r$ will always have value $\\frac{\\prod_{n=1}^{m}b_n}{\\prod_{n=1}^{m}d_n}$, and we are done."
+  }
+}

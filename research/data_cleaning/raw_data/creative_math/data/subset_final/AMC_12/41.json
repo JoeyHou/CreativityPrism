@@ -1,0 +1,10 @@
+{
+  "competition_id": "2023_AMC_12A_Problems",
+  "problem_id": 23,
+  "difficulty": 4,
+  "problem": "How many ordered pairs of positive real numbers $(a,b)$ satisfy the equation\n\\[(1+2a)(2+2b)(2a+b) = 32ab?\\]\n$\\textbf{(A) }0\\qquad\\textbf{(B) }1\\qquad\\textbf{(C) }2\\qquad\\textbf{(D) }3\\qquad\\textbf{(E) }\\text{an infinite number}$",
+  "solutions": {
+    "Solution 1: AM-GM Inequality": "Using AM-GM on the two terms in each factor on the left, we get\n\\[(1+2a)(2+2b)(2a+b) \\ge 8\\sqrt{2a \\cdot 4b \\cdot 2ab}= 32ab,\\]\nmeaning the equality condition must be satisfied. This means $1 = 2a = b$, so we only have $\\boxed{1}$ solution.",
+    "Solution 2: Sum Of Squares": "Equation $(1+2a)(2+2b)(2a+b)=32ab$ is equivalent to\n\\[b(2a-1)^2+2a(b-1)^2+(2a-b)^2=0,\\]\nwhere $a$, $b>0$. Therefore $2a-1=b-1=2a-b=0$, so $(a,b)=\\left(\\tfrac12,1\\right)$. Hence the answer is $\\boxed{\\textbf{(B) }1}$."
+  }
+}

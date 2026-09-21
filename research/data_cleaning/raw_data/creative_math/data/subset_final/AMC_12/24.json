@@ -1,0 +1,9 @@
+{
+  "competition_id": "2014_AMC_12B_Problems",
+  "problem_id": 18,
+  "difficulty": 3,
+  "problem": "The numbers 1, 2, 3, 4, 5 are to be arranged in a circle. An arrangement is $bad$ if it is not true that for every $n$ from $1$ to $15$ one can find a subset of the numbers that appear consecutively on the circle that sum to $n$. Arrangements that differ only by a rotation or a reflection are considered the same. How many different bad arrangements are there?\n$\\textbf {(A) } 1 \\qquad \\textbf {(B) } 2 \\qquad \\textbf {(C) } 3 \\qquad \\textbf {(D) } 4 \\qquad \\textbf {(E) } 5$",
+  "solutions": {
+    "Solution 1": "We see that there are $5!$ total ways to arrange the numbers. However, we can always rotate these numbers so that, for example, the number 1 is always at the top of the circle. Thus, there are only $4!$ ways under rotation, which is not difficult to list out. We systematically list out all $24$ cases. \nNow, we must examine if they satisfy the conditions. We can see that by choosing one number at a time, we can always obtain subsets with sums 1, 2, 3, 4, and 5. By choosing the full circle, we can obtain 15. By choosing everything except for 1, 2, 3, 4, and 5, we can obtain subsets with sums of 10, 11, 12, 13, and 14. \nThis means that we now only need to check for 6, 7, 8, and 9. However, once we have found a set summing to 6, we can choose everything else and obtain a set summing to 9, and similarly for 7 and 8. Thus, we only need to check each case for whether or not we can obtain 6 or 7. \nWe find that there are only 4 arrangements that satisfy these conditions. However, each of these is a reflection of another. We divide by 2 for these reflections to obtain a final answer of $\\boxed{\\textbf {(B) }2}$."
+  }
+}

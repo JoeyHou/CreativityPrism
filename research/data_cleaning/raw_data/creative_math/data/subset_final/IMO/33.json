@@ -1,0 +1,9 @@
+{
+  "competition_id": "1963_IMO_Problems",
+  "problem_id": 6,
+  "difficulty": 9.5,
+  "problem": "Five students, $A,B,C,D,E$, took part in a contest. One prediction was that the contestants would finish in the order $ABCDE$. This prediction was very poor. In fact no contestant finished in the position predicted, and no two contestants predicted to finish consecutively actually did so. A second prediction had the contestants finishing in the order $DAECB$. This prediction was better. Exactly two of the contestants finished in the places predicted, and two disjoint pairs of students predicted to finish consecutively actually did so. Determine the order in which the contestants finished.",
+  "solutions": {
+    "Solution": "We are given that no contestant finished in the position predicted, and no two contestants predicted to finish consecutively actually did so in order $ABCDE$. None of them finished in that order. Also only two of them had their actual positions in $DAECB$. After imposing these two conditions the list of possible outcomes is: \n(1)$CAEBD$,\n(2)$DCAEB$,\n(3)$DCEBA$,\n(4)$EDACB$. \nOne more condition is that two disjoint pairs of students predicted to finish consecutively actually did so. Out of the above four in the list, (1) and (2) have $AE$ as the correctly predicted consecutive finishers(but only 1 pair), (3) has no correctly predicted consecutive finishers. But (4) has 2 disjoint correctly predicted consecutive finishers who are $DA$ and $CB$.\nHence, order is $EDACB$."
+  }
+}

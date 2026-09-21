@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Template for site-local cluster environment setup.
+# Copy to registry/environments/.cluster_env.sh (git-ignored) and edit for your cluster.
+#
+# This file is sourced by registry/adapters/_common.sh before conda env activation,
+# so it runs in every adapter invocation. Use it for things that must be in the
+# shell environment before Python starts:
+#   - Lmod / Environment Modules "module load" commands
+#   - Cluster-specific LD_LIBRARY_PATH additions
+#   - Scheduler variables (e.g. SLURM-specific tweaks)
+#
+# Do NOT put secrets here (use api_keys.json for that).
+# Do NOT activate conda here (_common.sh handles activation).
+
+# ---------- Example: Pitt CRC ----------
+# module load cuda/12.1
+# module load gcc/10.2.0
+# export VLLM_WORKER_MULTIPROC_METHOD=spawn   # needed on CRC; default is already spawn
+
+# ---------- Example: SLURM cluster with different CUDA ----------
+# module load cuda/12.4
+# module load gcc/12.3.0
+
+# ---------- Example: cluster without Lmod ----------
+# export CUDA_HOME=/usr/local/cuda-12.1
+# export PATH="$CUDA_HOME/bin:$PATH"
+# export LD_LIBRARY_PATH="$CUDA_HOME/lib64:${LD_LIBRARY_PATH:-}"

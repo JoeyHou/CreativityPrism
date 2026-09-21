@@ -1,0 +1,9 @@
+{
+  "competition_id": "1977_IMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6.5,
+  "problem": "Let $a,b,A,B$ be given reals. We consider the function defined by\\[f(x) = 1 - a \\cdot \\cos(x) - b \\cdot \\sin(x) - A \\cdot \\cos(2x) - B \\cdot \\sin(2x).\\]Prove that if for any real number $x$ we have $f(x) \\geq 0$ then $a^2 + b^2 \\leq 2$ and $A^2 + B^2 \\leq 1.$",
+  "solutions": {
+    "Solution": "$f(x) = 1-\\sqrt{a^2+b^2}\\sin (x+\\arctan\\frac{a}{b}) - \\sqrt{A^2+B^2}\\sin (2x+\\arctan\\frac{A}{B}) \\geq 0$.\n$f(x+\\pi) = 1+\\sqrt{a^2+b^2}\\sin (x+\\arctan\\frac{a}{b}) - \\sqrt{A^2+B^2}\\sin (2x+\\arctan\\frac{A}{B}) \\geq 0$\nTherefore, $\\sqrt{A^2+B^2}\\sin (2x+\\arctan\\frac{A}{B}) \\leq 1$. Since this identity is true for any real $x$, let the sine term be one, $\\longrightarrow A^2+B^2 \\leq 1$.\nTo get cancellation on the rightmost terms, note $\\sin (x+\\pi/2) = \\cos x, \\sin (x-\\pi/2) = -\\cos x$.\n$f(x+\\pi/4) = 1-\\sqrt{a^2+b^2}\\sin (x+\\pi/4+\\arctan\\frac{a}{b}) - \\sqrt{A^2+B^2}\\cos2x+\\arctan\\frac{A}{B}) \\geq 0$.\n$f(x-\\pi/4) = 1-\\sqrt{a^2+b^2}\\sin (x-\\pi/4+\\arctan\\frac{a}{b}) + \\sqrt{A^2+B^2}\\cos2x+\\arctan\\frac{A}{B}) \\geq 0$.\nLet $x+\\arctan\\frac{a}{b} = y$.\nThen $\\sqrt{a^2+b^2}(\\sin (y+\\pi/4) + \\sin (y-\\pi/4)) \\leq 2$\n$\\sqrt{a^2+b^2} \\leq \\dfrac{2}{\\sqrt{2}(\\sin y)}$. Since it's valid for all real $x$ let $\\sin y = 1$, and we are done."
+  }
+}

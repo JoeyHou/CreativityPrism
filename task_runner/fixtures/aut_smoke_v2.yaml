@@ -1,0 +1,5 @@
+task: aut
+inference_model: GPT4.1
+judge_model: GPT4.1-mini
+limit: 3
+notes: "Phase 2 smoke test (1a) — config-file submission flow"

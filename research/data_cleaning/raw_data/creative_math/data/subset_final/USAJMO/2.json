@@ -1,0 +1,9 @@
+{
+  "competition_id": "2021_USAJMO_Problems",
+  "problem_id": 5,
+  "difficulty": 6.5,
+  "problem": "A finite set $S$ of positive integers has the property that, for each $s \\in S,$ and each positive integer divisor $d$ of $s$, there exists a unique element $t \\in S$ satisfying $\\text{gcd}(s, t) = d$. (The elements $s$ and $t$ could be equal.)\n\n\nGiven this information, find all possible values for the number of elements of $S$.\n\n\n",
+  "solutions": {
+    "Solution": "The answer is $0$ (left out by problem author) or $2^n$ for any non-negative integer $n$.\nTo construct $|S|=2^n$, take $2n$ distinct primes $p_1, q_1, p_2, q_2, \\dots p_n, q_n$ and construct $2^n$ elements for $S$ by taking the product over all $n$ indices $i$ of either $p_i$ or $q_i$ for every $i$.\nNote that (from the problem statement) each element of $S$ has $|S|$ divisors.\nNow it suffices to show that there is no element $x \\in S$ such that $x$ is divisible by more than one power of any prime.\nSuppose there does exist an element $x$ and a prime $p$ such that $p^2 \\mid x$.\nThis implies that there exists an element $c \\in S$ that is divisible by $p$ but not $p^2$ by $\\gcd (x,c)=p$.\nExactly half of $c$'s divisors are not divisible by $p$, so it follows that exactly half of the elements in $S$ are not divisible by $p$.\nHowever, if $p^0 , p^1 , \\dots p^k$ are the powers of $p$ dividing $x$ for some $k \\ge 2$, only $\\frac{1}{k+1}$ of the divisors of $x$ are not divisible by $p$.\nBut this means that $\\frac{1}{k+1}$ of the elements of $S$ are not divisible by $p$, contradiction.\nTherefore, $|S|$ must be some power of $2$."
+  }
+}

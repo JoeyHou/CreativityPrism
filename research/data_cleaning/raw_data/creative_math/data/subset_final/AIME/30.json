@@ -1,0 +1,10 @@
+{
+  "competition_id": "2009_AIME_II_Problems",
+  "problem_id": 2,
+  "difficulty": 3,
+  "problem": "Suppose that $a$, $b$, and $c$ are positive real numbers such that $a^{\\log_3 7} = 27$, $b^{\\log_7 11} = 49$, and $c^{\\log_{11}25} = \\sqrt{11}$. Find\n\\[a^{(\\log_3 7)^2} + b^{(\\log_7 11)^2} + c^{(\\log_{11} 25)^2}.\\]",
+  "solutions": {
+    "Solution 1": "First, we have:\n\\[x^{(\\log_y z)^2} = x^{\\left( (\\log_y z)^2 \\right) } = x^{(\\log_y z) \\cdot (\\log_y z) } = \\left( x^{\\log_y z} \\right)^{\\log_y z}\\]\nNow, let $x=y^w$, then we have:\n\\[x^{\\log_y z}  = \\left( y^w \\right)^{\\log_y z}  = y^{w\\log_y z}  = y^{\\log_y (z^w)}  = z^w\\]\nThis is all we need to evaluate the given formula. Note that in our case we have $27=3^3$, $49=7^2$, and $\\sqrt{11}=11^{1/2}$. We can now compute:\n\\[a^{(\\log_3 7)^2} = \\left( a^{\\log_3 7} \\right)^{\\log_3 7} = 27^{\\log_3 7} = (3^3)^{\\log_3 7} = 7^3 = 343\\]\nSimilarly, we get\n\\[b^{(\\log_7 11)^2}  = (7^2)^{\\log_7 11} = 11^2  = 121\\]\nand\n\\[c^{(\\log_{11} 25)^2} = (11^{1/2})^{\\log_{11} 25} = 25^{1/2} = 5\\]\nand therefore the answer is $343+121+5 = \\boxed{469}$.",
+    "Solution 2": "We know from the first three equations that $\\log_a27 = \\log_37$, $\\log_b49 = \\log_711$, and $\\log_c\\sqrt{11} = \\log_{11}25$. Substituting, we find\n\\[a^{(\\log_a27)(\\log_37)} + b^{(\\log_b49)(\\log_711)} + c^{(\\log_c\\sqrt {11})(\\log_{11}25)}.\\]\nWe know that $x^{\\log_xy} =y$, so we find\n\\[27^{\\log_37} + 49^{\\log_711} + \\sqrt {11}^{\\log_{11}25}\\]\n\\[(3^{\\log_37})^3 + (7^{\\log_711})^2 + ({11^{\\log_{11}25}})^{1/2}.\\]\nThe $3$ and the $\\log_37$ cancel to make $7$, and we can do this for the other two terms. Thus, our answer is\n\\[7^3 + 11^2 + 25^{1/2}\\]\n\\[= 343 + 121 + 5\\]\n\\[= \\boxed {469}.\\]"
+  }
+}

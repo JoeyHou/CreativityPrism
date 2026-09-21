@@ -1,0 +1,10 @@
+{
+  "competition_id": "1989_AIME_Problems",
+  "problem_id": 7,
+  "difficulty": 4,
+  "problem": "If the integer $k$ is added to each of the numbers $36$, $300$, and $596$, one obtains the squares of three consecutive terms of an arithmetic series. Find $k$.",
+  "solutions": {
+    "Solution 1": "Call the terms of the arithmetic progression $a,\\ a + d,\\ a + 2d$, making their squares $a^2,\\ a^2 + 2ad + d^2,\\ a^2 + 4ad + 4d^2$.\nWe know that $a^2 = 36 + k$ and $(a + d)^2 = 300 + k$, and subtracting these two we get $264 = 2ad + d^2$ (1). Similarly, using $(a + d)^2 = 300 + k$ and $(a + 2d)^2 = 596 + k$, subtraction yields $296 = 2ad + 3d^2$ (2). \nSubtracting the first equation from the second, we get $2d^2 = 32$, so $d = 4$. Substituting backwards yields that $a = 31$ and $k = \\boxed{925}$.",
+    "Solution 2 (Straighforward, but has big numbers)": "Since terms in an arithmetic progression have constant differences, \n\\[\\sqrt{300+k}-\\sqrt{36+k}=\\sqrt{596+k}-\\sqrt{300+k}\\]\n\\[\\implies 2\\sqrt{300+k} = \\sqrt{596+k}+\\sqrt{36+k}\\]\n\\[\\implies 4k+1200=596+k+36+k+2\\sqrt{(596+k)(36+k)}\\]\n\\[\\implies 2k+568=2\\sqrt{(596+k)(36+k)}\\]\n\\[\\implies k+284=\\sqrt{(596+k)(36+k)}\\]\n\\[\\implies k^2+568k+80656=k^2+632k+21456\\]\n\\[\\implies 568k+80656=632k+21456\\]\n\\[\\implies 64k = 59200\\]\n\\[\\implies k = \\boxed{925}\\]"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "2017_USAJMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6,
+  "problem": "Are there any triples $(a,b,c)$ of positive integers such that $(a-2)(b-2)(c-2) + 12$ is prime that properly divides the positive number $a^2 + b^2 + c^2 + abc - 2017$?",
+  "solutions": {
+    "Solution 1": "The answer is no. Substitute $x=a-2,y=b-2,z=c-2$. This means that $x,y,z\\geq -1$. Then \\[a^2+b^2+c^2+abc-2017=(x+y+z-41)(x+y+z+49)+xyz+12.\\] It is given in the problem that this is positive. Now, suppose for the sake of contradiction that $xyz+12$ is a prime. Clearly $x,y,z\\neq 0$. Then we have \\[\\frac{(x+y+z-41)(x+y+z+49)}{xyz+12}\\] is an integer greater than or equal to $1$. This also implies that $x+y+z > 41$. Since $xyz+12$ is prime, we must have \\[xyz+12\\mid x+y+z-41\\text{ or } xyz+12\\mid x+y+z+49.\\] Additionally, $x, y, z$ must be odd, so that $xyz+12$ is odd while $x+y+z-41,x+y+z+49$ are even. So, if \\[xyz+12\\mid x+y+z-41\\text{ or }xyz+12\\mid x+y+z+49,\\] we must have \\[2(xyz+12)\\leq x+y+z-41\\text{ or }2(xyz+12)\\leq x+y+z+49.\\] Now suppose WLOG that $x=-1$ and $y,z>0$. Then we must have $yz\\leq 10$, impossible since $x+y+z>41$. Again, suppose that $x,y=-1$ and $z>0$. Then we must have \\[2(z+12)\\leq z-43\\text{ or }2(z+12)\\leq z+47,\\] and since in this case we must have $z>43$, this is also impossible.\nThen the final case is when $x,y,z$ are positive odd numbers. Note that if $xyz>x+y+z$ for positive integers $x,y,z$, then $abc>a+b+c$ for positive integers $a,b,c$ where $a>x,b>y,c>z$. Then we only need to prove the case where $x+y+z=43$, since $x+y+z$ is odd. Then one of \\[2(xyz+12)\\leq 2\\text{ and/or }2(xyz+12)\\leq 92\\] is true, implying that $xyz\\leq -11$ or $xyz\\leq 34$. But if $x+y+z=43$, then $xyz$ is minimized when $x=1,y=1,z=41$, so that $xyz\\geq 41$. This is a contradiction, so we are done."
+  }
+}

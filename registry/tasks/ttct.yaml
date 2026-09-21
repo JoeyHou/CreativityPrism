@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: ttct
+display_name: "Torrance Test of Creative Thinking"
+domain: divergent_thinking
+folder: tasks/prism_v1
+adapter: registry/adapters/ttct.sh
+environment: modern
+description: "Open-ended creative-thinking questions across multiple subsets."
+uses_judge: true
+loader_parser: result_analysis.loader:_parse_ttct
+limit_supported: true
+
+# See the note in aut.yaml. This task's prompts were shared with us directly by
+# the authors rather than taken from a public release; they gave us permission by
+# email to publish them. There is no upstream licence file to carry.
+upstream:
+  name: "Assessing and Understanding Creativity in Large Language Models"
+  url: https://arxiv.org/abs/2401.12491
+  license: shared-by-authors-with-permission
+  paper: https://arxiv.org/abs/2401.12491
+  modifications: >-
+    Seven CSVs of prompts (one per question type) shared by the authors, turned
+    into 700 rows, 100 per type, each carrying the basic / instructive / CoT
+    variants; the key text_CoT was renamed text_cot and an unused constraints
+    field was dropped.

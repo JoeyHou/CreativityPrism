@@ -1,0 +1,10 @@
+{
+  "competition_id": "2008_AMC_10A_Problems",
+  "problem_id": 13,
+  "difficulty": 2,
+  "problem": "Doug can paint a room in $5$ hours. Dave can paint the same room in $7$ hours. Doug and Dave paint the room together and take a one-hour break for lunch. Let $t$ be the total time, in hours, required for them to complete the job working together, including lunch. Which of the following equations is satisfied by $t$?\n$\\mathrm{(A)}\\ \\left(\\frac{1}{5}+\\frac{1}{7}\\right)\\left(t+1\\right)=1\\qquad\\mathrm{(B)}\\ \\left(\\frac{1}{5}+\\frac{1}{7}\\right)t+1=1\\qquad\\mathrm{(C)}\\ \\left(\\frac{1}{5}+\\frac{1}{7}\\right)t=1\\\\\\mathrm{(D)}\\ \\left(\\frac{1}{5}+\\frac{1}{7}\\right)\\left(t-1\\right)=1\\qquad\\mathrm{(E)}\\ \\left(5+7\\right)t=1$",
+  "solutions": {
+    "Solution 1": "Doug can paint $\\frac{1}{5}$ of a room per hour, Dave can paint $\\frac{1}{7}$ of a room per hour, and the time they spend working together is $t-1$.\nSince rate multiplied by time gives output, $\\left(\\frac{1}{5}+\\frac{1}{7}\\right)\\left(t-1\\right)=1 \\Rightarrow \\mathrm{(D)}$",
+    "Solution 2": "If one person does a job in $a$ hours and another person does a job in $b$ hours, the time it takes to do the job together is $\\frac{ab}{a+b}$ hours.\nSince Doug paints a room in 5 hours and Dave paints a room in 7 hours, they both paint in $\\frac{5\\times7}{5+7} = \\frac{35}{12}$ hours. They also take 1 hour for lunch, so the total time $t = \\frac{35}{12} + 1$ hours.\nLooking at the answer choices, $(D)$ is the only one satisfied by $t = \\frac{35}{12} + 1$."
+  }
+}

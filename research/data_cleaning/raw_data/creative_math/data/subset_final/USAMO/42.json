@@ -1,0 +1,10 @@
+{
+  "competition_id": "2014_USAMO_Problems",
+  "problem_id": 3,
+  "difficulty": 9,
+  "problem": "Prove that there exists an infinite set of points \\[\\ldots,\\,\\,\\,\\,P_{-3},\\,\\,\\,\\,P_{-2},\\,\\,\\,\\,P_{-1},\\,\\,\\,\\,P_0,\\,\\,\\,\\,P_1,\\,\\,\\,\\,P_2,\\,\\,\\,\\,P_3,\\,\\,\\,\\,\\ldots\\] in the plane with the following property: For any three distinct integers $a,b,$ and $c$, points $P_a$, $P_b$, and $P_c$ are collinear if and only if $a+b+c=2014$.",
+  "solutions": {
+    "Solution (Group Theory)": "Consider an elliptic curve with a generator $g$, such that $g$ is not a root of $0$. By repeatedly adding $g$ to itself under the standard group operation, with can build $g, 2g, 3g, \\ldots$ as well as $-g, -2g, -3g, \\ldots$. If we let \\[P_k = (3k-2014)g\\] then we can observe that collinearity between $P_a$, $P_b$, and $P_c$ occurs only if $P_a + P_b + P_c = 0$ (by definition of the group operation), which is equivalent to $(3a-2014)g + (3b-2014)g + (3c-2014)g = (3a+3b+3c-3*2014)g = 0$, or $3a + 3b + 3c = 3*2014$, or $a + b + c = 2014$. We know that all these points $P_k$ exist because $3k-2014$ is never 0 for integer $k$, so that none of these points need to be point at infinity (the identity element of the group).",
+    "Solution 2 (Function Theory)": "Consider letting $P_x$ be the point $(x, f(x))$, where $f(x) = x^3 - 2014x^2$. Then if three points $P_a, P_b, P_c$ are on the same line $y = mx + p$, they must be the solutions to the equation $x^3 - 2014x^2 = mx + p$ (i.e. the intersection of $f$ and the line). By Vieta's Formulas, the sum of the roots to this equation is 2014. Because each value of x corresponds to a different one of a, b, and c by definition of $P_x$, $a + b + c = 2014$. Conversely, if $a + b + c = 2014$, they must be the solutions to $(x-a)(x-b)(x-c) = x^3 - 2014x^2 - mx - p = 0$ for some real $m$ and $p$. Clearly, then, $P_a, P_b, P_c$ must all lie on the line $y = mx + p$. Hence, our setting $P_x = f(x)$ produces a valid infinite set of points."
+  }
+}

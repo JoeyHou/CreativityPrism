@@ -1,0 +1,9 @@
+{
+  "competition_id": "1975_IMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6.5,
+  "problem": "When $4444^{4444}$ is written in decimal notation, the sum of its digits is $A$. Let $B$ be the sum of the digits of $A$. Find the sum of the digits of $B$. ($A$ and $B$ are written in decimal notation.)",
+  "solutions": {
+    "Solution": "Note that\n\\[4444^{4444}<10000^{4444}=\\left(10^4\\right)^{4444}=10^{17776}\\]\nTherefore $4444^{4444}$ has fewer than 17776 digits. This shows that $A<9\\cdot 17776=159984$. The sum of the digits of $A$ is then maximized when $A=99999$, so $B\\leq 45$. Note that out of all of the positive integers less than or equal to 45, the maximal sum of the digits is 12.\nIt's not hard to prove that any base-10 number is equivalent to the sum of its digits modulo 9. Therefore $4444^{4444}\\equiv A\\equiv B(\\bmod{9})$. This motivates us to compute $X$, where $1\\leq X \\leq 12$, such that $4444^{4444}\\equiv X(\\bmod{9})$. The easiest way to do this is by searching for a pattern. Note that\n\\[4444^1\\equiv 7(\\bmod 9)\\\\4444^2\\equiv 4(\\bmod 9)\\\\4444^3\\equiv 1(\\bmod 9)\\]\nand since $4444=3\\times 1481+1$,\n\\[4444^{4444}\\equiv 4444^{3\\times1481+1}\\equiv \\left(4444^3\\right)^{1481}\\times 4444\\equiv 1\\times 4444\\equiv 7(\\bmod{9})\\]\nThus, $X=7$, which means that the sum of the digits of $B$ is $\\boxed{7}$.\n"
+  }
+}

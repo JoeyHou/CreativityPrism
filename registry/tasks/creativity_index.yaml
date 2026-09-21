@@ -1,0 +1,52 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: creativity_index
+display_name: "Creativity Index"
+domain: creative_writing
+folder: tasks/prism_v1
+adapter: registry/adapters/creativity_index.sh
+environment: modern
+description: "Continue book, poem and speech prompts; scored by n-gram overlap against a web-scale corpus."
+uses_judge: false
+loader_parser: result_analysis.loader:_parse_creativity_index
+limit_supported: true
+
+# How this task's data reaches a user. The upstream repo carries no license, so we
+# may not redistribute its text: the Hub dataset ships our item ids and a pointer
+# to each item upstream, with the text left null, and release/scripts/fetch_upstream.py
+# pulls the text from the pinned commit onto the user's machine. If upstream adds a
+# license, set `distribution: bundled` -- the build then ships the file as it is,
+# and nothing else changes.
+distribution: fetch
+upstream:
+  name: Creativity Index
+  url: https://github.com/GXimingLu/creativity_index
+  license: none
+  paper: https://arxiv.org/abs/2410.04265
+  modifications: >-
+    582 continuation prompts (book 100, poem 247, speech 235) taken from the
+    prompt field of upstream's Human_{domain}.json. Book and speech prompts add
+    our instruction prefix; poem's upstream prompt already carries one. The text
+    is not redistributed: see `distribution` above.
+  commit: 3a37e8cbc8af78bad66d44e5cdf3110ed2544075
+  # One entry per data file of ours. Row i of `ours` is row i of `theirs`, and
+  # `into` = `prefix` + theirs[i][`field`]. The prefixes are ours: poem's upstream
+  # prompt already carries its instruction, book's and speech's do not.
+  files:
+    - ours: creativity_index/book_prompt.json
+      theirs: data/book/Human_book.json
+      sha256: 555ca07e4894821dccc6806df7635622a12d6e3ab1b263fa996a9f438658976d
+      field: prompt
+      into: input.text
+      prefix: "Please write a few paragraphs for a novel starting with the following prompt: "
+    - ours: creativity_index/poem_prompt.json
+      theirs: data/poem/Human_poem.json
+      sha256: 1e34eceaa268be5167b625057f0553ec28a0ada061f82e940bdb97516e0a440e
+      field: prompt
+      into: input.text
+      prefix: ""
+    - ours: creativity_index/speech_prompt.json
+      theirs: data/speech/Human_speech.json
+      sha256: c44dbde601fd35fe1d80b402e6815636d6babe0c511d7e8351b4cc826e4c69b2
+      field: prompt
+      into: input.text
+      prefix: "Please write a speech starting with the following sentence: "

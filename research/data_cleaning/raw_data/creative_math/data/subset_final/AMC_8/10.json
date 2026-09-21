@@ -1,0 +1,9 @@
+{
+  "competition_id": "1991_AJHSME_Problems",
+  "problem_id": 9,
+  "difficulty": 1,
+  "problem": "How many whole numbers from $1$ through $46$ are divisible by either $3$ or $5$ or both?\n$\\text{(A)}\\ 18 \\qquad \\text{(B)}\\ 21 \\qquad \\text{(C)}\\ 24 \\qquad \\text{(D)}\\ 25 \\qquad \\text{(E)}\\ 27$",
+  "solutions": {
+    "Solution": "There are $\\left\\lfloor \\frac{46}{3}\\right\\rfloor =15$ numbers divisible by $3$, $\\left\\lfloor\\frac{46}{5}\\right\\rfloor =9$ numbers divisible by $5$, so at first we have $15+9=24$ numbers that are divisible by $3$ or $5$, except we counted the multiples of $\\text{LCM}(3,5)=15$ twice, once for $3$ and once for $5$.\nThere are $\\left\\lfloor \\frac{46}{15}\\right\\rfloor =3$ numbers divisible by $15$, so there are $24-3=21$ numbers divisible by $3$ or $5$. $\\rightarrow \\boxed{\\text{B}}$"
+  }
+}

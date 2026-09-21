@@ -1,0 +1,10 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "ttcw_tmp_var/olmo_0",
+            "task": "creative_writing",
+            "model_name": "olmo_13b",
+            "temperature": 0
+        }
+    ]
+}

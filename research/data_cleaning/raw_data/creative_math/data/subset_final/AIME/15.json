@@ -1,0 +1,10 @@
+{
+  "competition_id": "1997_AIME_Problems",
+  "problem_id": 4,
+  "difficulty": 3,
+  "problem": "circles of radii $5, 5, 8,$ and $\\frac mn$ are mutually externally tangent, where $m$ and $n$ are relatively prime positive integers.  Find $m + n.$",
+  "solutions": {
+    "Solution": "If (in the diagram above) we draw the line going through the centers of the circles with radii $8$ and $\\frac mn = r$, that line is the perpendicular bisector of the segment connecting the centers of the two circles with radii $5$. Then we form two right triangles, of lengths $5, x, 5+r$ and $5, 8+r+x, 13$, wher $x$ is the distance between the center of the circle in question and the segment connecting the centers of the two circles of radii $5$. By the Pythagorean Theorem, we now have two equations with two unknowns:\n\\begin{eqnarray*} 5^2 + x^2 &=& (5+r)^2 \\\\ x &=& \\sqrt{10r + r^2} \\\\ && \\\\ (8 + r + \\sqrt{10r+r^2})^2 + 5^2 &=& 13^2\\\\ 8 + r + \\sqrt{10r+r^2} &=& 12\\\\ \\sqrt{10r+r^2}&=& 4-r\\\\ 10r+r^2 &=& 16 - 8r + r^2\\\\ r &=& \\frac{8}{9} \\end{eqnarray*}\nSo $m+n = \\boxed{17}$.\n\nNOTE: It can be seen that there is no apparent need to use the variable x as a 5,12,13 right triangle has been formed.",
+    "Solution 2": "We may also use Descartes' theorem, $k_4=k_1+k_2+k_3\\pm 2\\sqrt{k_1k_2+k_2k_3+k_3k_1}$ where each of $k_i$ is the curvature of a circle with radius $r_i$, and the curvature is defined as $k_i=\\frac{1}{r_i}$. The larger solution for $k_4$ will give the curvature of the circle externally tangent to the other circles, while the smaller solution will give the curvature for the circle internally tangent to each of the other circles. Using Descartes' theorem, we get $k_4=\\frac15+\\frac15+\\frac18+2\\sqrt{\\frac{1}{40}+\\frac{1}{40}+\\frac{1}{25}}=\\frac{21}{40}+2\\sqrt{\\frac{45}{500}}=\\frac{45}{40}$. Thus, $r_4=\\frac{1}{k_4}=\\frac{40}{45}=\\frac89$, and the answer is $\\boxed{017}$"
+  }
+}

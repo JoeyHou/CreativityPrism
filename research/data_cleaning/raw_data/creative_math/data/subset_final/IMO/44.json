@@ -1,0 +1,9 @@
+{
+  "competition_id": "1974_IMO_Problems",
+  "problem_id": 3,
+  "difficulty": 9.5,
+  "problem": "Prove that the number $\\sum^n_{k=0}\\binom{2n+1}{2k+1}2^{3k}$ is not divisible by $5$ for any integer $n\\ge0.$",
+  "solutions": {
+    "Solution": "Everything that follows takes place in $\\mathbb F_5(\\sqrt 2)$, i.e. the field we get by adjoining a root of $x^2-2=0$ to $\\mathbb F_5$, the field with $5$ elements.\nWe have $\\sum_{k=0}^n\\binom{2n+1}{2k+1}2^{3k}=\\sum_{k=0}^n\\binom{2n+1}{2n-2k}3^k=\\sum_{k=0}^n\\binom{2n+1}{2(n-k)}2^{-k}$. Now, this is zero iff it's zero when we multiply it by $2^n$, so we may as well prove that $\\sum_{k=0}^n\\binom{2n+1}{2(n-k)}\\sqrt 2^{2(n-k)}\\ne 0$. The LHS is $\\alpha$ from $(1+\\sqrt 2)^{2n+1}=\\alpha+\\beta\\sqrt 2,\\ \\alpha,\\beta\\in\\mathbb F_5$. We have $(1-\\sqrt 2)^{2n+1}=\\alpha-\\beta\\sqrt 2$, so by multiplying them we get $-1=\\alpha^2-2\\beta^2$. If we were to have $\\alpha=0$, then we would get $1=2\\beta^2,\\ \\beta\\in\\mathbb F_5$, and this is impossible, since it would make $3=2^{-1}$ a square $\\beta^2$ in $\\mathbb F_5$ (i.e. $3$ would be a quadratic residue modulo $5$, and it's not).\n"
+  }
+}

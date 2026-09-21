@@ -1,0 +1,10 @@
+{
+  "competition_id": "2006_AMC_8_Problems",
+  "problem_id": 4,
+  "difficulty": 1,
+  "problem": "Initially, a spinner points west. Chenille moves it clockwise $2 \\dfrac{1}{4}$ revolutions and then counterclockwise $3 \\dfrac{3}{4}$ revolutions. In what direction does the spinner point after the two moves?\n[asy]size(96); draw(circle((0,0),1),linewidth(1)); draw((0,0.75)--(0,1.25),linewidth(1)); draw((0,-0.75)--(0,-1.25),linewidth(1)); draw((0.75,0)--(1.25,0),linewidth(1)); draw((-0.75,0)--(-1.25,0),linewidth(1)); label(\"$N$\",(0,1.25), N); label(\"$W$\",(-1.25,0), W); label(\"$E$\",(1.25,0), E); label(\"$S$\",(0,-1.25), S); draw((0,0)--(-0.5,0),EndArrow);[/asy]\n$\\textbf{(A)}\\ \\text{north} \\qquad  \\textbf{(B)}\\ \\text{east} \\qquad  \\textbf{(C)}\\ \\text{south} \\qquad  \\textbf{(D)}\\ \\text{west} \\qquad  \\textbf{(E)}\\ \\text{northwest}$",
+  "solutions": {
+    "Solution 1": "If the spinner goes clockwise $2 \\dfrac{1}{4}$ revolutions and then counterclockwise $3 \\dfrac{3}{4}$ revolutions, it ultimately goes counterclockwise $1 \\dfrac{1}{2}$ which brings the spinner pointing $\\boxed{\\textbf{(B)}\\ \\text{east}}$.",
+    "Solution 2 (Minor improvement)": "Note that full revolutions do not matter, so this is equivalent to going clockwise $\\dfrac{1}{4}$ revolutions and then counterclockwise $\\dfrac{3}{4}$ revolutions, making it ultimately go counterclockwise $\\dfrac{1}{2}$, having the spinner point $\\boxed{\\textbf{(B)}\\ \\text{east}}$."
+  }
+}

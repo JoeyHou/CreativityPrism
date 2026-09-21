@@ -1,0 +1,33 @@
+{
+    "_note": "Overnight batch, API model. One entry per task. A failure is caught per experiment and reported at the end with exit code 1, so one bad task does not lose the rest.",
+    "experiments_list": [
+        {"task": "ttct", "run_id": "b1/ttct/gpt41mini", "model_name": "gpt-4.1-mini",
+         "input_data_dir": "data/processed/ttct/ttct.json", "prompt_formats": ["cot"],
+         "num_samples": 5, "temperature": 0.75, "top_p": 1, "top_k": 50, "max_tokens": 4096},
+
+        {"task": "dat", "run_id": "b1/dat/gpt41mini", "model_name": "gpt-4.1-mini",
+         "repeat": 100, "test_size": 20, "temperature": 0.75, "top_p": 1, "max_tokens": 4096},
+
+        {"task": "creative_math", "run_id": "b1/creative_math/gpt41mini", "model_name": "gpt-4.1-mini",
+         "input_data_dir": "data/processed/creative_math/creative_math.json",
+         "test_size": 5, "temperature": 0, "top_p": 1, "max_tokens": 2000},
+
+        {"task": "neocoder", "run_id": "b1/neocoder/gpt41mini", "model_name": "gpt-4.1-mini",
+         "input_data_dir": "data/processed/neocoder/NeoCoder.json",
+         "test_size": 5, "dp_rounds": 5, "temperature": 0.75, "top_p": 1, "max_tokens": 4096},
+
+        {"task": "creativity_index", "run_id": "b1/creativity_index/gpt41mini", "model_name": "gpt-4.1-mini",
+         "input_data_dir": "data/processed/creativity_index",
+         "domains": ["book", "poem", "speech"], "test_size": 5,
+         "temperature": 1, "top_p": 0.9, "max_tokens": 288},
+
+        {"task": "aut_push", "run_id": "b1/aut/gpt41mini", "model_name": "gpt-4.1-mini",
+         "test_size": 5, "max_tokens": 512},
+
+        {"task": "creative_writing", "run_id": "b1/ttcw/gpt41mini", "model_name": "gpt-4.1-mini",
+         "test_size": 3, "max_tokens": 4096},
+
+        {"task": "creative_short", "run_id": "b1/creative_short/gpt41mini", "model_name": "gpt-4.1-mini",
+         "test_size": 5, "max_tokens": 1024}
+    ]
+}

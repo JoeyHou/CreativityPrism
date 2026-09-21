@@ -1,0 +1,9 @@
+{
+  "competition_id": "1981_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "Prove that if $n$ is not a multiple of $3$, then the angle $\\frac{\\pi}{n}$ can be trisected with ruler and compasses.",
+  "solutions": {
+    "Solution": "Let $n=3k+1$.  Multiply throughout by $\\pi/3n$. We get \n$\\frac{\\pi}{3} = \\frac{\\pi \\times k}{n} + \\frac{\\pi}{3n}$\nRe-arranging, we get\n$\\frac{\\pi}{3} - \\frac{\\pi \\times k}{n} = \\frac{\\pi}{3n}$\nA way to interpret it is that if we know the value $k$, then the remainder angle of subtracting $k$ times the given angle from $\\frac{\\pi}{3}$ gives us $\\frac{\\pi}{3n}$, the desired trisected angle.\nThis can be extended to the case when $n=3k+2$ where now, the equation becomes\n$\\frac{\\pi}{3} - \\frac{\\pi \\times k}{n} = \\frac{2\\pi}{3n}$\nHence in this case, we will have to subtract $k$ times the original angle from $\\frac{\\pi}{3}$ to get twice the the trisected angle. We can bisect it after that to get the trisected angle."
+  }
+}

@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: aut
+display_name: "Alternative Uses Task"
+domain: divergent_thinking
+folder: tasks/prism_v1
+adapter: registry/adapters/aut.sh
+environment: modern
+description: "Generate creative alternative uses for common objects."
+uses_judge: true
+loader_parser: result_analysis.loader:_parse_aut
+limit_supported: true
+
+# Optional per-task SBATCH overrides for --slurm. Left unset so the task inherits
+# task_runner/slurm_template.sbatch. Partition and account names are cluster-specific,
+# so fill these in for your cluster rather than trusting a default:
+# slurm:
+#   partition: gpu
+#   time: "2:00:00"
+#   mem: 32G
+#   gres: "gpu:1"
+
+# Where this task's data comes from. Recorded per task because a reader of the
+# published dataset needs to know whose material each file is, and because the
+# CC-BY and Apache upstreams require us to state what we changed.
+upstream:
+  name: "Pushing the Limits of GPT's Creativity for Alternative Uses"
+  url: https://github.com/massivetexts/llm_aut_study
+  license: MIT
+  paper: https://kar.kent.ac.uk/101551/
+  modifications: >-
+    Prompts are built from the paper's objects and its three prompt variants
+    (nc / nn / bs), not copied from a file: 21 objects x 3 variants = 63 items
+    (aut_push_all.json keeps the unfiltered 25 x 3 = 75). The 21 judge few-shot
+    demos in aut_demos.json come from the llm_aut_study repository, reformatted
+    to our row schema.

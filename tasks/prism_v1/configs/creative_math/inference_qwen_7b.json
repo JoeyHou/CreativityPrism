@@ -1,0 +1,16 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "creative_math",
+            "run_id": "cm_smoke_open",
+            "model_name": "qwen_7b_instruct",
+            "input_data_dir": "data/processed/creative_math/creative_math.json",
+            "test_size": 2,
+
+            "temperature": 0,
+            "top_p": 1,
+            "max_tokens": 2000
+        }
+    ]
+}

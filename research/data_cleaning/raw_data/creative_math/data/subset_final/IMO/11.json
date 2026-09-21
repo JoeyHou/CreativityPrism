@@ -1,0 +1,9 @@
+{
+  "competition_id": "1985_IMO_Problems",
+  "problem_id": 2,
+  "difficulty": 8,
+  "problem": "Let $n$ and $k$ be given relatively prime natural numbers, $k < n$.  Each number in the set $M = \\{ 1,2, \\ldots , n-1 \\}$ is colored either blue or white.  It is given that\n(i) for each $i \\in M$, both $i$ and $n-i$ have the same color;\n(ii) for each $i \\in M, i \\neq k$, both $i$ and $|i-k|$ have the same color.\nProve that all the numbers in $M$ have the same color.",
+  "solutions": {
+    "Solution": "We may consider the elements of $M$ as residues mod $n$.  To these we may add the residue 0, since (i) may only imply that 0 has the same color as itself, and (ii) may only imply that 0 has the same color as $k$, which put no restrictions on the colors of the other residues.\nWe note that (i) is equivalent to saying that $i$ has the same color as $-i$, and given this, (ii) implies that $i$ and $(-i + k)$ have the same color.  But this means that $i, -i$, and $i+k$ have the same color, which is to say that all residues of the form $i + mk \\; (m \\in \\mathbb{N}_0)$ have the same color.  But these are all the residues mod $n$, since $k$ and $n$ are relatively prime.  Q.E.D."
+  }
+}

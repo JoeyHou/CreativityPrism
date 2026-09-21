@@ -1,0 +1,26 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "creative_math",
+            "run_id": "cm_smoke_api",
+            "eval_input_dir": "data/output/cm_smoke_api/inference_output.json",
+            "_judges": "Paper: Claude3-Sonnet, GPT-4.1, Gemini-2.0-Flash. Probed 2026-09-03 from Pitt CRC: gemini is unreachable (generativelanguage.googleapis.com does not resolve on this network) and claude-3-7-sonnet-20250219 now 404s. claude-sonnet-4-5-20250929 is what the key actually serves and is what creative_math_eval_api.py already listed.",
+            "judges": [
+                "claude-sonnet-4-5-20250929",
+                "gpt-4.1"
+            ],
+            "judge_credentials": {
+                "claude-sonnet-4-5-20250929": "claude-3-7-sonnet-20250219"
+            },
+            "_correctness_rule": "REQUIRED. 'single' follows the paper (one judge decides); 'unanimous' follows both code paths (every judge must agree). They give different correctness ratios.",
+            "correctness_rule": "single",
+            "correctness_judge": "claude-sonnet-4-5-20250929",
+            "_fine_grained": "Paper says fine-grained novelty was not conducted; both code paths ran it anyway.",
+            "fine_grained": false,
+            "judge_temperature": 0.0,
+            "judge_max_tokens": 1024,
+            "_judge_max_tokens": "Paper says 128. Measured 2026-09-03: claude-sonnet-4-5 reasons at length despite the prompt's 'output your decision only', and at 128 or 512 tokens the reply is cut off before the verdict. The original code scored every such reply as NO, which deflates the novelty ratio. 1024 is enough for this prompt."
+        }
+    ]
+}

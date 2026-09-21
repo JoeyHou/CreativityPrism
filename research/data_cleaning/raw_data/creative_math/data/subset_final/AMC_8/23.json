@@ -1,0 +1,9 @@
+{
+  "competition_id": "2010_AMC_8_Problems",
+  "problem_id": 20,
+  "difficulty": 1.5,
+  "problem": "In a room, $2/5$ of the people are wearing gloves, and $3/4$ of the people are wearing hats. What is the minimum number of people in the room wearing both a hat and a glove? \n$\\textbf{(A)}\\ 3 \\qquad\\textbf{(B)}\\ 5\\qquad\\textbf{(C)}\\ 8\\qquad\\textbf{(D)}\\ 15\\qquad\\textbf{(E)}\\ 20$",
+  "solutions": {
+    "Solution": "Let $x$ be the number of people wearing both a hat and a glove. Since the number of people wearing a hat or a glove must be whole numbers, the number of people in the room must be a multiple of (4,5), but we do lcm of 4,5 = 20. Since we are trying to find the minimum $x$, we must use the smallest possible value for the number of people in the room. Similarly, we can assume that there are no people present who are wearing neither of the two items since this would unnecessarily increase the number of people in the room. Thus, we can say that there are $20$ people in the room, all of which are wearing at least a hat or a glove.\nIt follows that there are $\\frac{2}{5}\\cdot 20 = 8$ people wearing gloves and $\\frac{3}{4}\\cdot 20 = 15$ people wearing hats. Then by applying the Principle of Inclusion Exclusion (PIE), the total number of people in the room wearing either a hat or a glove or both is  $8+15-x = 23-x$. Since we know that this equals $20$, it follows that $23-x = 20$, which implies that $x=3$. Thus, $\\boxed{\\textbf{(A)}\\ 3}$ is the correct answer."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "competition_id": "1960_AHSME_Problems",
+  "problem_id": 15,
+  "problem": "Triangle $I$ is equilateral with side $A$, perimeter $P$, area $K$, and circumradius $R$ (radius of the circumscribed circle). \nTriangle $II$ is equilateral with side $a$, perimeter $p$, area $k$, and circumradius $r$. If $A$ is different from $a$, then: \n$\\textbf{(A)}\\ P:p = R:r \\text{ } \\text{only sometimes} \\qquad \\\\ \\textbf{(B)}\\ P:p = R:r \\text{ } \\text{always}\\qquad \\\\ \\textbf{(C)}\\ P:p = K:k \\text{ } \\text{only sometimes} \\qquad \\\\ \\textbf{(D)}\\ R:r = K:k \\text{ } \\text{always}\\qquad \\\\ \\textbf{(E)}\\ R:r = K:k \\text{ } \\text{only sometimes}$",
+  "solutions": {
+    "Solution": "[asy] pair A=(0,50),O=(0,0),B=(43.301,-25),C=(-43.301,-25); draw(A--B--C--A); draw(circle(O,50)); draw(B--O--C); draw(anglemark(C,O,B,200)); draw((0,0)--(0,-25)); label(\"$60^{\\circ}$\",(-7,-12)); [/asy]\nFirst, find $P$, $K$, and $R$ in terms of $A$.  Since all sides of an  are the same, $P=3A$.  From the area formula, $K=\\frac{A^2\\sqrt{3}}{4}$.  By using 30-60-90 triangles, $R=\\frac{A\\sqrt{3}}{3}$.\nUsing the same steps, $p=3a$, $k=\\frac{a^2\\sqrt{3}}{4}$, and $r=\\frac{a\\sqrt{3}}{3}$.\nNote that $P/p = 3A/3a = A/a$ and $R/r = \\frac{A\\sqrt{3}}{3} \\div \\frac{a\\sqrt{3}}{3} = A/a$.  That means $P/p = R/r$, so the answer is $\\boxed{\\textbf{(B)}}$."
+  }
+}

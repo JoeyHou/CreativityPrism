@@ -1,0 +1,14 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "dat",
+            "run_id": "dat_smoke_api",
+            "eval_input_dir": "data/output/dat_smoke_api/inference_output.json",
+            "words_path": "data/processed/dat_words.txt",
+
+            "_score": "Mean pairwise cosine distance over the first 7 valid unique words, x100 (the original Olson 2021 DAT). The paper appendix instead describes 'DAT = 1 - D_0' over average cosine similarity, which is a different quantity on a different scale, and does not mention the cut to 7 words.",
+            "minimum_words": 7
+        }
+    ]
+}

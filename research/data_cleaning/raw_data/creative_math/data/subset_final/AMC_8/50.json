@@ -1,0 +1,10 @@
+{
+  "competition_id": "2016_AMC_8_Problems",
+  "problem_id": 16,
+  "difficulty": 1.5,
+  "problem": "Annie and Bonnie are running laps around a $400$-meter oval track. They started together, but Annie has pulled ahead, because she runs $25\\%$ faster than Bonnie. How many laps will Annie have run when she first passes Bonnie?\n$\\textbf{(A) }1\\dfrac{1}{4}\\qquad\\textbf{(B) }3\\dfrac{1}{3}\\qquad\\textbf{(C) }4\\qquad\\textbf{(D) }5\\qquad \\textbf{(E) }25$",
+  "solutions": {
+    "Solution 1": "Each lap Bonnie runs, Annie runs another quarter lap, so Bonnie will run four laps before she is overtaken.  This means that Annie and Bonnie are equal so that Annie needs to run another lap to overtake Bonnie. That means Annie will have run $\\boxed{\\textbf{(D)}\\ 5 }$ laps.",
+    "Solution 2": "Call $x$ the distance Annie runs. If Annie is $25\\%$ faster than Bonnie, then Bonnie will run a distance of $\\frac{4}{5}x$. For Annie to meet Bonnie, she must run an extra $400$ meters, the length of the track. So $x-\\left(\\frac{4}{5}\\right)x=400 \\implies x=2000$, which is $\\boxed{\\textbf{(D)}\\ 5 }$ laps."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1995_USAMO_Problems",
+  "problem_id": 2,
+  "difficulty": 8,
+  "problem": "A calculator is broken so that the only keys that still work are the $\\, \\sin, \\; \\cos,$ $\\tan, \\; \\sin^{-1}, \\; \\cos^{-1}, \\,$ and $\\, \\tan^{-1} \\,$ buttons.  The display initially shows 0. Given any positive rational number $\\, q, \\,$ show that pressing some finite sequence of buttons will yield $\\, q$.   Assume that the calculator does real number calculations with infinite precision.  All functions are in terms of radians.",
+  "solutions": {
+    "Solution": "We will prove the following, stronger statement\u00a0:  If $m$ and $n$ are relatively prime nonnegative integers such that $n>0$, then the some finite sequence of buttons will yield $\\sqrt{m/n}$.\nTo prove this statement, we induct strongly on $m+n$.  For our base case, $m+n=1$, we have $n=1$ and $m=0$, and $\\sqrt{m/n} = 0$, which is initially shown on the screen.  For the inductive step, we consider separately the cases $m=0$, $0<m\\le n$, and $n<m$.\nIf $m=0$, then $n=1$, and we have the base case.\nIf $0< m \\le n$, then by inductive hypothesis, $\\sqrt{(n-m)/m}$ can be obtained in finitely many steps; then so can\n\\[\\cos \\tan^{-1} \\sqrt{(n-m)/m} = \\sqrt{m/n} .\\]\nIf $n<m$, then by the previous case, $\\sqrt{n/m}$ can be obtained in finitely many steps.  Since $\\cos \\tan^{-1} \\sqrt{n/m} = \\sin \\tan^{-1} \\sqrt{m/n}$, it follows that\n\\[\\tan \\sin^{-1} \\cos \\tan^{-1} \\sqrt{n/m} = \\sqrt{m/n}\\]\ncan be obtained in finitely many steps.  Thus the induction is complete.  $\\blacksquare$"
+  }
+}

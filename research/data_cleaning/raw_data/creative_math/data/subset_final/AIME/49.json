@@ -1,0 +1,12 @@
+{
+  "competition_id": "1987_AIME_Problems",
+  "problem_id": 8,
+  "difficulty": 4,
+  "problem": "What is the largest positive integer $n$ for which there is a unique integer $k$ such that $\\frac{8}{15} < \\frac{n}{n + k} < \\frac{7}{13}$?",
+  "solutions": {
+    "Solution 1": "Multiplying out all of the denominators, we get:\n\\begin{align*}104(n+k) &< 195n< 105(n+k)\\\\ 0 &< 91n - 104k < n + k\\end{align*}\nSince $91n - 104k < n + k$, $k > \\frac{6}{7}n$. Also, $0 < 91n - 104k$, so $k < \\frac{7n}{8}$. Thus, $48n < 56k < 49n$. $k$ is unique if it is within a maximum range of $112$, so $n = 112$.",
+    "Solution 2": "Flip all of the fractions for\n\\[\\begin{array}{ccccc}\\frac{15}{8} &>& \\frac{k + n}{n} &>& \\frac{13}{7}\\\\  105n &>& 56 (k + n)& >& 104n\\\\  49n &>& 56k& >& 48n\\end{array}\\]\nContinue as in Solution 1.",
+    "Solution 3": "Flip the fractions and subtract one from all sides to yield \\[\\frac{7}{8}>\\frac{k}{n}>\\frac{6}{7}.\\]  Multiply both sides by $56n$ to get \\[49n>56k>48n.\\] This is equivalent to find the largest value of $n$ such that there is only one multiple of 56 within the open interval between $48n$ and $49n$.  If $n=112,$ then $98>k>96$ and $k=97$ is the unique value. For $n\\geq 113,$ there is at least $(49\\cdot 113-48\\cdot 113)-1=112$ possible numbers for $k$ and there is one $k$ every 56 numbers. Hence, there must be at least two values of $k$ that work.  So, the largest value of $n$ is $\\boxed{112}$.",
+    "Solution 4": "Notice that in order for $k$ to be unique, $\\frac{n}{n + k+ 1} \\le \\frac{8}{15}$ and $\\frac{n}{n+ k-1} \\ge \\frac{7}{13}$ must be true. Solving these inequalities for $k$ yields $\\frac{7}{6}(k-1) \\le n \\le \\frac{8}{7}(k+1)$.\nThus, we want to find $k$ such that $\\frac{7}{6}(k-1)\\le \\frac{8}{7}(k+1)$. Solving this inequality yields $k \\le 97$, and plugging this into $\\frac{n}{n+k} < \\frac{7}{13}$ in the original equation yields $n \\le 112$ so the answer is $\\boxed{112}$."
+  }
+}

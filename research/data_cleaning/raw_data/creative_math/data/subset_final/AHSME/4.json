@@ -1,0 +1,8 @@
+{
+  "competition_id": "1990_AHSME_Problems",
+  "problem_id": 19,
+  "problem": "For how many integers $N$ between $1$ and $1990$ is the improper fraction $\\frac{N^2+7}{N+4}$ $\\underline{not}$ in lowest terms?\n$\\text{(A) } 0\\quad \\text{(B) } 86\\quad \\text{(C) } 90\\quad \\text{(D) } 104\\quad \\text{(E) } 105$",
+  "solutions": {
+    "Solution": "What we want to know is for how many $n$ is \\[\\gcd(n^2+7, n+4) > 1.\\] We start by setting \\[n+4 \\equiv 0 \\mod m\\] for some arbitrary $m$. This shows that $m$ evenly divides $n+4$. Next we want to see under which conditions $m$ also divides $n^2 + 7$.  We know from the previous statement that \\[n \\equiv -4 \\mod m\\] and thus \\[n^2 \\equiv (-4)^2 \\equiv 16 \\mod m.\\] Next we simply add $7$ to get \\[n^2 + 7 \\equiv 23 \\mod m.\\] However, we also want \\[n^2 + 7 \\equiv 0 \\mod m\\] which leads to \\[n^2 + 7\\equiv 23 \\equiv 0 \\mod m\\] from the previous statement. From that statement, we get that $m$ divides $23$ evenly. Since $23$ is prime and we're looking for a GCD greater than 1,  $m$ must be $23$. Going back to our original statement, we can set \\[n+4=23x\\] for some positive integer x, and \\[n=23x-4.\\] Finally, we must find the largest $x$ such that \\[23x-4<1990.\\] This is a simple linear inequality for which the answer is $x=86$, or $\\fbox{B}$."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "competition_id": "1953_AHSME_Problems",
+  "problem_id": 47,
+  "problem": "If $x>0$, then the correct relationship is: \n$\\textbf{(A)}\\ \\log (1+x) = \\frac{x}{1+x} \\qquad \\textbf{(B)}\\ \\log (1+x) < \\frac{x}{1+x} \\\\  \\textbf{(C)}\\ \\log(1+x) > x\\qquad \\textbf{(D)}\\ \\log (1+x) < x\\qquad \\textbf{(E)}\\ \\text{none of these}$",
+  "solutions": {
+    "Solution 1(Cheap)": "Plug in $x=9$. Then, you can see that the answer is $\\fbox{D}$."
+  }
+}

@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: creative_short
+display_name: "Creative Short Story"
+domain: creative_writing
+folder: tasks/prism_v1
+adapter: registry/adapters/creative_short.sh
+environment: modern
+description: "Five-sentence stories using required keywords in unconventional ways."
+uses_judge: true
+loader_parser: result_analysis.loader:_parse_creative_short
+limit_supported: true
+
+# See the note in aut.yaml. Upstream added its MIT licence on 2026-09-11; our
+# copy is byte-identical to its data/pilot_data.json and data/test_data.json.
+upstream:
+  name: Creative Story Generation
+  url: https://github.com/mismayil/creative-story-gen
+  license: MIT
+  paper: https://arxiv.org/abs/2411.02316
+  modifications: >-
+    The 4 pilot and 6 test items are concatenated into 10 rows carrying the word
+    triple, its part-of-speech tags, the semantic-distance label and the boring
+    theme. The story prompt itself is built from those fields by the harness.

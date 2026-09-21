@@ -1,0 +1,10 @@
+{
+  "competition_id": "2023_AMC_8_Problems",
+  "problem_id": 14,
+  "difficulty": 1.5,
+  "problem": "Nicolas is planning to send a package to his friend Anton, who is a stamp collector. To pay for the postage, Nicolas would like to cover the package with a large number of stamps. Suppose he has a collection of $5$-cent, $10$-cent, and $25$-cent stamps, with exactly $20$ of each type. What is the greatest number of stamps Nicolas can use to make exactly $$7.10$ in postage?\n(Note: The amount $$7.10$ corresponds to $7$ dollars and $10$ cents. One dollar is worth $100$ cents.)\n$\\textbf{(A)}\\ 45 \\qquad \\textbf{(B)}\\ 46 \\qquad \\textbf{(C)}\\ 51 \\qquad \\textbf{(D)}\\ 54\\qquad \\textbf{(E)}\\ 55$",
+  "solutions": {
+    "Solution 1": "Let's use the most stamps to make $7.10.$ We have $20$ of each stamp, $5$-cent (nickels), $10$-cent (dimes), and $25$-cent (quarters).\nIf we want the highest number of stamps, we must have the highest number of the smaller value stamps (like the coins above). We can use $20$ nickels and $20$ dimes to bring our total cost to $7.10 - 3.00 = 4.10$. However, when we try to use quarters, the $25$ cents don\u2019t fit evenly, so we have to give back $15$ cents to make the quarter amount $4.25$. The most efficient way to do this is to give back a  $10$-cent (dime) stamp and a $5$-cent (nickel) stamp to have $38$ stamps used so far. Now, we just use $\\frac{425}{25} = 17$ quarters to get a grand total of $38 + 17 = \\boxed{\\textbf{(E)}\\ 55}$.",
+    "Solution 2": "The value of his entire stamp collection is $8$ dollars. To make $$7.10$ with stamps, he should remove $90$ cents worth of stamps with as few stamps as possible. To do this, he should start by removing as many $25$ cent stamps as possible as they have the greatest denomination. He can remove at most $3$ of these stamps. He still has to remove $90-25\\cdot3=15$ cents worth of stamps. This can be done with one $5$ and $10$ cent stamp. In total, he has $20\\cdot3=60$ stamps in his entire collection. As a result, the maximum number of stamps he can use is $20\\cdot3-5=\\boxed{\\textbf{(E)}\\ 55}$."
+  }
+}

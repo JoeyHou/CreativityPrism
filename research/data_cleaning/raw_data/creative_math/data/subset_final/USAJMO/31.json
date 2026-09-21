@@ -1,0 +1,9 @@
+{
+  "competition_id": "2014_USAJMO_Problems",
+  "problem_id": 1,
+  "difficulty": 6,
+  "problem": "Let $a$, $b$, $c$ be real numbers greater than or equal to $1$. Prove that \\[\\min{\\left (\\frac{10a^2-5a+1}{b^2-5b+10},\\frac{10b^2-5b+1}{c^2-5c+10},\\frac{10c^2-5c+1}{a^2-5a+10}\\right )}\\leq abc\\]",
+  "solutions": {
+    "Solution": "Since $(a-1)^5\\ge 0$,\n\\[a^5-5a^4+10a^3-10a^2+5a-1\\ge 0\\]\nor\n\\[10a^2-5a+1\\le a^3(a^2-5a+10)\\]\nSince $a^2-5a+10=\\left( a-\\dfrac{5}{2}\\right)^2 +\\dfrac{15}{4}>0$,\n\\[\\frac{10a^2-5a+1}{a^2-5a+10}\\le a^3\\]\nAlso note that $10a^2-5a+1=10\\left( a-\\dfrac{1}{4}\\right)^2+\\dfrac{3}{8}> 0$,\nWe conclude\n\\[0\\le \\frac{10a^2-5a+1}{a^2-5a+10}\\le a^3\\]\nSimilarly, \n\\[0\\le \\frac{10b^2-5b+1}{b^2-5b+10}\\le b^3\\]\n\\[0\\le \\frac{10c^2-5c+1}{c^2-5c+10}\\le c^3\\]\nSo \\[\\left(\\frac{10a^2-5a+1}{a^2-5a+10}\\right)\\left(\\frac{10b^2-5b+1}{b^2-5b+10}\\right)\\left(\\frac{10c^2-5c+1}{c^2-5c+10}\\right)\\le a^3b^3c^3\\]\nor\n\\[\\left(\\frac{10a^2-5a+1}{b^2-5b+10}\\right)\\left(\\frac{10b^2-5b+1}{c^2-5c+10}\\right)\\left(\\frac{10c^2-5c+1}{a^2-5a+10}\\right) \\le(abc)^3\\]\nTherefore,\n\\[\\min\\left(\\frac{10a^2-5a+1}{b^2-5b+10},\\frac{10b^2-5b+1}{c^2-5c+10},\\frac{10c^2-5c+1}{a^2-5a+10}\\right )\\le abc.\\]"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "competition_id": "2002_AMC_12A_Problems",
+  "problem_id": 2,
+  "difficulty": 2,
+  "problem": "Cindy was asked by her teacher to subtract 3 from a certain number and then divide the result by 9. Instead, she subtracted 9 and then divided the result by 3, giving an answer of 43. What would her answer have been had she worked the problem correctly?\n$\\textbf{(A) } 15\\qquad \\textbf{(B) } 34\\qquad \\textbf{(C) } 43\\qquad \\textbf{(D) } 51\\qquad \\textbf{(E) } 138$",
+  "solutions": {
+    "Solution": "We work backwards; the number that Cindy started with is $3(43)+9=138$. Now, the correct result is $\\frac{138-3}{9}=\\frac{135}{9}=15$. Our answer is $\\boxed{\\textbf{(A) }15}$.",
+    "Solution 2": "Let the number be $x$. We transform the problem into an equation: $\\frac{x-9}{3}=43$. Solve for $x$ gives us $x=138$. Therefore, the correct result is $\\frac{138-3}{9}=\\frac{135}{9}=\\boxed{\\textbf{(A) }15}$."
+  }
+}

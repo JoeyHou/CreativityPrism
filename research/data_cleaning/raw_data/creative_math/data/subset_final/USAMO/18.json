@@ -1,0 +1,9 @@
+{
+  "competition_id": "1994_USAMO_Problems",
+  "problem_id": 4,
+  "difficulty": 7,
+  "problem": "Let $\\, a_1, a_2, a_3, \\ldots \\,$ be a sequence of positive real numbers satisfying $\\, \\sum_{j = 1}^n a_j \\geq \\sqrt {n} \\,$ for all $\\, n \\geq 1$. Prove that, for all $\\, n \\geq 1, \\,$\n\\[\\sum_{j = 1}^n a_j^2 > \\frac {1}{4} \\left( 1 + \\frac {1}{2} + \\cdots + \\frac {1}{n} \\right).\\]",
+  "solutions": {
+    "Solution": "Note that if we try to minimize $(a_j)^2$, we would try to make the $a_j$ as equal as possible. However, by the condition given in the problem, this isn't possible, the $a_j$'s have to be an increasing sequence. Thinking of minimizing sequences, we realize that the optimal equation is $a_n = \\sqrt{n} - \\sqrt{n-1} = 1/(\\sqrt{n} + \\sqrt{n-1})$. Note that this is strictly greater than $1/(2\\sqrt{n})$. So it is greater than the sum of $(1/\\sqrt{4n})^2$ over all n from 1 to $\\infty$. So the sum we are looking to minimize is strictly greater than the sum of $1/4n$ over all $n$ from 1 to $\\infty$, which is what we wanted to do."
+  }
+}

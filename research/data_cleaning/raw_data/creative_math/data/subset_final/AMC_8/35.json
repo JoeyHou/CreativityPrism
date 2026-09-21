@@ -1,0 +1,11 @@
+{
+  "competition_id": "2019_AMC_8_Problems",
+  "problem_id": 20,
+  "difficulty": 1.5,
+  "problem": "How many different real numbers $x$ satisfy the equation \\[(x^{2}-5)^{2}=16?\\]\n$\\textbf{(A) }0\\qquad\\textbf{(B) }1\\qquad\\textbf{(C) }2\\qquad\\textbf{(D) }4\\qquad\\textbf{(E) }8$",
+  "solutions": {
+    "Solution 1": "We have that $(x^2-5)^2 = 16$ if and only if $x^2-5 = \\pm 4$. If $x^2-5 = 4$, then $x^2 = 9 \\implies x = \\pm 3$, giving 2 solutions. If $x^2-5 = -4$, then $x^2 = 1 \\implies x = \\pm 1$, giving 2 more solutions. All four of these solutions work, so the answer is $\\boxed{\\textbf{(D) }4}$. Further, the equation is a  in $x$, so by the , there can be at most four real solutions.",
+    "Solution 2": "We can expand $(x^2-5)^2$ to get $x^4-10x^2+25$, so now our equation is $x^4-10x^2+25=16$. Subtracting $16$ from both sides gives us $x^4-10x^2+9=0$. Now, we can factor the left hand side to get $(x^2-9)(x^2-1)=0$. If $x^2-9$ and/or $x^2-1$ equals $0$, then the whole left side will equal $0$. Since the solutions can be both positive and negative, we have $4$ solutions: $-3,3,-1,1$ (we can find these solutions by setting $x^2-9$ and $x^2-1$ equal to $0$ and solving for $x$). So, the answer is $\\boxed{\\textbf{(D) }4}$. ",
+    "Solution 3": "Subtract 16 from both sides and factor using difference of squares: \n\n\\[(x^2 - 5)^2 = 16\\]\n\\[(x^2 - 5)^2 - 16 =0\\]\n\\[(x^2 - 5)^2 - 4^2 = 0\\]\n\\[[(x^2 - 5)-4][(x^2 - 5) + 4] = 0\\]\n\\[(x^2 - 9)(x^2 - 1) =0\\]\n\\[(x+3)(x-3)(x+1)(x-1) = 0\\]\n\nQuite obviously, this equation has $\\boxed{\\textbf{(D) }4}$ solutions. \n"
+  }
+}

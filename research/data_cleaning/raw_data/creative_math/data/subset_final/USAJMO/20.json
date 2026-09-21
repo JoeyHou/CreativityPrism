@@ -1,0 +1,9 @@
+{
+  "competition_id": "2022_USAJMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6,
+  "problem": "Let $ABCD$ be a rhombus, and let $K$ and $L$ be points such that $K$ lies inside the rhombus, $L$ lies outside the rhombus, and $KA=KB=LC=LD$. Prove that there exist points $X$ and $Y$ on lines $AC$ and $BD$ such that $KXLY$ is also a rhombus.",
+  "solutions": {
+    "Solution": "Let's draw ($\\ell$) perpendicular bisector of $\\overline{KL}$. Let $X, Y$ be intersections of $\\ell$ with $AC$ and $BD$, respectively. $KXLY$ is a kite. Let $O$ mid-point of $\\overline{KL}$. Let $M$ mid-point of $\\overline{BD}$ (and also $M$ is mid-point of $\\overline{AC}$). $X, O, Y$ are on the line $\\ell$.\n$BK=DL$, $BX=XD$, $XK=XL$ and so $\\triangle BXK \\cong \\triangle DXL$ (side-side-side). By spiral similarity, $\\triangle BXD \\sim\\triangle KXL$. Hence, we get\n\\[\\angle XBD = \\angle XDB = \\angle XKL = \\angle XLK = b .\\]\nSimilarly, $AK =CL$, $YK = YL$, $YA=YC$ and so $\\triangle AKY \\cong \\triangle CYL$ (side-side-side). From spiral similarity, $\\triangle YKL\\sim \\triangle YAC$. Thus,\n\\[\\angle YAC = \\angle YCA = \\angle YKL = \\angle YLK = a .\\]\nIf we can show that $a=b$, then the kite $KXLY$ will be a rhombus.\nBy spiral similarities, $\\dfrac{BX}{BD} = \\dfrac{XK}{KL}$ and $\\dfrac{YA}{AC} = \\dfrac{YK}{KL}$. Then, $KL = \\dfrac{BD \\cdot XK}{BX} = \\dfrac{AC \\cdot YK}{YA}$.\n$\\dfrac{XK}{YK} = \\dfrac{AC \\cdot BX}{AY \\cdot BD}$. Then, $\\dfrac{YK}{XK} = \\dfrac{(BD/2) \\cdot AY}{(AC/2) \\cdot BX} = \\dfrac{\\sin b}{\\sin a}$. Also, in the right triangles $\\triangle KXO$ and $\\triangle KYO$,  $\\dfrac{YK}{XK} = \\dfrac{OK/\\cos a}{OK/\\cos b} = \\dfrac{\\cos b}{\\cos a}$. Therefore,\n\\[\\dfrac{\\sin b}{\\sin a} = \\dfrac{\\cos b}{\\cos a}.\\]\n$\\sin a \\cos b = \\sin b \\cos a \\implies \\sin a \\cos b - \\sin b \\cos a = 0 \\implies \\sin(a-b) = 0$ and we get $a=b$."
+  }
+}

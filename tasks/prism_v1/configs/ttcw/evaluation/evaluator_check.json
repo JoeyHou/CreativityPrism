@@ -1,0 +1,22 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "ttcw_evaluator_check/gpt4/few_shot_eval_qwen72b",
+            "task": "creative_writing",
+            "model_name": "qwen_72b_instruct",
+            "eval_output_raw": false,
+            "test_size": 5e10,
+            "few_shot": true,
+            "5_scale": false
+        },
+        {
+            "run_id": "ttcw_evaluator_check/gpt3_5/few_shot_eval_qwen72b",
+            "task": "creative_writing",
+            "model_name": "qwen_72b_instruct",
+            "eval_output_raw": false,
+            "test_size": 5e10,
+            "few_shot": true,
+            "5_scale": false
+        }
+    ]
+}

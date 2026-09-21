@@ -1,0 +1,8 @@
+{
+  "competition_id": "1958_AHSME_Problems",
+  "problem_id": 31,
+  "problem": "The altitude drawn to the base of an isosceles triangle is $8$, and the perimeter $32$. The area of the triangle is:\n$\\textbf{(A)}\\ 56\\qquad  \\textbf{(B)}\\ 48\\qquad  \\textbf{(C)}\\ 40\\qquad  \\textbf{(D)}\\ 32\\qquad  \\textbf{(E)}\\ 24$",
+  "solutions": {
+    "Solution": "Consider the half of the triangle that is left of the altitude. Using the information given in the problem, we can determine that this is a right triangle with one leg of length 8 whose other two sides sum to 16. Through either setting the other leg as $x$ and the hypotenuse as $16-x$ and using the Pythagorean Theorem, or by recognizing this $6-8-10$ triangle, we find that the other leg has length 6. So the triangle's total area is 48, and our answer is $\\fbox{E}$."
+  }
+}

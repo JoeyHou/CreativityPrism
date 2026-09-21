@@ -1,0 +1,9 @@
+{
+  "competition_id": "1989_AIME_Problems",
+  "problem_id": 12,
+  "difficulty": 6,
+  "problem": "Let $ABCD$ be a tetrahedron with $AB=41$, $AC=7$, $AD=18$, $BC=36$, $BD=27$, and $CD=13$, as shown in the figure. Let $d$ be the distance between the midpoints of edges $AB$ and $CD$. Find $d^{2}$.\n[asy] defaultpen(fontsize(10)+0.8); size(175); pair A,B,C,D,M,P,Q; C=origin; B=(8,0); D=IP(CR(C,6.5),CR(B,8)); A=(4,-3); P=midpoint(A--B); Q=midpoint(C--D); draw(B--C--D--B--A--C^^A--D); draw(D--P--C^^P--Q, gray+dashed+0.5); pen p=fontsize(12)+linewidth(3); dot(\"$A$\",A,down,p); dot(\"$B$\",B,right,p); dot(\"$C$\",C,left,p); dot(\"$D$\",D,up,p); dot(\"$M$\",P,dir(-45),p); dot(\"$N$\",Q,0.2*(Q-P),p); label(\"$27$\",B--D,2*dir(30),fontsize(10)); label(\"$7$\",A--C,2*dir(210),fontsize(10)); label(\"$18$\",A--D,1.5*dir(30),fontsize(10)); label(\"$36$\",(3,0),up,fontsize(10)); [/asy]",
+  "solutions": {
+    "Solution": "Call the midpoint of $\\overline{AB}$ $M$ and the midpoint of $\\overline{CD}$ $N$. $d$ is the median of triangle $\\triangle CDM$. The formula for the length of a median is $m=\\sqrt{\\frac{2a^2+2b^2-c^2}{4}}$, where $a$, $b$, and $c$ are the side lengths of triangle, and $c$ is the side that is bisected by median $m$. The formula is a direct result of the Law of Cosines applied twice with the angles formed by the median (Stewart's Theorem). We can also get this formula from the parallelogram law, that the sum of the squares of the diagonals is equal to the squares of the sides of a parallelogram.\nWe first find $CM$, which is the median of $\\triangle CAB$.\n\\[CM=\\sqrt{\\frac{98+2592-1681}{4}}=\\frac{\\sqrt{1009}}{2}\\]\nNow we must find $DM$, which is the median of $\\triangle DAB$.\n\\[DM=\\frac{\\sqrt{425}}{2}\\]\nNow that we know the sides of $\\triangle CDM$, we proceed to find the length of $d$.\n\\[d=\\frac{\\sqrt{548}}{2} \\Longrightarrow d^2=\\frac{548}{4}=\\boxed{137}\\]"
+  }
+}

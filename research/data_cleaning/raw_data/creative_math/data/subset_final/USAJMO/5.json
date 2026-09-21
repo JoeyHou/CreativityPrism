@@ -1,0 +1,9 @@
+{
+  "competition_id": "2023_USAJMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6,
+  "problem": "Two players, $B$ and $R$, play the following game on an infinite grid of unit squares, all initially colored white. The players take turns starting with $B$. On $B$'s turn, $B$ selects one white unit square and colors it blue. On $R$'s turn, $R$ selects two white unit squares and colors them red. The players alternate until $B$ decides to end the game. At this point, $B$ gets a score, given by the number of unit squares in the largest (in terms of area) simple polygon containing only blue unit squares. What is the largest score $B$ can guarantee?\n(A simple polygon is a polygon (not necessarily convex) that does not intersect itself and has no holes.)",
+  "solutions": {
+    "Solution": "It is clear that $B$ can guarantee a score of $4$ squares. We will show that $R$ has a strategy to limit blue to $4$ squares, thus solving the problem.\nPartition the grid into 2x2 squares. Red's strategy is as follows: \n- If $B$ plays in a 2x2 square, play the two adjacent squares to $B$'s square that are not in the 2x2 square.\n- If one (or both) of these moves are blocked, instead play a square a megaparsec away from the rest of the moves. This move can only benefit you and will not change the outcome of the game.\nBy induction, it is clear that no two blue squares that are adjacent are not in the same 2x2 square. Thus, we conclude that $R$ has limited blue to a maximum score of $2^2 = 4$, and the proof is complete. $\\square$"
+  }
+}

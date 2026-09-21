@@ -1,0 +1,8 @@
+{
+  "competition_id": "1998_AHSME_Problems",
+  "problem_id": 12,
+  "problem": "How many different prime numbers are factors of $N$ if\n$\\mathrm{(A) \\ }1 \\qquad \\mathrm{(B) \\ }2 \\qquad \\mathrm{(C) \\ }3 \\qquad \\mathrm{(D) \\ } 4\\qquad \\mathrm{(E) \\ }7$",
+  "solutions": {
+    "Solution": "Re-writing as exponents, we have $\\log_3 ( \\log_5 (\\log_ 7 N)) = 2^{11}$, and so forth, such that $N = 7^{5^{3^{2^{11}}}}$, which only has $7$ as a prime factor $\\mathbf{(A)}$."
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1999_AIME_Problems",
+  "problem_id": 5,
+  "difficulty": 3,
+  "problem": "For any positive integer $x_{}$, let $S(x)$ be the sum of the digits of $x_{}$, and let $T(x)$ be $|S(x+2)-S(x)|.$  For example, $T(199)=|S(201)-S(199)|=|3-19|=16.$  How many values of $T(x)$ do not exceed 1999?",
+  "solutions": {
+    "Solution": "For most values of $x$, $T(x)$ will equal $2$. For those that don't, the difference must be bumping the number up a ten, a hundred, etc. If we take $T(a999)$ as an example,\n\\[|(a + 1) + 0 + 0 + 1 - (a + 9 + 9 + 9)| = |2 - 9(3)|\\]\nAnd in general, the values of $T(x)$ will then be in the form of $|2 - 9n| = 9n - 2$. From $7$ to $1999$, there are $\\left\\lceil \\frac{1999 - 7}{9}\\right\\rceil = 222$ solutions; including $2$ and there are a total of $\\boxed{223}$ solutions."
+  }
+}

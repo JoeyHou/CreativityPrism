@@ -1,0 +1,8 @@
+{
+  "competition_id": "1956_AHSME_Problems",
+  "problem_id": 23,
+  "problem": "About the equation $ax^2 - 2x\\sqrt {2} + c = 0$, with $a$ and $c$ real constants, \nwe are told that the discriminant is zero. The roots are necessarily: \n$\\textbf{(A)}\\ \\text{equal and integral}\\qquad \\textbf{(B)}\\ \\text{equal and rational}\\qquad \\textbf{(C)}\\ \\text{equal and real} \\\\ \\textbf{(D)}\\ \\text{equal and irrational} \\qquad \\textbf{(E)}\\ \\text{equal and imaginary}$",
+  "solutions": {
+    "Solution": "Plugging into the quadratic formula, we get\n\\[x = \\frac{2\\sqrt{2} \\pm \\sqrt{8-4ac}}{2a}.\\]\nThe discriminant is equal to 0, so this simplifies to $x = \\frac{2\\sqrt{2}}{2a}=\\frac{\\sqrt{2}}{a}.$ Because we are given that $a$ is real, $x$ is always real, and the answer is $\\boxed{\\textbf{(C)}}.$"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "competition_id": "1970_IMO_Problems",
+  "problem_id": 6,
+  "difficulty": 9.5,
+  "problem": "In a plane there are $100$ points, no three of which are collinear.  Consider all possible triangles having these point as vertices.  Prove that no more than $70 \\%$ of these triangles are acute-angled.",
+  "solutions": {
+    "Solution": "At most $3$ of the triangles formed by $4$ points can be acute. It follows that at most $7$ out of the $10$ triangles formed by any $5$ points can be acute. For given $10$ points, the maximum number of acute triangles is: the number of subsets of $4$ points times $\\frac{3}{\\text{the number of subsets of 4 points containing 3 given points}}$. The total number of triangles is the same expression with the first $3$ replaced by $4$. Hence at most $\\frac{3}{4}$ of the $10$, or $7.5$, can be acute, and hence at most $7$ can be acute.\nThe same argument now extends the result to $100$ points. The maximum number of acute triangles formed by $100$ points is: the number of subsets of $5$ points times $\\frac{7}{\\text{the number of subsets of 5 points containing 3 given points}}$. The total number of triangles is the same expression with $7$ replaced by $10$. Hence at most $\\frac{7}{10}$ of the triangles are acute."
+  }
+}

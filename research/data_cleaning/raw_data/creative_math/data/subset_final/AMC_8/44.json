@@ -1,0 +1,9 @@
+{
+  "competition_id": "2002_AMC_8_Problems",
+  "problem_id": 8,
+  "difficulty": 1,
+  "problem": "Problems 8,9 and 10 use the data found in the accompanying paragraph and table:\n[asy] size(3inch, 1.5inch); for ( int y = 0; y &lt;= 5; ++y ) { draw((0,y)--(18,y)); } draw((0,0)--(0,5)); draw((6,0)--(6,5)); draw((9,0)--(9,5)); draw((12,0)--(12,5)); draw((15,0)--(15,5)); draw((18,0)--(18,5)); draw(scale(0.8)*\"50s\", (7.5,4.5)); draw(scale(0.8)*\"4\", (7.5,3.5)); draw(scale(0.8)*\"8\", (7.5,2.5)); draw(scale(0.8)*\"6\", (7.5,1.5)); draw(scale(0.8)*\"3\", (7.5,0.5)); draw(scale(0.8)*\"60s\", (10.5,4.5)); draw(scale(0.8)*\"7\", (10.5,3.5)); draw(scale(0.8)*\"4\", (10.5,2.5)); draw(scale(0.8)*\"4\", (10.5,1.5)); draw(scale(0.8)*\"9\", (10.5,0.5)); draw(scale(0.8)*\"70s\", (13.5,4.5)); draw(scale(0.8)*\"12\", (13.5,3.5)); draw(scale(0.8)*\"12\", (13.5,2.5)); draw(scale(0.8)*\"6\", (13.5,1.5)); draw(scale(0.8)*\"13\", (13.5,0.5)); draw(scale(0.8)*\"80s\", (16.5,4.5)); draw(scale(0.8)*\"8\", (16.5,3.5)); draw(scale(0.8)*\"15\", (16.5,2.5)); draw(scale(0.8)*\"10\", (16.5,1.5)); draw(scale(0.8)*\"9\", (16.5,0.5)); label(scale(0.8)*\"Country\", (3,4.5)); label(scale(0.8)*\"Brazil\", (3,3.5)); label(scale(0.8)*\"France\", (3,2.5)); label(scale(0.8)*\"Peru\", (3,1.5)); label(scale(0.8)*\"Spain\", (3,0.5)); label(scale(0.9)*\"Juan's Stamp Collection\", (9,0), S); label(scale(0.9)*\"Number of Stamps by Decade\", (9,5), N);[/asy]\nHow many of his European stamps were issued in the '80s? \n$\\text{(A)}\\ 9 \\qquad \\text{(B)}\\ 15 \\qquad \\text{(C)}\\ 18 \\qquad \\text{(D)}\\ 24 \\qquad \\text{(E)}\\ 42$",
+  "solutions": {
+    "Solution": "France and Spain are European countries. The number of '80s stamps from France is $15$ and the number of '80s stamps from Spain is $9$. The total number of stamps is $15+9=\\boxed{\\text{(D)}\\ 24}$."
+  }
+}

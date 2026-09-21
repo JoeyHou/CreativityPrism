@@ -1,0 +1,8 @@
+{
+  "competition_id": "1952_AHSME_Problems",
+  "problem_id": 16,
+  "problem": "If the base of a rectangle is increased by $10\\%$ and the area is unchanged, then the altitude is decreased by:\n$\\textbf{(A) \\ }9\\%  \\qquad \\textbf{(B) \\ }10\\% \\qquad \\textbf{(C) \\ }11\\% \\qquad \\textbf{(D) \\ }11\\frac{1}{9}\\% \\qquad \\textbf{(E) \\ }9\\frac{1}{11}\\%$",
+  "solutions": {
+    "Solution": "$b\\cdot a=\\frac{11}{10}b\\cdot xa\\implies x=\\frac{10}{11}$. Hence, the altitude is decreased by $1-x=\\frac{1}{11}=\\boxed{\\textbf{(E)}\\ 9\\frac{1}{11}\\%}$."
+  }
+}

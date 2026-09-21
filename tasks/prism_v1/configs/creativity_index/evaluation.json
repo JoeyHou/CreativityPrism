@@ -1,0 +1,17 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "creativity_index",
+            "run_id": "ci_smoke_api",
+            "eval_input_dir": "data/output/ci_smoke_api/inference_output.json",
+            "_corpus": "Resolved 2026-09-03: the published runs used v4_dolma-v1_7_llama. All three sbatch scripts in tasks/archive/math_n_index call evaluation_creative_index_parr, label the task '<model>-<domain>-dolma', and the README documents the same command. The other script (v4_rpj_llama_s4) appears to be dead.",
+            "corpus": "v4_dolma-v1_7_llama",
+            "lm_tokenizer": true,
+            "num_workers": 1,
+            "request_delay": 0.05,
+            "_throughput": "Measured 2026-09-03: 8 workers drove the public endpoint to refuse 10/10 probes. Single-threaded sustains ~5-8 req/s. One document at one n-gram size is ~400 requests, so the full paper run (100 docs x 3 domains x 8 sizes) is ~1M requests and is not feasible against the public endpoint.",
+            "_lm_tokenizer": "Production passed --lm_tokenizer, so the Llama tokenizer is what scored the published numbers. The gated meta-llama repo is replaced by an ungated mirror whose token ids were checked against infini-gram's own."
+        }
+    ]
+}

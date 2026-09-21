@@ -1,0 +1,9 @@
+{
+  "competition_id": "2000_AIME_I_Problems",
+  "problem_id": 12,
+  "difficulty": 6,
+  "problem": "Given a function $f$ for which\n\\[f(x) = f(398 - x) = f(2158 - x) = f(3214 - x)\\]\nholds for all real $x,$ what is the largest number of different values that can appear in the list $f(0),f(1),f(2),\\ldots,f(999)?$",
+  "solutions": {
+    "Solution": "\\begin{align*}f(2158 - x) = f(x) &= f(3214 - (2158 - x)) &= f(1056 + x)\\\\ f(398 - x) = f(x) &= f(2158 - (398 - x)) &= f(1760 + x)\\end{align*}\nSince $\\mathrm{gcd}(1056, 1760) = 352$ we can conclude that (by the Euclidean algorithm)\n\\[f(x) = f(352 + x)\\]\nSo we need only to consider one period $f(0), f(1), ... f(351)$, which can have at most $352$ distinct values which determine the value of $f(x)$ at all other integers.  \nBut we also know that $f(x) = f(46 - x) = f(398 - x)$, so the values $x = 24, 25, ... 46$ and $x = 200, 201, ... 351$ are repeated.  This gives a total of\n\\[352 - (46 - 24 + 1) - (351 - 200 + 1) = \\boxed{ 177 }\\]\ndistinct values.\nTo show that it is possible to have $f(23), f(24), \\ldots, f(199)$ distinct, we try to find a function which fulfills the given conditions. A bit of trial and error would lead to cosine the  function: $f(x) = \\cos \\left(\\frac{360}{352}(x-23)\\right)$ (in degrees)."
+  }
+}

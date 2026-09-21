@@ -1,0 +1,10 @@
+{
+  "competition_id": "2008_AMC_8_Problems",
+  "problem_id": 19,
+  "difficulty": 1.5,
+  "problem": "Eight points are spaced around at intervals of one unit around a $2 \\times 2$ square, as shown. Two of the $8$ points are chosen at random. What is the probability that the two points are one unit apart?\n[asy] size((50)); dot((5,0)); dot((5,5)); dot((0,5)); dot((-5,5)); dot((-5,0)); dot((-5,-5)); dot((0,-5)); dot((5,-5)); [/asy]\n$\\textbf{(A)}\\ \\frac{1}{4}\\qquad\\textbf{(B)}\\ \\frac{2}{7}\\qquad\\textbf{(C)}\\ \\frac{4}{11}\\qquad\\textbf{(D)}\\ \\frac{1}{2}\\qquad\\textbf{(E)}\\ \\frac{4}{7}$",
+  "solutions": {
+    "Solution 1": "The two points are one unit apart at $8$ places around the edge of the square. There are $8 \\choose 2$$= 28$ ways to choose two points. The probability is\n\\[\\frac{8}{28} = \\boxed{\\textbf{(B)}\\ \\frac27}\\]",
+    "Solution 2": "Arbitrarily pick a point in the grid. Clearly, we see two options for the other point to be placed, so the answer is $\\boxed{\\textbf{(B)}\\ \\frac27}$"
+  }
+}

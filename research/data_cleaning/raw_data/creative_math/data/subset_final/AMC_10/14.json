@@ -1,0 +1,9 @@
+{
+  "competition_id": "2006_AMC_10B_Problems",
+  "problem_id": 3,
+  "difficulty": 1,
+  "problem": "A football game was played between two teams, the Cougars and the Panthers. The two teams scored a total of $34$ points, and the Cougars won by a margin of $14$ points. How many points did the Panthers score? \n$\\textbf{(A) } 10\\qquad \\textbf{(B) } 14\\qquad \\textbf{(C) } 17\\qquad \\textbf{(D) } 20\\qquad \\textbf{(E) } 24$",
+  "solutions": {
+    "Solution": "Let $x$ be the number of points scored by the Cougars, and $y$ be the number of points scored by the Panthers. The problem is asking for the value of $y$. \n\\begin{align*} x+y &= 34 \\\\ x-y &= 14 \\\\ 2x &= 48 \\\\ x &= 24 \\\\ y &= \\boxed{\\textbf{(A) }10} \\\\ \\end{align*}"
+  }
+}

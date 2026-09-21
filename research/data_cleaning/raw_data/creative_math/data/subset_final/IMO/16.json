@@ -1,0 +1,9 @@
+{
+  "competition_id": "1960_IMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6.5,
+  "problem": "Construct triangle $ABC$, given $h_a$, $h_b$ (the altitudes from $A$ and $B$), and $m_a$, the median from vertex $A$.",
+  "solutions": {
+    "Solution": "Let $M_a$, $M_b$, and $M_c$ be the midpoints of sides $\\overline{BC}$, $\\overline{CA}$, and $\\overline{AB}$, respectively. Let $H_a$, $H_b$, and $H_c$ be the feet of the altitudes from $A$, $B$, and $C$ to their opposite sides, respectively. Since $\\triangle ABC\\sim\\triangle M_bM_aC$, with $M_bM_a=\\frac12 AB$, the distance from $M_a$ to side $\\overline{AC}$ is $\\frac{h_b}{2}$.\nConstruct $AM_a$ with length $m_a$. Draw a circle centered at $A$ with radius $h_a$. Construct the tangent $l_1$ to this circle through $M_a$. $\\overline{BC}$ lies on $l_1$.\nDraw a circle centered at $M_a$ with radius $\\frac{h_b}{2}$. Construct the tangent $l_2$ to this circle through $A$. $\\overline{AC}$ lies on $l_2$. Then $C=l_1\\cap l_2$.\nConstruct the line $l_3$ parallel to $l_2$ so that the distance between $l_2$ and $l_3$ is $h_b$ and $M_a$ lies between these lines. $B$ lies on $l_3$. Then $B=l_1\\cap l_3$."
+  }
+}

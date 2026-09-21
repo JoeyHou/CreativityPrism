@@ -1,0 +1,8 @@
+{
+  "competition_id": "1951_AHSME_Problems",
+  "problem_id": 21,
+  "problem": "Given: $x > 0, y > 0, x > y$ and $z\\ne 0$. The inequality which is not always correct is:\n$\\textbf{(A)}\\ x + z > y + z \\qquad\\textbf{(B)}\\ x - z > y - z \\qquad\\textbf{(C)}\\ xz > yz$\n$\\textbf{(D)}\\ \\frac {x}{z^2} > \\frac {y}{z^2} \\qquad\\textbf{(E)}\\ xz^2 > yz^2$",
+  "solutions": {
+    "Solution": "$\\textbf{(A)}\\ x + z > y + z\\implies x>y$, just subtract $z$ from both sides\n$\\textbf{(B)}\\ x - z > y - z\\implies x>y$, just add $z$ to both sides\n$\\textbf{(C)}\\ xz > yz\\implies x>y\\text{ if }x>0$, so that means that our desired answer is $\\boxed{\\textbf{(C)}\\ xz > yz}$. \nAs a check:\n$\\textbf{(D)}\\ \\frac {x}{z^2} > \\frac {y}{z^2}\\implies x>y$, we can divide $z^2$ safely and without worry because $z^2>0$.\n$\\textbf{(E)}\\ xz^2 > yz^2\\implies x>y$, similar reasoning as above but instead, multiply $z^2$."
+  }
+}

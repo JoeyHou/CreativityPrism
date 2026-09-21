@@ -1,0 +1,9 @@
+{
+  "competition_id": "2009_AMC_10B_Problems",
+  "problem_id": 3,
+  "difficulty": 1,
+  "problem": "Paula the painter had just enough paint for 30 identically sized rooms.  Unfortunately, on the way to work, three cans of paint fell off her truck, so she had only enough paint for 25 rooms.  How many cans of paint did she use for the 25 rooms?\n$\\mathrm{(A)}\\ 10\\qquad \\mathrm{(B)}\\ 12\\qquad \\mathrm{(C)}\\ 15\\qquad \\mathrm{(D)}\\ 18\\qquad \\mathrm{(E)}\\ 25$",
+  "solutions": {
+    "Solution": "Losing three cans of paint corresponds to being able to paint five fewer rooms. So $\\frac 35 \\cdot 25 = \\boxed{15}$.  The answer is $\\mathrm{(C)}$."
+  }
+}

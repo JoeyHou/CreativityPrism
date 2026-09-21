@@ -1,0 +1,9 @@
+{
+  "competition_id": "2021_Fall_AMC_12A_Problems",
+  "problem_id": 16,
+  "difficulty": 3,
+  "problem": "An organization has $30$ employees, $20$ of whom have a brand A computer while the other $10$ have a brand B computer. For security, the computers can only be connected to each other and only by cables. The cables can only connect a brand A computer to a brand B computer. Employees can communicate with each other if their computers are directly connected by a cable or by relaying messages through a series of connected computers. Initially, no computer is connected to any other. A technician arbitrarily selects one computer of each brand and installs a cable between them, provided there is not already a cable between that pair. The technician stops once every employee can communicate with each other. What is the maximum possible number of cables used?\n$\\textbf{(A)}\\ 190  \\qquad\\textbf{(B)}\\  191 \\qquad\\textbf{(C)}\\  192 \\qquad\\textbf{(D)}\\  195 \\qquad\\textbf{(E)}\\ 196$",
+  "solutions": {
+    "Solution": "We claim that to maximize the number of cables used, we isolate one computer and connect all cables for the remaining $29$ computers, then connect one more cable for the isolated computer.\nIf a brand A computer is isolated, then the technician can use at most $19\\cdot10+1=191$ cables. If a brand B computer is isolated instead, then the technician can use at most $20\\cdot9+1=181$ cables. Therefore, the answer is $\\boxed{\\textbf{(B)}\\  191}.$\n\nSuppose that the computers are labeled $A_1, A_2, \\ldots, A_{20}$ and $B_1, B_2, \\ldots, B_{10}.$ We will prove the claim in the first paragraph of this solution:"
+  }
+}

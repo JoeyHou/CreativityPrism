@@ -1,0 +1,9 @@
+{
+  "competition_id": "2020_USAMO_Problems",
+  "problem_id": 1,
+  "difficulty": 7,
+  "problem": "Let $ABC$ be a fixed acute triangle inscribed in a circle $\\omega$ with center $O$. A variable point $X$ is chosen on minor arc $AB$ of $\\omega$, and segments $CX$ and $AB$ meet at $D$. Denote by $O_1$ and $O_2$ the circumcenters of triangles $ADX$ and $BDX$, respectively. Determine all points $X$ for which the area of triangle $OO_1O_2$ is minimized.",
+  "solutions": {
+    "Solution": "Let $E$ be midpoint $AD.$ Let $F$ be midpoint $BD \\implies$\n\\[EF = ED + FD = \\frac {AD}{2} + \\frac {BD}{2} = \\frac {AB}{2}.\\]\n$E$ and $F$ are the bases of perpendiculars dropped from $O_1$ and $O_2,$ respectively.\nTherefore  $O_1O_2 \\ge EF =  \\frac {AB}{2}.$\n\\[CX \\perp  O_1O_2, AX \\perp  O_1O \\implies \\angle O O_1O_2 = \\angle AXC\\]\n$\\angle AXC = \\angle ABC (AXBC$ is cyclic) $\\implies \\angle O O_1O_2 = \\angle ABC.$\nSimilarly $\\angle BAC = \\angle O O_2 O_1 \\implies  \\triangle ABC \\sim \\triangle O_2 O_1O.$\nThe area of $\\triangle OO_1O_2$ is minimized if $CX \\perp AB$ because\n\\[\\frac {[OO_1O_2]} {[ABC]} = \\left(\\frac {O_1 O_2} {AB}\\right)^2 \\ge \\left(\\frac {EF} {AB}\\right)^2 = \\frac {1}{4}.\\]"
+  }
+}

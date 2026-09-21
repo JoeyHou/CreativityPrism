@@ -1,0 +1,16 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "neocoder",
+            "run_id": "nc_smoke_api",
+            "eval_input_dir": "data/output/nc_smoke_api/inference_output.json",
+            "test_case_path": "data/processed/neocoder/test_cases_annotated.json",
+            "_stages": "Correctness only. Technique detection needs gpt-4-turbo, which has no entry in the credentials file, and the creativity aggregate drops rounds whose constraints repeat the previous round's -- both left for Joey.",
+            "code_extractor": "fenced",
+            "_code_extractor": "Joey's call 2026-09-03: fenced. Measured over 90 Qwen2.5-7B generations -- 76 contain compilable code, and legacy recovers only 6 of them. It truncates 44 into syntax errors (its solve() boundary heuristic cuts mid-structure) and discards 26 outright. In both rounds where the two disagree on the verdict, fenced is the correct one. 'legacy' still reproduces the published numbers.",
+            "stage": "correctness",
+            "_stage": "correctness | techniques (needs reviewer_model) | creativity (needs correctness_path + techniques_path)"
+        }
+    ]
+}

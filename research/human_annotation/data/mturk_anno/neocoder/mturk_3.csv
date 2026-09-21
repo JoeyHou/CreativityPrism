@@ -1,0 +1,541 @@
+"HITId","HITTypeId","Title","Description","Keywords","Reward","CreationTime","MaxAssignments","RequesterAnnotation","AssignmentDurationInSeconds","AutoApprovalDelayInSeconds","Expiration","NumberOfSimilarHITs","LifetimeInSeconds","AssignmentId","WorkerId","AssignmentStatus","AcceptTime","SubmitTime","AutoApprovalTime","ApprovalTime","RejectionTime","RequesterFeedback","WorkTimeInSeconds","LifetimeApprovalRate","Last30DaysApprovalRate","Last7DaysApprovalRate","Input.machine_solutions","Answer.technique.Kadanes_algorithm","Answer.technique.back_tracking","Answer.technique.binary_search","Answer.technique.break_statement","Answer.technique.continue_statement","Answer.technique.depth_first_search","Answer.technique.dictionary","Answer.technique.divide_&_conquer","Answer.technique.dynamic_programming","Answer.technique.for_loop","Answer.technique.graph","Answer.technique.graph_traversal","Answer.technique.greedy_algorithm","Answer.technique.hashmap","Answer.technique.heap","Answer.technique.if_statement","Answer.technique.linked_list","Answer.technique.match_statement","Answer.technique.matrix_operation","Answer.technique.minimax","Answer.technique.misc","Answer.technique.pass_statement","Answer.technique.queue","Answer.technique.recursion","Answer.technique.set","Answer.technique.sliding_window","Answer.technique.sorting","Answer.technique.stack","Answer.technique.topological_sort","Answer.technique.tree","Answer.technique.tuple","Answer.technique.two_pointers","Answer.technique.while_loop","Answer.technique.width_first_search","Approve","Reject"
+"3RDTX9JRUHH0XUNETBJPSETCQPU976","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3IO1LGZLKTDK29OTVCELAOTKRK7863","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:38:47 PDT 2025","Sun Oct 19 19:39:17 PDT 2025","Wed Oct 22 19:39:17 PDT 2025","Wed Oct 22 19:39:49 PDT 2025","","","30","100% (60/60)","100% (60/60)","100% (40/40)","def solve(n, a):
+    import sympy as sp
+    b = list(range(1, n+1))
+    idx = [sp.Indexed解(Frozenset(a), i) for i in range(n)]
+    for i in idx:
+        b[i] = b[sp.Indexed解(Frozenset(a), i) + 1]
+    return tuple(b)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3RDTX9JRUHH0XUNETBJPSETCQPU976","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3RRCEFRB76SPPKIMF05G4SZ73ZJ4BA","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:05:08 PDT 2025","Mon Oct 13 11:05:49 PDT 2025","Thu Oct 16 11:05:49 PDT 2025","Thu Oct 16 11:06:49 PDT 2025","","","41","100% (11/11)","100% (11/11)","0% (0/0)","def solve(n, a):
+    import sympy as sp
+    b = list(range(1, n+1))
+    idx = [sp.Indexed解(Frozenset(a), i) for i in range(n)]
+    for i in idx:
+        b[i] = b[sp.Indexed解(Frozenset(a), i) + 1]
+    return tuple(b)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3RDTX9JRUHH0XUNETBJPSETCQPU976","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3RXPCZQMQ9R4O2TE84ES75J17RZG1M","A189Q7EDEDSQ34","Approved","Thu Oct 09 15:51:00 PDT 2025","Thu Oct 09 15:52:00 PDT 2025","Sun Oct 12 15:52:00 PDT 2025","Sun Oct 12 15:52:49 PDT 2025","","","60","100% (65/65)","100% (65/65)","0% (0/0)","def solve(n, a):
+    import sympy as sp
+    b = list(range(1, n+1))
+    idx = [sp.Indexed解(Frozenset(a), i) for i in range(n)]
+    for i in idx:
+        b[i] = b[sp.Indexed解(Frozenset(a), i) + 1]
+    return tuple(b)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false"
+"3QGHA0EA12GYB23CZ35XB0NJ7G6BWK","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3KV0LJBBHM1S9HOHH1R2Q1LB7C9MR2","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:57:29 PDT 2025","Fri Oct 17 12:58:53 PDT 2025","Mon Oct 20 12:58:53 PDT 2025","Mon Oct 20 12:59:49 PDT 2025","","","84","100% (65/65)","100% (65/65)","0% (0/0)","from math import sqrt
+
+def solve(w: int, d: int, h: int, a: int, b: int, f: int, g: int) -> int:
+    # Calculate the minimum cable length by summing distances along the edges
+    # Distance from laptop (a, b) to the wall closer to the x-axis
+    dist_a = min(a, w - a)
+    # Distance from laptop (a, b) to the wall closer to the y-axis
+    dist_b = min(b, d - b)
+    
+    # Distance from projector (f, g) on the ceiling to the wall closer to the x-axis
+    dist_f = min(f, w - f)
+    # Distance from projector (f, g) on the ceiling to the wall closer to the y-axis
+    dist_g = min(g, d - g)
+    
+    # Total cable length
+    cable_length = sqrt(dist_a**2 + dist_b**2) + sqrt(dist_f**2 + dist_g**2) + (w - (a + dist_a)) + (d - (b + dist_b))
+    
+    return int(cable_length)
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3QGHA0EA12GYB23CZ35XB0NJ7G6BWK","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3NS0A6KXCOO1JYEMGFNKZZ3DK6DZGV","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:03:06 PDT 2025","Mon Oct 13 11:03:34 PDT 2025","Thu Oct 16 11:03:34 PDT 2025","Thu Oct 16 11:03:49 PDT 2025","","","28","100% (11/11)","100% (11/11)","0% (0/0)","from math import sqrt
+
+def solve(w: int, d: int, h: int, a: int, b: int, f: int, g: int) -> int:
+    # Calculate the minimum cable length by summing distances along the edges
+    # Distance from laptop (a, b) to the wall closer to the x-axis
+    dist_a = min(a, w - a)
+    # Distance from laptop (a, b) to the wall closer to the y-axis
+    dist_b = min(b, d - b)
+    
+    # Distance from projector (f, g) on the ceiling to the wall closer to the x-axis
+    dist_f = min(f, w - f)
+    # Distance from projector (f, g) on the ceiling to the wall closer to the y-axis
+    dist_g = min(g, d - g)
+    
+    # Total cable length
+    cable_length = sqrt(dist_a**2 + dist_b**2) + sqrt(dist_f**2 + dist_g**2) + (w - (a + dist_a)) + (d - (b + dist_b))
+    
+    return int(cable_length)
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3QGHA0EA12GYB23CZ35XB0NJ7G6BWK","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3WMINLGALVJN1EQ921B2SFRPDUIAC1","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:45:29 PDT 2025","Sun Oct 19 18:46:45 PDT 2025","Wed Oct 22 18:46:45 PDT 2025","Wed Oct 22 18:46:49 PDT 2025","","","76","100% (60/60)","100% (60/60)","100% (40/40)","from math import sqrt
+
+def solve(w: int, d: int, h: int, a: int, b: int, f: int, g: int) -> int:
+    # Calculate the minimum cable length by summing distances along the edges
+    # Distance from laptop (a, b) to the wall closer to the x-axis
+    dist_a = min(a, w - a)
+    # Distance from laptop (a, b) to the wall closer to the y-axis
+    dist_b = min(b, d - b)
+    
+    # Distance from projector (f, g) on the ceiling to the wall closer to the x-axis
+    dist_f = min(f, w - f)
+    # Distance from projector (f, g) on the ceiling to the wall closer to the y-axis
+    dist_g = min(g, d - g)
+    
+    # Total cable length
+    cable_length = sqrt(dist_a**2 + dist_b**2) + sqrt(dist_f**2 + dist_g**2) + (w - (a + dist_a)) + (d - (b + dist_b))
+    
+    return int(cable_length)
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"38B7Q9C29ZLHTU99A1EXM0TGVEA967","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3JZQSN0I3AQVEHNMF3TDW7NV82RFGX","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:40:43 PDT 2025","Thu Oct 23 12:40:54 PDT 2025","Sun Oct 26 12:40:54 PDT 2025","Sun Oct 26 12:41:49 PDT 2025","","","11","100% (111/111)","100% (49/49)","100% (49/49)","def solve(case_index, s):
+    def check_palindrome(s):
+        return s == s[::-1]
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"38B7Q9C29ZLHTU99A1EXM0TGVEA967","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3X66WABAJGY0Y57TV8SBVYYY5CIG3L","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:50:32 PDT 2025","Sun Oct 19 18:50:57 PDT 2025","Wed Oct 22 18:50:57 PDT 2025","Wed Oct 22 18:51:49 PDT 2025","","","25","100% (60/60)","100% (60/60)","100% (40/40)","def solve(case_index, s):
+    def check_palindrome(s):
+        return s == s[::-1]
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"38B7Q9C29ZLHTU99A1EXM0TGVEA967","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3ZAZR5XV0LYO2MYHETR198IYMFOCZ3","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:38:50 PDT 2025","Fri Oct 17 12:39:42 PDT 2025","Mon Oct 20 12:39:42 PDT 2025","Mon Oct 20 12:39:49 PDT 2025","","","52","100% (65/65)","100% (65/65)","0% (0/0)","def solve(case_index, s):
+    def check_palindrome(s):
+        return s == s[::-1]
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3W1K7D6QTUX25X8HAQP4A4H1OIABZA","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3L4D84MILJ8PJF4TIZ2GW5ROG9LHJ1","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:43:55 PDT 2025","Thu Oct 23 12:44:15 PDT 2025","Sun Oct 26 12:44:15 PDT 2025","Sun Oct 26 12:44:49 PDT 2025","","","20","100% (111/111)","100% (49/49)","100% (49/49)","from decimal import getcontext, Decimal
+
+def solve(n: str) -> int:
+    getcontext().prec = 30
+    pi_str = str(Decimal('3.141592653589793238462643383279502884197'))[:30]
+    correct_digits = sum(1 for p, c in zip(pi_str, n) if p == c)
+    return correct_digits
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3W1K7D6QTUX25X8HAQP4A4H1OIABZA","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3P1L2B7ADL556MEGPX9JWT1HWK0LOR","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:12:43 PDT 2025","Sun Oct 19 19:13:09 PDT 2025","Wed Oct 22 19:13:09 PDT 2025","Wed Oct 22 19:13:49 PDT 2025","","","26","100% (60/60)","100% (60/60)","100% (40/40)","from decimal import getcontext, Decimal
+
+def solve(n: str) -> int:
+    getcontext().prec = 30
+    pi_str = str(Decimal('3.141592653589793238462643383279502884197'))[:30]
+    correct_digits = sum(1 for p, c in zip(pi_str, n) if p == c)
+    return correct_digits
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3W1K7D6QTUX25X8HAQP4A4H1OIABZA","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3TESA3PJ3LQ1C1BPCTVL42R11P8MMC","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:58:35 PDT 2025","Tue Oct 14 10:59:10 PDT 2025","Fri Oct 17 10:59:10 PDT 2025","Fri Oct 17 10:59:49 PDT 2025","","","35","100% (65/65)","100% (65/65)","0% (0/0)","from decimal import getcontext, Decimal
+
+def solve(n: str) -> int:
+    getcontext().prec = 30
+    pi_str = str(Decimal('3.141592653589793238462643383279502884197'))[:30]
+    correct_digits = sum(1 for p, c in zip(pi_str, n) if p == c)
+    return correct_digits
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3EGKVCRQGF8207YCE4NLWX8ZIO6BYJ","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","358UUM7WRJJ9OEHUDVPD7JOLCNC7RA","AKERE2HC8Y7H4","Approved","Mon Oct 13 22:38:50 PDT 2025","Mon Oct 13 22:39:06 PDT 2025","Thu Oct 16 22:39:06 PDT 2025","Thu Oct 16 22:39:49 PDT 2025","","","16","100% (14/14)","100% (12/12)","0% (0/0)","def solve():
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3EGKVCRQGF8207YCE4NLWX8ZIO6BYJ","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3X66WABAJGY0Y57TV8SBVYYY5BDG3E","A189Q7EDEDSQ34","Approved","Thu Oct 09 15:59:12 PDT 2025","Thu Oct 09 15:59:17 PDT 2025","Sun Oct 12 15:59:17 PDT 2025","Sun Oct 12 15:59:49 PDT 2025","","","5","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3EGKVCRQGF8207YCE4NLWX8ZIO6BYJ","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3YJ6NA41JVWHWW2H1CAL5ETF20RPJA","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:40:56 PDT 2025","Sun Oct 19 19:41:04 PDT 2025","Wed Oct 22 19:41:04 PDT 2025","Wed Oct 22 19:41:49 PDT 2025","","","8","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3WYZV0QBG2TD0282981JDJ1QGICBXD","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","38SKSKU7RLDVA03DR2WECW5VKB1LIW","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:56:51 PDT 2025","Sun Oct 19 18:58:11 PDT 2025","Wed Oct 22 18:58:11 PDT 2025","Wed Oct 22 18:58:49 PDT 2025","","","80","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    n, cnt = map(int, input().split())
+    balls = [0] * (n + 1)
+    for i in range(n):
+        cnt_i = int(input())
+        balls[cnt_i] += cnt_i
+    parity = balls[-1] % 2
+    
+    def can_stay(x):
+        return balls[x] >= 2
+    
+    def find_color(start):
+        if can_stay(start):
+            return start
+        for i in range(n):
+            if balls[i] >= 2 and can_stay(i) and balls[start] - 1 < balls[i]:
+                return find_color(i)
+        return start
+    
+    return find_color(1) if parity == 1 else find_color(2)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false"
+"3WYZV0QBG2TD0282981JDJ1QGICBXD","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3E13VNJ1N7BIKTZ9YSEVSHWHM4S1I0","A189Q7EDEDSQ34","Approved","Thu Oct 09 16:00:49 PDT 2025","Thu Oct 09 16:08:08 PDT 2025","Sun Oct 12 16:08:08 PDT 2025","Sun Oct 12 16:08:49 PDT 2025","","","439","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    n, cnt = map(int, input().split())
+    balls = [0] * (n + 1)
+    for i in range(n):
+        cnt_i = int(input())
+        balls[cnt_i] += cnt_i
+    parity = balls[-1] % 2
+    
+    def can_stay(x):
+        return balls[x] >= 2
+    
+    def find_color(start):
+        if can_stay(start):
+            return start
+        for i in range(n):
+            if balls[i] >= 2 and can_stay(i) and balls[start] - 1 < balls[i]:
+                return find_color(i)
+        return start
+    
+    return find_color(1) if parity == 1 else find_color(2)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false"
+"3WYZV0QBG2TD0282981JDJ1QGICBXD","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3VE8AYVF86DGL2H4W5HP4U6XKJEF8H","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:34:58 PDT 2025","Thu Oct 23 12:37:33 PDT 2025","Sun Oct 26 12:37:33 PDT 2025","Sun Oct 26 12:37:49 PDT 2025","","","155","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    n, cnt = map(int, input().split())
+    balls = [0] * (n + 1)
+    for i in range(n):
+        cnt_i = int(input())
+        balls[cnt_i] += cnt_i
+    parity = balls[-1] % 2
+    
+    def can_stay(x):
+        return balls[x] >= 2
+    
+    def find_color(start):
+        if can_stay(start):
+            return start
+        for i in range(n):
+            if balls[i] >= 2 and can_stay(i) and balls[start] - 1 < balls[i]:
+                return find_color(i)
+        return start
+    
+    return find_color(1) if parity == 1 else find_color(2)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false"
+"3CMV9YRYQMHOIRPPJHBC0DPGHEBLJM","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3PS7W85Z8JIQICIFWHSSLUG9VYX9T1","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 11:04:18 PDT 2025","Mon Oct 13 11:05:08 PDT 2025","Thu Oct 16 11:05:08 PDT 2025","Thu Oct 16 11:05:49 PDT 2025","","","50","100% (11/11)","100% (11/11)","0% (0/0)","def solve():
+    n, sticks = map(int, input().split())
+    lengths = list(map(int, input().split()))
+    
+    def can_form_equilateral(triangle):
+        a, b, c = sorted(triangle)
+        return a**2 + b**2 == 2 * (a**2 + c**2)
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","true","false","false","false"
+"3CMV9YRYQMHOIRPPJHBC0DPGHEBLJM","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3PXX5PX6LHE4R9Y3O1F7HVL7V9IABU","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:30:59 PDT 2025","Sun Oct 19 18:33:03 PDT 2025","Wed Oct 22 18:33:03 PDT 2025","Wed Oct 22 18:33:49 PDT 2025","","","124","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    n, sticks = map(int, input().split())
+    lengths = list(map(int, input().split()))
+    
+    def can_form_equilateral(triangle):
+        a, b, c = sorted(triangle)
+        return a**2 + b**2 == 2 * (a**2 + c**2)
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3CMV9YRYQMHOIRPPJHBC0DPGHEBLJM","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3TEM0PF1QPD15TY5AV9KNFXUP8FD0A","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:24:27 PDT 2025","Tue Oct 14 10:25:04 PDT 2025","Fri Oct 17 10:25:04 PDT 2025","Fri Oct 17 10:25:49 PDT 2025","","","37","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    n, sticks = map(int, input().split())
+    lengths = list(map(int, input().split()))
+    
+    def can_form_equilateral(triangle):
+        a, b, c = sorted(triangle)
+        return a**2 + b**2 == 2 * (a**2 + c**2)
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3MZ3TAMYU433QE0W6JN8AOJFARBIRX","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3ATPCQ38JSQ04HREYTTRP6J8GHWAY3","A189Q7EDEDSQ34","Approved","Thu Oct 09 15:59:32 PDT 2025","Thu Oct 09 16:00:44 PDT 2025","Sun Oct 12 16:00:44 PDT 2025","Sun Oct 12 16:00:49 PDT 2025","","","72","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    from math import comb
+    
+    def count_sequences(n, excluded_digits):
+        # Initialize the count of valid sequences
+        count = 0
+        
+        # Iterate over all possible digits
+        for a in range(10):
+            if a not in excluded_digits:
+                # Iterate over all positions in the 4-digit sequence
+                for i in range(4):
+                    # Choose 2 instances of the current digit
+                    count += comb(4, 2)
+        
+        return count
+    
+    # Process each test case
+    for _ in range(int(input())):
+        n = int(input())
+        excluded_digits = sorted(list(map(int, input().split()))[:n])
+        
+        result = count_sequences(4, excluded_digits)
+        print(result)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3MZ3TAMYU433QE0W6JN8AOJFARBIRX","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3ERET4BTV6PRFTSS28E0K3TDCLDK9D","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:46:36 PDT 2025","Thu Oct 23 12:47:29 PDT 2025","Sun Oct 26 12:47:29 PDT 2025","Sun Oct 26 12:47:49 PDT 2025","","","53","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    from math import comb
+    
+    def count_sequences(n, excluded_digits):
+        # Initialize the count of valid sequences
+        count = 0
+        
+        # Iterate over all possible digits
+        for a in range(10):
+            if a not in excluded_digits:
+                # Iterate over all positions in the 4-digit sequence
+                for i in range(4):
+                    # Choose 2 instances of the current digit
+                    count += comb(4, 2)
+        
+        return count
+    
+    # Process each test case
+    for _ in range(int(input())):
+        n = int(input())
+        excluded_digits = sorted(list(map(int, input().split()))[:n])
+        
+        result = count_sequences(4, excluded_digits)
+        print(result)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","true","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3MZ3TAMYU433QE0W6JN8AOJFARBIRX","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3Y5140Z9DHWL1LIBJUPLTDEFPL2PIY","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:33:56 PDT 2025","Sun Oct 19 19:35:32 PDT 2025","Wed Oct 22 19:35:32 PDT 2025","Wed Oct 22 19:35:49 PDT 2025","","","96","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    from math import comb
+    
+    def count_sequences(n, excluded_digits):
+        # Initialize the count of valid sequences
+        count = 0
+        
+        # Iterate over all possible digits
+        for a in range(10):
+            if a not in excluded_digits:
+                # Iterate over all positions in the 4-digit sequence
+                for i in range(4):
+                    # Choose 2 instances of the current digit
+                    count += comb(4, 2)
+        
+        return count
+    
+    # Process each test case
+    for _ in range(int(input())):
+        n = int(input())
+        excluded_digits = sorted(list(map(int, input().split()))[:n])
+        
+        result = count_sequences(4, excluded_digits)
+        print(result)
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"3CVBMEMMYUWTC05XRN7H5VR0922H74","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","33LK57MYLDL493NDBFH1ODMG8IEZSO","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:13:54 PDT 2025","Thu Oct 23 12:13:59 PDT 2025","Sun Oct 26 12:13:59 PDT 2025","Sun Oct 26 12:14:49 PDT 2025","","","5","100% (111/111)","100% (49/49)","100% (49/49)","def solve(n: int, strings: List[str]) -> str:
+    """"""
+    Determine if a string s is a palindrome given its non-empty prefixes and suffixes in arbitrary order.
+    """"""
+    # Implementation goes here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3CVBMEMMYUWTC05XRN7H5VR0922H74","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3N1FSUEFLPGI4HG6TWWMZIN76KVD4Q","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:35:50 PDT 2025","Tue Oct 14 10:35:56 PDT 2025","Fri Oct 17 10:35:56 PDT 2025","Fri Oct 17 10:36:49 PDT 2025","","","6","100% (65/65)","100% (65/65)","0% (0/0)","def solve(n: int, strings: List[str]) -> str:
+    """"""
+    Determine if a string s is a palindrome given its non-empty prefixes and suffixes in arbitrary order.
+    """"""
+    # Implementation goes here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3CVBMEMMYUWTC05XRN7H5VR0922H74","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3Q5ZZ9ZEV8VOJ5OFQT4GIIFKVPW85N","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:35:32 PDT 2025","Sun Oct 19 19:35:40 PDT 2025","Wed Oct 22 19:35:40 PDT 2025","Wed Oct 22 19:35:49 PDT 2025","","","8","100% (60/60)","100% (60/60)","100% (40/40)","def solve(n: int, strings: List[str]) -> str:
+    """"""
+    Determine if a string s is a palindrome given its non-empty prefixes and suffixes in arbitrary order.
+    """"""
+    # Implementation goes here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3YZ7A3YHSO93F55UEO4JBPK6R7O5SY","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","39K0FND3A1V0A020FQ5GVBW178LAMI","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:41:47 PDT 2025","Fri Oct 17 12:41:53 PDT 2025","Mon Oct 20 12:41:53 PDT 2025","Mon Oct 20 12:42:49 PDT 2025","","","6","100% (65/65)","100% (65/65)","0% (0/0)","def solve(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""YES""
+    else:
+        return ""NO""
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3YZ7A3YHSO93F55UEO4JBPK6R7O5SY","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","39RP059ME195TA7SL45CQMG7PQBBMJ","ASQIP0BTUIBHO","Approved","Thu Oct 23 13:23:56 PDT 2025","Thu Oct 23 13:24:04 PDT 2025","Sun Oct 26 13:24:04 PDT 2025","Sun Oct 26 13:24:49 PDT 2025","","","8","100% (111/111)","100% (49/49)","100% (49/49)","def solve(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""YES""
+    else:
+        return ""NO""
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3YZ7A3YHSO93F55UEO4JBPK6R7O5SY","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3XLBSAQ9ZOSIQ53LNCJQTMQKL4Y7Z6","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:27:39 PDT 2025","Sun Oct 19 18:30:43 PDT 2025","Wed Oct 22 18:30:43 PDT 2025","Wed Oct 22 18:30:49 PDT 2025","","","184","100% (60/60)","100% (60/60)","100% (40/40)","def solve(s):
+    length = len(s)
+    if length % 2 == 0:
+        return ""YES""
+    else:
+        return ""NO""
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3EHIMLB7GQFXCEAG1SZNJVNVKM8H8R","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","35LDD5557UK6MDBMRHI5PPZXCKFKM7","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:31:20 PDT 2025","Fri Oct 17 12:31:29 PDT 2025","Mon Oct 20 12:31:29 PDT 2025","Mon Oct 20 12:31:49 PDT 2025","","","9","100% (65/65)","100% (65/65)","0% (0/0)","def solve(n):
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3EHIMLB7GQFXCEAG1SZNJVNVKM8H8R","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3DHE4R9OCGRBDNBAR8E6COT6ZYIG2A","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:42:56 PDT 2025","Sun Oct 19 18:43:11 PDT 2025","Wed Oct 22 18:43:11 PDT 2025","Wed Oct 22 18:43:49 PDT 2025","","","15","100% (60/60)","100% (60/60)","100% (40/40)","def solve(n):
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3EHIMLB7GQFXCEAG1SZNJVNVKM8H8R","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3FFJ6VRILL4ID4ER29AVECD7HDU0I6","ASQIP0BTUIBHO","Approved","Thu Oct 23 13:24:59 PDT 2025","Thu Oct 23 13:25:02 PDT 2025","Sun Oct 26 13:25:02 PDT 2025","Sun Oct 26 13:25:49 PDT 2025","","","3","100% (111/111)","100% (49/49)","100% (49/49)","def solve(n):
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"30OITAWPC9JXQJTQ6K51JRI64SQH9G","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3H7Z272LXRNNRMQH4XMYLT676PWLP8","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:13:33 PDT 2025","Sun Oct 19 19:13:52 PDT 2025","Wed Oct 22 19:13:52 PDT 2025","Wed Oct 22 19:14:49 PDT 2025","","","19","100% (60/60)","100% (60/60)","100% (40/40)","def solve(n, m, a, b):
+    if n == 1 or m == 1:
+        return ""NO""
+    a.sort()
+    b.sort()
+    if a == b:
+        return ""YES""
+    return ""NO""
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"30OITAWPC9JXQJTQ6K51JRI64SQH9G","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3M1CVSFP6KLRVF0S7JCXCKG6H9NAQA","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:11:06 PDT 2025","Thu Oct 23 12:11:23 PDT 2025","Sun Oct 26 12:11:23 PDT 2025","Sun Oct 26 12:11:49 PDT 2025","","","17","100% (111/111)","100% (49/49)","100% (49/49)","def solve(n, m, a, b):
+    if n == 1 or m == 1:
+        return ""NO""
+    a.sort()
+    b.sort()
+    if a == b:
+        return ""YES""
+    return ""NO""
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false"
+"30OITAWPC9JXQJTQ6K51JRI64SQH9G","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3VE8AYVF86DGL2H4W5HP4U6XKJ9F8C","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:40:31 PDT 2025","Fri Oct 17 12:41:31 PDT 2025","Mon Oct 20 12:41:31 PDT 2025","Mon Oct 20 12:41:49 PDT 2025","","","60","100% (65/65)","100% (65/65)","0% (0/0)","def solve(n, m, a, b):
+    if n == 1 or m == 1:
+        return ""NO""
+    a.sort()
+    b.sort()
+    if a == b:
+        return ""YES""
+    return ""NO""
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3QREJ3J44MDJTBV712BO1SPTW3BLKL","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","31QNSG6A5B93692YEMJDG2TGMVR872","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:39:33 PDT 2025","Sun Oct 19 19:39:47 PDT 2025","Wed Oct 22 19:39:47 PDT 2025","Wed Oct 22 19:39:49 PDT 2025","","","14","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    def is_win(row_start, row_end, symbol):
+        count = 0
+        for i in range(row_start, row_end + 1):
+            if game[i] == symbol:
+                count += 1
+            if count == 3:
+                return True
+        return False
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3QREJ3J44MDJTBV712BO1SPTW3BLKL","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","39K0FND3A1V0A020FQ5GVBW178QAMN","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:06:30 PDT 2025","Thu Oct 23 12:06:54 PDT 2025","Sun Oct 26 12:06:54 PDT 2025","Sun Oct 26 12:07:49 PDT 2025","","","24","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    def is_win(row_start, row_end, symbol):
+        count = 0
+        for i in range(row_start, row_end + 1):
+            if game[i] == symbol:
+                count += 1
+            if count == 3:
+                return True
+        return False
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false"
+"3QREJ3J44MDJTBV712BO1SPTW3BLKL","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3QJOXOW4X3730DJCVV72RUMSSNHMEN","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:55:32 PDT 2025","Tue Oct 14 10:55:45 PDT 2025","Fri Oct 17 10:55:45 PDT 2025","Fri Oct 17 10:55:49 PDT 2025","","","13","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    def is_win(row_start, row_end, symbol):
+        count = 0
+        for i in range(row_start, row_end + 1):
+            if game[i] == symbol:
+                count += 1
+            if count == 3:
+                return True
+        return False
+","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UUIU9GZDOL4U5I93O99LUGSTQ25TN","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","33CUSNVVN7S76N7HORBJU2PBXFX88P","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:41:05 PDT 2025","Sun Oct 19 19:41:11 PDT 2025","Wed Oct 22 19:41:11 PDT 2025","Wed Oct 22 19:41:49 PDT 2025","","","6","100% (60/60)","100% (60/60)","100% (40/40)","def solve(n: int, k: int, x: int) -> int:
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UUIU9GZDOL4U5I93O99LUGSTQ25TN","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","34Q075JO1HT7DYITU2PPMDWL0BJ01E","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:37:36 PDT 2025","Thu Oct 23 12:37:39 PDT 2025","Sun Oct 26 12:37:39 PDT 2025","Sun Oct 26 12:37:49 PDT 2025","","","3","100% (111/111)","100% (49/49)","100% (49/49)","def solve(n: int, k: int, x: int) -> int:
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3UUIU9GZDOL4U5I93O99LUGSTQ25TN","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3L4PIM1GQDWS3YDV04FDKW8IGMLRYV","A189Q7EDEDSQ34","Approved","Tue Oct 14 11:07:30 PDT 2025","Tue Oct 14 11:07:34 PDT 2025","Fri Oct 17 11:07:34 PDT 2025","Fri Oct 17 11:07:49 PDT 2025","","","4","100% (65/65)","100% (65/65)","0% (0/0)","def solve(n: int, k: int, x: int) -> int:
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"37OPIVELVDJBV23VYQJ1FMTQAA8HAV","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3E7TUJ2EGW2J1NMIARSDGQYNSC9D9M","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:42:47 PDT 2025","Tue Oct 14 10:44:22 PDT 2025","Fri Oct 17 10:44:22 PDT 2025","Fri Oct 17 10:44:49 PDT 2025","","","95","100% (65/65)","100% (65/65)","0% (0/0)","def solve(n, m, a, b):
+    def can_win(n, a, m, b):
+        dp = [[False] * (m + 1) for _ in range(n + 1)]
+        for i in range(n + 1):
+            for j in range(m + 1):
+                if j == 0:
+                    dp[i][j] = (a[i] <= 0)
+                elif a[i] > b[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = dp[i-1][j] or (not dp[i-1][j-1] and a[i] - b[j-1] > 0)
+        return not dp[-1][-1]
+","false","false","false","false","false","false","false","false","true","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"37OPIVELVDJBV23VYQJ1FMTQAA8HAV","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3KV0LJBBHM1S9HOHH1R2Q1LB7CDMR6","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:08:30 PDT 2025","Thu Oct 23 12:09:12 PDT 2025","Sun Oct 26 12:09:12 PDT 2025","Sun Oct 26 12:09:49 PDT 2025","","","42","100% (111/111)","100% (49/49)","100% (49/49)","def solve(n, m, a, b):
+    def can_win(n, a, m, b):
+        dp = [[False] * (m + 1) for _ in range(n + 1)]
+        for i in range(n + 1):
+            for j in range(m + 1):
+                if j == 0:
+                    dp[i][j] = (a[i] <= 0)
+                elif a[i] > b[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = dp[i-1][j] or (not dp[i-1][j-1] and a[i] - b[j-1] > 0)
+        return not dp[-1][-1]
+","false","false","false","false","false","false","false","false","true","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"37OPIVELVDJBV23VYQJ1FMTQAA8HAV","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3MHW492WWKTK2O5YQLWCRYAESINMVW","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:33:11 PDT 2025","Sun Oct 19 18:34:38 PDT 2025","Wed Oct 22 18:34:38 PDT 2025","Wed Oct 22 18:34:49 PDT 2025","","","87","100% (60/60)","100% (60/60)","100% (40/40)","def solve(n, m, a, b):
+    def can_win(n, a, m, b):
+        dp = [[False] * (m + 1) for _ in range(n + 1)]
+        for i in range(n + 1):
+            for j in range(m + 1):
+                if j == 0:
+                    dp[i][j] = (a[i] <= 0)
+                elif a[i] > b[j-1]:
+                    dp[i][j] = dp[i-1][j-1]
+                else:
+                    dp[i][j] = dp[i-1][j] or (not dp[i-1][j-1] and a[i] - b[j-1] > 0)
+        return not dp[-1][-1]
+","false","false","false","false","false","false","false","false","true","true","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"389A2A3057YODHUXKW87FPKXOWRC0Q","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","36V4Q8R5Z4GSXG9H4M22LBB6BQ7MQ1","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:57:22 PDT 2025","Fri Oct 17 12:57:25 PDT 2025","Mon Oct 20 12:57:25 PDT 2025","Mon Oct 20 12:57:49 PDT 2025","","","3","100% (65/65)","100% (65/65)","0% (0/0)","deforces
+"" is not a palindrome string, and it's also the longest subsequence (of length 10) that isn't palindrome.
+In the fourth test case, ""
+lol
+"" is a palindrome string, so the answer is $$$2$$$.
+
+solve()
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"389A2A3057YODHUXKW87FPKXOWRC0Q","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3OLF68YTNTHU4QAJT3130LCSA7AAFC","A3D6HNGN48D9H9","Approved","Sun Oct 19 19:13:21 PDT 2025","Sun Oct 19 19:13:32 PDT 2025","Wed Oct 22 19:13:32 PDT 2025","Wed Oct 22 19:13:49 PDT 2025","","","11","100% (60/60)","100% (60/60)","100% (40/40)","deforces
+"" is not a palindrome string, and it's also the longest subsequence (of length 10) that isn't palindrome.
+In the fourth test case, ""
+lol
+"" is a palindrome string, so the answer is $$$2$$$.
+
+solve()
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"389A2A3057YODHUXKW87FPKXOWRC0Q","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3ZR9AIQJUVPO5XFCHK8RKB3OCVT04R","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:43:37 PDT 2025","Thu Oct 23 12:43:53 PDT 2025","Sun Oct 26 12:43:53 PDT 2025","Sun Oct 26 12:44:49 PDT 2025","","","16","100% (111/111)","100% (49/49)","100% (49/49)","deforces
+"" is not a palindrome string, and it's also the longest subsequence (of length 10) that isn't palindrome.
+In the fourth test case, ""
+lol
+"" is a palindrome string, so the answer is $$$2$$$.
+
+solve()
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3VAOOVPI4I8UDHDPM2NPGS28L3GLLO","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3CTOC39K3R6SQQYH5QG45S2U26LJ7X","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:41:45 PDT 2025","Sun Oct 19 18:42:52 PDT 2025","Wed Oct 22 18:42:52 PDT 2025","Wed Oct 22 18:43:49 PDT 2025","","","67","100% (60/60)","100% (60/60)","100% (40/40)","def solve(n: int) -> int:
+    if n == 4:
+        return 26
+    elif n == 5:
+        return 37
+    elif n == 6:
+        return 50
+    else:
+        chocolate_length = 2 * (n * (n - 1)) + 2 * n
+        return chocolate_length
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3VAOOVPI4I8UDHDPM2NPGS28L3GLLO","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3KKG4CDWK2E61R3PHGRKDM4HFZG490","A1RZVUWWQX8ZCG","Approved","Mon Oct 13 10:59:44 PDT 2025","Mon Oct 13 11:00:30 PDT 2025","Thu Oct 16 11:00:30 PDT 2025","Thu Oct 16 11:00:49 PDT 2025","","","46","100% (11/11)","100% (11/11)","0% (0/0)","def solve(n: int) -> int:
+    if n == 4:
+        return 26
+    elif n == 5:
+        return 37
+    elif n == 6:
+        return 50
+    else:
+        chocolate_length = 2 * (n * (n - 1)) + 2 * n
+        return chocolate_length
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3VAOOVPI4I8UDHDPM2NPGS28L3GLLO","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3YMU66OBI7OFSDESATHDZSZ8OHZHGS","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:56:59 PDT 2025","Fri Oct 17 12:57:19 PDT 2025","Mon Oct 20 12:57:19 PDT 2025","Mon Oct 20 12:57:49 PDT 2025","","","20","100% (65/65)","100% (65/65)","0% (0/0)","def solve(n: int) -> int:
+    if n == 4:
+        return 26
+    elif n == 5:
+        return 37
+    elif n == 6:
+        return 50
+    else:
+        chocolate_length = 2 * (n * (n - 1)) + 2 * n
+        return chocolate_length
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3TZ0XG8CCD04X8SX3GBV6EP719098T","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3180JW2OTOSD3MKYHX1778OYB0QJ5I","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:40:46 PDT 2025","Sun Oct 19 18:41:05 PDT 2025","Wed Oct 22 18:41:05 PDT 2025","Wed Oct 22 18:41:49 PDT 2025","","","19","100% (60/60)","100% (60/60)","100% (40/40)","def solve(a, b, c):
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3TZ0XG8CCD04X8SX3GBV6EP719098T","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3GNCZX450236V3ZD76X8CFQWCD1APJ","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:11:01 PDT 2025","Thu Oct 23 12:11:04 PDT 2025","Sun Oct 26 12:11:04 PDT 2025","Sun Oct 26 12:11:49 PDT 2025","","","3","100% (111/111)","100% (49/49)","100% (49/49)","def solve(a, b, c):
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3TZ0XG8CCD04X8SX3GBV6EP719098T","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3ZAZR5XV0LYO2MYHETR198IYMFMCZ1","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:24:07 PDT 2025","Tue Oct 14 10:24:24 PDT 2025","Fri Oct 17 10:24:24 PDT 2025","Fri Oct 17 10:24:49 PDT 2025","","","17","100% (65/65)","100% (65/65)","0% (0/0)","def solve(a, b, c):
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"37VUR2VJ7T5OK6FFGFC7TU37TOXC1T","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:16 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","339ANSOTRPIKQULV62KDXWSGVBVKIR","A189Q7EDEDSQ34","Approved","Fri Oct 17 12:26:28 PDT 2025","Fri Oct 17 12:26:35 PDT 2025","Mon Oct 20 12:26:35 PDT 2025","Mon Oct 20 12:26:49 PDT 2025","","","7","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"37VUR2VJ7T5OK6FFGFC7TU37TOXC1T","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:16 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3L70J4KAZ02X66WN2X6DCL97YUUAD1","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:50:10 PDT 2025","Sun Oct 19 18:50:19 PDT 2025","Wed Oct 22 18:50:19 PDT 2025","Wed Oct 22 18:50:49 PDT 2025","","","9","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"37VUR2VJ7T5OK6FFGFC7TU37TOXC1T","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:16 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3QAVNHZ3E6KG4IKFFE41VYHC730ALL","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:01:35 PDT 2025","Thu Oct 23 12:02:02 PDT 2025","Sun Oct 26 12:02:02 PDT 2025","Sun Oct 26 12:02:49 PDT 2025","","","27","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    # Your code here
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false"
+"3F6045TU8W44BDB788H96AKILFI99I","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3FIJLY1B6EK1RUGLIMJ0QG1N9TAPF7","A3D6HNGN48D9H9","Approved","Sun Oct 19 18:50:22 PDT 2025","Sun Oct 19 18:50:29 PDT 2025","Wed Oct 22 18:50:29 PDT 2025","Wed Oct 22 18:50:49 PDT 2025","","","7","100% (60/60)","100% (60/60)","100% (40/40)","def solve():
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3F6045TU8W44BDB788H96AKILFI99I","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3KWTYT087KJJYC8YKIDKNN1QFPZ5LA","ASQIP0BTUIBHO","Approved","Thu Oct 23 12:07:02 PDT 2025","Thu Oct 23 12:07:05 PDT 2025","Sun Oct 26 12:07:05 PDT 2025","Sun Oct 26 12:07:49 PDT 2025","","","3","100% (111/111)","100% (49/49)","100% (49/49)","def solve():
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"
+"3F6045TU8W44BDB788H96AKILFI99I","3PKXTM75KNQ3UDSPLPY4MHO7U4LFQO","CreativityPrism - NeoCoder","Is this coding solution creative?","survey","$0.01","Thu Oct 09 12:58:08 PDT 2025","3","BatchId:418126;OriginalHitTemplateId:921587278;","18000","259200","Sat Nov 22 11:58:17 PST 2025","","","3Y9N9SS8LIRXMLX2TIR3PDV1SKZD35","A189Q7EDEDSQ34","Approved","Tue Oct 14 10:35:42 PDT 2025","Tue Oct 14 10:35:45 PDT 2025","Fri Oct 17 10:35:45 PDT 2025","Fri Oct 17 10:35:49 PDT 2025","","","3","100% (65/65)","100% (65/65)","0% (0/0)","def solve():
+    pass
+","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","false","true","false","false","false","false","false","false","false","false","false","false","false","false"

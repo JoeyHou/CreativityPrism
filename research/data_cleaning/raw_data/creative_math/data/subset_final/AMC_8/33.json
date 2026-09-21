@@ -1,0 +1,10 @@
+{
+  "competition_id": "1994_AJHSME_Problems",
+  "problem_id": 20,
+  "difficulty": 1.5,
+  "problem": "Let $W,X,Y$ and $Z$ be four different digits selected from the set\n$\\{ 1,2,3,4,5,6,7,8,9\\}.$\nIf the sum $\\dfrac{W}{X} + \\dfrac{Y}{Z}$ is to be as small as possible, then $\\dfrac{W}{X} + \\dfrac{Y}{Z}$ must equal\n$\\text{(A)}\\ \\dfrac{2}{17} \\qquad \\text{(B)}\\ \\dfrac{3}{17} \\qquad \\text{(C)}\\ \\dfrac{17}{72} \\qquad \\text{(D)}\\ \\dfrac{25}{72} \\qquad \\text{(E)}\\ \\dfrac{13}{36}$",
+  "solutions": {
+    "Solution": "\\[\\frac{W}{X} + \\frac{Y}{Z} = \\frac{WZ+XY}{XZ}\\]\nSmall fractions have small numerators and large denominators. To maximize the denominator, let $X=8$ and $Z=9$.\n\\[\\frac{9W+8Y}{72}\\]\nTo minimize the numerator, let $W=1$ and $Y=2$.\n\\[\\frac{9+16}{72} = \\boxed{\\text{(D)}\\rightarrow \\frac{25}{72}}\\]",
+    "Solution 2": "To make the smallest fraction, you need the lowest numerator and the highest denominator. So, take the first $2$ and last $2$ digits of the set, which are $1,2$ and $8,9$. Balance the equations to be \"even\". Since $1$ is smaller than $2$, put it over $8$. You get $\\frac{1}{8}+\\frac{2}{9}=\\frac{25}{72}$, or $\\boxed{D}$."
+  }
+}

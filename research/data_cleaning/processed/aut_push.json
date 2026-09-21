@@ -1,0 +1,1304 @@
+[
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 0,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 1,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a paperclip. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 2,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a spoon. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 3,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a shovel. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 4,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a pants. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 5,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a ball. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 6,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a brick. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "brick",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 7,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a knife. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 8,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a box. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 9,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a lightbulb. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 10,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a rope. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 11,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a pencil. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 12,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a hat. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 13,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a table. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 14,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a tire. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 15,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a book. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 16,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a shoe. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 17,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a fork. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 18,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a toothbrush. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 19,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a backpack. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "backpack",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 20,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a sock. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nc",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 21,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a bottle. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 22,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a paperclip. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 23,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a spoon. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 24,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a shovel. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 25,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a pants. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 26,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a ball. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 27,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a brick. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "brick",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 28,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a knife. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 29,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a box. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 30,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a lightbulb. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 31,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a rope. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 32,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a pencil. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 33,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a hat. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 34,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a table. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 35,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a tire. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 36,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a book. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 37,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a shoe. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 38,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a fork. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 39,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a toothbrush. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 40,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a backpack. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "backpack",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 41,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of common uses for a sock. They should be 5 words long. No adjectives.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "nn",
+                "iteration_lst": {}
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 42,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a bottle. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a bottle that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a bottle that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a bottle made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a bottle, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a bottle used in domains in which bottle are not commonly used, try to replace it for a bottle.",
+            "file": "",
+            "others": {
+                "object": "bottle",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 43,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a paperclip. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a paperclip that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a paperclip that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a paperclip made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a paperclip, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a paperclip used in domains in which paperclip are not commonly used, try to replace it for a paperclip.",
+            "file": "",
+            "others": {
+                "object": "paperclip",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 44,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a spoon. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a spoon that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a spoon that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a spoon made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a spoon, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a spoon used in domains in which spoon are not commonly used, try to replace it for a spoon.",
+            "file": "",
+            "others": {
+                "object": "spoon",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 45,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a shovel. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a shovel that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a shovel that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a shovel made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a shovel, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a shovel used in domains in which shovel are not commonly used, try to replace it for a shovel.",
+            "file": "",
+            "others": {
+                "object": "shovel",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 46,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a pants. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a pants that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a pants that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a pants made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a pants, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a pants used in domains in which pants are not commonly used, try to replace it for a pants.",
+            "file": "",
+            "others": {
+                "object": "pants",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 47,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a ball. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a ball that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a ball that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a ball made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a ball, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a ball used in domains in which ball are not commonly used, try to replace it for a ball.",
+            "file": "",
+            "others": {
+                "object": "ball",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 48,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a brick. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a brick that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a brick that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a brick made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a brick, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a brick used in domains in which brick are not commonly used, try to replace it for a brick.",
+            "file": "",
+            "others": {
+                "object": "brick",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 49,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a knife. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a knife that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a knife that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a knife made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a knife, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a knife used in domains in which knife are not commonly used, try to replace it for a knife.",
+            "file": "",
+            "others": {
+                "object": "knife",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 50,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a box. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a box that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a box that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a box made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a box, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a box used in domains in which box are not commonly used, try to replace it for a box.",
+            "file": "",
+            "others": {
+                "object": "box",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 51,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a lightbulb. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a lightbulb that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a lightbulb that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a lightbulb made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a lightbulb, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a lightbulb used in domains in which lightbulb are not commonly used, try to replace it for a lightbulb.",
+            "file": "",
+            "others": {
+                "object": "lightbulb",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 52,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a rope. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a rope that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a rope that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a rope made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a rope, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a rope used in domains in which rope are not commonly used, try to replace it for a rope.",
+            "file": "",
+            "others": {
+                "object": "rope",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 53,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a pencil. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a pencil that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a pencil that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a pencil made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a pencil, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a pencil used in domains in which pencil are not commonly used, try to replace it for a pencil.",
+            "file": "",
+            "others": {
+                "object": "pencil",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 54,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a hat. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a hat that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a hat that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a hat made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a hat, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a hat used in domains in which hat are not commonly used, try to replace it for a hat.",
+            "file": "",
+            "others": {
+                "object": "hat",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 55,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a table. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a table that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a table that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a table made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a table, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a table used in domains in which table are not commonly used, try to replace it for a table.",
+            "file": "",
+            "others": {
+                "object": "table",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 56,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a tire. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a tire that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a tire that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a tire made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a tire, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a tire used in domains in which tire are not commonly used, try to replace it for a tire.",
+            "file": "",
+            "others": {
+                "object": "tire",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 57,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a book. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a book that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a book that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a book made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a book, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a book used in domains in which book are not commonly used, try to replace it for a book.",
+            "file": "",
+            "others": {
+                "object": "book",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 58,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a shoe. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a shoe that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a shoe that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a shoe made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a shoe, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a shoe used in domains in which shoe are not commonly used, try to replace it for a shoe.",
+            "file": "",
+            "others": {
+                "object": "shoe",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 59,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a fork. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a fork that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a fork that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a fork made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a fork, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a fork used in domains in which fork are not commonly used, try to replace it for a fork.",
+            "file": "",
+            "others": {
+                "object": "fork",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 60,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a toothbrush. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a toothbrush that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a toothbrush that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a toothbrush made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a toothbrush, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a toothbrush used in domains in which toothbrush are not commonly used, try to replace it for a toothbrush.",
+            "file": "",
+            "others": {
+                "object": "toothbrush",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 61,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a backpack. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a backpack that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a backpack that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a backpack made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a backpack, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a backpack used in domains in which backpack are not commonly used, try to replace it for a backpack.",
+            "file": "",
+            "others": {
+                "object": "backpack",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    },
+    {
+        "meta_data": {
+            "dataset": "aut_push",
+            "id": 62,
+            "eval_func": null
+        },
+        "input": {
+            "text": "Create a list of creative alternative uses for a sock. They should be 5 words long. No adjectives. Less creative means closer to common use and unfeasible/imaginary, more creative means closer to unexpected uses and also feasible/practical.\n    In order to be creative, consider the following:\n    \u2212 what elements have a similar shape of a sock that could be replaced by it, preserving the same functionality?\n    \u2212 what elements have a similar size of a sock that could be replaced by it without compromising the physical structure?\n    \u2212 what materials is a sock made of that could be used in a way to replace some other elements composed of the same material?\n    \u2212 when an element is replaced by a sock, it should make sure that the overall structure is not compromised.\n    \u2212 the laws of physics can not be contradicted.\n    \u2212 given an element similar to a sock used in domains in which sock are not commonly used, try to replace it for a sock.",
+            "file": "",
+            "others": {
+                "object": "sock",
+                "prompt_type": "bs",
+                "iteration_lst": {
+                    "bsr": "Really? Is this the best you can do?",
+                    "bsrd": "I\u2019m so disappointed with you. I hope this time you put effort into it.",
+                    "bsrde": "Stop with excuses and do your best this time",
+                    "bsrdel": "This is your last chance."
+                }
+            }
+        },
+        "output": {
+            "content": ""
+        }
+    }
+]

@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: contrib_metaphor
+display_name: "Metaphor Generation (contributed)"
+domain: divergent_thinking
+folder: tasks/contrib_metaphor
+adapter: registry/adapters/contrib_metaphor.sh
+environment: modern
+description: "Generate metaphors for abstract concepts; judged for originality."
+uses_judge: true
+loader_parser: tasks/contrib_metaphor/parser.py:parse
+limit_supported: true

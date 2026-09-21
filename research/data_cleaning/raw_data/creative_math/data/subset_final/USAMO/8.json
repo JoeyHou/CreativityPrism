@@ -1,0 +1,9 @@
+{
+  "competition_id": "1980_USAMO_Problems",
+  "problem_id": 3,
+  "difficulty": 9,
+  "problem": "$A + B + C$ is an integral multiple of $\\pi$. $x, y,$ and $z$ are real numbers. If $x\\sin(A)+y\\sin(B)+z\\sin(C)=x^2\\sin(2A)+y^2\\sin(2B)+z^2\\sin(2C)=0$, show that $x^n\\sin(nA)+y^n \\sin(nB) +z^n \\sin(nC)=0$ for any positive integer $n$.",
+  "solutions": {
+    "Solution": "Let $a=xe^{iA}$, $b=ye^{iB}$, $c=ze^{iC}$ be numbers in the complex plane. \nNote that $A+B+C=k\\pi$ implies $abc=xyz(e^{ik\\pi})=\\pm xyz$ which is real. Also note that $x\\sin(A), y\\sin(B), z\\sin(C)$ are the imaginary parts of $a, b, c$ and that $x^2\\sin(2A), y^2\\sin(2B), z^2\\sin(2C)$ are the imaginary parts of $a^2, b^2, c^2$ by de Moivre's Theorem. Therefore, $a+b+c$ and $a^2+b^2+c^2$ are real because their imaginary parts sum to zero.\nFinally, note that $\\frac{1}{2}\\left((a+b+c)^2-(a^2+b^2+c^2)\\right)=ab+bc+ac$ is real as well.\nIt suffices to show that $P_n=a^n+b^n+c^n$ is real for all positive integer $n$, which can be shown by induction.\nNewton Sums gives the following relationship between sums of the form $P_k=a^k+b^k+c^k$\n\\[P_k-S_1P_{k-1}+S_2P_{k-2}-S_3P_{k-3}=0\\]\nWhere $S_1=a+b+c$, $S_2=ab+bc+ac$, and $S_3=abc$. It is given that $P_0, P_1, P_2$ are real. Note that if  $P_{k-1}, P_{k-2}, P_{k-3}$ are real, then clearly $P_k$ is real because all other parts of the above equation are real, completing the induction."
+  }
+}

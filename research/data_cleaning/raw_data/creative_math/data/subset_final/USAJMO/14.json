@@ -1,0 +1,9 @@
+{
+  "competition_id": "2021_USAJMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6,
+  "problem": "Carina has three pins, labeled $A, B$, and $C$, respectively, located at the origin of the coordinate plane. In a move, Carina may move a pin to an adjacent lattice point at distance $1$ away. What is the least number of moves that Carina can make in order for triangle $ABC$ to have area 2021?\n(A lattice point is a point $(x, y)$ in the coordinate plane where $x$ and $y$ are both integers, not necessarily positive.)",
+  "solutions": {
+    "Solution 1": "The answer is $128$, achievable by $A=(10,0), B=(0,-63), C=(-54,1)$. We now show the bound.\nWe first do the following optimizations:\n-if you have a point goes both left and right, we may obviously delete both of these moves and decrease the number of moves by $2$.\n-if all of $A,B,C$ lie on one side of the plane, for example $y>0$, we shift them all down, decreasing the number of moves by $3$, until one of the points is on $y=0$ for the first time.\nNow we may assume that $A=(a,d)$, $B=(b,-e)$, $C=(-c,f)$ where $a,b,c,d,e,f \\geq 0$. Note we may still shift all $A,B,C$ down by $1$ if $d,f>0$, decreasing the number of moves by $1$, until one of $d,f$ is on $y=0$ for the first time. So we may assume one of $(a,b)$ and $(d,f)$ is $0$, by symmetry. In particular, by shoelace the answer to 2021 JMO Problem 4 is the minimum of the answers to the following problems:\n\nCase 1 (where $a=d=0$) if $wx-yz=4042$, find the minimum possible value of $w+x+y+z$.\nCase 2 (else) $wy+xy+xz=(w+x)(y+z)-wz=4042$, find the minimum possible value of $w+x+y+z$.\n\nNote that $(m+n)^2=4mn+(m-n)^2$ so if $m+n$ is fixed then $mn$ is maximized exactly when $|m-n|$ is minimized. In particular, if $m+n \\leq 127$ then $mn-op \\leq mn \\leq 63*64 = 4032 <4042$ as desired.\n"
+  }
+}

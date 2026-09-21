@@ -1,0 +1,18 @@
+{
+    "debug": false,
+    "experiments_list": [
+        {
+            "task": "creativity_index",
+            "run_id": "ci_smoke_api",
+            "model_name": "gpt-4.1-mini",
+            "input_data_dir": "data/processed/creativity_index",
+            "domains": ["book"],
+            "test_size": 2,
+
+            "_hyperparams": "Paper appendix, Creativity Index / Experiment Configurations.",
+            "temperature": 1,
+            "top_p": 0.9,
+            "max_tokens": 288
+        }
+    ]
+}

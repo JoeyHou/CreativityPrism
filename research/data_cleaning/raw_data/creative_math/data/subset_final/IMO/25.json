@@ -1,0 +1,9 @@
+{
+  "competition_id": "1978_IMO_Problems",
+  "problem_id": 3,
+  "difficulty": 9.5,
+  "problem": "Let $0<f(1)<f(2)<f(3)<\\ldots$ a sequence with all its terms positive$.$ The $n-th$ positive integer which doesn't belong to the sequence is $f(f(n))+1.$ Find $f(240).$",
+  "solutions": {
+    "Solution": "Since the $n$-th number missing is $f(f(n))+1$ and $f(f(n))$ is a member of the sequence, it results that there are exactly $n-1$ \"gaps\" less than $f(f(n))$, which leads us to:\n$f(f(n))=f(n)+n-1$ $(\\star)$\nnow with a simple induction we can prove that $f(F_{n}+1) = F_{n+1}+f(1)$ , where $F_{k}$ is the Fibonacci sequence.\nour next step now is to prove that $f(F_{n}+x) =F_{n+1}+f(x)$, for all $x$ with $1\\leq x\\leq F_{n-1}$....and agaiiiiin induction(on $n$)\u00a0:\u00a0:P\nfor $n=0$ and $n=1$ it`s trivial and now we supose that it`s true for $n-1$ and to prove that holds for $n$ , in other words $P(n-1) \\Rightarrow P(n)$\n$(i)$ If $x=f(y)$ for some $y$, then by the inductive assumption and $(\\star)$ we have:\n$f(F_{n}+x)=f(F_{n}+f(y))=f(f(F_{n-1}+y))=F_{n}+f(y)+F_{n-1}+y-1=F_{n+1}+f(x)$\n\n$(ii)$ If $x=f(f(y))+1$ is a gap, then $f(F_{n}+x-1)+1=F_{n+1}+f(x-1)+1$ is a gap also:\n$F_{n+1}+f(x)+1=F_{n+1}+f(f(f(y)))+1=f(F_{n}+f(f(y)))+1=f(f(F_{n-1}+f(y)))+1$\nIt follows that\u00a0: $f(F_{n}+x)=F_{n+1}+f(x-1)+2=F{n+1}+f(x)$\nnow since we know that each positive integer $x$ is expressible as:\n$x=F_{k_{1}}+F_{k_{2}}+...+F_{k_{r}}$ , where $0<k_{r}\\neq 2$, $k_{i}\\geq  k_{i+1}+2$\nwe obtain that $f(x) = F_{k_{1}+1}+...F_{k_{r}+1}$ and now that we have the general form, pe particulary calculate for $f(240)$:\nwe can write $240=233+5+2$, therefore $f(240)= 377+8+3=388$\nRemark: it can be shown now that $f(x)=[ax]$ , where $a=\\frac{1+\\sqrt{5}}{2}$\n"
+  }
+}

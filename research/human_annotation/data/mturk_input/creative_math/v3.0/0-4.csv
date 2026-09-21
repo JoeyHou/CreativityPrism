@@ -1,0 +1,346 @@
+problem_id,problem,cleaned_references,cleaned_response,image_in_problem
+2023_AMC_8_Problems_14,"Nicolas is planning to send a package to his friend Anton, who is a stamp collector. To pay for the postage, Nicolas would like to cover the package with a large number of stamps. Suppose he has a collection of \(5\)-cent, \(10\)-cent, and \(25\)-cent stamps, with exactly \(20\) of each type. What is the greatest number of stamps Nicolas can use to make exactly \($7.10\) in postage?
+(Note: The amount \($7.10\) corresponds to \(7\) dollars and \(10\) cents. One dollar is worth \(100\) cents.)
+\(\textbf{(A)}\ 45 \qquad \textbf{(B)}\ 46 \qquad \textbf{(C)}\ 51 \qquad \textbf{(D)}\ 54\qquad \textbf{(E)}\ 55\)","Solution 1. Let's use the most stamps to make \(7.10.\) We have \(20\) of each stamp, \(5\)-cent (nickels), \(10\)-cent (dimes), and \(25\)-cent (quarters).
+If we want the highest number of stamps, we must have the highest number of the smaller value stamps (like the coins above). We can use \(20\) nickels and \(20\) dimes to bring our total cost to \(7.10 - 3.00 = 4.10\). However, when we try to use quarters, the \(25\) cents don’t fit evenly, so we have to give back \(15\) cents to make the quarter amount \(4.25\). The most efficient way to do this is to give back a  \(10\)-cent (dime) stamp and a \(5\)-cent (nickel) stamp to have \(38\) stamps used so far. Now, we just use \(\frac{425}{25} = 17\) quarters to get a grand total of \(38 + 17 = \boxed{\textbf{(E)}\ 55}\).","To find the greatest number of stamps Nicolas can use to make exactly \(7.10 in postage, we need to maximize the number of smaller value stamps while ensuring the total value is \)7.10. Let's break down the problem step by step.
+
+1. **Convert the total amount to cents:**
+   \(
+   7.10 \text{ dollars} = 710 \text{ cents}
+   \)
+
+2. **Define the variables:**
+   - Let \( x \) be the number of 5-cent stamps.
+   - Let \( y \) be the number of 10-cent stamps.
+   - Let \( z \) be the number of 25-cent stamps.
+
+3. **Set up the equations:**
+   - The total value equation:
+     \(
+     5x + 10y + 25z = 710
+     \)
+   - The constraint on the number of stamps:
+     \(
+     x \leq 20, \quad y \leq 20, \quad z \leq 20
+     \)
+
+4. **Maximize the total number of stamps:**
+   \(
+   x + y + z
+   \)
+
+5. **Start with the maximum number of 5-cent stamps:**
+   - If \( x = 20 \):
+     \(
+     5(20) + 10y + 25z = 710 \implies 100 + 10y + 25z = 710 \implies 10y + 25z = 610
+     \)
+     Simplify:
+     \(
+     2y + 5z = 122
+     \)
+
+6. **Solve for \( y \) and \( z \):**
+   - We need \( y \) and \( z \) to be non-negative integers and \( y \leq 20 \), \( z \leq 20 \).
+   - Start with the maximum possible \( z \):
+     - If \( z = 20 \):
+       \(
+       2y + 5(20) = 122 \implies 2y + 100 = 122 \implies 2y = 22 \implies y = 11
+       \)
+     - Check the total number of stamps:
+       \(
+       x + y + z = 20 + 11 + 20 = 51
+       \)
+
+7. **Verify if a higher number of stamps is possible:**
+   - Try reducing \( z \) and increasing \( y \) to see if we can get more stamps:
+     - If \( z = 19 \):
+       \(
+       2y + 5(19) = 122 \implies 2y + 95 = 122 \implies 2y = 27 \implies y = 13.5 \quad (\text{not an integer})
+       \)
+     - If \( z = 18 \):
+       \(
+       2y + 5(18) = 122 \implies 2y + 90 = 122 \implies 2y = 32 \implies y = 16
+       \)
+     - Check the total number of stamps:
+       \(
+       x + y + z = 20 + 16 + 18 = 54
+       \)
+
+8. **Check if \( z = 17 \) or lower can yield more stamps:**
+   - If \( z = 17 \):
+     \(
+     2y + 5(17) = 122 \implies 2y + 85 = 122 \implies 2y = 37 \implies y = 18.5 \quad (\text{not an integer})
+     \)
+   - If \( z = 16 \):
+     \(
+     2y + 5(16) = 122 \implies 2y + 80 = 122 \implies 2y = 42 \implies y = 21 \quad (\text{exceeds 20})
+     \)
+
+9. **Conclusion:**
+   - The maximum number of stamps is achieved when \( x = 20 \), \( y = 16 \), and \( z = 18 \), giving a total of:
+     \(
+     x + y + z = 20 + 16 + 18 = 54
+     \)
+
+Thus, the greatest number of stamps Nicolas can use to make exactly $7.10 in postage is \(\boxed{54}\).",
+2018_USAJMO_Problems_2,"Let \(a,b,c\) be positive real numbers such that \(a+b+c=4\sqrt[3]{abc}\). Prove that \(2(ab+bc+ca)+4\min(a^2,b^2,c^2)\ge a^2+b^2+c^2.\)","Solution 1. WLOG let \(a \leq b \leq c\). Add \(2(ab+bc+ca)\) to both sides of the inequality and factor to get: \(4(a(a+b+c)+bc) \geq (a+b+c)^2\)
+By substituting \(a+b+c=4\sqrt[3]{abc}\), we get:
+\(\frac{4a\sqrt[3]{abc}+bc}{2} \geq 2\sqrt[3]{a^2b^2c^2}\)
+The last inequality is true by AM-GM. Since all these steps are reversible, the proof is complete.
+
+
+<br><br>==========<br>
+Solution 2. WLOG let \(a \geq b \geq c\). Note that the equations are homogeneous, so WLOG let \(c=1\).
+Thus, the inequality now becomes \(2ab + 2a + 2b + 4 \geq a^2 + b^2 + 1\), which simplifies to \(2(a+b) + 3 \geq (a-b)^2\).
+Now we will use the condition. Letting \(x=a+b\) and \(y=a-b\), we have
+\(x+1=\sqrt[3]{16(x^2-y^2)} \implies 16y^2=-x^3+13x^2-3x-1\).
+Plugging this into the inequality, we have \(2x+3 \geq \frac{1}{16}(-x^3+13x^2-3x-1) \implies x^3-13x^2+35x+49 = (x-7)^2(x+1) \geq 0\), which is true since \(x \geq 0\).","Given the condition \(a + b + c = 4\sqrt[3]{abc}\), we need to prove that:
+\(2(ab + bc + ca) + 4\min(a^2, b^2, c^2) \geq a^2 + b^2 + c^2.\)
+
+#### Step 1: Define the function and the constraint
+Define the function \(f(a, b, c) = 2(ab + bc + ca) + 4\min(a^2, b^2, c^2) - (a^2 + b^2 + c^2)\) and the constraint \(g(a, b, c) = a + b + c - 4\sqrt[3]{abc} = 0\).
+
+#### Step 2: Set up the Lagrange function
+The Lagrange function is:
+\(
+\mathcal{L}(a, b, c, \lambda) = 2(ab + bc + ca) + 4\min(a^2, b^2, c^2) - (a^2 + b^2 + c^2) + \lambda (a + b + c - 4\sqrt[3]{abc}).
+\)
+
+#### Step 3: Compute the partial derivatives
+We need to find the partial derivatives of \(\mathcal{L}\) with respect to \(a\), \(b\), \(c\), and \(\lambda\), and set them to zero.
+
+\(
+\frac{\partial \mathcal{L}}{\partial a} = 2(b + c) + 8a \cdot \mathbf{1}_{a^2 = \min(a^2, b^2, c^2)} - 2a + \lambda \left(1 - \frac{4\sqrt[3]{bc}}{3\sqrt[3]{a^2}}\right) = 0,
+\)
+\(
+\frac{\partial \mathcal{L}}{\partial b} = 2(a + c) + 8b \cdot \mathbf{1}_{b^2 = \min(a^2, b^2, c^2)} - 2b + \lambda \left(1 - \frac{4\sqrt[3]{ac}}{3\sqrt[3]{b^2}}\right) = 0,
+\)
+\(
+\frac{\partial \mathcal{L}}{\partial c} = 2(a + b) + 8c \cdot \mathbf{1}_{c^2 = \min(a^2, b^2, c^2)} - 2c + \lambda \left(1 - \frac{4\sqrt[3]{ab}}{3\sqrt[3]{c^2}}\right) = 0,
+\)
+\(
+\frac{\partial \mathcal{L}}{\partial \lambda} = a + b + c - 4\sqrt[3]{abc} = 0.
+\)
+
+#### Step 4: Analyze the critical points
+We need to consider the cases where \(a\), \(b\), and \(c\) are equal or not. Let's first consider the case where \(a = b = c\).
+
+#### Case 1: \(a = b = c\)
+If \(a = b = c\), then the constraint becomes:
+\(
+3a = 4\sqrt[3]{a^3} \implies 3a = 4a \implies a = 0.
+\)
+However, \(a, b, c\) are positive real numbers, so this case is not valid.
+
+#### Case 2: \(a \leq b \leq c\)
+Assume \(a \leq b \leq c\). Then \(\min(a^2, b^2, c^2) = a^2\). The inequality becomes:
+\(
+2(ab + bc + ca) + 4a^2 \geq a^2 + b^2 + c^2.
+\)
+Simplify:
+\(
+2(ab + bc + ca) + 3a^2 \geq b^2 + c^2.
+\)
+
+#### Step 5: Use the given condition
+From the condition \(a + b + c = 4\sqrt[3]{abc}\), we can use the AM-GM inequality:
+\(
+a + b + c \geq 3\sqrt[3]{abc}.
+\)
+Given \(a + b + c = 4\sqrt[3]{abc}\), we have:
+\(
+4\sqrt[3]{abc} \geq 3\sqrt[3]{abc} \implies \sqrt[3]{abc} \geq 0,
+\)
+which is always true for positive \(a, b, c\).
+
+#### Step 6: Verify the inequality
+We need to show:
+\(
+2(ab + bc + ca) + 3a^2 \geq b^2 + c^2.
+\)
+Rearrange:
+\(
+2(ab + bc + ca) + 3a^2 - b^2 - c^2 \geq 0.
+\)
+This can be rewritten as:
+\(
+2ab + 2bc + 2ca + 3a^2 - b^2 - c^2 \geq 0.
+\)
+Group terms:
+\(
+2ab + 2bc + 2ca + 3a^2 - b^2 - c^2 = (a + b + c)^2 - (a^2 + b^2 + c^2) + 2a^2.
+\)
+Using the given condition \(a + b + c = 4\sqrt[3]{abc}\):
+\(
+(4\sqrt[3]{abc})^2 - (a^2 + b^2 + c^2) + 2a^2 = 16\sqrt[3]{a^2b^2c^2} - (a^2 + b^2 + c^2) + 2a^2.
+\)
+Since \(a, b, c\) are positive and the terms are symmetric, the inequality holds.
+
+Thus, the inequality is proven, and the solution is complete.
+
+\(
+\boxed{2(ab + bc + ca) + 4\min(a^2, b^2, c^2) \geq a^2 + b^2 + c^2}
+\)",
+2009_AMC_12A_Problems_24,"The tower function of twos is defined recursively as follows: \(T(1) = 2\) and \(T(n + 1) = 2^{T(n)}\) for \(n\ge1\). Let \(A = (T(2009))^{T(2009)}\) and \(B = (T(2009))^A\). What is the largest integer \(k\) for which \(\underbrace{\log_2\log_2\log_2\ldots\log_2B}_{k\text{ times}}\) is defined?
+\(\textbf{(A)}\ 2009\qquad \textbf{(B)}\ 2010\qquad \textbf{(C)}\ 2011\qquad \textbf{(D)}\ 2012\qquad \textbf{(E)}\ 2013\)","Solution 1. Testing the first two (or three) positive integers instead of 2009, \(k\) seems to always be 4 more. Put E and go on to tackle ","To solve the problem, we need to determine the largest integer \( k \) for which the expression \(\underbrace{\log_2\log_2\log_2\ldots\log_2B}_{k\text{ times}}\) is defined, where \( B = (T(2009))^A \) and \( A = (T(2009))^{T(2009)} \).
+
+First, let's understand the tower function \( T(n) \):
+- \( T(1) = 2 \)
+- \( T(n + 1) = 2^{T(n)} \)
+
+We need to express \( A \) and \( B \) in terms of \( T(n) \):
+- \( A = (T(2009))^{T(2009)} \)
+- \( B = (T(2009))^A \)
+
+Let's denote \( T(2009) \) as \( t \). Then:
+- \( A = t^t \)
+- \( B = t^{t^t} \)
+
+We need to determine the largest \( k \) such that:
+\(
+\underbrace{\log_2\log_2\log_2\ldots\log_2B}_{k\text{ times}}
+\)
+is defined.
+
+First, let's simplify \( B \):
+\(
+B = t^{t^t}
+\)
+
+Taking the first logarithm:
+\(
+\log_2 B = \log_2 (t^{t^t}) = t^t \log_2 t
+\)
+
+Taking the second logarithm:
+\(
+\log_2 (\log_2 B) = \log_2 (t^t \log_2 t) = \log_2 (t^t) + \log_2 (\log_2 t) = t \log_2 t + \log_2 (\log_2 t)
+\)
+
+Taking the third logarithm:
+\(
+\log_2 (\log_2 (\log_2 B)) = \log_2 (t \log_2 t + \log_2 (\log_2 t))
+\)
+
+Since \( t = T(2009) \) is extremely large, \( t \log_2 t \) will dominate \( \log_2 (\log_2 t) \). Therefore:
+\(
+\log_2 (t \log_2 t + \log_2 (\log_2 t)) \approx \log_2 (t \log_2 t) = \log_2 t + \log_2 (\log_2 t)
+\)
+
+Taking the fourth logarithm:
+\(
+\log_2 (\log_2 (\log_2 (\log_2 B))) = \log_2 (\log_2 t + \log_2 (\log_2 t))
+\)
+
+Again, since \( t \) is extremely large, \( \log_2 t \) will dominate \( \log_2 (\log_2 t) \):
+\(
+\log_2 (\log_2 t + \log_2 (\log_2 t)) \approx \log_2 (\log_2 t)
+\)
+
+Taking the fifth logarithm:
+\(
+\log_2 (\log_2 (\log_2 (\log_2 (\log_2 B)))) = \log_2 (\log_2 (\log_2 t))
+\)
+
+We need to determine how many times we can take the logarithm before the result is no longer defined. Notice that:
+\(
+\log_2 (\log_2 (\log_2 t)) = \log_2 (\log_2 (T(2009)))
+\)
+
+Since \( T(2009) = 2^{T(2008)} \):
+\(
+\log_2 (T(2009)) = \log_2 (2^{T(2008)}) = T(2008)
+\)
+
+Thus:
+\(
+\log_2 (\log_2 (T(2009))) = \log_2 (T(2008))
+\)
+
+Continuing this process:
+\(
+\log_2 (\log_2 (\log_2 (T(2009)))) = \log_2 (T(2007))
+\)
+
+We can see that each additional logarithm reduces the argument by one level in the tower function. Therefore, we need to determine how many times we can take the logarithm before we reach a value that is no longer defined. Since \( T(1) = 2 \), we can take the logarithm 2009 times to reduce \( T(2009) \) to \( T(1) \), and one more time to reduce \( T(1) \) to 1, and one more time to reduce 1 to 0, which is the point where the logarithm is no longer defined.
+
+Thus, the largest integer \( k \) for which the expression is defined is:
+\(
+k = 2009 + 1 + 1 = 2011
+\)
+
+Therefore, the answer is:
+\(
+\boxed{2011}
+\)",
+2017_USAMO_Problems_3,"Let \(ABC\) be a scalene triangle with circumcircle \(\Omega\) and incenter \(I.\) Ray \(AI\) meets \(BC\) at \(D\) and \(\Omega\) again at \(M;\) the circle with diameter \(DM\) cuts \(\Omega\) again at \(K.\) Lines \(MK\) and \(BC\) meet at \(S,\) and \(N\) is the midpoint of \(IS.\) The circumcircles of \(\triangle KID\) and \(\triangle MAN\) intersect at points \(L_1\) and \(L.\) Prove that \(\Omega\) passes through the midpoint of either \(IL_1\) or \(IL.\)","Solution 1. Let \(X\) be the point on circle \(\Omega\) opposite \(M\). This means \(\angle MAX = 90^\circ, BC \perp XM.\)
+\(\angle XKM = \angle DKM = 90^\circ \implies\) the points \(X, D,\) and \(K\) are collinear.
+Let \(D' = BC \cap XM \implies DD' \perp XM \implies\)
+\(S\) is the orthocenter of \(\triangle DMX \implies\) the points \(X, A,\) and \(S\) are collinear.
+Let \(\omega\) be the circle centered at \(S\) with radius \(R = \sqrt {SK \cdot SM}.\)
+We denote \(I_\omega\) inversion with respect to \(\omega.\)
+Note that the circle \(\Omega\) has diameter \(MX\) and contain points \(A, B, C,\) and \(K.\)
+\(I_\omega (K) = M \implies\) circle \(\Omega \perp \omega \implies C = I_\omega (B), X = I_\omega (A).\)
+\(I_\omega (K) = M \implies\) circle \(KMD \perp \omega \implies D' = I_\omega (D) \in KMD \implies\)
+\(\angle DD'M = 90^\circ \implies\)  the points \(X, D',\) and \(M\) are collinear.
+Let \(F \in AM, MF = MI.\) It is well known that \(MB = MI = MC \implies\)
+\(\Theta = BICF\) is circle  centered at \(M.\) \(C = I_\omega (B) \implies \Theta \perp \omega.\)
+Let \(I' =  I_\omega (I ) \implies I' \in \Theta \implies \angle II'M =  90^\circ.\)
+\(I' =  I_\omega (I ), X =  I_\omega (A ) \implies AII'X\) is cyclic.
+\(\angle XI'I = \angle XAI =  90^\circ \implies\)  the points \(X, I' ,\) and \(F\) are collinear.
+\(I'IDD'\) is cyclic \(\implies \angle I'D'M = \angle I'D'C + 90^\circ =  \angle I'ID + 90^\circ,\)
+\(\angle XFM = \angle I'FI = 90^\circ – \angle I'IF = 90^\circ – \angle I'ID  \implies\)
+\(\angle XFM +  \angle I'D'M = 180^\circ \implies I'D'MF\) is cyclic.
+Therefore point \(F\) lies on  \(I_\omega (IDK).\)
+\(FA \perp SX, SI' \perp FX \implies I\) is orthocenter of \(\triangle FSX.\)
+\(N\) is midpoint \(SI, M\) is midpoint \(FI, I\) is orthocenter of \(\triangle FSX, A\) is root of height \(FA \implies AMN\) is the nine-point circle of \(\triangle FSX \implies I' \in AMN.\)
+Let \(N' = I_\omega (N) \implies R^2 = SN \cdot SN' = SI \cdot  SI' \implies\)
+\(\frac {SN'}{SI'} = \frac {SI}{SN} =2 \implies\)
+\(\angle XN'I' = \angle XSI' = 90^\circ – \angle AXI' = \angle IFX \implies N'XIF\) is cyclic. 
+Therefore point \(F\) lies on  \(I_\omega (AMN) \implies I_\omega(F) = L \implies\)
+The points \(F, L,\) and \(S\) are collinear, \(AXFL\) is cyclic.
+Point \(I\) is orthocenter \(\triangle FSX \implies XI \perp SF, \angle ILS = \angle SI'F = 90^\circ\)
+\(\implies\) The points \(X, I, E,\) and \(L\) are collinear.
+\(AXFL\) is circle \(\implies AI \cdot IF = IL \cdot XI\implies\)
+\(AI \cdot \frac {IF}{2} = \frac {IL}{2} \cdot IX \implies AI \cdot IM = EI \cdot IX \implies AEMX\) is cyclic.
+\(E \in \Omega.\)","### Solution 2:
+
+1. **Identify Key Points and Properties:**
+   - Let \( \Omega \) be the circumcircle of \( \triangle ABC \).
+   - \( I \) is the incenter of \( \triangle ABC \).
+   - \( M \) is the midpoint of the arc \( BC \) not containing \( A \).
+   - \( D \) is the intersection of \( AI \) with \( BC \).
+   - \( K \) is the second intersection of the circle with diameter \( DM \) with \( \Omega \).
+   - \( S \) is the intersection of \( MK \) and \( BC \).
+   - \( N \) is the midpoint of \( IS \).
+   - \( L_1 \) and \( L \) are the intersections of the circumcircles of \( \triangle KID \) and \( \triangle MAN \).
+
+2. **Use Radical Axes:**
+   - Consider the radical axes of the circles involved.
+   - The radical axis of \( \Omega \) and the circle with diameter \( DM \) is the line \( DK \).
+   - The radical axis of the circumcircle of \( \triangle KID \) and \( \Omega \) is the line \( DK \).
+   - The radical axis of the circumcircle of \( \triangle MAN \) and \( \Omega \) is the line \( AM \).
+
+3. **Intersection of Radical Axes:**
+   - The radical axes of the three circles \( \Omega \), the circumcircle of \( \triangle KID \), and the circumcircle of \( \triangle MAN \) are concurrent at a point, say \( P \).
+   - Since \( P \) lies on the radical axis of \( \Omega \) and the circumcircle of \( \triangle KID \), \( P \) is equidistant from \( \Omega \) and the circumcircle of \( \triangle KID \).
+   - Similarly, \( P \) is equidistant from \( \Omega \) and the circumcircle of \( \triangle MAN \).
+
+4. **Properties of \( P \):**
+   - \( P \) lies on the line \( DK \) and the line \( AM \).
+   - Since \( P \) is the radical center, it must also lie on the radical axis of the circumcircles of \( \triangle KID \) and \( \triangle MAN \).
+
+5. **Midpoint of \( IL_1 \) or \( IL \):**
+   - Let \( L_1 \) and \( L \) be the intersections of the circumcircles of \( \triangle KID \) and \( \triangle MAN \).
+   - The line \( L_1L \) is the radical axis of these two circles.
+   - Since \( P \) is the radical center, it lies on \( L_1L \).
+
+6. **Conclusion:**
+   - The point \( P \) is the midpoint of \( IL_1 \) or \( IL \) because it is equidistant from \( I \) and \( L_1 \) or \( L \).
+   - Therefore, \( \Omega \) passes through the midpoint of either \( IL_1 \) or \( IL \).
+
+Thus, we have shown that the circumcircle \( \Omega \) passes through the midpoint of either \( IL_1 \) or \( IL \).
+
+\(
+\boxed{\text{The circumcircle } \Omega \text{ passes through the midpoint of either } IL_1 \text{ or } IL.}
+\)",

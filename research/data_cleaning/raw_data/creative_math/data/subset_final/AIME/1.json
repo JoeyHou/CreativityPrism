@@ -1,0 +1,9 @@
+{
+  "competition_id": "2022_AIME_II_Problems",
+  "problem_id": 12,
+  "difficulty": 6,
+  "problem": "Let $a, b, x,$ and $y$ be real numbers with $a>4$ and $b>1$ such that\\[\\frac{x^2}{a^2}+\\frac{y^2}{a^2-16}=\\frac{(x-20)^2}{b^2-1}+\\frac{(y-11)^2}{b^2}=1.\\]Find the least possible value of $a+b.$",
+  "solutions": {
+    "Solution": "Denote $P = \\left( x , y \\right)$.\nBecause $\\frac{x^2}{a^2}+\\frac{y^2}{a^2-16} = 1$, $P$  is on an ellipse whose center is $\\left( 0 , 0 \\right)$ and foci are $\\left( - 4 , 0 \\right)$ and $\\left( 4 , 0 \\right)$.\nHence, the sum of distance from $P$ to $\\left( - 4 , 0 \\right)$ and $\\left( 4 , 0 \\right)$ is equal to twice the major axis of this ellipse, $2a$.\nBecause $\\frac{(x-20)^2}{b^2-1}+\\frac{(y-11)^2}{b^2} = 1$, $P$  is on an ellipse whose center is $\\left( 20 , 11 \\right)$ and foci are $\\left( 20 , 10 \\right)$ and $\\left( 20 , 12 \\right)$.\nHence, the sum of distance from $P$ to $\\left( 20 , 10 \\right)$ and $\\left( 20 , 12 \\right)$ is equal to twice the major axis of this ellipse, $2b$.\nTherefore, $2a + 2b$ is the sum of the distance from $P$ to four foci of these two ellipses.\nTo make this minimized, $P$ is the intersection point of the line that passes through $\\left( - 4 , 0 \\right)$ and $\\left( 20 , 10 \\right)$, and the line that passes through $\\left( 4 , 0 \\right)$ and $\\left( 20 , 12 \\right)$.\nThe distance between $\\left( - 4 , 0 \\right)$ and $\\left( 20 , 10 \\right)$ is $\\sqrt{\\left( 20 + 4 \\right)^2 + \\left( 10 - 0 \\right)^2} = 26$.\nThe distance between $\\left( 4 , 0 \\right)$ and $\\left( 20 , 12 \\right)$ is $\\sqrt{\\left( 20 - 4 \\right)^2 + \\left( 12 - 0 \\right)^2} = 20$.\nHence, $2 a + 2 b = 26 + 20 = 46$.\nTherefore, $a + b = \\boxed{\\textbf{(023) }}.$"
+  }
+}

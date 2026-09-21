@@ -1,0 +1,8 @@
+{
+  "competition_id": "1962_AHSME_Problems",
+  "problem_id": 11,
+  "problem": "The difference between the larger root and the smaller root of $x^2 - px + (p^2 - 1)/4 = 0$ is: \n$\\textbf{(A)}\\ 0\\qquad\\textbf{(B)}\\ 1\\qquad\\textbf{(C)}\\ 2\\qquad\\textbf{(D)}\\ p\\qquad\\textbf{(E)}\\ p+1$",
+  "solutions": {
+    "Solution": "Call the two roots $r$ and $s$, with $r \\ge s$. \nBy Vieta's formulas, $p=r+s$ and $(p^2-1)/4=rs.$\n(Multiplying both sides of the second equation by 4 gives $p^2-1=4rs$.)\nThe value we need to find, then, is $r-s$.\nSince $p=r+s$, $p^2=r^2+2rs+s^2$.\nSubtracting $p^2-1=4rs$ from both sides gives $1=r^2-2rs+s^2$.\nTaking square roots, $r-s=1 \\Rightarrow \\boxed{\\textbf{(B)}}$.\n(Another solution is to use the quadratic formula and see that the\nroots are $\\frac{p\\pm 1}2$, and their difference is 1.)"
+  }
+}

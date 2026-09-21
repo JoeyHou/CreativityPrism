@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=./_task.schema.json
+name: dat
+display_name: "Divergent Association Task"
+domain: divergent_thinking
+folder: tasks/prism_v1
+adapter: registry/adapters/dat.sh
+environment: modern
+description: "Name ten maximally unrelated nouns; scored by mean GloVe embedding distance."
+uses_judge: false
+loader_parser: result_analysis.loader:_parse_dat
+limit_supported: true
+
+# Scoring loads glove.840B.300d.txt (5.3 GB on disk, several times that once parsed
+# into per-word vectors), so raise mem here if the job is OOM-killed during eval.
+# slurm:
+#   mem: 64G
+
+# See the note in aut.yaml. The word list is the one from Olson et al.'s reference
+# implementation; probing_creativity, which our cleaning notes name, does not
+# contain it. Verified by checksum against jayolson/divergent-association-task.
+upstream:
+  name: Divergent Association Task
+  url: https://github.com/jayolson/divergent-association-task
+  license: MIT
+  paper: https://openreview.net/forum?id=BpibUh0aB3
+  modifications: >-
+    dat_words.txt is the upstream word list verbatim (175,276 nouns). The task
+    instruction is one fixed prompt and lives in the harness, so there is no
+    prompt file.

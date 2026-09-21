@@ -1,0 +1,9 @@
+{
+  "competition_id": "1971_IMO_Problems",
+  "problem_id": 4,
+  "difficulty": 6.5,
+  "problem": "All the faces of tetrahedron $ABCD$ are acute-angled triangles. We consider all closed polygonal paths of the form $XYZTX$ defined as follows: $X$ is a point on edge $AB$ distinct from $A$ and $B$; similarly, $Y, Z, T$ are interior points of edges $BC, CD, DA$, respectively. Prove:\n(a) If $\\angle DAB + \\angle BCD \\neq \\angle CDA + \\angle ABC$, then among the polygonal paths, there is none of minimal length.\n(b) If $\\angle DAB + \\angle BCD = \\angle CDA + \\angle ABC$, then there are infinitely many shortest polygonal paths, their common length being $2AC \\sin(\\alpha / 2)$, where $\\alpha = \\angle BAC + \\angle CAD + \\angle DAB$.",
+  "solutions": {
+    "Solution": "Rotate the triangle $BCD$ around the edge $BC$ until $ABCD$ are in one plane. It is clear that in a shortest path, the point Y lies on the line connecting $X$ and $Z$. Therefore, $XYB=ZYC$.\nSumming the four equations like this, we get exactly $\\angle ABC+\\angle ADC=\\angle BCD+\\angle BAD$.\nNow, draw all four faces in the plane, so that $BCD$ is constructed on the exterior of the edge $BC$ of $ABC$ and so on with edges $CD$ and $AD$.\nThe final new edge $AB$ (or rather $A'B'$) is parallel to the original one (because of the angle equation). Call the direction on $AB$ towards $B$ \"right\" and towards $A$ \"left\". If we choose a vertex $X$ on $AB$ and connect it to the corresponding vertex $X'$ on A'B'. This works for a whole interval of vertices $X$ if $C$ lies to the left of $B$ and $D$ and $D$ lies to the right of $A$. It is not hard to see that these conditions correspond to the fact that various angles are acute by assumption.\nFinally, regard the sine in half the isosceles triangle $ACA'$ which gives the result with the angles around $C$ instead of $A$, but the role of the vertices is symmetric."
+  }
+}

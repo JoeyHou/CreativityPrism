@@ -1,0 +1,8 @@
+{
+  "competition_id": "1996_AHSME_Problems",
+  "problem_id": 4,
+  "problem": "Six numbers from a list of nine integers are $7,8,3,5,9$ and $5$. The largest possible value of the median of all nine numbers in this list is\n$\\text{(A)}\\ 5\\qquad\\text{(B)}\\ 6\\qquad\\text{(C)}\\ 7\\qquad\\text{(D)}\\ 8\\qquad\\text{(E)}\\ 9$",
+  "solutions": {
+    "Solution": "First, put the six numbers we have in order, since we are concerned with the median:  $3, 5, 5, 7, 8, 9$.\nWe have three more numbers to insert into the list, and the median will be the $5^{th}$ highest (and $5^{th}$ lowest) number on the list.  If we top-load the list by making all three of the numbers greater than $9$, the median will be the highest it can possibly be.  Thus, the maximum median is the fifth piece of data in the list, which is $8$, giving an answer of $\\boxed{D}$.\n(In fact, as long as the three new integers are greater than $8$, the median will be $8$.)\nThis illustrates one important fact about medians:  no matter how high the three \"outlier\" numbers are, the median will never be greater than $8$.  The arithmetic mean is, generally speaking, more sensitive to such outliers, while the median is resistant to a small number of data that are either too high or too low."
+  }
+}

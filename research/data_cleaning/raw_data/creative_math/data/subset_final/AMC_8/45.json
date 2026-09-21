@@ -1,0 +1,9 @@
+{
+  "competition_id": "1989_AJHSME_Problems",
+  "problem_id": 21,
+  "difficulty": 1.5,
+  "problem": "Jack had a bag of $128$ apples.  He sold $25\\%$ of them to Jill.  Next he sold $25\\%$ of those remaining to June.  Of those apples still in his bag, he gave the shiniest one to his teacher.  How many apples did Jack have then?\n$\\text{(A)}\\ 7 \\qquad \\text{(B)}\\ 63 \\qquad \\text{(C)}\\ 65 \\qquad \\text{(D)}\\ 71 \\qquad \\text{(E)}\\ 111$",
+  "solutions": {
+    "Solution": "First he gives $128\\times .25 = 32$ apples to Jill, so he has $128-32=96$ apples left.  Then he gives $96\\times .25 = 24$ apples to June, so he has $96-24=72$ left.\nFinally, he gives one to the teacher, leaving $71\\rightarrow \\boxed{\\text{D}}$"
+  }
+}

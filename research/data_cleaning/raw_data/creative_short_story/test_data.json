@@ -1,0 +1,47 @@
+{
+    "metadata": {},
+    "data": [
+        {
+            "id": "house-window-live",
+            "items": ["house", "window", "live"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "living in a house with windows"
+        },
+        {
+            "id": "door-room-enter",
+            "items": ["door", "room", "enter"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "entering a room through a door"
+        },
+        {
+            "id": "desk-laptop-study",
+            "items": ["desk", "laptop", "study"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "studying on a desk with a laptop"
+        },
+        {
+            "id": "bike-wheel-ride",
+            "items": ["bike", "wheel", "ride"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "riding on a bike with wheels"
+        },
+        {
+            "id": "kitchen-food-cook",
+            "items": ["kitchen", "food", "cook"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "cooking food in a kitchen"
+        },
+        {
+            "id": "pen-paper-write",
+            "items": ["pen", "paper", "write"],
+            "pos": ["noun", "noun", "verb"],
+            "semantic_distance": "low",
+            "boring_theme": "writing on a paper with a pen"
+        }
+    ]
+}

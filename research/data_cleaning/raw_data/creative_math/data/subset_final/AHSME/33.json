@@ -1,0 +1,8 @@
+{
+  "competition_id": "1950_AHSME_Problems",
+  "problem_id": 30,
+  "problem": "From a group of boys and girls, $15$ girls leave. There are then left two boys for each girl. After this $45$ boys leave. There are then $5$ girls for each boy. The number of girls in the beginning was:\n$\\textbf{(A)}\\ 40 \\qquad \\textbf{(B)}\\ 43 \\qquad \\textbf{(C)}\\ 29 \\qquad \\textbf{(D)}\\ 50 \\qquad \\textbf{(E)}\\ \\text{None of these}$",
+  "solutions": {
+    "Solution": "Let us represent the number of boys $b$, and the number of girls $g$.\nFrom the first sentence, we get that $2(g-15)=b$.\nFrom the second sentence, we get $5(b-45)=g-15$.\nExpanding both equations and simplifying, we get $2g-30 = b$ and $5b = g+210$.\nSubstituting $b$ for $2g-30$, we get $5(2g-30)=g+210$. Solving for $g$, we get $g = \\boxed{\\textbf{(A)}\\ 40}$."
+  }
+}

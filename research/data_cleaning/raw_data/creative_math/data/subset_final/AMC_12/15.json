@@ -1,0 +1,10 @@
+{
+  "competition_id": "2009_AMC_12A_Problems",
+  "problem_id": 24,
+  "difficulty": 4,
+  "problem": "The tower function of twos is defined recursively as follows: $T(1) = 2$ and $T(n + 1) = 2^{T(n)}$ for $n\\ge1$. Let $A = (T(2009))^{T(2009)}$ and $B = (T(2009))^A$. What is the largest integer $k$ for which \\[\\underbrace{\\log_2\\log_2\\log_2\\ldots\\log_2B}_{k\\text{ times}}\\] is defined?\n$\\textbf{(A)}\\ 2009\\qquad \\textbf{(B)}\\ 2010\\qquad \\textbf{(C)}\\ 2011\\qquad \\textbf{(D)}\\ 2012\\qquad \\textbf{(E)}\\ 2013$",
+  "solutions": {
+    "Solution (not a proof, but good enough for AMCs)": "Testing the first two (or three) positive integers instead of 2009, $k$ seems to always be 4 more. Put E and go on to tackle ",
+    "Solution": "We just look at the last three logarithms for the moment, and use the fact that $\\log_2 T(k) = T(k - 1)$. We wish to find:\n\\begin{align*} \\log_2\\log_2\\log_2\\left({T(2009)^{\\left({T(2009)}^{T(2009)}\\right)}}\\right) &= \\log_2(T(2009)\\log_2(T(2009)\\log_2 T(2009)))\\\\ &= \\log_2(T(2009)\\log_2(T(2009)T(2008)))\\\\ &= \\log_2 \\{ T(2009) [ T(2008) + T(2007) ] \\} \\\\ \\end{align*}\n\nNow we realize that $T(n - 1)$ is much smaller than $T(n)$. So we approximate this, remembering we have rounded down, as:\nWe have used $3$ logarithms so far. Applying $2007$ more to the left of our expression, we get $T(1) = 2$. Then we can apply the logarithm $2$ more times, until we get to $0$. So our answer is approximately $3 + 2007 + 2 = 2012$. But we rounded down, so that means that after $2012$ logarithms we get a number slightly greater than $0$, so we can apply logarithms one more time. We can be sure it is small enough so that the logarithm can only be applied $1$ more time since $2012 + 1 = 2013$ is the largest answer choice. So the answer is $\\mathbf{(E)}$."
+  }
+}

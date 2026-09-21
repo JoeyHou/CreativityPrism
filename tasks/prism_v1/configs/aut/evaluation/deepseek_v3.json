@@ -1,0 +1,9 @@
+{
+    "experiments_list": [
+        {
+            "run_id": "aut_v1_0/deepseek_v3",
+            "task": "aut_push",
+            "model_name": "qwen_72b_instruct"
+        }
+    ]
+}
