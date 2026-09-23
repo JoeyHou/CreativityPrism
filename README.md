@@ -1,5 +1,12 @@
 # CreativityPrism
 
+<p align="center">
+| <a href="https://huggingface.co/datasets/joeyhou/creativityprism_v1"><b>Dataset (v1)</b></a>
+| <a href="https://github.com/JoeyHou/CreativityPrism"><b>Codebase</b></a>
+| <a href="https://joeyhou.github.io/CreativityPrism/"><b>Live benchmark results</b></a>
+|
+</p>
+
 A cross-domain benchmark for LLM creativity: **eight tasks** spanning divergent
 thinking, creative writing, mathematical creativity, code creativity, and
 originality measurement.
