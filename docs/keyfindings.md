@@ -1,0 +1,16 @@
+# Key findings
+
+## Frontier-scale vs. open models
+...
+
+## Divergent thinking
+...
+
+## Quality, novelty and diversity
+...
+
+## Correlation across metrics
+...
+
+## Takeaways
+...

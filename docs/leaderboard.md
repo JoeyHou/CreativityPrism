@@ -4,90 +4,135 @@
       <h2 id="leaderboard">Leaderboard</h2>
       <div id="updated" class="lb-updated">Last updated: —</div>
     </div>
-    <div class="lb-legend">
-      <span class="pill gold">🥇 Top 1</span>
-      <span class="pill silver">🥈 Top 2</span>
-      <span class="pill bronze">🥉 Top 3</span>
+    <div class="lb-controls">
+      <label>Size <select id="grp"><option value="">All</option></select></label>
     </div>
   </div>
 
-  <table id="board" class="display compact nowrap" style="width:100%">
+  <table id="board" class="paper-table" style="width:100%">
     <thead>
       <tr>
-        <th>Rank</th>
-        <th>Model</th>
-        <th>Overall</th>
-        <th>Quality</th>
-        <th>Novelty</th>
-        <th>Diversity</th>
-        <th>Date</th>
-        <th>Paper</th>
+        <th>#</th>
+        <th class="th-model" data-key="model" data-type="text">Model</th>
+        <th data-key="group" data-type="text">Size</th>
+        <th data-key="overall" data-type="num">Overall</th>
+        <th data-key="quality" data-type="num">Quality</th>
+        <th data-key="novelty" data-type="num">Novelty</th>
+        <th data-key="diversity" data-type="num">Diversity</th>
+        <th data-key="cw" data-type="num">Creative&nbsp;Writing</th>
+        <th data-key="dt" data-type="num">Divergent&nbsp;Thinking</th>
+        <th data-key="lr" data-type="num">Logical&nbsp;Reasoning</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
+  <p class="lb-note">Scores are in [0, 1]. Click a column header to sort. Want to be on the board? See <a href="../submit/">how to submit</a>.</p>
+</div>
+
+<div class="section leaderboard-card">
+  <div class="lb-header">
+    <h2 id="chart">Scores by metric</h2>
+    <div class="lb-controls">
+      <label>Metric <select id="metric"></select></label>
+    </div>
+  </div>
+  <div id="bars" class="bars"></div>
 </div>
 
 <script>
 (async function(){
-  const updatedEl = document.getElementById('updated');
-  const table = document.getElementById('board');
-  const tbody = table.querySelector('tbody');
-
-  function fmt(p){ return (p*100).toFixed(1)+'%'; }
-
-  // 1) Load data with error handling
-  let data;
-  try {
-    const res = await fetch('assets/data/leaderboard.json', { cache: 'no-cache' });
-    if (!res.ok) throw new Error('Fetch ' + res.status);
-    data = await res.json();
-  } catch (e) {
-    updatedEl.textContent = 'Last updated: — (failed to load data)';
-    tbody.innerHTML = `<tr><td colspan="8" style="text-align:center;opacity:.7;">Could not load <code>assets/data/leaderboard.json</code>.</td></tr>`;
-    console.error('Leaderboard fetch error:', e);
+  // works whether the page is served at /leaderboard/ or /leaderboard.html
+  const urls = ['assets/data/leaderboard.json', '../assets/data/leaderboard.json'];
+  let data = null;
+  for (const u of urls) {
+    try {
+      const r = await fetch(u, { cache: 'no-cache' });
+      if (r.ok) { data = await r.json(); break; }
+    } catch (e) {}
+  }
+  const tbody = document.querySelector('#board tbody');
+  if (!data) {
+    document.getElementById('updated').textContent = 'Last updated: — (failed to load data)';
+    tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;opacity:.7;">Could not load leaderboard.json.</td></tr>';
     return;
   }
+  document.getElementById('updated').textContent = 'Last updated: ' + (data.meta?.last_updated ?? '—');
 
-  updatedEl.textContent = 'Last updated: ' + (data.meta?.last_updated ?? '—');
+  const fmt3 = x => (x ?? 0).toFixed(3).replace(/^0(?=\.)/, '');
+  const metrics = [
+    ['overall','Overall'], ['quality','Quality'], ['novelty','Novelty'], ['diversity','Diversity'],
+    ['cw','Creative Writing'], ['dt','Divergent Thinking'], ['lr','Logical Reasoning']
+  ];
+  const cols = metrics.map(m => m[0]);
+  const allRows = data.rows || [];
 
-  // 2) Build rows (also works without DataTables)
-  const rows = (data.rows ?? []).map((r,i)=>{
-    const rank = i+1, medal = rank===1?'🥇':rank===2?'🥈':rank===3?'🥉':'';
-    return [
-      `<span class="rank ${rank<=3?'top3':''}">${medal || rank}</span>`,
-      r.model ?? '',
-      `<span class="num">${fmt(r.overall ?? 0)}</span>`,
-      `<span class="num">${fmt(r.quality ?? 0)}</span>`,
-      `<span class="num">${fmt(r.novelty ?? 0)}</span>`,
-      `<span class="num">${fmt(r.diversity ?? 0)}</span>`,
-      `<span class="mono">${r.date ?? ''}</span>`,
-      r.paper ? `<a class="pill link" href="${r.paper}" target="_blank" rel="noopener">link</a>` : ''
-    ];
+  // controls
+  const grpSel = document.getElementById('grp');
+  (data.group_order ?? [...new Set(allRows.map(r => r.group))]).forEach(g => {
+    grpSel.insertAdjacentHTML('beforeend', `<option value="${g}">${g}</option>`);
   });
+  const metSel = document.getElementById('metric');
+  metrics.forEach(([k, label]) => metSel.insertAdjacentHTML('beforeend', `<option value="${k}">${label}</option>`));
 
-  // Fallback: if DataTables isn’t present, render plain HTML rows
-  if (typeof window.DataTable === 'undefined') {
-    tbody.innerHTML = rows.map(cells => `<tr>${cells.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('');
-    console.warn('DataTable not found — rendered plain table.');
-    return;
+  const state = { key: 'overall', dir: 'desc' };
+
+  function visibleRows() {
+    const g = grpSel.value;
+    return allRows.filter(r => !g || r.group === g);
   }
 
-  // 3) Enhance with DataTables
-  new DataTable('#board', {
-    data: rows,
-    order: [[0,'asc']],
-    pageLength: 25,
-    dom: '<"lb-top"lf>t<"lb-bottom"ip>',
-    language: { search: '', lengthMenu: '_MENU_ entries per page' },
-    columnDefs: [
-      { targets: [0,2,3,4,5], className: 'dt-right' },
-      { targets: [1], className: 'dt-left' },
-      { targets: [6,7], className: 'dt-center' }
-    ]
+  function renderTable() {
+    const rows = visibleRows().slice().sort((a, b) => {
+      const va = a[state.key], vb = b[state.key];
+      if (typeof va === 'number' && typeof vb === 'number') return state.dir === 'asc' ? va - vb : vb - va;
+      return state.dir === 'asc' ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+    });
+    const best = {};
+    cols.forEach(c => best[c] = Math.max(...rows.map(r => +r[c] || -Infinity)));
+    tbody.innerHTML = rows.map((r, i) => `<tr>
+      <td class="num">${i + 1}</td>
+      <td class="model">${r.model}</td>
+      <td class="num">${r.group}</td>
+      ${cols.map(c => {
+        const v = +r[c], isBest = isFinite(v) && v === best[c];
+        const s = isFinite(v) ? fmt3(v) : '';
+        return `<td class="num ${isBest ? 'best' : ''}">${isBest ? '<strong>' + s + '</strong>' : s}</td>`;
+      }).join('')}
+    </tr>`).join('');
+  }
+
+  function renderBars() {
+    const k = metSel.value;
+    const rows = visibleRows().slice().sort((a, b) => b[k] - a[k]);
+    document.getElementById('bars').innerHTML = rows.map(r => `
+      <div class="bar-row">
+        <div class="bar-label">${r.model}</div>
+        <div class="bar-track"><div class="bar-fill" style="width:${(r[k] * 100).toFixed(1)}%"></div></div>
+        <div class="bar-val">${fmt3(r[k])}</div>
+      </div>`).join('');
+  }
+
+  function renderAll() { renderTable(); renderBars(); }
+
+  // header sorting
+  const ths = Array.from(document.querySelectorAll('#board thead th'));
+  ths.forEach(th => {
+    const key = th.dataset.key;
+    if (!key) return;
+    th.classList.add('sortable');
+    if (key === state.key) th.classList.add('sorted-desc');
+    th.addEventListener('click', () => {
+      if (state.key === key) state.dir = state.dir === 'desc' ? 'asc' : 'desc';
+      else { state.key = key; state.dir = th.dataset.type === 'text' ? 'asc' : 'desc'; }
+      ths.forEach(t => t.classList.remove('sorted-asc', 'sorted-desc'));
+      th.classList.add(state.dir === 'asc' ? 'sorted-asc' : 'sorted-desc');
+      renderTable();
+    });
   });
 
-  const input = document.querySelector('.dataTables_filter input');
-  if (input) input.placeholder = 'Search models…';
+  grpSel.addEventListener('change', renderAll);
+  metSel.addEventListener('change', renderBars);
+  renderAll();
 })();
+
 </script>
