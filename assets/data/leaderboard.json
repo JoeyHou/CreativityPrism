@@ -1,138 +1,201 @@
-<div class="section leaderboard-card">
-  <div class="lb-header">
-    <div>
-      <h2 id="leaderboard">Leaderboard</h2>
-      <div id="updated" class="lb-updated">Last updated: —</div>
-    </div>
-    <div class="lb-controls">
-      <label>Size <select id="grp"><option value="">All</option></select></label>
-    </div>
-  </div>
-
-  <table id="board" class="paper-table" style="width:100%">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th class="th-model" data-key="model" data-type="text">Model</th>
-        <th data-key="group" data-type="text">Size</th>
-        <th data-key="overall" data-type="num">Overall</th>
-        <th data-key="quality" data-type="num">Quality</th>
-        <th data-key="novelty" data-type="num">Novelty</th>
-        <th data-key="diversity" data-type="num">Diversity</th>
-        <th data-key="cw" data-type="num">Creative&nbsp;Writing</th>
-        <th data-key="dt" data-type="num">Divergent&nbsp;Thinking</th>
-        <th data-key="lr" data-type="num">Logical&nbsp;Reasoning</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-  <p class="lb-note">Scores are in [0, 1]. Click a column header to sort. Want to be on the board? See <a href="../submit/">how to submit</a>.</p>
-</div>
-
-<div class="section leaderboard-card">
-  <div class="lb-header">
-    <h2 id="chart">Scores by metric</h2>
-    <div class="lb-controls">
-      <label>Metric <select id="metric"></select></label>
-    </div>
-  </div>
-  <div id="bars" class="bars"></div>
-</div>
-
-<script>
-(async function(){
-  // works whether the page is served at /leaderboard/ or /leaderboard.html
-  const urls = ['assets/data/leaderboard.json', '../assets/data/leaderboard.json'];
-  let data = null;
-  for (const u of urls) {
-    try {
-      const r = await fetch(u, { cache: 'no-cache' });
-      if (r.ok) { data = await r.json(); break; }
-    } catch (e) {}
-  }
-  const tbody = document.querySelector('#board tbody');
-  if (!data) {
-    document.getElementById('updated').textContent = 'Last updated: — (failed to load data)';
-    tbody.innerHTML = '<tr><td colspan="10" style="text-align:center;opacity:.7;">Could not load leaderboard.json.</td></tr>';
-    return;
-  }
-  document.getElementById('updated').textContent = 'Last updated: ' + (data.meta?.last_updated ?? '—');
-
-  const fmt3 = x => (x ?? 0).toFixed(3).replace(/^0(?=\.)/, '');
-  const metrics = [
-    ['overall','Overall'], ['quality','Quality'], ['novelty','Novelty'], ['diversity','Diversity'],
-    ['cw','Creative Writing'], ['dt','Divergent Thinking'], ['lr','Logical Reasoning']
-  ];
-  const cols = metrics.map(m => m[0]);
-  const allRows = data.rows || [];
-
-  // controls
-  const grpSel = document.getElementById('grp');
-  (data.group_order ?? [...new Set(allRows.map(r => r.group))]).forEach(g => {
-    grpSel.insertAdjacentHTML('beforeend', `<option value="${g}">${g}</option>`);
-  });
-  const metSel = document.getElementById('metric');
-  metrics.forEach(([k, label]) => metSel.insertAdjacentHTML('beforeend', `<option value="${k}">${label}</option>`));
-
-  const state = { key: 'overall', dir: 'desc' };
-
-  function visibleRows() {
-    const g = grpSel.value;
-    return allRows.filter(r => !g || r.group === g);
-  }
-
-  function renderTable() {
-    const rows = visibleRows().slice().sort((a, b) => {
-      const va = a[state.key], vb = b[state.key];
-      if (typeof va === 'number' && typeof vb === 'number') return state.dir === 'asc' ? va - vb : vb - va;
-      return state.dir === 'asc' ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
-    });
-    const best = {};
-    cols.forEach(c => best[c] = Math.max(...rows.map(r => +r[c] || -Infinity)));
-    tbody.innerHTML = rows.map((r, i) => `<tr>
-      <td class="num">${i + 1}</td>
-      <td class="model">${r.model}</td>
-      <td class="num">${r.group}</td>
-      ${cols.map(c => {
-        const v = +r[c], isBest = isFinite(v) && v === best[c];
-        const s = isFinite(v) ? fmt3(v) : '';
-        return `<td class="num ${isBest ? 'best' : ''}">${isBest ? '<strong>' + s + '</strong>' : s}</td>`;
-      }).join('')}
-    </tr>`).join('');
-  }
-
-  function renderBars() {
-    const k = metSel.value;
-    const rows = visibleRows().slice().sort((a, b) => b[k] - a[k]);
-    document.getElementById('bars').innerHTML = rows.map(r => `
-      <div class="bar-row">
-        <div class="bar-label">${r.model}</div>
-        <div class="bar-track"><div class="bar-fill" style="width:${(r[k] * 100).toFixed(1)}%"></div></div>
-        <div class="bar-val">${fmt3(r[k])}</div>
-      </div>`).join('');
-  }
-
-  function renderAll() { renderTable(); renderBars(); }
-
-  // header sorting
-  const ths = Array.from(document.querySelectorAll('#board thead th'));
-  ths.forEach(th => {
-    const key = th.dataset.key;
-    if (!key) return;
-    th.classList.add('sortable');
-    if (key === state.key) th.classList.add('sorted-desc');
-    th.addEventListener('click', () => {
-      if (state.key === key) state.dir = state.dir === 'desc' ? 'asc' : 'desc';
-      else { state.key = key; state.dir = th.dataset.type === 'text' ? 'asc' : 'desc'; }
-      ths.forEach(t => t.classList.remove('sorted-asc', 'sorted-desc'));
-      th.classList.add(state.dir === 'asc' ? 'sorted-asc' : 'sorted-desc');
-      renderTable();
-    });
-  });
-
-  grpSel.addEventListener('change', renderAll);
-  metSel.addEventListener('change', renderBars);
-  renderAll();
-})();
-
-</script>
+{
+  "meta": {
+    "last_updated": "2026-09-04",
+    "source": "Table 'tab:perf-summary' of the published paper. Not re-run from this repository; see docs/data.md for the one task whose full-scale scoring is not reproducible against the public index."
+  },
+  "group_order": [
+    "<10B",
+    "10-40B",
+    "40-80B",
+    "Frontier-scale"
+  ],
+  "rows": [
+    {
+      "group": "<10B",
+      "model": "Mistral-7B",
+      "overall": 0.423,
+      "quality": 0.268,
+      "novelty": 0.393,
+      "diversity": 0.607,
+      "cw": 0.316,
+      "dt": 0.679,
+      "lr": 0.32
+    },
+    {
+      "group": "<10B",
+      "model": "Qwen2.5-7B",
+      "overall": 0.406,
+      "quality": 0.374,
+      "novelty": 0.398,
+      "diversity": 0.445,
+      "cw": 0.207,
+      "dt": 0.654,
+      "lr": 0.46
+    },
+    {
+      "group": "<10B",
+      "model": "OLMo2-7B",
+      "overall": 0.462,
+      "quality": 0.405,
+      "novelty": 0.34,
+      "diversity": 0.64,
+      "cw": 0.403,
+      "dt": 0.643,
+      "lr": 0.257
+    },
+    {
+      "group": "<10B",
+      "model": "Llama3.1-8B",
+      "overall": 0.404,
+      "quality": 0.313,
+      "novelty": 0.391,
+      "diversity": 0.509,
+      "cw": 0.239,
+      "dt": 0.683,
+      "lr": 0.409
+    },
+    {
+      "group": "10-40B",
+      "model": "OLMo2-13B",
+      "overall": 0.451,
+      "quality": 0.389,
+      "novelty": 0.379,
+      "diversity": 0.586,
+      "cw": 0.424,
+      "dt": 0.672,
+      "lr": 0.278
+    },
+    {
+      "group": "10-40B",
+      "model": "Mistral-24B",
+      "overall": 0.448,
+      "quality": 0.352,
+      "novelty": 0.44,
+      "diversity": 0.553,
+      "cw": 0.346,
+      "dt": 0.614,
+      "lr": 0.473
+    },
+    {
+      "group": "10-40B",
+      "model": "Qwen2.5-32B",
+      "overall": 0.453,
+      "quality": 0.417,
+      "novelty": 0.336,
+      "diversity": 0.605,
+      "cw": 0.338,
+      "dt": 0.655,
+      "lr": 0.358
+    },
+    {
+      "group": "40-80B",
+      "model": "Mixtral-8x7B",
+      "overall": 0.43,
+      "quality": 0.318,
+      "novelty": 0.392,
+      "diversity": 0.578,
+      "cw": 0.278,
+      "dt": 0.687,
+      "lr": 0.42
+    },
+    {
+      "group": "40-80B",
+      "model": "Llama3.3-70B",
+      "overall": 0.446,
+      "quality": 0.401,
+      "novelty": 0.404,
+      "diversity": 0.534,
+      "cw": 0.269,
+      "dt": 0.614,
+      "lr": 0.529
+    },
+    {
+      "group": "40-80B",
+      "model": "Qwen2.5-72B",
+      "overall": 0.549,
+      "quality": 0.526,
+      "novelty": 0.49,
+      "diversity": 0.632,
+      "cw": 0.385,
+      "dt": 0.736,
+      "lr": 0.554
+    },
+    {
+      "group": "Frontier-scale",
+      "model": "Claude3-Sonnet",
+      "overall": 0.632,
+      "quality": 0.606,
+      "novelty": 0.557,
+      "diversity": 0.733,
+      "cw": 0.507,
+      "dt": 0.765,
+      "lr": 0.612
+    },
+    {
+      "group": "Frontier-scale",
+      "model": "Claude3-Haiku",
+      "overall": 0.535,
+      "quality": 0.522,
+      "novelty": 0.456,
+      "diversity": 0.627,
+      "cw": 0.413,
+      "dt": 0.685,
+      "lr": 0.568
+    },
+    {
+      "group": "Frontier-scale",
+      "model": "GPT4.1",
+      "overall": 0.641,
+      "quality": 0.618,
+      "novelty": 0.582,
+      "diversity": 0.732,
+      "cw": 0.518,
+      "dt": 0.722,
+      "lr": 0.682
+    },
+    {
+      "group": "Frontier-scale",
+      "model": "GPT4.1-mini",
+      "overall": 0.615,
+      "quality": 0.567,
+      "novelty": 0.571,
+      "diversity": 0.718,
+      "cw": 0.504,
+      "dt": 0.697,
+      "lr": 0.649
+    },
+    {
+      "group": "Frontier-scale",
+      "model": "Gemini2.0-Flash",
+      "overall": 0.626,
+      "quality": 0.657,
+      "novelty": 0.522,
+      "diversity": 0.712,
+      "cw": 0.438,
+      "dt": 0.753,
+      "lr": 0.655
+    },
+    {
+      "group": "Frontier-scale",
+      "model": "DeepSeek-R1",
+      "overall": 0.665,
+      "quality": 0.677,
+      "novelty": 0.575,
+      "diversity": 0.742,
+      "cw": 0.548,
+      "dt": 0.724,
+      "lr": 0.643
+    },
+    {
+      "group": "Frontier-scale",
+      "model": "DeepSeek-V3",
+      "overall": 0.695,
+      "quality": 0.749,
+      "novelty": 0.616,
+      "diversity": 0.728,
+      "cw": 0.571,
+      "dt": 0.768,
+      "lr": 0.726
+    }
+  ]
+}
