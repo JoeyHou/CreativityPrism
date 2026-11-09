@@ -22,6 +22,7 @@ nav:
   - Submit: submit.md
   - Adding a task: adding-a-task.md
   - Changelog: changelog.md
+  - Contact: contact.md
 
 markdown_extensions:
   - admonition
@@ -39,5 +40,14 @@ extra_css:
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/joeyhou/creativityprism
+
+copyright: >-
+  Contact: <a href="mailto:joey.hou@pitt.edu">joey.hou@pitt.edu</a> ·
+  <a href="mailto:nps99@pitt.edu">nps99@pitt.edu</a>
 
 plugins: []
