@@ -7,15 +7,22 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   features:
-    - navigation.instant
+    - navigation.tabs
     - content.code.copy
     - toc.integrate
   icon:
     repo: fontawesome/brands/github
 
-# single-page: only "Home"
 nav:
   - Home: index.md
+  - Leaderboard: leaderboard.md
+  - Key findings: keyfindings.md
+  - Method: method.md
+  - Data: data.md
+  - Submit: submit.md
+  - Adding a task: adding-a-task.md
+  - Changelog: changelog.md
+
 markdown_extensions:
   - admonition
   - toc:
@@ -27,21 +34,10 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
-
-# extra_javascript:
-#   - https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
-#   - https://cdn.jsdelivr.net/npm/datatables.net-dt@2/js/dataTables.dataTables.min.js
-# extra_css:
-#   - assets/onepage.css
-#   - https://cdn.jsdelivr.net/npm/datatables.net-dt@2/css/dataTables.dataTables.min.css
-
 extra_css:
   - assets/onepage.css
-#  - https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css  # <- comment out
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js  # optional, or remove
-#  - https://cdn.datatables.net/2.0.8/js/dataTables.min.js     # <- comment out
-
+  - https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
 
 plugins: []
