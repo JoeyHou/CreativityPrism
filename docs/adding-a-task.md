@@ -1,5 +1,8 @@
 # Adding a task
 
+
+
+
 Derived from actually doing it: a deliberately awkward task was written into
 `tasks/contrib_metaphor/` and integrated without touching a single central file.
 Every rule below earned its place by something breaking first.

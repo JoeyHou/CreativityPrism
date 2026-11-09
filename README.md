@@ -130,7 +130,7 @@ Two caveats, both real:
 - **`creativity_index`** scores against the public infini-gram index, which
   rate-limits by IP. The published configuration is ~1.7M lookups and is not
   feasible there; **this task has not been validated at full scale here.** See
-  [docs/data.md](docs/data.md).
+  [docs/submit.md#coverage-caveat-creativity_index](docs/submit.md#coverage-caveat-creativity_index).
 
 ## Layout
 
