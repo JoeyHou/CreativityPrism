@@ -4,11 +4,8 @@ We'd love to hear from you. Whether you have a question, a suggestion, or need h
 
 ## Email
 
-| Address |
-|---|
- [joey.hou@pitt.edu](mailto:joey.hou@pitt.edu) |
- [nps99@pitt.edu](mailto:nps99@pitt.edu) |
-
+[joey.hou@pitt.edu](mailto:joey.hou@pitt.edu) <br>
+[nps99@pitt.edu](mailto:nps99@pitt.edu)
 
 ## What to Include
 
