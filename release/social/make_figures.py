@@ -357,6 +357,54 @@ def fig_panel_gap_time(data, dates):
     plt.close(fig)
 
 
+def fig_panel_heatmaps():
+    """The paper's two correlation figures, side by side.
+
+    These are the paper's own renders, not redrawn: the correlation matrices
+    behind them are not in this repository, and redrawing from the picture
+    would be inventing numbers. They are dense, so the canvas is wider than the
+    rest -- at 1600x900 the cell labels would be unreadable even zoomed.
+    """
+    import matplotlib.image as mpimg
+    src = REPO / "docs" / "assets" / "img"
+    left = mpimg.imread(src / "figure_4_heatmap_task_full.png")
+    right = mpimg.imread(src / "figure_5_heatmap_task_sub.png")
+
+    # Same height for both, so the pair reads as one figure.
+    h = 900
+    wl = h * left.shape[1] / left.shape[0]
+    wr = h * right.shape[1] / right.shape[0]
+    pad, top, bottom = 40, 150, 120
+    W, H = wl + wr + 3 * pad, h + top + bottom
+
+    fig = plt.figure(figsize=(W / DPI, H / DPI), dpi=DPI)
+    fig.patch.set_facecolor(SURFACE)
+    for img, x0, w, label, caption in (
+            (left, pad, wl, "By task",
+             "Metrics from the same task agree; across tasks and domains they do not."),
+            (right, 2 * pad + wl, wr, "By dimension",
+             "Quality and diversity hold together. Novelty does not.")):
+        ax = fig.add_axes([x0 / W, bottom / H, w / W, h / H])
+        ax.imshow(img)
+        ax.set_xticks([])
+        ax.set_yticks([])
+        for side in ax.spines.values():
+            side.set_visible(False)
+        ax.set_title(label, fontsize=13, fontweight="bold", color=INK, pad=10, loc="left")
+        ax.text(0, -0.035, caption, transform=ax.transAxes, fontsize=9,
+                color=INK_2, va="top", ha="left")
+
+    fig.text(pad / W, 1 - 22 / H, "What correlates with what",
+             fontsize=18, fontweight="bold", color=INK, va="top")
+    fig.text(pad / W, 1 - 62 / H,
+             "Pearson correlation of 17 models' scores, over every pair of metrics in CreativityPrism.",
+             fontsize=11, color=INK_2, va="top")
+    fig.text(pad / W, 24 / H,
+             "Figures 4 and 5 of the paper  ·  " + SOURCE, fontsize=8.5, color=INK_2, va="bottom")
+    fig.savefig(OUT / "panel_heatmaps.png", facecolor=SURFACE)
+    plt.close(fig)
+
+
 def main():
     use_inter()
     data = load_table()
@@ -376,6 +424,7 @@ def main():
                        "Creativity by dimension",
                        "CreativityPrism scores, ranked within each dimension. Higher is better.")
     fig_panel_gap_time(data, dates)
+    fig_panel_heatmaps()
     for f in sorted(OUT.glob("*.png")):
         print("{:26s} {:>5.0f} KB".format(f.name, f.stat().st_size / 1024))
 
