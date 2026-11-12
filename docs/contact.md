@@ -1,35 +1,26 @@
-# Contact
+# Contact Us
 
-## Questions about the benchmark
+We'd love to hear from you. Whether you have a question, a suggestion, or need help with something, reach out using the details below.
 
-For anything about the tasks, the metrics, or the paper, email us:
+## Email
 
-- Zhaoyi Joey Hou — [joey.hou@pitt.edu](mailto:joey.hou@pitt.edu)
-- Nisarg Patel — [nps99@pitt.edu](mailto:nps99@pitt.edu)
+[joey.hou@pitt.edu](mailto:joey.hou@pitt.edu) <br>
+[nps99@pitt.edu](mailto:nps99@pitt.edu)
 
-## Something wrong with the code or the data
+## What to Include
 
-Open an issue — that way the answer helps the next person too:
+To help us respond quickly, please include:
 
-[github.com/joeyhou/creativityprism/issues](https://github.com/joeyhou/creativityprism/issues)
+- Your name
+- A clear subject line
+- A short description of your question or issue
+- Any relevant screenshots or links
 
-Useful things to include: the command you ran, the model and judge you used, and
-the output of `creativityprism data status`.
 
-## Getting your model on the leaderboard
+## Feedback
 
-See [Submit a result](submit.md).
+Have an idea or found a bug? We welcome all feedback. Send it to either email above with the subject line **"Feedback"**.
 
-## Citing CreativityPrism
+---
 
-```bibtex
-@article{hou2025creativityprism,
-  title   = {CreativityPrism: A Cross-Domain Evaluation Framework for Large Language Model Creativity},
-  author  = {Hou, Zhaoyi Joey and Zhang, Bowei Alvin and Lu, Yining and Baghel, Bhiman Kumar and
-             Brei, Anneliese and Lu, Ximing and Jiang, Meng and Brahman, Faeze and
-             Chaturvedi, Snigdha and Chang, Haw-Shiuan and Khashabi, Daniel and Li, Xiang Lorraine},
-  journal = {arXiv preprint arXiv:2510.20091},
-  year    = {2025},
-  url     = {https://openreview.net/forum?id=3pfsQcEtNC}
-}
-```
+*Thank you for getting in touch!*

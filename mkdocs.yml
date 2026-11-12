@@ -4,6 +4,11 @@ site_url: https://joeyhou.github.io/CreativityPrism/
 repo_url: https://github.com/joeyhou/creativityprism
 edit_uri: edit/main/docs/
 
+copyright: >-
+  <span id="contact-us">Contact us:</span>
+  <a href="mailto:joey.hou@pitt.edu">joey.hou@pitt.edu</a> ·
+  <a href="mailto:nps99@pitt.edu">nps99@pitt.edu</a>
+
 theme:
   name: material
   features:
@@ -18,11 +23,11 @@ nav:
   - Leaderboard: leaderboard.md
   - Key findings: keyfindings.md
   - Method: method.md
-  - Data: data.md
   - Submit: submit.md
   - Adding a task: adding-a-task.md
-  - Changelog: changelog.md
-  - Contact: contact.md
+  - Contact Us: contact.md
+  
+  # - Changelog: changelog.md
 
 markdown_extensions:
   - admonition
