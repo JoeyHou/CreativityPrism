@@ -77,6 +77,6 @@ Metrics that did not meet the bar were removed. TTCT drops the story-writing and
 - Text only. Domains without reliable automatic evaluation, such as scientific discovery, are not covered.
 - The human annotation sets are small and the annotators are CS researchers rather than creativity experts. Judge choice may add bias.
 - Models released later may have an advantage on metrics that reward text that differs from existing content, such as Creativity Index and Creative Math, because of data contamination.
-- Creativity Index at the full published scale needs a self-hosted n-gram index. See [Data](data.md#coverage-caveat-creativity_index).
+- Creativity Index at the full published scale needs a self-hosted n-gram index. Scoring one document at one n-gram size is several hundred lookups, and the published configuration — 100 documents × 3 domains × 8 n-gram sizes — is on the order of 1.7M. The public infini-gram endpoint rate-limits by IP, so that configuration has not been validated end to end here; the scoring stage is verified on small subsets.
 
 For the prompts, per-task metrics and annotation details, see the [paper](https://arxiv.org/abs/2510.20091) (Appendices C, D and F).
